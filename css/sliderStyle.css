@@ -1,0 +1,29 @@
+.slider-cell {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    height: 100%;
+}
+
+.arc-container {
+    position: relative;
+    width: 140px;
+    height: 70px;
+}
+
+#number-box {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    width: 42px; /* Adjust the width to fit three digits */
+    height: 21px; /* Adjust the height for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black; /* Add a border to create the text box appearance */
+    box-sizing: border-box; /* Include border in the total box size */
+    background-color: white; /* Optional: Set background to white */
+}

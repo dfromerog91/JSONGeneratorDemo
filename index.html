@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1">
   <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
   <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+  <link rel="stylesheet" href="css/sliderStyle.css"
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans">
   <script src="script_init.js"></script>
   <script src="js/JSON_Scripts.js"></script>
@@ -14,6 +15,7 @@
   <script src="js/jquery.flexslider.js"></script>
   <script src="js/default.js"></script>
   <script src="js/API_jsonCipia.js"></script>
+  <script src="js/sliderScript.js"></script>
 </head>
 
 <body onload="import_FS10_defaultConfig()">
@@ -302,7 +304,7 @@
                               </label>
                             </div> 
                           </td>
-                          <td style="text-align: center;" title="Defines the period in which additional occurrences of the same event are not reported to the server. If timer expires and the safety event is still ongoing or a new occurrence is detected, another OTA alert is generated, and back-off timer is reset.">
+                          <td style="text-align: center;"  title="Defines the period in which additional occurrences of the same event are not reported to the server. If timer expires and the safety event is still ongoing or a new occurrence is detected, another OTA alert is generated, and back-off timer is reset.">
                             Message Backoff:
                             <img src="source_img/info.png" class="icon">
                           </td>
@@ -310,7 +312,7 @@
                             Backoff Timer:
                             <img src="source_img/info.png" class="icon">
                           </td>
-                          <td style="text-align: center;" title="Defines minimum speed for alert triggering">
+                          <td style="text-align: center; height: 33%;" title="Defines minimum speed for alert triggering">
                             Speed Threshold:
                             <img src="source_img/info.png" class="icon">
                           </td>
@@ -324,8 +326,31 @@
                             <select name="SleepBackoffTimer" id="SleepBackoffTimer" style="width: 165px; font-size: 10px; background-color: #B9E6F0;">
                             </select>
                           </td>
-                          <td rowspan="3" style="text-align: center;">
-                            val10
+                          <td rowspan="3"  style="height: 66%;">
+                            <div class="arc-container">
+                              <svg id="arc" width="140" height="70" viewBox="0 -7 140 77">
+                                  <!-- Define the gradient -->
+                                  <defs>
+                                      <linearGradient id="rainbow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                          <stop offset="0%" style="stop-color:blue;stop-opacity:1" />
+                                          <stop offset="25%" style="stop-color:green;stop-opacity:1" />
+                                          <stop offset="50%" style="stop-color:yellow;stop-opacity:1" />
+                                          <stop offset="75%" style="stop-color:orange;stop-opacity:1" />
+                                          <stop offset="100%" style="stop-color:red;stop-opacity:1" />
+                                      </linearGradient>
+                                  </defs>
+                                  <!-- Draw the arc using the gradient -->
+                                  <path id="arc-path" d="M 7 63 A 63 63 0 0 1 133 63" stroke="url(#rainbow-gradient)" fill="transparent" stroke-width="7"/>
+                                  <!-- Draw the circle -->
+                                  <circle id="slider" cx="7" cy="63" r="6" fill="black" />
+                              </svg>
+                              <!-- Add a container for the number -->
+                              <div id="number-box-container">
+                                  <div id="number-box">
+                                    000
+                                  </div>
+                              </div>
+                            </div>                           
                           </td>
                         </tr>
                         <tr>
