@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // Prueba para inicializar (Probablemente esto vaya en el onLoad)
-    initializeDial('dial1', 'dialValue1', 0, 60, '100px', 15);
+    initializeDial('dial1', 'dialValue1', 0, 60, '200px', 15);
     initializeDial('dial2', 'dialValue2', 10, 60, '100px', 12);
 });
