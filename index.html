@@ -326,31 +326,22 @@
                             <select name="SleepBackoffTimer" id="SleepBackoffTimer" style="width: 165px; font-size: 10px; background-color: #B9E6F0;">
                             </select>
                           </td>
-                          <td rowspan="3"  style="height: 66%;">
-                            <div class="arc-container">
-                              <svg id="arc" width="140" height="70" viewBox="0 -7 140 77">
-                                  <!-- Define the gradient -->
-                                  <defs>
-                                      <linearGradient id="rainbow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                          <stop offset="0%" style="stop-color:blue;stop-opacity:1" />
-                                          <stop offset="25%" style="stop-color:green;stop-opacity:1" />
-                                          <stop offset="50%" style="stop-color:yellow;stop-opacity:1" />
-                                          <stop offset="75%" style="stop-color:orange;stop-opacity:1" />
-                                          <stop offset="100%" style="stop-color:red;stop-opacity:1" />
-                                      </linearGradient>
-                                  </defs>
-                                  <!-- Draw the arc using the gradient -->
-                                  <path id="arc-path" d="M 7 63 A 63 63 0 0 1 133 63" stroke="url(#rainbow-gradient)" fill="transparent" stroke-width="7"/>
-                                  <!-- Draw the circle -->
-                                  <circle id="slider" cx="7" cy="63" r="6" fill="black" />
-                              </svg>
-                              <!-- Add a container for the number -->
-                              <div id="number-box-container">
-                                  <div id="number-box">
-                                    000
-                                  </div>
-                              </div>
-                            </div>                           
+                          <td rowspan="3"  style="text-align: center;">
+                            <table>
+                              <td style="border: none; text-align: center; vertical-align: middle;">
+                                <div class="dial-container">
+                                  <input type="range" id="dial1">
+                                </div>
+                              </td>
+                              <td style="border: none; text-align: right; vertical-align: middle">
+                                <div class="value-container">
+                                  <input type="number" id="dialValue1">
+                                </div>
+                              </td>
+                              <td style="border: none; text-align: left; vertical-align: middle">
+                                <label for="dialValue1">km/h</label>
+                              </td>
+                            </table>                          
                           </td>
                         </tr>
                         <tr>
@@ -568,7 +559,21 @@
                           </select>
                         </td>
                         <td rowspan="3" style="text-align: center;">
-                          val10
+                          <table>
+                            <td style="border: none; text-align: center; vertical-align: middle;">
+                              <div class="dial-container">
+                                <input type="range" id="dial2">
+                              </div>
+                            </td>
+                            <td style="border: none; text-align: right; vertical-align: middle">
+                              <div class="value-container">
+                                <input type="number" id="dialValue2">
+                              </div>
+                            </td>
+                            <td style="border: none; text-align: left; vertical-align: middle">
+                              <label for="dialValue2">km/h</label>
+                            </td>
+                          </table>
                         </td>
                       </tr>
                       <tr>
