@@ -1087,28 +1087,50 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function toggleSubParameters(id, button, moreOptionsImg, lessOptionsImg) {
+    // Seleccionar todos los elementos con la clase 'sub-parameters'
+    const allSubParams = document.querySelectorAll('.sub-parameters');
+
+    // Recorrer cada elemento para ocultar todos los menús excepto el que se está alternando
+    allSubParams.forEach(subParam => {
+        if (subParam.id !== id) {
+            // Ocultar los menús que no están siendo alternados
+            subParam.classList.remove('show');
+            subParam.style.display = 'none';
+
+            // Actualizar la imagen del botón asociado al menú que se está ocultando
+            const associatedButton = document.querySelector(`.toggle-button[onclick*="${subParam.id}"] img`);
+            if (associatedButton) {
+                associatedButton.src = moreOptionsImg;
+                associatedButton.alt = 'More Options';
+            }
+        }
+    });
+
+    // Seleccionar el menú que se está alternando
     const subParams = document.getElementById(id);
     if (subParams) {
+        // Verificar si el menú está oculto
         const isHidden = !subParams.classList.contains('show');
         if (isHidden) {
-            subParams.style.display = 'block';  // Make it visible first to apply the transition
-            subParams.offsetHeight;  // Trigger a reflow
+            // Mostrar el menú
+            subParams.style.display = 'block';  // Hacerlo visible primero para aplicar la transición
+            subParams.offsetHeight;  // Forzar un reflujo
             subParams.classList.add('show');
         } else {
+            // Ocultar el menú
             subParams.classList.remove('show');
             setTimeout(() => {
                 if (!subParams.classList.contains('show')) {
                     subParams.style.display = 'none';
                 }
-            }, 125); // Match the timeout duration with the CSS transition duration
+            }, 125); // Ajustar la duración del temporizador con la duración de la transición CSS
         }
 
+        // Actualizar la imagen del botón del menú alternado
         const img = button.querySelector('img');
         if (img) {
             img.src = isHidden ? lessOptionsImg : moreOptionsImg;
             img.alt = isHidden ? 'Less Options' : 'More Options';
-        } else {
-            button.textContent = isHidden ? '[-]' : '[+]';
         }
     }
 }

@@ -228,92 +228,145 @@
                   </tr>
                   <tr>
                     <td style="background-color:#ffffff;">
-                      <!--Table for Messages-->
                       <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
-                        <!-- Row1 -->
                         <tr>
-                          <!-- Col1 -->
-                          <td rowspan="2" style="height: 50%; text-align: center;" title="Enables/disables event that marks end of safety alert">
-                            Closure Event:
-                            <img src="source_img/info.png" class="icon">
+                          <td colspan="3">
+                            <table>
+                              <tr>
+                                <td style="border: none; text-align: center;" title="Enables/disables alert upload to the server">
+                                  Detection Event:
+                                  <img src="source_img/info.png" class="icon">
+                                </td>
+                                <td style="border: none; text-align: center;">
+                                  <div class="container">
+                                    <label class="switch">
+                                      <input type="checkbox" id="DMS_DriverAsleep_ReportEvent_test">
+                                      <span class="slider round"></span>
+                                    </label>
+                                  </div>
+                                </td>                            
+                              </tr>
+                            </table>                            
                           </td>
-                          <!-- Col2 -->
-                          <td rowspan="2" style="height: 50%; text-align: center;">
-                            <div class="container">
-                              <label class="switch">
-                                <input type="checkbox" id="DMS_DriverAsleep_ReportEvent_test">
-                                <span class="slider round"></span>
-                              </label>
-                            </div>
-                          </td>
-                          <!-- Col3 -->
-                          <td style="height: 33%; text-align: center;" title="Defines the period in which additional occurrences of the same event are not reported to the server. If timer expires and the safety event is still ongoing or a new occurrence is detected, another OTA alert is generated, and back-off timer is reset.">
-                            Message Backoff:
-                            <img src="source_img/info.png" class="icon">
-                          </td>
-                          <!-- Col4 -->
-                          <td style="height: 33%; text-align: center;" title="Defines the period in which additional occurrences of the same event are not reported to the driver(in-cabin). If timer expires and the safety event is still ongoing or a new occurrence is detected, another alert is generated, and back-off timer is reset.">
-                            Feedback Backoff:
-                            <img src="source_img/info.png" class="icon">
-                          </td>
-                          <!-- Col5 -->
-                          <td style="height: 33%; text-align: center;" title="Defines minimum speed for alert triggering">
-                            Speed Threshold:
-                            <img src="source_img/info.png" class="icon">
+                          <td colspan="3">
+                            <table>
+                              <tr>
+                                <td style="border: none; text-align: center;" title="Enables/disables event that marks end of safety alert">
+                                  Closure Event:
+                                  <img src="source_img/info.png" class="icon">
+                                </td>
+                                <td style="border: none; text-align: center;">
+                                  <div class="container">
+                                    <label class="switch">
+                                      <input type="checkbox" id="DMS_DriverAsleep_ClosureEvent_test">
+                                      <span class="slider round"></span>
+                                    </label>
+                                  </div>
+                                </td>                            
+                              </tr>
+                            </table>                            
                           </td>
                         </tr>
-                        <!-- Row2 -->
                         <tr>
-                          <!-- Col3 -->
-                          <td rowspan="3" style="height: 67%; text-align: center;">
-                            <select name="AsleepOTABackOff" id="AsleepOTABackOff" style="width: 165px; font-size: 10px;background-color: #B9E6F0;">
-                            </select>
-                          </td>
-                          <!-- Col4 -->
-                          <td rowspan="3" style="height: 67%; text-align: center;">
-                            <select name="SleepBackoffTimer" id="SleepBackoffTimer" style="width: 165px; font-size: 10px; background-color: #B9E6F0;">
-                            </select>
-                          </td>
-                          <!-- Col5 -->
-                          <td rowspan="3" style="height: 67%; text-align: center;">
-                            <!-- Internal table for speed threshold -->
-                            <table style="border-collapse: collapse; width: 100%; height: 100%;">
+                          <td colspan="2">
+                            <table>
                               <tr>
-                                <td colspan="2" style="border: none; vertical-align: middle;">
-                                  <div class="dial-container" style="display: flex; align-items: center; justify-content: center;">
-                                    <input type="range" id="dial1">
-                                  </div>
-                                </td>
-                                <td style="border: none; vertical-align: middle;">
-                                  <div class="value-container" style="display: flex; align-items: right; justify-content: right;">
-                                    <input type="number" id="dialValue1">  
-                                  </div>
-                                </td>
-                                <td style="border: none; text-align: left; vertical-align: middle;">
-                                  <label style="font-size: 12pt;">km/h</label>
+                                <td style="border: none; text-align: center;"
+                                  title="Defines the period in which additional occurrences of the same event are not reported to the server. If timer expires and the safety event is still ongoing or a new occurrence is detected, another OTA alert is generated, and back-off timer is reset.">
+                                  Message Backoff:
+                                  <img src="source_img/info.png" class="icon">
                                 </td>
                               </tr>
-                            </table>                          
+                              <tr>
+                                <td style="border: none;">
+                                  <table>
+                                    <tr>
+                                      <td colspan="2" style="border: none; vertical-align: middle;">
+                                        <div class="dial-container" style="display: flex; align-items: center; justify-content: center;">
+                                          <input type="range" id="AsleepOTABackOffDial1">
+                                        </div>
+                                      </td>
+                                      <td style="border: none; vertical-align: middle;">
+                                        <div class="value-container" style="display: flex; align-items: right; justify-content: right;">
+                                          <input type="number" id="AsleepOTABackOffDialValue1">
+                                        </div>
+                                      </td>
+                                      <td style="border: none; text-align: left; vertical-align: middle;">
+                                        <label style="font-size: 12pt;">s</label>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                          <td colspan="2">
+                            <table>
+                              <tr>
+                                <td style="border: none; text-align: center;"
+                                  title="Defines the period in which additional occurrences of the same event are not reported to the driver(in-cabin). If timer expires and the safety event is still ongoing or a new occurrence is detected, another alert is generated, and back-off timer is reset.">
+                                  Feedback Backoff:
+                                  <img src="source_img/info.png" class="icon">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border: none;">
+                                  <table>
+                                    <tr>
+                                      <td colspan="2" style="border: none; vertical-align: middle;">
+                                        <div class="dial-container" style="display: flex; align-items: center; justify-content: center;">
+                                          <input type="range" id="SleepBackoffTimerDial1">
+                                        </div>
+                                      </td>
+                                      <td style="border: none; vertical-align: middle;">
+                                        <div class="value-container" style="display: flex; align-items: right; justify-content: right;">
+                                          <input type="number" id="SleepBackoffTimerDialValue1">
+                                        </div>
+                                      </td>
+                                      <td style="border: none; text-align: left; vertical-align: middle;">
+                                        <label style="font-size: 12pt;">s</label>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                          <td colspan="2">
+                            <table>
+                              <tr>
+                                <td style="border: none; text-align: center;"
+                                  title="Defines minimum speed for alert triggering.">
+                                  Speed Threshold:
+                                  <img src="source_img/info.png" class="icon">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border: none;">
+                                  <table>
+                                    <tr>
+                                      <td colspan="2" style="border: none; vertical-align: middle;">
+                                        <div class="dial-container" style="display: flex; align-items: center; justify-content: center;">
+                                          <input type="range" id="dial1">
+                                        </div>
+                                      </td>
+                                      <td style="border: none; vertical-align: middle;">
+                                        <div class="value-container" style="display: flex; align-items: right; justify-content: right;">
+                                          <input type="number" id="dialValue1">
+                                        </div>
+                                      </td>
+                                      <td style="border: none; text-align: left; vertical-align: middle;">
+                                        <label style="font-size: 12pt;">km/h</label>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
                           </td>
                         </tr>
-                        <tr>
-                          <!-- Col1 -->
-                          <td rowspan="2" style="height: 50%; text-align: center;" title="Enables/disables alert upload to the server">
-                            Detection Event:
-                            <img src="source_img/info.png" class="icon">
-                          </td>
-                          <!-- Col2 -->
-                          <td rowspan="2" style="height: 50%; text-align: center;">
-                            <div class="container">
-                              <label class="switch">
-                                <input type="checkbox" id="DMS_DriverAsleep_ClosureEvent_test">
-                                <span class="slider round"></span>
-                              </label>
-                            </div>
-                          </td>
-                        </tr>
-                      </table>                    
-                    </td>
+                      </table>
+                    </td>       
                   </tr>
                   <tr>
                     <td style="background-color:#ffffff;">
