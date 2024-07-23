@@ -166,7 +166,7 @@
                 <table> 
                   <tr>
                     <td style="background-color:#ffffff;">
-                      Feedback:
+                      Driver Feedback:
                     </td>
                   </tr>
                   <tr>
@@ -211,7 +211,7 @@
                           </td>
                           <td style="width: 25%; font-size: 10px; text-align: center;">
                             <select id="DMS_DriverAsleep_FeedbackOutput_test">
-                              <option value="None">None</option>
+                              <option value="None" style="background-color: #9C0000;">None</option>
                               <option value="GPO">GPO</option>
                               <option value="GPIO">GPIO</option>
                               <option value="Both">Both</option>
@@ -223,69 +223,7 @@
                   </tr>
                   <tr>
                     <td style="background-color:#ffffff;">
-                      Media Upload:
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="background-color:#ffffff;">
-                      <table class="table-internal">
-                        <tr>
-                          <td colspan="2">
-                            &nbsp
-                          </td>
-                          <td colspan="2" style="text-align: center;" title="Defines if snapshot upload is required">
-                            Photo
-                            <img src="source_img/info.png" class="icon">
-                          </td>
-                          <td colspan="2" style="text-align: center;" title="Defines if video upload is required">
-                            Video
-                            <img src="source_img/info.png" class="icon">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td style="text-align: center;" title="Enables sending 10 snapshots every 0.5s, if video is enabled">
-                            Enable timelapse
-                            <img src="source_img/info.png" class="icon">
-                          </td>
-                          <td style="text-align: center;">
-                            <div class="container">
-                              <label class="switch">
-                                  <input type="checkbox" id="DMS_DriverAsleep_Timelapse">
-                                  <span class="slider round"></span>
-                              </label>
-                            </div>
-                          </td>
-                          <td style="text-align: center;">
-                            <div class="container" title="In-Cabin snapshot">
-                              <img id="DMS_DriverAsleep_ReportImageDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportImageDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportImageDMS_Checkbox')">
-                              <input type="checkbox" id="DMS_DriverAsleep_ReportImageDMS_Checkbox" class="hidden-checkbox">
-                            </div>
-                          </td>
-                          <td style="text-align: center;">
-                            <div class="container" title="Road-facing snapshot">
-                              <img id="DMS_DriverAsleep_ReportImageADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportImageADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportImageADAS_Checkbox')">
-                              <input type="checkbox" id="DMS_DriverAsleep_ReportImageADAS_Checkbox" class="hidden-checkbox">
-                            </div>
-                          </td>
-                          <td style="text-align: center;" title="In-Cabin video">
-                            <div class="container">
-                              <img id="DMS_DriverAsleep_ReportVideoDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportVideoDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportVideoDMS_Checkbox')">
-                              <input type="checkbox" id="DMS_DriverAsleep_ReportVideoDMS_Checkbox" class="hidden-checkbox">
-                            </div>
-                          </td>
-                          <td style="text-align: center;" title="Road-facing video">
-                            <div class="container">
-                              <img id="DMS_DriverAsleep_ReportVideoADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportVideoADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportVideoADAS_Checkbox')">
-                              <input type="checkbox" id="DMS_DriverAsleep_ReportVideoADAS_Checkbox" class="hidden-checkbox">
-                            </div>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="background-color:#ffffff;">
-                      Message:
+                      Message Settings:
                     </td>
                   </tr>
                   <tr>
@@ -315,7 +253,7 @@
                           </td>
                           <!-- Col4 -->
                           <td style="height: 33%; text-align: center;" title="Defines the period in which additional occurrences of the same event are not reported to the driver(in-cabin). If timer expires and the safety event is still ongoing or a new occurrence is detected, another alert is generated, and back-off timer is reset.">
-                            Backoff Timer:
+                            Feedback Backoff:
                             <img src="source_img/info.png" class="icon">
                           </td>
                           <!-- Col5 -->
@@ -361,7 +299,7 @@
                         <tr>
                           <!-- Col1 -->
                           <td rowspan="2" style="height: 50%; text-align: center;" title="Enables/disables alert upload to the server">
-                            Cloud Event:
+                            Detection Event:
                             <img src="source_img/info.png" class="icon">
                           </td>
                           <!-- Col2 -->
@@ -375,6 +313,68 @@
                           </td>
                         </tr>
                       </table>                    
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="background-color:#ffffff;">
+                      Media Upload:
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="background-color:#ffffff;">
+                      <table class="table-internal">
+                        <tr>
+                          <td colspan="2">
+                            &nbsp
+                          </td>
+                          <td colspan="2" style="text-align: center;" title="Defines if snapshot upload is required">
+                            Photo
+                            <img src="source_img/info.png" class="icon">
+                          </td>
+                          <td colspan="2" style="text-align: center;" title="Defines if video upload is required">
+                            Video
+                            <img src="source_img/info.png" class="icon">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;" title="Enables sending 10 snapshots every 0.5s">
+                            Enable timelapse
+                            <img src="source_img/info.png" class="icon">
+                          </td>
+                          <td style="text-align: center;">
+                            <div class="container">
+                              <label class="switch">
+                                  <input type="checkbox" id="DMS_DriverAsleep_Timelapse">
+                                  <span class="slider round"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td style="text-align: center;">
+                            <div class="container" title="In-Cabin snapshot">
+                              <img id="DMS_DriverAsleep_ReportImageDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportImageDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportImageDMS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportImageDMS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td style="text-align: center;">
+                            <div class="container" title="Road-facing snapshot">
+                              <img id="DMS_DriverAsleep_ReportImageADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportImageADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportImageADAS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportImageADAS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td style="text-align: center;" title="In-Cabin video">
+                            <div class="container">
+                              <img id="DMS_DriverAsleep_ReportVideoDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportVideoDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportVideoDMS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportVideoDMS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td style="text-align: center;" title="Road-facing video">
+                            <div class="container">
+                              <img id="DMS_DriverAsleep_ReportVideoADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportVideoADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportVideoADAS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportVideoADAS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
                   </tr>
                 </table>
@@ -414,7 +414,7 @@
               <table> 
                 <tr>
                   <td style="background-color:#ffffff;">
-                    Feedback:
+                    Driver Feedback:
                   </td>
                 </tr>
                 <tr>
@@ -471,69 +471,7 @@
                 </tr>
                 <tr>
                   <td style="background-color:#ffffff;">
-                    Media Upload:
-                  </td>
-                </tr>
-                <tr>
-                  <td style="background-color:#ffffff;">
-                    <table class="table-internal">
-                      <tr>
-                        <td colspan="2">
-                          &nbsp
-                        </td>
-                        <td colspan="2" style="text-align: center;" title="Defines if snapshot upload is required">
-                          Photo
-                          <img src="source_img/info.png" class="icon">
-                        </td>
-                        <td colspan="2" style="text-align: center;" title="Defines if video upload is required">
-                          Video
-                          <img src="source_img/info.png" class="icon">
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="text-align: center;" title="Enables sending 10 snapshots every 0.5s, if video is enabled">
-                          Enable timelapse
-                          <img src="source_img/info.png" class="icon">
-                        </td>
-                        <td style="text-align: center;">
-                          <div class="container">
-                            <label class="switch">
-                                <input type="checkbox" id="DMS_Drowsiness_Timelapse">
-                                <span class="slider round"></span>
-                            </label>
-                          </div>
-                        </td>
-                        <td style="text-align: center;" title="In-Cabin snapshot">
-                          <div class="container">
-                            <img id="DMS_Drowsiness_ReportImageDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_Drowsiness_ReportImageDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_Drowsiness_ReportImageDMS_Checkbox')">
-                            <input type="checkbox" id="DMS_Drowsiness_ReportImageDMS_Checkbox" class="hidden-checkbox">
-                          </div>
-                        </td>
-                        <td style="text-align: center;" title="Road-facing snapshot">
-                          <div class="container">
-                            <img id="DMS_Drowsiness_ReportImageADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_Drowsiness_ReportImageADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_Drowsiness_ReportImageADAS_Checkbox')">
-                            <input type="checkbox" id="DMS_Drowsiness_ReportImageADAS_Checkbox" class="hidden-checkbox">
-                          </div>
-                        </td>
-                        <td style="text-align: center;" title="In-Cabin video">
-                          <div class="container">
-                            <img id="DMS_Drowsiness_ReportVideoDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_Drowsiness_ReportVideoDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_Drowsiness_ReportVideoDMS_Checkbox')">
-                            <input type="checkbox" id="DMS_Drowsiness_ReportVideoDMS_Checkbox" class="hidden-checkbox">
-                          </div>
-                        </td>
-                        <td style="text-align: center;" title="Road-facing snapshot">
-                          <div class="container">
-                            <img id="DMS_Drowsiness_ReportVideoADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_Drowsiness_ReportVideoADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_Drowsiness_ReportVideoADAS_Checkbox')">
-                            <input type="checkbox" id="DMS_Drowsiness_ReportVideoADAS_Checkbox" class="hidden-checkbox">
-                          </div>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="background-color:#ffffff;">
-                    Message:
+                    Message Settings:
                   </td>
                 </tr>
                 <tr>
@@ -541,7 +479,7 @@
                     <table class="table-internal">
                       <tr>
                         <td rowspan="2" style="text-align: center;" title="Enables/disables alert upload to the server">
-                          Cloud Event:
+                          Detection Event:
                           <img src="source_img/info.png" class="icon">
                         </td>
                         <td rowspan="2" style="text-align: center;">
@@ -557,7 +495,7 @@
                           <img src="source_img/info.png" class="icon">
                         </td>
                         <td style="text-align: center;" title="Defines the period in which additional occurrences of the same event are not reported to the driver(in-cabin). If timer expires and the safety event is still ongoing or a new occurrence is detected, another alert is generated, and back-off timer is reset">
-                          Backoff Timer:
+                          Feedback Backoff:
                           <img src="source_img/info.png" class="icon">
                         </td>
                         <td style="text-align: center;" title="Defines minimum speed for alert triggering">
@@ -603,6 +541,68 @@
                                 <input type="checkbox" id="DMS_Drowsiness_ClosureEvent_test">
                                 <span class="slider round"></span>
                             </label>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff;">
+                    Media Upload:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff;">
+                    <table class="table-internal">
+                      <tr>
+                        <td colspan="2">
+                          &nbsp
+                        </td>
+                        <td colspan="2" style="text-align: center;" title="Defines if snapshot upload is required">
+                          Photo
+                          <img src="source_img/info.png" class="icon">
+                        </td>
+                        <td colspan="2" style="text-align: center;" title="Defines if video upload is required">
+                          Video
+                          <img src="source_img/info.png" class="icon">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align: center;" title="Enables sending 10 snapshots every 0.5s">
+                          Enable timelapse
+                          <img src="source_img/info.png" class="icon">
+                        </td>
+                        <td style="text-align: center;">
+                          <div class="container">
+                            <label class="switch">
+                                <input type="checkbox" id="DMS_Drowsiness_Timelapse">
+                                <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </td>
+                        <td style="text-align: center;" title="In-Cabin snapshot">
+                          <div class="container">
+                            <img id="DMS_Drowsiness_ReportImageDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_Drowsiness_ReportImageDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_Drowsiness_ReportImageDMS_Checkbox')">
+                            <input type="checkbox" id="DMS_Drowsiness_ReportImageDMS_Checkbox" class="hidden-checkbox">
+                          </div>
+                        </td>
+                        <td style="text-align: center;" title="Road-facing snapshot">
+                          <div class="container">
+                            <img id="DMS_Drowsiness_ReportImageADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_Drowsiness_ReportImageADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_Drowsiness_ReportImageADAS_Checkbox')">
+                            <input type="checkbox" id="DMS_Drowsiness_ReportImageADAS_Checkbox" class="hidden-checkbox">
+                          </div>
+                        </td>
+                        <td style="text-align: center;" title="In-Cabin video">
+                          <div class="container">
+                            <img id="DMS_Drowsiness_ReportVideoDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_Drowsiness_ReportVideoDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_Drowsiness_ReportVideoDMS_Checkbox')">
+                            <input type="checkbox" id="DMS_Drowsiness_ReportVideoDMS_Checkbox" class="hidden-checkbox">
+                          </div>
+                        </td>
+                        <td style="text-align: center;" title="Road-facing snapshot">
+                          <div class="container">
+                            <img id="DMS_Drowsiness_ReportVideoADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_Drowsiness_ReportVideoADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_Drowsiness_ReportVideoADAS_Checkbox')">
+                            <input type="checkbox" id="DMS_Drowsiness_ReportVideoADAS_Checkbox" class="hidden-checkbox">
                           </div>
                         </td>
                       </tr>
