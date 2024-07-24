@@ -390,14 +390,14 @@
                           </td>
                         </tr>
                         <tr>
-                          <td style="text-align: center;" title="Enables sending 10 snapshots every 0.5s">
+                          <td style="text-align: center;" title="Enables sending 5 snapshots for each event of driver asleep from both in-cabin and road-facing cameras. The delay between two consecutive snapshots in timelapse is 0.5 seconds.">
                             Enable timelapse
                             <img src="source_img/info.png" class="icon">
                           </td>
                           <td style="text-align: center;">
                             <div class="container">
                               <label class="switch">
-                                  <input type="checkbox" id="DMS_DriverAsleep_Timelapse">
+                                  <input type="checkbox" id="DMS_DriverAsleep_Timelapse" onchange="handle_DMS_DriverAsleep_Timelapse_change(this, 'DMS_DriverAsleep_ReportVideoDMS', 'source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportVideoDMS_Checkbox', 'DMS_DriverAsleep_ReportVideoADAS', 'source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportVideoADAS_Checkbox')">
                                   <span class="slider round"></span>
                               </label>
                             </div>

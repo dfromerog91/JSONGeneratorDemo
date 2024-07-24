@@ -1047,6 +1047,19 @@ function FeedbackSpeech_UnsupportedUpdate(){
     document.getElementById("System_w_Event_4x7_select").value = false; // MCUlog
 }
 
+function handle_DMS_DriverAsleep_Timelapse_change(checkbox, id_img1, imagePath1, checkboxId1, id_img2, imagePath2, checkboxId2,) {
+    if (checkbox.checked) {
+        const imgElement1 = document.getElementById(id_img1);
+        const checkboxElement1 = document.getElementById(checkboxId1);
+        const imgElement2 = document.getElementById(id_img2);
+        const checkboxElement2 = document.getElementById(checkboxId2);
+        imgElement1.src = imagePath1;
+        checkboxElement1.checked = false;
+        imgElement2.src = imagePath2;
+        checkboxElement2.checked = false;
+    }
+}
+
 // Script Test for New FrontEnd
 function toggleImageAndCheckbox(id_img, imagePath1, imagePath2, checkboxId) {
     const imgElement = document.getElementById(id_img);
@@ -1057,6 +1070,10 @@ function toggleImageAndCheckbox(id_img, imagePath1, imagePath2, checkboxId) {
 
     if (imgElement.src.includes(imagePath2)) {
         imgElement.src = imagePath1;
+        if (id_img === 'DMS_DriverAsleep_ReportVideoDMS' || id_img === 'DMS_DriverAsleep_ReportVideoADAS') {
+            const checkbox = document.getElementById('DMS_DriverAsleep_Timelapse');
+            checkbox.checked = false; // Desmarca el checkbox
+        }
     } else {
         imgElement.src = imagePath2;
     }
