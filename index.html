@@ -376,7 +376,7 @@
                   <tr>
                     <td style="background-color:#ffffff;">
                       <table class="table-internal">
-                        <tr>
+                        <!--<tr>
                           <td colspan="2">
                             &nbsp
                           </td>
@@ -424,6 +424,64 @@
                             <div class="container">
                               <img id="DMS_DriverAsleep_ReportVideoADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImageAndCheckbox('DMS_DriverAsleep_ReportVideoADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportVideoADAS_Checkbox')">
                               <input type="checkbox" id="DMS_DriverAsleep_ReportVideoADAS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                        </tr>-->
+                        <tr>
+                          <td style="text-align: center;">
+                            In Cabin
+                          </td>
+                          <td>
+                            <div class="container" title="In-Cabin snapshot">
+                              <img id="DMS_DriverAsleep_ReportImageDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImage_VideoAndCheckbox('DMS_DriverAsleep_ReportImageDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportImageDMS_Checkbox', 'DMS_DriverAsleep_ReportTimelapseDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportTimelapseDMS_Checkbox', 'DMS_DriverAsleep_DisableDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_DisableDMS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportImageDMS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="container" title="In-Cabin timelapse">
+                              <img id="DMS_DriverAsleep_ReportTimelapseDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="td_DMS_ADAS_Checkbox('DMS_DriverAsleep_ReportTimelapseDMS','source_img/DMS_ON.png', 'DMS_DriverAsleep_ReportTimelapseDMS_Checkbox', 'DMS_DriverAsleep_ReportImageDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportImageDMS_Checkbox', 'DMS_DriverAsleep_DisableDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_DisableDMS_Checkbox', 'DMS_DriverAsleep_ReportVideoDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportVideoDMS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportTimelapseDMS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="container" title="In-Cabin video">
+                              <img id="DMS_DriverAsleep_ReportVideoDMS" class="container_img" src="source_img/DMS_OFF.png" alt="Toggle Image" onclick="toggleImage_VideoAndCheckbox('DMS_DriverAsleep_ReportVideoDMS','source_img/DMS_ON.png', 'source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportVideoDMS_Checkbox', 'DMS_DriverAsleep_ReportTimelapseDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportTimelapseDMS_Checkbox', 'DMS_DriverAsleep_DisableDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_DisableDMS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportVideoDMS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="container" title="In-Cabin camera disabled">
+                              <img id="DMS_DriverAsleep_DisableDMS" class="container_img" src="source_img/DMS_ON.png" alt="Toggle Image" onclick="td_DMS_ADAS_Checkbox('DMS_DriverAsleep_DisableDMS','source_img/DMS_ON.png', 'DMS_DriverAsleep_DisableDMS_Checkbox', 'DMS_DriverAsleep_ReportImageDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportImageDMS_Checkbox', 'DMS_DriverAsleep_ReportTimelapseDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportTimelapseDMS_Checkbox', 'DMS_DriverAsleep_ReportVideoDMS','source_img/DMS_OFF.png', 'DMS_DriverAsleep_ReportVideoDMS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_DisableDMS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">
+                            Road facing
+                          </td>
+                          <td>
+                            <div class="container" title="Road-facing snapshot">
+                              <img id="DMS_DriverAsleep_ReportImageADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImage_VideoAndCheckbox('DMS_DriverAsleep_ReportImageADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportImageADAS_Checkbox', 'DMS_DriverAsleep_ReportTimelapseADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportTimelapseADAS_Checkbox', 'DMS_DriverAsleep_DisableADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_DisableADAS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportImageADAS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="container" title="Road-facing timelapse">
+                              <img id="DMS_DriverAsleep_ReportTimelapseADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="td_DMS_ADAS_Checkbox('DMS_DriverAsleep_ReportTimelapseADAS','source_img/ADAS_ON.png', 'DMS_DriverAsleep_ReportTimelapseADAS_Checkbox', 'DMS_DriverAsleep_ReportImageADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportImageADAS_Checkbox', 'DMS_DriverAsleep_DisableADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_DisableADAS_Checkbox', 'DMS_DriverAsleep_ReportVideoADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportVideoADAS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportTimelapseADAS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="container" title="Road-facing video">
+                              <img id="DMS_DriverAsleep_ReportVideoADAS" class="container_img" src="source_img/ADAS_OFF.png" alt="Toggle Image" onclick="toggleImage_VideoAndCheckbox('DMS_DriverAsleep_ReportVideoADAS','source_img/ADAS_ON.png', 'source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportVideoADAS_Checkbox', 'DMS_DriverAsleep_ReportTimelapseADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportTimelapseADAS_Checkbox', 'DMS_DriverAsleep_DisableADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_DisableADAS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_ReportVideoADAS_Checkbox" class="hidden-checkbox">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="container" title="Road-facing camera disabled">
+                              <img id="DMS_DriverAsleep_DisableADAS" class="container_img" src="source_img/ADAS_ON.png" alt="Toggle Image" onclick="td_DMS_ADAS_Checkbox('DMS_DriverAsleep_DisableADAS','source_img/ADAS_ON.png', 'DMS_DriverAsleep_DisableADAS_Checkbox', 'DMS_DriverAsleep_ReportImageADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportImageADAS_Checkbox', 'DMS_DriverAsleep_ReportTimelapseADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportTimelapseADAS_Checkbox', 'DMS_DriverAsleep_ReportVideoADAS','source_img/ADAS_OFF.png', 'DMS_DriverAsleep_ReportVideoADAS_Checkbox')">
+                              <input type="checkbox" id="DMS_DriverAsleep_DisableADAS_Checkbox" class="hidden-checkbox">
                             </div>
                           </td>
                         </tr>
