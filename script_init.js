@@ -1060,28 +1060,6 @@ function handle_DMS_DriverAsleep_Timelapse_change(checkbox, id_img1, imagePath1,
     }
 }
 
-function td_DMS_ADAS_Checkbox(id_img1, imgPath1, checkbox1, id_img2, imgPath2, checkbox2, id_img3, imgPath3, checkbox3, id_img4, imgPath4, checkbox4) {
-    const tdButton = document.getElementById(id_img1);
-    const imageButton = document.getElementById(id_img2);
-    const dtButton = document.getElementById(id_img3);
-    const videoButton = document.getElementById(id_img4);
-
-    const tdCheckbox = document. getElementById(checkbox1);
-    const imageCheckbox = document. getElementById(checkbox2);
-    const dtCheckbox = document. getElementById(checkbox3);
-    const videoCheckbox = document. getElementById(checkbox4);
-
-    tdButton.src = imgPath1;
-    imageButton.src = imgPath2;
-    dtButton.src = imgPath3;
-    videoButton.src = imgPath4;
-
-    tdCheckbox.checked = true;
-    imageCheckbox.checked = false;
-    dtCheckbox.checked = false;
-    videoCheckbox.checked = false;
-}
-
 function toggleImage_VideoAndCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, checkbox1, id_img2, imgPath2, checkbox2, id_img3, imgPath3, checkbox3) {
     const imgButton = document.getElementById(id_img1);
     const timelapseButton = document.getElementById(id_img2);
@@ -1095,14 +1073,40 @@ function toggleImage_VideoAndCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, checkb
         imgButton.src = imgPath1_OFF;
         imgCheckbox.checked = false;
     } else {
-        imgCheckbox.checked = true;
         imgButton.src = imgPath1_ON;
         timelapseButton.src = imgPath2;
         disableButton.src = imgPath3;
-        timelapseCheckbox = false;
-        disableCheckbox = false;
+        imgCheckbox.checked = true;
+        timelapseCheckbox.checked = false;
+        disableCheckbox.checked = false;
     }
     //imgCheckbox.checked = !imgCheckbox.checked;
+}
+
+function td_DMS_ADAS_Checkbox(id_img1, imgPath1_ON, imgPath1_OFF, checkbox1, id_img2, imgPath2, checkbox2, id_img3, imgPath3, checkbox3, id_img4, imgPath4, checkbox4) {
+    const pushedButton = document.getElementById(id_img1);
+    const imageButton = document.getElementById(id_img2);
+    const videoButton = document.getElementById(id_img3);
+    const tdButton = document.getElementById(id_img4);
+
+    const pushedCheckbox = document. getElementById(checkbox1);
+    const imageCheckbox = document. getElementById(checkbox2);
+    const videoCheckbox = document. getElementById(checkbox3);
+    const tdCheckbox = document. getElementById(checkbox4);
+
+    if (pushedCheckbox.checked) {
+        pushedButton.src = imgPath1_OFF;
+        pushedCheckbox.checked = false;
+    } else {
+        pushedButton.src =imgPath1_ON;
+        imageButton.src = imgPath2;
+        videoButton.src = imgPath3;
+        tdButton.src = imgPath4;
+        pushedCheckbox.checked = true;
+        imageCheckbox.checked = false;
+        videoCheckbox.checked = false;
+        tdCheckbox.checked = false;
+    }
 }
 
 // Script Test for New FrontEnd
