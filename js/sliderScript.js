@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     initializeDial('DMS_driverAsleepMessageBackoffRange', 'DMS_driverAsleepMessageBackoffNumber', 0, 60, '150px', 10);
     initializeDial('DMS_driverAsleepFeedbackBackoffRange', 'DMS_driverAsleepFeedbackBackoffNumber', 0, 60, '150px', 10);
-    initializeDial('DMS_driverAsleepSpeedThresholdRange', 'DMS_driverAsleepSpeedThresholdNumber', 0, 60, '150px', 10);
+    initializeDial('DMS_driverAsleepSpeedThresholdRange', 'DMS_driverAsleepSpeedThresholdNumber', 0, 60, '150px', 10, 'DMS_drowsinessSpeedThresholdRange', 'DMS_drowsinessSpeedThresholdNumber');
 
     initializeDial('DMS_drowsinessMessageBackoffRange', 'DMS_drowsinessMessageBackoffNumber', 0, 60, '150px', 10);
     initializeDial('DMS_drowsinessFeedbackBackoffRange', 'DMS_drowsinessFeedbackBackoffNumber', 0, 60, '150px', 10);
-    initializeDial('DMS_drowsinessSpeedThresholdRange', 'DMS_drowsinessSpeedThresholdNumber', 0, 60, '150px', 10);
+    initializeDial('DMS_drowsinessSpeedThresholdRange', 'DMS_drowsinessSpeedThresholdNumber', 0, 60, '150px', 10, 'DMS_driverAsleepSpeedThresholdRange', 'DMS_driverAsleepSpeedThresholdNumber');
 
     initializeDial('DMS_driverDistractedMessageBackoffRange', 'DMS_driverDistractedMessageBackoffNumber', 0, 60, '150px', 10);
     initializeDial('DMS_driverDistractedFeedbackBackoffRange', 'DMS_driverDistractedFeedbackBackoffNumber', 0, 60, '150px', 10);
@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('ADAS_PCW_MessageBackoffRange', 'ADAS_PCW_MessageBackoffNumber', 0, 60, '150px', 10);
 
     initializeDial('TES_movementStartedSpeedThresholdRange', 'TES_movementStartedSpeedThresholdNumber', 0, 60, '150px', 10, 'TES_movementStoppedSpeedThresholdRange', 'TES_movementStoppedSpeedThresholdNumber');
+    
     initializeDial('TES_movementStoppedSpeedThresholdRange', 'TES_movementStoppedSpeedThresholdNumber', 0, 60, '150px', 10, 'TES_movementStartedSpeedThresholdRange', 'TES_movementStartedSpeedThresholdNumber');
 });
 
