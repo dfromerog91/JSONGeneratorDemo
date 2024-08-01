@@ -935,7 +935,12 @@ input:checked + .slider:before {
 .table-container {
     width: 100%;
     overflow-x: auto;
-    padding: 20px;
+    padding: 0px;
+}
+
+.table-container table {
+	width: 100%;
+	margin: 0 auto;
 }
 
 .summary_table {
