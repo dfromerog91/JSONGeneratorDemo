@@ -1060,7 +1060,7 @@ function handle_DMS_DriverAsleep_Timelapse_change(checkbox, id_img1, imagePath1,
     }
 }
 
-function toggleImage_VideoAndCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, checkbox1, id_img2, imgPath2, checkbox2, id_img3, imgPath3, checkbox3) {
+function toggleImageVideoCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, checkbox1, id_img2, imgPath2, checkbox2, id_img3, imgPath3, checkbox3) {
     const imgButton = document.getElementById(id_img1);
     const timelapseButton = document.getElementById(id_img2);
     const disableButton = document.getElementById(id_img3);
@@ -1083,7 +1083,7 @@ function toggleImage_VideoAndCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, checkb
     //imgCheckbox.checked = !imgCheckbox.checked;
 }
 
-function td_DMS_ADAS_Checkbox(id_img1, imgPath1_ON, imgPath1_OFF, checkbox1, id_img2, imgPath2, checkbox2, id_img3, imgPath3, checkbox3, id_img4, imgPath4, checkbox4) {
+function toggleTimelapseEnableCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, checkbox1, id_img2, imgPath2, checkbox2, id_img3, imgPath3, checkbox3, id_img4, imgPath4, checkbox4) {
     const pushedButton = document.getElementById(id_img1);
     const imageButton = document.getElementById(id_img2);
     const videoButton = document.getElementById(id_img3);
@@ -1152,7 +1152,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function toggleSubParameters(id, button, moreOptionsImg, lessOptionsImg) {
+function toggleSubParameters(id, button, moreOptionsImg, lessOptionsImg, headerId) {
     // Seleccionar todos los elementos con la clase 'sub-parameters'
     const allSubParams = document.querySelectorAll('.sub-parameters');
 
@@ -1182,6 +1182,7 @@ function toggleSubParameters(id, button, moreOptionsImg, lessOptionsImg) {
             subParams.style.display = 'block';  // Hacerlo visible primero para aplicar la transición
             subParams.offsetHeight;  // Forzar un reflujo
             subParams.classList.add('show');
+            scrollToView(headerId);
         } else {
             // Ocultar el menú
             subParams.classList.remove('show');
@@ -1199,4 +1200,16 @@ function toggleSubParameters(id, button, moreOptionsImg, lessOptionsImg) {
             img.alt = isHidden ? 'Less Options' : 'More Options';
         }
     }
+}
+
+function scrollToView(elementId) {
+    var element = document.getElementById(elementId);
+    var headerOffset = document.getElementById('header').offsetHeight; // Get the height of the fixed header
+    var elementPosition = element.getBoundingClientRect().top; // Get the element's position relative to the viewport
+    var offsetPosition = elementPosition + window.scrollY - headerOffset;
+  
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
 }

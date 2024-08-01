@@ -953,16 +953,18 @@ input:checked + .slider:before {
 .summary_table th, .summary_table td {
     border: 1px solid #ddd;
     padding: 8px;
+	writing-mode: horizontal-tb;
+	transform: none;
     text-align: left;
     box-sizing: border-box;
     font-size: 12px;
-	background-color: #E5F2FF;
+	/*background-color: #E5F2FF;*/
 }
 
 .summary_table th {
     padding-top: 12px;
     padding-bottom: 12px;
-    /*background-color: #e5f2ff;*/
+    background-color: #e5f2ff;
     color: rgb(0, 0, 0);
 }
 
@@ -1025,4 +1027,14 @@ input:checked + .slider:before {
     text-align: left;
     transform: translateY(-50%);
     font-size: 14px;
+}
+
+/* Style for cells with a check mark */
+.successCell {
+    background-color: #D8FFC2; /* Light green background */
+}
+
+/* Style for cells with an X */
+.failCell {
+    background-color: #FFD8D8; /* Light red background */
 }
