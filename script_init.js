@@ -68,7 +68,7 @@ function import_FS10_defaultConfig(){
         console.error("Error fetching the JSON file:", error);
         });
 }
-                                                                                                                                                                                                                                        function setInitialValues() {
+function setInitialValues() {
     //Update colors
     FeedbackSpeech_UnsupportedUpdate();
     setInitialColors()

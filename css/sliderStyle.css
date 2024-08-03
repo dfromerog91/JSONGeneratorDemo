@@ -49,6 +49,6 @@ input[type="range"]::-moz-range-thumb {
 }
 
 input[type="number"] {
-    width: 80px;   /* Width from text box */
+    width: 90px;   /* Width from text box */
     text-align: right;
 }
