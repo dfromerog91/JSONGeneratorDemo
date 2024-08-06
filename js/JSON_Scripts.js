@@ -33,12 +33,15 @@ function update_FS10_textInputs(inputFromTextbox){
 
 function generate_FS10_JSON(){
     // DMS
-    var DriverAsleep_Activation = document.getElementById("DMS_1x1_select").value; 
-    var DriverAsleep_FeedbackAudio = document.getElementById("DMS_2x1_select").value; 
-    var DriverAsleep_FeedbackOutput = document.getElementById("DMS_3x1_select").value; 
-    var DriverAsleep_FeedbackSpeech = document.getElementById("DMS_4x1_select").value; 
-    var DriverAsleep_FeedbackVisual = document.getElementById("DMS_5x1_select").value; 
-    var DriverAsleep_ReportEvent = document.getElementById("DMS_6x1_select").value; 
+    var DriverAsleep_Activation = document.getElementById("DMS_driverAsleepActivationId").checked; 
+    var DriverAsleep_FeedbackAudio = document.getElementById("DMS_driverAsleepFeedbackAudioCheckbox").checked; 
+    var DriverAsleep_FeedbackOutput = document.getElementById("DMS_driverAsleepFeedbackOutputId").value; 
+    var DriverAsleep_FeedbackSpeech = document.getElementById("DMS_driverAsleepFeedbackSpeechCheckbox").checked; 
+    var DriverAsleep_FeedbackVisual = document.getElementById("DMS_driverAsleepFeedbackVisualCheckbox").checked; 
+    var DriverAsleep_ReportEvent = document.getElementById("DMS_driverAsleepDetectionEventCheckbox").checked; 
+    var DriverAsleep_ReportCabinEnable = document.getElementById("DMS_driverAsleepEnableInCabinCheckbox").checked;
+    var DriverAsleep_ReportCabinSnapshot = document.getElementById("DMS_driverAsleepReportImageInCabinCheckbox").checked;
+    var DriverAsleep_ReportCabinTimelapse = document.getElementById("DMS_driverAsleepReportTimelapseInCabinCheckbox").checked;
     var DriverAsleep_ReportImage = document.getElementById("DMS_7x1_select").value; 
     var DriverAsleep_ReportFootage = document.getElementById("DMS_8x1_select").value; 
     var Drowsiness_Activation = document.getElementById("DMS_1x2_select").value; 
@@ -1980,12 +1983,12 @@ function update_FS10_OutputValue(selectId, JSONdata, propertyPath) {
 function DMS_menuToUpdate(JSONdata){
     // DMS
     //    -Driver Asleep
-    updateSelectValue("DMS_1x1_select", JSONdata, "EventsSettings.DriverAsleep.Activation");
-    updateSelectValue("DMS_2x1_select", JSONdata, "EventsSettings.DriverAsleep.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x1_select", JSONdata, "EventsSettings.DriverAsleep.FeedbackOutput");
-    updateSelectValue("DMS_4x1_select", JSONdata, "EventsSettings.DriverAsleep.FeedbackSpeech");
-    updateSelectValue("DMS_5x1_select", JSONdata, "EventsSettings.DriverAsleep.FeedbackVisual");
-    updateSelectValue("DMS_6x1_select", JSONdata, "EventsSettings.DriverAsleep.ReportEvent");
+    updateSelectValue("DMS_driverAsleepActivationId", JSONdata, "EventsSettings.DriverAsleep.Activation");
+    updateSelectValue("DMS_driverAsleepFeedbackAudioCheckbox", JSONdata, "EventsSettings.DriverAsleep.FeedbackAudio");
+    update_FS10_OutputValue("DMS_driverAsleepFeedbackOutputId", JSONdata, "EventsSettings.DriverAsleep.FeedbackOutput");
+    updateSelectValue("DMS_driverAsleepFeedbackSpeechCheckbox", JSONdata, "EventsSettings.DriverAsleep.FeedbackSpeech");
+    updateSelectValue("DMS_driverAsleepFeedbackVisualCheckbox", JSONdata, "EventsSettings.DriverAsleep.FeedbackVisual");
+    updateSelectValue("DMS_driverAsleepDetectionEventCheckbox", JSONdata, "EventsSettings.DriverAsleep.ReportEvent");
     update_FS10_imageValue('DMS_7x1_select', JSONdata, "EventsSettings.DriverAsleep.ReportImage");
     update_FS10_videoValue("DMS_8x1_select", JSONdata, "EventsSettings.DriverAsleep.ReportFootage");
     //    -Drowsiness
