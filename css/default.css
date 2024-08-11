@@ -1020,13 +1020,21 @@ input:checked + .slider:before {
     }
 }
 
-
-/* Style for cells with a check mark */
 .successCell {
-    background-color: #D8FFC2; /* Light green background */
+    background-color: #D8FFC2;
 }
 
 /* Style for cells with an X */
 .failCell {
     background-color: #FFD8D8; /* Light red background */
+}
+
+.active-cell {
+	background-color: #D8FFC2;
+	width: 4%;
+}
+  
+.inactive-cell { 
+	background-color: #FFD8D8;
+	width: 4%;
 }

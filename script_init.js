@@ -1089,10 +1089,10 @@ function toggleTimelapseEnableCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, check
     const videoButton = document.getElementById(id_img3);
     const tdButton = document.getElementById(id_img4);
 
-    const pushedCheckbox = document. getElementById(checkbox1);
-    const imageCheckbox = document. getElementById(checkbox2);
-    const videoCheckbox = document. getElementById(checkbox3);
-    const tdCheckbox = document. getElementById(checkbox4);
+    const pushedCheckbox = document.getElementById(checkbox1);
+    const imageCheckbox = document.getElementById(checkbox2);
+    const videoCheckbox = document.getElementById(checkbox3);
+    const tdCheckbox = document.getElementById(checkbox4);
 
     if (pushedCheckbox.checked) {
         pushedButton.src = imgPath1_OFF;
@@ -1106,6 +1106,146 @@ function toggleTimelapseEnableCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, check
         imageCheckbox.checked = false;
         videoCheckbox.checked = false;
         tdCheckbox.checked = false;
+    }
+}
+
+function toggleDriverFeedbackButtons(paramId, paramPathOn, paramPathOff) {
+    const button = document.getElementById(paramId + 'Id');
+    const checkbox = document.getElementById(paramId + 'Checkbox');
+    const summaryCell = document.getElementById(paramId + 'Summary');
+    const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
+
+    if (checkbox.checked) {
+        checkbox.checked = false;
+        button.src = paramPathOff;
+        summaryCell.classList.remove('active-cell');
+        summaryCell.classList.add('inactive-cell');
+        summaryCellImg.src = paramPathOff;
+    } else {
+        checkbox.checked = true;
+        button.src = paramPathOn;
+        summaryCell.classList.remove('inactive-cell');
+        summaryCell.classList.add('active-cell');
+        summaryCellImg.src = paramPathOn;
+    }
+}
+
+function toggleFeedbackOutputSummary (paramId) {
+    const selectedValue = document.getElementById(paramId + 'Id');
+    const summaryCell = document.getElementById(paramId + 'Summary');
+    const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
+
+    if (selectedValue.value === 'None') {
+        summaryCell.classList.remove('active-cell');
+        summaryCell.classList.add('inactive-cell');
+    } else {
+        summaryCell.classList.remove('inactive-cell');
+        summaryCell.classList.add('active-cell');
+    }
+    summaryCellImg.src = "source_img/" + selectedValue.value + ".png";
+}
+
+function toggleDetectionEventSummary (paramId, paramPathOn, paramPathOff) {
+    const checkbox = document.getElementById(paramId + 'Checkbox');
+    const summaryCell = document.getElementById(paramId + 'Summary');
+    const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
+
+    if (!checkbox.checked) {
+        summaryCell.classList.remove('active-cell');
+        summaryCell.classList.add('inactive-cell');
+        summaryCellImg.src = paramPathOff;
+    } else {
+        summaryCell.classList.remove('inactive-cell');
+        summaryCell.classList.add('active-cell');
+        summaryCellImg.src = paramPathOn;
+    }
+}
+
+function toggleMediaUpload(paramId1, paramPath1_On, paramPath1_Off, paramId2, paramPath2, paramId3, paramPath3, paramId4, paramPath4, paramId5 = null, paramPath5 = null, paramId6 = null, paramPath6 = null) {
+    const button1 = document.getElementById(paramId1 + 'Id');
+    const checkbox1 = document.getElementById(paramId1 + 'Checkbox');
+
+    if (checkbox1.checked) {
+        checkbox1.checked = false;
+        button1.src = paramPath1_Off;
+
+        if (paramPath1_On !== "source_img/Camera_Disabled.png") {
+            const summaryCell1 = document.getElementById(paramId1 + 'Summary');
+            const summaryCellImg1 = document.getElementById(paramId1 + 'SummaryImg');
+            summaryCell1.classList.remove('active-cell');
+            summaryCell1.classList.add('inactive-cell');
+            summaryCellImg1.src = paramPath1_Off;
+        }
+    } else {
+        const button2 = document.getElementById(paramId2 + 'Id');
+        const button3 = document.getElementById(paramId3 + 'Id');
+        const button4 = document.getElementById(paramId4 + 'Id');
+
+        const checkbox2 = document.getElementById(paramId2 + 'Checkbox');
+        const checkbox3 = document.getElementById(paramId3 + 'Checkbox');
+        const checkbox4 = document.getElementById(paramId4 + 'Checkbox');
+
+        const summaryCell3 = document.getElementById(paramId3 + 'Summary');
+        const summaryCell4 = document.getElementById(paramId4 + 'Summary');
+
+        const summaryCellImg3 = document.getElementById(paramId3 + 'SummaryImg');
+        const summaryCellImg4 = document.getElementById(paramId4 + 'SummaryImg');
+        
+        checkbox1.checked = true;
+        checkbox2.checked = false;
+        checkbox3.checked = false;
+        checkbox4.checked = false;
+        button1.src = paramPath1_On;
+        button2.src = paramPath2;
+        button3.src = paramPath3;
+        button4.src = paramPath4;
+        summaryCell3.classList.remove('active-cell');
+        summaryCell3.classList.add('inactive-cell');
+        summaryCell4.classList.remove('active-cell');
+        summaryCell4.classList.add('inactive-cell');
+        summaryCellImg3.src = paramPath3;
+        summaryCellImg4.src = paramPath4;
+
+        if (paramPath1_On !== "source_img/Camera_Disabled.png") {
+            const summaryCell1 = document.getElementById(paramId1 + 'Summary');
+            const summaryCellImg1 = document.getElementById(paramId1 + 'SummaryImg');
+            summaryCell1.classList.remove('inactive-cell');
+            summaryCell1.classList.add('active-cell');
+            summaryCellImg1.src = paramPath1_On;
+        }
+
+        if (paramPath2 !== "source_img/Camera_Enabled.png") {
+            const summaryCell2 = document.getElementById(paramId2 + 'Summary');
+            const summaryCellImg2 = document.getElementById(paramId2 + 'SummaryImg');
+            summaryCell2.classList.remove('active-cell');
+            summaryCell2.classList.add('inactive-cell');
+            summaryCellImg2.src = paramPath2;
+        }
+        
+        if (paramId5 !== null) {
+            const button5 = document.getElementById(paramId5 + 'Id');
+            const checkbox5 = document.getElementById(paramId5 + 'Checkbox');
+            const summaryCell5 = document.getElementById(paramId5 + 'Summary');
+            const summaryCellImg5 = document.getElementById(paramId5 + 'SummaryImg');
+
+            checkbox5.checked = false;
+            button5.src = paramPath5;
+            summaryCell5.classList.remove('active-cell');
+            summaryCell5.classList.add('inactive-cell');
+            summaryCellImg5.src = paramPath5;
+        }
+        if (paramId6 !== null) {
+            const button6 = document.getElementById(paramId6 + 'Id');
+            const checkbox6 = document.getElementById(paramId6 + 'Checkbox');
+            const summaryCell6 = document.getElementById(paramId6 + 'Summary');
+            const summaryCellImg6 = document.getElementById(paramId6 + 'SummaryImg');
+
+            checkbox6.checked = false;
+            button6.src = paramPath6;
+            summaryCell6.classList.remove('active-cell');
+            summaryCell6.classList.add('inactive-cell');
+            summaryCellImg6.src = paramPath6;
+        }
     }
 }
 

@@ -39,51 +39,204 @@ function generate_FS10_JSON(){
     var DriverAsleep_FeedbackSpeech = document.getElementById("DMS_driverAsleepFeedbackSpeechCheckbox").checked; 
     var DriverAsleep_FeedbackVisual = document.getElementById("DMS_driverAsleepFeedbackVisualCheckbox").checked; 
     var DriverAsleep_ReportEvent = document.getElementById("DMS_driverAsleepDetectionEventCheckbox").checked; 
-    var DriverAsleep_ReportCabinEnable = document.getElementById("DMS_driverAsleepEnableInCabinCheckbox").checked;
     var DriverAsleep_ReportCabinSnapshot = document.getElementById("DMS_driverAsleepReportImageInCabinCheckbox").checked;
     var DriverAsleep_ReportCabinTimelapse = document.getElementById("DMS_driverAsleepReportTimelapseInCabinCheckbox").checked;
-    var DriverAsleep_ReportImage = document.getElementById("DMS_7x1_select").value; 
-    var DriverAsleep_ReportFootage = document.getElementById("DMS_8x1_select").value; 
-    var Drowsiness_Activation = document.getElementById("DMS_1x2_select").value; 
-    var Drowsiness_FeedbackAudio = document.getElementById("DMS_2x2_select").value; 
-    var Drowsiness_FeedbackOutput = document.getElementById("DMS_3x2_select").value; 
-    var Drowsiness_FeedbackSpeech = document.getElementById("DMS_4x2_select").value; 
-    var Drowsiness_FeedbackVisual = document.getElementById("DMS_5x2_select").value; 
-    var Drowsiness_ReportEvent = document.getElementById("DMS_6x2_select").value; 
-    var Drowsiness_ReportImage = document.getElementById("DMS_7x2_select").value; 
-    var Drowsiness_ReportFootage = document.getElementById("DMS_8x2_select").value; 
-    var DriverDistracted_Activation = document.getElementById("DMS_1x3_select").value; 
-    var DriverDistracted_FeedbackAudio = document.getElementById("DMS_2x3_select").value; 
-    var DriverDistracted_FeedbackOutput = document.getElementById("DMS_3x3_select").value; 
-    var DriverDistracted_FeedbackSpeech = document.getElementById("DMS_4x3_select").value; 
-    var DriverDistracted_FeedbackVisual = document.getElementById("DMS_5x3_select").value; 
-    var DriverDistracted_ReportEvent = document.getElementById("DMS_6x3_select").value; 
-    var DriverDistracted_ReportImage = document.getElementById("DMS_7x3_select").value; 
-    var DriverDistracted_ReportFootage = document.getElementById("DMS_8x3_select").value; 
-    var PhoneUse_Activation = document.getElementById("DMS_1x4_select").value; 
-    var PhoneUse_FeedbackAudio = document.getElementById("DMS_2x4_select").value; 
-    var PhoneUse_FeedbackOutput = document.getElementById("DMS_3x4_select").value; 
-    var PhoneUse_FeedbackSpeech = document.getElementById("DMS_4x4_select").value; 
-    var PhoneUse_FeedbackVisual = document.getElementById("DMS_5x4_select").value; 
-    var PhoneUse_ReportEvent = document.getElementById("DMS_6x4_select").value; 
-    var PhoneUse_ReportImage = document.getElementById("DMS_7x4_select").value; 
-    var PhoneUse_ReportFootage = document.getElementById("DMS_8x4_select").value; 
-    var Seatbelt_Activation = document.getElementById("DMS_1x5_select").value; 
-    var Seatbelt_FeedbackAudio = document.getElementById("DMS_2x5_select").value; 
-    var Seatbelt_FeedbackOutput = document.getElementById("DMS_3x5_select").value; 
-    var Seatbelt_FeedbackSpeech = document.getElementById("DMS_4x5_select").value; 
-    var Seatbelt_FeedbackVisual = document.getElementById("DMS_5x5_select").value; 
-    var Seatbelt_ReportEvent = document.getElementById("DMS_6x5_select").value; 
-    var Seatbelt_ReportImage = document.getElementById("DMS_7x5_select").value; 
-    var Seatbelt_ReportFootage = document.getElementById("DMS_8x5_select").value; 
-    var Smoking_Activation = document.getElementById("DMS_1x6_select").value; 
-    var Smoking_FeedbackAudio = document.getElementById("DMS_2x6_select").value; 
-    var Smoking_FeedbackOutput = document.getElementById("DMS_3x6_select").value; 
-    var Smoking_FeedbackSpeech = document.getElementById("DMS_4x6_select").value; 
-    var Smoking_FeedbackVisual = document.getElementById("DMS_5x6_select").value; 
-    var Smoking_ReportEvent = document.getElementById("DMS_6x6_select").value; 
-    var Smoking_ReportImage = document.getElementById("DMS_7x6_select").value; 
-    var Smoking_ReportFootage = document.getElementById("DMS_8x6_select").value; 
+    var DriverAsleep_ReportRoadSnapshot = document.getElementById("DMS_driverAsleepReportImageRoadFacingCheckbox").checked;
+    var DriverAsleep_ReportRoadTimelapse = document.getElementById("DMS_driverAsleepReportTimelapseRoadFacingCheckbox").checked;
+    var DriverAsleep_ReportImage = "None";
+    if (DriverAsleep_ReportCabinSnapshot && DriverAsleep_ReportRoadSnapshot) {
+        DriverAsleep_ReportImage = "BothSingle";
+    } else if (DriverAsleep_ReportCabinSnapshot && !DriverAsleep_ReportRoadSnapshot) {
+        DriverAsleep_ReportImage = "SingleDMS";
+    } else if (!DriverAsleep_ReportCabinSnapshot && DriverAsleep_ReportRoadSnapshot) {
+        DriverAsleep_ReportImage = "SingleADAS";
+    } else if (DriverAsleep_ReportCabinTimelapse && DriverAsleep_ReportRoadTimelapse) {
+        DriverAsleep_ReportImage = "BothTimelaps";
+    } else if (DriverAsleep_ReportCabinTimelapse && !DriverAsleep_ReportRoadTimelapse) {
+        DriverAsleep_ReportImage = "TimelapseDMS";
+    } else if (!DriverAsleep_ReportCabinTimelapse && DriverAsleep_ReportRoadTimelapse) {
+        DriverAsleep_ReportImage = "TimelapseADAS";
+    }
+    var DriverAsleep_ReportFootageCabin = document.getElementById("DMS_driverAsleepReportVideoInCabinCheckbox").checked;
+    var DriverAsleep_ReportFootageRoad = document.getElementById("DMS_driverAsleepReportVideoRoadFacingCheckbox").checked;
+    var DriverAsleep_ReportFootage = "None";
+    if (DriverAsleep_ReportFootageCabin && DriverAsleep_ReportFootageRoad) {
+        DriverAsleep_ReportFootage = "Both";
+    } else if (DriverAsleep_ReportFootageCabin && !DriverAsleep_ReportFootageRoad) {
+        DriverAsleep_ReportFootage = "DMS";
+    } else if (!DriverAsleep_ReportFootageCabin && DriverAsleep_ReportFootageRoad) {
+        DriverAsleep_ReportFootage = "ADAS";
+    }
+    var Drowsiness_Activation = document.getElementById("DMS_drowsinessActivationId").checked; 
+    var Drowsiness_FeedbackAudio = document.getElementById("DMS_drowsinessFeedbackAudioCheckbox").checked; 
+    var Drowsiness_FeedbackOutput = document.getElementById("DMS_drowsinessFeedbackOutputId").value; 
+    var Drowsiness_FeedbackSpeech = document.getElementById("DMS_drowsinessFeedbackSpeechCheckbox").checked; 
+    var Drowsiness_FeedbackVisual = document.getElementById("DMS_drowsinessFeedbackVisualCheckbox").checked; 
+    var Drowsiness_ReportEvent = document.getElementById("DMS_drowsinessDetectionEventCheckbox").checked; 
+    var Drowsiness_ReportCabinSnapshot = document.getElementById("DMS_drowsinessReportImageInCabinCheckbox").checked;
+    var Drowsiness_ReportCabinTimelapse = document.getElementById("DMS_drowsinessReportTimelapseInCabinCheckbox").checked;
+    var Drowsiness_ReportRoadSnapshot = document.getElementById("DMS_drowsinessReportImageRoadFacingCheckbox").checked;
+    var Drowsiness_ReportRoadTimelapse = document.getElementById("DMS_drowsinessReportTimelapseRoadFacingCheckbox").checked;
+    var Drowsiness_ReportImage = "None";
+    if (Drowsiness_ReportCabinSnapshot && Drowsiness_ReportRoadSnapshot) {
+        Drowsiness_ReportImage = "BothSingle";
+    } else if (Drowsiness_ReportCabinSnapshot && !Drowsiness_ReportRoadSnapshot) {
+        Drowsiness_ReportImage = "SingleDMS";
+    } else if (!Drowsiness_ReportCabinSnapshot && Drowsiness_ReportRoadSnapshot) {
+        Drowsiness_ReportImage = "SingleADAS";
+    } else if (Drowsiness_ReportCabinTimelapse && Drowsiness_ReportRoadTimelapse) {
+        Drowsiness_ReportImage = "BothTimelaps";
+    } else if (Drowsiness_ReportCabinTimelapse && !Drowsiness_ReportRoadTimelapse) {
+        Drowsiness_ReportImage = "TimelapseDMS";
+    } else if (!Drowsiness_ReportCabinTimelapse && Drowsiness_ReportRoadTimelapse) {
+        Drowsiness_ReportImage = "TimelapseADAS";
+    }
+    var Drowsiness_ReportFootageCabin = document.getElementById("DMS_drowsinessReportVideoInCabinCheckbox").checked;
+    var Drowsiness_ReportFootageRoad = document.getElementById("DMS_drowsinessReportVideoRoadFacingCheckbox").checked;
+    var Drowsiness_ReportFootage = "None";
+    if (Drowsiness_ReportFootageCabin && Drowsiness_ReportFootageRoad) {
+        Drowsiness_ReportFootage = "Both";
+    } else if (Drowsiness_ReportFootageCabin && !Drowsiness_ReportFootageRoad) {
+        Drowsiness_ReportFootage = "DMS";
+    } else if (!Drowsiness_ReportFootageCabin && Drowsiness_ReportFootageRoad) {
+        Drowsiness_ReportFootage = "ADAS";
+    }
+    var DriverDistracted_Activation = document.getElementById("DMS_driverDistractedActivationId").checked; 
+    var DriverDistracted_FeedbackAudio = document.getElementById("DMS_driverDistractedFeedbackAudioCheckbox").checked; 
+    var DriverDistracted_FeedbackOutput = document.getElementById("DMS_driverDistractedFeedbackOutputId").value; 
+    var DriverDistracted_FeedbackSpeech = document.getElementById("DMS_driverDistractedFeedbackSpeechCheckbox").checked; 
+    var DriverDistracted_FeedbackVisual = document.getElementById("DMS_driverDistractedFeedbackVisualCheckbox").checked; 
+    var DriverDistracted_ReportEvent = document.getElementById("DMS_driverDistractedDetectionEventCheckbox").checked; 
+    var DriverDistracted_ReportCabinSnapshot = document.getElementById("DMS_driverDistractedReportImageInCabinCheckbox").checked;
+    var DriverDistracted_ReportCabinTimelapse = document.getElementById("DMS_driverDistractedReportTimelapseInCabinCheckbox").checked;
+    var DriverDistracted_ReportRoadSnapshot = document.getElementById("DMS_driverDistractedReportImageRoadFacingCheckbox").checked;
+    var DriverDistracted_ReportRoadTimelapse = document.getElementById("DMS_driverDistractedReportTimelapseRoadFacingCheckbox").checked;
+    var DriverDistracted_ReportImage = "None";
+    if (DriverDistracted_ReportCabinSnapshot && DriverDistracted_ReportRoadSnapshot) {
+        DriverDistracted_ReportImage = "BothSingle";
+    } else if (DriverDistracted_ReportCabinSnapshot && !DriverDistracted_ReportRoadSnapshot) {
+        DriverDistracted_ReportImage = "SingleDMS";
+    } else if (!DriverDistracted_ReportCabinSnapshot && DriverDistracted_ReportRoadSnapshot) {
+        DriverDistracted_ReportImage = "SingleADAS";
+    } else if (DriverDistracted_ReportCabinTimelapse && DriverDistracted_ReportRoadTimelapse) {
+        DriverDistracted_ReportImage = "BothTimelaps";
+    } else if (DriverDistracted_ReportCabinTimelapse && !DriverDistracted_ReportRoadTimelapse) {
+        DriverDistracted_ReportImage = "TimelapseDMS";
+    } else if (!DriverDistracted_ReportCabinTimelapse && DriverDistracted_ReportRoadTimelapse) {
+        DriverDistracted_ReportImage = "TimelapseADAS";
+    }
+    var DriverDistracted_ReportFootageCabin = document.getElementById("DMS_driverDistractedReportVideoInCabinCheckbox").checked;
+    var DriverDistracted_ReportFootageRoad = document.getElementById("DMS_driverDistractedReportVideoRoadFacingCheckbox").checked;
+    var DriverDistracted_ReportFootage = "None";
+    if (DriverDistracted_ReportFootageCabin && DriverDistracted_ReportFootageRoad) {
+        DriverDistracted_ReportFootage = "Both";
+    } else if (DriverDistracted_ReportFootageCabin && !DriverDistracted_ReportFootageRoad) {
+        DriverDistracted_ReportFootage = "DMS";
+    } else if (!DriverDistracted_ReportFootageCabin && DriverDistracted_ReportFootageRoad) {
+        DriverDistracted_ReportFootage = "ADAS";
+    }
+    var PhoneUse_Activation = document.getElementById("DMS_phoneUseActivationId").checked; 
+    var PhoneUse_FeedbackAudio = document.getElementById("DMS_phoneUseFeedbackAudioCheckbox").checked; 
+    var PhoneUse_FeedbackOutput = document.getElementById("DMS_phoneUseFeedbackOutputId").value; 
+    var PhoneUse_FeedbackSpeech = document.getElementById("DMS_phoneUseFeedbackSpeechCheckbox").checked; 
+    var PhoneUse_FeedbackVisual = document.getElementById("DMS_phoneUseFeedbackVisualCheckbox").checked; 
+    var PhoneUse_ReportEvent = document.getElementById("DMS_phoneUseDetectionEventCheckbox").checked; 
+    var PhoneUse_ReportCabinSnapshot = document.getElementById("DMS_phoneUseReportImageInCabinCheckbox").checked;
+    var PhoneUse_ReportCabinTimelapse = document.getElementById("DMS_phoneUseReportTimelapseInCabinCheckbox").checked;
+    var PhoneUse_ReportRoadSnapshot = document.getElementById("DMS_phoneUseReportImageRoadFacingCheckbox").checked;
+    var PhoneUse_ReportRoadTimelapse = document.getElementById("DMS_phoneUseReportTimelapseRoadFacingCheckbox").checked;
+    var PhoneUse_ReportImage = "None";
+    if (PhoneUse_ReportCabinSnapshot && PhoneUse_ReportRoadSnapshot) {
+        PhoneUse_ReportImage = "BothSingle";
+    } else if (PhoneUse_ReportCabinSnapshot && !PhoneUse_ReportRoadSnapshot) {
+        PhoneUse_ReportImage = "SingleDMS";
+    } else if (!PhoneUse_ReportCabinSnapshot && PhoneUse_ReportRoadSnapshot) {
+        PhoneUse_ReportImage = "SingleADAS";
+    } else if (PhoneUse_ReportCabinTimelapse && PhoneUse_ReportRoadTimelapse) {
+        PhoneUse_ReportImage = "BothTimelaps";
+    } else if (PhoneUse_ReportCabinTimelapse && !PhoneUse_ReportRoadTimelapse) {
+        PhoneUse_ReportImage = "TimelapseDMS";
+    } else if (!PhoneUse_ReportCabinTimelapse && PhoneUse_ReportRoadTimelapse) {
+        PhoneUse_ReportImage = "TimelapseADAS";
+    }
+    var PhoneUse_ReportFootageCabin = document.getElementById("DMS_phoneUseReportVideoInCabinCheckbox").checked;
+    var PhoneUse_ReportFootageRoad = document.getElementById("DMS_phoneUseReportVideoRoadFacingCheckbox").checked;
+    var PhoneUse_ReportFootage = "None";
+    if (PhoneUse_ReportFootageCabin && PhoneUse_ReportFootageRoad) {
+        PhoneUse_ReportFootage = "Both";
+    } else if (PhoneUse_ReportFootageCabin && !PhoneUse_ReportFootageRoad) {
+        PhoneUse_ReportFootage = "DMS";
+    } else if (!PhoneUse_ReportFootageCabin && PhoneUse_ReportFootageRoad) {
+        PhoneUse_ReportFootage = "ADAS";
+    }
+    var Seatbelt_Activation = document.getElementById("DMS_seatbeltActivationId").checked; 
+    var Seatbelt_FeedbackAudio = document.getElementById("DMS_seatbeltFeedbackAudioCheckbox").checked; 
+    var Seatbelt_FeedbackOutput = document.getElementById("DMS_seatbeltFeedbackOutputId").value; 
+    var Seatbelt_FeedbackSpeech = document.getElementById("DMS_seatbeltFeedbackSpeechCheckbox").checked; 
+    var Seatbelt_FeedbackVisual = document.getElementById("DMS_seatbeltFeedbackVisualCheckbox").checked; 
+    var Seatbelt_ReportEvent = document.getElementById("DMS_seatbeltDetectionEventCheckbox").checked; 
+    var Seatbelt_ReportCabinSnapshot = document.getElementById("DMS_seatbeltReportImageInCabinCheckbox").checked;
+    var Seatbelt_ReportCabinTimelapse = document.getElementById("DMS_seatbeltReportTimelapseInCabinCheckbox").checked;
+    var Seatbelt_ReportRoadSnapshot = document.getElementById("DMS_seatbeltReportImageRoadFacingCheckbox").checked;
+    var Seatbelt_ReportRoadTimelapse = document.getElementById("DMS_seatbeltReportTimelapseRoadFacingCheckbox").checked;
+    var Seatbelt_ReportImage = "None";
+    if (Seatbelt_ReportCabinSnapshot && Seatbelt_ReportRoadSnapshot) {
+        Seatbelt_ReportImage = "BothSingle";
+    } else if (Seatbelt_ReportCabinSnapshot && !Seatbelt_ReportRoadSnapshot) {
+        Seatbelt_ReportImage = "SingleDMS";
+    } else if (!Seatbelt_ReportCabinSnapshot && Seatbelt_ReportRoadSnapshot) {
+        Seatbelt_ReportImage = "SingleADAS";
+    } else if (Seatbelt_ReportCabinTimelapse && Seatbelt_ReportRoadTimelapse) {
+        Seatbelt_ReportImage = "BothTimelaps";
+    } else if (Seatbelt_ReportCabinTimelapse && !Seatbelt_ReportRoadTimelapse) {
+        Seatbelt_ReportImage = "TimelapseDMS";
+    } else if (!Seatbelt_ReportCabinTimelapse && Seatbelt_ReportRoadTimelapse) {
+        Seatbelt_ReportImage = "TimelapseADAS";
+    }
+    var Seatbelt_ReportFootageCabin = document.getElementById("DMS_seatbeltReportVideoInCabinCheckbox").checked;
+    var Seatbelt_ReportFootageRoad = document.getElementById("DMS_seatbeltReportVideoRoadFacingCheckbox").checked;
+    var Seatbelt_ReportFootage = "None";
+    if (Seatbelt_ReportFootageCabin && Seatbelt_ReportFootageRoad) {
+        Seatbelt_ReportFootage = "Both";
+    } else if (Seatbelt_ReportFootageCabin && !Seatbelt_ReportFootageRoad) {
+        Seatbelt_ReportFootage = "DMS";
+    } else if (!Seatbelt_ReportFootageCabin && Seatbelt_ReportFootageRoad) {
+        Seatbelt_ReportFootage = "ADAS";
+    }
+    var Smoking_Activation = document.getElementById("DMS_smokingActivationId").checked;
+    var Smoking_FeedbackAudio = document.getElementById("DMS_smokingFeedbackAudioCheckbox").checked;
+    var Smoking_FeedbackOutput = document.getElementById("DMS_smokingFeedbackOutputId").value;
+    var Smoking_FeedbackSpeech = document.getElementById("DMS_smokingFeedbackSpeechCheckbox").checked;
+    var Smoking_FeedbackVisual = document.getElementById("DMS_smokingFeedbackVisualCheckbox").checked;
+    var Smoking_ReportEvent = document.getElementById("DMS_smokingDetectionEventCheckbox").checked;
+    var Smoking_ReportCabinSnapshot = document.getElementById("DMS_smokingReportImageInCabinCheckbox").checked;
+    var Smoking_ReportCabinTimelapse = document.getElementById("DMS_smokingReportTimelapseInCabinCheckbox").checked;
+    var Smoking_ReportRoadSnapshot = document.getElementById("DMS_smokingReportImageRoadFacingCheckbox").checked;
+    var Smoking_ReportRoadTimelapse = document.getElementById("DMS_smokingReportTimelapseRoadFacingCheckbox").checked;
+    var Smoking_ReportImage = "None";
+    if (Smoking_ReportCabinSnapshot && Smoking_ReportRoadSnapshot) {
+        Smoking_ReportImage = "BothSingle";
+    } else if (Smoking_ReportCabinSnapshot && !Smoking_ReportRoadSnapshot) {
+        Smoking_ReportImage = "SingleDMS";
+    } else if (!Smoking_ReportCabinSnapshot && Smoking_ReportRoadSnapshot) {
+        Smoking_ReportImage = "SingleADAS";
+    } else if (Smoking_ReportCabinTimelapse && Smoking_ReportRoadTimelapse) {
+        Smoking_ReportImage = "BothTimelaps";
+    } else if (Smoking_ReportCabinTimelapse && !Smoking_ReportRoadTimelapse) {
+        Smoking_ReportImage = "TimelapseDMS";
+    } else if (!Smoking_ReportCabinTimelapse && Smoking_ReportRoadTimelapse) {
+        Smoking_ReportImage = "TimelapseADAS";
+    }
+    var Smoking_ReportFootageCabin = document.getElementById("DMS_smokingReportVideoInCabinCheckbox").checked;
+    var Smoking_ReportFootageRoad = document.getElementById("DMS_smokingReportVideoRoadFacingCheckbox").checked;
+    var Smoking_ReportFootage = "None";
+    if (Smoking_ReportFootageCabin && Smoking_ReportFootageRoad) {
+        Smoking_ReportFootage = "Both";
+    } else if (Smoking_ReportFootageCabin && !Smoking_ReportFootageRoad) {
+        Smoking_ReportFootage = "DMS";
+    } else if (!Smoking_ReportFootageCabin && Smoking_ReportFootageRoad) {
+        Smoking_ReportFootage = "ADAS";
+    }
     //var LightDrowsiness_Activation = document.getElementById("DMS_1x7_select").value; 
     //var LightDrowsiness_FeedbackAudio = document.getElementById("DMS_2x7_select").value;
     //var LightDrowsiness_FeedbackOutput = document.getElementById("DMS_3x7_select").value; 
@@ -92,30 +245,108 @@ function generate_FS10_JSON(){
     //var LightDrowsiness_ReportEvent = document.getElementById("DMS_6x7_select").value; 
     //var LightDrowsiness_ReportImage = document.getElementById("DMS_7x7_select").value; 
     //var LightDrowsiness_ReportFootage = document.getElementById("DMS_8x7_select").value; 
-    var TamperingDetection_Activation = document.getElementById("DMS_1x8_select").value; 
-    var TamperingDetection_FeedbackAudio = document.getElementById("DMS_2x8_select").value; 
-    var TamperingDetection_FeedbackOutput = document.getElementById("DMS_3x8_select").value; 
-    var TamperingDetection_FeedbackSpeech = document.getElementById("DMS_4x8_select").value; 
-    var TamperingDetection_FeedbackVisual = document.getElementById("DMS_5x8_select").value; 
-    var TamperingDetection_ReportEvent = document.getElementById("DMS_6x8_select").value; 
-    var TamperingDetection_ReportImage = document.getElementById("DMS_7x8_select").value; 
-    var TamperingDetection_ReportFootage = document.getElementById("DMS_8x8_select").value; 
-    var DriverIdentified_Activation = document.getElementById("DMS_1x9_select").value; 
-    var DriverIdentified_FeedbackAudio = document.getElementById("DMS_2x9_select").value; 
-    var DriverIdentified_FeedbackOutput = document.getElementById("DMS_3x9_select").value; 
-    var DriverIdentified_FeedbackSpeech = document.getElementById("DMS_4x9_select").value; 
-    var DriverIdentified_FeedbackVisual = document.getElementById("DMS_5x9_select").value; 
-    var DriverIdentified_ReportEvent = document.getElementById("DMS_6x9_select").value; 
-    var DriverIdentified_ReportImage = document.getElementById("DMS_7x9_select").value; 
-    var DriverIdentified_ReportFootage = document.getElementById("DMS_8x9_select").value; 
-    var UnidentifiedUnauthDriver_Activation = document.getElementById("DMS_1x10_select").value; 
-    var UnidentifiedUnauthDriver_FeedbackAudio = document.getElementById("DMS_2x10_select").value; 
-    var UnidentifiedUnauthDriver_FeedbackOutput = document.getElementById("DMS_3x10_select").value; 
-    var UnidentifiedUnauthDriver_FeedbackSpeech = document.getElementById("DMS_4x10_select").value; 
-    var UnidentifiedUnauthDriver_FeedbackVisual = document.getElementById("DMS_5x10_select").value; 
-    var UnidentifiedUnauthDriver_ReportEvent = document.getElementById("DMS_6x10_select").value; 
-    var UnidentifiedUnauthDriver_ReportImage = document.getElementById("DMS_7x10_select").value; 
-    var UnidentifiedUnauthDriver_ReportFootage = document.getElementById("DMS_8x10_select").value; 
+    var TamperingDetection_Activation = document.getElementById("DMS_tamperingDetectionActivationId").checked;
+    var TamperingDetection_FeedbackAudio = document.getElementById("DMS_tamperingDetectionFeedbackAudioCheckbox").checked;
+    var TamperingDetection_FeedbackOutput = document.getElementById("DMS_tamperingDetectionFeedbackOutputId").value;
+    var TamperingDetection_FeedbackSpeech = document.getElementById("DMS_tamperingDetectionFeedbackSpeechCheckbox").checked;
+    var TamperingDetection_FeedbackVisual = document.getElementById("DMS_tamperingDetectionFeedbackVisualCheckbox").checked;
+    var TamperingDetection_ReportEvent = document.getElementById("DMS_tamperingDetectionDetectionEventCheckbox").checked;
+    var TamperingDetection_ReportCabinSnapshot = document.getElementById("DMS_tamperingDetectionReportImageInCabinCheckbox").checked;
+    var TamperingDetection_ReportCabinTimelapse = document.getElementById("DMS_tamperingDetectionReportTimelapseInCabinCheckbox").checked;
+    var TamperingDetection_ReportRoadSnapshot = document.getElementById("DMS_tamperingDetectionReportImageRoadFacingCheckbox").checked;
+    var TamperingDetection_ReportRoadTimelapse = document.getElementById("DMS_tamperingDetectionReportTimelapseRoadFacingCheckbox").checked;
+    var TamperingDetection_ReportImage = "None";
+    if (TamperingDetection_ReportCabinSnapshot && TamperingDetection_ReportRoadSnapshot) {
+        TamperingDetection_ReportImage = "BothSingle";
+    } else if (TamperingDetection_ReportCabinSnapshot && !TamperingDetection_ReportRoadSnapshot) {
+        TamperingDetection_ReportImage = "SingleDMS";
+    } else if (!TamperingDetection_ReportCabinSnapshot && TamperingDetection_ReportRoadSnapshot) {
+        TamperingDetection_ReportImage = "SingleADAS";
+    } else if (TamperingDetection_ReportCabinTimelapse && TamperingDetection_ReportRoadTimelapse) {
+        TamperingDetection_ReportImage = "BothTimelaps";
+    } else if (TamperingDetection_ReportCabinTimelapse && !TamperingDetection_ReportRoadTimelapse) {
+        TamperingDetection_ReportImage = "TimelapseDMS";
+    } else if (!TamperingDetection_ReportCabinTimelapse && TamperingDetection_ReportRoadTimelapse) {
+        TamperingDetection_ReportImage = "TimelapseADAS";
+    }
+    var TamperingDetection_ReportFootageCabin = document.getElementById("DMS_tamperingDetectionReportVideoInCabinCheckbox").checked;
+    var TamperingDetection_ReportFootageRoad = document.getElementById("DMS_tamperingDetectionReportVideoRoadFacingCheckbox").checked;
+    var TamperingDetection_ReportFootage = "None";
+    if (TamperingDetection_ReportFootageCabin && TamperingDetection_ReportFootageRoad) {
+        TamperingDetection_ReportFootage = "Both";
+    } else if (TamperingDetection_ReportFootageCabin && !TamperingDetection_ReportFootageRoad) {
+        TamperingDetection_ReportFootage = "DMS";
+    } else if (!TamperingDetection_ReportFootageCabin && TamperingDetection_ReportFootageRoad) {
+        TamperingDetection_ReportFootage = "ADAS";
+    }
+    var DriverIdentified_Activation = document.getElementById("DMS_driverIdentifiedActivationId").checked;
+    var DriverIdentified_FeedbackAudio = document.getElementById("DMS_driverIdentifiedFeedbackAudioCheckbox").checked;
+    var DriverIdentified_FeedbackOutput = document.getElementById("DMS_driverIdentifiedFeedbackOutputId").value;
+    var DriverIdentified_FeedbackSpeech = document.getElementById("DMS_driverIdentifiedFeedbackSpeechCheckbox").checked;
+    var DriverIdentified_FeedbackVisual = document.getElementById("DMS_driverIdentifiedFeedbackVisualCheckbox").checked;
+    var DriverIdentified_ReportEvent = document.getElementById("DMS_driverIdentifiedDetectionEventCheckbox").checked;
+    var DriverIdentified_ReportCabinSnapshot = document.getElementById("DMS_driverIdentifiedReportImageInCabinCheckbox").checked;
+    var DriverIdentified_ReportCabinTimelapse = document.getElementById("DMS_driverIdentifiedReportTimelapseInCabinCheckbox").checked;
+    var DriverIdentified_ReportRoadSnapshot = document.getElementById("DMS_driverIdentifiedReportImageRoadFacingCheckbox").checked;
+    var DriverIdentified_ReportRoadTimelapse = document.getElementById("DMS_driverIdentifiedReportTimelapseRoadFacingCheckbox").checked;
+    var DriverIdentified_ReportImage = "None";
+    if (DriverIdentified_ReportCabinSnapshot && DriverIdentified_ReportRoadSnapshot) {
+        DriverIdentified_ReportImage = "BothSingle";
+    } else if (DriverIdentified_ReportCabinSnapshot && !DriverIdentified_ReportRoadSnapshot) {
+        DriverIdentified_ReportImage = "SingleDMS";
+    } else if (!DriverIdentified_ReportCabinSnapshot && DriverIdentified_ReportRoadSnapshot) {
+        DriverIdentified_ReportImage = "SingleADAS";
+    } else if (DriverIdentified_ReportCabinTimelapse && DriverIdentified_ReportRoadTimelapse) {
+        DriverIdentified_ReportImage = "BothTimelaps";
+    } else if (DriverIdentified_ReportCabinTimelapse && !DriverIdentified_ReportRoadTimelapse) {
+        DriverIdentified_ReportImage = "TimelapseDMS";
+    } else if (!DriverIdentified_ReportCabinTimelapse && DriverIdentified_ReportRoadTimelapse) {
+        DriverIdentified_ReportImage = "TimelapseADAS";
+    }
+    var DriverIdentified_ReportFootageCabin = document.getElementById("DMS_driverIdentifiedReportVideoInCabinCheckbox").checked;
+    var DriverIdentified_ReportFootageRoad = document.getElementById("DMS_driverIdentifiedReportVideoRoadFacingCheckbox").checked;
+    var DriverIdentified_ReportFootage = "None";
+    if (DriverIdentified_ReportFootageCabin && DriverIdentified_ReportFootageRoad) {
+        DriverIdentified_ReportFootage = "Both";
+    } else if (DriverIdentified_ReportFootageCabin && !DriverIdentified_ReportFootageRoad) {
+        DriverIdentified_ReportFootage = "DMS";
+    } else if (!DriverIdentified_ReportFootageCabin && DriverIdentified_ReportFootageRoad) {
+        DriverIdentified_ReportFootage = "ADAS";
+    }
+    var UnidentifiedUnauthDriver_Activation = document.getElementById("DMS_driverUnidentifiedActivationId").checked;
+    var UnidentifiedUnauthDriver_FeedbackAudio = document.getElementById("DMS_driverUnidentifiedFeedbackAudioCheckbox").checked;
+    var UnidentifiedUnauthDriver_FeedbackOutput = document.getElementById("DMS_driverUnidentifiedFeedbackOutputId").value;
+    var UnidentifiedUnauthDriver_FeedbackSpeech = document.getElementById("DMS_driverUnidentifiedFeedbackSpeechCheckbox").checked;
+    var UnidentifiedUnauthDriver_FeedbackVisual = document.getElementById("DMS_driverUnidentifiedFeedbackVisualCheckbox").checked;
+    var UnidentifiedUnauthDriver_ReportEvent = document.getElementById("DMS_driverUnidentifiedDetectionEventCheckbox").checked;
+    var UnidentifiedUnauthDriver_ReportCabinSnapshot = document.getElementById("DMS_driverUnidentifiedReportImageInCabinCheckbox").checked;
+    var UnidentifiedUnauthDriver_ReportCabinTimelapse = document.getElementById("DMS_driverUnidentifiedReportTimelapseInCabinCheckbox").checked;
+    var UnidentifiedUnauthDriver_ReportRoadSnapshot = document.getElementById("DMS_driverUnidentifiedReportImageRoadFacingCheckbox").checked;
+    var UnidentifiedUnauthDriver_ReportRoadTimelapse = document.getElementById("DMS_driverUnidentifiedReportTimelapseRoadFacingCheckbox").checked;
+    var UnidentifiedUnauthDriver_ReportImage = "None";
+    if (UnidentifiedUnauthDriver_ReportCabinSnapshot && UnidentifiedUnauthDriver_ReportRoadSnapshot) {
+        UnidentifiedUnauthDriver_ReportImage = "BothSingle";
+    } else if (UnidentifiedUnauthDriver_ReportCabinSnapshot && !UnidentifiedUnauthDriver_ReportRoadSnapshot) {
+        UnidentifiedUnauthDriver_ReportImage = "SingleDMS";
+    } else if (!UnidentifiedUnauthDriver_ReportCabinSnapshot && UnidentifiedUnauthDriver_ReportRoadSnapshot) {
+        UnidentifiedUnauthDriver_ReportImage = "SingleADAS";
+    } else if (UnidentifiedUnauthDriver_ReportCabinTimelapse && UnidentifiedUnauthDriver_ReportRoadTimelapse) {
+        UnidentifiedUnauthDriver_ReportImage = "BothTimelaps";
+    } else if (UnidentifiedUnauthDriver_ReportCabinTimelapse && !UnidentifiedUnauthDriver_ReportRoadTimelapse) {
+        UnidentifiedUnauthDriver_ReportImage = "TimelapseDMS";
+    } else if (!UnidentifiedUnauthDriver_ReportCabinTimelapse && UnidentifiedUnauthDriver_ReportRoadTimelapse) {
+        UnidentifiedUnauthDriver_ReportImage = "TimelapseADAS";
+    }
+    var UnidentifiedUnauthDriver_ReportFootageCabin = document.getElementById("DMS_driverUnidentifiedReportVideoInCabinCheckbox").checked;
+    var UnidentifiedUnauthDriver_ReportFootageRoad = document.getElementById("DMS_driverUnidentifiedReportVideoRoadFacingCheckbox").checked;
+    var UnidentifiedUnauthDriver_ReportFootage = "None";
+    if (UnidentifiedUnauthDriver_ReportFootageCabin && UnidentifiedUnauthDriver_ReportFootageRoad) {
+        UnidentifiedUnauthDriver_ReportFootage = "Both";
+    } else if (UnidentifiedUnauthDriver_ReportFootageCabin && !UnidentifiedUnauthDriver_ReportFootageRoad) {
+        UnidentifiedUnauthDriver_ReportFootage = "DMS";
+    } else if (!UnidentifiedUnauthDriver_ReportFootageCabin && UnidentifiedUnauthDriver_ReportFootageRoad) {
+        UnidentifiedUnauthDriver_ReportFootage = "ADAS";
+    }
     var DriverDisappeared_Activation = document.getElementById("DMS_1x11_select").value; 
     var DriverDisappeared_FeedbackAudio = document.getElementById("DMS_2x11_select").value; 
     var DriverDisappeared_FeedbackOutput = document.getElementById("DMS_3x11_select").value; 
