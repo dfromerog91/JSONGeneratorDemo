@@ -1,7 +1,14 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    function initializeDial(dialId, dialValueId, min, max, width, initialValue, step = 1, linkedDialId = null, linkedDialValueId = null) {
+    function initializeDial(baseId, min, max, width, initialValue, step = 1, linkedBaseId = null) {
+        const dialId = baseId + 'Range';
+        const dialValueId = baseId + 'Number';
+        const summaryCellId = baseId + 'Summary';
+        const summaryValueId = baseId + 'SummaryValue';
+
         const dial = document.getElementById(dialId);
         const dialValue = document.getElementById(dialValueId);
+        const summaryCell = summaryCellId ? document.getElementById(summaryCellId) : null;
+        const summaryValue = summaryValueId ? document.getElementById(summaryValueId) : null;
 
         dial.min = min;
         dial.max = max;
@@ -14,12 +21,57 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dialValue.value = initialValue;
         dialValue.step = step;
 
+        function updateSummaryValue() {
+            if (summaryValue) {
+                summaryValue.textContent = dialValue.value;
+            }
+        }
+
+        function updateCellColor(cell) {
+            if (cell) {
+                if (parseFloat(dialValue.value) > 0) {
+                    cell.classList.remove('inactive-summary-cell');
+                    cell.classList.add('active-summary-cell');
+                } else {
+                    cell.classList.remove('active-summary-cell');
+                    cell.classList.add('inactive-summary-cell');
+                }
+            }
+        }
+
+        function updateLinkedCells() {
+            // Update the color of the current control's summary
+            if (summaryCell) {
+                updateCellColor(summaryCell);
+            }
+            
+            // Update the value of the current control's summary
+            updateSummaryValue();
+            
+            // Update the linked control's summary if it exists
+            if (linkedBaseId) {
+                const linkedSummaryValueId = linkedBaseId + 'SummaryValue';
+                const linkedSummaryValue = document.getElementById(linkedSummaryValueId);
+                if (linkedSummaryValue) {
+                    linkedSummaryValue.textContent = dialValue.value;
+                }
+                const linkedSummaryCellId = linkedBaseId + 'Summary';
+                const linkedSummaryCell = document.getElementById(linkedSummaryCellId);
+                if (linkedSummaryCell) {
+                    updateCellColor(linkedSummaryCell);
+                }
+            }
+        }
+
         dial.addEventListener('input', function() {
             dialValue.value = dial.value;
-            if (linkedDialId && linkedDialValueId) {
+            if (linkedBaseId) {
+                const linkedDialId = linkedBaseId + 'Range';
+                const linkedDialValueId = linkedBaseId + 'Number';
                 document.getElementById(linkedDialId).value = dial.value;
                 document.getElementById(linkedDialValueId).value = dial.value;
             }
+            updateLinkedCells(); // Update linked cells
         });
 
         dialValue.addEventListener('input', function() {
@@ -29,77 +81,67 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 dialValue.value = dial.max;
             }
             dial.value = dialValue.value;
-            if (linkedDialId && linkedDialValueId) {
+            if (linkedBaseId) {
+                const linkedDialId = linkedBaseId + 'Range';
+                const linkedDialValueId = linkedBaseId + 'Number';
                 document.getElementById(linkedDialId).value = dialValue.value;
                 document.getElementById(linkedDialValueId).value = dialValue.value;
             }
+            updateLinkedCells(); // Update linked cells
         });
+
+        updateSummaryValue(); // Initialize summary value
     }
 
-    initializeDial('DMS_driverAsleepMessageBackoffRange', 'DMS_driverAsleepMessageBackoffNumber', 0, 1, '136px', 0);
-    initializeDial('DMS_driverAsleepFeedbackBackoffRange', 'DMS_driverAsleepFeedbackBackoffNumber', 1, 60, '136px', 1);
-    initializeDial('DMS_driverAsleepSpeedThresholdRange', 'DMS_driverAsleepSpeedThresholdNumber', 0, 50, '136px', 0, 1, 'DMS_drowsinessSpeedThresholdRange', 'DMS_drowsinessSpeedThresholdNumber');
-    initializeDial('DMS_driverAsleepSleepDurationRange', 'DMS_driverAsleepSleepDurationNumber', 1, 5, '192px', 4, 0.1);
+    // Initialization of controls
+    initializeDial('DMS_driverAsleepMessageBackoff', 0, 1, '136px', 0);
+    initializeDial('DMS_driverAsleepFeedbackBackoff', 1, 60, '136px', 1);
+    initializeDial('DMS_driverAsleepSpeedThreshold', 0, 50, '136px', 0, 1, 'DMS_drowsinessSpeedThreshold');
+    initializeDial('DMS_driverAsleepSleepDuration', 1, 5, '192px', 4, 0.1);
 
-    initializeDial('DMS_drowsinessMessageBackoffRange', 'DMS_drowsinessMessageBackoffNumber', 0, 30, '136px', 15);
-    initializeDial('DMS_drowsinessFeedbackBackoffRange', 'DMS_drowsinessFeedbackBackoffNumber', 1, 60, '136px', 10);
-    initializeDial('DMS_drowsinessSpeedThresholdRange', 'DMS_drowsinessSpeedThresholdNumber', 0, 50, '136px', 0, 1, 'DMS_driverAsleepSpeedThresholdRange', 'DMS_driverAsleepSpeedThresholdNumber');
+    initializeDial('DMS_drowsinessMessageBackoff', 0, 30, '136px', 15);
+    initializeDial('DMS_drowsinessFeedbackBackoff', 1, 60, '136px', 10);
+    initializeDial('DMS_drowsinessSpeedThreshold', 0, 50, '136px', 0, 1, 'DMS_driverAsleepSpeedThreshold');
 
-    initializeDial('DMS_driverDistractedMessageBackoffRange', 'DMS_driverDistractedMessageBackoffNumber', 0, 30, '136px', 1);
-    initializeDial('DMS_driverDistractedFeedbackBackoffRange', 'DMS_driverDistractedFeedbackBackoffNumber', 1, 60, '136px', 10);
-    initializeDial('DMS_driverDistractedSpeedThresholdRange', 'DMS_driverDistractedSpeedThresholdNumber', 0, 50, '136px', 0);
-    initializeDial('DMS_driverDistractedTurnGraceTimerRange', 'DMS_driverDistractedTurnGraceTimerNumber', 0, 5, '192px', 2, 0.1);
+    initializeDial('DMS_driverDistractedMessageBackoff', 0, 30, '136px', 1);
+    initializeDial('DMS_driverDistractedFeedbackBackoff', 1, 60, '136px', 10);
+    initializeDial('DMS_driverDistractedSpeedThreshold', 0, 50, '136px', 0);
+    initializeDial('DMS_driverDistractedTurnGraceTimer', 0, 5, '192px', 2, 0.1);
 
-    initializeDial('DMS_phoneUseMessageBackoffRange', 'DMS_phoneUseMessageBackoffNumber', 0, 30, '136px', 5);
-    initializeDial('DMS_phoneUseFeedbackBackoffRange', 'DMS_phoneUseFeedbackBackoffNumber', 1, 60, '136px', 30);
-    initializeDial('DMS_phoneUseSpeedThresholdRange', 'DMS_phoneUseSpeedThresholdNumber', 0, 50, '136px', 0);
+    initializeDial('DMS_phoneUseMessageBackoff', 0, 30, '136px', 5);
+    initializeDial('DMS_phoneUseFeedbackBackoff', 1, 60, '136px', 30);
+    initializeDial('DMS_phoneUseSpeedThreshold', 0, 50, '136px', 0);
 
-    initializeDial('DMS_seatbeltMessageBackoffRange', 'DMS_seatbeltMessageBackoffNumber', 0, 30, '136px', 10);
-    initializeDial('DMS_seatbeltFeedbackBackoffRange', 'DMS_seatbeltFeedbackBackoffNumber', 1, 60, '136px', 30);
-    initializeDial('DMS_seatbeltSpeedThresholdRange', 'DMS_seatbeltSpeedThresholdNumber', 0, 50, '136px', 0);
-    initializeDial('DMS_seatbeltAlertTimeRange', 'DMS_seatbeltAlertTimeNumber', 5, 60, '192px', 15);
+    initializeDial('DMS_seatbeltMessageBackoff', 0, 30, '136px', 10);
+    initializeDial('DMS_seatbeltFeedbackBackoff', 1, 60, '136px', 30);
+    initializeDial('DMS_seatbeltSpeedThreshold', 0, 50, '136px', 0);
+    initializeDial('DMS_seatbeltAlertTime', 5, 60, '192px', 15);
 
-    initializeDial('DMS_smokingMessageBackoffRange', 'DMS_smokingMessageBackoffNumber', 0, 30, '136px', 5);
-    initializeDial('DMS_smokingFeedbackBackoffRange', 'DMS_smokingFeedbackBackoffNumber', 1, 60, '136px', 30);
-    initializeDial('DMS_smokingSpeedThresholdRange', 'DMS_smokingSpeedThresholdNumber', 0, 50, '136px', 0);
+    initializeDial('DMS_smokingMessageBackoff', 0, 30, '136px', 5);
+    initializeDial('DMS_smokingFeedbackBackoff', 1, 60, '136px', 30);
+    initializeDial('DMS_smokingSpeedThreshold', 0, 50, '136px', 0);
 
-    initializeDial('DMS_driverDisappearedTimeThresholdRange', 'DMS_driverDisappearedTimeThresholdNumber', 5, 60, '192px', 30);
-    initializeDial('DMS_driverDisappearedTrackingGraceTimerRange', 'DMS_driverDisappearedTrackingGraceTimerNumber', 1, 60, '192px', 5);
+    initializeDial('DMS_driverDisappearedTimeThreshold', 5, 60, '192px', 30);
+    initializeDial('DMS_driverDisappearedTrackingGraceTimer', 1, 60, '192px', 5);
 
-    initializeDial('DMS_driverChangedMinimumRange', 'DMS_driverChangedMinimumNumber', 0, 15, '192px', 5, 0.1);
+    initializeDial('DMS_driverChangedMinimum', 0, 15, '192px', 5, 0.1);
 
-    initializeDial('ADAS_LDW_MessageBackoffRange', 'ADAS_LDW_MessageBackoffNumber', 0, 30, '136px', 5);
+    initializeDial('ADAS_LDW_MessageBackoff', 0, 30, '136px', 5);
 
-    initializeDial('ADAS_HMW_MessageBackoffRange', 'ADAS_HMW_MessageBackoffNumber', 0, 30, '136px', 5);
+    initializeDial('ADAS_HMW_MessageBackoff', 0, 30, '136px', 5);
 
-    initializeDial('ADAS_UFCW_MessageBackoffRange', 'ADAS_UFCW_MessageBackoffNumber', 0, 30, '136px', 5);
+    initializeDial('ADAS_UFCW_MessageBackoff', 0, 30, '136px', 5);
 
-    initializeDial('ADAS_FCW_MessageBackoffRange', 'ADAS_FCW_MessageBackoffNumber', 0, 30, '136px', 0);
+    initializeDial('ADAS_FCW_MessageBackoff', 0, 30, '136px', 0);
 
-    initializeDial('ADAS_PCW_MessageBackoffRange', 'ADAS_PCW_MessageBackoffNumber', 0, 30, '136px', 0);
+    initializeDial('ADAS_PCW_MessageBackoff', 0, 30, '136px', 0);
 
-    initializeDial('TES_movementStartedSpeedThresholdRange', 'TES_movementStartedSpeedThresholdNumber', 10, 30, '136px', 10, 1, 'TES_movementStoppedSpeedThresholdRange', 'TES_movementStoppedSpeedThresholdNumber');
-    
-    initializeDial('TES_movementStoppedSpeedThresholdRange', 'TES_movementStoppedSpeedThresholdNumber', 10, 30, '136px', 10, 1, 'TES_movementStartedSpeedThresholdRange', 'TES_movementStartedSpeedThresholdNumber');
+    initializeDial('TES_movementStartedSpeedThreshold', 10, 30, '136px', 10, 1, 'TES_movementStoppedSpeedThreshold');
+    initializeDial('TES_movementStoppedSpeedThreshold', 10, 30, '136px', 10, 1, 'TES_movementStartedSpeedThreshold');
 
-    initializeDial('TES_heartbeatIgnitionOffIntervalRange', 'TES_heartbeatIgnitionOffIntervalNumber', 1, 24, '136px', 1);
-    initializeDial('TES_heartbeatIgnitionOnIntervalRange', 'TES_heartbeatIgnitionOnIntervalNumber', 5, 600, '136px', 60);
-    initializeDial('TES_heartbeatTimeToWaitGPSFixRange', 'TES_heartbeatTimeToWaitGPSFixNumber', 0, 300, '136px', 120);
-    initializeDial('TES_heartbeatGPS_FixLossOrRecoveryRange', 'TES_heartbeatGPS_FixLossOrRecoveryNumber', 0, 500, '136px', 15);
-    initializeDial('TES_heartbeatIgnitionOnFilterRange', 'TES_heartbeatIgnitionOnFilterNumber', 0, 255, '136px', 3);
-    initializeDial('TES_heartbeatIgnitionOffFilterRange', 'TES_heartbeatIgnitionOffFilterNumber', 0, 255, '136px', 15);
+    initializeDial('TES_heartbeatIgnitionOffInterval', 1, 10, '192px', 1, 0.1);
 
-    initializeDial('TES_tripPathDistanceRange', 'TES_tripPathDistanceNumber', 100, 1000, '136px', 200);
-    initializeDial('TES_tripPathTimeRange', 'TES_tripPathTimeNumber', 30, 300, '136px', 60);
-    initializeDial('TES_tripPathHeadingRange', 'TES_tripPathHeadingNumber', 20, 90, '136px', 30);
+    initializeDial('TES_heartbeatInterval', 1, 30, '192px', 2, 0.1);
 
-    initializeDial('SI_cameraError_FeedbackBackoffRange', 'SI_cameraError_FeedbackBackoffNumber', 1, 60, '136px', 2);
-
-    initializeDial('SI_communicationsWatchdogKeepAliveRange', 'SI_communicationsWatchdogKeepAliveNumber', 0, 300, '136px', 0);
-    initializeDial('SI_communicationsWatchdogModemResetRange', 'SI_communicationsWatchdogModemResetNumber', 0, 30, '136px', 0);
-    initializeDial('SI_communicationsWatchdogModemResetSignalRange', 'SI_communicationsWatchdogModemResetSignalNumber', 0, 30, '136px', 0);
-    initializeDial('SI_communicationsWatchdogSelfPowerRecycleRange', 'SI_communicationsWatchdogSelfPowerRecycleNumber', 0, 30, '136px', 0);
-    initializeDial('SI_communicationsWatchdogSocketRestTimeRange', 'SI_communicationsWatchdogSocketRestTimeNumber', 0, 30, '136px', 0);
-
-    initializeDial('SI_SettingsAndHybridWi_Fi_TimeOutRange', 'SI_SettingsAndHybridWi_Fi_TimeOutNumber', 5, 300, '136px', 0);
+    initializeDial('TES_ignoreMovingTime', 0, 60, '192px', 5, 1);
 });
