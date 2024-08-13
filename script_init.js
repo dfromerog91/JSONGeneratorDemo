@@ -1145,6 +1145,21 @@ function toggleFeedbackOutputSummary (paramId) {
     summaryCellImg.src = "source_img/" + selectedValue.value + ".png";
 }
 
+function toggleDetectionClosureEventSummary (id) {
+    const detectionEventCheckbox = document.getElementById(id + 'DetectionEventCheckbox');
+    const closureEventCheckbox = document.getElementById(id + 'ClosureEventCheckbox');
+    const summaryCellLabel = id + 'DetectionClosureEventSummary';
+    if (detectionEventCheckbox.checked && closureEventCheckbox.checked) {
+        toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Closure_Event_ON.png');
+    } else if (detectionEventCheckbox.checked) {
+        toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
+    } else if (closureEventCheckbox.checked) {
+        toggleSummaryCell(summaryCellLabel, true, 'source_img/Closure_Event_ON.png');
+    } else {
+        toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
+    }
+}
+
 function toggleDetectionEventSummary (paramId, paramPathOn, paramPathOff) {
     const checkbox = document.getElementById(paramId + 'Checkbox');
     const summaryCell = document.getElementById(paramId + 'Summary');
