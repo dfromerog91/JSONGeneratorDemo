@@ -1109,27 +1109,6 @@ function toggleTimelapseEnableCheckbox(id_img1, imgPath1_ON, imgPath1_OFF, check
     }
 }
 
-function toggleDriverFeedbackButtons(paramId, paramPathOn, paramPathOff) {
-    const button = document.getElementById(paramId + 'Id');
-    const checkbox = document.getElementById(paramId + 'Checkbox');
-    const summaryCell = document.getElementById(paramId + 'Summary');
-    const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
-
-    if (checkbox.checked) {
-        checkbox.checked = false;
-        button.src = paramPathOff;
-        summaryCell.classList.remove('active-summary-cell');
-        summaryCell.classList.add('inactive-summary-cell');
-        summaryCellImg.src = paramPathOff;
-    } else {
-        checkbox.checked = true;
-        button.src = paramPathOn;
-        summaryCell.classList.remove('inactive-summary-cell');
-        summaryCell.classList.add('active-summary-cell');
-        summaryCellImg.src = paramPathOn;
-    }
-}
-
 function toggleFeedbackOutputSummary (paramId) {
     const selectedValue = document.getElementById(paramId + 'Id');
     const summaryCell = document.getElementById(paramId + 'Summary');
@@ -1285,17 +1264,32 @@ function toggleMediaUploadButton (button, activate, imgSrc) {
     toggleSummaryCell(button + 'Summary', activate, imgSrc);
 }
 
+function toggleCheckAndImageButton(button, imgOnSrc, imgOffSrc) {
+    const buttonId = document.getElementById(button + 'Id');
+    const buttonCheckbox = document.getElementById(button + 'Checkbox');
+    buttonCheckbox.checked = !buttonCheckbox.checked;
+    if (buttonCheckbox.checked) {
+        buttonId.src = imgOnSrc;
+        toggleSummaryCell(button + 'Summary', true, imgOnSrc);
+    } else {
+        buttonId.src = imgOffSrc;
+        toggleSummaryCell(button + 'Summary', false, imgOffSrc);
+    }
+}
+
 function toggleSummaryCell (cell, activate, imgSrc) {
     const summaryCell = document.getElementById(cell);
     const summaryCellImg = document.getElementById(cell + 'Img');
-    if (activate) {
-        summaryCell.classList.remove('inactive-summary-cell');
-        summaryCell.classList.add('active-summary-cell');
-    } else {
-        summaryCell.classList.remove('active-summary-cell');
-        summaryCell.classList.add('inactive-summary-cell');
+    if (summaryCell) {
+        if (activate) {
+            summaryCell.classList.remove('inactive-summary-cell');
+            summaryCell.classList.add('active-summary-cell');
+        } else {
+            summaryCell.classList.remove('active-summary-cell');
+            summaryCell.classList.add('inactive-summary-cell');
+        }
+        summaryCellImg.src = imgSrc;
     }
-    summaryCellImg.src = imgSrc;
 }
 
 function toggleMediaUpload(paramId1, paramPath1_On, paramPath1_Off, paramId2, paramPath2, paramId3, paramPath3, paramId4, paramPath4, paramId5 = null, paramPath5 = null, paramId6 = null, paramPath6 = null) {
