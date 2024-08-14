@@ -338,7 +338,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverAsleepDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverAsleep')">
+                                    <input type="checkbox" id="DMS_driverAsleepDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverAsleep', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -357,7 +357,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverAsleepClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverAsleep')">
+                                    <input type="checkbox" id="DMS_driverAsleepClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverAsleep', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -680,6 +680,48 @@
                 <td id="DMS_drowsinessDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_drowsinessDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_drowsinessMessageBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_drowsinessMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        15
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_drowsinessFeedbackBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_drowsinessFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        10
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_drowsinessSpeedThresholdSummary" class="inactive-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_drowsinessSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_drowsinessReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_drowsinessReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -697,20 +739,6 @@
                 </td>
                 <td id="DMS_drowsinessReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_drowsinessReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_drowsinessSpeedThresholdSummary" class="inactive-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_drowsinessSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -815,7 +843,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_drowsinessDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_drowsinessDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_drowsinessDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_drowsiness', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -834,7 +862,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_drowsinessClosureEventCheckbox">
+                                    <input type="checkbox" id="DMS_drowsinessClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_drowsiness', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -1125,6 +1153,48 @@
                 <td id="DMS_driverDistractedDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_driverDistractedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_driverDistractedMessageBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverDistractedMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        1
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverDistractedFeedbackBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverDistractedFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        10
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverDistractedSpeedThresholdSummary" class="inactive-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverDistractedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_driverDistractedReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_driverDistractedReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -1142,20 +1212,6 @@
                 </td>
                 <td id="DMS_driverDistractedReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_driverDistractedReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_driverDistractedSpeedThresholdSummary" class="inactive-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_driverDistractedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -1260,7 +1316,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverDistractedDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_driverDistractedDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_driverDistractedDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverDistracted', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -1279,7 +1335,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverDistractedClosureEventCheckbox">
+                                    <input type="checkbox" id="DMS_driverDistractedClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverDistracted', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -1585,6 +1641,48 @@
                 <td id="DMS_phoneUseDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_phoneUseDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_phoneUseMessageBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_phoneUseMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        5
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_phoneUseFeedbackBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_phoneUseFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        30
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_phoneUseSpeedThresholdSummary" class="inactive-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_phoneUseSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_phoneUseReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_phoneUseReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -1602,20 +1700,6 @@
                 </td>
                 <td id="DMS_phoneUseReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_phoneUseReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_phoneUseSpeedThresholdSummary" class="inactive-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_phoneUseSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -1720,7 +1804,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_phoneUseDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_phoneUseDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_phoneUseDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_phoneUse', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -1739,7 +1823,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_phoneUseClosureEventCheckbox">
+                                    <input type="checkbox" id="DMS_phoneUseClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_phoneUse', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -1996,6 +2080,48 @@
                 <td id="DMS_seatbeltDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_seatbeltDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_seatbeltMessageBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_seatbeltMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        10
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_seatbeltFeedbackBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_seatbeltFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        30
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_seatbeltSpeedThresholdSummary" class="inactive-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_seatbeltSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_seatbeltReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_seatbeltReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -2013,20 +2139,6 @@
                 </td>
                 <td id="DMS_seatbeltReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_seatbeltReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_seatbeltSpeedThresholdSummary" class="inactive-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_seatbeltSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -2131,7 +2243,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_seatbeltDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_seatbeltDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_seatbeltDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_seatbelt', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -2150,7 +2262,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_seatbeltClosureEventCheckbox">
+                                    <input type="checkbox" id="DMS_seatbeltClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_seatbelt', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -2636,7 +2748,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_smokingDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_smoking')">
+                                    <input type="checkbox" id="DMS_smokingDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_smoking', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -2655,7 +2767,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_smokingClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_smoking')">
+                                    <input type="checkbox" id="DMS_smokingClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_smoking', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -3075,7 +3187,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_tamperingDetectionDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_tamperingDetection')">
+                                    <input type="checkbox" id="DMS_tamperingDetectionDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_tamperingDetection', false)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -3094,7 +3206,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_tamperingDetectionClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_tamperingDetection')" disabled>
+                                    <input type="checkbox" id="DMS_tamperingDetectionClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_tamperingDetection', false)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -3247,6 +3359,48 @@
                 <td id="DMS_driverIdentifiedDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_driverIdentifiedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_driverIdentifiedMessageBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverIdentifiedMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverIdentifiedFeedbackBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverIdentifiedFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverIdentifiedSpeedThresholdSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverIdentifiedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_driverIdentifiedReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_driverIdentifiedReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -3264,20 +3418,6 @@
                 </td>
                 <td id="DMS_driverIdentifiedReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_driverIdentifiedReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_driverIdentifiedSpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_driverIdentifiedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -3382,7 +3522,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverIdentifiedDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_driverIdentifiedDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_driverIdentifiedDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverIdentified', false)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -3401,7 +3541,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverIdentifiedClosureEventCheckbox" disabled>
+                                    <input type="checkbox" id="DMS_driverIdentifiedClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverIdentified', false)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -3588,6 +3728,48 @@
                 <td id="DMS_driverUnidentifiedDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_driverUnidentifiedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_driverUnidentifiedMessageBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverUnidentifiedMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverUnidentifiedFeedbackBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverUnidentifiedFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverUnidentifiedSpeedThresholdSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverUnidentifiedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_driverUnidentifiedReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_driverUnidentifiedReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -3605,20 +3787,6 @@
                 </td>
                 <td id="DMS_driverUnidentifiedReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_driverUnidentifiedReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_driverUnidentifiedSpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_driverUnidentifiedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -3723,7 +3891,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverUnidentifiedDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_driverUnidentifiedDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_driverUnidentifiedDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverUnidentified', false)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -3742,7 +3910,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverUnidentifiedClosureEventCheckbox" disabled>
+                                    <input type="checkbox" id="DMS_driverUnidentifiedClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverUnidentified', false)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -3895,6 +4063,48 @@
                 <td id="DMS_driverDisappearedDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_driverDisappearedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_driverDisappearedMessageBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverDisappearedMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverDisappearedFeedbackBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverDisappearedFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverDisappearedSpeedThresholdSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverDisappearedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_driverDisappearedReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_driverDisappearedReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -3912,20 +4122,6 @@
                 </td>
                 <td id="DMS_driverDisappearedReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_driverDisappearedReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_driverDisappearedSpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_driverDisappearedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -4030,7 +4226,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverDisappearedDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_driverDisappearedDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_driverDisappearedDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverDisappeared', false)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -4049,7 +4245,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverDisappearedClosureEventCheckbox" disabled>
+                                    <input type="checkbox" id="DMS_driverDisappearedClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverDisappeared', false)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -4282,6 +4478,48 @@
                 <td id="DMS_driverChangedDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_driverChangedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_driverChangedMessageBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverChangedMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverChangedFeedbackBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverChangedFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverChangedSpeedThresholdSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverChangedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_driverChangedReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_driverChangedReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -4299,20 +4537,6 @@
                 </td>
                 <td id="DMS_driverChangedReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_driverChangedReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_driverChangedSpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_driverChangedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -4417,7 +4641,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverChangedDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_driverChangedDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_driverChangedDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverChanged', false)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -4436,7 +4660,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverChangedClosureEventCheckbox" disabled>
+                                    <input type="checkbox" id="DMS_driverChangedClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverChanged', false)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -4638,6 +4862,48 @@
                 <td id="DMS_driverIdUpdatedDetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="DMS_driverIdUpdatedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="DMS_driverIdUpdatedMessageBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverIdUpdatedMessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverIdUpdatedFeedbackBackoffSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverIdUpdatedFeedbackBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        sec
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td id="DMS_driverIdUpdatedSpeedThresholdSummary" class="disabled-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="DMS_driverIdUpdatedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        km/h
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="DMS_driverIdUpdatedReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="DMS_driverIdUpdatedReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -4655,20 +4921,6 @@
                 </td>
                 <td id="DMS_driverIdUpdatedReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="DMS_driverIdUpdatedReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="DMS_driverIdUpdatedSpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="DMS_driverIdUpdatedSpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -4773,7 +5025,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverIdUpdatedDetectionEventCheckbox" onclick="toggleDetectionEventSummary('DMS_driverIdUpdatedDetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="DMS_driverIdUpdatedDetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverIdUpdated', false)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -4792,7 +5044,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="DMS_driverIdUpdatedClosureEventCheckbox" disabled>
+                                    <input type="checkbox" id="DMS_driverIdUpdatedClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('DMS_driverIdUpdated', false)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>

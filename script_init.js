@@ -1145,20 +1145,32 @@ function toggleFeedbackOutputSummary (paramId) {
     summaryCellImg.src = "source_img/" + selectedValue.value + ".png";
 }
 
-function toggleDetectionClosureEventSummary (id) {
+function toggleDetectionClosureEventSummary(id, closureEventAdmitted) {
     const detectionEventCheckbox = document.getElementById(id + 'DetectionEventCheckbox');
     const closureEventCheckbox = document.getElementById(id + 'ClosureEventCheckbox');
     const summaryCellLabel = id + 'DetectionClosureEventSummary';
-    if (detectionEventCheckbox.checked && closureEventCheckbox.checked) {
-        toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Closure_Event_ON.png');
-    } else if (detectionEventCheckbox.checked) {
-        toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
-    } else if (closureEventCheckbox.checked) {
-        toggleSummaryCell(summaryCellLabel, true, 'source_img/Closure_Event_ON.png');
+    if (closureEventAdmitted) {
+        if (detectionEventCheckbox.checked) {
+            closureEventCheckbox.disabled = false;
+            if (closureEventCheckbox.checked) {
+                toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Closure_Event_ON.png');
+            } else {
+                toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
+            }
+        } else {
+            closureEventCheckbox.checked = false;
+            closureEventCheckbox.disabled = true;
+            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
+        }
     } else {
-        toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
+        if (detectionEventCheckbox.checked) {
+            toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
+        } else {
+            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
+        }
     }
 }
+
 
 function toggleDetectionEventSummary (paramId, paramPathOn, paramPathOff) {
     const checkbox = document.getElementById(paramId + 'Checkbox');
