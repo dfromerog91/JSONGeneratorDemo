@@ -5337,6 +5337,20 @@
                 <td id="ADAS_LDW_DetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="ADAS_LDW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="ADAS_LDW_MessageBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="ADAS_LDW_MessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        5
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="ADAS_LDW_ReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="ADAS_LDW_ReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -5354,20 +5368,6 @@
                 </td>
                 <td id="ADAS_LDW_ReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="ADAS_LDW_ReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="ADAS_LDW_SpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="ADAS_LDW_SpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -5478,7 +5478,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_LDW_DetectionEventCheckbox" onclick="toggleDetectionEventSummary('ADAS_LDW_DetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="ADAS_LDW_DetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_LDW_', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -5497,7 +5497,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_LDW_ClosureEventCheckbox">
+                                    <input type="checkbox" id="ADAS_LDW_ClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_LDW_', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -5567,17 +5567,17 @@
                         </td>
                         <td>
                           <div class="container" title="In-Cabin camera enabled/disabled">
-                            <img id="ADAS_LDW_EnableInCabinId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_LDW_EnableInCabin','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_LDW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_LDW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png', 'ADAS_LDW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_LDW_EnableInCabinCheckbox" class="hidden-checkbox">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_LDW_EnableInCabinCheckbox" onclick="secondToggleMediaUpload('ADAS_LDW_', 'Enable', 'InCabin')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td>
                           <div class="container" title="In-Cabin snapshot">
                             <img id="ADAS_LDW_ReportImageInCabinId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_LDW_ReportImageInCabin','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_LDW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_LDW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_LDW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_LDW_', 'ReportImage', 'InCabin')">
                             <input type="checkbox" id="ADAS_LDW_ReportImageInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5586,7 +5586,7 @@
                           <div class="container" title="In-Cabin timelapse">
                             <img id="ADAS_LDW_ReportTimelapseInCabinId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_LDW_ReportTimelapseInCabin','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_LDW_EnableInCabin', 'source_img/Camera_Enabled.png', 'ADAS_LDW_ReportImageInCabin','source_img/Image_OFF.png', 'ADAS_LDW_ReportVideoInCabin','source_img/Video_OFF.png', 'ADAS_LDW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_LDW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_LDW_', 'ReportTimelapse', 'InCabin')">
                             <input type="checkbox" id="ADAS_LDW_ReportTimelapseInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5595,7 +5595,7 @@
                           <div class="container" title="In-Cabin video">
                             <img id="ADAS_LDW_ReportVideoInCabinId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_LDW_ReportVideoInCabin','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_LDW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_LDW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_LDW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_LDW_', 'ReportVideo', 'InCabin')">
                             <input type="checkbox" id="ADAS_LDW_ReportVideoInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5616,18 +5616,18 @@
                           </table>
                         </td>
                         <td style="width: 18%;">
-                          <div class="container" title="Road-facing camera enabled/disabled">
-                            <img id="ADAS_LDW_EnableRoadFacingId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_LDW_EnableRoadFacing','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_LDW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_LDW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png', 'ADAS_LDW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_LDW_EnableRoadFacingCheckbox" class="hidden-checkbox">
+                          <div class="container" title="Road-Facing camera enabled/disabled">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_LDW_EnableRoadFacingCheckbox" onclick="secondToggleMediaUpload('ADAS_LDW_', 'Enable', 'RoadFacing')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td style="width: 18%;">
                           <div class="container" title="Road-facing snapshot">
                             <img id="ADAS_LDW_ReportImageRoadFacingId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_LDW_ReportImageRoadFacing','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_LDW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_LDW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_LDW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_LDW_', 'ReportImage', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_LDW_ReportImageRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5636,7 +5636,7 @@
                           <div class="container" title="Road-facing timelapse">
                             <img id="ADAS_LDW_ReportTimelapseRoadFacingId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_LDW_ReportTimelapseRoadFacing','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_LDW_EnableRoadFacing', 'source_img/Camera_Enabled.png', 'ADAS_LDW_ReportImageRoadFacing','source_img/Image_OFF.png', 'ADAS_LDW_ReportVideoRoadFacing','source_img/Video_OFF.png', 'ADAS_LDW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_LDW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_LDW_', 'ReportTimelapse', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_LDW_ReportTimelapseRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5645,7 +5645,7 @@
                           <div class="container" title="Road-facing video">
                             <img id="ADAS_LDW_ReportVideoRoadFacingId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_LDW_ReportVideoRoadFacing','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_LDW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_LDW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_LDW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_LDW_', 'ReportVideo', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_LDW_ReportVideoRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5684,6 +5684,20 @@
                 <td id="ADAS_HMW_DetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="ADAS_HMW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="ADAS_HMW_MessageBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="ADAS_HMW_MessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        5
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="ADAS_HMW_ReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="ADAS_HMW_ReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -5701,20 +5715,6 @@
                 </td>
                 <td id="ADAS_HMW_ReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="ADAS_HMW_ReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="ADAS_HMW_SpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="ADAS_HMW_SpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -5825,7 +5825,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_HMW_DetectionEventCheckbox" onclick="toggleDetectionEventSummary('ADAS_HMW_DetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="ADAS_HMW_DetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_HMW_', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -5844,7 +5844,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_HMW_ClosureEventCheckbox">
+                                    <input type="checkbox" id="ADAS_HMW_ClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_HMW_', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -5914,17 +5914,17 @@
                         </td>
                         <td>
                           <div class="container" title="In-Cabin camera enabled/disabled">
-                            <img id="ADAS_HMW_EnableInCabinId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_HMW_EnableInCabin','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_HMW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_HMW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png', 'ADAS_HMW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_HMW_EnableInCabinCheckbox" class="hidden-checkbox">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_HMW_EnableInCabinCheckbox" onclick="secondToggleMediaUpload('ADAS_HMW_', 'Enable', 'InCabin')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td>
                           <div class="container" title="In-Cabin snapshot">
                             <img id="ADAS_HMW_ReportImageInCabinId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_HMW_ReportImageInCabin','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_HMW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_HMW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_HMW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_HMW_', 'ReportImage', 'InCabin')">
                             <input type="checkbox" id="ADAS_HMW_ReportImageInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5933,7 +5933,7 @@
                           <div class="container" title="In-Cabin timelapse">
                             <img id="ADAS_HMW_ReportTimelapseInCabinId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_HMW_ReportTimelapseInCabin','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_HMW_EnableInCabin', 'source_img/Camera_Enabled.png', 'ADAS_HMW_ReportImageInCabin','source_img/Image_OFF.png', 'ADAS_HMW_ReportVideoInCabin','source_img/Video_OFF.png', 'ADAS_HMW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_HMW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_HMW_', 'ReportTimelapse', 'InCabin')">
                             <input type="checkbox" id="ADAS_HMW_ReportTimelapseInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5942,7 +5942,7 @@
                           <div class="container" title="In-Cabin video">
                             <img id="ADAS_HMW_ReportVideoInCabinId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_HMW_ReportVideoInCabin','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_HMW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_HMW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_HMW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_HMW_', 'ReportVideo', 'InCabin')">
                             <input type="checkbox" id="ADAS_HMW_ReportVideoInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5963,18 +5963,18 @@
                           </table>
                         </td>
                         <td style="width: 18%;">
-                          <div class="container" title="Road-facing camera enabled/disabled">
-                            <img id="ADAS_HMW_EnableRoadFacingId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_HMW_EnableRoadFacing','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_HMW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_HMW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png', 'ADAS_HMW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_HMW_EnableRoadFacingCheckbox" class="hidden-checkbox">
+                          <div class="container" title="Road-Facing camera enabled/disabled">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_HMW_EnableRoadFacingCheckbox" onclick="secondToggleMediaUpload('ADAS_HMW_', 'Enable', 'RoadFacing')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td style="width: 18%;">
                           <div class="container" title="Road-facing snapshot">
                             <img id="ADAS_HMW_ReportImageRoadFacingId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_HMW_ReportImageRoadFacing','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_HMW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_HMW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_HMW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_HMW_', 'ReportImage', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_HMW_ReportImageRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5983,7 +5983,7 @@
                           <div class="container" title="Road-facing timelapse">
                             <img id="ADAS_HMW_ReportTimelapseRoadFacingId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_HMW_ReportTimelapseRoadFacing','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_HMW_EnableRoadFacing', 'source_img/Camera_Enabled.png', 'ADAS_HMW_ReportImageRoadFacing','source_img/Image_OFF.png', 'ADAS_HMW_ReportVideoRoadFacing','source_img/Video_OFF.png', 'ADAS_HMW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_HMW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_HMW_', 'ReportTimelapse', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_HMW_ReportTimelapseRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -5992,7 +5992,7 @@
                           <div class="container" title="Road-facing video">
                             <img id="ADAS_HMW_ReportVideoRoadFacingId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_HMW_ReportVideoRoadFacing','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_HMW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_HMW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_HMW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_HMW_', 'ReportVideo', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_HMW_ReportVideoRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6031,6 +6031,20 @@
                 <td id="ADAS_UFCW_DetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="ADAS_UFCW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="ADAS_UFCW_MessageBackoffSummary" class="active-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="ADAS_UFCW_MessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        5
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="ADAS_UFCW_ReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="ADAS_UFCW_ReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -6048,20 +6062,6 @@
                 </td>
                 <td id="ADAS_UFCW_ReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="ADAS_UFCW_ReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="ADAS_UFCW_SpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="ADAS_UFCW_SpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -6172,7 +6172,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_UFCW_DetectionEventCheckbox" onclick="toggleDetectionEventSummary('ADAS_UFCW_DetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="ADAS_UFCW_DetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_UFCW_', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -6191,7 +6191,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_UFCW_ClosureEventCheckbox">
+                                    <input type="checkbox" id="ADAS_UFCW_ClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_UFCW_', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -6261,17 +6261,17 @@
                         </td>
                         <td>
                           <div class="container" title="In-Cabin camera enabled/disabled">
-                            <img id="ADAS_UFCW_EnableInCabinId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_UFCW_EnableInCabin','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_UFCW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_UFCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png', 'ADAS_UFCW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_UFCW_EnableInCabinCheckbox" class="hidden-checkbox">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_UFCW_EnableInCabinCheckbox" onclick="secondToggleMediaUpload('ADAS_UFCW_', 'Enable', 'InCabin')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td>
                           <div class="container" title="In-Cabin snapshot">
                             <img id="ADAS_UFCW_ReportImageInCabinId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_UFCW_ReportImageInCabin','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_UFCW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_UFCW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_UFCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_UFCW_', 'ReportImage', 'InCabin')">
                             <input type="checkbox" id="ADAS_UFCW_ReportImageInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6280,7 +6280,7 @@
                           <div class="container" title="In-Cabin timelapse">
                             <img id="ADAS_UFCW_ReportTimelapseInCabinId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_UFCW_ReportTimelapseInCabin','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_UFCW_EnableInCabin', 'source_img/Camera_Enabled.png', 'ADAS_UFCW_ReportImageInCabin','source_img/Image_OFF.png', 'ADAS_UFCW_ReportVideoInCabin','source_img/Video_OFF.png', 'ADAS_UFCW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_UFCW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_UFCW_', 'ReportTimelapse', 'InCabin')">
                             <input type="checkbox" id="ADAS_UFCW_ReportTimelapseInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6289,7 +6289,7 @@
                           <div class="container" title="In-Cabin video">
                             <img id="ADAS_UFCW_ReportVideoInCabinId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_UFCW_ReportVideoInCabin','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_UFCW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_UFCW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_UFCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_UFCW_', 'ReportVideo', 'InCabin')">
                             <input type="checkbox" id="ADAS_UFCW_ReportVideoInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6310,18 +6310,18 @@
                           </table>
                         </td>
                         <td style="width: 18%;">
-                          <div class="container" title="Road-facing camera enabled/disabled">
-                            <img id="ADAS_UFCW_EnableRoadFacingId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_UFCW_EnableRoadFacing','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_UFCW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_UFCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png', 'ADAS_UFCW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_UFCW_EnableRoadFacingCheckbox" class="hidden-checkbox">
+                          <div class="container" title="Road-Facing camera enabled/disabled">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_UFCW_EnableRoadFacingCheckbox" onclick="secondToggleMediaUpload('ADAS_UFCW_', 'Enable', 'RoadFacing')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td style="width: 18%;">
                           <div class="container" title="Road-facing snapshot">
                             <img id="ADAS_UFCW_ReportImageRoadFacingId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_UFCW_ReportImageRoadFacing','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_UFCW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_UFCW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_UFCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_UFCW_', 'ReportImage', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_UFCW_ReportImageRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6330,7 +6330,7 @@
                           <div class="container" title="Road-facing timelapse">
                             <img id="ADAS_UFCW_ReportTimelapseRoadFacingId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_UFCW_ReportTimelapseRoadFacing','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_UFCW_EnableRoadFacing', 'source_img/Camera_Enabled.png', 'ADAS_UFCW_ReportImageRoadFacing','source_img/Image_OFF.png', 'ADAS_UFCW_ReportVideoRoadFacing','source_img/Video_OFF.png', 'ADAS_UFCW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_UFCW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_UFCW_', 'ReportTimelapse', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_UFCW_ReportTimelapseRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6339,7 +6339,7 @@
                           <div class="container" title="Road-facing video">
                             <img id="ADAS_UFCW_ReportVideoRoadFacingId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_UFCW_ReportVideoRoadFacing','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_UFCW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_UFCW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_UFCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_UFCW_', 'ReportVideo', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_UFCW_ReportVideoRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6378,6 +6378,20 @@
                 <td id="ADAS_FCW_DetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="ADAS_FCW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="ADAS_FCW_MessageBackoffSummary" class="inactive-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="ADAS_FCW_MessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="ADAS_FCW_ReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="ADAS_FCW_ReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -6395,20 +6409,6 @@
                 </td>
                 <td id="ADAS_FCW_ReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="ADAS_FCW_ReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="ADAS_FCW_SpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="ADAS_FCW_SpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -6519,7 +6519,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_FCW_DetectionEventCheckbox" onclick="toggleDetectionEventSummary('ADAS_FCW_DetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="ADAS_FCW_DetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_FCW_', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -6538,7 +6538,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_FCW_ClosureEventCheckbox">
+                                    <input type="checkbox" id="ADAS_FCW_ClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_FCW_', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -6608,17 +6608,17 @@
                         </td>
                         <td>
                           <div class="container" title="In-Cabin camera enabled/disabled">
-                            <img id="ADAS_FCW_EnableInCabinId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_FCW_EnableInCabin','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_FCW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_FCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png', 'ADAS_FCW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_FCW_EnableInCabinCheckbox" class="hidden-checkbox">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_FCW_EnableInCabinCheckbox" onclick="secondToggleMediaUpload('ADAS_FCW_', 'Enable', 'InCabin')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td>
                           <div class="container" title="In-Cabin snapshot">
                             <img id="ADAS_FCW_ReportImageInCabinId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_FCW_ReportImageInCabin','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_FCW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_FCW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_FCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_FCW_', 'ReportImage', 'InCabin')">
                             <input type="checkbox" id="ADAS_FCW_ReportImageInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6627,7 +6627,7 @@
                           <div class="container" title="In-Cabin timelapse">
                             <img id="ADAS_FCW_ReportTimelapseInCabinId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_FCW_ReportTimelapseInCabin','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_FCW_EnableInCabin', 'source_img/Camera_Enabled.png', 'ADAS_FCW_ReportImageInCabin','source_img/Image_OFF.png', 'ADAS_FCW_ReportVideoInCabin','source_img/Video_OFF.png', 'ADAS_FCW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_FCW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_FCW_', 'ReportTimelapse', 'InCabin')">
                             <input type="checkbox" id="ADAS_FCW_ReportTimelapseInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6636,7 +6636,7 @@
                           <div class="container" title="In-Cabin video">
                             <img id="ADAS_FCW_ReportVideoInCabinId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_FCW_ReportVideoInCabin','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_FCW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_FCW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_FCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_FCW_', 'ReportVideo', 'InCabin')">
                             <input type="checkbox" id="ADAS_FCW_ReportVideoInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6657,18 +6657,18 @@
                           </table>
                         </td>
                         <td style="width: 18%;">
-                          <div class="container" title="Road-facing camera enabled/disabled">
-                            <img id="ADAS_FCW_EnableRoadFacingId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_FCW_EnableRoadFacing','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_FCW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_FCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png', 'ADAS_FCW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_FCW_EnableRoadFacingCheckbox" class="hidden-checkbox">
+                          <div class="container" title="Road-Facing camera enabled/disabled">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_FCW_EnableRoadFacingCheckbox" onclick="secondToggleMediaUpload('ADAS_FCW_', 'Enable', 'RoadFacing')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td style="width: 18%;">
                           <div class="container" title="Road-facing snapshot">
                             <img id="ADAS_FCW_ReportImageRoadFacingId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_FCW_ReportImageRoadFacing','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_FCW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_FCW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_FCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_FCW_', 'ReportImage', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_FCW_ReportImageRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6677,7 +6677,7 @@
                           <div class="container" title="Road-facing timelapse">
                             <img id="ADAS_FCW_ReportTimelapseRoadFacingId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_FCW_ReportTimelapseRoadFacing','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_FCW_EnableRoadFacing', 'source_img/Camera_Enabled.png', 'ADAS_FCW_ReportImageRoadFacing','source_img/Image_OFF.png', 'ADAS_FCW_ReportVideoRoadFacing','source_img/Video_OFF.png', 'ADAS_FCW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_FCW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_FCW_', 'ReportTimelapse', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_FCW_ReportTimelapseRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6686,7 +6686,7 @@
                           <div class="container" title="Road-facing video">
                             <img id="ADAS_FCW_ReportVideoRoadFacingId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_FCW_ReportVideoRoadFacing','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_FCW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_FCW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_FCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_FCW_', 'ReportVideo', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_FCW_ReportVideoRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6725,6 +6725,20 @@
                 <td id="ADAS_PCW_DetectionClosureEventSummary" class="inactive-summary-cell">
                   <img id="ADAS_PCW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.png">
                 </td>
+                <td id="ADAS_PCW_MessageBackoffSummary" class="inactive-summary-cell">
+                  <table>
+                    <tr>
+                      <td id="ADAS_PCW_MessageBackoffSummaryValue" style="text-align: center; border: none;" class="slider-summary">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; border: none;" class="slider-summary">
+                        min
+                      </td>
+                    </tr>
+                  </table>
+                </td>
                 <td id="ADAS_PCW_ReportImageInCabinSummary" class="inactive-summary-cell">
                   <img id="ADAS_PCW_ReportImageInCabinSummaryImg" src="source_img/Image_OFF.png">
                 </td>
@@ -6742,20 +6756,6 @@
                 </td>
                 <td id="ADAS_PCW_ReportVideoRoadFacingSummary" class="inactive-summary-cell">
                   <img id="ADAS_PCW_ReportVideoRoadFacingSummaryImg" src="source_img/Video_OFF.png">
-                </td>
-                <td id="ADAS_PCW_SpeedThresholdSummary" class="disabled-summary-cell">
-                  <table>
-                    <tr>
-                      <td id="ADAS_PCW_SpeedThresholdSummaryValue" style="text-align: center; border: none;" class="slider-summary">
-                        0
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="text-align: center; border: none;" class="slider-summary">
-                        km/h
-                      </td>
-                    </tr>
-                  </table>
                 </td>
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
@@ -6866,7 +6866,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_PCW_DetectionEventCheckbox" onclick="toggleDetectionEventSummary('ADAS_PCW_DetectionEvent', 'source_img/Detection_Event_ON.png', 'source_img/Detection_Closure_Event_OFF.png')">
+                                    <input type="checkbox" id="ADAS_PCW_DetectionEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_PCW_', true)">
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -6885,7 +6885,7 @@
                               <td style="border: none; text-align: center;">
                                 <div class="container">
                                   <label class="switch">
-                                    <input type="checkbox" id="ADAS_PCW_ClosureEventCheckbox">
+                                    <input type="checkbox" id="ADAS_PCW_ClosureEventCheckbox" onclick="toggleDetectionClosureEventSummary('ADAS_PCW_', true)" disabled>
                                     <span class="slider round"></span>
                                   </label>
                                 </div>
@@ -6955,17 +6955,17 @@
                         </td>
                         <td>
                           <div class="container" title="In-Cabin camera enabled/disabled">
-                            <img id="ADAS_PCW_EnableInCabinId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_PCW_EnableInCabin','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_PCW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_PCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png', 'ADAS_PCW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_PCW_EnableInCabinCheckbox" class="hidden-checkbox">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_PCW_EnableInCabinCheckbox" onclick="secondToggleMediaUpload('ADAS_PCW_', 'Enable', 'InCabin')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td>
                           <div class="container" title="In-Cabin snapshot">
                             <img id="ADAS_PCW_ReportImageInCabinId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_PCW_ReportImageInCabin','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_PCW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_PCW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_PCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_PCW_', 'ReportImage', 'InCabin')">
                             <input type="checkbox" id="ADAS_PCW_ReportImageInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6974,7 +6974,7 @@
                           <div class="container" title="In-Cabin timelapse">
                             <img id="ADAS_PCW_ReportTimelapseInCabinId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_PCW_ReportTimelapseInCabin','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_PCW_EnableInCabin', 'source_img/Camera_Enabled.png', 'ADAS_PCW_ReportImageInCabin','source_img/Image_OFF.png', 'ADAS_PCW_ReportVideoInCabin','source_img/Video_OFF.png', 'ADAS_PCW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_PCW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_PCW_', 'ReportTimelapse', 'InCabin')">
                             <input type="checkbox" id="ADAS_PCW_ReportTimelapseInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -6983,7 +6983,7 @@
                           <div class="container" title="In-Cabin video">
                             <img id="ADAS_PCW_ReportVideoInCabinId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_PCW_ReportVideoInCabin','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_PCW_EnableInCabin','source_img/Camera_Enabled.png', 'ADAS_PCW_ReportTimelapseInCabin','source_img/Timelapse_OFF.png', 'ADAS_PCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_PCW_', 'ReportVideo', 'InCabin')">
                             <input type="checkbox" id="ADAS_PCW_ReportVideoInCabinCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -7004,18 +7004,18 @@
                           </table>
                         </td>
                         <td style="width: 18%;">
-                          <div class="container" title="Road-facing camera enabled/disabled">
-                            <img id="ADAS_PCW_EnableRoadFacingId" class="container_img"
-                              src="source_img/Camera_Enabled.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_PCW_EnableRoadFacing','source_img/Camera_Disabled.png', 'source_img/Camera_Enabled.png', 'ADAS_PCW_ReportImageRoadFacing', 'source_img/Image_OFF.png', 'ADAS_PCW_ReportTimelapseRoadFacing', 'source_img/Timelapse_OFF.png', 'ADAS_PCW_ReportVideoRoadFacing', 'source_img/Video_OFF.png')">
-                            <input type="checkbox" id="ADAS_PCW_EnableRoadFacingCheckbox" class="hidden-checkbox">
+                          <div class="container" title="Road-Facing camera enabled/disabled">
+                            <label class="switch">
+                              <input type="checkbox" id="ADAS_PCW_EnableRoadFacingCheckbox" onclick="secondToggleMediaUpload('ADAS_PCW_', 'Enable', 'RoadFacing')">
+                              <span class="slider round"></span>
+                            </label>
                           </div>
                         </td>
                         <td style="width: 18%;">
                           <div class="container" title="Road-facing snapshot">
                             <img id="ADAS_PCW_ReportImageRoadFacingId" class="container_img"
                               src="source_img/Image_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_PCW_ReportImageRoadFacing','source_img/Image_ON.png', 'source_img/Image_OFF.png', 'ADAS_PCW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_PCW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_PCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_PCW_', 'ReportImage', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_PCW_ReportImageRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -7024,7 +7024,7 @@
                           <div class="container" title="Road-facing timelapse">
                             <img id="ADAS_PCW_ReportTimelapseRoadFacingId" class="container_img"
                               src="source_img/Timelapse_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_PCW_ReportTimelapseRoadFacing','source_img/Timelapse_ON.png', 'source_img/Timelapse_OFF.png', 'ADAS_PCW_EnableRoadFacing', 'source_img/Camera_Enabled.png', 'ADAS_PCW_ReportImageRoadFacing','source_img/Image_OFF.png', 'ADAS_PCW_ReportVideoRoadFacing','source_img/Video_OFF.png', 'ADAS_PCW_ReportImageInCabin', 'source_img/Image_OFF.png', 'ADAS_PCW_ReportVideoInCabin', 'source_img/Video_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_PCW_', 'ReportTimelapse', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_PCW_ReportTimelapseRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
@@ -7033,7 +7033,7 @@
                           <div class="container" title="Road-facing video">
                             <img id="ADAS_PCW_ReportVideoRoadFacingId" class="container_img"
                               src="source_img/Video_OFF.png" alt="Toggle Image"
-                              onclick="toggleMediaUpload('ADAS_PCW_ReportVideoRoadFacing','source_img/Video_ON.png', 'source_img/Video_OFF.png', 'ADAS_PCW_EnableRoadFacing','source_img/Camera_Enabled.png', 'ADAS_PCW_ReportTimelapseRoadFacing','source_img/Timelapse_OFF.png', 'ADAS_PCW_ReportTimelapseInCabin', 'source_img/Timelapse_OFF.png')">
+                              onclick="secondToggleMediaUpload('ADAS_PCW_', 'ReportVideo', 'RoadFacing')">
                             <input type="checkbox" id="ADAS_PCW_ReportVideoRoadFacingCheckbox"
                               class="hidden-checkbox">
                           </div>
