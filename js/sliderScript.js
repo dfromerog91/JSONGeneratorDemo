@@ -21,6 +21,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dialValue.value = initialValue;
         dialValue.step = step;
 
+        if (summaryCell) {
+            summaryCell.classList.remove('disabled-summary-cell');
+            if (parseFloat(dialValue.value) > 0) {                
+                summaryCell.classList.add('active-summary-cell');
+            } else {
+                summaryCell.classList.add('inactive-summary-cell');
+            }
+        }
+
         function updateSummaryValue() {
             if (summaryValue) {
                 summaryValue.textContent = dialValue.value;
@@ -150,7 +159,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('TES_tripPathTime', 30, 300, '136px', 60);
     initializeDial('TES_tripPathHeading', 20, 90, '136px', 30);
 
-    initializeDial('SI_cameraError_FeedbackBackoff', 1, 60, '136px', 2);
+    initializeDial('SI_cameraErrorFeedbackBackoff', 1, 60, '136px', 2);
 
     initializeDial('SI_communicationsWatchdogKeepAlive', 0, 300, '136px', 0);
     initializeDial('SI_communicationsWatchdogModemReset', 0, 30, '136px', 0);
