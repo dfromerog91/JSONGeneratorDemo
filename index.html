@@ -9765,10 +9765,10 @@
                       <tr>
                         <td style="text-align: center; width: 20%;">
                           Enable<br><br>
-                          <select id="TES_tripPathEnableId" name="TES_tripPathEnableName" style="width: 100px;">
-                            <option value="true">True</option>
-                            <option value="false">False</option>
-                          </select>
+                          <label class="switch">
+                            <input id="TES_tripPathEnableId" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
                         </td>
                         <td colspan="2" style="width: 40%;">
                           <table>
@@ -9840,10 +9840,10 @@
                       <tr>
                         <td style="text-align: center;">
                           Inhibit Heartbeat<br><br>
-                          <select id="TES_tripPathInhibitHeartbeatId" name="TES_tripPathInhibitHeartbeatName" style="width: 100px;">
-                            <option value="true">True</option>
-                            <option value="false">False</option>
-                          </select>
+                          <label class="switch">
+                            <input id="TES_tripPathInhibitHeartbeatId" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
                         </td>
                         <td style="border: none; width: 20%;"></td>
                         <td colspan="2" style="border: none; width: 40%;">
@@ -14847,32 +14847,37 @@
             </div>
             <h1></h1>
           </div>
-          <!---SI Communications Watchdog - Header------>
-          <div class="header" , id="communicationsWatchdogHeader">
+          <!---SI Cipia-FS10 Architecture - Header------>
+          <div class="header" , id="Cipia-FS10ArchitectureHeader">
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
-                  <img src="source_img/Communications_Watchdog.png" class="icon">
+                  <img src="source_img/Cipia-FS10_Architecture.png" class="icon">
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
                   title="AlertMessage">
-                  Communications Watchdog
+                  Cipia-FS10 Architecture
                 </td>
                 <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
                   title="More/less options">
                   <span class="toggle-button"
-                    onclick="toggleSubParameters('SI_communicationsWatchdogSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'communicationsWatchdogHeader')">
+                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureHeader')">
                     <img src="source_img/more_options_icon.png" alt="More Options">
                   </span>
                 </td>
               </tr>
             </table>
           </div>
-          <!---SI Communications Watchdog - Subparams-->
-          <div id="SI_communicationsWatchdogSubParamsId" class="sub-parameters">
+          <!-- SI Cipia-FS10 Architecture - Subparams -->
+          <div id="SI_Cipia-FS10ArchitectureSubParamsId" class="sub-parameters">
             <h1></h1>
             <div class="table-container">
               <table>
+                <tr>
+                  <td style="background-color:#ffffff;">
+                    Communications Watchdog:
+                  </td>
+                </tr>
                 <tr>
                   <td style="background-color:#ffffff;">
                     <table class="table-internal">
@@ -14980,10 +14985,10 @@
                       <tr>
                         <td style="text-align: center;">
                           Repeat Cycle<br><br>
-                          <select id="SI_communicationsWatchdogRepeatCycleId" name="SI_communicationsWatchdogRepeatCycleName" style="width: 100px;">
-                            <option value="true">True</option>
-                            <option value="false">False</option>
-                          </select>
+                          <label class="switch">
+                            <input id="SI_communicationsWatchdogRepeatCycleId" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
                         </td>
                         <td>
                           <table>
@@ -15055,36 +15060,11 @@
                     </table>
                   </td>
                 </tr>
-              </table>
-            </div>
-            <h1></h1>
-          </div>
-          <!---SI Communication Settings and Hybrid Mode - Header------>
-          <div class="header" , id="communicationSettingsAndHybridHeader">
-            <table class="table_properties">
-              <tr style="text-align: center; ">
-                <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
-                  <img src="source_img/Communication_Settings_and_Hybrid_Mode.png" class="icon">
-                </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
-                  title="AlertMessage">
-                  Communication Settings and Hybrid Mode
-                </td>
-                <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
-                  title="More/less options">
-                  <span class="toggle-button"
-                    onclick="toggleSubParameters('SI_communicationSettingsAndHybridSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'communicationSettingsAndHybridHeader')">
-                    <img src="source_img/more_options_icon.png" alt="More Options">
-                  </span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <!---SI Communication Settings and Hybrid Mode - Subparams-->
-          <div id="SI_communicationSettingsAndHybridSubParamsId" class="sub-parameters">
-            <h1></h1>
-            <div class="table-container">
-              <table>
+                <tr>
+                  <td style="background-color:#ffffff;">
+                    Communication Settings and Hybrid Mode:
+                  </td>
+                </tr>
                 <tr>
                   <td style="background-color:#ffffff;">
                     <table class="table-internal">
@@ -15186,47 +15166,21 @@
                       </tr>
                       <tr>
                         <td colspan="3" style="text-align: center;">
-                          Duplicate Event Over RS232:&nbsp;
-                          <select id="SI_communicationSettingsAndHybridDuplicateEventId"
-                            name="SI_communicationSettingsAndHybridDuplicateEventName" style="width: 100px;">
-                            <option value="true">Enable</option>
-                            <option value="false">Disable</option>
-                          </select>
+                          Duplicate Event Over RS232:&nbsp;&nbsp;&nbsp;
+                          <label class="switch">
+                            <input id="SI_communicationSettingsAndHybridDuplicateEventId" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
                         </td>
                       </tr>
                     </table>
                   </td>
                 </tr>
-              </table>
-            </div>
-            <h1></h1>
-          </div>
-          <!---SI APN Settings - Header------>
-          <div class="header" , id="APN_SettingsHeader">
-            <table class="table_properties">
-              <tr style="text-align: center; ">
-                <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
-                  <img src="source_img/APN_Settings.png" class="icon">
-                </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
-                  title="AlertMessage">
-                  APN Settings
-                </td>
-                <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
-                  title="More/less options">
-                  <span class="toggle-button"
-                    onclick="toggleSubParameters('SI_APN_SettingsSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'APN_SettingsHeader')">
-                    <img src="source_img/more_options_icon.png" alt="More Options">
-                  </span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <!---SI APN Settings - Subparams-->
-          <div id="SI_APN_SettingsSubParamsId" class="sub-parameters">
-            <h1></h1>
-            <div class="table-container">
-              <table>
+                <tr>
+                  <td style="background-color:#ffffff;">
+                    APN Settings:
+                  </td>
+                </tr>
                 <tr>
                   <td style="background-color:#ffffff;">
                     <table class="table-internal">
@@ -15271,36 +15225,11 @@
                     </table>
                   </td>
                 </tr>
-              </table>
-            </div>
-            <h1></h1>
-          </div>
-          <!---SI Serial Communications - Header------>
-          <div class="header" , id="serialCommHeader">
-            <table class="table_properties">
-              <tr style="text-align: center; ">
-                <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
-                  <img src="source_img/Serial_Communications.png" class="icon">
-                </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
-                  title="AlertMessage">
-                  Serial Communications (RS232)
-                </td>
-                <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
-                  title="More/less options">
-                  <span class="toggle-button"
-                    onclick="toggleSubParameters('SI_serialCommSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'serialCommHeader')">
-                    <img src="source_img/more_options_icon.png" alt="More Options">
-                  </span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <!---SI Serial Communications - Subparams-->
-          <div id="SI_serialCommSubParamsId" class="sub-parameters">
-            <h1></h1>
-            <div class="table-container">
-              <table>
+                <tr>
+                  <td style="background-color:#ffffff;">
+                    Serial Communications (RS232):
+                  </td>
+                </tr>
                 <tr>
                   <td style="background-color:#ffffff;">
                     <table class="table-internal">
@@ -15337,8 +15266,8 @@
                         <td style="text-align: center;">
                           Stop bits<br>
                           <select id="SI_serialCommStopbitsId" name="SI_serialCommStopbitsName" style="width: 100px;">
-                            <option value="1">2</option>
-                            <option value="1">2</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
                           </select>
                         </td>
                         <td style="text-align: center;">
