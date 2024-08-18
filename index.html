@@ -5195,109 +5195,115 @@
             <h1></h1>
             <div class="table-container">
               <table>
-                <br>
-                <table>
-                  <tr>
-                    <td rowspan="2">Vehicle Type</td>
-                    <td><span class="coment"
-                        title="Small Vehicles for individual personal transportation purposes">Private</span></td>
-                    <td><span class="coment" title="Light Commercial Vehicles - under 15 TON">LCV</span></td>
-                    <td><span class="coment" title="Medium Commercial Vehicles - around 15 TON">MCV</span></td>
-                    <td><span class="coment" title="High Commercial Vehicles - over 15 TON">HCV</span></td>
-                    <td><span class="coment" title="Medium/ Big Vehicles for people transportation purposes">Bus</span></td>
-                  </tr>
-                  <tr>
-                    <td><img src="img/Private.png"></td>
-                    <td><img src="img/LCV.png"></td>
-                    <td><img src="img/MCV.png"></td>
-                    <td><img src="img/HCV.png"></td>
-                    <td><img src="img/BUS.png"></td>
-                  </tr>
-                  <tbody>
-                    <tr>
-                      <td>Category</td>
-                      <td><input type="radio" name="vehicleType" id="vehicleType_Private" value="Private" checked></td>
-                      <td><input type="radio" name="vehicleType" id="vehicleType_LCV" value="LCV"></td>
-                      <td><input type="radio" name="vehicleType" id="vehicleType_MCV" value="MCV"></td>
-                      <td><input type="radio" name="vehicleType" id="vehicleType_HCV" value="HCV"></td>
-                      <td><input type="radio" name="vehicleType" id="vehicleType_Bus" value="Bus"></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <br><br>
-                <table>
-                  <tr style="text-align: center;">
-                    <td style="text-align: center; background-color: #ffffff;">
-                      <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
+                <tr>
+                  <td style="background-color:#ffffff;">
+                    <table class="table-internal">
+                      <tr>
+                        <td rowspan="2">Vehicle Type</td>
+                        <td><span class="coment"
+                            title="Small Vehicles for individual personal transportation purposes">Private</span></td>
+                        <td><span class="coment" title="Light Commercial Vehicles - under 15 TON">LCV</span></td>
+                        <td><span class="coment" title="Medium Commercial Vehicles - around 15 TON">MCV</span></td>
+                        <td><span class="coment" title="High Commercial Vehicles - over 15 TON">HCV</span></td>
+                        <td><span class="coment" title="Medium/ Big Vehicles for people transportation purposes">Bus</span></td>
+                      </tr>
+                      <tr>
+                        <td><img src="img/Private.png"></td>
+                        <td><img src="img/LCV.png"></td>
+                        <td><img src="img/MCV.png"></td>
+                        <td><img src="img/HCV.png"></td>
+                        <td><img src="img/BUS.png"></td>
+                      </tr>
+                      <tbody>
                         <tr>
-                          <td
-                            style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
-                            <img id="DMS_up_A" style="display: block; margin: 0 auto; padding: 0; border: none;">
-                          </td>
+                          <td>Category</td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_Private" value="Private" checked></td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_LCV" value="LCV"></td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_MCV" value="MCV"></td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_HCV" value="HCV"></td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_Bus" value="Bus"></td>
                         </tr>
-                        <tr>
-                          <td
-                            style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
-                            <img id="DMS_up_B" style="display: block; margin: 0 auto; padding: 0; border: none;">
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                    <td style="vertical-align: top;">
-                      <label style="font-size: 14px; font-weight: bold; ">Road Centering Options</label>
-                      <label style="font-size: 2px;">&nbsp;</label>
-                      <label style="font-size: 12px;" for="RoadCenterPitchPos">Positive Pitch Angle (Up): </label>
-                      <select style="background-color: rgb(232 216 244);" name="RoadCenterPitchPos" id="RoadCenterPitchPos"
-                        onchange="updateDMSImage()">
-                      </select>
-                      <br><br>
-                      <label style="font-size: 12px;" for="RoadCenterPitchNeg">Negative Pitch Angle (Down): </label>
-                      <select style="background-color: rgb(232 216 244);" name="RoadCenterPitchNeg" id="RoadCenterPitchNeg"
-                        onchange="updateDMSImage()">
-                      </select>
-                      <br><br>
-                      <label style="font-size: 12px;" for="RoadCenterYawPos">Positive Yaw Angle (Right): </label>
-                      <select style="background-color: rgb(232 216 244);" name="RoadCenterYawPos" id="RoadCenterYawPos"
-                        onchange="updateDMSImage()">
-                      </select>
-                      <br><br>
-                      <label style="font-size: 12px;" for="RoadCenterYawNeg">Negative Yaw Angle (Left): </label>
-                      <select style="background-color: rgb(232 216 244);" name="RoadCenterYawNeg" id="RoadCenterYawNeg"
-                        onchange="updateDMSImage()">
-                      </select>
-                      <br><br>
-                      <label style="font-size: 12px;">Max Heading Angle for Events: </label>
-                      <select name="MaxHeadingAngleForEvents" id="MaxHeadingAngleForEvents"
-                        style="background-color: rgb(232 216 244);">
-                      </select>
-                      <br><br><br>
-                      <label style="font-size: 14px; font-weight: bold; ">Additional Driver Options</label>
-                      <label style="font-size: 2px;">&nbsp;</label>
-                      <span class="coment" title="Position of the Driver&#10;inside the vehicle"
-                        style="font-size: 13px;font-weight: normal;">Driving Position:</span>
-                      <select name="LeftHandDrive" id="LeftHandDrive" onchange="updateLogicalColor(this, id)">
-                        <option value="true" style="background-color: #C6EFCE; color: #006100">Left</option>
-                        <option value="false" style="background-color: #FFC7CE; color: #9C0000">Right</option>
-                      </select>
-                    </td>
-                    <td style="background-color: #ffffff;">
-                      <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
-                        <tr>
-                          <td
-                            style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
-                            <img id="DMS_side_A" style="display: block; margin: 0 auto; padding: 0; border: none;">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td
-                            style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
-                            <img id="DMS_side_B" style="display: block; margin: 0 auto; padding: 0; border: none;">
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff;">
+                    <table class="table-internal">
+                      <tr style="text-align: center;">
+                        <td style="text-align: center; background-color: #ffffff;">
+                          <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
+                            <tr>
+                              <td
+                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
+                                <img id="DMS_up_A" style="display: block; margin: 0 auto; padding: 0; border: none;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td
+                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
+                                <img id="DMS_up_B" style="display: block; margin: 0 auto; padding: 0; border: none;">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="vertical-align: top;">
+                          <label style="font-size: 14px; font-weight: bold; ">Road Centering Options</label>
+                          <label style="font-size: 2px;">&nbsp;</label>
+                          <label style="font-size: 12px;" for="RoadCenterPitchPos">Positive Pitch Angle (Up): </label>
+                          <select style="background-color: rgb(232 216 244);" name="RoadCenterPitchPos" id="RoadCenterPitchPos"
+                            onchange="updateDMSImage()">
+                          </select>
+                          <br><br>
+                          <label style="font-size: 12px;" for="RoadCenterPitchNeg">Negative Pitch Angle (Down): </label>
+                          <select style="background-color: rgb(232 216 244);" name="RoadCenterPitchNeg" id="RoadCenterPitchNeg"
+                            onchange="updateDMSImage()">
+                          </select>
+                          <br><br>
+                          <label style="font-size: 12px;" for="RoadCenterYawPos">Positive Yaw Angle (Right): </label>
+                          <select style="background-color: rgb(232 216 244);" name="RoadCenterYawPos" id="RoadCenterYawPos"
+                            onchange="updateDMSImage()">
+                          </select>
+                          <br><br>
+                          <label style="font-size: 12px;" for="RoadCenterYawNeg">Negative Yaw Angle (Left): </label>
+                          <select style="background-color: rgb(232 216 244);" name="RoadCenterYawNeg" id="RoadCenterYawNeg"
+                            onchange="updateDMSImage()">
+                          </select>
+                          <br><br>
+                          <label style="font-size: 12px;">Max Heading Angle for Events: </label>
+                          <select name="MaxHeadingAngleForEvents" id="MaxHeadingAngleForEvents"
+                            style="background-color: rgb(232 216 244);">
+                          </select>
+                          <br><br><br>
+                          <label style="font-size: 14px; font-weight: bold; ">Additional Driver Options</label>
+                          <label style="font-size: 2px;">&nbsp;</label>
+                          <span class="coment" title="Position of the Driver&#10;inside the vehicle"
+                            style="font-size: 13px;font-weight: normal;">Driving Position:</span>
+                          <select name="LeftHandDrive" id="LeftHandDrive" onchange="updateLogicalColor(this, id)">
+                            <option value="true" style="background-color: #C6EFCE; color: #006100">Left</option>
+                            <option value="false" style="background-color: #FFC7CE; color: #9C0000">Right</option>
+                          </select>
+                        </td>
+                        <td style="background-color: #ffffff;">
+                          <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
+                            <tr>
+                              <td
+                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
+                                <img id="DMS_side_A" style="display: block; margin: 0 auto; padding: 0; border: none;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td
+                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
+                                <img id="DMS_side_B" style="display: block; margin: 0 auto; padding: 0; border: none;">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
               </table>
             </div>
           </div>
@@ -5321,7 +5327,7 @@
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
                   title="AlertMessage">
-                  Lane Departure (LDW)
+                  Lane Departure Warning (LDW)
                 </td>
                 <td id="ADAS_LDW_FeedbackVisualSummary" class="inactive-summary-cell">
                   <img id="ADAS_LDW_FeedbackVisualSummaryImg" src="source_img/Visual_OFF.png">
@@ -6015,7 +6021,7 @@
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
                   title="AlertMessage">
-                  Urban Forward Collision (UFCW)
+                  Urban Forward Collision Warning (UFCW)
                 </td>
                 <td id="ADAS_UFCW_FeedbackVisualSummary" class="inactive-summary-cell">
                   <img id="ADAS_UFCW_FeedbackVisualSummaryImg" src="source_img/Visual_OFF.png">
@@ -6362,7 +6368,7 @@
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
                   title="AlertMessage">
-                  Forward Collision (FCW)
+                  Forward Collision Warning (FCW)
                 </td>
                 <td id="ADAS_FCW_FeedbackVisualSummary" class="inactive-summary-cell">
                   <img id="ADAS_FCW_FeedbackVisualSummaryImg" src="source_img/Visual_OFF.png">
@@ -6709,7 +6715,7 @@
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
                   title="AlertMessage">
-                  Pedestrian Collision (PCW)
+                  Pedestrian Collision Warning (PCW)
                 </td>
                 <td id="ADAS_PCW_FeedbackVisualSummary" class="inactive-summary-cell">
                   <img id="ADAS_PCW_FeedbackVisualSummaryImg" src="source_img/Visual_OFF.png">
@@ -14847,29 +14853,30 @@
             </div>
             <h1></h1>
           </div>
-          <!---SI Cipia-FS10 Architecture - Header------>
-          <div class="header" , id="Cipia-FS10ArchitectureHeader">
+          
+          <!---SI Cipia-FS10 Architecture: Communications - Header------>
+          <div class="header" , id="Cipia-FS10ArchitectureCommunicationsHeader">
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
-                  <img src="source_img/Cipia-FS10_Architecture.png" class="icon">
+                  <img src="source_img/Cipia-FS10_Architecture_Communications.png" class="icon">
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
                   title="AlertMessage">
-                  Cipia-FS10 Architecture
+                  Cipia-FS10 Architecture: Communications
                 </td>
                 <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
                   title="More/less options">
                   <span class="toggle-button"
-                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureHeader')">
+                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureCommunicationsSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureCommunicationsHeader')">
                     <img src="source_img/more_options_icon.png" alt="More Options">
                   </span>
                 </td>
               </tr>
             </table>
           </div>
-          <!-- SI Cipia-FS10 Architecture - Subparams -->
-          <div id="SI_Cipia-FS10ArchitectureSubParamsId" class="sub-parameters">
+          <!-- SI Cipia-FS10 Architecture: Communications - Subparams -->
+          <div id="SI_Cipia-FS10ArchitectureCommunicationsSubParamsId" class="sub-parameters">
             <h1></h1>
             <div class="table-container">
               <table>
@@ -15192,7 +15199,7 @@
                                 <label for="SI_APN_SettingsTextId">APN:</label>
                               </td>
                               <td style="border: none;">
-                                <input type="text" id="SI_APN_SettingsTextId" placeholder="APN" style="width: 150px;">
+                                <input type="text" id="SI_APN_SettingsTextId" name="SI_APN_SettingsTextName" placeholder="APN" style="width: 150px;">
                               </td>
                             </tr>
                           </table>
@@ -15204,7 +15211,7 @@
                                 <label for="SI_APN_UserTextId">User:</label>
                               </td>
                               <td style="border: none;">
-                                <input type="text" id="SI_APN_UserTextId" placeholder="User" style="width: 150px;">
+                                <input type="text" id="SI_APN_UserTextId" name="SI_APN_UserTextName" placeholder="User" style="width: 150px;">
                               </td>
                             </tr>
                           </table>
@@ -15216,7 +15223,7 @@
                                 <label for="SI_APN_PasswordTextId">Password:</label>
                               </td>
                               <td style="border: none;">
-                                <input type="text" id="SI_APN_PasswordTextId" placeholder="Password" style="width: 150px;">
+                                <input type="text" id="SI_APN_PasswordTextId" name="SI_APN_PasswordTextName" placeholder="Password" style="width: 150px;">
                               </td>
                             </tr>
                           </table>
@@ -15285,1032 +15292,1361 @@
             </div>
             <h1></h1>
           </div>
-          <h1></h1>
-          
-          <br>
-          <!----------------------------->
-          <!-- Cipia-FS10 Architecture -->
-          <!----------------------------->
-          <table>
-            <tr>
-              <td style="text-align: center; font-weight: bold; font-size: 20px; color: black;" colspan="6">
-                Cipia-FS10 Architecture
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: center; font-weight: bold; font-size: 16px; color: black;" colspan="6">
-                General Purpose Input & Outputs
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: center; font-weight: normal; font-size: 14px; color: black;" colspan="2">
-                General Purpose Input/Output<br>(GPIO)
-              </td>
-              <td style="text-align: center; font-weight: normal; font-size: 14px; color: black;" colspan="2">
-                General Purpose Input<br>(GPI)
-              </td>
-              <td style="text-align: center; font-weight: normal; font-size: 14px; color: black;" colspan="2">
-                General Purpose Output<br>(GPO)
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                <label id="GPIO_field_1">GPIO_field_1</label>
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="Select_GPIO_1" id="Select_GPIO_1" style="width: 120px;">
-                </select>
-              </td>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                Active level:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="ActiveLevelGPI" id="ActiveLevelGPI" style="width: 120px;"
-                  onchange="updateLogicalColor(this, id)">
-                  <option value="true" style="background-color: #C6EFCE; color: #006100">High</option>
-                  <option value="false" style="background-color: #FFC7CE; color: #9C0000">Low</option>
-                </select>
-              </td>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                Duty Cycle:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="DutyCycleGPO" id="DutyCycleGPO" style="width: 120px;">
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                <label id="GPIO_field_2">GPIO_field_2</label>
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="Select_GPIO_2" style="width: 120px;" id="Select_GPIO_2">
-                </select>
-              </td>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                Special function:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="FunctionGPI" id="FunctionGPI" style="width: 120px;">
-                  <option value="Other">Other</option>
-                  <option value="Reverse">Reverse</option>
-                  <option value="Blinkers">Blinkers</option>
-                  <option value="Telematics">Telematics</option>
-                </select>
-              </td>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                Frequency:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="FrequencyGPO" id="FrequencyGPO" style="width: 120px;">
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                <label id="GPIO_field_3">GPIO_field_3</label>
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="Select_GPIO_3" id="Select_GPIO_3" style="width: 120px; background-color: #B9E6F0;">
-                </select>
-              </td>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                State duration:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="StateDurationGPI" id="StateDurationGPI" style="width: 120px; background-color: #B9E6F0;">
-                </select>
-              </td>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                Length:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="LengthGPO" id="LengthGPO" style="width: 120px; background-color: #B9E6F0;">
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                <label id="GPIO_field_4">GPIO_field_4</label>
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="Select_GPIO_4" style="width: 120px;" id="Select_GPIO_4">
-                </select>
-              </td>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                Voltage Threshold:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="VoltageThresholdGPI" id="VoltageThresholdGPI" style="width: 120px;">
-                </select>
-              </td>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                Source:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="SourceGPO" id="SourceGPO" style="width: 120px;">
-                  <option value="Waveform">Waveform</option>
-                  <option value="LED">Based on LED</option>
-                  <option value="Server">From Server</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
-                State:
-              </td>
-              <td style="vertical-align: center; text-align: left;">
-                <select name="StateGPIO" style="width: 120px;" id="StateGPIO" onchange="updateGPIOparameters(this)">
-                  <option value="In" style="background-color: rgb(153,217,234);">In</option>
-                  <option value="Out" style="background-color: rgb(165,255,5);">Out</option>
-                  <option value="AnalogIn" style="background-color: rgb(255,216,6);">Analog in</option>
-                </select>
-              </td>
-              <td colspan="4"
-                style="text-align: left; vertical-align: center; font-size: 10px; color: rgb(65, 65, 65);">
-                <strong>***For GPO: </strong> Source <strong>LED</strong>, means that output signal will be enabled
-                according to the frontal LED (Driver's Feedback). For <strong>Waveform</strong>, output signal will be
-                enabled according to the PWM parameters during the time specified in lenght.
-              </td>
-            </tr>
-            <tr>
-              <td colspan="6" style="text-align: center;">
-                <div style="width: 600px; margin: 0 auto; text-align: center;">
-                  <canvas id="GPO_PWM" style="width: 100%; text-align: center;"></canvas>
-                </div>
-                <script>
-                  var ctx = document.getElementById("GPO_PWM").getContext("2d");
-                  var myChart = new Chart(ctx, {
-                    type: "line",
-                    data: {
-                      labels: time_GPO,
-                      datasets: [
-                        {
-                          label: "GPO Signal",
-                          data: data_GPO,
-                          borderColor: "rgba(255, 99, 132, 1)",
-                          borderWidth: 1,
+          <!-- SI Cipia-FS10 Architecture: General Purpose Inputs & Outputs - Header -->
+          <div class="header" , id="Cipia-FS10ArchitectureGPIO_Header">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
+                  <img src="source_img/Cipia-FS10_Architecture_GPIO.png" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
+                  title="AlertMessage">
+                  Cipia-FS10 Architecture: General Purpose Inputs & Outputs
+                </td>
+                <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureGPIO_SubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureGPIO_Header')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- SI Cipia-FS10 Architecture: General Purpose Inputs & Outputs - Subparams -->
+          <div id="SI_Cipia-FS10ArchitectureGPIO_SubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table class="table-internal">
+                <tr>
+                  <td style="text-align: center; font-weight: normal; font-size: 14px; color: black;" colspan="2">
+                    General Purpose Input/Output<br>(GPIO)
+                  </td>
+                  <td style="text-align: center; font-weight: normal; font-size: 14px; color: black;" colspan="2">
+                    General Purpose Input<br>(GPI)
+                  </td>
+                  <td style="text-align: center; font-weight: normal; font-size: 14px; color: black;" colspan="2">
+                    General Purpose Output<br>(GPO)
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    <label id="GPIO_field_1">GPIO_field_1</label>
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="Select_GPIO_1" id="Select_GPIO_1" style="width: 120px;">
+                    </select>
+                  </td>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    Active level:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="ActiveLevelGPI" id="ActiveLevelGPI" style="width: 120px;"
+                      onchange="updateLogicalColor(this, id)">
+                      <option value="true" style="background-color: #C6EFCE; color: #006100">High</option>
+                      <option value="false" style="background-color: #FFC7CE; color: #9C0000">Low</option>
+                    </select>
+                  </td>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    Duty Cycle:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="DutyCycleGPO" id="DutyCycleGPO" style="width: 120px;">
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    <label id="GPIO_field_2">GPIO_field_2</label>
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="Select_GPIO_2" style="width: 120px;" id="Select_GPIO_2">
+                    </select>
+                  </td>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    Special function:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="FunctionGPI" id="FunctionGPI" style="width: 120px;">
+                      <option value="Other">Other</option>
+                      <option value="Reverse">Reverse</option>
+                      <option value="Blinkers">Blinkers</option>
+                      <option value="Telematics">Telematics</option>
+                    </select>
+                  </td>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    Frequency:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="FrequencyGPO" id="FrequencyGPO" style="width: 120px;">
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    <label id="GPIO_field_3">GPIO_field_3</label>
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="Select_GPIO_3" id="Select_GPIO_3" style="width: 120px; background-color: #B9E6F0;">
+                    </select>
+                  </td>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    State duration:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="StateDurationGPI" id="StateDurationGPI" style="width: 120px; background-color: #B9E6F0;">
+                    </select>
+                  </td>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    Length:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="LengthGPO" id="LengthGPO" style="width: 120px; background-color: #B9E6F0;">
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    <label id="GPIO_field_4">GPIO_field_4</label>
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="Select_GPIO_4" style="width: 120px;" id="Select_GPIO_4">
+                    </select>
+                  </td>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    Voltage Threshold:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="VoltageThresholdGPI" id="VoltageThresholdGPI" style="width: 120px;">
+                    </select>
+                  </td>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    Source:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="SourceGPO" id="SourceGPO" style="width: 120px;">
+                      <option value="Waveform">Waveform</option>
+                      <option value="LED">Based on LED</option>
+                      <option value="Server">From Server</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="font-size: 13px; color: rgb(65, 65, 65); vertical-align: center; text-align: right; font-weight: normal;">
+                    State:
+                  </td>
+                  <td style="vertical-align: center; text-align: left;">
+                    <select name="StateGPIO" style="width: 120px;" id="StateGPIO" onchange="updateGPIOparameters(this)">
+                      <option value="In" style="background-color: rgb(153,217,234);">In</option>
+                      <option value="Out" style="background-color: rgb(165,255,5);">Out</option>
+                      <option value="AnalogIn" style="background-color: rgb(255,216,6);">Analog in</option>
+                    </select>
+                  </td>
+                  <td colspan="4"
+                    style="text-align: left; vertical-align: center; font-size: 10px; color: rgb(65, 65, 65);">
+                    <strong>***For GPO: </strong> Source <strong>LED</strong>, means that output signal will be enabled
+                    according to the frontal LED (Driver's Feedback). For <strong>Waveform</strong>, output signal will be
+                    enabled according to the PWM parameters during the time specified in lenght.
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="6" style="text-align: center;">
+                    <div style="width: 600px; margin: 0 auto; text-align: center;">
+                      <canvas id="GPO_PWM" style="width: 100%; text-align: center;"></canvas>
+                    </div>
+                    <script>
+                      var ctx = document.getElementById("GPO_PWM").getContext("2d");
+                      var myChart = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                          labels: time_GPO,
+                          datasets: [
+                            {
+                              label: "GPO Signal",
+                              data: data_GPO,
+                              borderColor: "rgba(255, 99, 132, 1)",
+                              borderWidth: 1,
+                            },
+                            {
+                              label: "GPIO Signal",
+                              data: data_GPIO,
+                              borderColor: "rgba(10, 99, 255, 1)",
+                              borderWidth: 1,
+                            },
+                          ],
                         },
-                        {
-                          label: "GPIO Signal",
-                          data: data_GPIO,
-                          borderColor: "rgba(10, 99, 255, 1)",
-                          borderWidth: 1,
+                        options: {
+                          scales: {
+                            y: {
+                              min: 0,
+                              max: 1.1,
+                              ticks: {
+                                color: 'black'
+                              }
+                            },
+                            x: {
+                              min: 0,
+                              max: parseInt(document.getElementById(LengthGPO)),
+                              ticks: {
+                                color: 'black'
+                              }
+                            }
+                          },
+                          plugins: {
+                            legend: {
+                              labels: {
+                                color: 'black'
+                              }
+                            }
+                          },
                         },
-                      ],
-                    },
-                    options: {
-                      scales: {
-                        y: {
-                          min: 0,
-                          max: 1.1,
-                          ticks: {
-                            color: 'white'
-                          }
-                        },
-                        x: {
-                          min: 0,
-                          max: parseInt(document.getElementById(LengthGPO)),
-                          ticks: {
-                            color: 'white'
-                          }
+                      });
+                      var N = 101;
+                      var samples = 20;
+                      var data_GPO = new Array(N);
+                      var time_GPO = new Array(N);
+                      var data_GPIO = new Array(N);
+                      var time_GPIO = new Array(N);
+                      var LED_GPO = [0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                      var timeLED_GPO = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15, 3.2, 3.25, 3.3, 3.35, 3.4, 3.45, 3.5, 3.55, 3.6, 3.65, 3.7, 3.75, 3.8, 3.85, 3.9, 3.95, 4, 4.05, 4.1, 4.15, 4.2, 4.25, 4.3, 4.35, 4.4, 4.45, 4.5, 4.55, 4.6, 4.65, 4.7, 4.75, 4.8, 4.85, 4.9, 4.95, 5];
+    
+                      function generateSignal() {
+                        var dutyCycle = parseInt(document.getElementById("DutyCycleGPO").value);
+                        var frequency = parseInt(document.getElementById("FrequencyGPO").value);
+                        var length = parseInt(document.getElementById("LengthGPO").value);
+                        var source = document.getElementById("SourceGPO").value;
+    
+                        var period = 1 / frequency;
+                        var dutyTime = dutyCycle * period / N;
+    
+                        for (let i = 0; i < N; i++) {
+                          time_GPO[i] = i * (period / samples);
+                          time_GPO[i] = time_GPO[i].toFixed(2);
                         }
-                      },
-                      plugins: {
-                        legend: {
-                          labels: {
-                            color: 'white'
+                        if (source === 'Waveform') {
+                          for (let i = 0; i < samples; i++) {
+                            if (time_GPO[i] <= dutyTime) {
+                              data_GPO[i] = 1;
+                              data_GPO[i + samples] = 1;
+                              data_GPO[i + 2 * samples] = 1;
+                              data_GPO[i + 3 * samples] = 1;
+                              data_GPO[i + 4 * samples] = 1;
+                            }
+                            else {
+                              data_GPO[i] = 0;
+                              data_GPO[i + samples] = 0;
+                              data_GPO[i + 2 * samples] = 0;
+                              data_GPO[i + 3 * samples] = 0;
+                              data_GPO[i + 4 * samples] = 0;
+                            }
                           }
-                        }
-                      },
-                    },
-                  });
-                  var N = 101;
-                  var samples = 20;
-                  var data_GPO = new Array(N);
-                  var time_GPO = new Array(N);
-                  var data_GPIO = new Array(N);
-                  var time_GPIO = new Array(N);
-                  var LED_GPO = [0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                  var timeLED_GPO = [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15, 3.2, 3.25, 3.3, 3.35, 3.4, 3.45, 3.5, 3.55, 3.6, 3.65, 3.7, 3.75, 3.8, 3.85, 3.9, 3.95, 4, 4.05, 4.1, 4.15, 4.2, 4.25, 4.3, 4.35, 4.4, 4.45, 4.5, 4.55, 4.6, 4.65, 4.7, 4.75, 4.8, 4.85, 4.9, 4.95, 5];
-
-                  function generateSignal() {
-                    var dutyCycle = parseInt(document.getElementById("DutyCycleGPO").value);
-                    var frequency = parseInt(document.getElementById("FrequencyGPO").value);
-                    var length = parseInt(document.getElementById("LengthGPO").value);
-                    var source = document.getElementById("SourceGPO").value;
-
-                    var period = 1 / frequency;
-                    var dutyTime = dutyCycle * period / N;
-
-                    for (let i = 0; i < N; i++) {
-                      time_GPO[i] = i * (period / samples);
-                      time_GPO[i] = time_GPO[i].toFixed(2);
-                    }
-                    if (source === 'Waveform') {
-                      for (let i = 0; i < samples; i++) {
-                        if (time_GPO[i] <= dutyTime) {
-                          data_GPO[i] = 1;
-                          data_GPO[i + samples] = 1;
-                          data_GPO[i + 2 * samples] = 1;
-                          data_GPO[i + 3 * samples] = 1;
-                          data_GPO[i + 4 * samples] = 1;
                         }
                         else {
-                          data_GPO[i] = 0;
-                          data_GPO[i + samples] = 0;
-                          data_GPO[i + 2 * samples] = 0;
-                          data_GPO[i + 3 * samples] = 0;
-                          data_GPO[i + 4 * samples] = 0;
+                          for (let i = 0; i < N; i++) {
+                            time_GPO[i] = timeLED_GPO[i];
+                            data_GPO[i] = LED_GPO[i];
+                          }
                         }
-                      }
-                    }
-                    else {
-                      for (let i = 0; i < N; i++) {
-                        time_GPO[i] = timeLED_GPO[i];
-                        data_GPO[i] = LED_GPO[i];
-                      }
-                    }
-                    for (let i = 0; i < N; i++) {
-                      if (source === 'Waveform') {
-                        if (time_GPO[i] >= length) {
-                          data_GPO[i] = 0;
+                        for (let i = 0; i < N; i++) {
+                          if (source === 'Waveform') {
+                            if (time_GPO[i] >= length) {
+                              data_GPO[i] = 0;
+                            }
+                          }
                         }
+                        myChart.data.labels = time_GPO;
+                        myChart.data.datasets[0].data = data_GPO;
+                        myChart.update();
                       }
-                    }
-                    myChart.data.labels = time_GPO;
-                    myChart.data.datasets[0].data = data_GPO;
-                    myChart.update();
-                  }
-                  function generateSignal_GPIO() {
-                    var State_GPIO = document.getElementById("StateGPIO").value;
-                    if (State_GPIO === "Out") {
-                      var dutyCycle_GPIO = parseInt(document.getElementById("Select_GPIO_1").value);
-                      var frequency_GPIO = parseInt(document.getElementById("Select_GPIO_2").value);
-                      var length_GPIO = parseInt(document.getElementById("Select_GPIO_3").value);
-                      var source_GPIO = document.getElementById("Select_GPIO_4").value;
-
-                      var period_GPIO = 1 / frequency_GPIO;
-                      var dutyTime_GPIO = dutyCycle_GPIO * period_GPIO / N;
-
-                      for (let i = 0; i < N; i++) {
-                        time_GPIO[i] = i * (period_GPIO / samples);
-                        time_GPIO[i] = time_GPIO[i].toFixed(2);
-                      }
-                      if (source_GPIO === 'Waveform') {
-                        for (let i = 0; i < samples; i++) {
-                          if (time_GPIO[i] <= dutyTime_GPIO) {
-                            data_GPIO[i] = 0.9;
-                            data_GPIO[i + samples] = 0.9;
-                            data_GPIO[i + 2 * samples] = 0.9;
-                            data_GPIO[i + 3 * samples] = 0.9;
-                            data_GPIO[i + 4 * samples] = 0.9;
+                      function generateSignal_GPIO() {
+                        var State_GPIO = document.getElementById("StateGPIO").value;
+                        if (State_GPIO === "Out") {
+                          var dutyCycle_GPIO = parseInt(document.getElementById("Select_GPIO_1").value);
+                          var frequency_GPIO = parseInt(document.getElementById("Select_GPIO_2").value);
+                          var length_GPIO = parseInt(document.getElementById("Select_GPIO_3").value);
+                          var source_GPIO = document.getElementById("Select_GPIO_4").value;
+    
+                          var period_GPIO = 1 / frequency_GPIO;
+                          var dutyTime_GPIO = dutyCycle_GPIO * period_GPIO / N;
+    
+                          for (let i = 0; i < N; i++) {
+                            time_GPIO[i] = i * (period_GPIO / samples);
+                            time_GPIO[i] = time_GPIO[i].toFixed(2);
+                          }
+                          if (source_GPIO === 'Waveform') {
+                            for (let i = 0; i < samples; i++) {
+                              if (time_GPIO[i] <= dutyTime_GPIO) {
+                                data_GPIO[i] = 0.9;
+                                data_GPIO[i + samples] = 0.9;
+                                data_GPIO[i + 2 * samples] = 0.9;
+                                data_GPIO[i + 3 * samples] = 0.9;
+                                data_GPIO[i + 4 * samples] = 0.9;
+                              }
+                              else {
+                                data_GPIO[i] = 0;
+                                data_GPIO[i + samples] = 0;
+                                data_GPIO[i + 2 * samples] = 0;
+                                data_GPIO[i + 3 * samples] = 0;
+                                data_GPIO[i + 4 * samples] = 0;
+                              }
+                            }
                           }
                           else {
-                            data_GPIO[i] = 0;
-                            data_GPIO[i + samples] = 0;
-                            data_GPIO[i + 2 * samples] = 0;
-                            data_GPIO[i + 3 * samples] = 0;
-                            data_GPIO[i + 4 * samples] = 0;
+                            for (let i = 0; i < N; i++) {
+                              time_GPIO[i] = timeLED_GPO[i];
+                              data_GPIO[i] = 0.9 * LED_GPO[i];
+                            }
                           }
+                          for (let i = 0; i < N; i++) {
+                            if (source_GPIO === 'Waveform') {
+                              if (time_GPIO[i] >= length_GPIO) {
+                                data_GPIO[i] = 0;
+                              }
+                            }
+                          }
+                          myChart.data.labels = time_GPIO;
+                          myChart.data.datasets[1].data = data_GPIO;
+                          myChart.update();
                         }
-                      }
-                      else {
-                        for (let i = 0; i < N; i++) {
-                          time_GPIO[i] = timeLED_GPO[i];
-                          data_GPIO[i] = 0.9 * LED_GPO[i];
-                        }
-                      }
-                      for (let i = 0; i < N; i++) {
-                        if (source_GPIO === 'Waveform') {
-                          if (time_GPIO[i] >= length_GPIO) {
+                        else {
+                          for (let i = 0; i < N; i++) {
+                            time_GPIO[i] = i * (period_GPIO / samples);
+                            time_GPIO[i] = time_GPIO[i].toFixed(2);
                             data_GPIO[i] = 0;
                           }
+                          myChart.data.labels = time_GPO;
+                          myChart.data.datasets[1].data = data_GPIO;
+                          myChart.update();
                         }
                       }
-                      myChart.data.labels = time_GPIO;
-                      myChart.data.datasets[1].data = data_GPIO;
-                      myChart.update();
-                    }
-                    else {
-                      for (let i = 0; i < N; i++) {
-                        time_GPIO[i] = i * (period_GPIO / samples);
-                        time_GPIO[i] = time_GPIO[i].toFixed(2);
-                        data_GPIO[i] = 0;
-                      }
-                      myChart.data.labels = time_GPO;
-                      myChart.data.datasets[1].data = data_GPIO;
-                      myChart.update();
-                    }
-                  }
-                  // Listeners for GPO
-                  document.getElementById("DutyCycleGPO").addEventListener("change", generateSignal);
-                  document.getElementById("FrequencyGPO").addEventListener("change", generateSignal);
-                  document.getElementById("LengthGPO").addEventListener("change", generateSignal);
-                  document.getElementById("SourceGPO").addEventListener("change", generateSignal);
-                  // Listeners for GPIO
-                  document.getElementById("StateGPIO").addEventListener("change", generateSignal_GPIO);
-                  document.getElementById("Select_GPIO_1").addEventListener("change", generateSignal_GPIO);
-                  document.getElementById("Select_GPIO_2").addEventListener("change", generateSignal_GPIO);
-                  document.getElementById("Select_GPIO_3").addEventListener("change", generateSignal_GPIO);
-                  document.getElementById("Select_GPIO_4").addEventListener("change", generateSignal_GPIO);
-                </script>
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: center; font-weight: bold; font-size: 16px; color: black;" colspan="6">
-                Photos and Videos
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Video Overlay:
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="videoOverlay" id="videoOverlay" style="width: 120px;"
-                  onchange="updateLogicalColor(this, id)">
-                  <option value="true" style="background-color: #C6EFCE; color: #006100">Enabled</option>
-                  <option value="false" style="background-color: #FFC7CE; color: #9C0000">Disabled</option>
-                </select>
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Time Source:
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="timeSource" id="timeSource" style="width: 120px;">
-                  <option value="UTC">UTC</option>
-                  <option value="Fix">User defined</option>
-                  <option value="Cell">Network Operator</option>
-                </select>
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                SD-card Encryption:
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="SDcardEncryption" id="SDcardEncryption" style="width: 120px;"
-                  onchange="updateLogicalColor(this, id)">
-                  <option value="true" style="background-color: #C6EFCE; color: #006100">Yes</option>
-                  <option value="false" style="background-color: #FFC7CE; color: #9C0000">No</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                String for video:
-              </td>
-              <td colspan="3">
-                <div class="input-field"><input type="text" id="String_Overlay" name="String_Overlay"
-                    placeholder="String Overlay"
-                    style="vertical-align: center; text-align: left; background-color: lightgray; font-size: 13px; font-style: italic;"
-                    onchange="changeAPNFormat('String_Overlay', 'String Overlay')"></div>
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Unit ID
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="Unit_ID_Overlay" id="Unit_ID_Overlay" style="width: 120px;"
-                  onchange="updateLogicalColor(this, id)">
-                  <option value="true" style="background-color: #C6EFCE; color: #006100">On-screen</option>
-                  <option value="false" style="background-color: #FFC7CE; color: #9C0000">No</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Time Offset:
-              </td>
-              <td style="text-align: left; vertical-align: center;" colspan="3">
-                <select name="timeOffset" id="timeOffset" style="width: 400px; font-size: 85%;">
-                  <option value="-11">(UTC -11:00) Coordinated Universal Time-11</option>
-                  <option value="-10">(UTC -10:00) Aleutian Islands, Hawaii</option>
-                  <option value="-9">(UTC -09:00) Alaska</option>
-                  <option value="-8">(UTC -08:00) Baja California, Pacific Time (US & Canada)</option>
-                  <option value="-7">(UTC -07:00) Arizona</option>
-                  <option value="-7">(UTC -07:00) Chihuahua, La Paz, Mazatlan</option>
-                  <option value="-7">(UTC -07:00) Mountain Time (US & Canada)</option>
-                  <option value="-6">(UTC -06:00) Central America</option>
-                  <option value="-6">(UTC -06:00) Central Time (US & Canada)</option>
-                  <option value="-6">(UTC -06:00) Easter Island</option>
-                  <option value="-6">(UTC -06:00) Guadalajara, Mexico City, Monterrey</option>
-                  <option value="-6">(UTC -06:00) Saskatchewan</option>
-                  <option value="-5">(UTC -05:00) Bogota, Lima, Quito, Rio Branco</option>
-                  <option value="-5">(UTC -05:00) Chetumal</option>
-                  <option value="-5">(UTC -05:00) Eastern Time (US & Canada)</option>
-                  <option value="-5">(UTC -05:00) Haiti</option>
-                  <option value="-5">(UTC -05:00) Havana</option>
-                  <option value="-5">(UTC -05:00) Indiana (East)</option>
-                  <option value="-5">(UTC -05:00) Turks and Caicos</option>
-                  <option value="-4">(UTC -04:00) Asuncion</option>
-                  <option value="-4">(UTC -04:00) Atlantic Time (Canada)</option>
-                  <option value="-4">(UTC -04:00) Caracas</option>
-                  <option value="-4">(UTC -04:00) Cuiaba</option>
-                  <option value="-4">(UTC -04:00) Georgetown, La Paz, Manaus, San Juan</option>
-                  <option value="-4">(UTC -04:00) Santiago</option>
-                  <option value="-3">(UTC -03:00) Newfoundland</option>
-                  <option value="-3">(UTC -03:00) Araguaina</option>
-                  <option value="-3">(UTC -03:00) Brasilia</option>
-                  <option value="-3">(UTC -03:00) Cayenne, Fortaleza</option>
-                  <option value="-3">(UTC -03:00) City of Buenos Aires</option>
-                  <option value="-3">(UTC -03:00) Greenland</option>
-                  <option value="-3">(UTC -03:00) Montevideo</option>
-                  <option value="-3">(UTC -03:00) Punta Arenas</option>
-                  <option value="-3">(UTC -03:00) Saint Pierre and Miquelon</option>
-                  <option value="-3">(UTC -03:00) Salvador</option>
-                  <option value="-2">(UTC -02:00) Coordinated Universal Time-02</option>
-                  <option value="-1">(UTC -01:00) Azores</option>
-                  <option value="-1">(UTC -01:00) Cabo Verde Is.</option>
-                  <option value="0">(UTC 00:00) Coordinated Universal Time</option>
-                  <option value="0">(UTC 00:00) Dublin, Edinburgh, Lisbon, London</option>
-                  <option value="0">(UTC 00:00) Monrovia, Reykjavik</option>
-                  <option value="0">(UTC 00:00) Sao Tome</option>
-                  <option value="1">(UTC 01:00) Casablanca</option>
-                  <option value="1">(UTC 01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
-                  <option value="1">(UTC 01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
-                  <option value="1">(UTC 01:00) Brussels, Copenhagen, Madrid, Paris</option>
-                  <option value="1">(UTC 01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
-                  <option value="1">(UTC 01:00) West Central Africa</option>
-                  <option value="2">(UTC 02:00) Amman</option>
-                  <option value="2">(UTC 02:00) Athens, Bucharest</option>
-                  <option value="2">(UTC 02:00) Beirut</option>
-                  <option value="2">(UTC 02:00) Cairo</option>
-                  <option value="2">(UTC 02:00) Chisinau</option>
-                  <option value="2">(UTC 02:00) Damascus</option>
-                  <option value="2">(UTC 02:00) Herzeliya</option>
-                  <option value="2">(UTC 02:00) Harare, Pretoria</option>
-                  <option value="2">(UTC 02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
-                  <option value="2">(UTC 02:00) Jerusalem</option>
-                  <option value="2">(UTC 02:00) Kaliningrad</option>
-                  <option value="2">(UTC 02:00) Khartoum</option>
-                  <option value="2">(UTC 02:00) Tripoli</option>
-                  <option value="2">(UTC 02:00) Windhoek</option>
-                  <option value="3">(UTC 03:00) Istanbul</option>
-                  <option value="3">(UTC 03:00) Kuwait, Riyadh</option>
-                  <option value="3">(UTC 03:00) Minsk</option>
-                  <option value="3">(UTC 03:00) Moscow, St. Petersburg</option>
-                  <option value="3">(UTC 03:00) Nairobi</option>
-                  <option value="3">(UTC 03:00) Tehran</option>
-                  <option value="4">(UTC 04:00) Abu Dhabi, Muscat</option>
-                  <option value="4">(UTC 04:00) Astrakhan, Ulyanovsk</option>
-                  <option value="4">(UTC 04:00) Baku</option>
-                  <option value="4">(UTC 04:00) Izhevsk, Samara</option>
-                  <option value="4">(UTC 04:00) Port Louis</option>
-                  <option value="4">(UTC 04:00) Saratov</option>
-                  <option value="4">(UTC 04:00) Tbilisi</option>
-                  <option value="4">(UTC 04:00) Volgograd</option>
-                  <option value="4">(UTC 04:00) Yerevan</option>
-                  <option value="4">(UTC 04:00) Kabul</option>
-                  <option value="5">(UTC 05:00) Ashgabat, Tashkent</option>
-                  <option value="5">(UTC 05:00) Ekaterinburg</option>
-                  <option value="5">(UTC 05:00) Islamabad, Karachi</option>
-                  <option value="5">(UTC 05:00) Qyzylorda</option>
-                  <option value="5">(UTC 05:00) Chennai, Kolkata, Mumbai, New Delhi</option>
-                  <option value="5">(UTC 05:00) Sri Jayawardenepura</option>
-                  <option value="5">(UTC 05:00) Kathmandu</option>
-                  <option value="6">(UTC 06:00) Astana</option>
-                  <option value="6">(UTC 06:00) Dhaka</option>
-                  <option value="6">(UTC 06:00) Omsk</option>
-                  <option value="6">(UTC 06:00) Yangon (Rangoon)</option>
-                  <option value="7">(UTC 07:00) Bangkok, Hanoi, Jakarta</option>
-                  <option value="7">(UTC 07:00) Barnaul, Gorno-Altaysk</option>
-                  <option value="7">(UTC 07:00) Hovd</option>
-                  <option value="7">(UTC 07:00) Krasnoyarsk</option>
-                  <option value="7">(UTC 07:00) Novosibirsk</option>
-                  <option value="7">(UTC 07:00) Tomsk</option>
-                  <option value="8">(UTC 08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
-                  <option value="8">(UTC 08:00) Irkutsk</option>
-                  <option value="8">(UTC 08:00) Kuala Lumpur, Singapore</option>
-                  <option value="8">(UTC 08:00) Perth</option>
-                  <option value="8">(UTC 08:00) Taipei</option>
-                  <option value="8">(UTC 08:00) Ulaanbaatar</option>
-                  <option value="8">(UTC 08:00) Eucla</option>
-                  <option value="9">(UTC 09:00) Chita</option>
-                  <option value="9">(UTC 09:00) Osaka, Sapporo, Tokyo</option>
-                  <option value="9">(UTC 09:00) Pyongyang</option>
-                  <option value="9">(UTC 09:00) Seoul</option>
-                  <option value="9">(UTC 09:00) Yakutsk</option>
-                  <option value="9">(UTC 09:00) Adelaide</option>
-                  <option value="9">(UTC 09:00) Darwin</option>
-                  <option value="10">(UTC 10:00) Brisbane</option>
-                  <option value="10">(UTC 10:00) Canberra, Melbourne, Sydney</option>
-                  <option value="10">(UTC 10:00) Guam, Port Moresby</option>
-                  <option value="10">(UTC 10:00) Hobart</option>
-                  <option value="10">(UTC 10:00) Vladivostok</option>
-                  <option value="10">(UTC 10:00) Lord Howe Island</option>
-                  <option value="11">(UTC 11:00) Bougainville Island</option>
-                  <option value="11">(UTC 11:00) Chokurdakh</option>
-                  <option value="11">(UTC 11:00) Magadan</option>
-                  <option value="11">(UTC 11:00) Norfolk Island</option>
-                  <option value="11">(UTC 11:00) Sakhalin</option>
-                  <option value="11">(UTC 11:00) Solomon Is., New Caledonia</option>
-                  <option value="12">(UTC 12:00) Anadyr, Petropavlovsk-Kamchatsky</option>
-                  <option value="12">(UTC 12:00) Auckland, Wellington</option>
-                  <option value="12">(UTC 12:00) Coordinated Universal Time+12</option>
-                  <option value="12">(UTC 12:00) Fiji</option>
-                  <option value="12">(UTC 12:00) Chatham Islands</option>
-                </select>
-              </td>
-              <td style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;"
-                rowspan="2">
-                SD card space for cyclic recording:
-              </td>
-              <td style="text-align: left; vertical-align: center;" rowspan="2">
-                <select name="ContRecording" id="ContRecording" style="width: 120px;">
-                  <option value="0">Disabled</option>
-                  <option value="8">8 GB</option>
-                  <option value="16">16 GB</option>
-                  <option value="32">32 GB</option>
-                  <option value="64">64 GB</option>
-                  <option value="128">128 GB</option>
-                  <option value="256">256 GB</option>
-                  <option value="512">512 GB</option>
-                  <option value="1024">1 TB</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Events to Storage:
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="EventstoStorage" id="EventstoStorage" style="width: 120px;">
-                </select>
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Videos to Storage:
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="VideostoStorage" id="VideostoStorage" style="width: 120px;">
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Photo Resolution:
-              </td>
-              <td style="text-align: left; vertical-align: center;" colspan="2">
-                <select name="photoResolution" id="photoResolution" style="width: 225px;">
-                  <option value="1">Cabin:1280x960 - Road:1920x1280</option>
-                  <option value="2">Cabin:640x480 - Road:960x640</option>
-                  <option value="4">Cabin:320x240 - Road:480x320</option>
-                </select>
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Video Resolution:
-              </td>
-              <td style="text-align: left; vertical-align: center;" colspan="2">
-                <select name="videoResolution" id="videoResolution" style="width: 225px;">
-                  <option value="1">Cabin:1280x960 - Road:1920x1280</option>
-                  <option value="2">Cabin:640x480 - Road:960x640</option>
-                  <option value="4">Cabin:320x240 - Road:480x320</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td style="height: 22.2px; width: 33%; text-align: center; vertical-align: center;" colspan="2">
-                <img src="img/001.png" width="50%">
-              </td>
-              <td style="height: 22.2px; width: 33%; text-align: center; vertical-align: center;" colspan="2">
-                <img src="img/002.png" width="50%">
-              </td>
-              <td style="height: 22.2px; width: 33%; text-align: center; vertical-align: center;" colspan="2">
-                <img src="img/003.png" width="50%">
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Record before event:
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="timeBeforeEvent" id="timeBeforeEvent" style="width: 120px; background-color: #B9E6F0;">
-                </select>
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Event:
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select style="width: 120px" name="micStatus" id="micStatus">
-                  <option value="true">REC w/ audio</option>
-                  <option value="false">REC w/o audio</option>
-                </select>
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Record after event:
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="timeAfterEvent" id="timeAfterEvent" style="width: 120px; background-color: #B9E6F0;">
-                </select>
-              </td>
-            </tr>
-          </table>
-          <table>
-            <tr>
-              <td style="text-align: center; font-weight: bold; font-size: 16px; color: black;" colspan="5">
-                Additional Settings
-              </td>
-            </tr>
-            <tr>
-              <td
-                style="width:20%; text-align: right; vertical-align: center; font-weight: bold; font-size: 14px; color: black;">
-                Main button settings:
-              </td>
-              <td
-                style="width:20%; text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Device-Turn-On:
-              </td>
-              <td style="width:20%; text-align: left; vertical-align: center;">
-                <select name="DeviceTurnOnEnable" id="DeviceTurnOnEnable" style="width: 80px;"
-                  onchange="updateLogicalColor(this, id)">
-                  <option value="true" style="background-color: #C6EFCE; color: #006100">Enabled</option>
-                  <option value="false" style="background-color: #FFC7CE; color: #9C0000">Disabled</option>
-                </select>
-              </td>
-              <td
-                style="width:20%; text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Self Event Trigger:
-              </td>
-              <td style="width:20%; text-align: left; vertical-align: center;">
-                <select name="SelfEventTriggerEnable" id="SelfEventTriggerEnable" style="width: 80px;"
-                  onchange="updateLogicalColor(this, id)">
-                  <option value="true" style="background-color: #C6EFCE; color: #006100">Enabled</option>
-                  <option value="false" style="background-color: #FFC7CE; color: #9C0000">Disabled</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: right; vertical-align: center; font-weight: bold; font-size: 14px; color: black;">
-                Accelerometer:
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Drive Time Filter
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="Acc3DDriveTimeFilter" id="Acc3DDriveTimeFilter"
-                  style="width: 120px; background-color: #B9E6F0;">
-                </select>
-              </td>
-              <td
-                style="text-align: right; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Stop Time Filter
-              </td>
-              <td style="text-align: left; vertical-align: center;">
-                <select name="Acc3DStopTimeFilter" id="Acc3DStopTimeFilter"
-                  style="width: 120px;  background-color: #B9E6F0;">
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: right; vertical-align: center; font-weight: bold; font-size: 14px; color: black;"
-                rowspan="2">
-                Volume:
-              </td>
-              <td
-                style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Volume for Asleep
-              </td>
-              <td
-                style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Volume for Other Alerts
-              </td>
-              <td
-                style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Volume Controls
-              </td>
-              <td
-                style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Notification Language
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: center; vertical-align: center;">
-                <select name="VolumeforAsleep" style="width: 80px;" id="VolumeforAsleep">
-                  <option value="100">100</option>
-                  <option value="90">90</option>
-                  <option value="80">80</option>
-                  <option value="70">70</option>
-                  <option value="60">60</option>
-                  <option value="50">50</option>
-                </select>
-              </td>
-              <td style="text-align: center; vertical-align: center;">
-                <select name="VolumeforAlerts" style="width: 80px;" id="VolumeforAlerts">
-                  <option value="100">100</option>
-                  <option value="90">90</option>
-                  <option value="80">80</option>
-                  <option value="70">70</option>
-                  <option value="60">60</option>
-                  <option value="50">50</option>
-                  <option value="40">40</option>
-                  <option value="30">30</option>
-                  <option value="20">20</option>
-                  <option value="10">10</option>
-                </select>
-              </td>
-              <td style="text-align: center; vertical-align: center;">
-                <select name="VolumeControls" id="VolumeControls" style="width: 80px;"
-                  onchange="updateLogicalColor(this, id)">
-                  <option value="true" style="background-color: #C6EFCE; color: #006100">Enabled</option>
-                  <option value="false" style="background-color: #FFC7CE; color: #9C0000">Disabled</option>
-                </select>
-              </td>
-              <td style="text-align: center; vertical-align: center;">
-                <select name="Notificationlanguage" style="width: 80px;" id="Notificationlanguage">
-                  <option value="0">English</option>
-                  <option value="1">Spanish</option>
-                  <option value="2">Chinesse</option>
-                  <option value="3">Custom 1</option>
-                  <option value="4">Custom 2</option>
-                  <option value="5">Custom 3 </option>
-                  <option value="6">Custom 4</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: right; vertical-align: center; font-weight: bold; font-size: 14px; color: black;"
-                rowspan="2">
-                Extra:
-              </td>
-              <td
-                style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Calibration Timeout
-              </td>
-              <td
-                style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                OTA Update
-              </td>
-              <td
-                style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                Sleep Mode TimeOut
-              </td>
-              <td
-                style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
-                GSensor Wake Threshold
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: center; vertical-align: center;">
-                <select name="CalibrationTimeout" id="CalibrationTimeout"
-                  style="width: 80px; background-color: #B9E6F0;">
-                </select>
-              </td>
-              <td style="text-align: center; vertical-align: center;">
-                <select name="OTAUpdateEnable" id="OTAUpdateEnable" style="width: 80px;"
-                  onchange="updateLogicalColor(this, id)">
-                  <option value="true" style="background-color: #C6EFCE; color: #006100">Enabled</option>
-                  <option value="false" style="background-color: #FFC7CE; color: #9C0000">Disabled</option>
-                </select>
-              </td>
-              <td style="text-align: center; vertical-align: center;">
-                <select name="SleepModeTO" id="SleepModeTO" style="width: 120px; background-color: #B9E6F0;">
-                </select>
-              </td>
-              <td style="text-align: center; vertical-align: center;">
-                <select name="GsensorWakeThreshold" id="GsensorWakeThreshold" style="width: 80px;">
-                </select>
-              </td>
-            </tr>
-          </table>
-          <br>
-          <!--------------------->
-          <!--Server Parameters-->
-          <!--------------------->
-          <br>
-          <table>
-            <tr>
-              <td colspan="7" style="text-align: center; color: black; font-size: 16px;">
-                Server Parameters
-              </td>
-            </tr>
-            <tr>
-              <td style="text-align: center;">
-                <input type="checkbox" name="MW_check" id="MW_check"
-                  onchange="ServerEnableColor('MW_check', 'ServerAddress', 'ServerPassword', 'Port')">
-              </td>
-              <td style="width: 10px;">
-                &nbsp;
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="ServerAddress" name="ServerAddress" placeholder="Server Address"
-                  style="background-color: lightgray; font-style: italic; width: 280px; font-size: 13px;">
-              </td>
-              <td style="width: 10px;">
-                &nbsp;
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="ServerPassword" name="ServerPassword" placeholder="Server Password"
-                  style="background-color: lightgray;font-style: italic; width: 280px; font-size: 13px;">
-              </td>
-              <td style="width: 10px;">
-                &nbsp;
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="Port" name="Port" placeholder="Server Port"
-                  style="background-color: lightgray;font-style: italic; width: 150px; font-size: 13px;">
-              </td>
-            </tr>
-          </table>
-          <br>
-          <!----------------->
-          <!--WiFi Networks-->
-          <!----------------->
-          <table>
-            <tr>
-              <td colspan="7" style="text-align: center; color: black; font-size: 16px;">
-                Wifi Networks 2.4GHz/5.0GHz (Prioritized List)
-              </td>
-            </tr>
-            <!--Network 01-->
-            <tr style="text-align: center;">
-              <td style="text-align: center; width: 5%">
-                <input type="checkbox" name="WiFi_Network01_check" id="WiFi_Network01_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network01_check', 'WiFi_Network01_SSID', 'WiFi_Network01_Password')">
-              </td>
-              <td style="text-align: center;  width: 20%">
-                <input type="text" id="WiFi_Network01_SSID" name="WiFi_Network01_check" placeholder="SSID_01"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network01_Password" name="WiFi_Network01_Password"
-                  placeholder="Password_SSID_01"
-                  style="font-style: italic; background-color: lightgrey; font-size: 13px;">
-              </td>
-              <td style="width: 10%;">
-                &nbsp;
-              </td>
-              <!--Network 02-->
-              <td style="text-align: center;  width: 5%">
-                <input type="checkbox" name="WiFi_Network02_check" id="WiFi_Network02_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network02_check', 'WiFi_Network02_SSID', 'WiFi_Network02_Password')">
-              </td>
-              <td style="text-align: center;  width: 20%">
-                <input type="text" id="WiFi_Network02_SSID" name="WiFi_Network02_check" placeholder="SSID_02"
-                  style="font-style: italic; background-color: lightgrey; font-size: 13px;">
-              </td>
-              <td style="text-align: center;  width: 20%">
-                <input type="text" id="WiFi_Network02_Password" name="WiFi_Network02_Password"
-                  placeholder="Password_SSID_02"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-            </tr>
-            <!--Network 03-->
-            <tr style="text-align: center;">
-              <td style="text-align: center;">
-                <input type="checkbox" name="WiFi_Network03_check" id="WiFi_Network03_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network03_check', 'WiFi_Network03_SSID', 'WiFi_Network03_Password')">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network03_SSID" name="WiFi_Network03_check" placeholder="SSID_03"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network03_Password" name="WiFi_Network03_Password"
-                  placeholder="Password_SSID_03"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="width: 10px;">
-                &nbsp;
-              </td>
-              <!--Network 04-->
-              <td style="text-align: center;">
-                <input type="checkbox" name="WiFi_Network04_check" id="WiFi_Network04_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network04_check', 'WiFi_Network04_SSID', 'WiFi_Network04_Password')">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network04_SSID" name="WiFi_Network04_check" placeholder="SSID_04"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network04_Password" name="WiFi_Network04_Password"
-                  placeholder="Password_SSID_04"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-            </tr>
-            <!--Network 05-->
-            <tr style="text-align: center;">
-              <td style="text-align: center;">
-                <input type="checkbox" name="WiFi_Network05_check" id="WiFi_Network05_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network05_check', 'WiFi_Network05_SSID', 'WiFi_Network05_Password')">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network05_SSID" name="WiFi_Network05_check" placeholder="SSID_05"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network05_Password" name="WiFi_Network05_Password"
-                  placeholder="Password_SSID_05"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="width: 10px;">
-                &nbsp;
-              </td>
-              <!--Network 06-->
-              <td style="text-align: center;">
-                <input type="checkbox" name="WiFi_Network06_check" id="WiFi_Network06_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network06_check', 'WiFi_Network06_SSID', 'WiFi_Network06_Password')">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network06_SSID" name="WiFi_Network06_check" placeholder="SSID_06"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network06_Password" name="WiFi_Network06_Password"
-                  placeholder="Password_SSID_06"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-            </tr>
-            <!--Network 07-->
-            <tr style="text-align: center;">
-              <td style="text-align: center;">
-                <input type="checkbox" name="WiFi_Network07_check" id="WiFi_Network07_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network07_check', 'WiFi_Network07_SSID', 'WiFi_Network07_Password')">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network07_SSID" name="WiFi_Network07_check" placeholder="SSID_07"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network07_Password" name="WiFi_Network07_Password"
-                  placeholder="Password_SSID_07"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="width: 10px;">
-                &nbsp;
-              </td>
-              <!--Network 08-->
-              <td style="text-align: center;">
-                <input type="checkbox" name="WiFi_Network08_check" id="WiFi_Network08_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network08_check', 'WiFi_Network08_SSID', 'WiFi_Network08_Password')">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network08_SSID" name="WiFi_Network08_check" placeholder="SSID_08"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network08_Password" name="WiFi_Network08_Password"
-                  placeholder="Password_SSID_08"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-            </tr>
-            <!--Network 09-->
-            <tr style="text-align: center;">
-              <td style="text-align: center;">
-                <input type="checkbox" name="WiFi_Network09_check" id="WiFi_Network09_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network09_check', 'WiFi_Network09_SSID', 'WiFi_Network09_Password')">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network09_SSID" name="WiFi_Network09_check" placeholder="SSID_09"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network09_Password" name="WiFi_Network09_Password"
-                  placeholder="Password_SSID_09"
-                  style="font-style: italic; font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="width: 10px;">
-                &nbsp;
-              </td>
-              <!--Network 10-->
-              <td style="text-align: center;">
-                <input type="checkbox" name="WiFi_Network10_check" id="WiFi_Network10_check"
-                  onchange="WifiNetworkEnableColor('WiFi_Network10_check', 'WiFi_Network10_SSID', 'WiFi_Network10_Password')">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network10_SSID" name="WiFi_Network10_check" placeholder="SSID_10"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-              <td style="text-align: center;">
-                <input type="text" id="WiFi_Network10_Password" name="WiFi_Network10_Password"
-                  placeholder="Password_SSID_10"
-                  style="font-style: italic; background-color: lightgray; font-size: 13px;">
-              </td>
-            </tr>
-          </table>
+                      // Listeners for GPO
+                      document.getElementById("DutyCycleGPO").addEventListener("change", generateSignal);
+                      document.getElementById("FrequencyGPO").addEventListener("change", generateSignal);
+                      document.getElementById("LengthGPO").addEventListener("change", generateSignal);
+                      document.getElementById("SourceGPO").addEventListener("change", generateSignal);
+                      // Listeners for GPIO
+                      document.getElementById("StateGPIO").addEventListener("change", generateSignal_GPIO);
+                      document.getElementById("Select_GPIO_1").addEventListener("change", generateSignal_GPIO);
+                      document.getElementById("Select_GPIO_2").addEventListener("change", generateSignal_GPIO);
+                      document.getElementById("Select_GPIO_3").addEventListener("change", generateSignal_GPIO);
+                      document.getElementById("Select_GPIO_4").addEventListener("change", generateSignal_GPIO);
+                    </script>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <h1></h1>
+          </div>
+          <!-- SI Cipia-FS10 Architecture: Photos and Videos - Header -->
+          <div class="header" , id="Cipia-FS10ArchitecturePhotosAndVideosHeader">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
+                  <img src="source_img/Cipia-FS10_Architecture_Photos_And_Videos.png" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
+                  title="AlertMessage">
+                  Cipia-FS10 Architecture: Photos and Videos
+                </td>
+                <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitecturePhotosAndVideosSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitecturePhotosAndVideosHeader')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- SI Cipia-FS10 Architecture: Photos and Videos - Subparams -->
+          <div id="SI_Cipia-FS10ArchitecturePhotosAndVideosSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table class="table-internal">
+                <tr>
+                  <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    Video Overlay:&nbsp;
+                    <label class="switch">
+                      <input id="SI_videoOverlayId" type="checkbox">
+                      <span class="slider"></span>
+                    </label>
+                  </td>
+                  <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    Time Source:&nbsp;
+                    <select name="timeSource" id="timeSource" style="width: 120px;">
+                      <option value="UTC">UTC</option>
+                      <option value="Fix">User defined</option>
+                      <option value="Cell">Network Operator</option>
+                    </select>
+                  </td>
+                  <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    SD-card Encryption:&nbsp;
+                    <label class="switch">
+                      <input id="SI_SD_cardEncryptionId" type="checkbox">
+                      <span class="slider"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    <table>
+                      <tr>
+                        <td style="width: 25%; text-align: right; border: none;">
+                          String for video:
+                        </td>
+                        <td style="width: auto; text-align: left; border: none;">
+                          <div class="input-field">
+                            <input type="text" id="String_Overlay" name="String_Overlay"
+                              placeholder="String Overlay"
+                              style="vertical-align: center; text-align: left; font-size: 13px; font-style: italic;"
+                              onchange="changeAPNFormat('String_Overlay', 'String Overlay')">
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    Unit ID:&nbsp;
+                    <select name="Unit_ID_Overlay" id="Unit_ID_Overlay" style="width: 120px;"
+                      onchange="updateLogicalColor(this, id)">
+                      <option value="true" style="background-color: #C6EFCE; color: #006100">On-screen</option>
+                      <option value="false" style="background-color: #FFC7CE; color: #9C0000">No</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    Time Offset:&nbsp;
+                    <select name="timeOffset" id="timeOffset" style="width: 400px; font-size: 85%;">
+                      <option value="-11">(UTC -11:00) Coordinated Universal Time-11</option>
+                      <option value="-10">(UTC -10:00) Aleutian Islands, Hawaii</option>
+                      <option value="-9">(UTC -09:00) Alaska</option>
+                      <option value="-8">(UTC -08:00) Baja California, Pacific Time (US & Canada)</option>
+                      <option value="-7">(UTC -07:00) Arizona</option>
+                      <option value="-7">(UTC -07:00) Chihuahua, La Paz, Mazatlan</option>
+                      <option value="-7">(UTC -07:00) Mountain Time (US & Canada)</option>
+                      <option value="-6">(UTC -06:00) Central America</option>
+                      <option value="-6">(UTC -06:00) Central Time (US & Canada)</option>
+                      <option value="-6">(UTC -06:00) Easter Island</option>
+                      <option value="-6">(UTC -06:00) Guadalajara, Mexico City, Monterrey</option>
+                      <option value="-6">(UTC -06:00) Saskatchewan</option>
+                      <option value="-5">(UTC -05:00) Bogota, Lima, Quito, Rio Branco</option>
+                      <option value="-5">(UTC -05:00) Chetumal</option>
+                      <option value="-5">(UTC -05:00) Eastern Time (US & Canada)</option>
+                      <option value="-5">(UTC -05:00) Haiti</option>
+                      <option value="-5">(UTC -05:00) Havana</option>
+                      <option value="-5">(UTC -05:00) Indiana (East)</option>
+                      <option value="-5">(UTC -05:00) Turks and Caicos</option>
+                      <option value="-4">(UTC -04:00) Asuncion</option>
+                      <option value="-4">(UTC -04:00) Atlantic Time (Canada)</option>
+                      <option value="-4">(UTC -04:00) Caracas</option>
+                      <option value="-4">(UTC -04:00) Cuiaba</option>
+                      <option value="-4">(UTC -04:00) Georgetown, La Paz, Manaus, San Juan</option>
+                      <option value="-4">(UTC -04:00) Santiago</option>
+                      <option value="-3">(UTC -03:00) Newfoundland</option>
+                      <option value="-3">(UTC -03:00) Araguaina</option>
+                      <option value="-3">(UTC -03:00) Brasilia</option>
+                      <option value="-3">(UTC -03:00) Cayenne, Fortaleza</option>
+                      <option value="-3">(UTC -03:00) City of Buenos Aires</option>
+                      <option value="-3">(UTC -03:00) Greenland</option>
+                      <option value="-3">(UTC -03:00) Montevideo</option>
+                      <option value="-3">(UTC -03:00) Punta Arenas</option>
+                      <option value="-3">(UTC -03:00) Saint Pierre and Miquelon</option>
+                      <option value="-3">(UTC -03:00) Salvador</option>
+                      <option value="-2">(UTC -02:00) Coordinated Universal Time-02</option>
+                      <option value="-1">(UTC -01:00) Azores</option>
+                      <option value="-1">(UTC -01:00) Cabo Verde Is.</option>
+                      <option value="0">(UTC 00:00) Coordinated Universal Time</option>
+                      <option value="0">(UTC 00:00) Dublin, Edinburgh, Lisbon, London</option>
+                      <option value="0">(UTC 00:00) Monrovia, Reykjavik</option>
+                      <option value="0">(UTC 00:00) Sao Tome</option>
+                      <option value="1">(UTC 01:00) Casablanca</option>
+                      <option value="1">(UTC 01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+                      <option value="1">(UTC 01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+                      <option value="1">(UTC 01:00) Brussels, Copenhagen, Madrid, Paris</option>
+                      <option value="1">(UTC 01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+                      <option value="1">(UTC 01:00) West Central Africa</option>
+                      <option value="2">(UTC 02:00) Amman</option>
+                      <option value="2">(UTC 02:00) Athens, Bucharest</option>
+                      <option value="2">(UTC 02:00) Beirut</option>
+                      <option value="2">(UTC 02:00) Cairo</option>
+                      <option value="2">(UTC 02:00) Chisinau</option>
+                      <option value="2">(UTC 02:00) Damascus</option>
+                      <option value="2">(UTC 02:00) Herzeliya</option>
+                      <option value="2">(UTC 02:00) Harare, Pretoria</option>
+                      <option value="2">(UTC 02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+                      <option value="2">(UTC 02:00) Jerusalem</option>
+                      <option value="2">(UTC 02:00) Kaliningrad</option>
+                      <option value="2">(UTC 02:00) Khartoum</option>
+                      <option value="2">(UTC 02:00) Tripoli</option>
+                      <option value="2">(UTC 02:00) Windhoek</option>
+                      <option value="3">(UTC 03:00) Istanbul</option>
+                      <option value="3">(UTC 03:00) Kuwait, Riyadh</option>
+                      <option value="3">(UTC 03:00) Minsk</option>
+                      <option value="3">(UTC 03:00) Moscow, St. Petersburg</option>
+                      <option value="3">(UTC 03:00) Nairobi</option>
+                      <option value="3">(UTC 03:00) Tehran</option>
+                      <option value="4">(UTC 04:00) Abu Dhabi, Muscat</option>
+                      <option value="4">(UTC 04:00) Astrakhan, Ulyanovsk</option>
+                      <option value="4">(UTC 04:00) Baku</option>
+                      <option value="4">(UTC 04:00) Izhevsk, Samara</option>
+                      <option value="4">(UTC 04:00) Port Louis</option>
+                      <option value="4">(UTC 04:00) Saratov</option>
+                      <option value="4">(UTC 04:00) Tbilisi</option>
+                      <option value="4">(UTC 04:00) Volgograd</option>
+                      <option value="4">(UTC 04:00) Yerevan</option>
+                      <option value="4">(UTC 04:00) Kabul</option>
+                      <option value="5">(UTC 05:00) Ashgabat, Tashkent</option>
+                      <option value="5">(UTC 05:00) Ekaterinburg</option>
+                      <option value="5">(UTC 05:00) Islamabad, Karachi</option>
+                      <option value="5">(UTC 05:00) Qyzylorda</option>
+                      <option value="5">(UTC 05:00) Chennai, Kolkata, Mumbai, New Delhi</option>
+                      <option value="5">(UTC 05:00) Sri Jayawardenepura</option>
+                      <option value="5">(UTC 05:00) Kathmandu</option>
+                      <option value="6">(UTC 06:00) Astana</option>
+                      <option value="6">(UTC 06:00) Dhaka</option>
+                      <option value="6">(UTC 06:00) Omsk</option>
+                      <option value="6">(UTC 06:00) Yangon (Rangoon)</option>
+                      <option value="7">(UTC 07:00) Bangkok, Hanoi, Jakarta</option>
+                      <option value="7">(UTC 07:00) Barnaul, Gorno-Altaysk</option>
+                      <option value="7">(UTC 07:00) Hovd</option>
+                      <option value="7">(UTC 07:00) Krasnoyarsk</option>
+                      <option value="7">(UTC 07:00) Novosibirsk</option>
+                      <option value="7">(UTC 07:00) Tomsk</option>
+                      <option value="8">(UTC 08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+                      <option value="8">(UTC 08:00) Irkutsk</option>
+                      <option value="8">(UTC 08:00) Kuala Lumpur, Singapore</option>
+                      <option value="8">(UTC 08:00) Perth</option>
+                      <option value="8">(UTC 08:00) Taipei</option>
+                      <option value="8">(UTC 08:00) Ulaanbaatar</option>
+                      <option value="8">(UTC 08:00) Eucla</option>
+                      <option value="9">(UTC 09:00) Chita</option>
+                      <option value="9">(UTC 09:00) Osaka, Sapporo, Tokyo</option>
+                      <option value="9">(UTC 09:00) Pyongyang</option>
+                      <option value="9">(UTC 09:00) Seoul</option>
+                      <option value="9">(UTC 09:00) Yakutsk</option>
+                      <option value="9">(UTC 09:00) Adelaide</option>
+                      <option value="9">(UTC 09:00) Darwin</option>
+                      <option value="10">(UTC 10:00) Brisbane</option>
+                      <option value="10">(UTC 10:00) Canberra, Melbourne, Sydney</option>
+                      <option value="10">(UTC 10:00) Guam, Port Moresby</option>
+                      <option value="10">(UTC 10:00) Hobart</option>
+                      <option value="10">(UTC 10:00) Vladivostok</option>
+                      <option value="10">(UTC 10:00) Lord Howe Island</option>
+                      <option value="11">(UTC 11:00) Bougainville Island</option>
+                      <option value="11">(UTC 11:00) Chokurdakh</option>
+                      <option value="11">(UTC 11:00) Magadan</option>
+                      <option value="11">(UTC 11:00) Norfolk Island</option>
+                      <option value="11">(UTC 11:00) Sakhalin</option>
+                      <option value="11">(UTC 11:00) Solomon Is., New Caledonia</option>
+                      <option value="12">(UTC 12:00) Anadyr, Petropavlovsk-Kamchatsky</option>
+                      <option value="12">(UTC 12:00) Auckland, Wellington</option>
+                      <option value="12">(UTC 12:00) Coordinated Universal Time+12</option>
+                      <option value="12">(UTC 12:00) Fiji</option>
+                      <option value="12">(UTC 12:00) Chatham Islands</option>
+                    </select>
+                  </td>
+                  <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    SD card space for cyclic recording:&nbsp;
+                    <select name="ContRecording" id="ContRecording" style="width: 80px;">
+                      <option value="0">Disabled</option>
+                      <option value="8">8 GB</option>
+                      <option value="16">16 GB</option>
+                      <option value="32">32 GB</option>
+                      <option value="64">64 GB</option>
+                      <option value="128">128 GB</option>
+                      <option value="256">256 GB</option>
+                      <option value="512">512 GB</option>
+                      <option value="1024">1 TB</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <table>
+                      <tr>
+                        <td style="border: none; text-align: center;" title="Hint">
+                          Events to Storage
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border: none;">
+                          <table>
+                            <tr>
+                              <td style="border: none; vertical-align: middle;">
+                                <div class="dial-container"
+                                  style="display: flex; align-items: center; justify-content: center;">
+                                  <input type="range" id="SI_eventsToStorageRange">
+                                </div>
+                              </td>
+                              <td style="border: none; vertical-align: middle;">
+                                <div class="value-container"
+                                  style="display: flex; align-items: right; justify-content: right;">
+                                  <input type="number" id="SI_eventsToStorageNumber">
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td colspan="3">
+                    <table>
+                      <tr>
+                        <td style="border: none; text-align: center;" title="Hint">
+                          Video to Storage
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border: none;">
+                          <table>
+                            <tr>
+                              <td style="border: none; vertical-align: middle;">
+                                <div class="dial-container"
+                                  style="display: flex; align-items: center; justify-content: center;">
+                                  <input type="range" id="SI_videoToStorageRange">
+                                </div>
+                              </td>
+                              <td style="border: none; vertical-align: middle;">
+                                <div class="value-container"
+                                  style="display: flex; align-items: right; justify-content: right;">
+                                  <input type="number" id="SI_videoToStorageNumber">
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    Photo Resolution:&nbsp;
+                    <select name="photoResolution" id="photoResolution" style="width: 225px;">
+                      <option value="1">Cabin:1280x960 - Road:1920x1280</option>
+                      <option value="2">Cabin:640x480 - Road:960x640</option>
+                      <option value="4">Cabin:320x240 - Road:480x320</option>
+                    </select>
+                  </td>
+                  <td colspan="3" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    Video Resolution:&nbsp;
+                    <select name="videoResolution" id="videoResolution" style="width: 225px;">
+                      <option value="1">Cabin:1280x960 - Road:1920x1280</option>
+                      <option value="2">Cabin:640x480 - Road:960x640</option>
+                      <option value="4">Cabin:320x240 - Road:480x320</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="height: 22.2px; width: 33%; text-align: center; vertical-align: center;" colspan="2">
+                    <img src="img/001.png" width="50%">
+                  </td>
+                  <td style="height: 22.2px; width: 33%; text-align: center; vertical-align: center;" colspan="2">
+                    <img src="img/002.png" width="50%">
+                  </td>
+                  <td style="height: 22.2px; width: 33%; text-align: center; vertical-align: center;" colspan="2">
+                    <img src="img/003.png" width="50%">
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <table>
+                      <tr>
+                        <td style="border: none; text-align: center;"
+                          title="Hint">
+                          Record before event:
+                          <img src="source_img/info.png" class="icon">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border: none;">
+                          <table>
+                            <tr>
+                              <td colspan="2" style="border: none; vertical-align: middle;">
+                                <div class="dial-container"
+                                  style="display: flex; align-items: center; justify-content: center;">
+                                  <input type="range" id="SI_recordBeforeEventRange">
+                                </div>
+                              </td>
+                              <td style="border: none; vertical-align: middle;">
+                                <div class="value-container"
+                                  style="display: flex; align-items: right; justify-content: right;">
+                                  <input type="number" id="SI_recordBeforeEventNumber">
+                                </div>
+                              </td>
+                              <td style="border: none; text-align: left; vertical-align: middle;">
+                                <label style="font-size: 12pt;">s</label>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
+                    Event:
+                    <br><br>
+                    <select style="width: 120px" name="micStatus" id="micStatus">
+                      <option value="true">REC w/ audio</option>
+                      <option value="false">REC w/o audio</option>
+                    </select>
+                  </td>
+                  <td colspan="2">
+                    <table>
+                      <tr>
+                        <td style="border: none; text-align: center;"
+                          title="Hint">
+                          Record after event:
+                          <img src="source_img/info.png" class="icon">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border: none;">
+                          <table>
+                            <tr>
+                              <td colspan="2" style="border: none; vertical-align: middle;">
+                                <div class="dial-container"
+                                  style="display: flex; align-items: center; justify-content: center;">
+                                  <input type="range" id="SI_recordAfterEventRange">
+                                </div>
+                              </td>
+                              <td style="border: none; vertical-align: middle;">
+                                <div class="value-container"
+                                  style="display: flex; align-items: right; justify-content: right;">
+                                  <input type="number" id="SI_recordAfterEventNumber">
+                                </div>
+                              </td>
+                              <td style="border: none; text-align: left; vertical-align: middle;">
+                                <label style="font-size: 12pt;">s</label>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <h1></h1>
+          </div>
+          <!-- SI Cipia-FS10 Architecture: Additional Settings - Header -->
+          <div class="header" , id="Cipia-FS10ArchitectureAdditionalSettingsHeader">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
+                  <img src="source_img/Cipia-FS10_Architecture_Additional_Settings.png" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
+                  title="AlertMessage">
+                  Cipia-FS10 Architecture: Additional Settings
+                </td>
+                <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureAdditionalSettingsSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureAdditionalSettingsHeader')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- SI Cipia-FS10 Architecture: Additional Settings - Subparams -->
+          <div id="SI_Cipia-FS10ArchitectureAdditionalSettingsSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td style="text-align: left; background-color: white;">
+                    Main button settings:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color: white;">
+                    <table class="table-internal">
+                      <tr>
+                        <td style="text-align: center; width: 50%;">
+                          Device-Turn-On:&nbsp;
+                          <label class="switch">
+                            <input id="SI_deviceTurnOnId" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
+                        </td>
+                        <td style="text-align: center; width: auto;">
+                          Self Event Trigger:&nbsp;
+                          <label class="switch">
+                            <input id="SI_selfEventTriggerId" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; background-color: white;">
+                    Accelerometer:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color: white;">
+                    <table class="table-internal">
+                      <tr>
+                        <td style="width: 50%;">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;" title="Hint">
+                                Drive Time Filter
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border: none;">
+                                <table>
+                                  <tr>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="SI_driveTimeFilterRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="SI_driveTimeFilterNumber">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; text-align: left; vertical-align: middle;">
+                                      <label style="font-size: 12pt;">s</label>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="width: auto;">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;" title="Hint">
+                                Stop Time Filter
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border: none;">
+                                <table>
+                                  <tr>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="SI_stopTimeFilterRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="SI_stopTimeFilterNumber">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; text-align: left; vertical-align: middle;">
+                                      <label style="font-size: 12pt;">s</label>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; background-color: white;">
+                    Volume:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color: white;">
+                    <table class="table-internal">
+                      <tr>
+                        <td style="width: 33.33%;">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;" title="Hint">
+                                Volume for Asleep
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border: none;">
+                                <table>
+                                  <tr>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="SI_volumeForAsleepRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="SI_volumeForAsleepNumber">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="width: 33.33%;">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;" title="Hint">
+                                Volume for Other Alerts
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border: none;">
+                                <table>
+                                  <tr>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="SI_volumeForOtherAlertsRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="SI_volumeForOtherAlertsNumber">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="width: 16.67%; text-align: center; vertical-align: middle;">
+                          Volume Controls:
+                          <br><br>
+                          <label class="switch">
+                            <input id="SI_volumeControlsId" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
+                        </td>
+                        <td style="width: auto; text-align: center; vertical-align: middle;">
+                          Notification Language:
+                          <br><br>
+                          <select name="SI_notificationLanguageName" style="width: 80px;" id="SI_notificationLanguageId">
+                            <option value="0">English</option>
+                            <option value="1">Spanish</option>
+                            <option value="2">Chinese</option>
+                            <option value="3">Custom 1</option>
+                            <option value="4">Custom 2</option>
+                            <option value="5">Custom 3 </option>
+                            <option value="6">Custom 4</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: left; background-color: white;">
+                    Extra:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color: white;">
+                    <table class="table-internal">
+                      <tr>
+                        <td style="width: 50%;">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;" title="Hint">
+                                Calibration Timeout
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border: none;">
+                                <table>
+                                  <tr>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="SI_calibrationTimeoutRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="SI_calibrationTimeoutNumber">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; text-align: left; vertical-align: middle;">
+                                      <label style="font-size: 12pt;">s</label>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle;">
+                          OTA Update:&nbsp;
+                          <label class="switch">
+                            <input id="SI_OTA_updateId" type="checkbox">
+                            <span class="slider"></span>
+                          </label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;" title="Hint">
+                                Sleep Mode Timeout
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border: none;">
+                                <table>
+                                  <tr>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="SI_sleepModeTimeoutRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="SI_sleepModeTimeoutNumber">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; text-align: left; vertical-align: middle;">
+                                      <label style="font-size: 12pt;">min</label>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle;">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;" title="Hint">
+                                GSensor Wake Threshold
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border: none;">
+                                <table>
+                                  <tr>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="SI_GSensorWakeThresholdRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="SI_GSensorWakeThresholdNumber">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+              </table>
+            </div>
+            <h1></h1>
+          </div>
+          <!-- Server Parameters - Header -->
+          <div class="header" , id="serverParametersHeader">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
+                  <img src="source_img/Server_Parameters.png" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
+                  title="AlertMessage">
+                  Server Parameters
+                </td>
+                <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('SI_serverParametersSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'serverParametersHeader')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- Server Parameters - Subparams -->
+          <div id="SI_serverParametersSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table class="table-internal">
+                <tr>
+                  <td colspan="7" style="text-align: center; color: black; font-size: 16px;">
+                    Server Parameters
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="MW_check" id="MW_check"
+                      onchange="ServerEnableColor('MW_check', 'ServerAddress', 'ServerPassword', 'Port')">
+                  </td>
+                  <td style="width: 10px;">
+                    &nbsp;
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="ServerAddress" name="ServerAddress" placeholder="Server Address"
+                      style="font-style: italic; width: 280px; font-size: 13px;">
+                  </td>
+                  <td style="width: 10px;">
+                    &nbsp;
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="ServerPassword" name="ServerPassword" placeholder="Server Password"
+                      style="font-style: italic; width: 280px; font-size: 13px;">
+                  </td>
+                  <td style="width: 10px;">
+                    &nbsp;
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="Port" name="Port" placeholder="Server Port"
+                      style="font-style: italic; width: 150px; font-size: 13px;">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <h1></h1>
+          </div>
+          <!-- Wifi Networks - Header -->
+          <div class="header" , id="wifiNetworksHeader">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center; background-color:#dbdbdb;">
+                  <img src="source_img/Wifi_Networks.png" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold; background-color:#dbdbdb;"
+                  title="AlertMessage">
+                  Wifi Networks 2.4GHz/5.0GHz (Prioritized List)
+                </td>
+                <td class="col4" style="width: 5%; text-align: center; background-color:#dbdbdb;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('SI_wifiNetworksSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'wifiNetworksHeader')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- Wifi Networks - Subparams -->
+          <div id="SI_wifiNetworksSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table class="table-internal">
+                <tr>
+                  <td colspan="7" style="text-align: center; color: black; font-size: 16px;">
+                    Wifi Networks 2.4GHz/5.0GHz (Prioritized List)
+                  </td>
+                </tr>
+                <!--Network 01-->
+                <tr style="text-align: center;">
+                  <td style="text-align: center; width: 5%">
+                    <input type="checkbox" name="WiFi_Network01_check" id="WiFi_Network01_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network01_check', 'WiFi_Network01_SSID', 'WiFi_Network01_Password')">
+                  </td>
+                  <td style="text-align: center;  width: 20%">
+                    <input type="text" id="WiFi_Network01_SSID" name="WiFi_Network01_check" placeholder="SSID_01"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network01_Password" name="WiFi_Network01_Password"
+                      placeholder="Password_SSID_01"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="width: 10%;">
+                    &nbsp;
+                  </td>
+                  <!--Network 02-->
+                  <td style="text-align: center;  width: 5%">
+                    <input type="checkbox" name="WiFi_Network02_check" id="WiFi_Network02_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network02_check', 'WiFi_Network02_SSID', 'WiFi_Network02_Password')">
+                  </td>
+                  <td style="text-align: center;  width: 20%">
+                    <input type="text" id="WiFi_Network02_SSID" name="WiFi_Network02_check" placeholder="SSID_02"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;  width: 20%">
+                    <input type="text" id="WiFi_Network02_Password" name="WiFi_Network02_Password"
+                      placeholder="Password_SSID_02"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                </tr>
+                <!--Network 03-->
+                <tr style="text-align: center;">
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="WiFi_Network03_check" id="WiFi_Network03_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network03_check', 'WiFi_Network03_SSID', 'WiFi_Network03_Password')">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network03_SSID" name="WiFi_Network03_check" placeholder="SSID_03"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network03_Password" name="WiFi_Network03_Password"
+                      placeholder="Password_SSID_03"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="width: 10px;">
+                    &nbsp;
+                  </td>
+                  <!--Network 04-->
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="WiFi_Network04_check" id="WiFi_Network04_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network04_check', 'WiFi_Network04_SSID', 'WiFi_Network04_Password')">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network04_SSID" name="WiFi_Network04_check" placeholder="SSID_04"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network04_Password" name="WiFi_Network04_Password"
+                      placeholder="Password_SSID_04"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                </tr>
+                <!--Network 05-->
+                <tr style="text-align: center;">
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="WiFi_Network05_check" id="WiFi_Network05_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network05_check', 'WiFi_Network05_SSID', 'WiFi_Network05_Password')">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network05_SSID" name="WiFi_Network05_check" placeholder="SSID_05"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network05_Password" name="WiFi_Network05_Password"
+                      placeholder="Password_SSID_05"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="width: 10px;">
+                    &nbsp;
+                  </td>
+                  <!--Network 06-->
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="WiFi_Network06_check" id="WiFi_Network06_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network06_check', 'WiFi_Network06_SSID', 'WiFi_Network06_Password')">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network06_SSID" name="WiFi_Network06_check" placeholder="SSID_06"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network06_Password" name="WiFi_Network06_Password"
+                      placeholder="Password_SSID_06"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                </tr>
+                <!--Network 07-->
+                <tr style="text-align: center;">
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="WiFi_Network07_check" id="WiFi_Network07_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network07_check', 'WiFi_Network07_SSID', 'WiFi_Network07_Password')">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network07_SSID" name="WiFi_Network07_check" placeholder="SSID_07"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network07_Password" name="WiFi_Network07_Password"
+                      placeholder="Password_SSID_07"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="width: 10px;">
+                    &nbsp;
+                  </td>
+                  <!--Network 08-->
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="WiFi_Network08_check" id="WiFi_Network08_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network08_check', 'WiFi_Network08_SSID', 'WiFi_Network08_Password')">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network08_SSID" name="WiFi_Network08_check" placeholder="SSID_08"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network08_Password" name="WiFi_Network08_Password"
+                      placeholder="Password_SSID_08"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                </tr>
+                <!--Network 09-->
+                <tr style="text-align: center;">
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="WiFi_Network09_check" id="WiFi_Network09_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network09_check', 'WiFi_Network09_SSID', 'WiFi_Network09_Password')">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network09_SSID" name="WiFi_Network09_check" placeholder="SSID_09"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network09_Password" name="WiFi_Network09_Password"
+                      placeholder="Password_SSID_09"
+                      style="font-style: italic; font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="width: 10px;">
+                    &nbsp;
+                  </td>
+                  <!--Network 10-->
+                  <td style="text-align: center;">
+                    <input type="checkbox" name="WiFi_Network10_check" id="WiFi_Network10_check"
+                      onchange="WifiNetworkEnableColor('WiFi_Network10_check', 'WiFi_Network10_SSID', 'WiFi_Network10_Password')">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network10_SSID" name="WiFi_Network10_check" placeholder="SSID_10"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                  <td style="text-align: center;">
+                    <input type="text" id="WiFi_Network10_Password" name="WiFi_Network10_Password"
+                      placeholder="Password_SSID_10"
+                      style="font-style: italic; font-size: 13px;">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <h1></h1>
+          </div>
         </div>
       </section>
       <!---->
