@@ -347,40 +347,144 @@ function generate_FS10_JSON(){
     } else if (!UnidentifiedUnauthDriver_ReportFootageCabin && UnidentifiedUnauthDriver_ReportFootageRoad) {
         UnidentifiedUnauthDriver_ReportFootage = "ADAS";
     }
-    var DriverDisappeared_Activation = document.getElementById("DMS_1x11_select").value; 
-    var DriverDisappeared_FeedbackAudio = document.getElementById("DMS_2x11_select").value; 
-    var DriverDisappeared_FeedbackOutput = document.getElementById("DMS_3x11_select").value; 
-    var DriverDisappeared_FeedbackSpeech = document.getElementById("DMS_4x11_select").value; 
-    var DriverDisappeared_FeedbackVisual = document.getElementById("DMS_5x11_select").value; 
-    var DriverDisappeared_ReportEvent = document.getElementById("DMS_6x11_select").value; 
-    var DriverDisappeared_ReportImage = document.getElementById("DMS_7x11_select").value; 
-    var DriverDisappeared_ReportFootage = document.getElementById("DMS_8x11_select").value; 
-    var DriverChange_Activation = document.getElementById("DMS_1x12_select").value; 
-    var DriverChange_FeedbackAudio = document.getElementById("DMS_2x12_select").value; 
-    var DriverChange_FeedbackOutput = document.getElementById("DMS_3x12_select").value; 
-    var DriverChange_FeedbackSpeech = document.getElementById("DMS_4x12_select").value; 
-    var DriverChange_FeedbackVisual = document.getElementById("DMS_5x12_select").value; 
-    var DriverChange_ReportEvent = document.getElementById("DMS_6x12_select").value; 
-    var DriverChange_ReportImage = document.getElementById("DMS_7x12_select").value; 
-    var DriverChange_ReportFootage = document.getElementById("DMS_8x12_select").value; 
-    var DriverIDUpdated_Activation = document.getElementById("DMS_1x13_select").value; 
-    var DriverIDUpdated_FeedbackAudio = document.getElementById("DMS_2x13_select").value; 
-    var DriverIDUpdated_FeedbackOutput = document.getElementById("DMS_3x13_select").value; 
-    var DriverIDUpdated_FeedbackSpeech = document.getElementById("DMS_4x13_select").value; 
-    var DriverIDUpdated_FeedbackVisual = document.getElementById("DMS_5x13_select").value; 
-    var DriverIDUpdated_ReportEvent = document.getElementById("DMS_6x13_select").value; 
-    var DriverIDUpdated_ReportImage = document.getElementById("DMS_7x13_select").value; 
-    var DriverIDUpdated_ReportFootage = document.getElementById("DMS_8x13_select").value; 
+    var DriverDisappeared_Activation = document.getElementById("DMS_driverDisappearedActivationId").checked;
+    var DriverDisappeared_FeedbackAudio = document.getElementById("DMS_driverDisappearedFeedbackAudioCheckbox").checked;
+    var DriverDisappeared_FeedbackOutput = document.getElementById("DMS_driverDisappearedFeedbackOutputId").value;
+    var DriverDisappeared_FeedbackSpeech = document.getElementById("DMS_driverDisappearedFeedbackSpeechCheckbox").checked;
+    var DriverDisappeared_FeedbackVisual = document.getElementById("DMS_driverDisappearedFeedbackVisualCheckbox").checked;
+    var DriverDisappeared_ReportEvent = document.getElementById("DMS_driverDisappearedDetectionEventCheckbox").checked;
+    var DriverDisappeared_ReportCabinSnapshot = document.getElementById("DMS_driverDisappearedReportImageInCabinCheckbox").checked;
+    var DriverDisappeared_ReportCabinTimelapse = document.getElementById("DMS_driverDisappearedReportTimelapseInCabinCheckbox").checked;
+    var DriverDisappeared_ReportRoadSnapshot = document.getElementById("DMS_driverDisappearedReportImageRoadFacingCheckbox").checked;
+    var DriverDisappeared_ReportRoadTimelapse = document.getElementById("DMS_driverDisappearedReportTimelapseRoadFacingCheckbox").checked;
+    var DriverDisappeared_ReportImage = "None";
+    if (DriverDisappeared_ReportCabinSnapshot && DriverDisappeared_ReportRoadSnapshot) {
+        DriverDisappeared_ReportImage = "BothSingle";
+    } else if (DriverDisappeared_ReportCabinSnapshot && !DriverDisappeared_ReportRoadSnapshot) {
+        DriverDisappeared_ReportImage = "SingleDMS";
+    } else if (!DriverDisappeared_ReportCabinSnapshot && DriverDisappeared_ReportRoadSnapshot) {
+        DriverDisappeared_ReportImage = "SingleADAS";
+    } else if (DriverDisappeared_ReportCabinTimelapse && DriverDisappeared_ReportRoadTimelapse) {
+        DriverDisappeared_ReportImage = "BothTimelaps";
+    } else if (DriverDisappeared_ReportCabinTimelapse && !DriverDisappeared_ReportRoadTimelapse) {
+        DriverDisappeared_ReportImage = "TimelapseDMS";
+    } else if (!DriverDisappeared_ReportCabinTimelapse && DriverDisappeared_ReportRoadTimelapse) {
+        DriverDisappeared_ReportImage = "TimelapseADAS";
+    }
+    var DriverDisappeared_ReportFootageCabin = document.getElementById("DMS_driverDisappearedReportVideoInCabinCheckbox").checked;
+    var DriverDisappeared_ReportFootageRoad = document.getElementById("DMS_driverDisappearedReportVideoRoadFacingCheckbox").checked;
+    var DriverDisappeared_ReportFootage = "None";
+    if (DriverDisappeared_ReportFootageCabin && DriverDisappeared_ReportFootageRoad) {
+        DriverDisappeared_ReportFootage = "Both";
+    } else if (DriverDisappeared_ReportFootageCabin && !DriverDisappeared_ReportFootageRoad) {
+        DriverDisappeared_ReportFootage = "DMS";
+    } else if (!DriverDisappeared_ReportFootageCabin && DriverDisappeared_ReportFootageRoad) {
+        DriverDisappeared_ReportFootage = "ADAS";
+    } 
+    var DriverChange_Activation = document.getElementById("DMS_driverChangedActivationId").checked;
+    var DriverChange_FeedbackAudio = document.getElementById("DMS_driverChangedFeedbackAudioCheckbox").checked;
+    var DriverChange_FeedbackOutput = document.getElementById("DMS_driverChangedFeedbackOutputId").value;
+    var DriverChange_FeedbackSpeech = document.getElementById("DMS_driverChangedFeedbackSpeechCheckbox").checked;
+    var DriverChange_FeedbackVisual = document.getElementById("DMS_driverChangedFeedbackVisualCheckbox").checked;
+    var DriverChange_ReportEvent = document.getElementById("DMS_driverChangedDetectionEventCheckbox").checked;
+    var DriverChange_ReportCabinSnapshot = document.getElementById("DMS_driverChangedReportImageInCabinCheckbox").checked;
+    var DriverChange_ReportCabinTimelapse = document.getElementById("DMS_driverChangedReportTimelapseInCabinCheckbox").checked;
+    var DriverChange_ReportRoadSnapshot = document.getElementById("DMS_driverChangedReportImageRoadFacingCheckbox").checked;
+    var DriverChange_ReportRoadTimelapse = document.getElementById("DMS_driverChangedReportTimelapseRoadFacingCheckbox").checked;
+    var DriverChange_ReportImage = "None";
+    if (DriverChange_ReportCabinSnapshot && DriverChange_ReportRoadSnapshot) {
+        DriverChange_ReportImage = "BothSingle";
+    } else if (DriverChange_ReportCabinSnapshot && !DriverChange_ReportRoadSnapshot) {
+        DriverChange_ReportImage = "SingleDMS";
+    } else if (!DriverChange_ReportCabinSnapshot && DriverChange_ReportRoadSnapshot) {
+        DriverChange_ReportImage = "SingleADAS";
+    } else if (DriverChange_ReportCabinTimelapse && DriverChange_ReportRoadTimelapse) {
+        DriverChange_ReportImage = "BothTimelaps";
+    } else if (DriverChange_ReportCabinTimelapse && !DriverChange_ReportRoadTimelapse) {
+        DriverChange_ReportImage = "TimelapseDMS";
+    } else if (!DriverChange_ReportCabinTimelapse && DriverChange_ReportRoadTimelapse) {
+        DriverChange_ReportImage = "TimelapseADAS";
+    }
+    var DriverChange_ReportFootageCabin = document.getElementById("DMS_driverChangedReportVideoInCabinCheckbox").checked;
+    var DriverChange_ReportFootageRoad = document.getElementById("DMS_driverChangedReportVideoRoadFacingCheckbox").checked;
+    var DriverChange_ReportFootage = "None";
+    if (DriverChange_ReportFootageCabin && DriverChange_ReportFootageRoad) {
+        DriverChange_ReportFootage = "Both";
+    } else if (DriverChange_ReportFootageCabin && !DriverChange_ReportFootageRoad) {
+        DriverChange_ReportFootage = "DMS";
+    } else if (!DriverChange_ReportFootageCabin && DriverChange_ReportFootageRoad) {
+        DriverChange_ReportFootage = "ADAS";
+    } 
+    var DriverIDUpdated_Activation = document.getElementById("DMS_driverIdUpdatedActivationId").checked;
+    var DriverIDUpdated_FeedbackAudio = document.getElementById("DMS_driverIdUpdatedFeedbackAudioCheckbox").checked;
+    var DriverIDUpdated_FeedbackOutput = document.getElementById("DMS_driverIdUpdatedFeedbackOutputId").value;
+    var DriverIDUpdated_FeedbackSpeech = document.getElementById("DMS_driverIdUpdatedFeedbackSpeechCheckbox").checked;
+    var DriverIDUpdated_FeedbackVisual = document.getElementById("DMS_driverIdUpdatedFeedbackVisualCheckbox").checked;
+    var DriverIDUpdated_ReportEvent = document.getElementById("DMS_driverIdUpdatedDetectionEventCheckbox").checked;
+    var DriverIDUpdated_ReportCabinSnapshot = document.getElementById("DMS_driverIdUpdatedReportImageInCabinCheckbox").checked;
+    var DriverIDUpdated_ReportCabinTimelapse = document.getElementById("DMS_driverIdUpdatedReportTimelapseInCabinCheckbox").checked;
+    var DriverIDUpdated_ReportRoadSnapshot = document.getElementById("DMS_driverIdUpdatedReportImageRoadFacingCheckbox").checked;
+    var DriverIDUpdated_ReportRoadTimelapse = document.getElementById("DMS_driverIdUpdatedReportTimelapseRoadFacingCheckbox").checked;
+    var DriverIDUpdated_ReportImage = "None";
+    if (DriverIDUpdated_ReportCabinSnapshot && DriverIDUpdated_ReportRoadSnapshot) {
+        DriverIDUpdated_ReportImage = "BothSingle";
+    } else if (DriverIDUpdated_ReportCabinSnapshot && !DriverIDUpdated_ReportRoadSnapshot) {
+        DriverIDUpdated_ReportImage = "SingleDMS";
+    } else if (!DriverIDUpdated_ReportCabinSnapshot && DriverIDUpdated_ReportRoadSnapshot) {
+        DriverIDUpdated_ReportImage = "SingleADAS";
+    } else if (DriverIDUpdated_ReportCabinTimelapse && DriverIDUpdated_ReportRoadTimelapse) {
+        DriverIDUpdated_ReportImage = "BothTimelaps";
+    } else if (DriverIDUpdated_ReportCabinTimelapse && !DriverIDUpdated_ReportRoadTimelapse) {
+        DriverIDUpdated_ReportImage = "TimelapseDMS";
+    } else if (!DriverIDUpdated_ReportCabinTimelapse && DriverIDUpdated_ReportRoadTimelapse) {
+        DriverIDUpdated_ReportImage = "TimelapseADAS";
+    }
+    var DriverIDUpdated_ReportFootageCabin = document.getElementById("DMS_driverIdUpdatedReportVideoInCabinCheckbox").checked;
+    var DriverIDUpdated_ReportFootageRoad = document.getElementById("DMS_driverIdUpdatedReportVideoRoadFacingCheckbox").checked;
+    var DriverIDUpdated_ReportFootage = "None";
+    if (DriverIDUpdated_ReportFootageCabin && DriverIDUpdated_ReportFootageRoad) {
+        DriverIDUpdated_ReportFootage = "Both";
+    } else if (DriverIDUpdated_ReportFootageCabin && !DriverIDUpdated_ReportFootageRoad) {
+        DriverIDUpdated_ReportFootage = "DMS";
+    } else if (!DriverIDUpdated_ReportFootageCabin && DriverIDUpdated_ReportFootageRoad) {
+        DriverIDUpdated_ReportFootage = "ADAS";
+    }
    
     // ADAS
-    var LDW_Activation = document.getElementById("ADAS_1x1_select").value;
-    var LDW_FeedbackAudio = document.getElementById("ADAS_2x1_select").value;
-    var LDW_FeedbackOutput = document.getElementById("ADAS_3x1_select").value;
-    var LDW_FeedbackSpeech = document.getElementById("ADAS_4x1_select").value;
-    var LDW_FeedbackVisual = document.getElementById("ADAS_5x1_select").value;
-    var LDW_ReportEvent = document.getElementById("ADAS_6x1_select").value;
-    var LDW_ReportImage = document.getElementById("ADAS_7x1_select").value;
-    var LDW_ReportFootage = document.getElementById("ADAS_8x1_select").value;
+    var LDW_Activation = document.getElementById("ADAS_LDW_ActivationId").checked;
+    var LDW_FeedbackAudio = document.getElementById("ADAS_LDW_FeedbackAudioCheckbox").checked;
+    var LDW_FeedbackOutput = document.getElementById("ADAS_LDW_FeedbackOutputId").value;
+    var LDW_FeedbackSpeech = document.getElementById("ADAS_LDW_FeedbackSpeechCheckbox").checked;
+    var LDW_FeedbackVisual = document.getElementById("ADAS_LDW_FeedbackVisualCheckbox").checked;
+    var LDW_ReportEvent = document.getElementById("ADAS_LDW_DetectionEventCheckbox").checked;
+    var LDW_ReportCabinSnapshot = document.getElementById("ADAS_LDW_ReportImageInCabinCheckbox").checked;
+    var LDW_ReportCabinTimelapse = document.getElementById("ADAS_LDW_ReportTimelapseInCabinCheckbox").checked;
+    var LDW_ReportRoadSnapshot = document.getElementById("ADAS_LDW_ReportImageRoadFacingCheckbox").checked;
+    var LDW_ReportRoadTimelapse = document.getElementById("ADAS_LDW_ReportTimelapseRoadFacingCheckbox").checked;
+    var LDW_ReportImage = "None";
+    if (LDW_ReportCabinSnapshot && LDW_ReportRoadSnapshot) {
+        LDW_ReportImage = "BothSingle";
+    } else if (LDW_ReportCabinSnapshot && !LDW_ReportRoadSnapshot) {
+        LDW_ReportImage = "SingleDMS";
+    } else if (!LDW_ReportCabinSnapshot && LDW_ReportRoadSnapshot) {
+        LDW_ReportImage = "SingleADAS";
+    } else if (LDW_ReportCabinTimelapse && LDW_ReportRoadTimelapse) {
+        LDW_ReportImage = "BothTimelaps";
+    } else if (LDW_ReportCabinTimelapse && !LDW_ReportRoadTimelapse) {
+        LDW_ReportImage = "TimelapseDMS";
+    } else if (!LDW_ReportCabinTimelapse && LDW_ReportRoadTimelapse) {
+        LDW_ReportImage = "TimelapseADAS";
+    }
+    var LDW_ReportFootageCabin = document.getElementById("ADAS_LDW_ReportVideoInCabinCheckbox").checked;
+    var LDW_ReportFootageRoad = document.getElementById("ADAS_LDW_ReportVideoRoadFacingCheckbox").checked;
+    var LDW_ReportFootage = "None";
+    if (LDW_ReportFootageCabin && LDW_ReportFootageRoad) {
+        LDW_ReportFootage = "Both";
+    } else if (LDW_ReportFootageCabin && !LDW_ReportFootageRoad) {
+        LDW_ReportFootage = "DMS";
+    } else if (!LDW_ReportFootageCabin && LDW_ReportFootageRoad) {
+        LDW_ReportFootage = "ADAS";
+    }
     //var RedLight_Activation = document.getElementById("ADAS_1x2_select").value;
     //var RedLight_FeedbackAudio = document.getElementById("ADAS_2x2_select").value;
     //var RedLight_FeedbackOutput = document.getElementById("ADAS_3x2_select").value;
@@ -397,30 +501,108 @@ function generate_FS10_JSON(){
     //var StopDisobeyed_ReportEvent = document.getElementById("ADAS_6x3_select").value;
     //var StopDisobeyed_ReportImage = document.getElementById("ADAS_7x3_select").value;
     //var StopDisobeyed_ReportFootage = document.getElementById("ADAS_8x3_select").value;
-    var HMW_Activation = document.getElementById("ADAS_1x4_select").value;
-    var HMW_FeedbackAudio = document.getElementById("ADAS_2x4_select").value;
-    var HMW_FeedbackOutput = document.getElementById("ADAS_3x4_select").value;
-    var HMW_FeedbackSpeech = document.getElementById("ADAS_4x4_select").value;
-    var HMW_FeedbackVisual = document.getElementById("ADAS_5x4_select").value;
-    var HMW_ReportEvent = document.getElementById("ADAS_6x4_select").value;
-    var HMW_ReportImage = document.getElementById("ADAS_7x4_select").value;
-    var HMW_ReportFootage = document.getElementById("ADAS_8x4_select").value;
-    var UrbanFCW_Activation = document.getElementById("ADAS_1x5_select").value;
-    var UrbanFCW_FeedbackAudio = document.getElementById("ADAS_2x5_select").value;
-    var UrbanFCW_FeedbackOutput = document.getElementById("ADAS_3x5_select").value;
-    var UrbanFCW_FeedbackSpeech = document.getElementById("ADAS_4x5_select").value;
-    var UrbanFCW_FeedbackVisual = document.getElementById("ADAS_5x5_select").value;
-    var UrbanFCW_ReportEvent = document.getElementById("ADAS_6x5_select").value;
-    var UrbanFCW_ReportImage = document.getElementById("ADAS_7x5_select").value;
-    var UrbanFCW_ReportFootage = document.getElementById("ADAS_8x5_select").value;
-    var FCW_Activation = document.getElementById("ADAS_1x6_select").value;
-    var FCW_FeedbackAudio = document.getElementById("ADAS_2x6_select").value;
-    var FCW_FeedbackOutput = document.getElementById("ADAS_3x6_select").value;
-    var FCW_FeedbackSpeech = document.getElementById("ADAS_4x6_select").value;
-    var FCW_FeedbackVisual = document.getElementById("ADAS_5x6_select").value;
-    var FCW_ReportEvent = document.getElementById("ADAS_6x6_select").value;
-    var FCW_ReportImage = document.getElementById("ADAS_7x6_select").value;
-    var FCW_ReportFootage = document.getElementById("ADAS_8x6_select").value;
+    var HMW_Activation = document.getElementById("ADAS_HMW_ActivationId").checked;
+    var HMW_FeedbackAudio = document.getElementById("ADAS_HMW_FeedbackAudioCheckbox").checked;
+    var HMW_FeedbackOutput = document.getElementById("ADAS_HMW_FeedbackOutputId").value;
+    var HMW_FeedbackSpeech = document.getElementById("ADAS_HMW_FeedbackSpeechCheckbox").checked;
+    var HMW_FeedbackVisual = document.getElementById("ADAS_HMW_FeedbackVisualCheckbox").checked;
+    var HMW_ReportEvent = document.getElementById("ADAS_HMW_DetectionEventCheckbox").checked;
+    var HMW_ReportCabinSnapshot = document.getElementById("ADAS_HMW_ReportImageInCabinCheckbox").checked;
+    var HMW_ReportCabinTimelapse = document.getElementById("ADAS_HMW_ReportTimelapseInCabinCheckbox").checked;
+    var HMW_ReportRoadSnapshot = document.getElementById("ADAS_HMW_ReportImageRoadFacingCheckbox").checked;
+    var HMW_ReportRoadTimelapse = document.getElementById("ADAS_HMW_ReportTimelapseRoadFacingCheckbox").checked;
+    var HMW_ReportImage = "None";
+    if (HMW_ReportCabinSnapshot && HMW_ReportRoadSnapshot) {
+        HMW_ReportImage = "BothSingle";
+    } else if (HMW_ReportCabinSnapshot && !HMW_ReportRoadSnapshot) {
+        HMW_ReportImage = "SingleDMS";
+    } else if (!HMW_ReportCabinSnapshot && HMW_ReportRoadSnapshot) {
+        HMW_ReportImage = "SingleADAS";
+    } else if (HMW_ReportCabinTimelapse && HMW_ReportRoadTimelapse) {
+        HMW_ReportImage = "BothTimelaps";
+    } else if (HMW_ReportCabinTimelapse && !HMW_ReportRoadTimelapse) {
+        HMW_ReportImage = "TimelapseDMS";
+    } else if (!HMW_ReportCabinTimelapse && HMW_ReportRoadTimelapse) {
+        HMW_ReportImage = "TimelapseADAS";
+    }
+    var HMW_ReportFootageCabin = document.getElementById("ADAS_HMW_ReportVideoInCabinCheckbox").checked;
+    var HMW_ReportFootageRoad = document.getElementById("ADAS_HMW_ReportVideoRoadFacingCheckbox").checked;
+    var HMW_ReportFootage = "None";
+    if (HMW_ReportFootageCabin && HMW_ReportFootageRoad) {
+        HMW_ReportFootage = "Both";
+    } else if (HMW_ReportFootageCabin && !HMW_ReportFootageRoad) {
+        HMW_ReportFootage = "DMS";
+    } else if (!HMW_ReportFootageCabin && HMW_ReportFootageRoad) {
+        HMW_ReportFootage = "ADAS";
+    }
+    var UrbanFCW_Activation = document.getElementById("ADAS_UFCW_ActivationId").checked;
+    var UrbanFCW_FeedbackAudio = document.getElementById("ADAS_UFCW_FeedbackAudioCheckbox").checked;
+    var UrbanFCW_FeedbackOutput = document.getElementById("ADAS_UFCW_FeedbackOutputId").value;
+    var UrbanFCW_FeedbackSpeech = document.getElementById("ADAS_UFCW_FeedbackSpeechCheckbox").checked;
+    var UrbanFCW_FeedbackVisual = document.getElementById("ADAS_UFCW_FeedbackVisualCheckbox").checked;
+    var UrbanFCW_ReportEvent = document.getElementById("ADAS_UFCW_DetectionEventCheckbox").checked;
+    var UrbanFCW_ReportCabinSnapshot = document.getElementById("ADAS_UFCW_ReportImageInCabinCheckbox").checked;
+    var UrbanFCW_ReportCabinTimelapse = document.getElementById("ADAS_UFCW_ReportTimelapseInCabinCheckbox").checked;
+    var UrbanFCW_ReportRoadSnapshot = document.getElementById("ADAS_UFCW_ReportImageRoadFacingCheckbox").checked;
+    var UrbanFCW_ReportRoadTimelapse = document.getElementById("ADAS_UFCW_ReportTimelapseRoadFacingCheckbox").checked;
+    var UrbanFCW_ReportImage = "None";
+    if (UrbanFCW_ReportCabinSnapshot && UrbanFCW_ReportRoadSnapshot) {
+        UrbanFCW_ReportImage = "BothSingle";
+    } else if (UrbanFCW_ReportCabinSnapshot && !UrbanFCW_ReportRoadSnapshot) {
+        UrbanFCW_ReportImage = "SingleDMS";
+    } else if (!UrbanFCW_ReportCabinSnapshot && UrbanFCW_ReportRoadSnapshot) {
+        UrbanFCW_ReportImage = "SingleADAS";
+    } else if (UrbanFCW_ReportCabinTimelapse && UrbanFCW_ReportRoadTimelapse) {
+        UrbanFCW_ReportImage = "BothTimelaps";
+    } else if (UrbanFCW_ReportCabinTimelapse && !UrbanFCW_ReportRoadTimelapse) {
+        UrbanFCW_ReportImage = "TimelapseDMS";
+    } else if (!UrbanFCW_ReportCabinTimelapse && UrbanFCW_ReportRoadTimelapse) {
+        UrbanFCW_ReportImage = "TimelapseADAS";
+    }
+    var UrbanFCW_ReportFootageCabin = document.getElementById("ADAS_UFCW_ReportVideoInCabinCheckbox").checked;
+    var UrbanFCW_ReportFootageRoad = document.getElementById("ADAS_UFCW_ReportVideoRoadFacingCheckbox").checked;
+    var UrbanFCW_ReportFootage = "None";
+    if (UrbanFCW_ReportFootageCabin && UrbanFCW_ReportFootageRoad) {
+        UrbanFCW_ReportFootage = "Both";
+    } else if (UrbanFCW_ReportFootageCabin && !UrbanFCW_ReportFootageRoad) {
+        UrbanFCW_ReportFootage = "DMS";
+    } else if (!UrbanFCW_ReportFootageCabin && UrbanFCW_ReportFootageRoad) {
+        UrbanFCW_ReportFootage = "ADAS";
+    }
+    var FCW_Activation = document.getElementById("ADAS_FCW_ActivationId").checked;
+    var FCW_FeedbackAudio = document.getElementById("ADAS_FCW_FeedbackAudioCheckbox").checked;
+    var FCW_FeedbackOutput = document.getElementById("ADAS_FCW_FeedbackOutputId").value;
+    var FCW_FeedbackSpeech = document.getElementById("ADAS_FCW_FeedbackSpeechCheckbox").checked;
+    var FCW_FeedbackVisual = document.getElementById("ADAS_FCW_FeedbackVisualCheckbox").checked;
+    var FCW_ReportEvent = document.getElementById("ADAS_FCW_DetectionEventCheckbox").checked;
+    var FCW_ReportCabinSnapshot = document.getElementById("ADAS_FCW_ReportImageInCabinCheckbox").checked;
+    var FCW_ReportCabinTimelapse = document.getElementById("ADAS_FCW_ReportTimelapseInCabinCheckbox").checked;
+    var FCW_ReportRoadSnapshot = document.getElementById("ADAS_FCW_ReportImageRoadFacingCheckbox").checked;
+    var FCW_ReportRoadTimelapse = document.getElementById("ADAS_FCW_ReportTimelapseRoadFacingCheckbox").checked;
+    var FCW_ReportImage = "None";
+    if (FCW_ReportCabinSnapshot && FCW_ReportRoadSnapshot) {
+        FCW_ReportImage = "BothSingle";
+    } else if (FCW_ReportCabinSnapshot && !FCW_ReportRoadSnapshot) {
+        FCW_ReportImage = "SingleDMS";
+    } else if (!FCW_ReportCabinSnapshot && FCW_ReportRoadSnapshot) {
+        FCW_ReportImage = "SingleADAS";
+    } else if (FCW_ReportCabinTimelapse && FCW_ReportRoadTimelapse) {
+        FCW_ReportImage = "BothTimelaps";
+    } else if (FCW_ReportCabinTimelapse && !FCW_ReportRoadTimelapse) {
+        FCW_ReportImage = "TimelapseDMS";
+    } else if (!FCW_ReportCabinTimelapse && FCW_ReportRoadTimelapse) {
+        FCW_ReportImage = "TimelapseADAS";
+    }
+    var FCW_ReportFootageCabin = document.getElementById("ADAS_FCW_ReportVideoInCabinCheckbox").checked;
+    var FCW_ReportFootageRoad = document.getElementById("ADAS_FCW_ReportVideoRoadFacingCheckbox").checked;
+    var FCW_ReportFootage = "None";
+    if (FCW_ReportFootageCabin && FCW_ReportFootageRoad) {
+        FCW_ReportFootage = "Both";
+    } else if (FCW_ReportFootageCabin && !FCW_ReportFootageRoad) {
+        FCW_ReportFootage = "DMS";
+    } else if (!FCW_ReportFootageCabin && FCW_ReportFootageRoad) {
+        FCW_ReportFootage = "ADAS";
+    }
     //var Overspeeding_Activation = document.getElementById("ADAS_1x7_select").value;
     //var Overspeeding_FeedbackAudio = document.getElementById("ADAS_2x7_select").value;
     //var Overspeeding_FeedbackOutput = document.getElementById("ADAS_3x7_select").value;
@@ -429,214 +611,838 @@ function generate_FS10_JSON(){
     //var Overspeeding_ReportEvent = document.getElementById("ADAS_6x7_select").value;
     //var Overspeeding_ReportImage = document.getElementById("ADAS_7x7_select").value;
     //var Overspeeding_ReportFootage = document.getElementById("ADAS_8x7_select").value;
-    var PCW_Activation = document.getElementById("ADAS_1x8_select").value;
-    var PCW_FeedbackAudio = document.getElementById("ADAS_2x8_select").value;
-    var PCW_FeedbackOutput = document.getElementById("ADAS_3x8_select").value;
-    var PCW_FeedbackSpeech = document.getElementById("ADAS_4x8_select").value;
-    var PCW_FeedbackVisual = document.getElementById("ADAS_5x8_select").value;
-    var PCW_ReportEvent = document.getElementById("ADAS_6x8_select").value;
-    var PCW_ReportImage = document.getElementById("ADAS_7x8_select").value;
-    var PCW_ReportFootage = document.getElementById("ADAS_8x8_select").value;
+    var PCW_Activation = document.getElementById("ADAS_PCW_ActivationId").checked;
+    var PCW_FeedbackAudio = document.getElementById("ADAS_PCW_FeedbackAudioCheckbox").checked;
+    var PCW_FeedbackOutput = document.getElementById("ADAS_PCW_FeedbackOutputId").value;
+    var PCW_FeedbackSpeech = document.getElementById("ADAS_PCW_FeedbackSpeechCheckbox").checked;
+    var PCW_FeedbackVisual = document.getElementById("ADAS_PCW_FeedbackVisualCheckbox").checked;
+    var PCW_ReportEvent = document.getElementById("ADAS_PCW_DetectionEventCheckbox").checked;
+    var PCW_ReportCabinSnapshot = document.getElementById("ADAS_PCW_ReportImageInCabinCheckbox").checked;
+    var PCW_ReportCabinTimelapse = document.getElementById("ADAS_PCW_ReportTimelapseInCabinCheckbox").checked;
+    var PCW_ReportRoadSnapshot = document.getElementById("ADAS_PCW_ReportImageRoadFacingCheckbox").checked;
+    var PCW_ReportRoadTimelapse = document.getElementById("ADAS_PCW_ReportTimelapseRoadFacingCheckbox").checked;
+    var PCW_ReportImage = "None";
+    if (PCW_ReportCabinSnapshot && PCW_ReportRoadSnapshot) {
+        PCW_ReportImage = "BothSingle";
+    } else if (PCW_ReportCabinSnapshot && !PCW_ReportRoadSnapshot) {
+        PCW_ReportImage = "SingleDMS";
+    } else if (!PCW_ReportCabinSnapshot && PCW_ReportRoadSnapshot) {
+        PCW_ReportImage = "SingleADAS";
+    } else if (PCW_ReportCabinTimelapse && PCW_ReportRoadTimelapse) {
+        PCW_ReportImage = "BothTimelaps";
+    } else if (PCW_ReportCabinTimelapse && !PCW_ReportRoadTimelapse) {
+        PCW_ReportImage = "TimelapseDMS";
+    } else if (!PCW_ReportCabinTimelapse && PCW_ReportRoadTimelapse) {
+        PCW_ReportImage = "TimelapseADAS";
+    }
+    var PCW_ReportFootageCabin = document.getElementById("ADAS_PCW_ReportVideoInCabinCheckbox").checked;
+    var PCW_ReportFootageRoad = document.getElementById("ADAS_PCW_ReportVideoRoadFacingCheckbox").checked;
+    var PCW_ReportFootage = "None";
+    if (PCW_ReportFootageCabin && PCW_ReportFootageRoad) {
+        PCW_ReportFootage = "Both";
+    } else if (PCW_ReportFootageCabin && !PCW_ReportFootageRoad) {
+        PCW_ReportFootage = "DMS";
+    } else if (!PCW_ReportFootageCabin && PCW_ReportFootageRoad) {
+        PCW_ReportFootage = "ADAS";
+    }
 
     //Tracking Events
-    var IgnitionON_Activation = document.getElementById("TrackingEvents_1x1_select").value; 
-    var IgnitionON_FeedbackAudio = document.getElementById("TrackingEvents_2x1_select").value; 
-    var IgnitionON_FeedbackOutput = document.getElementById("TrackingEvents_3x1_select").value; 
-    var IgnitionON_FeedbackSpeech = document.getElementById("TrackingEvents_4x1_select").value; 
-    var IgnitionON_FeedbackVisual = document.getElementById("TrackingEvents_5x1_select").value; 
-    var IgnitionON_ReportEvent = document.getElementById("TrackingEvents_6x1_select").value; 
-    var IgnitionON_ReportImage = document.getElementById("TrackingEvents_7x1_select").value; 
-    var IgnitionON_ReportFootage = document.getElementById("TrackingEvents_8x1_select").value; 
-    var IgnitionOFF_Activation = document.getElementById("TrackingEvents_1x2_select").value; 
-    var IgnitionOFF_FeedbackAudio = document.getElementById("TrackingEvents_2x2_select").value; 
-    var IgnitionOFF_FeedbackOutput = document.getElementById("TrackingEvents_3x2_select").value; 
-    var IgnitionOFF_FeedbackSpeech = document.getElementById("TrackingEvents_4x2_select").value; 
-    var IgnitionOFF_FeedbackVisual = document.getElementById("TrackingEvents_5x2_select").value; 
-    var IgnitionOFF_ReportEvent = document.getElementById("TrackingEvents_6x2_select").value; 
-    var IgnitionOFF_ReportImage = document.getElementById("TrackingEvents_7x2_select").value; 
-    var IgnitionOFF_ReportFootage = document.getElementById("TrackingEvents_8x2_select").value; 
-    var MovementStarted_Activation = document.getElementById("TrackingEvents_1x3_select").value; 
-    var MovementStarted_FeedbackAudio = document.getElementById("TrackingEvents_2x3_select").value; 
-    var MovementStarted_FeedbackOutput = document.getElementById("TrackingEvents_3x3_select").value; 
-    var MovementStarted_FeedbackSpeech = document.getElementById("TrackingEvents_4x3_select").value; 
-    var MovementStarted_FeedbackVisual = document.getElementById("TrackingEvents_5x3_select").value; 
-    var MovementStarted_ReportEvent = document.getElementById("TrackingEvents_6x3_select").value; 
-    var MovementStarted_ReportImage = document.getElementById("TrackingEvents_7x3_select").value; 
-    var MovementStarted_ReportFootage = document.getElementById("TrackingEvents_8x3_select").value; 
-    var MovementStopped_Activation = document.getElementById("TrackingEvents_1x4_select").value; 
-    var MovementStopped_FeedbackAudio = document.getElementById("TrackingEvents_2x4_select").value; 
-    var MovementStopped_FeedbackOutput = document.getElementById("TrackingEvents_3x4_select").value; 
-    var MovementStopped_FeedbackSpeech = document.getElementById("TrackingEvents_4x4_select").value; 
-    var MovementStopped_FeedbackVisual = document.getElementById("TrackingEvents_5x4_select").value; 
-    var MovementStopped_ReportEvent = document.getElementById("TrackingEvents_6x4_select").value; 
-    var MovementStopped_ReportImage = document.getElementById("TrackingEvents_7x4_select").value; 
-    var MovementStopped_ReportFootage = document.getElementById("TrackingEvents_8x4_select").value; 
-    var Heartbeat_Activation = document.getElementById("TrackingEvents_1x5_select").value; 
-    var Heartbeat_FeedbackAudio = document.getElementById("TrackingEvents_2x5_select").value; 
-    var Heartbeat_FeedbackOutput = document.getElementById("TrackingEvents_3x5_select").value; 
-    var Heartbeat_FeedbackSpeech = document.getElementById("TrackingEvents_4x5_select").value; 
-    var Heartbeat_FeedbackVisual = document.getElementById("TrackingEvents_5x5_select").value; 
-    var Heartbeat_ReportEvent = document.getElementById("TrackingEvents_6x5_select").value; 
-    var Heartbeat_ReportImage = document.getElementById("TrackingEvents_7x5_select").value; 
-    var Heartbeat_ReportFootage = document.getElementById("TrackingEvents_8x5_select").value;
-    var GPSstatusUpdate_Activation = document.getElementById("TrackingEvents_1x6_select").value; 
-    var GPSstatusUpdate_FeedbackAudio = document.getElementById("TrackingEvents_2x6_select").value; 
-    var GPSstatusUpdate_FeedbackOutput = document.getElementById("TrackingEvents_3x6_select").value; 
-    var GPSstatusUpdate_FeedbackSpeech = document.getElementById("TrackingEvents_4x6_select").value; 
-    var GPSstatusUpdate_FeedbackVisual = document.getElementById("TrackingEvents_5x6_select").value; 
-    var GPSstatusUpdate_ReportEvent = document.getElementById("TrackingEvents_6x6_select").value; 
-    var GPSstatusUpdate_ReportImage = document.getElementById("TrackingEvents_7x6_select").value; 
-    var GPSstatusUpdate_ReportFootage = document.getElementById("TrackingEvents_8x6_select").value; 
-    var TripPath_Activation = document.getElementById("TrackingEvents_1x7_select").value; 
-    var TripPath_FeedbackAudio = document.getElementById("TrackingEvents_2x7_select").value; 
-    var TripPath_FeedbackOutput = document.getElementById("TrackingEvents_3x7_select").value; 
-    var TripPath_FeedbackSpeech = document.getElementById("TrackingEvents_4x7_select").value; 
-    var TripPath_FeedbackVisual = document.getElementById("TrackingEvents_5x7_select").value; 
-    var TripPath_ReportEvent = document.getElementById("TrackingEvents_6x7_select").value; 
-    var TripPath_ReportImage = document.getElementById("TrackingEvents_7x7_select").value; 
-    var TripPath_ReportFootage = document.getElementById("TrackingEvents_8x7_select").value;
+    var IgnitionON_Activation = document.getElementById("TES_ignitionOnActivationId").checked;
+    var IgnitionON_FeedbackAudio = document.getElementById("TES_ignitionOnFeedbackAudioCheckbox").checked;
+    var IgnitionON_FeedbackOutput = document.getElementById("TES_ignitionOnFeedbackOutputId").value;
+    var IgnitionON_FeedbackSpeech = document.getElementById("TES_ignitionOnFeedbackSpeechCheckbox").checked;
+    var IgnitionON_FeedbackVisual = document.getElementById("TES_ignitionOnFeedbackVisualCheckbox").checked;
+    var IgnitionON_ReportEvent = document.getElementById("TES_ignitionOnDetectionEventCheckbox").checked;
+    var IgnitionON_ReportCabinSnapshot = document.getElementById("TES_ignitionOnReportImageInCabinCheckbox").checked;
+    var IgnitionON_ReportCabinTimelapse = document.getElementById("TES_ignitionOnReportTimelapseInCabinCheckbox").checked;
+    var IgnitionON_ReportRoadSnapshot = document.getElementById("TES_ignitionOnReportImageRoadFacingCheckbox").checked;
+    var IgnitionON_ReportRoadTimelapse = document.getElementById("TES_ignitionOnReportTimelapseRoadFacingCheckbox").checked;
+    var IgnitionON_ReportImage = "None";
+    if (IgnitionON_ReportCabinSnapshot && IgnitionON_ReportRoadSnapshot) {
+        IgnitionON_ReportImage = "BothSingle";
+    } else if (IgnitionON_ReportCabinSnapshot && !IgnitionON_ReportRoadSnapshot) {
+        IgnitionON_ReportImage = "SingleDMS";
+    } else if (!IgnitionON_ReportCabinSnapshot && IgnitionON_ReportRoadSnapshot) {
+        IgnitionON_ReportImage = "SingleADAS";
+    } else if (IgnitionON_ReportCabinTimelapse && IgnitionON_ReportRoadTimelapse) {
+        IgnitionON_ReportImage = "BothTimelaps";
+    } else if (IgnitionON_ReportCabinTimelapse && !IgnitionON_ReportRoadTimelapse) {
+        IgnitionON_ReportImage = "TimelapseDMS";
+    } else if (!IgnitionON_ReportCabinTimelapse && IgnitionON_ReportRoadTimelapse) {
+        IgnitionON_ReportImage = "TimelapseADAS";
+    }
+    var IgnitionON_ReportFootageCabin = document.getElementById("TES_ignitionOnReportVideoInCabinCheckbox").checked;
+    var IgnitionON_ReportFootageRoad = document.getElementById("TES_ignitionOnReportVideoRoadFacingCheckbox").checked;
+    var IgnitionON_ReportFootage = "None";
+    if (IgnitionON_ReportFootageCabin && IgnitionON_ReportFootageRoad) {
+        IgnitionON_ReportFootage = "Both";
+    } else if (IgnitionON_ReportFootageCabin && !IgnitionON_ReportFootageRoad) {
+        IgnitionON_ReportFootage = "DMS";
+    } else if (!IgnitionON_ReportFootageCabin && IgnitionON_ReportFootageRoad) {
+        IgnitionON_ReportFootage = "ADAS";
+    }
+    var IgnitionOFF_Activation = document.getElementById("TES_ignitionOffActivationId").checked;
+    var IgnitionOFF_FeedbackAudio = document.getElementById("TES_ignitionOffFeedbackAudioCheckbox").checked;
+    var IgnitionOFF_FeedbackOutput = document.getElementById("TES_ignitionOffFeedbackOutputId").value;
+    var IgnitionOFF_FeedbackSpeech = document.getElementById("TES_ignitionOffFeedbackSpeechCheckbox").checked;
+    var IgnitionOFF_FeedbackVisual = document.getElementById("TES_ignitionOffFeedbackVisualCheckbox").checked;
+    var IgnitionOFF_ReportEvent = document.getElementById("TES_ignitionOffDetectionEventCheckbox").checked;
+    var IgnitionOFF_ReportCabinSnapshot = document.getElementById("TES_ignitionOffReportImageInCabinCheckbox").checked;
+    var IgnitionOFF_ReportCabinTimelapse = document.getElementById("TES_ignitionOffReportTimelapseInCabinCheckbox").checked;
+    var IgnitionOFF_ReportRoadSnapshot = document.getElementById("TES_ignitionOffReportImageRoadFacingCheckbox").checked;
+    var IgnitionOFF_ReportRoadTimelapse = document.getElementById("TES_ignitionOffReportTimelapseRoadFacingCheckbox").checked;
+    var IgnitionOFF_ReportImage = "None";
+    if (IgnitionOFF_ReportCabinSnapshot && IgnitionOFF_ReportRoadSnapshot) {
+        IgnitionOFF_ReportImage = "BothSingle";
+    } else if (IgnitionOFF_ReportCabinSnapshot && !IgnitionOFF_ReportRoadSnapshot) {
+        IgnitionOFF_ReportImage = "SingleDMS";
+    } else if (!IgnitionOFF_ReportCabinSnapshot && IgnitionOFF_ReportRoadSnapshot) {
+        IgnitionOFF_ReportImage = "SingleADAS";
+    } else if (IgnitionOFF_ReportCabinTimelapse && IgnitionOFF_ReportRoadTimelapse) {
+        IgnitionOFF_ReportImage = "BothTimelaps";
+    } else if (IgnitionOFF_ReportCabinTimelapse && !IgnitionOFF_ReportRoadTimelapse) {
+        IgnitionOFF_ReportImage = "TimelapseDMS";
+    } else if (!IgnitionOFF_ReportCabinTimelapse && IgnitionOFF_ReportRoadTimelapse) {
+        IgnitionOFF_ReportImage = "TimelapseADAS";
+    }
+    var IgnitionOFF_ReportFootageCabin = document.getElementById("TES_ignitionOffReportVideoInCabinCheckbox").checked;
+    var IgnitionOFF_ReportFootageRoad = document.getElementById("TES_ignitionOffReportVideoRoadFacingCheckbox").checked;
+    var IgnitionOFF_ReportFootage = "None";
+    if (IgnitionOFF_ReportFootageCabin && IgnitionOFF_ReportFootageRoad) {
+        IgnitionOFF_ReportFootage = "Both";
+    } else if (IgnitionOFF_ReportFootageCabin && !IgnitionOFF_ReportFootageRoad) {
+        IgnitionOFF_ReportFootage = "DMS";
+    } else if (!IgnitionOFF_ReportFootageCabin && IgnitionOFF_ReportFootageRoad) {
+        IgnitionOFF_ReportFootage = "ADAS";
+    }
+    var MovementStarted_Activation = document.getElementById("TES_movementStartedActivationId").checked;
+    var MovementStarted_FeedbackAudio = document.getElementById("TES_movementStartedFeedbackAudioCheckbox").checked;
+    var MovementStarted_FeedbackOutput = document.getElementById("TES_movementStartedFeedbackOutputId").value;
+    var MovementStarted_FeedbackSpeech = document.getElementById("TES_movementStartedFeedbackSpeechCheckbox").checked;
+    var MovementStarted_FeedbackVisual = document.getElementById("TES_movementStartedFeedbackVisualCheckbox").checked;
+    var MovementStarted_ReportEvent = document.getElementById("TES_movementStartedDetectionEventCheckbox").checked;
+    var MovementStarted_ReportCabinSnapshot = document.getElementById("TES_movementStartedReportImageInCabinCheckbox").checked;
+    var MovementStarted_ReportCabinTimelapse = document.getElementById("TES_movementStartedReportTimelapseInCabinCheckbox").checked;
+    var MovementStarted_ReportRoadSnapshot = document.getElementById("TES_movementStartedReportImageRoadFacingCheckbox").checked;
+    var MovementStarted_ReportRoadTimelapse = document.getElementById("TES_movementStartedReportTimelapseRoadFacingCheckbox").checked;
+    var MovementStarted_ReportImage = "None";
+    if (MovementStarted_ReportCabinSnapshot && MovementStarted_ReportRoadSnapshot) {
+        MovementStarted_ReportImage = "BothSingle";
+    } else if (MovementStarted_ReportCabinSnapshot && !MovementStarted_ReportRoadSnapshot) {
+        MovementStarted_ReportImage = "SingleDMS";
+    } else if (!MovementStarted_ReportCabinSnapshot && MovementStarted_ReportRoadSnapshot) {
+        MovementStarted_ReportImage = "SingleADAS";
+    } else if (MovementStarted_ReportCabinTimelapse && MovementStarted_ReportRoadTimelapse) {
+        MovementStarted_ReportImage = "BothTimelaps";
+    } else if (MovementStarted_ReportCabinTimelapse && !MovementStarted_ReportRoadTimelapse) {
+        MovementStarted_ReportImage = "TimelapseDMS";
+    } else if (!MovementStarted_ReportCabinTimelapse && MovementStarted_ReportRoadTimelapse) {
+        MovementStarted_ReportImage = "TimelapseADAS";
+    }
+    var MovementStarted_ReportFootageCabin = document.getElementById("TES_movementStartedReportVideoInCabinCheckbox").checked;
+    var MovementStarted_ReportFootageRoad = document.getElementById("TES_movementStartedReportVideoRoadFacingCheckbox").checked;
+    var MovementStarted_ReportFootage = "None";
+    if (MovementStarted_ReportFootageCabin && MovementStarted_ReportFootageRoad) {
+        MovementStarted_ReportFootage = "Both";
+    } else if (MovementStarted_ReportFootageCabin && !MovementStarted_ReportFootageRoad) {
+        MovementStarted_ReportFootage = "DMS";
+    } else if (!MovementStarted_ReportFootageCabin && MovementStarted_ReportFootageRoad) {
+        MovementStarted_ReportFootage = "ADAS";
+    }
+    var MovementStopped_Activation = document.getElementById("TES_movementStoppedActivationId").checked;
+    var MovementStopped_FeedbackAudio = document.getElementById("TES_movementStoppedFeedbackAudioCheckbox").checked;
+    var MovementStopped_FeedbackOutput = document.getElementById("TES_movementStoppedFeedbackOutputId").value;
+    var MovementStopped_FeedbackSpeech = document.getElementById("TES_movementStoppedFeedbackSpeechCheckbox").checked;
+    var MovementStopped_FeedbackVisual = document.getElementById("TES_movementStoppedFeedbackVisualCheckbox").checked;
+    var MovementStopped_ReportEvent = document.getElementById("TES_movementStoppedDetectionEventCheckbox").checked;
+    var MovementStopped_ReportCabinSnapshot = document.getElementById("TES_movementStoppedReportImageInCabinCheckbox").checked;
+    var MovementStopped_ReportCabinTimelapse = document.getElementById("TES_movementStoppedReportTimelapseInCabinCheckbox").checked;
+    var MovementStopped_ReportRoadSnapshot = document.getElementById("TES_movementStoppedReportImageRoadFacingCheckbox").checked;
+    var MovementStopped_ReportRoadTimelapse = document.getElementById("TES_movementStoppedReportTimelapseRoadFacingCheckbox").checked;
+    var MovementStopped_ReportImage = "None";
+    if (MovementStopped_ReportCabinSnapshot && MovementStopped_ReportRoadSnapshot) {
+        MovementStopped_ReportImage = "BothSingle";
+    } else if (MovementStopped_ReportCabinSnapshot && !MovementStopped_ReportRoadSnapshot) {
+        MovementStopped_ReportImage = "SingleDMS";
+    } else if (!MovementStopped_ReportCabinSnapshot && MovementStopped_ReportRoadSnapshot) {
+        MovementStopped_ReportImage = "SingleADAS";
+    } else if (MovementStopped_ReportCabinTimelapse && MovementStopped_ReportRoadTimelapse) {
+        MovementStopped_ReportImage = "BothTimelaps";
+    } else if (MovementStopped_ReportCabinTimelapse && !MovementStopped_ReportRoadTimelapse) {
+        MovementStopped_ReportImage = "TimelapseDMS";
+    } else if (!MovementStopped_ReportCabinTimelapse && MovementStopped_ReportRoadTimelapse) {
+        MovementStopped_ReportImage = "TimelapseADAS";
+    }
+    var MovementStopped_ReportFootageCabin = document.getElementById("TES_movementStoppedReportVideoInCabinCheckbox").checked;
+    var MovementStopped_ReportFootageRoad = document.getElementById("TES_movementStoppedReportVideoRoadFacingCheckbox").checked;
+    var MovementStopped_ReportFootage = "None";
+    if (MovementStopped_ReportFootageCabin && MovementStopped_ReportFootageRoad) {
+        MovementStopped_ReportFootage = "Both";
+    } else if (MovementStopped_ReportFootageCabin && !MovementStopped_ReportFootageRoad) {
+        MovementStopped_ReportFootage = "DMS";
+    } else if (!MovementStopped_ReportFootageCabin && MovementStopped_ReportFootageRoad) {
+        MovementStopped_ReportFootage = "ADAS";
+    }
+    var Heartbeat_Activation = document.getElementById("TES_heartbeatActivationId").checked;
+    var Heartbeat_FeedbackAudio = document.getElementById("TES_heartbeatFeedbackAudioCheckbox").checked;
+    var Heartbeat_FeedbackOutput = document.getElementById("TES_heartbeatFeedbackOutputId").value;
+    var Heartbeat_FeedbackSpeech = document.getElementById("TES_heartbeatFeedbackSpeechCheckbox").checked;
+    var Heartbeat_FeedbackVisual = document.getElementById("TES_heartbeatFeedbackVisualCheckbox").checked;
+    var Heartbeat_ReportEvent = document.getElementById("TES_heartbeatDetectionEventCheckbox").checked;
+    var Heartbeat_ReportCabinSnapshot = document.getElementById("TES_heartbeatReportImageInCabinCheckbox").checked;
+    var Heartbeat_ReportCabinTimelapse = document.getElementById("TES_heartbeatReportTimelapseInCabinCheckbox").checked;
+    var Heartbeat_ReportRoadSnapshot = document.getElementById("TES_heartbeatReportImageRoadFacingCheckbox").checked;
+    var Heartbeat_ReportRoadTimelapse = document.getElementById("TES_heartbeatReportTimelapseRoadFacingCheckbox").checked;
+    var Heartbeat_ReportImage = "None";
+    if (Heartbeat_ReportCabinSnapshot && Heartbeat_ReportRoadSnapshot) {
+        Heartbeat_ReportImage = "BothSingle";
+    } else if (Heartbeat_ReportCabinSnapshot && !Heartbeat_ReportRoadSnapshot) {
+        Heartbeat_ReportImage = "SingleDMS";
+    } else if (!Heartbeat_ReportCabinSnapshot && Heartbeat_ReportRoadSnapshot) {
+        Heartbeat_ReportImage = "SingleADAS";
+    } else if (Heartbeat_ReportCabinTimelapse && Heartbeat_ReportRoadTimelapse) {
+        Heartbeat_ReportImage = "BothTimelaps";
+    } else if (Heartbeat_ReportCabinTimelapse && !Heartbeat_ReportRoadTimelapse) {
+        Heartbeat_ReportImage = "TimelapseDMS";
+    } else if (!Heartbeat_ReportCabinTimelapse && Heartbeat_ReportRoadTimelapse) {
+        Heartbeat_ReportImage = "TimelapseADAS";
+    }
+    var Heartbeat_ReportFootageCabin = document.getElementById("TES_heartbeatReportVideoInCabinCheckbox").checked;
+    var Heartbeat_ReportFootageRoad = document.getElementById("TES_heartbeatReportVideoRoadFacingCheckbox").checked;
+    var Heartbeat_ReportFootage = "None";
+    if (Heartbeat_ReportFootageCabin && Heartbeat_ReportFootageRoad) {
+        Heartbeat_ReportFootage = "Both";
+    } else if (Heartbeat_ReportFootageCabin && !Heartbeat_ReportFootageRoad) {
+        Heartbeat_ReportFootage = "DMS";
+    } else if (!Heartbeat_ReportFootageCabin && Heartbeat_ReportFootageRoad) {
+        Heartbeat_ReportFootage = "ADAS";
+    }
+    var GPSstatusUpdate_Activation = document.getElementById("TES_GPS_updateStatusActivationId").checked;
+    var GPSstatusUpdate_FeedbackAudio = document.getElementById("TES_GPS_updateStatusFeedbackAudioCheckbox").checked;
+    var GPSstatusUpdate_FeedbackOutput = document.getElementById("TES_GPS_updateStatusFeedbackOutputId").value;
+    var GPSstatusUpdate_FeedbackSpeech = document.getElementById("TES_GPS_updateStatusFeedbackSpeechCheckbox").checked;
+    var GPSstatusUpdate_FeedbackVisual = document.getElementById("TES_GPS_updateStatusFeedbackVisualCheckbox").checked;
+    var GPSstatusUpdate_ReportEvent = document.getElementById("TES_GPS_updateStatusDetectionEventCheckbox").checked;
+    var GPSstatusUpdate_ReportCabinSnapshot = document.getElementById("TES_GPS_updateStatusReportImageInCabinCheckbox").checked;
+    var GPSstatusUpdate_ReportCabinTimelapse = document.getElementById("TES_GPS_updateStatusReportTimelapseInCabinCheckbox").checked;
+    var GPSstatusUpdate_ReportRoadSnapshot = document.getElementById("TES_GPS_updateStatusReportImageRoadFacingCheckbox").checked;
+    var GPSstatusUpdate_ReportRoadTimelapse = document.getElementById("TES_GPS_updateStatusReportTimelapseRoadFacingCheckbox").checked;
+    var GPSstatusUpdate_ReportImage = "None";
+    if (GPSstatusUpdate_ReportCabinSnapshot && GPSstatusUpdate_ReportRoadSnapshot) {
+        GPSstatusUpdate_ReportImage = "BothSingle";
+    } else if (GPSstatusUpdate_ReportCabinSnapshot && !GPSstatusUpdate_ReportRoadSnapshot) {
+        GPSstatusUpdate_ReportImage = "SingleDMS";
+    } else if (!GPSstatusUpdate_ReportCabinSnapshot && GPSstatusUpdate_ReportRoadSnapshot) {
+        GPSstatusUpdate_ReportImage = "SingleADAS";
+    } else if (GPSstatusUpdate_ReportCabinTimelapse && GPSstatusUpdate_ReportRoadTimelapse) {
+        GPSstatusUpdate_ReportImage = "BothTimelaps";
+    } else if (GPSstatusUpdate_ReportCabinTimelapse && !GPSstatusUpdate_ReportRoadTimelapse) {
+        GPSstatusUpdate_ReportImage = "TimelapseDMS";
+    } else if (!GPSstatusUpdate_ReportCabinTimelapse && GPSstatusUpdate_ReportRoadTimelapse) {
+        GPSstatusUpdate_ReportImage = "TimelapseADAS";
+    }
+    var GPSstatusUpdate_ReportFootageCabin = document.getElementById("TES_GPS_updateStatusReportVideoInCabinCheckbox").checked;
+    var GPSstatusUpdate_ReportFootageRoad = document.getElementById("TES_GPS_updateStatusReportVideoRoadFacingCheckbox").checked;
+    var GPSstatusUpdate_ReportFootage = "None";
+    if (GPSstatusUpdate_ReportFootageCabin && GPSstatusUpdate_ReportFootageRoad) {
+        GPSstatusUpdate_ReportFootage = "Both";
+    } else if (GPSstatusUpdate_ReportFootageCabin && !GPSstatusUpdate_ReportFootageRoad) {
+        GPSstatusUpdate_ReportFootage = "DMS";
+    } else if (!GPSstatusUpdate_ReportFootageCabin && GPSstatusUpdate_ReportFootageRoad) {
+        GPSstatusUpdate_ReportFootage = "ADAS";
+    }
+    var TripPath_Activation = document.getElementById("TES_tripPathActivationId").checked;
+    var TripPath_FeedbackAudio = document.getElementById("TES_tripPathFeedbackAudioCheckbox").checked;
+    var TripPath_FeedbackOutput = document.getElementById("TES_tripPathFeedbackOutputId").value;
+    var TripPath_FeedbackSpeech = document.getElementById("TES_tripPathFeedbackSpeechCheckbox").checked;
+    var TripPath_FeedbackVisual = document.getElementById("TES_tripPathFeedbackVisualCheckbox").checked;
+    var TripPath_ReportEvent = document.getElementById("TES_tripPathDetectionEventCheckbox").checked;
+    var TripPath_ReportCabinSnapshot = document.getElementById("TES_tripPathReportImageInCabinCheckbox").checked;
+    var TripPath_ReportCabinTimelapse = document.getElementById("TES_tripPathReportTimelapseInCabinCheckbox").checked;
+    var TripPath_ReportRoadSnapshot = document.getElementById("TES_tripPathReportImageRoadFacingCheckbox").checked;
+    var TripPath_ReportRoadTimelapse = document.getElementById("TES_tripPathReportTimelapseRoadFacingCheckbox").checked;
+    var TripPath_ReportImage = "None";
+    if (TripPath_ReportCabinSnapshot && TripPath_ReportRoadSnapshot) {
+        TripPath_ReportImage = "BothSingle";
+    } else if (TripPath_ReportCabinSnapshot && !TripPath_ReportRoadSnapshot) {
+        TripPath_ReportImage = "SingleDMS";
+    } else if (!TripPath_ReportCabinSnapshot && TripPath_ReportRoadSnapshot) {
+        TripPath_ReportImage = "SingleADAS";
+    } else if (TripPath_ReportCabinTimelapse && TripPath_ReportRoadTimelapse) {
+        TripPath_ReportImage = "BothTimelaps";
+    } else if (TripPath_ReportCabinTimelapse && !TripPath_ReportRoadTimelapse) {
+        TripPath_ReportImage = "TimelapseDMS";
+    } else if (!TripPath_ReportCabinTimelapse && TripPath_ReportRoadTimelapse) {
+        TripPath_ReportImage = "TimelapseADAS";
+    }
+    var TripPath_ReportFootageCabin = document.getElementById("TES_tripPathReportVideoInCabinCheckbox").checked;
+    var TripPath_ReportFootageRoad = document.getElementById("TES_tripPathReportVideoRoadFacingCheckbox").checked;
+    var TripPath_ReportFootage = "None";
+    if (TripPath_ReportFootageCabin && TripPath_ReportFootageRoad) {
+        TripPath_ReportFootage = "Both";
+    } else if (TripPath_ReportFootageCabin && !TripPath_ReportFootageRoad) {
+        TripPath_ReportFootage = "DMS";
+    } else if (!TripPath_ReportFootageCabin && TripPath_ReportFootageRoad) {
+        TripPath_ReportFootage = "ADAS";
+    }
 
     //System
-    var CameraCalibrationCompleted_Activation = document.getElementById("System_wo_Event_1x1_select").value; 
-    var CameraCalibrationCompleted_FeedbackAudio = document.getElementById("System_wo_Event_2x1_select").value; 
-    var CameraCalibrationCompleted_FeedbackOutput = document.getElementById("System_wo_Event_3x1_select").value; 
-    var CameraCalibrationCompleted_FeedbackSpeech = document.getElementById("System_wo_Event_4x1_select").value; 
-    var CameraCalibrationCompleted_FeedbackVisual = document.getElementById("System_wo_Event_5x1_select").value; 
-    var CameraCalibrationCompleted_ReportEvent = document.getElementById("System_wo_Event_6x1_select").value; 
-    var CameraCalibrationCompleted_ReportImage = document.getElementById("System_wo_Event_7x1_select").value; 
-    var CameraCalibrationCompleted_ReportFootage = document.getElementById("System_wo_Event_8x1_select").value; 
-    var CameraCalibrationFailed_Activation = document.getElementById("System_wo_Event_1x2_select").value; 
-    var CameraCalibrationFailed_FeedbackAudio = document.getElementById("System_wo_Event_2x2_select").value;
-    var CameraCalibrationFailed_FeedbackOutput = document.getElementById("System_wo_Event_3x2_select").value; 
-    var CameraCalibrationFailed_FeedbackSpeech = document.getElementById("System_wo_Event_4x2_select").value; 
-    var CameraCalibrationFailed_FeedbackVisual = document.getElementById("System_wo_Event_5x2_select").value; 
-    var CameraCalibrationFailed_ReportEvent = document.getElementById("System_wo_Event_6x2_select").value; 
-    var CameraCalibrationFailed_ReportImage = document.getElementById("System_wo_Event_7x2_select").value; 
-    var CameraCalibrationFailed_ReportFootage = document.getElementById("System_wo_Event_8x2_select").value; 
-    var AccelerometerCalibrationCompleted_Activation = document.getElementById("System_wo_Event_1x3_select").value; 
-    var AccelerometerCalibrationCompleted_FeedbackAudio = document.getElementById("System_wo_Event_2x3_select").value; 
-    var AccelerometerCalibrationCompleted_FeedbackOutput = document.getElementById("System_wo_Event_3x3_select").value; 
-    var AccelerometerCalibrationCompleted_FeedbackSpeech = document.getElementById("System_wo_Event_4x3_select").value; 
-    var AccelerometerCalibrationCompleted_FeedbackVisual = document.getElementById("System_wo_Event_5x3_select").value; 
-    var AccelerometerCalibrationCompleted_ReportEvent = document.getElementById("System_wo_Event_6x3_select").value; 
-    var AccelerometerCalibrationCompleted_ReportImage = document.getElementById("System_wo_Event_7x3_select").value; 
-    var AccelerometerCalibrationCompleted_ReportFootage = document.getElementById("System_wo_Event_8x3_select").value; 
-    var EnteredSleepMode_Activation = document.getElementById("System_wo_Event_1x4_select").value; 
-    var EnteredSleepMode_FeedbackAudio = document.getElementById("System_wo_Event_2x4_select").value; 
-    var EnteredSleepMode_FeedbackOutput = document.getElementById("System_wo_Event_3x4_select").value; 
-    var EnteredSleepMode_FeedbackSpeech = document.getElementById("System_wo_Event_4x4_select").value; 
-    var EnteredSleepMode_FeedbackVisual = document.getElementById("System_wo_Event_5x4_select").value; 
-    var EnteredSleepMode_ReportEvent = document.getElementById("System_wo_Event_6x4_select").value; 
-    var EnteredSleepMode_ReportImage = document.getElementById("System_wo_Event_7x4_select").value; 
-    var EnteredSleepMode_ReportFootage = document.getElementById("System_wo_Event_8x4_select").value; 
-    var FwUpdateStarted_Activation = document.getElementById("System_wo_Event_1x5_select").value; 
-    var FwUpdateStarted_FeedbackAudio = document.getElementById("System_wo_Event_2x5_select").value; 
-    var FwUpdateStarted_FeedbackOutput = document.getElementById("System_wo_Event_3x5_select").value; 
-    var FwUpdateStarted_FeedbackSpeech = document.getElementById("System_wo_Event_4x5_select").value; 
-    var FwUpdateStarted_FeedbackVisual = document.getElementById("System_wo_Event_5x5_select").value; 
-    var FwUpdateStarted_ReportEvent = document.getElementById("System_wo_Event_6x5_select").value; 
-    var FwUpdateStarted_ReportImage = document.getElementById("System_wo_Event_7x5_select").value; 
-    var FwUpdateStarted_ReportFootage = document.getElementById("System_wo_Event_8x5_select").value; 
-    var FwUpdateCompleted_Activation = document.getElementById("System_wo_Event_1x6_select").value; 
-    var FwUpdateCompleted_FeedbackAudio = document.getElementById("System_wo_Event_2x6_select").value; 
-    var FwUpdateCompleted_FeedbackOutput = document.getElementById("System_wo_Event_3x6_select").value; 
-    var FwUpdateCompleted_FeedbackSpeech = document.getElementById("System_wo_Event_4x6_select").value; 
-    var FwUpdateCompleted_FeedbackVisual = document.getElementById("System_wo_Event_5x6_select").value; 
-    var FwUpdateCompleted_ReportEvent = document.getElementById("System_wo_Event_6x6_select").value; 
-    var FwUpdateCompleted_ReportImage = document.getElementById("System_wo_Event_7x6_select").value; 
-    var FwUpdateCompleted_ReportFootage = document.getElementById("System_wo_Event_8x6_select").value;
-    var FwUpdateFailed_Activation = document.getElementById("System_wo_Event_1x7_select").value; 
-    var FwUpdateFailed_FeedbackAudio = document.getElementById("System_wo_Event_2x7_select").value; 
-    var FwUpdateFailed_FeedbackOutput = document.getElementById("System_wo_Event_3x7_select").value; 
-    var FwUpdateFailed_FeedbackSpeech = document.getElementById("System_wo_Event_4x7_select").value; 
-    var FwUpdateFailed_FeedbackVisual = document.getElementById("System_wo_Event_5x7_select").value; 
-    var FwUpdateFailed_ReportEvent = document.getElementById("System_wo_Event_6x7_select").value; 
-    var FwUpdateFailed_ReportImage = document.getElementById("System_wo_Event_7x7_select").value; 
-    var FwUpdateFailed_ReportFootage = document.getElementById("System_wo_Event_8x7_select").value; 
-    var SystemBoot_Activation = document.getElementById("System_wo_Event_1x8_select").value; 
-    var SystemBoot_FeedbackAudio = document.getElementById("System_wo_Event_2x8_select").value; 
-    var SystemBoot_FeedbackOutput = document.getElementById("System_wo_Event_3x8_select").value; 
-    var SystemBoot_FeedbackSpeech = document.getElementById("System_wo_Event_4x8_select").value; 
-    var SystemBoot_FeedbackVisual = document.getElementById("System_wo_Event_5x8_select").value; 
-    var SystemBoot_ReportEvent = document.getElementById("System_wo_Event_6x8_select").value; 
-    var SystemBoot_ReportImage = document.getElementById("System_wo_Event_7x8_select").value; 
-    var SystemBoot_ReportFootage = document.getElementById("System_wo_Event_8x8_select").value; 
-    var SystemBootFailure_Activation = document.getElementById("System_wo_Event_1x9_select").value; 
-    var SystemBootFailure_FeedbackAudio = document.getElementById("System_wo_Event_2x9_select").value; 
-    var SystemBootFailure_FeedbackOutput = document.getElementById("System_wo_Event_3x9_select").value; 
-    var SystemBootFailure_FeedbackSpeech = document.getElementById("System_wo_Event_4x9_select").value; 
-    var SystemBootFailure_FeedbackVisual = document.getElementById("System_wo_Event_5x9_select").value; 
-    var SystemBootFailure_ReportEvent = document.getElementById("System_wo_Event_6x9_select").value; 
-    var SystemBootFailure_ReportImage = document.getElementById("System_wo_Event_7x9_select").value; 
-    var SystemBootFailure_ReportFootage = document.getElementById("System_wo_Event_8x9_select").value; 
-    var ExternalEventTriggering_Activation = document.getElementById("System_w_Event_1x1_select").value; 
-    var ExternalEventTriggering_FeedbackAudio = document.getElementById("System_w_Event_2x1_select").value; 
-    var ExternalEventTriggering_FeedbackOutput = document.getElementById("System_w_Event_3x1_select").value; 
-    var ExternalEventTriggering_FeedbackSpeech = document.getElementById("System_w_Event_4x1_select").value; 
-    var ExternalEventTriggering_FeedbackVisual = document.getElementById("System_w_Event_5x1_select").value; 
-    var ExternalEventTriggering_ReportEvent = document.getElementById("System_w_Event_6x1_select").value; 
-    var ExternalEventTriggering_ReportImage = document.getElementById("System_w_Event_7x1_select").value; 
-    var ExternalEventTriggering_ReportFootage = document.getElementById("System_w_Event_8x1_select").value; 
-    var ApplicationError_Activation = document.getElementById("System_w_Event_1x2_select").value; 
-    var ApplicationError_FeedbackAudio = document.getElementById("System_w_Event_2x2_select").value; 
-    var ApplicationError_FeedbackOutput = document.getElementById("System_w_Event_3x2_select").value; 
-    var ApplicationError_FeedbackSpeech = document.getElementById("System_w_Event_4x2_select").value; 
-    var ApplicationError_FeedbackVisual = document.getElementById("System_w_Event_5x2_select").value; 
-    var ApplicationError_ReportEvent = document.getElementById("System_w_Event_6x2_select").value; 
-    var ApplicationError_ReportImage = document.getElementById("System_w_Event_7x2_select").value; 
-    var ApplicationError_ReportFootage = document.getElementById("System_w_Event_8x2_select").value; 
-    var CameraError_Activation = document.getElementById("System_w_Event_1x3_select").value; 
-    var CameraError_FeedbackAudio = document.getElementById("System_w_Event_2x3_select").value; 
-    var CameraError_FeedbackOutput = document.getElementById("System_w_Event_3x3_select").value; 
-    var CameraError_FeedbackSpeech = document.getElementById("System_w_Event_4x3_select").value; 
-    var CameraError_FeedbackVisual = document.getElementById("System_w_Event_5x3_select").value; 
-    var CameraError_ReportEvent = document.getElementById("System_w_Event_6x3_select").value; 
-    var CameraError_ReportImage = document.getElementById("System_w_Event_7x3_select").value; 
-    var CameraError_ReportFootage = document.getElementById("System_w_Event_8x3_select").value; 
-    var SystemOK_Activation = document.getElementById("System_w_Event_1x4_select").value; 
-    var SystemOK_FeedbackAudio = document.getElementById("System_w_Event_2x4_select").value; 
-    var SystemOK_FeedbackOutput = document.getElementById("System_w_Event_3x4_select").value; 
-    var SystemOK_FeedbackSpeech = document.getElementById("System_w_Event_4x4_select").value; 
-    var SystemOK_FeedbackVisual = document.getElementById("System_w_Event_5x4_select").value; 
-    var SystemOK_ReportEvent = document.getElementById("System_w_Event_6x4_select").value; 
-    var SystemOK_ReportImage = document.getElementById("System_w_Event_7x4_select").value; 
-    var SystemOK_ReportFootage = document.getElementById("System_w_Event_8x4_select").value; 
-    var SystemReset_Activation = document.getElementById("System_w_Event_1x5_select").value; 
-    var SystemReset_FeedbackAudio = document.getElementById("System_w_Event_2x5_select").value; 
-    var SystemReset_FeedbackOutput = document.getElementById("System_w_Event_3x5_select").value; 
-    var SystemReset_FeedbackSpeech = document.getElementById("System_w_Event_4x5_select").value; 
-    var SystemReset_FeedbackVisual = document.getElementById("System_w_Event_5x5_select").value; 
-    var SystemReset_ReportEvent = document.getElementById("System_w_Event_6x5_select").value; 
-    var SystemReset_ReportImage = document.getElementById("System_w_Event_7x5_select").value; 
-    var SystemReset_ReportFootage = document.getElementById("System_w_Event_8x5_select").value; 
-    var SystemError_Activation = document.getElementById("System_w_Event_1x6_select").value; 
-    var SystemError_FeedbackAudio = document.getElementById("System_w_Event_2x6_select").value; 
-    var SystemError_FeedbackOutput = document.getElementById("System_w_Event_3x6_select").value; 
-    var SystemError_FeedbackSpeech = document.getElementById("System_w_Event_4x6_select").value; 
-    var SystemError_FeedbackVisual = document.getElementById("System_w_Event_5x6_select").value; 
-    var SystemError_ReportEvent = document.getElementById("System_w_Event_6x6_select").value; 
-    var SystemError_ReportImage = document.getElementById("System_w_Event_7x6_select").value; 
-    var SystemError_ReportFootage = document.getElementById("System_w_Event_8x6_select").value; 
-    var MCULOG_Activation = document.getElementById("System_w_Event_1x7_select").value; 
-    var MCULOG_FeedbackAudio = document.getElementById("System_w_Event_2x7_select").value; 
-    var MCULOG_FeedbackOutput = document.getElementById("System_w_Event_3x7_select").value; 
-    var MCULOG_FeedbackSpeech = document.getElementById("System_w_Event_4x7_select").value; 
-    var MCULOG_FeedbackVisual = document.getElementById("System_w_Event_5x7_select").value; 
-    var MCULOG_ReportEvent = document.getElementById("System_w_Event_6x7_select").value; 
-    var MCULOG_ReportImage = document.getElementById("System_w_Event_7x7_select").value; 
-    var MCULOG_ReportFootage = document.getElementById("System_w_Event_8x7_select").value; 
+    var CameraCalibrationCompleted_Activation = document.getElementById("SI_cameraCalibrationOkActivationId").checked;
+    var CameraCalibrationCompleted_FeedbackAudio = document.getElementById("SI_cameraCalibrationOkFeedbackAudioCheckbox").checked;
+    var CameraCalibrationCompleted_FeedbackOutput = document.getElementById("SI_cameraCalibrationOkFeedbackOutputId").value;
+    var CameraCalibrationCompleted_FeedbackSpeech = document.getElementById("SI_cameraCalibrationOkFeedbackSpeechCheckbox").checked;
+    var CameraCalibrationCompleted_FeedbackVisual = document.getElementById("SI_cameraCalibrationOkFeedbackVisualCheckbox").checked;
+    var CameraCalibrationCompleted_ReportEvent = document.getElementById("SI_cameraCalibrationOkDetectionEventCheckbox").checked;
+    var CameraCalibrationCompleted_ReportCabinSnapshot = document.getElementById("SI_cameraCalibrationOkReportImageInCabinCheckbox").checked;
+    var CameraCalibrationCompleted_ReportCabinTimelapse = document.getElementById("SI_cameraCalibrationOkReportTimelapseInCabinCheckbox").checked;
+    var CameraCalibrationCompleted_ReportRoadSnapshot = document.getElementById("SI_cameraCalibrationOkReportImageRoadFacingCheckbox").checked;
+    var CameraCalibrationCompleted_ReportRoadTimelapse = document.getElementById("SI_cameraCalibrationOkReportTimelapseRoadFacingCheckbox").checked;
+    var CameraCalibrationCompleted_ReportImage = "None";
+    if (CameraCalibrationCompleted_ReportCabinSnapshot && CameraCalibrationCompleted_ReportRoadSnapshot) {
+        CameraCalibrationCompleted_ReportImage = "BothSingle";
+    } else if (CameraCalibrationCompleted_ReportCabinSnapshot && !CameraCalibrationCompleted_ReportRoadSnapshot) {
+        CameraCalibrationCompleted_ReportImage = "SingleDMS";
+    } else if (!CameraCalibrationCompleted_ReportCabinSnapshot && CameraCalibrationCompleted_ReportRoadSnapshot) {
+        CameraCalibrationCompleted_ReportImage = "SingleADAS";
+    } else if (CameraCalibrationCompleted_ReportCabinTimelapse && CameraCalibrationCompleted_ReportRoadTimelapse) {
+        CameraCalibrationCompleted_ReportImage = "BothTimelaps";
+    } else if (CameraCalibrationCompleted_ReportCabinTimelapse && !CameraCalibrationCompleted_ReportRoadTimelapse) {
+        CameraCalibrationCompleted_ReportImage = "TimelapseDMS";
+    } else if (!CameraCalibrationCompleted_ReportCabinTimelapse && CameraCalibrationCompleted_ReportRoadTimelapse) {
+        CameraCalibrationCompleted_ReportImage = "TimelapseADAS";
+    }
+    var CameraCalibrationCompleted_ReportFootageCabin = document.getElementById("SI_cameraCalibrationOkReportVideoInCabinCheckbox").checked;
+    var CameraCalibrationCompleted_ReportFootageRoad = document.getElementById("SI_cameraCalibrationOkReportVideoRoadFacingCheckbox").checked;
+    var CameraCalibrationCompleted_ReportFootage = "None";
+    if (CameraCalibrationCompleted_ReportFootageCabin && CameraCalibrationCompleted_ReportFootageRoad) {
+        CameraCalibrationCompleted_ReportFootage = "Both";
+    } else if (CameraCalibrationCompleted_ReportFootageCabin && !CameraCalibrationCompleted_ReportFootageRoad) {
+        CameraCalibrationCompleted_ReportFootage = "DMS";
+    } else if (!CameraCalibrationCompleted_ReportFootageCabin && CameraCalibrationCompleted_ReportFootageRoad) {
+        CameraCalibrationCompleted_ReportFootage = "ADAS";
+    }
+    var CameraCalibrationFailed_Activation = document.getElementById("SI_cameraCalibrationFailedActivationId").checked;
+    var CameraCalibrationFailed_FeedbackAudio = document.getElementById("SI_cameraCalibrationFailedFeedbackAudioCheckbox").checked;
+    var CameraCalibrationFailed_FeedbackOutput = document.getElementById("SI_cameraCalibrationFailedFeedbackOutputId").value;
+    var CameraCalibrationFailed_FeedbackSpeech = document.getElementById("SI_cameraCalibrationFailedFeedbackSpeechCheckbox").checked;
+    var CameraCalibrationFailed_FeedbackVisual = document.getElementById("SI_cameraCalibrationFailedFeedbackVisualCheckbox").checked;
+    var CameraCalibrationFailed_ReportEvent = document.getElementById("SI_cameraCalibrationFailedDetectionEventCheckbox").checked;
+    var CameraCalibrationFailed_ReportCabinSnapshot = document.getElementById("SI_cameraCalibrationFailedReportImageInCabinCheckbox").checked;
+    var CameraCalibrationFailed_ReportCabinTimelapse = document.getElementById("SI_cameraCalibrationFailedReportTimelapseInCabinCheckbox").checked;
+    var CameraCalibrationFailed_ReportRoadSnapshot = document.getElementById("SI_cameraCalibrationFailedReportImageRoadFacingCheckbox").checked;
+    var CameraCalibrationFailed_ReportRoadTimelapse = document.getElementById("SI_cameraCalibrationFailedReportTimelapseRoadFacingCheckbox").checked;
+    var CameraCalibrationFailed_ReportImage = "None";
+    if (CameraCalibrationFailed_ReportCabinSnapshot && CameraCalibrationFailed_ReportRoadSnapshot) {
+        CameraCalibrationFailed_ReportImage = "BothSingle";
+    } else if (CameraCalibrationFailed_ReportCabinSnapshot && !CameraCalibrationFailed_ReportRoadSnapshot) {
+        CameraCalibrationFailed_ReportImage = "SingleDMS";
+    } else if (!CameraCalibrationFailed_ReportCabinSnapshot && CameraCalibrationFailed_ReportRoadSnapshot) {
+        CameraCalibrationFailed_ReportImage = "SingleADAS";
+    } else if (CameraCalibrationFailed_ReportCabinTimelapse && CameraCalibrationFailed_ReportRoadTimelapse) {
+        CameraCalibrationFailed_ReportImage = "BothTimelaps";
+    } else if (CameraCalibrationFailed_ReportCabinTimelapse && !CameraCalibrationFailed_ReportRoadTimelapse) {
+        CameraCalibrationFailed_ReportImage = "TimelapseDMS";
+    } else if (!CameraCalibrationFailed_ReportCabinTimelapse && CameraCalibrationFailed_ReportRoadTimelapse) {
+        CameraCalibrationFailed_ReportImage = "TimelapseADAS";
+    }
+    var CameraCalibrationFailed_ReportFootageCabin = document.getElementById("SI_cameraCalibrationFailedReportVideoInCabinCheckbox").checked;
+    var CameraCalibrationFailed_ReportFootageRoad = document.getElementById("SI_cameraCalibrationFailedReportVideoRoadFacingCheckbox").checked;
+    var CameraCalibrationFailed_ReportFootage = "None";
+    if (CameraCalibrationFailed_ReportFootageCabin && CameraCalibrationFailed_ReportFootageRoad) {
+        CameraCalibrationFailed_ReportFootage = "Both";
+    } else if (CameraCalibrationFailed_ReportFootageCabin && !CameraCalibrationFailed_ReportFootageRoad) {
+        CameraCalibrationFailed_ReportFootage = "DMS";
+    } else if (!CameraCalibrationFailed_ReportFootageCabin && CameraCalibrationFailed_ReportFootageRoad) {
+        CameraCalibrationFailed_ReportFootage = "ADAS";
+    }
+    var AccelerometerCalibrationCompleted_Activation = document.getElementById("SI_accelCalibrationOkActivationId").checked;
+    var AccelerometerCalibrationCompleted_FeedbackAudio = document.getElementById("SI_accelCalibrationOkFeedbackAudioCheckbox").checked;
+    var AccelerometerCalibrationCompleted_FeedbackOutput = document.getElementById("SI_accelCalibrationOkFeedbackOutputId").value;
+    var AccelerometerCalibrationCompleted_FeedbackSpeech = document.getElementById("SI_accelCalibrationOkFeedbackSpeechCheckbox").checked;
+    var AccelerometerCalibrationCompleted_FeedbackVisual = document.getElementById("SI_accelCalibrationOkFeedbackVisualCheckbox").checked;
+    var AccelerometerCalibrationCompleted_ReportEvent = document.getElementById("SI_accelCalibrationOkDetectionEventCheckbox").checked;
+    var AccelerometerCalibrationCompleted_ReportCabinSnapshot = document.getElementById("SI_accelCalibrationOkReportImageInCabinCheckbox").checked;
+    var AccelerometerCalibrationCompleted_ReportCabinTimelapse = document.getElementById("SI_accelCalibrationOkReportTimelapseInCabinCheckbox").checked;
+    var AccelerometerCalibrationCompleted_ReportRoadSnapshot = document.getElementById("SI_accelCalibrationOkReportImageRoadFacingCheckbox").checked;
+    var AccelerometerCalibrationCompleted_ReportRoadTimelapse = document.getElementById("SI_accelCalibrationOkReportTimelapseRoadFacingCheckbox").checked;
+    var AccelerometerCalibrationCompleted_ReportImage = "None";
+    if (AccelerometerCalibrationCompleted_ReportCabinSnapshot && AccelerometerCalibrationCompleted_ReportRoadSnapshot) {
+        AccelerometerCalibrationCompleted_ReportImage = "BothSingle";
+    } else if (AccelerometerCalibrationCompleted_ReportCabinSnapshot && !AccelerometerCalibrationCompleted_ReportRoadSnapshot) {
+        AccelerometerCalibrationCompleted_ReportImage = "SingleDMS";
+    } else if (!AccelerometerCalibrationCompleted_ReportCabinSnapshot && AccelerometerCalibrationCompleted_ReportRoadSnapshot) {
+        AccelerometerCalibrationCompleted_ReportImage = "SingleADAS";
+    } else if (AccelerometerCalibrationCompleted_ReportCabinTimelapse && AccelerometerCalibrationCompleted_ReportRoadTimelapse) {
+        AccelerometerCalibrationCompleted_ReportImage = "BothTimelaps";
+    } else if (AccelerometerCalibrationCompleted_ReportCabinTimelapse && !AccelerometerCalibrationCompleted_ReportRoadTimelapse) {
+        AccelerometerCalibrationCompleted_ReportImage = "TimelapseDMS";
+    } else if (!AccelerometerCalibrationCompleted_ReportCabinTimelapse && AccelerometerCalibrationCompleted_ReportRoadTimelapse) {
+        AccelerometerCalibrationCompleted_ReportImage = "TimelapseADAS";
+    }
+    var AccelerometerCalibrationCompleted_ReportFootageCabin = document.getElementById("SI_accelCalibrationOkReportVideoInCabinCheckbox").checked;
+    var AccelerometerCalibrationCompleted_ReportFootageRoad = document.getElementById("SI_accelCalibrationOkReportVideoRoadFacingCheckbox").checked;
+    var AccelerometerCalibrationCompleted_ReportFootage = "None";
+    if (AccelerometerCalibrationCompleted_ReportFootageCabin && AccelerometerCalibrationCompleted_ReportFootageRoad) {
+        AccelerometerCalibrationCompleted_ReportFootage = "Both";
+    } else if (AccelerometerCalibrationCompleted_ReportFootageCabin && !AccelerometerCalibrationCompleted_ReportFootageRoad) {
+        AccelerometerCalibrationCompleted_ReportFootage = "DMS";
+    } else if (!AccelerometerCalibrationCompleted_ReportFootageCabin && AccelerometerCalibrationCompleted_ReportFootageRoad) {
+        AccelerometerCalibrationCompleted_ReportFootage = "ADAS";
+    } 
+    var EnteredSleepMode_Activation = document.getElementById("SI_enteringSleepModeActivationId").checked;
+    var EnteredSleepMode_FeedbackAudio = document.getElementById("SI_enteringSleepModeFeedbackAudioCheckbox").checked;
+    var EnteredSleepMode_FeedbackOutput = document.getElementById("SI_enteringSleepModeFeedbackOutputId").value;
+    var EnteredSleepMode_FeedbackSpeech = document.getElementById("SI_enteringSleepModeFeedbackSpeechCheckbox").checked;
+    var EnteredSleepMode_FeedbackVisual = document.getElementById("SI_enteringSleepModeFeedbackVisualCheckbox").checked;
+    var EnteredSleepMode_ReportEvent = document.getElementById("SI_enteringSleepModeDetectionEventCheckbox").checked;
+    var EnteredSleepMode_ReportCabinSnapshot = document.getElementById("SI_enteringSleepModeReportImageInCabinCheckbox").checked;
+    var EnteredSleepMode_ReportCabinTimelapse = document.getElementById("SI_enteringSleepModeReportTimelapseInCabinCheckbox").checked;
+    var EnteredSleepMode_ReportRoadSnapshot = document.getElementById("SI_enteringSleepModeReportImageRoadFacingCheckbox").checked;
+    var EnteredSleepMode_ReportRoadTimelapse = document.getElementById("SI_enteringSleepModeReportTimelapseRoadFacingCheckbox").checked;
+    var EnteredSleepMode_ReportImage = "None";
+    if (EnteredSleepMode_ReportCabinSnapshot && EnteredSleepMode_ReportRoadSnapshot) {
+        EnteredSleepMode_ReportImage = "BothSingle";
+    } else if (EnteredSleepMode_ReportCabinSnapshot && !EnteredSleepMode_ReportRoadSnapshot) {
+        EnteredSleepMode_ReportImage = "SingleDMS";
+    } else if (!EnteredSleepMode_ReportCabinSnapshot && EnteredSleepMode_ReportRoadSnapshot) {
+        EnteredSleepMode_ReportImage = "SingleADAS";
+    } else if (EnteredSleepMode_ReportCabinTimelapse && EnteredSleepMode_ReportRoadTimelapse) {
+        EnteredSleepMode_ReportImage = "BothTimelaps";
+    } else if (EnteredSleepMode_ReportCabinTimelapse && !EnteredSleepMode_ReportRoadTimelapse) {
+        EnteredSleepMode_ReportImage = "TimelapseDMS";
+    } else if (!EnteredSleepMode_ReportCabinTimelapse && EnteredSleepMode_ReportRoadTimelapse) {
+        EnteredSleepMode_ReportImage = "TimelapseADAS";
+    }
+    var EnteredSleepMode_ReportFootageCabin = document.getElementById("SI_enteringSleepModeReportVideoInCabinCheckbox").checked;
+    var EnteredSleepMode_ReportFootageRoad = document.getElementById("SI_enteringSleepModeReportVideoRoadFacingCheckbox").checked;
+    var EnteredSleepMode_ReportFootage = "None";
+    if (EnteredSleepMode_ReportFootageCabin && EnteredSleepMode_ReportFootageRoad) {
+        EnteredSleepMode_ReportFootage = "Both";
+    } else if (EnteredSleepMode_ReportFootageCabin && !EnteredSleepMode_ReportFootageRoad) {
+        EnteredSleepMode_ReportFootage = "DMS";
+    } else if (!EnteredSleepMode_ReportFootageCabin && EnteredSleepMode_ReportFootageRoad) {
+        EnteredSleepMode_ReportFootage = "ADAS";
+    }
+    var FwUpdateStarted_Activation = document.getElementById("SI_firmwareUpdateStartedActivationId").checked;
+    var FwUpdateStarted_FeedbackAudio = document.getElementById("SI_firmwareUpdateStartedFeedbackAudioCheckbox").checked;
+    var FwUpdateStarted_FeedbackOutput = document.getElementById("SI_firmwareUpdateStartedFeedbackOutputId").value;
+    var FwUpdateStarted_FeedbackSpeech = document.getElementById("SI_firmwareUpdateStartedFeedbackSpeechCheckbox").checked;
+    var FwUpdateStarted_FeedbackVisual = document.getElementById("SI_firmwareUpdateStartedFeedbackVisualCheckbox").checked;
+    var FwUpdateStarted_ReportEvent = document.getElementById("SI_firmwareUpdateStartedDetectionEventCheckbox").checked;
+    var FwUpdateStarted_ReportCabinSnapshot = document.getElementById("SI_firmwareUpdateStartedReportImageInCabinCheckbox").checked;
+    var FwUpdateStarted_ReportCabinTimelapse = document.getElementById("SI_firmwareUpdateStartedReportTimelapseInCabinCheckbox").checked;
+    var FwUpdateStarted_ReportRoadSnapshot = document.getElementById("SI_firmwareUpdateStartedReportImageRoadFacingCheckbox").checked;
+    var FwUpdateStarted_ReportRoadTimelapse = document.getElementById("SI_firmwareUpdateStartedReportTimelapseRoadFacingCheckbox").checked;
+    var FwUpdateStarted_ReportImage = "None";
+    if (FwUpdateStarted_ReportCabinSnapshot && FwUpdateStarted_ReportRoadSnapshot) {
+        FwUpdateStarted_ReportImage = "BothSingle";
+    } else if (FwUpdateStarted_ReportCabinSnapshot && !FwUpdateStarted_ReportRoadSnapshot) {
+        FwUpdateStarted_ReportImage = "SingleDMS";
+    } else if (!FwUpdateStarted_ReportCabinSnapshot && FwUpdateStarted_ReportRoadSnapshot) {
+        FwUpdateStarted_ReportImage = "SingleADAS";
+    } else if (FwUpdateStarted_ReportCabinTimelapse && FwUpdateStarted_ReportRoadTimelapse) {
+        FwUpdateStarted_ReportImage = "BothTimelaps";
+    } else if (FwUpdateStarted_ReportCabinTimelapse && !FwUpdateStarted_ReportRoadTimelapse) {
+        FwUpdateStarted_ReportImage = "TimelapseDMS";
+    } else if (!FwUpdateStarted_ReportCabinTimelapse && FwUpdateStarted_ReportRoadTimelapse) {
+        FwUpdateStarted_ReportImage = "TimelapseADAS";
+    }
+    var FwUpdateStarted_ReportFootageCabin = document.getElementById("SI_firmwareUpdateStartedReportVideoInCabinCheckbox").checked;
+    var FwUpdateStarted_ReportFootageRoad = document.getElementById("SI_firmwareUpdateStartedReportVideoRoadFacingCheckbox").checked;
+    var FwUpdateStarted_ReportFootage = "None";
+    if (FwUpdateStarted_ReportFootageCabin && FwUpdateStarted_ReportFootageRoad) {
+        FwUpdateStarted_ReportFootage = "Both";
+    } else if (FwUpdateStarted_ReportFootageCabin && !FwUpdateStarted_ReportFootageRoad) {
+        FwUpdateStarted_ReportFootage = "DMS";
+    } else if (!FwUpdateStarted_ReportFootageCabin && FwUpdateStarted_ReportFootageRoad) {
+        FwUpdateStarted_ReportFootage = "ADAS";
+    }
+    var FwUpdateCompleted_Activation = document.getElementById("SI_firmwareUpdateOK_ActivationId").checked;
+    var FwUpdateCompleted_FeedbackAudio = document.getElementById("SI_firmwareUpdateOK_FeedbackAudioCheckbox").checked;
+    var FwUpdateCompleted_FeedbackOutput = document.getElementById("SI_firmwareUpdateOK_FeedbackOutputId").value;
+    var FwUpdateCompleted_FeedbackSpeech = document.getElementById("SI_firmwareUpdateOK_FeedbackSpeechCheckbox").checked;
+    var FwUpdateCompleted_FeedbackVisual = document.getElementById("SI_firmwareUpdateOK_FeedbackVisualCheckbox").checked;
+    var FwUpdateCompleted_ReportEvent = document.getElementById("SI_firmwareUpdateOK_DetectionEventCheckbox").checked;
+    var FwUpdateCompleted_ReportCabinSnapshot = document.getElementById("SI_firmwareUpdateOK_ReportImageInCabinCheckbox").checked;
+    var FwUpdateCompleted_ReportCabinTimelapse = document.getElementById("SI_firmwareUpdateOK_ReportTimelapseInCabinCheckbox").checked;
+    var FwUpdateCompleted_ReportRoadSnapshot = document.getElementById("SI_firmwareUpdateOK_ReportImageRoadFacingCheckbox").checked;
+    var FwUpdateCompleted_ReportRoadTimelapse = document.getElementById("SI_firmwareUpdateOK_ReportTimelapseRoadFacingCheckbox").checked;
+    var FwUpdateCompleted_ReportImage = "None";
+    if (FwUpdateCompleted_ReportCabinSnapshot && FwUpdateCompleted_ReportRoadSnapshot) {
+        FwUpdateCompleted_ReportImage = "BothSingle";
+    } else if (FwUpdateCompleted_ReportCabinSnapshot && !FwUpdateCompleted_ReportRoadSnapshot) {
+        FwUpdateCompleted_ReportImage = "SingleDMS";
+    } else if (!FwUpdateCompleted_ReportCabinSnapshot && FwUpdateCompleted_ReportRoadSnapshot) {
+        FwUpdateCompleted_ReportImage = "SingleADAS";
+    } else if (FwUpdateCompleted_ReportCabinTimelapse && FwUpdateCompleted_ReportRoadTimelapse) {
+        FwUpdateCompleted_ReportImage = "BothTimelaps";
+    } else if (FwUpdateCompleted_ReportCabinTimelapse && !FwUpdateCompleted_ReportRoadTimelapse) {
+        FwUpdateCompleted_ReportImage = "TimelapseDMS";
+    } else if (!FwUpdateCompleted_ReportCabinTimelapse && FwUpdateCompleted_ReportRoadTimelapse) {
+        FwUpdateCompleted_ReportImage = "TimelapseADAS";
+    }
+    var FwUpdateCompleted_ReportFootageCabin = document.getElementById("SI_firmwareUpdateOK_ReportVideoInCabinCheckbox").checked;
+    var FwUpdateCompleted_ReportFootageRoad = document.getElementById("SI_firmwareUpdateOK_ReportVideoRoadFacingCheckbox").checked;
+    var FwUpdateCompleted_ReportFootage = "None";
+    if (FwUpdateCompleted_ReportFootageCabin && FwUpdateCompleted_ReportFootageRoad) {
+        FwUpdateCompleted_ReportFootage = "Both";
+    } else if (FwUpdateCompleted_ReportFootageCabin && !FwUpdateCompleted_ReportFootageRoad) {
+        FwUpdateCompleted_ReportFootage = "DMS";
+    } else if (!FwUpdateCompleted_ReportFootageCabin && FwUpdateCompleted_ReportFootageRoad) {
+        FwUpdateCompleted_ReportFootage = "ADAS";
+    }
+    var FwUpdateFailed_Activation = document.getElementById("SI_firmwareUpdateFailedActivationId").checked;
+    var FwUpdateFailed_FeedbackAudio = document.getElementById("SI_firmwareUpdateFailedFeedbackAudioCheckbox").checked;
+    var FwUpdateFailed_FeedbackOutput = document.getElementById("SI_firmwareUpdateFailedFeedbackOutputId").value;
+    var FwUpdateFailed_FeedbackSpeech = document.getElementById("SI_firmwareUpdateFailedFeedbackSpeechCheckbox").checked;
+    var FwUpdateFailed_FeedbackVisual = document.getElementById("SI_firmwareUpdateFailedFeedbackVisualCheckbox").checked;
+    var FwUpdateFailed_ReportEvent = document.getElementById("SI_firmwareUpdateFailedDetectionEventCheckbox").checked;
+    var FwUpdateFailed_ReportCabinSnapshot = document.getElementById("SI_firmwareUpdateFailedReportImageInCabinCheckbox").checked;
+    var FwUpdateFailed_ReportCabinTimelapse = document.getElementById("SI_firmwareUpdateFailedReportTimelapseInCabinCheckbox").checked;
+    var FwUpdateFailed_ReportRoadSnapshot = document.getElementById("SI_firmwareUpdateFailedReportImageRoadFacingCheckbox").checked;
+    var FwUpdateFailed_ReportRoadTimelapse = document.getElementById("SI_firmwareUpdateFailedReportTimelapseRoadFacingCheckbox").checked;
+    var FwUpdateFailed_ReportImage = "None";
+    if (FwUpdateFailed_ReportCabinSnapshot && FwUpdateFailed_ReportRoadSnapshot) {
+        FwUpdateFailed_ReportImage = "BothSingle";
+    } else if (FwUpdateFailed_ReportCabinSnapshot && !FwUpdateFailed_ReportRoadSnapshot) {
+        FwUpdateFailed_ReportImage = "SingleDMS";
+    } else if (!FwUpdateFailed_ReportCabinSnapshot && FwUpdateFailed_ReportRoadSnapshot) {
+        FwUpdateFailed_ReportImage = "SingleADAS";
+    } else if (FwUpdateFailed_ReportCabinTimelapse && FwUpdateFailed_ReportRoadTimelapse) {
+        FwUpdateFailed_ReportImage = "BothTimelaps";
+    } else if (FwUpdateFailed_ReportCabinTimelapse && !FwUpdateFailed_ReportRoadTimelapse) {
+        FwUpdateFailed_ReportImage = "TimelapseDMS";
+    } else if (!FwUpdateFailed_ReportCabinTimelapse && FwUpdateFailed_ReportRoadTimelapse) {
+        FwUpdateFailed_ReportImage = "TimelapseADAS";
+    }
+    var FwUpdateFailed_ReportFootageCabin = document.getElementById("SI_firmwareUpdateFailedReportVideoInCabinCheckbox").checked;
+    var FwUpdateFailed_ReportFootageRoad = document.getElementById("SI_firmwareUpdateFailedReportVideoRoadFacingCheckbox").checked;
+    var FwUpdateFailed_ReportFootage = "None";
+    if (FwUpdateFailed_ReportFootageCabin && FwUpdateFailed_ReportFootageRoad) {
+        FwUpdateFailed_ReportFootage = "Both";
+    } else if (FwUpdateFailed_ReportFootageCabin && !FwUpdateFailed_ReportFootageRoad) {
+        FwUpdateFailed_ReportFootage = "DMS";
+    } else if (!FwUpdateFailed_ReportFootageCabin && FwUpdateFailed_ReportFootageRoad) {
+        FwUpdateFailed_ReportFootage = "ADAS";
+    }
+    var SystemBoot_Activation = document.getElementById("SI_systemBootActivationId").checked;
+    var SystemBoot_FeedbackAudio = document.getElementById("SI_systemBootFeedbackAudioCheckbox").checked;
+    var SystemBoot_FeedbackOutput = document.getElementById("SI_systemBootFeedbackOutputId").value;
+    var SystemBoot_FeedbackSpeech = document.getElementById("SI_systemBootFeedbackSpeechCheckbox").checked;
+    var SystemBoot_FeedbackVisual = document.getElementById("SI_systemBootFeedbackVisualCheckbox").checked;
+    var SystemBoot_ReportEvent = document.getElementById("SI_systemBootDetectionEventCheckbox").checked;
+    var SystemBoot_ReportCabinSnapshot = document.getElementById("SI_systemBootReportImageInCabinCheckbox").checked;
+    var SystemBoot_ReportCabinTimelapse = document.getElementById("SI_systemBootReportTimelapseInCabinCheckbox").checked;
+    var SystemBoot_ReportRoadSnapshot = document.getElementById("SI_systemBootReportImageRoadFacingCheckbox").checked;
+    var SystemBoot_ReportRoadTimelapse = document.getElementById("SI_systemBootReportTimelapseRoadFacingCheckbox").checked;
+    var SystemBoot_ReportImage = "None";
+    if (SystemBoot_ReportCabinSnapshot && SystemBoot_ReportRoadSnapshot) {
+        SystemBoot_ReportImage = "BothSingle";
+    } else if (SystemBoot_ReportCabinSnapshot && !SystemBoot_ReportRoadSnapshot) {
+        SystemBoot_ReportImage = "SingleDMS";
+    } else if (!SystemBoot_ReportCabinSnapshot && SystemBoot_ReportRoadSnapshot) {
+        SystemBoot_ReportImage = "SingleADAS";
+    } else if (SystemBoot_ReportCabinTimelapse && SystemBoot_ReportRoadTimelapse) {
+        SystemBoot_ReportImage = "BothTimelaps";
+    } else if (SystemBoot_ReportCabinTimelapse && !SystemBoot_ReportRoadTimelapse) {
+        SystemBoot_ReportImage = "TimelapseDMS";
+    } else if (!SystemBoot_ReportCabinTimelapse && SystemBoot_ReportRoadTimelapse) {
+        SystemBoot_ReportImage = "TimelapseADAS";
+    }
+    var SystemBoot_ReportFootageCabin = document.getElementById("SI_systemBootReportVideoInCabinCheckbox").checked;
+    var SystemBoot_ReportFootageRoad = document.getElementById("SI_systemBootReportVideoRoadFacingCheckbox").checked;
+    var SystemBoot_ReportFootage = "None";
+    if (SystemBoot_ReportFootageCabin && SystemBoot_ReportFootageRoad) {
+        SystemBoot_ReportFootage = "Both";
+    } else if (SystemBoot_ReportFootageCabin && !SystemBoot_ReportFootageRoad) {
+        SystemBoot_ReportFootage = "DMS";
+    } else if (!SystemBoot_ReportFootageCabin && SystemBoot_ReportFootageRoad) {
+        SystemBoot_ReportFootage = "ADAS";
+    }
+    var SystemBootFailure_Activation = document.getElementById("SI_systemBootFailureActivationId").checked;
+    var SystemBootFailure_FeedbackAudio = document.getElementById("SI_systemBootFailureFeedbackAudioCheckbox").checked;
+    var SystemBootFailure_FeedbackOutput = document.getElementById("SI_systemBootFailureFeedbackOutputId").value;
+    var SystemBootFailure_FeedbackSpeech = document.getElementById("SI_systemBootFailureFeedbackSpeechCheckbox").checked;
+    var SystemBootFailure_FeedbackVisual = document.getElementById("SI_systemBootFailureFeedbackVisualCheckbox").checked;
+    var SystemBootFailure_ReportEvent = document.getElementById("SI_systemBootFailureDetectionEventCheckbox").checked;
+    var SystemBootFailure_ReportCabinSnapshot = document.getElementById("SI_systemBootFailureReportImageInCabinCheckbox").checked;
+    var SystemBootFailure_ReportCabinTimelapse = document.getElementById("SI_systemBootFailureReportTimelapseInCabinCheckbox").checked;
+    var SystemBootFailure_ReportRoadSnapshot = document.getElementById("SI_systemBootFailureReportImageRoadFacingCheckbox").checked;
+    var SystemBootFailure_ReportRoadTimelapse = document.getElementById("SI_systemBootFailureReportTimelapseRoadFacingCheckbox").checked;
+    var SystemBootFailure_ReportImage = "None";
+    if (SystemBootFailure_ReportCabinSnapshot && SystemBootFailure_ReportRoadSnapshot) {
+        SystemBootFailure_ReportImage = "BothSingle";
+    } else if (SystemBootFailure_ReportCabinSnapshot && !SystemBootFailure_ReportRoadSnapshot) {
+        SystemBootFailure_ReportImage = "SingleDMS";
+    } else if (!SystemBootFailure_ReportCabinSnapshot && SystemBootFailure_ReportRoadSnapshot) {
+        SystemBootFailure_ReportImage = "SingleADAS";
+    } else if (SystemBootFailure_ReportCabinTimelapse && SystemBootFailure_ReportRoadTimelapse) {
+        SystemBootFailure_ReportImage = "BothTimelaps";
+    } else if (SystemBootFailure_ReportCabinTimelapse && !SystemBootFailure_ReportRoadTimelapse) {
+        SystemBootFailure_ReportImage = "TimelapseDMS";
+    } else if (!SystemBootFailure_ReportCabinTimelapse && SystemBootFailure_ReportRoadTimelapse) {
+        SystemBootFailure_ReportImage = "TimelapseADAS";
+    }
+    var SystemBootFailure_ReportFootageCabin = document.getElementById("SI_systemBootFailureReportVideoInCabinCheckbox").checked;
+    var SystemBootFailure_ReportFootageRoad = document.getElementById("SI_systemBootFailureReportVideoRoadFacingCheckbox").checked;
+    var SystemBootFailure_ReportFootage = "None";
+    if (SystemBootFailure_ReportFootageCabin && SystemBootFailure_ReportFootageRoad) {
+        SystemBootFailure_ReportFootage = "Both";
+    } else if (SystemBootFailure_ReportFootageCabin && !SystemBootFailure_ReportFootageRoad) {
+        SystemBootFailure_ReportFootage = "DMS";
+    } else if (!SystemBootFailure_ReportFootageCabin && SystemBootFailure_ReportFootageRoad) {
+        SystemBootFailure_ReportFootage = "ADAS";
+    }
+    var ExternalEventTriggering_Activation = document.getElementById("SI_externalEventTriggeringActivationId").checked;
+    var ExternalEventTriggering_FeedbackAudio = document.getElementById("SI_externalEventTriggeringFeedbackAudioCheckbox").checked;
+    var ExternalEventTriggering_FeedbackOutput = document.getElementById("SI_externalEventTriggeringFeedbackOutputId").value;
+    var ExternalEventTriggering_FeedbackSpeech = document.getElementById("SI_externalEventTriggeringFeedbackSpeechCheckbox").checked;
+    var ExternalEventTriggering_FeedbackVisual = document.getElementById("SI_externalEventTriggeringFeedbackVisualCheckbox").checked;
+    var ExternalEventTriggering_ReportEvent = document.getElementById("SI_externalEventTriggeringDetectionEventCheckbox").checked;
+    var ExternalEventTriggering_ReportCabinSnapshot = document.getElementById("SI_externalEventTriggeringReportImageInCabinCheckbox").checked;
+    var ExternalEventTriggering_ReportCabinTimelapse = document.getElementById("SI_externalEventTriggeringReportTimelapseInCabinCheckbox").checked;
+    var ExternalEventTriggering_ReportRoadSnapshot = document.getElementById("SI_externalEventTriggeringReportImageRoadFacingCheckbox").checked;
+    var ExternalEventTriggering_ReportRoadTimelapse = document.getElementById("SI_externalEventTriggeringReportTimelapseRoadFacingCheckbox").checked;
+    var ExternalEventTriggering_ReportImage = "None";
+    if (ExternalEventTriggering_ReportCabinSnapshot && ExternalEventTriggering_ReportRoadSnapshot) {
+        ExternalEventTriggering_ReportImage = "BothSingle";
+    } else if (ExternalEventTriggering_ReportCabinSnapshot && !ExternalEventTriggering_ReportRoadSnapshot) {
+        ExternalEventTriggering_ReportImage = "SingleDMS";
+    } else if (!ExternalEventTriggering_ReportCabinSnapshot && ExternalEventTriggering_ReportRoadSnapshot) {
+        ExternalEventTriggering_ReportImage = "SingleADAS";
+    } else if (ExternalEventTriggering_ReportCabinTimelapse && ExternalEventTriggering_ReportRoadTimelapse) {
+        ExternalEventTriggering_ReportImage = "BothTimelaps";
+    } else if (ExternalEventTriggering_ReportCabinTimelapse && !ExternalEventTriggering_ReportRoadTimelapse) {
+        ExternalEventTriggering_ReportImage = "TimelapseDMS";
+    } else if (!ExternalEventTriggering_ReportCabinTimelapse && ExternalEventTriggering_ReportRoadTimelapse) {
+        ExternalEventTriggering_ReportImage = "TimelapseADAS";
+    }
+    var ExternalEventTriggering_ReportFootageCabin = document.getElementById("SI_externalEventTriggeringReportVideoInCabinCheckbox").checked;
+    var ExternalEventTriggering_ReportFootageRoad = document.getElementById("SI_externalEventTriggeringReportVideoRoadFacingCheckbox").checked;
+    var ExternalEventTriggering_ReportFootage = "None";
+    if (ExternalEventTriggering_ReportFootageCabin && ExternalEventTriggering_ReportFootageRoad) {
+        ExternalEventTriggering_ReportFootage = "Both";
+    } else if (ExternalEventTriggering_ReportFootageCabin && !ExternalEventTriggering_ReportFootageRoad) {
+        ExternalEventTriggering_ReportFootage = "DMS";
+    } else if (!ExternalEventTriggering_ReportFootageCabin && ExternalEventTriggering_ReportFootageRoad) {
+        ExternalEventTriggering_ReportFootage = "ADAS";
+    }
+    var ApplicationError_Activation = document.getElementById("SI_applicationErrorActivationId").checked;
+    var ApplicationError_FeedbackAudio = document.getElementById("SI_applicationErrorFeedbackAudioCheckbox").checked;
+    var ApplicationError_FeedbackOutput = document.getElementById("SI_applicationErrorFeedbackOutputId").value;
+    var ApplicationError_FeedbackSpeech = document.getElementById("SI_applicationErrorFeedbackSpeechCheckbox").checked;
+    var ApplicationError_FeedbackVisual = document.getElementById("SI_applicationErrorFeedbackVisualCheckbox").checked;
+    var ApplicationError_ReportEvent = document.getElementById("SI_applicationErrorDetectionEventCheckbox").checked;
+    var ApplicationError_ReportCabinSnapshot = document.getElementById("SI_applicationErrorReportImageInCabinCheckbox").checked;
+    var ApplicationError_ReportCabinTimelapse = document.getElementById("SI_applicationErrorReportTimelapseInCabinCheckbox").checked;
+    var ApplicationError_ReportRoadSnapshot = document.getElementById("SI_applicationErrorReportImageRoadFacingCheckbox").checked;
+    var ApplicationError_ReportRoadTimelapse = document.getElementById("SI_applicationErrorReportTimelapseRoadFacingCheckbox").checked;
+    var ApplicationError_ReportImage = "None";
+    if (ApplicationError_ReportCabinSnapshot && ApplicationError_ReportRoadSnapshot) {
+        ApplicationError_ReportImage = "BothSingle";
+    } else if (ApplicationError_ReportCabinSnapshot && !ApplicationError_ReportRoadSnapshot) {
+        ApplicationError_ReportImage = "SingleDMS";
+    } else if (!ApplicationError_ReportCabinSnapshot && ApplicationError_ReportRoadSnapshot) {
+        ApplicationError_ReportImage = "SingleADAS";
+    } else if (ApplicationError_ReportCabinTimelapse && ApplicationError_ReportRoadTimelapse) {
+        ApplicationError_ReportImage = "BothTimelaps";
+    } else if (ApplicationError_ReportCabinTimelapse && !ApplicationError_ReportRoadTimelapse) {
+        ApplicationError_ReportImage = "TimelapseDMS";
+    } else if (!ApplicationError_ReportCabinTimelapse && ApplicationError_ReportRoadTimelapse) {
+        ApplicationError_ReportImage = "TimelapseADAS";
+    }
+    var ApplicationError_ReportFootageCabin = document.getElementById("SI_applicationErrorReportVideoInCabinCheckbox").checked;
+    var ApplicationError_ReportFootageRoad = document.getElementById("SI_applicationErrorReportVideoRoadFacingCheckbox").checked;
+    var ApplicationError_ReportFootage = "None";
+    if (ApplicationError_ReportFootageCabin && ApplicationError_ReportFootageRoad) {
+        ApplicationError_ReportFootage = "Both";
+    } else if (ApplicationError_ReportFootageCabin && !ApplicationError_ReportFootageRoad) {
+        ApplicationError_ReportFootage = "DMS";
+    } else if (!ApplicationError_ReportFootageCabin && ApplicationError_ReportFootageRoad) {
+        ApplicationError_ReportFootage = "ADAS";
+    }
+    var CameraError_Activation = document.getElementById("SI_cameraErrorActivationId").checked;
+    var CameraError_FeedbackAudio = document.getElementById("SI_cameraErrorFeedbackAudioCheckbox").checked;
+    var CameraError_FeedbackOutput = document.getElementById("SI_cameraErrorFeedbackOutputId").value;
+    var CameraError_FeedbackSpeech = document.getElementById("SI_cameraErrorFeedbackSpeechCheckbox").checked;
+    var CameraError_FeedbackVisual = document.getElementById("SI_cameraErrorFeedbackVisualCheckbox").checked;
+    var CameraError_ReportEvent = document.getElementById("SI_cameraErrorDetectionEventCheckbox").checked;
+    var CameraError_ReportCabinSnapshot = document.getElementById("SI_cameraErrorReportImageInCabinCheckbox").checked;
+    var CameraError_ReportCabinTimelapse = document.getElementById("SI_cameraErrorReportTimelapseInCabinCheckbox").checked;
+    var CameraError_ReportRoadSnapshot = document.getElementById("SI_cameraErrorReportImageRoadFacingCheckbox").checked;
+    var CameraError_ReportRoadTimelapse = document.getElementById("SI_cameraErrorReportTimelapseRoadFacingCheckbox").checked;
+    var CameraError_ReportImage = "None";
+    if (CameraError_ReportCabinSnapshot && CameraError_ReportRoadSnapshot) {
+        CameraError_ReportImage = "BothSingle";
+    } else if (CameraError_ReportCabinSnapshot && !CameraError_ReportRoadSnapshot) {
+        CameraError_ReportImage = "SingleDMS";
+    } else if (!CameraError_ReportCabinSnapshot && CameraError_ReportRoadSnapshot) {
+        CameraError_ReportImage = "SingleADAS";
+    } else if (CameraError_ReportCabinTimelapse && CameraError_ReportRoadTimelapse) {
+        CameraError_ReportImage = "BothTimelaps";
+    } else if (CameraError_ReportCabinTimelapse && !CameraError_ReportRoadTimelapse) {
+        CameraError_ReportImage = "TimelapseDMS";
+    } else if (!CameraError_ReportCabinTimelapse && CameraError_ReportRoadTimelapse) {
+        CameraError_ReportImage = "TimelapseADAS";
+    }
+    var CameraError_ReportFootageCabin = document.getElementById("SI_cameraErrorReportVideoInCabinCheckbox").checked;
+    var CameraError_ReportFootageRoad = document.getElementById("SI_cameraErrorReportVideoRoadFacingCheckbox").checked;
+    var CameraError_ReportFootage = "None";
+    if (CameraError_ReportFootageCabin && CameraError_ReportFootageRoad) {
+        CameraError_ReportFootage = "Both";
+    } else if (CameraError_ReportFootageCabin && !CameraError_ReportFootageRoad) {
+        CameraError_ReportFootage = "DMS";
+    } else if (!CameraError_ReportFootageCabin && CameraError_ReportFootageRoad) {
+        CameraError_ReportFootage = "ADAS";
+    }
+    var SystemOK_Activation = document.getElementById("SI_systemOK_ActivationId").checked;
+    var SystemOK_FeedbackAudio = document.getElementById("SI_systemOK_FeedbackAudioCheckbox").checked;
+    var SystemOK_FeedbackOutput = document.getElementById("SI_systemOK_FeedbackOutputId").value;
+    var SystemOK_FeedbackSpeech = document.getElementById("SI_systemOK_FeedbackSpeechCheckbox").checked;
+    var SystemOK_FeedbackVisual = document.getElementById("SI_systemOK_FeedbackVisualCheckbox").checked;
+    var SystemOK_ReportEvent = document.getElementById("SI_systemOK_DetectionEventCheckbox").checked;
+    var SystemOK_ReportCabinSnapshot = document.getElementById("SI_systemOK_ReportImageInCabinCheckbox").checked;
+    var SystemOK_ReportCabinTimelapse = document.getElementById("SI_systemOK_ReportTimelapseInCabinCheckbox").checked;
+    var SystemOK_ReportRoadSnapshot = document.getElementById("SI_systemOK_ReportImageRoadFacingCheckbox").checked;
+    var SystemOK_ReportRoadTimelapse = document.getElementById("SI_systemOK_ReportTimelapseRoadFacingCheckbox").checked;
+    var SystemOK_ReportImage = "None";
+    if (SystemOK_ReportCabinSnapshot && SystemOK_ReportRoadSnapshot) {
+        SystemOK_ReportImage = "BothSingle";
+    } else if (SystemOK_ReportCabinSnapshot && !SystemOK_ReportRoadSnapshot) {
+        SystemOK_ReportImage = "SingleDMS";
+    } else if (!SystemOK_ReportCabinSnapshot && SystemOK_ReportRoadSnapshot) {
+        SystemOK_ReportImage = "SingleADAS";
+    } else if (SystemOK_ReportCabinTimelapse && SystemOK_ReportRoadTimelapse) {
+        SystemOK_ReportImage = "BothTimelaps";
+    } else if (SystemOK_ReportCabinTimelapse && !SystemOK_ReportRoadTimelapse) {
+        SystemOK_ReportImage = "TimelapseDMS";
+    } else if (!SystemOK_ReportCabinTimelapse && SystemOK_ReportRoadTimelapse) {
+        SystemOK_ReportImage = "TimelapseADAS";
+    }
+    var SystemOK_ReportFootageCabin = document.getElementById("SI_systemOK_ReportVideoInCabinCheckbox").checked;
+    var SystemOK_ReportFootageRoad = document.getElementById("SI_systemOK_ReportVideoRoadFacingCheckbox").checked;
+    var SystemOK_ReportFootage = "None";
+    if (SystemOK_ReportFootageCabin && SystemOK_ReportFootageRoad) {
+        SystemOK_ReportFootage = "Both";
+    } else if (SystemOK_ReportFootageCabin && !SystemOK_ReportFootageRoad) {
+        SystemOK_ReportFootage = "DMS";
+    } else if (!SystemOK_ReportFootageCabin && SystemOK_ReportFootageRoad) {
+        SystemOK_ReportFootage = "ADAS";
+    }
+    var SystemReset_Activation = document.getElementById("SI_systemResetActivationId").checked;
+    var SystemReset_FeedbackAudio = document.getElementById("SI_systemResetFeedbackAudioCheckbox").checked;
+    var SystemReset_FeedbackOutput = document.getElementById("SI_systemResetFeedbackOutputId").value;
+    var SystemReset_FeedbackSpeech = document.getElementById("SI_systemResetFeedbackSpeechCheckbox").checked;
+    var SystemReset_FeedbackVisual = document.getElementById("SI_systemResetFeedbackVisualCheckbox").checked;
+    var SystemReset_ReportEvent = document.getElementById("SI_systemResetDetectionEventCheckbox").checked;
+    var SystemReset_ReportCabinSnapshot = document.getElementById("SI_systemResetReportImageInCabinCheckbox").checked;
+    var SystemReset_ReportCabinTimelapse = document.getElementById("SI_systemResetReportTimelapseInCabinCheckbox").checked;
+    var SystemReset_ReportRoadSnapshot = document.getElementById("SI_systemResetReportImageRoadFacingCheckbox").checked;
+    var SystemReset_ReportRoadTimelapse = document.getElementById("SI_systemResetReportTimelapseRoadFacingCheckbox").checked;
+    var SystemReset_ReportImage = "None";
+    if (SystemReset_ReportCabinSnapshot && SystemReset_ReportRoadSnapshot) {
+        SystemReset_ReportImage = "BothSingle";
+    } else if (SystemReset_ReportCabinSnapshot && !SystemReset_ReportRoadSnapshot) {
+        SystemReset_ReportImage = "SingleDMS";
+    } else if (!SystemReset_ReportCabinSnapshot && SystemReset_ReportRoadSnapshot) {
+        SystemReset_ReportImage = "SingleADAS";
+    } else if (SystemReset_ReportCabinTimelapse && SystemReset_ReportRoadTimelapse) {
+        SystemReset_ReportImage = "BothTimelaps";
+    } else if (SystemReset_ReportCabinTimelapse && !SystemReset_ReportRoadTimelapse) {
+        SystemReset_ReportImage = "TimelapseDMS";
+    } else if (!SystemReset_ReportCabinTimelapse && SystemReset_ReportRoadTimelapse) {
+        SystemReset_ReportImage = "TimelapseADAS";
+    }
+    var SystemReset_ReportFootageCabin = document.getElementById("SI_systemResetReportVideoInCabinCheckbox").checked;
+    var SystemReset_ReportFootageRoad = document.getElementById("SI_systemResetReportVideoRoadFacingCheckbox").checked;
+    var SystemReset_ReportFootage = "None";
+    if (SystemReset_ReportFootageCabin && SystemReset_ReportFootageRoad) {
+        SystemReset_ReportFootage = "Both";
+    } else if (SystemReset_ReportFootageCabin && !SystemReset_ReportFootageRoad) {
+        SystemReset_ReportFootage = "DMS";
+    } else if (!SystemReset_ReportFootageCabin && SystemReset_ReportFootageRoad) {
+        SystemReset_ReportFootage = "ADAS";
+    }
+    var SystemError_Activation = document.getElementById("SI_systemErrorActivationId").checked;
+    var SystemError_FeedbackAudio = document.getElementById("SI_systemErrorFeedbackAudioCheckbox").checked;
+    var SystemError_FeedbackOutput = document.getElementById("SI_systemErrorFeedbackOutputId").value;
+    var SystemError_FeedbackSpeech = document.getElementById("SI_systemErrorFeedbackSpeechCheckbox").checked;
+    var SystemError_FeedbackVisual = document.getElementById("SI_systemErrorFeedbackVisualCheckbox").checked;
+    var SystemError_ReportEvent = document.getElementById("SI_systemErrorDetectionEventCheckbox").checked;
+    var SystemError_ReportCabinSnapshot = document.getElementById("SI_systemErrorReportImageInCabinCheckbox").checked;
+    var SystemError_ReportCabinTimelapse = document.getElementById("SI_systemErrorReportTimelapseInCabinCheckbox").checked;
+    var SystemError_ReportRoadSnapshot = document.getElementById("SI_systemErrorReportImageRoadFacingCheckbox").checked;
+    var SystemError_ReportRoadTimelapse = document.getElementById("SI_systemErrorReportTimelapseRoadFacingCheckbox").checked;
+    var SystemError_ReportImage = "None";
+    if (SystemError_ReportCabinSnapshot && SystemError_ReportRoadSnapshot) {
+        SystemError_ReportImage = "BothSingle";
+    } else if (SystemError_ReportCabinSnapshot && !SystemError_ReportRoadSnapshot) {
+        SystemError_ReportImage = "SingleDMS";
+    } else if (!SystemError_ReportCabinSnapshot && SystemError_ReportRoadSnapshot) {
+        SystemError_ReportImage = "SingleADAS";
+    } else if (SystemError_ReportCabinTimelapse && SystemError_ReportRoadTimelapse) {
+        SystemError_ReportImage = "BothTimelaps";
+    } else if (SystemError_ReportCabinTimelapse && !SystemError_ReportRoadTimelapse) {
+        SystemError_ReportImage = "TimelapseDMS";
+    } else if (!SystemError_ReportCabinTimelapse && SystemError_ReportRoadTimelapse) {
+        SystemError_ReportImage = "TimelapseADAS";
+    }
+    var SystemError_ReportFootageCabin = document.getElementById("SI_systemErrorReportVideoInCabinCheckbox").checked;
+    var SystemError_ReportFootageRoad = document.getElementById("SI_systemErrorReportVideoRoadFacingCheckbox").checked;
+    var SystemError_ReportFootage = "None";
+    if (SystemError_ReportFootageCabin && SystemError_ReportFootageRoad) {
+        SystemError_ReportFootage = "Both";
+    } else if (SystemError_ReportFootageCabin && !SystemError_ReportFootageRoad) {
+        SystemError_ReportFootage = "DMS";
+    } else if (!SystemError_ReportFootageCabin && SystemError_ReportFootageRoad) {
+        SystemError_ReportFootage = "ADAS";
+    }
+    var MCULOG_Activation = document.getElementById("SI_MCU_LogActivationId").checked;
+    var MCULOG_FeedbackAudio = document.getElementById("SI_MCU_LogFeedbackAudioCheckbox").checked;
+    var MCULOG_FeedbackOutput = document.getElementById("SI_MCU_LogFeedbackOutputId").value;
+    var MCULOG_FeedbackSpeech = document.getElementById("SI_MCU_LogFeedbackSpeechCheckbox").checked;
+    var MCULOG_FeedbackVisual = document.getElementById("SI_MCU_LogFeedbackVisualCheckbox").checked;
+    var MCULOG_ReportEvent = document.getElementById("SI_MCU_LogDetectionEventCheckbox").checked;
+    var MCULOG_ReportCabinSnapshot = document.getElementById("SI_MCU_LogReportImageInCabinCheckbox").checked;
+    var MCULOG_ReportCabinTimelapse = document.getElementById("SI_MCU_LogReportTimelapseInCabinCheckbox").checked;
+    var MCULOG_ReportRoadSnapshot = document.getElementById("SI_MCU_LogReportImageRoadFacingCheckbox").checked;
+    var MCULOG_ReportRoadTimelapse = document.getElementById("SI_MCU_LogReportTimelapseRoadFacingCheckbox").checked;
+    var MCULOG_ReportImage = "None";
+    if (MCULOG_ReportCabinSnapshot && MCULOG_ReportRoadSnapshot) {
+        MCULOG_ReportImage = "BothSingle";
+    } else if (MCULOG_ReportCabinSnapshot && !MCULOG_ReportRoadSnapshot) {
+        MCULOG_ReportImage = "SingleDMS";
+    } else if (!MCULOG_ReportCabinSnapshot && MCULOG_ReportRoadSnapshot) {
+        MCULOG_ReportImage = "SingleADAS";
+    } else if (MCULOG_ReportCabinTimelapse && MCULOG_ReportRoadTimelapse) {
+        MCULOG_ReportImage = "BothTimelaps";
+    } else if (MCULOG_ReportCabinTimelapse && !MCULOG_ReportRoadTimelapse) {
+        MCULOG_ReportImage = "TimelapseDMS";
+    } else if (!MCULOG_ReportCabinTimelapse && MCULOG_ReportRoadTimelapse) {
+        MCULOG_ReportImage = "TimelapseADAS";
+    }
+    var MCULOG_ReportFootageCabin = document.getElementById("SI_MCU_LogReportVideoInCabinCheckbox").checked;
+    var MCULOG_ReportFootageRoad = document.getElementById("SI_MCU_LogReportVideoRoadFacingCheckbox").checked;
+    var MCULOG_ReportFootage = "None";
+    if (MCULOG_ReportFootageCabin && MCULOG_ReportFootageRoad) {
+        MCULOG_ReportFootage = "Both";
+    } else if (MCULOG_ReportFootageCabin && !MCULOG_ReportFootageRoad) {
+        MCULOG_ReportFootage = "DMS";
+    } else if (!MCULOG_ReportFootageCabin && MCULOG_ReportFootageRoad) {
+        MCULOG_ReportFootage = "ADAS";
+    }
 
     //Modem
-    var KeepAliveInSec = parseInt(document.getElementById("KeepAliveInSec").value);
-    var ModemResetHWTimeInMin = parseInt(document.getElementById("ModemResetHWTimeInMin").value);
-    var ModemResetSignalTimeInMin = parseInt(document.getElementById("ModemResetSignalTimeInMin").value);
-    var RepeatCycleUntilCommRecovery = document.getElementById("RepeatCycleUntilCommRecovery").value;
-    var SelfPowerRecycleTimeInMin = parseInt(document.getElementById("SelfPowerRecycleTimeInMin").value);
-    var SocketResetTimeInMin = parseInt(document.getElementById("SocketResetTimeInMin").value);
+    var KeepAliveInSec = parseInt(document.getElementById("SI_communicationsWatchdogKeepAliveNumber").value);
+    var ModemResetHWTimeInMin = parseInt(document.getElementById("SI_communicationsWatchdogModemResetNumber").value);
+    var ModemResetSignalTimeInMin = parseInt(document.getElementById("SI_communicationsWatchdogModemResetSignalNumber").value);
+    var RepeatCycleUntilCommRecovery = document.getElementById("SI_communicationsWatchdogRepeatCycleId").checked;
+    var SelfPowerRecycleTimeInMin = parseInt(document.getElementById("SI_communicationsWatchdogSelfPowerRecycleNumber").value);
+    var SocketResetTimeInMin = parseInt(document.getElementById("SI_communicationsWatchdogSocketResetTimeNumber").value);
     
     //Hardware
-    var Acc3DDriveTimeFilter = parseInt(document.getElementById("Acc3DDriveTimeFilter").value);
-    var Acc3DStopTimeFilter = parseInt(document.getElementById("Acc3DStopTimeFilter").value);
+    var Acc3DDriveTimeFilter = parseInt(document.getElementById("SI_driveTimeFilterNumber").value);
+    var Acc3DStopTimeFilter = parseInt(document.getElementById("SI_stopTimeFilterNumber").value);
     var ContRecording = parseInt(document.getElementById("ContRecording").value);
     var StateGPIO = document.getElementById("StateGPIO").value;
     var GPIO_Field_1 = document.getElementById("Select_GPIO_1").value;
@@ -681,22 +1487,22 @@ function generate_FS10_JSON(){
     var FrequencyGPO = parseFloat(document.getElementById("FrequencyGPO").value).toFixed(1);
     var LengthGPO = parseInt(document.getElementById("LengthGPO").value);
     var SourceGPO = document.getElementById("SourceGPO").value;
-    var DeviceTurnOnEnable = document.getElementById("DeviceTurnOnEnable").value;
-    var SelfEventTriggerEnable = document.getElementById("SelfEventTriggerEnable").value;
+    var DeviceTurnOnEnable = document.getElementById("SI_deviceTurnOnId").checked;
+    var SelfEventTriggerEnable = document.getElementById("SI_selfEventTriggerId").checked;
     var micStatus = document.getElementById("micStatus").value;
-    var SDcardEncryption = document.getElementById("SDcardEncryption").value;
+    var SDcardEncryption = document.getElementById("SI_SD_cardEncryptionId").checked;
     
     //Volume
-    var VolumeforAsleep = parseInt(document.getElementById("VolumeforAsleep").value);
-    var VolumeforAlerts = parseInt(document.getElementById("VolumeforAlerts").value);
-    var VolumeControls = document.getElementById("VolumeControls").value;
-    var Notificationlanguage = parseInt(document.getElementById("Notificationlanguage").value);
+    var VolumeforAsleep = parseInt(document.getElementById("SI_volumeForAsleepNumber").value);
+    var VolumeforAlerts = parseInt(document.getElementById("SI_volumeForOtherAlertsNumber").value);
+    var VolumeControls = document.getElementById("SI_volumeControlsId").checked;
+    var Notificationlanguage = parseInt(document.getElementById("SI_notificationLanguageId").value);
     
     //Driver's Feedback
-    var DriverFeedbackBeeps = document.getElementById("beepsActivation").value;
-    var DriverFeedbackLED = document.getElementById("LEDActivation").value;
-    var DriverFeedbackVoice = document.getElementById("voiceActivation").value;
-    var SystemLEDActivation = document.getElementById("SystemLEDActivation").value;
+    var DriverFeedbackBeeps = document.getElementById("GP_beepsActivationCheckbox").checked;
+    var DriverFeedbackLED = document.getElementById("GP_LED_activationCheckbox").checked;
+    var DriverFeedbackVoice = document.getElementById("GP_voiceActivationCheckbox").checked;
+    var SystemLEDActivation = document.getElementById("GP_system_LED_activationCheckbox").checked;
 
     //Driver
     var LeftHandDrive = document.getElementById("LeftHandDrive").value;
@@ -2120,6 +2926,128 @@ function updateSelectValue(selectId, JSONdata, propertyPath) {
     selectElement.value = value;
 }
 
+function updateCheckboxCheckedState(id, JSONdata, propertyPath, imgOnSrc = null, imgOffSrc = null) {
+    var segments = propertyPath.split('.');
+    var value = JSONdata;
+    for (var i = 0; i < segments.length; i++) {
+        var segment = segments[i];
+        if (segment in value) {
+            value = value[segment];
+        } else {
+            value = false;
+            break;
+        }
+    }
+    var checkboxElement = document.getElementById(id + 'Checkbox');
+    checkboxElement.checked = value;
+    if (checkboxElement.checked) {
+        updateSummaryCell(id + 'Summary', true, imgOnSrc);
+    } else {
+        updateSummaryCell(id + 'Summary', false, imgOffSrc);
+    }
+}
+
+function updateDetectionClosureEvent(id, JSONdata, detectionPath, closurePath, closureEventAdmitted) {
+    const fullDetectionPath = "EventsSettings." + detectionPath + ".ReportEvent";
+    const detectionSegments = fullDetectionPath.split('.');
+    var detectionValue = JSONdata;
+    for (var i = 0; i < detectionSegments.length; i++) {
+        var segment = detectionSegments[i];
+        if (segment in detectionValue) {
+            detectionValue = detectionValue[segment];
+        } else {
+            detectionValue = false;
+            break;
+        }
+    }
+    const detectionEventCheckbox = document.getElementById(id + 'DetectionEventCheckbox');
+    const closureEventCheckbox = document.getElementById(id + 'ClosureEventCheckbox');
+    const summaryCellLabel = id + 'DetectionClosureEventSummary';
+    detectionEventCheckbox.checked = detectionValue;
+    if (closureEventAdmitted) {
+        if (detectionEventCheckbox.checked) {
+            closureEventCheckbox.disabled = false;
+            const fullClosurePath = "ExtraParameters.OTAClosureEvent." + closurePath;
+            const closureSegments = fullClosurePath.split('.');
+            closureValue = JSONdata;
+            for (var i = 0; i < closureSegments.length; i++) {
+                var segment = closureSegments[i];
+                if (segment in closureValue) {
+                    closureValue = closureValue[segment];
+                } else {
+                    closureValue = false;
+                    break;
+                }
+            }
+            closureEventCheckbox.checked = closureValue;
+            if (closureEventCheckbox.checked) {
+                updateSummaryCell(summaryCellLabel, true, 'source_img/Detection_Closure_Event_ON.png');
+            } else {
+                updateSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
+            }
+        } else {
+            closureEventCheckbox.checked = false;
+            closureEventCheckbox.disabled = true;
+            updateSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
+        }
+    } else {
+        closureEventCheckbox.checked = false;
+        closureEventCheckbox.disabled = true;
+        if (detectionEventCheckbox.checked) {
+            toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
+        } else {
+            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
+        }
+    }
+}
+
+function updateCheckAndImageButton(button, JSONdata, propertyPath, imgOnSrc, imgOffSrc) {
+    // Split the property path into segments using the dot as a separator
+    var segments = propertyPath.split('.');
+    var value = JSONdata;
+
+    // Iterate through each segment to access the nested property in the JSON object
+    for (var i = 0; i < segments.length; i++) {
+        var segment = segments[i];
+        if (segment in value) {
+            value = value[segment];
+        } else {
+            value = false; // Set the default value if the property path is invalid
+            break;
+        }
+    }
+
+    // Get the checkbox element by its ID
+    var checkboxElement = document.getElementById(button);
+
+    // Update the checkbox's checked property based on the value from the JSON data
+    const buttonId = document.getElementById(button + 'Id');
+    const buttonCheckbox = document.getElementById(button + 'Checkbox');
+    buttonCheckbox.checked = value;
+    if (buttonCheckbox.checked) {
+        buttonId.src = imgOnSrc;
+        updateSummaryCell(button + 'Summary', true, imgOnSrc);
+    } else {
+        buttonId.src = imgOffSrc;
+        updateSummaryCell(button + 'Summary', false, imgOffSrc);
+    }
+}
+
+function updateSummaryCell(cell, activate, imgSrc) {
+    const summaryCell = document.getElementById(cell);
+    const summaryCellImg = document.getElementById(cell + 'Img');
+    if (summaryCell) {
+        if (activate) {
+            summaryCell.classList.remove('inactive-summary-cell');
+            summaryCell.classList.add('active-summary-cell');
+        } else {
+            summaryCell.classList.remove('active-summary-cell');
+            summaryCell.classList.add('inactive-summary-cell');
+        }
+        summaryCellImg.src = imgSrc;
+    }
+}
+
 // Values from images including inherit from "true/false"
 function update_FS10_imageValue(selectId, JSONdata, propertyPath) {
     var selectValue = "None";
@@ -2148,6 +3076,106 @@ function update_FS10_imageValue(selectId, JSONdata, propertyPath) {
     }
     var selectElement = document.getElementById(selectId);
     selectElement.value = selectValue;
+}
+
+function updateMediaUpload(id, JSONdata, paramPath) {
+    const imagePath = "EventsSettings." + paramPath + ".ReportImage";
+    const footagePath = "EventsSettings." + paramPath + ".ReportFootage";
+    const imageSegments = imagePath.split('.');
+    var imageValue = JSONdata;
+    for (var i = 0; i < imageSegments.length; i++) {
+        var segment = imageSegments[i];
+        if (segment in imageValue) {
+            imageValue = imageValue[segment];
+        } else {
+            imageValue = "None";
+            break;
+        }
+    }
+    const footageSegments = footagePath.split('.');
+    var footageValue = JSONdata;
+    for (var i = 0; i < footageSegments.length; i++) {
+        var segment = footageSegments[i];
+        if (segment in footageValue) {
+            footageValue = footageValue[segment];
+        } else {
+            footageValue = "None";
+            break;
+        }
+    }
+    const enableInCabinLabel = id + 'EnableInCabin';
+    const imageInCabinLabel = id + 'ReportImageInCabin';
+    const timelapseInCabinLabel = id + 'ReportTimelapseInCabin';
+    const videoInCabinLabel = id + 'ReportVideoInCabin';
+    const enableRoadFacingLabel = id + 'EnableRoadFacing';
+    const imageRoadFacingLabel = id + 'ReportImageRoadFacing';
+    const timelapseRoadFacingLabel = id + 'ReportTimelapseRoadFacing';
+    const videoRoadFacingLabel = id + 'ReportVideoRoadFacing';
+    const enableInCabinCheckbox = document.getElementById(enableInCabinLabel + 'Checkbox');
+    const imageInCabinCheckbox = document.getElementById(imageInCabinLabel + 'Checkbox');
+    const timelapseInCabinCheckbox = document.getElementById(timelapseInCabinLabel + 'Checkbox');
+    const videoInCabinCheckbox = document.getElementById(videoInCabinLabel + 'Checkbox');
+    const enableRoadFacingCheckbox = document.getElementById(enableRoadFacingLabel + 'Checkbox');
+    const imageRoadFacingCheckbox = document.getElementById(imageRoadFacingLabel + 'Checkbox');
+    const timelapseRoadFacingCheckbox = document.getElementById(timelapseRoadFacingLabel + 'Checkbox');
+    const videoRoadFacingCheckbox = document.getElementById(videoRoadFacingLabel + 'Checkbox');
+    updateMediaUploadButton(imageInCabinLabel, false, 'source_img/Image_OFF.png');
+    updateMediaUploadButton(timelapseInCabinLabel, false, 'source_img/Timelapse_OFF.png');
+    updateMediaUploadButton(imageRoadFacingLabel, false, 'source_img/Image_OFF.png');
+    updateMediaUploadButton(timelapseRoadFacingLabel, false, 'source_img/Timelapse_OFF.png');
+    updateMediaUploadButton(videoInCabinLabel, false, 'source_img/Video_OFF.png');
+    updateMediaUploadButton(videoRoadFacingLabel, false, 'source_img/Video_OFF.png');
+    switch (imageValue) {
+        case "SingleDMS":
+            updateMediaUploadButton(imageInCabinLabel, true, 'source_img/Image_ON.png');
+            break;
+        case "SingleADAS":
+            updateMediaUploadButton(imageRoadFacingLabel, true, 'source_img/Image_ON.png');
+            break;
+        case "BothSingle":
+            updateMediaUploadButton(imageInCabinLabel, true, 'source_img/Image_ON.png');
+            updateMediaUploadButton(imageRoadFacingLabel, true, 'source_img/Image_ON.png');
+            break;
+        case "TimelapseDMS":
+            updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_ON.png');
+            footageValue = "None";
+            break;
+        case "TimelapseADAS":
+            updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_ON.png');
+            footageValue = "None";
+            break;
+        case "BothTimelaps":
+            updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_ON.png');
+            updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_ON.png');
+            footageValue = "None";
+            break;
+        default:
+            break;
+    }
+    switch (footageValue) {
+        case "DMS":
+            updateMediaUploadButton(videoInCabinLabel, true, 'source_img/Video_ON.png');
+            break;
+        case "ADAS":
+            updateMediaUploadButton(videoRoadFacingLabel, true, 'source_img/Video_ON.png');
+            break;
+        case "Both":
+            updateMediaUploadButton(videoInCabinLabel, true, 'source_img/Video_ON.png');
+            updateMediaUploadButton(videoRoadFacingLabel, true, 'source_img/Video_ON.png');
+            break;
+        default:
+            break;
+    }
+    enableInCabinCheckbox.checked = (imageInCabinCheckbox.checked || timelapseInCabinCheckbox.checked || videoInCabinCheckbox.checked);
+    enableRoadFacingCheckbox.checked = (imageRoadFacingCheckbox.checked || timelapseRoadFacingCheckbox.checked || videoRoadFacingCheckbox.checked);
+}
+
+function updateMediaUploadButton (button, activate, imgSrc) {
+    const buttonId = document.getElementById(button + 'Id');
+    const buttonCheckbox = document.getElementById(button + 'Checkbox');
+    buttonCheckbox.checked = activate;
+    buttonId.src = imgSrc;
+    updateSummaryCell(button + 'Summary', activate, imgSrc);
 }
 
 // Values from videos including inherit from "true/false"
@@ -2210,63 +3238,91 @@ function update_FS10_OutputValue(selectId, JSONdata, propertyPath) {
     selectElement.value = selectValue;
 }
 
+function updateFeedbackOutput(id, JSONdata, propertyPath) {
+    var segments = propertyPath.split('.');
+    var value = JSONdata;
+    for (var i = 0; i < segments.length; i++) {
+        var segment = segments[i];
+        if (segment in value) {
+            value = value[segment];
+        }
+        else {
+            value = "None";
+            break;
+        }
+    }
+    var selectElement = document.getElementById(id + 'Id');
+    selectElement.value = value;
+    updateFeedbackOutputSummary(id);
+}
+
+function updateFeedbackOutputSummary (paramId) {
+    const selectedValue = document.getElementById(paramId + 'Id');
+    const summaryCell = document.getElementById(paramId + 'Summary');
+    const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
+
+    if (selectedValue.value === 'None') {
+        summaryCell.classList.remove('active-summary-cell');
+        summaryCell.classList.add('inactive-summary-cell');
+    } else {
+        summaryCell.classList.remove('inactive-summary-cell');
+        summaryCell.classList.add('active-summary-cell');
+    }
+    summaryCellImg.src = "source_img/" + selectedValue.value + ".png";
+}
+
 // Updating tables from FS10-Events
 function DMS_menuToUpdate(JSONdata){
     // DMS
     //    -Driver Asleep
-    updateSelectValue("DMS_driverAsleepActivationId", JSONdata, "EventsSettings.DriverAsleep.Activation");
-    updateSelectValue("DMS_driverAsleepFeedbackAudioCheckbox", JSONdata, "EventsSettings.DriverAsleep.FeedbackAudio");
-    update_FS10_OutputValue("DMS_driverAsleepFeedbackOutputId", JSONdata, "EventsSettings.DriverAsleep.FeedbackOutput");
-    updateSelectValue("DMS_driverAsleepFeedbackSpeechCheckbox", JSONdata, "EventsSettings.DriverAsleep.FeedbackSpeech");
-    updateSelectValue("DMS_driverAsleepFeedbackVisualCheckbox", JSONdata, "EventsSettings.DriverAsleep.FeedbackVisual");
-    updateSelectValue("DMS_driverAsleepDetectionEventCheckbox", JSONdata, "EventsSettings.DriverAsleep.ReportEvent");
-    update_FS10_imageValue('DMS_7x1_select', JSONdata, "EventsSettings.DriverAsleep.ReportImage");
-    update_FS10_videoValue("DMS_8x1_select", JSONdata, "EventsSettings.DriverAsleep.ReportFootage");
+    updateCheckboxCheckedState("DMS_driverAsleepActivation", JSONdata, "EventsSettings.DriverAsleep.Activation");
+    updateCheckAndImageButton("DMS_driverAsleepFeedbackAudio", JSONdata, "EventsSettings.DriverAsleep.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_driverAsleepFeedbackOutput", JSONdata, "EventsSettings.DriverAsleep.FeedbackOutput");
+    updateCheckAndImageButton("DMS_driverAsleepFeedbackSpeech", JSONdata, "EventsSettings.DriverAsleep.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverAsleepFeedbackVisual", JSONdata, "EventsSettings.DriverAsleep.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_driverAsleep", JSONdata, 'DriverAsleep', 'Asleep', true);
+    updateMediaUpload("DMS_driverAsleep", JSONdata, "DriverAsleep");
+    
     //    -Drowsiness
-    updateSelectValue("DMS_1x2_select", JSONdata, "EventsSettings.Drowsiness.Activation");
-    updateSelectValue("DMS_2x2_select", JSONdata, "EventsSettings.Drowsiness.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x2_select", JSONdata, "EventsSettings.Drowsiness.FeedbackOutput");
-    updateSelectValue("DMS_4x2_select", JSONdata, "EventsSettings.Drowsiness.FeedbackSpeech");
-    updateSelectValue("DMS_5x2_select", JSONdata, "EventsSettings.Drowsiness.FeedbackVisual");
-    updateSelectValue("DMS_6x2_select", JSONdata, "EventsSettings.Drowsiness.ReportEvent");
-    update_FS10_imageValue('DMS_7x2_select', JSONdata, "EventsSettings.Drowsiness.ReportImage");
-    update_FS10_videoValue("DMS_8x2_select", JSONdata, "EventsSettings.Drowsiness.ReportFootage");
+    updateCheckboxCheckedState("DMS_drowsinessActivation", JSONdata, "EventsSettings.Drowsiness.Activation");
+    updateCheckAndImageButton("DMS_drowsinessFeedbackAudio", JSONdata, "EventsSettings.Drowsiness.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_drowsinessFeedbackOutput", JSONdata, "EventsSettings.Drowsiness.FeedbackOutput");
+    updateCheckAndImageButton("DMS_drowsinessFeedbackSpeech", JSONdata, "EventsSettings.Drowsiness.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_drowsinessFeedbackVisual", JSONdata, "EventsSettings.Drowsiness.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_drowsiness", JSONdata, 'Drowsiness', 'Drowsiness', true);
+    updateMediaUpload("DMS_drowsiness", JSONdata, "Drowsiness");
     //    -Driver Distracted
-    updateSelectValue("DMS_1x3_select", JSONdata, "EventsSettings.DriverDistracted.Activation");
-    updateSelectValue("DMS_2x3_select", JSONdata, "EventsSettings.DriverDistracted.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x3_select", JSONdata, "EventsSettings.DriverDistracted.FeedbackOutput");
-    updateSelectValue("DMS_4x3_select", JSONdata, "EventsSettings.DriverDistracted.FeedbackSpeech");
-    updateSelectValue("DMS_5x3_select", JSONdata, "EventsSettings.DriverDistracted.FeedbackVisual");
-    updateSelectValue("DMS_6x3_select", JSONdata, "EventsSettings.DriverDistracted.ReportEvent");
-    update_FS10_imageValue('DMS_7x3_select', JSONdata, "EventsSettings.DriverDistracted.ReportImage");
-    update_FS10_videoValue("DMS_8x3_select", JSONdata, "EventsSettings.DriverDistracted.ReportFootage");
+    updateCheckboxCheckedState("DMS_driverDistractedActivation", JSONdata, "EventsSettings.DriverDistracted.Activation");
+    updateCheckAndImageButton("DMS_driverDistractedFeedbackAudio", JSONdata, "EventsSettings.DriverDistracted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_driverDistractedFeedbackOutput", JSONdata, "EventsSettings.DriverDistracted.FeedbackOutput");
+    updateCheckAndImageButton("DMS_driverDistractedFeedbackSpeech", JSONdata, "EventsSettings.DriverDistracted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverDistractedFeedbackVisual", JSONdata, "EventsSettings.DriverDistracted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_driverDistracted", JSONdata, 'DriverDistracted', 'DriverDistracted', true);
+    updateMediaUpload("DMS_driverDistracted", JSONdata, "DriverDistracted");
     //    -Phone use
-    updateSelectValue("DMS_1x4_select", JSONdata, "EventsSettings.PhoneUse.Activation");
-    updateSelectValue("DMS_2x4_select", JSONdata, "EventsSettings.PhoneUse.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x4_select", JSONdata, "EventsSettings.PhoneUse.FeedbackOutput");
-    updateSelectValue("DMS_4x4_select", JSONdata, "EventsSettings.PhoneUse.FeedbackSpeech");
-    updateSelectValue("DMS_5x4_select", JSONdata, "EventsSettings.PhoneUse.FeedbackVisual");
-    updateSelectValue("DMS_6x4_select", JSONdata, "EventsSettings.PhoneUse.ReportEvent");
-    update_FS10_imageValue('DMS_7x4_select', JSONdata, "EventsSettings.PhoneUse.ReportImage");
-    update_FS10_videoValue("DMS_8x4_select", JSONdata, "EventsSettings.PhoneUse.ReportFootage");
+    updateCheckboxCheckedState("DMS_phoneUseActivation", JSONdata, "EventsSettings.PhoneUse.Activation");
+    updateCheckAndImageButton("DMS_phoneUseFeedbackAudio", JSONdata, "EventsSettings.PhoneUse.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_phoneUseFeedbackOutput", JSONdata, "EventsSettings.PhoneUse.FeedbackOutput");
+    updateCheckAndImageButton("DMS_phoneUseFeedbackSpeech", JSONdata, "EventsSettings.PhoneUse.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_phoneUseFeedbackVisual", JSONdata, "EventsSettings.PhoneUse.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_phoneUse", JSONdata, 'PhoneUse', 'PhoneUse', true);
+    updateMediaUpload("DMS_phoneUse", JSONdata, "PhoneUse");
     //    -Seatbelt
-    updateSelectValue("DMS_1x5_select", JSONdata, "EventsSettings.Seatbelt.Activation");
-    updateSelectValue("DMS_2x5_select", JSONdata, "EventsSettings.Seatbelt.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x5_select", JSONdata, "EventsSettings.Seatbelt.FeedbackOutput");
-    updateSelectValue("DMS_4x5_select", JSONdata, "EventsSettings.Seatbelt.FeedbackSpeech");
-    updateSelectValue("DMS_5x5_select", JSONdata, "EventsSettings.Seatbelt.FeedbackVisual");
-    updateSelectValue("DMS_6x5_select", JSONdata, "EventsSettings.Seatbelt.ReportEvent");
-    update_FS10_imageValue('DMS_7x5_select', JSONdata, "EventsSettings.Seatbelt.ReportImage");
-    update_FS10_videoValue("DMS_8x5_select", JSONdata, "EventsSettings.Seatbelt.ReportFootage");
+    updateCheckboxCheckedState("DMS_seatbeltActivation", JSONdata, "EventsSettings.Seatbelt.Activation");
+    updateCheckAndImageButton("DMS_seatbeltFeedbackAudio", JSONdata, "EventsSettings.Seatbelt.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_seatbeltFeedbackOutput", JSONdata, "EventsSettings.Seatbelt.FeedbackOutput");
+    updateCheckAndImageButton("DMS_seatbeltFeedbackSpeech", JSONdata, "EventsSettings.Seatbelt.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_seatbeltFeedbackVisual", JSONdata, "EventsSettings.Seatbelt.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_seatbelt", JSONdata, 'Seatbelt', 'Seatbelt', true);
+    updateMediaUpload("DMS_seatbelt", JSONdata, "Seatbelt");
     //    -Smoking
-    updateSelectValue("DMS_1x6_select", JSONdata, "EventsSettings.Smoking.Activation");
-    updateSelectValue("DMS_2x6_select", JSONdata, "EventsSettings.Smoking.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x6_select", JSONdata, "EventsSettings.Smoking.FeedbackOutput");
-    updateSelectValue("DMS_4x6_select", JSONdata, "EventsSettings.Smoking.FeedbackSpeech");
-    updateSelectValue("DMS_5x6_select", JSONdata, "EventsSettings.Smoking.FeedbackVisual");
-    updateSelectValue("DMS_6x6_select", JSONdata, "EventsSettings.Smoking.ReportEvent");
-    update_FS10_imageValue('DMS_7x6_select', JSONdata, "EventsSettings.Smoking.ReportImage");
-    update_FS10_videoValue("DMS_8x6_select", JSONdata, "EventsSettings.Smoking.ReportFootage");
+    updateCheckboxCheckedState("DMS_smokingActivation", JSONdata, "EventsSettings.Smoking.Activation");
+    updateCheckAndImageButton("DMS_smokingFeedbackAudio", JSONdata, "EventsSettings.Smoking.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_smokingFeedbackOutput", JSONdata, "EventsSettings.Smoking.FeedbackOutput");
+    updateCheckAndImageButton("DMS_smokingFeedbackSpeech", JSONdata, "EventsSettings.Smoking.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_smokingFeedbackVisual", JSONdata, "EventsSettings.Smoking.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_smoking", JSONdata, 'Smoking', 'Smoking', true);
+    updateMediaUpload("DMS_smoking", JSONdata, "Smoking");
     //    -Light Drowsiness
     /*
     updateSelectValue("DMS_1x7_select", JSONdata, "EventsSettings.LightDrowsiness.Activation");
@@ -2279,71 +3335,64 @@ function DMS_menuToUpdate(JSONdata){
     update_FS10_videoValue("DMS_8x7_select", JSONdata, "EventsSettings.LightDrowsiness.ReportFootage");
     */
     //    -Tampering
-    updateSelectValue("DMS_1x8_select", JSONdata, "EventsSettings.TamperingDetection.Activation");
-    updateSelectValue("DMS_2x8_select", JSONdata, "EventsSettings.TamperingDetection.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x8_select", JSONdata, "EventsSettings.TamperingDetection.FeedbackOutput");
-    updateSelectValue("DMS_4x8_select", JSONdata, "EventsSettings.TamperingDetection.FeedbackSpeech");
-    updateSelectValue("DMS_5x8_select", JSONdata, "EventsSettings.TamperingDetection.FeedbackVisual");
-    updateSelectValue("DMS_6x8_select", JSONdata, "EventsSettings.TamperingDetection.ReportEvent");
-    update_FS10_imageValue('DMS_7x8_select', JSONdata, "EventsSettings.TamperingDetection.ReportImage");
-    update_FS10_videoValue("DMS_8x8_select", JSONdata, "EventsSettings.TamperingDetection.ReportFootage");
+    updateCheckboxCheckedState("DMS_tamperingDetectionActivation", JSONdata, "EventsSettings.TamperingDetection.Activation");
+    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackAudio", JSONdata, "EventsSettings.TamperingDetection.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_tamperingDetectionFeedbackOutput", JSONdata, "EventsSettings.TamperingDetection.FeedbackOutput");
+    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackSpeech", JSONdata, "EventsSettings.TamperingDetection.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackVisual", JSONdata, "EventsSettings.TamperingDetection.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_tamperingDetection", JSONdata, 'TamperingDetection', 'TamperingDetection', false);
+    updateMediaUpload("DMS_tamperingDetection", JSONdata, "TamperingDetection");
     //    -Driver Identified
-    updateSelectValue("DMS_1x9_select", JSONdata, "EventsSettings.DriverIdentified.Activation");
-    updateSelectValue("DMS_2x9_select", JSONdata, "EventsSettings.DriverIdentified.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x9_select", JSONdata, "EventsSettings.DriverIdentified.FeedbackOutput");
-    updateSelectValue("DMS_4x9_select", JSONdata, "EventsSettings.DriverIdentified.FeedbackSpeech");
-    updateSelectValue("DMS_5x9_select", JSONdata, "EventsSettings.DriverIdentified.FeedbackVisual");
-    updateSelectValue("DMS_6x9_select", JSONdata, "EventsSettings.DriverIdentified.ReportEvent");
-    update_FS10_imageValue('DMS_7x9_select', JSONdata, "EventsSettings.DriverIdentified.ReportImage");
-    update_FS10_videoValue("DMS_8x9_select", JSONdata, "EventsSettings.DriverIdentified.ReportFootage");
+    updateCheckboxCheckedState("DMS_driverIdentifiedActivation", JSONdata, "EventsSettings.DriverIdentified.Activation");
+    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackAudio", JSONdata, "EventsSettings.DriverIdentified.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_driverIdentifiedFeedbackOutput", JSONdata, "EventsSettings.DriverIdentified.FeedbackOutput");
+    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackSpeech", JSONdata, "EventsSettings.DriverIdentified.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackVisual", JSONdata, "EventsSettings.DriverIdentified.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_driverIdentified", JSONdata, 'DriverIdentified', 'DriverIdentified', false);
+    updateMediaUpload("DMS_driverIdentified", JSONdata, "DriverIdentified");
     //    -Driver Unindentified
-    updateSelectValue("DMS_1x10_select", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.Activation");
-    updateSelectValue("DMS_2x10_select", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x10_select", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackOutput");
-    updateSelectValue("DMS_4x10_select", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackSpeech");
-    updateSelectValue("DMS_5x10_select", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackVisual");
-    updateSelectValue("DMS_6x10_select", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.ReportEvent");
-    update_FS10_imageValue('DMS_7x10_select', JSONdata, "EventsSettings.UnidentifiedUnauthDriver.ReportImage");
-    update_FS10_videoValue("DMS_8x10_select", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.ReportFootage");
+    updateCheckboxCheckedState("DMS_driverUnidentifiedActivation", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.Activation");
+    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackAudio", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_driverUnidentifiedFeedbackOutput", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackOutput");
+    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackSpeech", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackVisual", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_driverUnidentified", JSONdata, 'UnidentifiedUnauthDriver', 'UnidentifiedUnauthDriver', false);
+    updateMediaUpload("DMS_driverUnidentified", JSONdata, "UnidentifiedUnauthDriver");
     //    -Driver Disappeared
-    updateSelectValue("DMS_1x11_select", JSONdata, "EventsSettings.DriverDisappeared.Activation");
-    updateSelectValue("DMS_2x11_select", JSONdata, "EventsSettings.DriverDisappeared.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x11_select", JSONdata, "EventsSettings.DriverDisappeared.FeedbackOutput");
-    updateSelectValue("DMS_4x11_select", JSONdata, "EventsSettings.DriverDisappeared.FeedbackSpeech");
-    updateSelectValue("DMS_5x11_select", JSONdata, "EventsSettings.DriverDisappeared.FeedbackVisual");
-    updateSelectValue("DMS_6x11_select", JSONdata, "EventsSettings.DriverDisappeared.ReportEvent");
-    update_FS10_imageValue('DMS_7x11_select', JSONdata, "EventsSettings.DriverDisappeared.ReportImage");
-    update_FS10_videoValue("DMS_8x11_select", JSONdata, "EventsSettings.DriverDisappeared.ReportFootage");
+    updateCheckboxCheckedState("DMS_driverDisappearedActivation", JSONdata, "EventsSettings.DriverDisappeared.Activation");
+    updateCheckAndImageButton("DMS_driverDisappearedFeedbackAudio", JSONdata, "EventsSettings.DriverDisappeared.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_driverDisappearedFeedbackOutput", JSONdata, "EventsSettings.DriverDisappeared.FeedbackOutput");
+    updateCheckAndImageButton("DMS_driverDisappearedFeedbackSpeech", JSONdata, "EventsSettings.DriverDisappeared.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverDisappearedFeedbackVisual", JSONdata, "EventsSettings.DriverDisappeared.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_driverDisappeared", JSONdata, 'DriverDisappeared', 'DriverDisappeared', false);
+    updateMediaUpload("DMS_driverDisappeared", JSONdata, "DriverDisappeared");
     //    -Driver Changed
-    updateSelectValue("DMS_1x12_select", JSONdata, "EventsSettings.DriverChange.Activation");
-    updateSelectValue("DMS_2x12_select", JSONdata, "EventsSettings.DriverChange.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x12_select", JSONdata, "EventsSettings.DriverChange.FeedbackOutput");
-    updateSelectValue("DMS_4x12_select", JSONdata, "EventsSettings.DriverChange.FeedbackSpeech");
-    updateSelectValue("DMS_5x12_select", JSONdata, "EventsSettings.DriverChange.FeedbackVisual");
-    updateSelectValue("DMS_6x12_select", JSONdata, "EventsSettings.DriverChange.ReportEvent");
-    update_FS10_imageValue('DMS_7x12_select', JSONdata, "EventsSettings.DriverChange.ReportImage");
-    update_FS10_videoValue("DMS_8x12_select", JSONdata, "EventsSettings.DriverChange.ReportFootage");
+    updateCheckboxCheckedState("DMS_driverChangedActivation", JSONdata, "EventsSettings.DriverChange.Activation");
+    updateCheckAndImageButton("DMS_driverChangedFeedbackAudio", JSONdata, "EventsSettings.DriverChange.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_driverChangedFeedbackOutput", JSONdata, "EventsSettings.DriverChange.FeedbackOutput");
+    updateCheckAndImageButton("DMS_driverChangedFeedbackSpeech", JSONdata, "EventsSettings.DriverChange.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverChangedFeedbackVisual", JSONdata, "EventsSettings.DriverChange.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_driverChanged", JSONdata, 'DriverChange', 'DriverChange', false);
+    updateMediaUpload("DMS_driverChanged", JSONdata, "DriverChange");
     //    -Driver ID Updated
-    updateSelectValue("DMS_1x13_select", JSONdata, "EventsSettings.DriverIDUpdated.Activation");
-    updateSelectValue("DMS_2x13_select", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackAudio");
-    update_FS10_OutputValue("DMS_3x13_select", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackOutput");
-    updateSelectValue("DMS_4x13_select", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackSpeech");
-    updateSelectValue("DMS_5x13_select", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackVisual");
-    updateSelectValue("DMS_6x13_select", JSONdata, "EventsSettings.DriverIDUpdated.ReportEvent");
-    update_FS10_imageValue('DMS_7x13_select', JSONdata, "EventsSettings.DriverIDUpdated.ReportImage");
-    update_FS10_videoValue("DMS_8x13_select", JSONdata, "EventsSettings.DriverIDUpdated.ReportFootage");
+    updateCheckboxCheckedState("DMS_driverIdUpdatedActivation", JSONdata, "EventsSettings.DriverIDUpdated.Activation");
+    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackAudio", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("DMS_driverIdUpdatedFeedbackOutput", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackOutput");
+    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackSpeech", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackVisual", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("DMS_driverIdUpdated", JSONdata, 'DriverIDUpdated', 'DriverIDUpdated', false);
+    updateMediaUpload("DMS_driverIdUpdated", JSONdata, "DriverIDUpdated");
 }
 function ADAS_menuToUpdate(JSONdata){
     // ADAS
     //    -LDW
-    updateSelectValue("ADAS_1x1_select", JSONdata, "EventsSettings.LaneDepartureWarning.Activation");
-    updateSelectValue("ADAS_2x1_select", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackAudio");
-    update_FS10_OutputValue("ADAS_3x1_select", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackOutput");
-    updateSelectValue("ADAS_4x1_select", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackSpeech");
-    updateSelectValue("ADAS_5x1_select", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackVisual");
-    updateSelectValue("ADAS_6x1_select", JSONdata, "EventsSettings.LaneDepartureWarning.ReportEvent");
-    update_FS10_imageValue('ADAS_7x1_select', JSONdata, "EventsSettings.LaneDepartureWarning.ReportImage");
-    update_FS10_videoValue("ADAS_8x1_select", JSONdata, "EventsSettings.LaneDepartureWarning.ReportFootage");
+    updateCheckboxCheckedState("ADAS_LDW_Activation", JSONdata, "EventsSettings.LaneDepartureWarning.Activation");
+    updateCheckAndImageButton("ADAS_LDW_FeedbackAudio", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("ADAS_LDW_FeedbackOutput", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackOutput");
+    updateCheckAndImageButton("ADAS_LDW_FeedbackSpeech", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_LDW_FeedbackVisual", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("ADAS_LDW_", JSONdata, 'LaneDepartureWarning', 'LDW', true);
+    updateMediaUpload("ADAS_LDW_", JSONdata, "LaneDepartureWarning");
     //    -Running Red Light (FS10)
     /*
     updateSelectValue("ADAS_1x2_select", JSONdata, "EventsSettings.RunningRedLight.Activation");
@@ -2367,32 +3416,29 @@ function ADAS_menuToUpdate(JSONdata){
     update_FS10_videoValue("ADAS_8x3_select", JSONdata, "EventsSettings.StopDisobeyed.ReportFootage");
     */
     //    -HMW
-    updateSelectValue("ADAS_1x4_select", JSONdata, "EventsSettings.Tailgating(HMW).Activation");
-    updateSelectValue("ADAS_2x4_select", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackAudio");
-    update_FS10_OutputValue("ADAS_3x4_select", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackOutput");
-    updateSelectValue("ADAS_4x4_select", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackSpeech");
-    updateSelectValue("ADAS_5x4_select", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackVisual");
-    updateSelectValue("ADAS_6x4_select", JSONdata, "EventsSettings.Tailgating(HMW).ReportEvent");
-    update_FS10_imageValue('ADAS_7x4_select', JSONdata, "EventsSettings.Tailgating(HMW).ReportImage");
-    update_FS10_videoValue("ADAS_8x4_select", JSONdata, "EventsSettings.Tailgating(HMW).ReportFootage");
+    updateCheckboxCheckedState("ADAS_HMW_Activation", JSONdata, "EventsSettings.Tailgating(HMW).Activation");
+    updateCheckAndImageButton("ADAS_HMW_FeedbackAudio", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("ADAS_HMW_FeedbackOutput", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackOutput");
+    updateCheckAndImageButton("ADAS_HMW_FeedbackSpeech", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_HMW_FeedbackVisual", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("ADAS_HMW_", JSONdata, 'Tailgating(HMW)', 'Tailgating', true);
+    updateMediaUpload("ADAS_HMW_", JSONdata, "Tailgating(HMW)");
     //    -UFCW
-    updateSelectValue("ADAS_1x5_select", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.Activation");
-    updateSelectValue("ADAS_2x5_select", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackAudio");
-    update_FS10_OutputValue("ADAS_3x5_select", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackOutput");
-    updateSelectValue("ADAS_4x5_select", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackSpeech");
-    updateSelectValue("ADAS_5x5_select", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackVisual");
-    updateSelectValue("ADAS_6x5_select", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.ReportEvent");
-    update_FS10_imageValue('ADAS_7x5_select', JSONdata, "EventsSettings.UrbanForwardCollisionWarning.ReportImage");
-    update_FS10_videoValue("ADAS_8x5_select", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.ReportFootage");
+    updateCheckboxCheckedState("ADAS_UFCW_Activation", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.Activation");
+    updateCheckAndImageButton("ADAS_UFCW_FeedbackAudio", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("ADAS_UFCW_FeedbackOutput", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackOutput");
+    updateCheckAndImageButton("ADAS_UFCW_FeedbackSpeech", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_UFCW_FeedbackVisual", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("ADAS_UFCW_", JSONdata, 'UrbanForwardCollisionWarning', 'UFCW', true);
+    updateMediaUpload("ADAS_UFCW_", JSONdata, "UrbanForwardCollisionWarning");
     //    -FCW
-    updateSelectValue("ADAS_1x6_select", JSONdata, "EventsSettings.ForwardCollisionWarning.Activation");
-    updateSelectValue("ADAS_2x6_select", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackAudio");
-    update_FS10_OutputValue("ADAS_3x6_select", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackOutput");
-    updateSelectValue("ADAS_4x6_select", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackSpeech");
-    updateSelectValue("ADAS_5x6_select", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackVisual");
-    updateSelectValue("ADAS_6x6_select", JSONdata, "EventsSettings.ForwardCollisionWarning.ReportEvent");
-    update_FS10_imageValue('ADAS_7x6_select', JSONdata, "EventsSettings.ForwardCollisionWarning.ReportImage");
-    update_FS10_videoValue("ADAS_8x6_select", JSONdata, "EventsSettings.ForwardCollisionWarning.ReportFootage");
+    updateCheckboxCheckedState("ADAS_FCW_Activation", JSONdata, "EventsSettings.ForwardCollisionWarning.Activation");
+    updateCheckAndImageButton("ADAS_FCW_FeedbackAudio", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("ADAS_FCW_FeedbackOutput", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackOutput");
+    updateCheckAndImageButton("ADAS_FCW_FeedbackSpeech", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_FCW_FeedbackVisual", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("ADAS_FCW_", JSONdata, 'ForwardCollisionWarning', 'FCW', true);
+    updateMediaUpload("ADAS_FCW_", JSONdata, "ForwardCollisionWarning");
     //    -FS10
     /*
     updateSelectValue("ADAS_1x7_select", JSONdata, "EventsSettings.OverSpeeding.Activation");
@@ -2405,231 +3451,206 @@ function ADAS_menuToUpdate(JSONdata){
     update_FS10_videoValue("ADAS_8x7_select", JSONdata, "EventsSettings.OverSpeeding.ReportFootage");
     */
     //    -PCW
-    updateSelectValue("ADAS_1x8_select", JSONdata, "EventsSettings.PedestrianCollisionWarning.Activation");
-    updateSelectValue("ADAS_2x8_select", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackAudio");
-    update_FS10_OutputValue("ADAS_3x8_select", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackOutput");
-    updateSelectValue("ADAS_4x8_select", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackSpeech");
-    updateSelectValue("ADAS_5x8_select", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackVisual");
-    updateSelectValue("ADAS_6x8_select", JSONdata, "EventsSettings.PedestrianCollisionWarning.ReportEvent");
-    update_FS10_imageValue('ADAS_7x8_select', JSONdata, "EventsSettings.PedestrianCollisionWarning.ReportImage");
-    update_FS10_videoValue("ADAS_8x8_select", JSONdata, "EventsSettings.PedestrianCollisionWarning.ReportFootage");
+    updateCheckboxCheckedState("ADAS_PCW_Activation", JSONdata, "EventsSettings.PedestrianCollisionWarning.Activation");
+    updateCheckAndImageButton("ADAS_PCW_FeedbackAudio", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("ADAS_PCW_FeedbackOutput", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackOutput");
+    updateCheckAndImageButton("ADAS_PCW_FeedbackSpeech", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_PCW_FeedbackVisual", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("ADAS_PCW_", JSONdata, 'PedestrianCollisionWarning', 'PCW', true);
+    updateMediaUpload("ADAS_PCW_", JSONdata, "PedestrianCollisionWarning");
 }
 function Tracking_menuToUpdate(JSONdata){
     // Tracking
     //    -Ignition ON
-    updateSelectValue("TrackingEvents_1x1_select", JSONdata, "EventsSettings.IgnitionOn.Activation");
-    updateSelectValue("TrackingEvents_2x1_select", JSONdata, "EventsSettings.IgnitionOn.FeedbackAudio");
-    update_FS10_OutputValue("TrackingEvents_3x1_select", JSONdata, "EventsSettings.IgnitionOn.FeedbackOutput");
-    updateSelectValue("TrackingEvents_4x1_select", JSONdata, "EventsSettings.IgnitionOn.FeedbackSpeech");
-    updateSelectValue("TrackingEvents_5x1_select", JSONdata, "EventsSettings.IgnitionOn.FeedbackVisual");
-    updateSelectValue("TrackingEvents_6x1_select", JSONdata, "EventsSettings.IgnitionOn.ReportEvent");
-    update_FS10_imageValue('TrackingEvents_7x1_select', JSONdata, "EventsSettings.IgnitionOn.ReportImage");
-    update_FS10_videoValue("TrackingEvents_8x1_select", JSONdata, "EventsSettings.IgnitionOn.ReportFootage");
+    updateCheckboxCheckedState("TES_ignitionOnActivation", JSONdata, "EventsSettings.IgnitionOn.Activation");
+    updateCheckAndImageButton("TES_ignitionOnFeedbackAudio", JSONdata, "EventsSettings.IgnitionOn.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("TES_ignitionOnFeedbackOutput", JSONdata, "EventsSettings.IgnitionOn.FeedbackOutput");
+    updateCheckAndImageButton("TES_ignitionOnFeedbackSpeech", JSONdata, "EventsSettings.IgnitionOn.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_ignitionOnFeedbackVisual", JSONdata, "EventsSettings.IgnitionOn.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("TES_ignitionOn", JSONdata, 'IgnitionOn', 'IgnitionOn', false);
+    updateMediaUpload("TES_ignitionOn", JSONdata, "IgnitionOn");
     //    -Ignition OFF
-    updateSelectValue("TrackingEvents_1x2_select", JSONdata, "EventsSettings.IgnitionOff.Activation");
-    updateSelectValue("TrackingEvents_2x2_select", JSONdata, "EventsSettings.IgnitionOff.FeedbackAudio");
-    update_FS10_OutputValue("TrackingEvents_3x2_select", JSONdata, "EventsSettings.IgnitionOff.FeedbackOutput");
-    updateSelectValue("TrackingEvents_4x2_select", JSONdata, "EventsSettings.IgnitionOff.FeedbackSpeech");
-    updateSelectValue("TrackingEvents_5x2_select", JSONdata, "EventsSettings.IgnitionOff.FeedbackVisual");
-    updateSelectValue("TrackingEvents_6x2_select", JSONdata, "EventsSettings.IgnitionOff.ReportEvent");
-    update_FS10_imageValue('TrackingEvents_7x2_select', JSONdata, "EventsSettings.IgnitionOff.ReportImage");
-    update_FS10_videoValue("TrackingEvents_8x2_select", JSONdata, "EventsSettings.IgnitionOff.ReportFootage");
+    updateCheckboxCheckedState("TES_ignitionOffActivation", JSONdata, "EventsSettings.IgnitionOff.Activation");
+    updateCheckAndImageButton("TES_ignitionOffFeedbackAudio", JSONdata, "EventsSettings.IgnitionOff.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("TES_ignitionOffFeedbackOutput", JSONdata, "EventsSettings.IgnitionOff.FeedbackOutput");
+    updateCheckAndImageButton("TES_ignitionOffFeedbackSpeech", JSONdata, "EventsSettings.IgnitionOff.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_ignitionOffFeedbackVisual", JSONdata, "EventsSettings.IgnitionOff.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("TES_ignitionOff", JSONdata, 'IgnitionOff', 'IgnitionOff', false);
+    updateMediaUpload("TES_ignitionOff", JSONdata, "IgnitionOff");
     //    -Movement Started
-    updateSelectValue("TrackingEvents_1x3_select", JSONdata, "EventsSettings.MovementStarted.Activation");
-    updateSelectValue("TrackingEvents_2x3_select", JSONdata, "EventsSettings.MovementStarted.FeedbackAudio");
-    update_FS10_OutputValue("TrackingEvents_3x3_select", JSONdata, "EventsSettings.MovementStarted.FeedbackOutput");
-    updateSelectValue("TrackingEvents_4x3_select", JSONdata, "EventsSettings.MovementStarted.FeedbackSpeech");
-    updateSelectValue("TrackingEvents_5x3_select", JSONdata, "EventsSettings.MovementStarted.FeedbackVisual");
-    updateSelectValue("TrackingEvents_6x3_select", JSONdata, "EventsSettings.MovementStarted.ReportEvent");
-    update_FS10_imageValue('TrackingEvents_7x3_select', JSONdata, "EventsSettings.MovementStarted.ReportImage");
-    update_FS10_videoValue("TrackingEvents_8x3_select", JSONdata, "EventsSettings.MovementStarted.ReportFootage");
+    updateCheckboxCheckedState("TES_movementStartedActivation", JSONdata, "EventsSettings.MovementStarted.Activation");
+    updateCheckAndImageButton("TES_movementStartedFeedbackAudio", JSONdata, "EventsSettings.MovementStarted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("TES_movementStartedFeedbackOutput", JSONdata, "EventsSettings.MovementStarted.FeedbackOutput");
+    updateCheckAndImageButton("TES_movementStartedFeedbackSpeech", JSONdata, "EventsSettings.MovementStarted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_movementStartedFeedbackVisual", JSONdata, "EventsSettings.MovementStarted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("TES_movementStarted", JSONdata, 'MovementStarted', 'MovementStarted', false);
+    updateMediaUpload("TES_movementStarted", JSONdata, "MovementStarted");
     //    -Movement Stopped
-    updateSelectValue("TrackingEvents_1x4_select", JSONdata, "EventsSettings.MovementStop.Activation");
-    updateSelectValue("TrackingEvents_2x4_select", JSONdata, "EventsSettings.MovementStop.FeedbackAudio");
-    update_FS10_OutputValue("TrackingEvents_3x4_select", JSONdata, "EventsSettings.MovementStop.FeedbackOutput");
-    updateSelectValue("TrackingEvents_4x4_select", JSONdata, "EventsSettings.MovementStop.FeedbackSpeech");
-    updateSelectValue("TrackingEvents_5x4_select", JSONdata, "EventsSettings.MovementStop.FeedbackVisual");
-    updateSelectValue("TrackingEvents_6x4_select", JSONdata, "EventsSettings.MovementStop.ReportEvent");
-    update_FS10_imageValue('TrackingEvents_7x4_select', JSONdata, "EventsSettings.MovementStop.ReportImage");
-    update_FS10_videoValue("TrackingEvents_8x4_select", JSONdata, "EventsSettings.MovementStop.ReportFootage");
+    updateCheckboxCheckedState("TES_movementStoppedActivation", JSONdata, "EventsSettings.MovementStop.Activation");
+    updateCheckAndImageButton("TES_movementStoppedFeedbackAudio", JSONdata, "EventsSettings.MovementStop.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("TES_movementStoppedFeedbackOutput", JSONdata, "EventsSettings.MovementStop.FeedbackOutput");
+    updateCheckAndImageButton("TES_movementStoppedFeedbackSpeech", JSONdata, "EventsSettings.MovementStop.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_movementStoppedFeedbackVisual", JSONdata, "EventsSettings.MovementStop.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("TES_movementStopped", JSONdata, 'MovementStop', 'MovementStop', false);
+    updateMediaUpload("TES_movementStopped", JSONdata, "MovementStop");
     //    -Heartbeat
-    updateSelectValue("TrackingEvents_1x5_select", JSONdata, "EventsSettings.Heartbeat.Activation");
-    updateSelectValue("TrackingEvents_2x5_select", JSONdata, "EventsSettings.Heartbeat.FeedbackAudio");
-    update_FS10_OutputValue("TrackingEvents_3x5_select", JSONdata, "EventsSettings.Heartbeat.FeedbackOutput");
-    updateSelectValue("TrackingEvents_4x5_select", JSONdata, "EventsSettings.Heartbeat.FeedbackSpeech");
-    updateSelectValue("TrackingEvents_5x5_select", JSONdata, "EventsSettings.Heartbeat.FeedbackVisual");
-    updateSelectValue("TrackingEvents_6x5_select", JSONdata, "EventsSettings.Heartbeat.ReportEvent");
-    update_FS10_imageValue('TrackingEvents_7x5_select', JSONdata, "EventsSettings.Heartbeat.ReportImage");
-    update_FS10_videoValue("TrackingEvents_8x5_select", JSONdata, "EventsSettings.Heartbeat.ReportFootage");
+    updateCheckboxCheckedState("TES_heartbeatActivation", JSONdata, "EventsSettings.Heartbeat.Activation");
+    updateCheckAndImageButton("TES_heartbeatFeedbackAudio", JSONdata, "EventsSettings.Heartbeat.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("TES_heartbeatFeedbackOutput", JSONdata, "EventsSettings.Heartbeat.FeedbackOutput");
+    updateCheckAndImageButton("TES_heartbeatFeedbackSpeech", JSONdata, "EventsSettings.Heartbeat.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_heartbeatFeedbackVisual", JSONdata, "EventsSettings.Heartbeat.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("TES_heartbeat", JSONdata, 'Heartbeat', 'Heartbeat', false);
+    updateMediaUpload("TES_heartbeat", JSONdata, "Heartbeat");
     //    -GPS Status Update
-    updateSelectValue("TrackingEvents_1x6_select", JSONdata, "EventsSettings.GpsStatusUpdate.Activation");
-    updateSelectValue("TrackingEvents_2x6_select", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackAudio");
-    update_FS10_OutputValue("TrackingEvents_3x6_select", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackOutput");
-    updateSelectValue("TrackingEvents_4x6_select", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackSpeech");
-    updateSelectValue("TrackingEvents_5x6_select", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackVisual");
-    updateSelectValue("TrackingEvents_6x6_select", JSONdata, "EventsSettings.GpsStatusUpdate.ReportEvent");
-    update_FS10_imageValue('TrackingEvents_7x6_select', JSONdata, "EventsSettings.GpsStatusUpdate.ReportImage");
-    update_FS10_videoValue("TrackingEvents_8x6_select", JSONdata, "EventsSettings.GpsStatusUpdate.ReportFootage");
+    updateCheckboxCheckedState("TES_GPS_updateStatusActivation", JSONdata, "EventsSettings.GpsStatusUpdate.Activation");
+    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackAudio", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("TES_GPS_updateStatusFeedbackOutput", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackOutput");
+    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackSpeech", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackVisual", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("TES_GPS_updateStatus", JSONdata, 'GpsStatusUpdate', 'GpsStatusUpdate', false);
+    updateMediaUpload("TES_GPS_updateStatus", JSONdata, "GpsStatusUpdate");
     //    -TripPath
-    updateSelectValue("TrackingEvents_1x7_select", JSONdata, "EventsSettings.TripPath.Activation");
-    updateSelectValue("TrackingEvents_2x7_select", JSONdata, "EventsSettings.TripPath.FeedbackAudio");
-    update_FS10_OutputValue("TrackingEvents_3x7_select", JSONdata, "EventsSettings.TripPath.FeedbackOutput");
-    updateSelectValue("TrackingEvents_4x7_select", JSONdata, "EventsSettings.TripPath.FeedbackSpeech");
-    updateSelectValue("TrackingEvents_5x7_select", JSONdata, "EventsSettings.TripPath.FeedbackVisual");
-    updateSelectValue("TrackingEvents_6x7_select", JSONdata, "EventsSettings.TripPath.ReportEvent");
-    update_FS10_imageValue('TrackingEvents_7x7_select', JSONdata, "EventsSettings.TripPath.ReportImage");
-    update_FS10_videoValue("TrackingEvents_8x7_select", JSONdata, "EventsSettings.TripPath.ReportFootage");
-
+    updateCheckboxCheckedState("TES_tripPathActivation", JSONdata, "EventsSettings.TripPath.Activation");
+    updateCheckAndImageButton("TES_tripPathFeedbackAudio", JSONdata, "EventsSettings.TripPath.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("TES_tripPathFeedbackOutput", JSONdata, "EventsSettings.TripPath.FeedbackOutput");
+    updateCheckAndImageButton("TES_tripPathFeedbackSpeech", JSONdata, "EventsSettings.TripPath.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_tripPathFeedbackVisual", JSONdata, "EventsSettings.TripPath.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("TES_tripPath", JSONdata, 'TripPath', 'TripPath', false);
+    updateMediaUpload("TES_tripPath", JSONdata, "TripPath");
 }
 function System_wo_event_menuToUpdate(JSONdata){
     //System Events without Reason
     //    -Camera Calibration Completed
-    updateSelectValue("System_wo_Event_1x1_select", JSONdata, "EventsSettings.CameraCalibrationCompleted.Activation");
-    updateSelectValue("System_wo_Event_2x1_select", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x1_select", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x1_select", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x1_select", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x1_select", JSONdata, "EventsSettings.CameraCalibrationCompleted.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x1_select', JSONdata, "EventsSettings.CameraCalibrationCompleted.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x1_select", JSONdata, "EventsSettings.CameraCalibrationCompleted.ReportFootage");
+    updateCheckboxCheckedState("SI_cameraCalibrationOkActivation", JSONdata, "EventsSettings.CameraCalibrationCompleted.Activation");
+    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackAudio", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_cameraCalibrationOkFeedbackOutput", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackOutput");
+    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackSpeech", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackVisual", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_cameraCalibrationOk", JSONdata, 'CameraCalibrationCompleted', 'CameraCalibrationCompleted', false);
+    updateMediaUpload("SI_cameraCalibrationOk", JSONdata, "CameraCalibrationCompleted");
     //    -Camera Calibration Failed
-    updateSelectValue("System_wo_Event_1x2_select", JSONdata, "EventsSettings.CameraCalibrationFailed.Activation");
-    updateSelectValue("System_wo_Event_2x2_select", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x2_select", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x2_select", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x2_select", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x2_select", JSONdata, "EventsSettings.CameraCalibrationFailed.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x2_select', JSONdata, "EventsSettings.CameraCalibrationFailed.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x2_select", JSONdata, "EventsSettings.CameraCalibrationFailed.ReportFootage");
+    updateCheckboxCheckedState("SI_cameraCalibrationFailedActivation", JSONdata, "EventsSettings.CameraCalibrationFailed.Activation");
+    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackAudio", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_cameraCalibrationFailedFeedbackOutput", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackOutput");
+    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackSpeech", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackVisual", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_cameraCalibrationFailed", JSONdata, 'CameraCalibrationFailed', 'CameraCalibrationFailed', false);
+    updateMediaUpload("SI_cameraCalibrationFailed", JSONdata, "CameraCalibrationFailed");
     //    -Accelerometer Calibration Complete
-    updateSelectValue("System_wo_Event_1x3_select", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.Activation");
-    updateSelectValue("System_wo_Event_2x3_select", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x3_select", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x3_select", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x3_select", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x3_select", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x3_select', JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x3_select", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.ReportFootage");
+    updateCheckboxCheckedState("SI_accelCalibrationOkActivation", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.Activation");
+    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackAudio", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_accelCalibrationOkFeedbackOutput", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackOutput");
+    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackSpeech", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackVisual", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_accelCalibrationOk", JSONdata, '3DAccelerometerCalibrationCompleted', '3DAccelerometerCalibrationCompleted', false);
+    updateMediaUpload("SI_accelCalibrationOk", JSONdata, "3DAccelerometerCalibrationCompleted");
     //    -Entering Sleep Mode
-    updateSelectValue("System_wo_Event_1x4_select", JSONdata, "EventsSettings.EnteredSleepMode.Activation");
-    updateSelectValue("System_wo_Event_2x4_select", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x4_select", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x4_select", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x4_select", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x4_select", JSONdata, "EventsSettings.EnteredSleepMode.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x4_select', JSONdata, "EventsSettings.EnteredSleepMode.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x4_select", JSONdata, "EventsSettings.EnteredSleepMode.ReportFootage");
+    updateCheckboxCheckedState("SI_enteringSleepModeActivation", JSONdata, "EventsSettings.EnteredSleepMode.Activation");
+    updateCheckAndImageButton("SI_enteringSleepModeFeedbackAudio", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_enteringSleepModeFeedbackOutput", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackOutput");
+    updateCheckAndImageButton("SI_enteringSleepModeFeedbackSpeech", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_enteringSleepModeFeedbackVisual", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_enteringSleepMode", JSONdata, 'EnteredSleepMode', 'EnteredSleepMode', false);
+    updateMediaUpload("SI_enteringSleepMode", JSONdata, "EnteredSleepMode");
     //    -FW Update Started
-    updateSelectValue("System_wo_Event_1x5_select", JSONdata, "EventsSettings.FwUpdateStarted.Activation");
-    updateSelectValue("System_wo_Event_2x5_select", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x5_select", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x5_select", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x5_select", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x5_select", JSONdata, "EventsSettings.FwUpdateStarted.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x5_select', JSONdata, "EventsSettings.FwUpdateStarted.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x5_select", JSONdata, "EventsSettings.FwUpdateStarted.ReportFootage");
+    updateCheckboxCheckedState("SI_firmwareUpdateStartedActivation", JSONdata, "EventsSettings.FwUpdateStarted.Activation");
+    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackAudio", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_firmwareUpdateStartedFeedbackOutput", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackOutput");
+    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackSpeech", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackVisual", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_firmwareUpdateStarted", JSONdata, 'FwUpdateStarted', 'FwUpdateStarted', false);
+    updateMediaUpload("SI_firmwareUpdateStarted", JSONdata, "FwUpdateStarted");
     //    -FW Update Completed
-    updateSelectValue("System_wo_Event_1x6_select", JSONdata, "EventsSettings.FwUpdateCompleted.Activation");
-    updateSelectValue("System_wo_Event_2x6_select", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x6_select", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x6_select", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x6_select", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x6_select", JSONdata, "EventsSettings.FwUpdateCompleted.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x6_select', JSONdata, "EventsSettings.FwUpdateCompleted.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x6_select", JSONdata, "EventsSettings.FwUpdateCompleted.ReportFootage");
+    updateCheckboxCheckedState("SI_firmwareUpdateOK_Activation", JSONdata, "EventsSettings.FwUpdateCompleted.Activation");
+    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackAudio", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_firmwareUpdateOK_FeedbackOutput", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackOutput");
+    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackSpeech", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackVisual", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_firmwareUpdateOK_", JSONdata, 'FwUpdateCompleted', 'FwUpdateCompleted', false);
+    updateMediaUpload("SI_firmwareUpdateOK_", JSONdata, "FwUpdateCompleted");
     //    -FW Update Failed
-    updateSelectValue("System_wo_Event_1x7_select", JSONdata, "EventsSettings.FwUpdateFailed.Activation");
-    updateSelectValue("System_wo_Event_2x7_select", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x7_select", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x7_select", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x7_select", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x7_select", JSONdata, "EventsSettings.FwUpdateFailed.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x7_select', JSONdata, "EventsSettings.FwUpdateFailed.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x7_select", JSONdata, "EventsSettings.FwUpdateFailed.ReportFootage");
+    updateCheckboxCheckedState("SI_firmwareUpdateFailedActivation", JSONdata, "EventsSettings.FwUpdateFailed.Activation");
+    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackAudio", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_firmwareUpdateFailedFeedbackOutput", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackOutput");
+    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackSpeech", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackVisual", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_firmwareUpdateFailed", JSONdata, 'FwUpdateFailed', 'FwUpdateFailed', false);
+    updateMediaUpload("SI_firmwareUpdateFailed", JSONdata, "FwUpdateFailed");
     //    -System Boot
-    updateSelectValue("System_wo_Event_1x8_select", JSONdata, "EventsSettings.SystemBoot.Activation");
-    updateSelectValue("System_wo_Event_2x8_select", JSONdata, "EventsSettings.SystemBoot.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x8_select", JSONdata, "EventsSettings.SystemBoot.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x8_select", JSONdata, "EventsSettings.SystemBoot.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x8_select", JSONdata, "EventsSettings.SystemBoot.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x8_select", JSONdata, "EventsSettings.SystemBoot.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x8_select', JSONdata, "EventsSettings.SystemBoot.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x8_select", JSONdata, "EventsSettings.SystemBoot.ReportFootage");
+    updateCheckboxCheckedState("SI_systemBootActivation", JSONdata, "EventsSettings.SystemBoot.Activation");
+    updateCheckAndImageButton("SI_systemBootFeedbackAudio", JSONdata, "EventsSettings.SystemBoot.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_systemBootFeedbackOutput", JSONdata, "EventsSettings.SystemBoot.FeedbackOutput");
+    updateCheckAndImageButton("SI_systemBootFeedbackSpeech", JSONdata, "EventsSettings.SystemBoot.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemBootFeedbackVisual", JSONdata, "EventsSettings.SystemBoot.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_systemBoot", JSONdata, 'SystemBoot', 'SystemBoot', false);
+    updateMediaUpload("SI_systemBoot", JSONdata, "SystemBoot");
     //    -System Boot Failure
-    updateSelectValue("System_wo_Event_1x9_select", JSONdata, "EventsSettings.SystemBootFailure.Activation");
-    updateSelectValue("System_wo_Event_2x9_select", JSONdata, "EventsSettings.SystemBootFailure.FeedbackAudio");
-    update_FS10_OutputValue("System_wo_Event_3x9_select", JSONdata, "EventsSettings.SystemBootFailure.FeedbackOutput");
-    updateSelectValue("System_wo_Event_4x9_select", JSONdata, "EventsSettings.SystemBootFailure.FeedbackSpeech");
-    updateSelectValue("System_wo_Event_5x9_select", JSONdata, "EventsSettings.SystemBootFailure.FeedbackVisual");
-    updateSelectValue("System_wo_Event_6x9_select", JSONdata, "EventsSettings.SystemBootFailure.ReportEvent");
-    update_FS10_imageValue('System_wo_Event_7x9_select', JSONdata, "EventsSettings.SystemBootFailure.ReportImage");
-    update_FS10_videoValue("System_wo_Event_8x9_select", JSONdata, "EventsSettings.SystemBootFailure.ReportFootage");
+    updateCheckboxCheckedState("SI_systemBootFailureActivation", JSONdata, "EventsSettings.SystemBootFailure.Activation");
+    updateCheckAndImageButton("SI_systemBootFailureFeedbackAudio", JSONdata, "EventsSettings.SystemBootFailure.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_systemBootFailureFeedbackOutput", JSONdata, "EventsSettings.SystemBootFailure.FeedbackOutput");
+    updateCheckAndImageButton("SI_systemBootFailureFeedbackSpeech", JSONdata, "EventsSettings.SystemBootFailure.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemBootFailureFeedbackVisual", JSONdata, "EventsSettings.SystemBootFailure.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_systemBootFailure", JSONdata, 'SystemBootFailure', 'SystemBootFailure', false);
+    updateMediaUpload("SI_systemBootFailure", JSONdata, "SystemBootFailure");
 }
 function System_w_event_menuToUpdate(JSONdata){
     //System Events with Reason 
     //    -External Event Triggering
-    updateSelectValue("System_w_Event_1x1_select", JSONdata, "EventsSettings.ExternalEventTriggering.Activation");
-    updateSelectValue("System_w_Event_2x1_select", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackAudio");
-    update_FS10_OutputValue("System_w_Event_3x1_select", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackOutput");
-    updateSelectValue("System_w_Event_4x1_select", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackSpeech");
-    updateSelectValue("System_w_Event_5x1_select", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackVisual");
-    updateSelectValue("System_w_Event_6x1_select", JSONdata, "EventsSettings.ExternalEventTriggering.ReportEvent");
-    update_FS10_imageValue('System_w_Event_7x1_select', JSONdata, "EventsSettings.ExternalEventTriggering.ReportImage");
-    update_FS10_videoValue("System_w_Event_8x1_select", JSONdata, "EventsSettings.ExternalEventTriggering.ReportFootage");
+    updateCheckboxCheckedState("SI_externalEventTriggeringActivation", JSONdata, "EventsSettings.ExternalEventTriggering.Activation");
+    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackAudio", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_externalEventTriggeringFeedbackOutput", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackOutput");
+    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackSpeech", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackVisual", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_externalEventTriggering", JSONdata, 'ExternalEventTriggering', 'ExternalEventTriggering', false);
+    updateMediaUpload("SI_externalEventTriggering", JSONdata, "ExternalEventTriggering");
     //    -Application Error
-    updateSelectValue("System_w_Event_1x2_select", JSONdata, "EventsSettings.ApplicationError.Activation");
-    updateSelectValue("System_w_Event_2x2_select", JSONdata, "EventsSettings.ApplicationError.FeedbackAudio");
-    update_FS10_OutputValue("System_w_Event_3x2_select", JSONdata, "EventsSettings.ApplicationError.FeedbackOutput");
-    updateSelectValue("System_w_Event_4x2_select", JSONdata, "EventsSettings.ApplicationError.FeedbackSpeech");
-    updateSelectValue("System_w_Event_5x2_select", JSONdata, "EventsSettings.ApplicationError.FeedbackVisual");
-    updateSelectValue("System_w_Event_6x2_select", JSONdata, "EventsSettings.ApplicationError.ReportEvent");
-    update_FS10_imageValue('System_w_Event_7x2_select', JSONdata, "EventsSettings.ApplicationError.ReportImage");
-    update_FS10_videoValue("System_w_Event_8x2_select", JSONdata, "EventsSettings.ApplicationError.ReportFootage");
+    updateCheckboxCheckedState("SI_applicationErrorActivation", JSONdata, "EventsSettings.ApplicationError.Activation");
+    updateCheckAndImageButton("SI_applicationErrorFeedbackAudio", JSONdata, "EventsSettings.ApplicationError.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_applicationErrorFeedbackOutput", JSONdata, "EventsSettings.ApplicationError.FeedbackOutput");
+    updateCheckAndImageButton("SI_applicationErrorFeedbackSpeech", JSONdata, "EventsSettings.ApplicationError.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_applicationErrorFeedbackVisual", JSONdata, "EventsSettings.ApplicationError.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_applicationError", JSONdata, 'ApplicationError', 'ApplicationError', false);
+    updateMediaUpload("SI_applicationError", JSONdata, "ApplicationError");
     //    -Camera Error
-    updateSelectValue("System_w_Event_1x3_select", JSONdata, "EventsSettings.CameraError.Activation");
-    updateSelectValue("System_w_Event_2x3_select", JSONdata, "EventsSettings.CameraError.FeedbackAudio");
-    update_FS10_OutputValue("System_w_Event_3x3_select", JSONdata, "EventsSettings.CameraError.FeedbackOutput");
-    updateSelectValue("System_w_Event_4x3_select", JSONdata, "EventsSettings.CameraError.FeedbackSpeech");
-    updateSelectValue("System_w_Event_5x3_select", JSONdata, "EventsSettings.CameraError.FeedbackVisual");
-    updateSelectValue("System_w_Event_6x3_select", JSONdata, "EventsSettings.CameraError.ReportEvent");
-    update_FS10_imageValue('System_w_Event_7x3_select', JSONdata, "EventsSettings.CameraError.ReportImage");
-    update_FS10_videoValue("System_w_Event_8x3_select", JSONdata, "EventsSettings.CameraError.ReportFootage");
+    updateCheckboxCheckedState("SI_cameraErrorActivation", JSONdata, "EventsSettings.CameraError.Activation");
+    updateCheckAndImageButton("SI_cameraErrorFeedbackAudio", JSONdata, "EventsSettings.CameraError.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_cameraErrorFeedbackOutput", JSONdata, "EventsSettings.CameraError.FeedbackOutput");
+    updateCheckAndImageButton("SI_cameraErrorFeedbackSpeech", JSONdata, "EventsSettings.CameraError.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_cameraErrorFeedbackVisual", JSONdata, "EventsSettings.CameraError.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_cameraError", JSONdata, 'CameraError', 'CameraError', false);
+    updateMediaUpload("SI_cameraError", JSONdata, "CameraError");
     //    -System OK
-    updateSelectValue("System_w_Event_1x4_select", JSONdata, "EventsSettings.SystemOk.Activation");
-    updateSelectValue("System_w_Event_2x4_select", JSONdata, "EventsSettings.SystemOk.FeedbackAudio");
-    update_FS10_OutputValue("System_w_Event_3x4_select", JSONdata, "EventsSettings.SystemOk.FeedbackOutput");
-    updateSelectValue("System_w_Event_4x4_select", JSONdata, "EventsSettings.SystemOk.FeedbackSpeech");
-    updateSelectValue("System_w_Event_5x4_select", JSONdata, "EventsSettings.SystemOk.FeedbackVisual");
-    updateSelectValue("System_w_Event_6x4_select", JSONdata, "EventsSettings.SystemOk.ReportEvent");
-    update_FS10_imageValue('System_w_Event_7x4_select', JSONdata, "EventsSettings.SystemOk.ReportImage");
-    update_FS10_videoValue("System_w_Event_8x4_select", JSONdata, "EventsSettings.SystemOk.ReportFootage");
+    updateCheckboxCheckedState("SI_systemOK_Activation", JSONdata, "EventsSettings.SystemOk.Activation");
+    updateCheckAndImageButton("SI_systemOK_FeedbackAudio", JSONdata, "EventsSettings.SystemOk.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_systemOK_FeedbackOutput", JSONdata, "EventsSettings.SystemOk.FeedbackOutput");
+    updateCheckAndImageButton("SI_systemOK_FeedbackSpeech", JSONdata, "EventsSettings.SystemOk.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemOK_FeedbackVisual", JSONdata, "EventsSettings.SystemOk.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_systemOK_", JSONdata, 'SystemOk', 'SystemOk', false);
+    updateMediaUpload("SI_systemOK_", JSONdata, "SystemOk");
     //    -System Reset
-    updateSelectValue("System_w_Event_1x5_select", JSONdata, "EventsSettings.SystemReset.Activation");
-    updateSelectValue("System_w_Event_2x5_select", JSONdata, "EventsSettings.SystemReset.FeedbackAudio");
-    update_FS10_OutputValue("System_w_Event_3x5_select", JSONdata, "EventsSettings.SystemReset.FeedbackOutput");
-    updateSelectValue("System_w_Event_4x5_select", JSONdata, "EventsSettings.SystemReset.FeedbackSpeech");
-    updateSelectValue("System_w_Event_5x5_select", JSONdata, "EventsSettings.SystemReset.FeedbackVisual");
-    updateSelectValue("System_w_Event_6x5_select", JSONdata, "EventsSettings.SystemReset.ReportEvent");
-    update_FS10_imageValue('System_w_Event_7x5_select', JSONdata, "EventsSettings.SystemReset.ReportImage");
-    update_FS10_videoValue("System_w_Event_8x5_select", JSONdata, "EventsSettings.SystemReset.ReportFootage");
+    updateCheckboxCheckedState("SI_systemResetActivation", JSONdata, "EventsSettings.SystemReset.Activation");
+    updateCheckAndImageButton("SI_systemResetFeedbackAudio", JSONdata, "EventsSettings.SystemReset.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_systemResetFeedbackOutput", JSONdata, "EventsSettings.SystemReset.FeedbackOutput");
+    updateCheckAndImageButton("SI_systemResetFeedbackSpeech", JSONdata, "EventsSettings.SystemReset.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemResetFeedbackVisual", JSONdata, "EventsSettings.SystemReset.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_systemReset", JSONdata, 'SystemReset', 'SystemReset', false);
+    updateMediaUpload("SI_systemReset", JSONdata, "SystemReset");
     //    -System Error
-    updateSelectValue("System_w_Event_1x6_select", JSONdata, "EventsSettings.SystemError.Activation");
-    updateSelectValue("System_w_Event_2x6_select", JSONdata, "EventsSettings.SystemError.FeedbackAudio");
-    update_FS10_OutputValue("System_w_Event_3x6_select", JSONdata, "EventsSettings.SystemError.FeedbackOutput");
-    updateSelectValue("System_w_Event_4x6_select", JSONdata, "EventsSettings.SystemError.FeedbackSpeech");
-    updateSelectValue("System_w_Event_5x6_select", JSONdata, "EventsSettings.SystemError.FeedbackVisual");
-    updateSelectValue("System_w_Event_6x6_select", JSONdata, "EventsSettings.SystemError.ReportEvent");
-    update_FS10_imageValue('System_w_Event_7x6_select', JSONdata, "EventsSettings.SystemError.ReportImage");
-    update_FS10_videoValue("System_w_Event_8x6_select", JSONdata, "EventsSettings.SystemError.ReportFootage");
+    updateCheckboxCheckedState("SI_systemErrorActivation", JSONdata, "EventsSettings.SystemError.Activation");
+    updateCheckAndImageButton("SI_systemErrorFeedbackAudio", JSONdata, "EventsSettings.SystemError.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_systemErrorFeedbackOutput", JSONdata, "EventsSettings.SystemError.FeedbackOutput");
+    updateCheckAndImageButton("SI_systemErrorFeedbackSpeech", JSONdata, "EventsSettings.SystemError.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemErrorFeedbackVisual", JSONdata, "EventsSettings.SystemError.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_systemError", JSONdata, 'SystemError', 'SystemError', false);
+    updateMediaUpload("SI_systemError", JSONdata, "SystemError");
     //    -MCULOG
-    updateSelectValue("System_w_Event_1x7_select", JSONdata, "EventsSettings.MCULOG.Activation");
-    updateSelectValue("System_w_Event_2x7_select", JSONdata, "EventsSettings.MCULOG.FeedbackAudio");
-    update_FS10_OutputValue("System_w_Event_3x7_select", JSONdata, "EventsSettings.MCULOG.FeedbackOutput");
-    updateSelectValue("System_w_Event_4x7_select", JSONdata, "EventsSettings.MCULOG.FeedbackSpeech");
-    updateSelectValue("System_w_Event_5x7_select", JSONdata, "EventsSettings.MCULOG.FeedbackVisual");
-    updateSelectValue("System_w_Event_6x7_select", JSONdata, "EventsSettings.MCULOG.ReportEvent");
-    update_FS10_imageValue('System_w_Event_7x7_select', JSONdata, "EventsSettings.MCULOG.ReportImage");
-    update_FS10_videoValue("System_w_Event_8x7_select", JSONdata, "EventsSettings.MCULOG.ReportFootage");
+    updateCheckboxCheckedState("SI_MCU_LogActivation", JSONdata, "EventsSettings.MCULOG.Activation");
+    updateCheckAndImageButton("SI_MCU_LogFeedbackAudio", JSONdata, "EventsSettings.MCULOG.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+    updateFeedbackOutput("SI_MCU_LogFeedbackOutput", JSONdata, "EventsSettings.MCULOG.FeedbackOutput");
+    updateCheckAndImageButton("SI_MCU_LogFeedbackSpeech", JSONdata, "EventsSettings.MCULOG.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_MCU_LogFeedbackVisual", JSONdata, "EventsSettings.MCULOG.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+    updateDetectionClosureEvent("SI_MCU_Log", JSONdata, 'MCULOG', 'MCULOG', false);
+    updateMediaUpload("SI_MCU_Log", JSONdata, "MCULOG");
 }
 
 // Updating ComboBox from Numerical Values
@@ -2695,6 +3716,88 @@ function updateNumericValue(selectId, JSONdata, propertyPath, nominal, min_Lim, 
 
     var selectElement = document.getElementById(selectId);
     selectElement.value = selectValue;
+}
+
+function updateSliderControlInteger(id, JSONdata, propertyPath) {
+    var segments = propertyPath.split('.');
+    var value = JSONdata;
+    for (var i = 0; i < segments.length; i++) {
+        var segment = segments[i];
+        if (value && segment in value) {
+            value = value[segment];
+        } else {
+            value = NaN;
+            break;
+        }
+    }
+    const range = document.getElementById(id + "Range");
+    const number = document.getElementById(id + "Number");
+    let minValue = parseInt(range.min, 10);
+    let maxValue = parseInt(range.max, 10);
+    if (!isNaN(value)) {
+        value = parseInt(value, 10);
+        if (value < minValue) {
+            value = minValue;
+        } else if (value > maxValue) {
+            value = maxValue;
+        }
+    } else {
+        value = parseInt((maxValue - minValue) / 2 + minValue, 10);
+    }
+    range.value = value;
+    number.value = value;
+    updateSliderControlSummary(id + "Summary", value);
+}
+
+function updateSliderControlDecimal(id, JSONdata, propertyPath) {
+    var segments = propertyPath.split('.');
+    var value = JSONdata;
+    for (var i = 0; i < segments.length; i++) {
+        var segment = segments[i];
+        if (value && segment in value) {
+            value = value[segment];
+        } else {
+            value = NaN;
+            break;
+        }
+    }
+    const range = document.getElementById(id + "Range");
+    const number = document.getElementById(id + "Number");
+    let minValue = parseInt(range.min, 10);
+    let maxValue = parseInt(range.max, 10);
+    if (!isNaN(value)) {
+        value = parseFloat(value).toFixed(1);
+        value = parseFloat(value);
+        if (value < minValue) {
+            value = parseFloat(minValue).toFixed(1);
+            value = parseFloat(value);
+        } else if (value > maxValue) {
+            value = parseFloat(maxValue).toFixed(1);
+            value = parseFloat(value);
+        }
+    } else {
+        value = parseFloat((maxValue - minValue) / 2 + minValue).toFixed(1);
+        value = parseFloat(value);
+    }
+    range.value = value;
+    number.value = value;
+    updateSliderControlSummary(id + "Summary", value);
+}
+
+
+function updateSliderControlSummary(id, value) {
+    const summaryCell = document.getElementById(id);
+    if (summaryCell) {
+        if (value > 0) {
+            summaryCell.classList.remove('inactive-summary-cell');
+            summaryCell.classList.add('active-summary-cell');
+        } else {
+            summaryCell.classList.remove('active-summary-cell');
+            summaryCell.classList.add('inactive-summary-cell');
+        }
+        const summaryCellValue = document.getElementById(id + "Value");
+        summaryCellValue.textContent = value;
+    }
 }
 
 // Updating ComboBox from Numerical Values with 0 as disabled option
@@ -2833,10 +3936,10 @@ function updateComboBox_fromJSON(JSONdata){
     updateSelectValue("LeftHandDrive", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.LeftHandDrive");
 
     // Global Parameters for Driver's Feedback
-    updateSelectValue("beepsActivation", JSONdata, "DriverFeedbackOptions.Beeps");
-    updateSelectValue("voiceActivation", JSONdata, "DriverFeedbackOptions.Voice");
-    updateSelectValue("LEDActivation", JSONdata, "DriverFeedbackOptions.LED");
-    updateSelectValue("SystemLEDActivation", JSONdata, "SystemLEDActivation");
+    updateCheckAndImageButton("GP_beepsActivation", JSONdata, "DriverFeedbackOptions.Beeps", 'source_img/GP_Beeps_Activation_ON.png', 'source_img/GP_Beeps_Activation_OFF.png');
+    updateCheckAndImageButton("GP_voiceActivation", JSONdata, "DriverFeedbackOptions.Voice", 'source_img/GP_Voice_Activation_ON.png', 'source_img/GP_Voice_Activation_OFF.png');
+    updateCheckAndImageButton("GP_LED_activation", JSONdata, "DriverFeedbackOptions.LED", 'source_img/GP_LED_Activation_ON.png', 'source_img/GP_LED_Activation_OFF.png');
+    updateCheckAndImageButton("GP_system_LED_activation", JSONdata, "SystemLEDActivation", 'source_img/GP_System_LED_Activation_ON.png', 'source_img/GP_System_LED_Activation_OFF.png');
     
     // Driver Angles
     updateAngleValue("RoadCenterPitchPos", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterPitchPos", 15, 0, 45, PitchPos);
@@ -2846,53 +3949,55 @@ function updateComboBox_fromJSON(JSONdata){
 
     // Driver Distraction
     updateNumericValue("MaxHeadingAngleForEvents", JSONdata, "MaxHeadingAngleForEvents", 15, 2, 30);
-    updateCmbBox("DriverDisappearTimeThreshold", 5, 60, 1, 1, 1, 0, "sec(s)");
-    updateNumericValue("DriverDisappearTimeThreshold", JSONdata, "DriverDisappearTimeThreshold", 30, 5, 60);
+    updateSliderControlInteger("DMS_driverDisappearedTimeThreshold", JSONdata, "DriverDisappearTimeThreshold");
     
     // Movement
-    updateNumericValue("MinSpeedMonitor", JSONdata, "MinSpeedMonitorThreshold", 10, 10, 30);
+    updateSliderControlInteger("TES_movementStartedSpeedThreshold", JSONdata, "MinSpeedMonitorThreshold");
+    updateSliderControlInteger("TES_movementStoppedSpeedThreshold", JSONdata, "MinSpeedMonitorThreshold");
     
     // SpeedThresholds
-    updateNumericValue("DistractionSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionSpeedThreshold", 30, 0, 50);
-    updateNumericValue("DrowsinessSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DrowsinessSpeedThreshold", 5, 0, 50);
-    updateNumericValue("PhoneSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.PhoneSpeedThreshold", 5, 0, 50);
-    updateNumericValue("SeatbeltSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SeatbeltSpeedThreshold", 15, 0, 50);
-    updateNumericValue("SmokingSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SmokingSpeedThreshold", 0, 0, 50);
-    updateNumericValue("DistractionTurnGraceDuration", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionTurnGraceDuration", 2.0, 0.0, 5.0);
-    updateNumericValue("TrackingGraceTimer", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.TrackingGraceTimer", 150, 30, 1800);
-    updateNumericValue("DriverChangeMinDuration", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DriverChangeMinDuration", 5.0, 0.0, 15.0);
-    updateNumericValue("SeatbeltAlertTime", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.SeatbeltAlertTime", 15.0, 5.0, 60.0);
-    updateNumericValue("SleepDuration", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.SleepDuration", 4.0, 1.0, 5.0);
+    updateSliderControlInteger("DMS_driverDistractedSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionSpeedThreshold");
+    updateSliderControlInteger("DMS_driverAsleepSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DrowsinessSpeedThreshold");
+    updateSliderControlInteger("DMS_drowsinessSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DrowsinessSpeedThreshold");
+    updateSliderControlInteger("DMS_phoneUseSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.PhoneSpeedThreshold");
+    updateSliderControlInteger("DMS_seatbeltSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SeatbeltSpeedThreshold");
+    updateSliderControlInteger("DMS_smokingSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SmokingSpeedThreshold");
+    updateSliderControlDecimal("DMS_driverDistractedTurnGraceTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionTurnGraceDuration");
+    updateSliderControlInteger("DMS_driverDisappearedTrackingGraceTimer", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.TrackingGraceTimer");
+    updateSliderControlDecimal("DMS_driverChangedMinimum", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DriverChangeMinDuration");
+    updateSliderControlInteger("DMS_seatbeltAlertTime", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.SeatbeltAlertTime");
+    updateSliderControlDecimal("DMS_driverAsleepSleepDuration", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.SleepDuration");
     
     //Enables Post and Pre 
-    updateSelectValue("EnableSleepBlockingByDrowsiness", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.EnableSleepBlockingByDrowsiness");
-    updateSelectValue("InhibitSeatbeltOnStop", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.InhibitSeatbeltAlertsOnStop");
-    updateSelectValue("EnableYawnBasedDrowsiness", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.EnableYawnBasedDrowsiness");
-    updateSelectValue("EnableImagesIdDB", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.EnableImagesIdDB");
+    updateCheckboxCheckedState("DMS_driverAsleepSleepBlockingEnable", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.EnableSleepBlockingByDrowsiness");
+    updateCheckboxCheckedState("DMS_seatbeltInhibitAlertsOnStop", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.InhibitSeatbeltAlertsOnStop");
+    updateCheckboxCheckedState("DMS_drowsinessYawnEnable", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.EnableYawnBasedDrowsiness");
+    updateCheckboxCheckedState("DMS_driverIdentifiedEnableDatabase", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.EnableImagesIdDB");
     
     //Messages Backoff
-    updateNumericValue("AsleepOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.Asleep", 0, 0, 1);
-    updateNumericValue("DriverDistractedOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.DriverDistracted", 0, 0, 30);
-    updateNumericValue("DrowsinessOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.Drowsiness", 0, 0, 30);
-    updateNumericValue("FCWOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.FCW", 0, 0, 30);
-    updateNumericValue("LDWOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.LDW", 0, 0, 30);
+    updateSliderControlInteger("DMS_driverAsleepMessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.Asleep");
+    updateSliderControlInteger("DMS_driverDistractedMessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.DriverDistracted");
+    updateSliderControlInteger("DMS_drowsinessMessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.Drowsiness");
+    updateSliderControlInteger("ADAS_FCW_MessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.FCW");
+    updateSliderControlInteger("ADAS_LDW_MessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.LDW");
+    updateSliderControlInteger("ADAS_PCW_MessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.PCW");
+    updateSliderControlInteger("DMS_phoneUseMessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.PhoneUse");
+    updateSliderControlInteger("DMS_seatbeltMessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.Seatbelt");
+    updateSliderControlInteger("DMS_smokingMessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.Smoking");
+    updateSliderControlInteger("ADAS_HMW_MessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.Tailgating");
+    updateSliderControlInteger("ADAS_UFCW_MessageBackoff", JSONdata, "ExtraParameters.OTAMessageBackOff.UFCW");
     //updateNumericValue("LightDrowsinessOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.LightDrowsiness", 15, 0, 30);
-    updateNumericValue("PCWOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.PCW", 0, 0, 30);
-    updateNumericValue("PhoneUseOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.PhoneUse", 0, 0, 30);
-    updateNumericValue("SeatbeltOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.Seatbelt", 0, 0, 30);
-    updateNumericValue("SmokingOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.Smoking", 0, 0, 30);
-    updateNumericValue("HMWOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.Tailgating", 0, 0, 30);
-    updateNumericValue("UFCWOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.UFCW", 0, 0, 30);
 
     // Backoff Timers
-    updateNumericValue("CameraStatusBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.CameraStatusBackoffTimer", 60, 30, 1800);
-    updateNumericValue("DistractionBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionBackoffTimer", 900, 30, 1800);
-    updateNumericValue("DrowsinessBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DrowsinessBackoffTimer", 300, 30, 1800);
+    updateSliderControlInteger("SI_cameraErrorFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.CameraStatusBackoffTimer");
+    updateSliderControlInteger("DMS_driverDistractedFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionBackoffTimer");
+    updateSliderControlInteger("DMS_drowsinessFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DrowsinessBackoffTimer");
+    updateSliderControlInteger("DMS_phoneUseFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.PhoneBackoffTimer");
+    updateSliderControlInteger("DMS_seatbeltFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SeatbeltBackoffTimer");
+    updateSliderControlInteger("DMS_driverAsleepFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SleepBackoffTimer");
+    updateSliderControlInteger("DMS_smokingFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SmokingBackoffTimer");
+    console.log("Check point reached");
     //updateNumericValue("LightDrowsinessBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.LightDrowsinessBackoffTimer", 900, 30, 1800);
-    updateNumericValue("PhoneBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.PhoneBackoffTimer", 900, 30, 1800);
-    updateNumericValue("SeatbeltBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SeatbeltBackoffTimer", 900, 30, 1800);
-    updateNumericValue("SleepBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SleepBackoffTimer", 300, 30, 1800);
-    updateNumericValue("SmokingBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SmokingBackoffTimer", 900, 30, 1800);
 
     //Communication Watchdog
     updateNumericValue("KeepAliveInSec", JSONdata, "CommunicationWatchdog.KeepAliveInSec", 180, 0, 300);
@@ -3081,7 +4186,7 @@ function getPropertyValue(obj, path) {
             value = value[properties[i]];
         }
         else {
-            return undefined;
+            return null;
         }
     }
     return value;

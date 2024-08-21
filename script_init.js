@@ -129,21 +129,21 @@ function setInitialColors(){
     //DMS
     //Activation
     changeBackgroundColor('DMS_DriverAsleep_Activation', 'DMS_1x1_select'); 
-    changeBackgroundColor('DMS_Drowsiness_Activation', 'DMS_1x2_select');
-    changeBackgroundColor('DMS_DriverDistracted_Activation', 'DMS_1x3_select');
-    changeBackgroundColor('DMS_PhoneUse_Activation', 'DMS_1x4_select');
-    changeBackgroundColor('DMS_Seatbelt_Activation', 'DMS_1x5_select');
-    changeBackgroundColor('DMS_Smoking_Activation', 'DMS_1x6_select');
+    changeBackgroundColor('DMS_Drowsiness_Activation', 'DMS_drowsinessActivationId');
+    changeBackgroundColor('DMS_DriverDistracted_Activation', 'DMS_driverDistractedActivationId');
+    changeBackgroundColor('DMS_PhoneUse_Activation', 'DMS_phoneUseActivationId');
+    changeBackgroundColor('DMS_Seatbelt_Activation', 'DMS_seatbeltActivationId');
+    changeBackgroundColor('DMS_Smoking_Activation', 'DMS_smokingActivationId');
     //changeBackgroundColor('DMS_LightDrowsiness_Activation', 'DMS_1x7_select');
-    changeBackgroundColor('DMS_TamperingDetection_Activation', 'DMS_1x8_select');
-    changeBackgroundColor('DMS_DriverIdentified_Activation', 'DMS_1x9_select');
-    changeBackgroundColor('DMS_UnidentifiedUnauthDriver_Activation', 'DMS_1x10_select');
-    changeBackgroundColor('DMS_DriverDisappeared_Activation', 'DMS_1x11_select');
-    changeBackgroundColor('DMS_DriverChange_Activation', 'DMS_1x12_select');
-    changeBackgroundColor('DMS_DriverIDUpdated_Activation', 'DMS_1x13_select');
+    changeBackgroundColor('DMS_TamperingDetection_Activation', 'DMS_tamperingDetectionActivationId');
+    changeBackgroundColor('DMS_DriverIdentified_Activation', 'DMS_driverIdentifiedActivationId');
+    changeBackgroundColor('DMS_UnidentifiedUnauthDriver_Activation', 'DMS_driverUnidentifiedActivationId');
+    changeBackgroundColor('DMS_DriverDisappeared_Activation', 'DMS_driverDisappearedActivationId');
+    changeBackgroundColor('DMS_DriverChange_Activation', 'DMS_driverChangedActivationId');
+    changeBackgroundColor('DMS_DriverIDUpdated_Activation', 'DMS_driverIdUpdatedActivationId');
     //FeedbackAudio
     changeBackgroundColor('DMS_DriverAsleep_FeedbackAudio', 'DMS_2x1_select'); 
-    changeBackgroundColor('DMS_Drowsiness_FeedbackAudio', 'DMS_2x2_select');
+    changeBackgroundColor('DMS_Drowsiness_FeedbackAudio', 'DMS_drowsinessFeedbackAudio');
     changeBackgroundColor('DMS_DriverDistracted_FeedbackAudio', 'DMS_2x3_select');
     changeBackgroundColor('DMS_PhoneUse_FeedbackAudio', 'DMS_2x4_select');
     changeBackgroundColor('DMS_Seatbelt_FeedbackAudio', 'DMS_2x5_select');
@@ -157,7 +157,7 @@ function setInitialColors(){
     changeBackgroundColor('DMS_DriverIDUpdated_FeedbackAudio', 'DMS_2x13_select');
     //Feedback Speech
     changeBackgroundColor('DMS_DriverAsleep_FeedbackSpeech', 'DMS_4x1_select'); 
-    changeBackgroundColor('DMS_Drowsiness_FeedbackSpeech', 'DMS_4x2_select');
+    changeBackgroundColor('DMS_Drowsiness_FeedbackSpeech', 'DMS_drowsinessFeedbackSpeech');
     changeBackgroundColor('DMS_DriverDistracted_FeedbackSpeech', 'DMS_4x3_select');
     changeBackgroundColor('DMS_PhoneUse_FeedbackSpeech', 'DMS_4x4_select');
     changeBackgroundColor('DMS_Seatbelt_FeedbackSpeech', 'DMS_4x5_select');
@@ -171,7 +171,7 @@ function setInitialColors(){
     changeBackgroundColor('DMS_DriverIDUpdated_FeedbackSpeech', 'DMS_4x13_select');
     //Feedback Visual
     changeBackgroundColor('DMS_DriverAsleep_FeedbackVisual', 'DMS_5x1_select'); 
-    changeBackgroundColor('DMS_Drowsiness_FeedbackVisual', 'DMS_5x2_select');
+    changeBackgroundColor('DMS_Drowsiness_FeedbackVisual', 'DMS_drowsinessFeedbackVisual');
     changeBackgroundColor('DMS_DriverDistracted_FeedbackVisual', 'DMS_5x3_select');
     changeBackgroundColor('DMS_PhoneUse_FeedbackVisual', 'DMS_5x4_select');
     changeBackgroundColor('DMS_Seatbelt_FeedbackVisual', 'DMS_5x5_select');
@@ -199,14 +199,14 @@ function setInitialColors(){
     changeBackgroundColor('DMS_DriverIDUpdated_ReportEvent', 'DMS_6x13_select');
     //ADAS
     //Activation
-    changeBackgroundColor('ADAS_LDW_Activation', 'ADAS_1x1_select');
+    changeBackgroundColor('ADAS_LDW_Activation', 'ADAS_LDW_ActivationId');
     //changeBackgroundColor('ADAS_RedLight_Activation', 'ADAS_1x2_select');
     //changeBackgroundColor('ADAS_StopDisobeyed_Activation', 'ADAS_1x3_select');
-    changeBackgroundColor('ADAS_HMW_Activation', 'ADAS_1x4_select');
-    changeBackgroundColor('ADAS_UrbanFCW_Activation', 'ADAS_1x5_select');
-    changeBackgroundColor('ADAS_FCW_Activation', 'ADAS_1x6_select');
+    changeBackgroundColor('ADAS_HMW_Activation', 'ADAS_HMW_ActivationId');
+    changeBackgroundColor('ADAS_UrbanFCW_Activation', 'ADAS_UFCW_ActivationId');
+    changeBackgroundColor('ADAS_FCW_Activation', 'ADAS_FCW_ActivationId');
     //changeBackgroundColor('ADAS_Overspeeding_Activation', 'ADAS_1x7_select');
-    changeBackgroundColor('ADAS_PCW_Activation', 'ADAS_1x8_select');
+    changeBackgroundColor('ADAS_PCW_Activation', 'ADAS_PCW_ActivationId');
     changeBackgroundColor('ADAS_LDW_FeedbackAudio', 'ADAS_2x1_select');
     //changeBackgroundColor('ADAS_RedLight_FeedbackAudio', 'ADAS_2x2_select');
     //changeBackgroundColor('ADAS_StopDisobeyed_FeedbackAudio', 'ADAS_2x3_select');
@@ -241,13 +241,13 @@ function setInitialColors(){
     changeBackgroundColor('ADAS_PCW_ReportEvent', 'ADAS_6x8_select');
     //Tracking Events
     //Activation
-    changeBackgroundColor('TrackingEvents_IgnitionON_Activation', 'TrackingEvents_1x1_select'); 
-    changeBackgroundColor('TrackingEvents_IgnitionOFF_Activation', 'TrackingEvents_1x2_select');
-    changeBackgroundColor('TrackingEvents_MovementStarted_Activation', 'TrackingEvents_1x3_select');
-    changeBackgroundColor('TrackingEvents_MovementStopped_Activation', 'TrackingEvents_1x4_select');
-    changeBackgroundColor('TrackingEvents_Heartbeat_Activation', 'TrackingEvents_1x5_select');
-    changeBackgroundColor('TrackingEvents_GPSstatusUpdate_Activation', 'TrackingEvents_1x6_select');
-    changeBackgroundColor('TrackingEvents_TripPath_Activation', 'TrackingEvents_1x7_select');
+    changeBackgroundColor('TrackingEvents_IgnitionON_Activation', 'TES_ignitionOnActivationId'); 
+    changeBackgroundColor('TrackingEvents_IgnitionOFF_Activation', 'TES_ignitionOffActivationId');
+    changeBackgroundColor('TrackingEvents_MovementStarted_Activation', 'TES_movementStartedActivationId');
+    changeBackgroundColor('TrackingEvents_MovementStopped_Activation', 'TES_movementStoppedActivationId');
+    changeBackgroundColor('TrackingEvents_Heartbeat_Activation', 'TES_heartbeatActivationId');
+    changeBackgroundColor('TrackingEvents_GPSstatusUpdate_Activation', 'TES_GPS_updateStatusActivationId');
+    changeBackgroundColor('TrackingEvents_TripPath_Activation', 'TES_tripPathActivationId');
     //FeedbackAudio
     changeBackgroundColor('TrackingEvents_IgnitionON_FeedbackAudio', 'TrackingEvents_2x1_select'); 
     changeBackgroundColor('TrackingEvents_IgnitionOFF_FeedbackAudio', 'TrackingEvents_2x2_select');
@@ -282,12 +282,12 @@ function setInitialColors(){
     changeBackgroundColor('TrackingEvents_TripPath_ReportEvent', 'TrackingEvents_6x7_select');
     //System without Events
     //Activation
-    changeBackgroundColor('System_wo_Event_CameraCalibrationCompleted_Activation', 'System_wo_Event_1x1_select'); 
-    changeBackgroundColor('System_wo_Event_CameraCalibrationFailed_Activation', 'System_wo_Event_1x2_select');
-    changeBackgroundColor('System_wo_Event_3DAccelerometerCalibrationCompleted_Activation', 'System_wo_Event_1x3_select');
-    changeBackgroundColor('System_wo_Event_EnteredSleepMode_Activation', 'System_wo_Event_1x4_select');
-    changeBackgroundColor('System_wo_Event_FwUpdateStarted_Activation', 'System_wo_Event_1x5_select');
-    changeBackgroundColor('System_wo_Event_FwUpdateCompleted_Activation', 'System_wo_Event_1x6_select');
+    changeBackgroundColor('System_wo_Event_CameraCalibrationCompleted_Activation', 'SI_cameraCalibrationOkActivationId'); 
+    changeBackgroundColor('System_wo_Event_CameraCalibrationFailed_Activation', 'SI_cameraCalibrationFailedActivationId');
+    changeBackgroundColor('System_wo_Event_3DAccelerometerCalibrationCompleted_Activation', 'SI_accelCalibrationOkActivationId');
+    changeBackgroundColor('System_wo_Event_EnteredSleepMode_Activation', 'SI_enteringSleepModeActivationId');
+    changeBackgroundColor('System_wo_Event_FwUpdateStarted_Activation', 'SI_firmwareUpdateStartedActivationId');
+    changeBackgroundColor('System_wo_Event_FwUpdateCompleted_Activation', 'SI_firmwareUpdateOK_ActivationId');
     changeBackgroundColor('System_wo_Event_FwUpdateFailed_Activation', 'System_wo_Event_1x7_select');
     changeBackgroundColor('System_wo_Event_SystemBoot_Activation', 'System_wo_Event_1x8_select');
     changeBackgroundColor('System_wo_Event_SystemBootFailure_Activation', 'System_wo_Event_1x9_select');
@@ -378,42 +378,42 @@ function setInitialColors(){
 function setInitialMenusToFalse(){
     // DMS
     update_to_false_menus("DMS_1x1_select");
-    update_to_false_menus("DMS_1x2_select");
-    update_to_false_menus("DMS_1x3_select");
-    update_to_false_menus("DMS_1x4_select");
-    update_to_false_menus("DMS_1x5_select");
-    update_to_false_menus("DMS_1x6_select");
+    update_to_false_menus("DMS_drowsinessActivationId");
+    update_to_false_menus("DMS_driverDistractedActivationId");
+    update_to_false_menus("DMS_phoneUseActivationId");
+    update_to_false_menus("DMS_seatbeltActivationId");
+    update_to_false_menus("DMS_smokingActivationId");
     //update_to_false_menus("DMS_1x7_select");
-    update_to_false_menus("DMS_1x8_select");
-    update_to_false_menus("DMS_1x9_select");
-    update_to_false_menus("DMS_1x10_select");
-    update_to_false_menus("DMS_1x11_select");
-    update_to_false_menus("DMS_1x12_select");
-    update_to_false_menus("DMS_1x13_select");
+    update_to_false_menus("DMS_tamperingDetectionActivationId");
+    update_to_false_menus("DMS_driverIdentifiedActivationId");
+    update_to_false_menus("DMS_driverUnidentifiedActivationId");
+    update_to_false_menus("DMS_driverDisappearedActivationId");
+    update_to_false_menus("DMS_driverChangedActivationId");
+    update_to_false_menus("DMS_driverIdUpdatedActivationId");
     // ADAS
-    update_to_false_menus("ADAS_1x1_select");
+    update_to_false_menus("ADAS_LDW_ActivationId");
     //update_to_false_menus("ADAS_1x2_select");
     //update_to_false_menus("ADAS_1x3_select");
-    update_to_false_menus("ADAS_1x4_select");
-    update_to_false_menus("ADAS_1x5_select");
-    update_to_false_menus("ADAS_1x6_select");
+    update_to_false_menus("ADAS_HMW_ActivationId");
+    update_to_false_menus("ADAS_UFCW_ActivationId");
+    update_to_false_menus("ADAS_FCW_ActivationId");
     //update_to_false_menus("ADAS_1x7_select");
-    update_to_false_menus("ADAS_1x8_select");
+    update_to_false_menus("ADAS_PCW_ActivationId");
     // Tracking Events
-    update_to_false_menus("TrackingEvents_1x1_select");
-    update_to_false_menus("TrackingEvents_1x2_select");
-    update_to_false_menus("TrackingEvents_1x3_select");
-    update_to_false_menus("TrackingEvents_1x4_select");
-    update_to_false_menus("TrackingEvents_1x5_select");
-    update_to_false_menus("TrackingEvents_1x6_select");
-    update_to_false_menus("TrackingEvents_1x7_select");
+    update_to_false_menus("TES_ignitionOnActivationId");
+    update_to_false_menus("TES_ignitionOffActivationId");
+    update_to_false_menus("TES_movementStartedActivationId");
+    update_to_false_menus("TES_movementStoppedActivationId");
+    update_to_false_menus("TES_heartbeatActivationId");
+    update_to_false_menus("TES_GPS_updateStatusActivationId");
+    update_to_false_menus("TES_tripPathActivationId");
     // System w/o Events
-    update_to_false_menus("System_wo_Event_1x1_select");
-    update_to_false_menus("System_wo_Event_1x2_select");
-    update_to_false_menus("System_wo_Event_1x3_select");
-    update_to_false_menus("System_wo_Event_1x4_select");
-    update_to_false_menus("System_wo_Event_1x5_select");
-    update_to_false_menus("System_wo_Event_1x6_select");
+    update_to_false_menus("SI_cameraCalibrationOkActivationId");
+    update_to_false_menus("SI_cameraCalibrationFailedActivationId");
+    update_to_false_menus("SI_accelCalibrationOkActivationId");
+    update_to_false_menus("SI_enteringSleepModeActivationId");
+    update_to_false_menus("SI_firmwareUpdateStartedActivationId");
+    update_to_false_menus("SI_firmwareUpdateOK_ActivationId");
     update_to_false_menus("System_wo_Event_1x7_select");
     update_to_false_menus("System_wo_Event_1x8_select");
     update_to_false_menus("System_wo_Event_1x9_select");
@@ -564,10 +564,10 @@ function fillCmbBoxes(){
 }
 
 function update_from_TripPath(){
-    disable_parameter_from_event_activation('TrackingEvents_Heartbeat_Activation', 'TrackingEvents_1x5_select', 'TripPathInhibitHeartbeat');
-    disable_parameter_from_event_activation('TrackingEvents_TripPath_Activation', 'TrackingEvents_1x7_select', 'TripPathEnable');
-    disable_event_activation_from_parameter('TrackingEvents_TripPath_Activation', 'TrackingEvents_1x7_select', 'TripPathEnable');
-    disable_event_activation_from_parameter('TrackingEvents_Heartbeat_Activation', 'TrackingEvents_1x5_select', 'TripPathInhibitHeartbeat');
+    disable_parameter_from_event_activation('TrackingEvents_Heartbeat_Activation', 'TES_heartbeatActivationId', 'TripPathInhibitHeartbeat');
+    disable_parameter_from_event_activation('TrackingEvents_TripPath_Activation', 'TES_tripPathActivationId', 'TripPathEnable');
+    disable_event_activation_from_parameter('TrackingEvents_TripPath_Activation', 'TES_tripPathActivationId', 'TripPathEnable');
+    disable_event_activation_from_parameter('TrackingEvents_Heartbeat_Activation', 'TES_heartbeatActivationId', 'TripPathInhibitHeartbeat');
 }
 
 function setTimezone() {
@@ -769,34 +769,34 @@ function changeAPNFormat(element_ID, default_val) {
 // All menus to false
 function update_ADAS_Select() {
     var deviceTypeRadioButtons = document.getElementsByName("deviceType");
-    var adas_1x1_Select = document.getElementById("ADAS_1x1_select");
+    var ADAS_LDW_ActivationId = document.getElementById("ADAS_LDW_ActivationId");
     //var adas_1x2_Select = document.getElementById("ADAS_1x2_select");
     //var adas_1x3_Select = document.getElementById("ADAS_1x3_select");
-    var adas_1x4_Select = document.getElementById("ADAS_1x4_select");
-    var adas_1x5_Select = document.getElementById("ADAS_1x5_select");
-    var adas_1x6_Select = document.getElementById("ADAS_1x6_select");
+    var ADAS_HMW_ActivationId = document.getElementById("ADAS_HMW_ActivationId");
+    var ADAS_UFCW_ActivationId = document.getElementById("ADAS_UFCW_ActivationId");
+    var ADAS_FCW_ActivationId = document.getElementById("ADAS_FCW_ActivationId");
     //var adas_1x7_Select = document.getElementById("ADAS_1x7_select");
-    var adas_1x8_Select = document.getElementById("ADAS_1x8_select");
+    var ADAS_PCW_ActivationId = document.getElementById("ADAS_PCW_ActivationId");
   
     for (var i = 0; i < deviceTypeRadioButtons.length; i++) {
       if (deviceTypeRadioButtons[i].checked) {
         if (deviceTypeRadioButtons[i].value === "Disabled" || deviceTypeRadioButtons[i].value === "DVR") {
-          adas_1x1_Select.value = "false";
+          ADAS_LDW_ActivationId.value = "false";
           //adas_1x2_Select.value = "false";
           //adas_1x3_Select.value = "false";
-          adas_1x4_Select.value = "false";
-          adas_1x5_Select.value = "false";
-          adas_1x6_Select.value = "false";
+          ADAS_HMW_ActivationId.value = "false";
+          ADAS_UFCW_ActivationId.value = "false";
+          ADAS_FCW_ActivationId.value = "false";
           //adas_1x7_Select.value = "false";
-          adas_1x8_Select.value = "false";
-          changeBackgroundColor('ADAS_LDW_Activation', 'ADAS_1x1_select');
+          ADAS_PCW_ActivationId.value = "false";
+          changeBackgroundColor('ADAS_LDW_Activation', 'ADAS_LDW_ActivationId');
           //changeBackgroundColor('ADAS_RedLight_Activation', 'ADAS_1x2_select');
           //changeBackgroundColor('ADAS_StopDisobeyed_Activation', 'ADAS_1x3_select');
-          changeBackgroundColor('ADAS_HMW_Activation', 'ADAS_1x4_select');
-          changeBackgroundColor('ADAS_UrbanFCW_Activation', 'ADAS_1x5_select');
-          changeBackgroundColor('ADAS_FCW_Activation', 'ADAS_1x6_select');
+          changeBackgroundColor('ADAS_HMW_Activation', 'ADAS_HMW_ActivationId');
+          changeBackgroundColor('ADAS_UrbanFCW_Activation', 'ADAS_UFCW_ActivationId');
+          changeBackgroundColor('ADAS_FCW_Activation', 'ADAS_FCW_ActivationId');
           //changeBackgroundColor('ADAS_Overspeeding_Activation', 'ADAS_1x7_select');
-          changeBackgroundColor('ADAS_PCW_Activation', 'ADAS_1x8_select');
+          changeBackgroundColor('ADAS_PCW_Activation', 'ADAS_PCW_ActivationId');
         }
       }
     }
@@ -1124,7 +1124,7 @@ function toggleFeedbackOutputSummary (paramId) {
     summaryCellImg.src = "source_img/" + selectedValue.value + ".png";
 }
 
-function toggleDetectionClosureEventSummary(id, closureEventAdmitted) {
+function toggleDetectionClosureEvent(id, closureEventAdmitted) {
     const detectionEventCheckbox = document.getElementById(id + 'DetectionEventCheckbox');
     const closureEventCheckbox = document.getElementById(id + 'ClosureEventCheckbox');
     const summaryCellLabel = id + 'DetectionClosureEventSummary';
@@ -1142,6 +1142,8 @@ function toggleDetectionClosureEventSummary(id, closureEventAdmitted) {
             toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
         }
     } else {
+        closureEventCheckbox.checked = false;
+        closureEventCheckbox.disabled = true;
         if (detectionEventCheckbox.checked) {
             toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
         } else {
@@ -1167,7 +1169,7 @@ function toggleDetectionEventSummary (paramId, paramPathOn, paramPathOff) {
     }
 }
 
-function secondToggleMediaUpload (id, option, camera) {
+function toggleMediaUpload(id, option, camera) {
     let camera1 = "InCabin"
     let camera2 = "RoadFacing"
     if (camera === "RoadFacing") {
@@ -1289,94 +1291,6 @@ function toggleSummaryCell (cell, activate, imgSrc) {
             summaryCell.classList.add('inactive-summary-cell');
         }
         summaryCellImg.src = imgSrc;
-    }
-}
-
-function toggleMediaUpload(paramId1, paramPath1_On, paramPath1_Off, paramId2, paramPath2, paramId3, paramPath3, paramId4, paramPath4, paramId5 = null, paramPath5 = null, paramId6 = null, paramPath6 = null) {
-    const button1 = document.getElementById(paramId1 + 'Id');
-    const checkbox1 = document.getElementById(paramId1 + 'Checkbox');
-
-    if (checkbox1.checked) {
-        checkbox1.checked = false;
-        button1.src = paramPath1_Off;
-
-        if (paramPath1_On !== "source_img/Camera_Disabled.png") {
-            const summaryCell1 = document.getElementById(paramId1 + 'Summary');
-            const summaryCellImg1 = document.getElementById(paramId1 + 'SummaryImg');
-            summaryCell1.classList.remove('active-summary-cell');
-            summaryCell1.classList.add('inactive-summary-cell');
-            summaryCellImg1.src = paramPath1_Off;
-        }
-    } else {
-        const button2 = document.getElementById(paramId2 + 'Id');
-        const button3 = document.getElementById(paramId3 + 'Id');
-        const button4 = document.getElementById(paramId4 + 'Id');
-
-        const checkbox2 = document.getElementById(paramId2 + 'Checkbox');
-        const checkbox3 = document.getElementById(paramId3 + 'Checkbox');
-        const checkbox4 = document.getElementById(paramId4 + 'Checkbox');
-
-        const summaryCell3 = document.getElementById(paramId3 + 'Summary');
-        const summaryCell4 = document.getElementById(paramId4 + 'Summary');
-
-        const summaryCellImg3 = document.getElementById(paramId3 + 'SummaryImg');
-        const summaryCellImg4 = document.getElementById(paramId4 + 'SummaryImg');
-        
-        checkbox1.checked = true;
-        checkbox2.checked = false;
-        checkbox3.checked = false;
-        checkbox4.checked = false;
-        button1.src = paramPath1_On;
-        button2.src = paramPath2;
-        button3.src = paramPath3;
-        button4.src = paramPath4;
-        summaryCell3.classList.remove('active-summary-cell');
-        summaryCell3.classList.add('inactive-summary-cell');
-        summaryCell4.classList.remove('active-summary-cell');
-        summaryCell4.classList.add('inactive-summary-cell');
-        summaryCellImg3.src = paramPath3;
-        summaryCellImg4.src = paramPath4;
-
-        if (paramPath1_On !== "source_img/Camera_Disabled.png") {
-            const summaryCell1 = document.getElementById(paramId1 + 'Summary');
-            const summaryCellImg1 = document.getElementById(paramId1 + 'SummaryImg');
-            summaryCell1.classList.remove('inactive-summary-cell');
-            summaryCell1.classList.add('active-summary-cell');
-            summaryCellImg1.src = paramPath1_On;
-        }
-
-        if (paramPath2 !== "source_img/Camera_Enabled.png") {
-            const summaryCell2 = document.getElementById(paramId2 + 'Summary');
-            const summaryCellImg2 = document.getElementById(paramId2 + 'SummaryImg');
-            summaryCell2.classList.remove('active-summary-cell');
-            summaryCell2.classList.add('inactive-summary-cell');
-            summaryCellImg2.src = paramPath2;
-        }
-        
-        if (paramId5 !== null) {
-            const button5 = document.getElementById(paramId5 + 'Id');
-            const checkbox5 = document.getElementById(paramId5 + 'Checkbox');
-            const summaryCell5 = document.getElementById(paramId5 + 'Summary');
-            const summaryCellImg5 = document.getElementById(paramId5 + 'SummaryImg');
-
-            checkbox5.checked = false;
-            button5.src = paramPath5;
-            summaryCell5.classList.remove('active-summary-cell');
-            summaryCell5.classList.add('inactive-summary-cell');
-            summaryCellImg5.src = paramPath5;
-        }
-        if (paramId6 !== null) {
-            const button6 = document.getElementById(paramId6 + 'Id');
-            const checkbox6 = document.getElementById(paramId6 + 'Checkbox');
-            const summaryCell6 = document.getElementById(paramId6 + 'Summary');
-            const summaryCellImg6 = document.getElementById(paramId6 + 'SummaryImg');
-
-            checkbox6.checked = false;
-            button6.src = paramPath6;
-            summaryCell6.classList.remove('active-summary-cell');
-            summaryCell6.classList.add('inactive-summary-cell');
-            summaryCellImg6.src = paramPath6;
-        }
     }
 }
 

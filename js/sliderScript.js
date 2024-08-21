@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('SI_communicationsWatchdogModemReset', 0, 30, '136px', 0);
     initializeDial('SI_communicationsWatchdogModemResetSignal', 0, 30, '136px', 0);
     initializeDial('SI_communicationsWatchdogSelfPowerRecycle', 0, 30, '136px', 0);
-    initializeDial('SI_communicationsWatchdogSocketRestTime', 0, 30, '136px', 0);
+    initializeDial('SI_communicationsWatchdogSocketResetTime', 0, 30, '136px', 0);
 
     initializeDial('SI_SettingsAndHybridWi_Fi_TimeOut', 5, 300, '136px', 5);
 
