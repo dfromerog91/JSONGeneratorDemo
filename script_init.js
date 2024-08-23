@@ -70,10 +70,10 @@ function import_FS10_defaultConfig(){
 }
 function setInitialValues() {
     //Update colors
-    FeedbackSpeech_UnsupportedUpdate();
-    setInitialColors()
+    //FeedbackSpeech_UnsupportedUpdate();
+    //setInitialColors()
     //Update communication colors
-    updateCommunicationsColor(document.getElementById("CommChannelState"), "CommChannelState");
+    /*updateCommunicationsColor(document.getElementById("CommChannelState"), "CommChannelState");
     updateCommunicationsColor(document.getElementById("Alerts"), "Alerts");
     updateCommunicationsColor(document.getElementById("Debug"), "Debug");
     updateCommunicationsColor(document.getElementById("FOTA"), "FOTA");
@@ -96,26 +96,26 @@ function setInitialValues() {
     updateLogicalColor(document.getElementById("TripPathInhibitHeartbeat"), "TripPathInhibitHeartbeat");
     updateLogicalColor(document.getElementById("DeviceTurnOnEnable"), "DeviceTurnOnEnable");
     updateLogicalColor(document.getElementById("SelfEventTriggerEnable"), "SelfEventTriggerEnable");
-    updateLogicalColor(document.getElementById("OTAUpdateEnable"), "OTAUpdateEnable");
+    updateLogicalColor(document.getElementById("OTAUpdateEnable"), "OTAUpdateEnable");*/
     //updateLogicalColor(document.getElementById("DashedLineCrossing"),"DashedLineCrossing");
     //updateLogicalColor(document.getElementById("SolidLineCrossing"),"SolidLineCrossing");
     //updateFCWRange(document.getElementById("FCWWarningRange"), "FCWWarningRange");
-    updateLogicalColor(document.getElementById("DuplicateMsgOverRS232"), "DuplicateMsgOverRS232");
+    //updateLogicalColor(document.getElementById("DuplicateMsgOverRS232"), "DuplicateMsgOverRS232");
     //Fill combo boxes
     fillCmbBoxes();
-    updateLogicalColor(document.getElementById("LeftHandDrive"), "LeftHandDrive");
-    updateLogicalColor(document.getElementById("Unit_ID_Overlay"), "Unit_ID_Overlay");
+    //updateLogicalColor(document.getElementById("LeftHandDrive"), "LeftHandDrive");
+    //updateLogicalColor(document.getElementById("Unit_ID_Overlay"), "Unit_ID_Overlay");
     setTimezone();
-    CommunicationEnableColor("AlertsCheckBox", "Alerts");
-    CommunicationEnableColor("DebugCheckBox", "Debug");
-    CommunicationEnableColor("FOTACheckBox", "FOTA");
-    CommunicationEnableColor("ImageCheckBox", "Image_Comm");
-    CommunicationEnableColor("VideoCheckBox", "Video_Comm");
-    ServerEnableColor('MW_check', 'ServerAddress', 'ServerPassword', 'Port');
+    //CommunicationEnableColor("AlertsCheckBox", "Alerts");
+    //CommunicationEnableColor("DebugCheckBox", "Debug");
+    //CommunicationEnableColor("FOTACheckBox", "FOTA");
+    //CommunicationEnableColor("ImageCheckBox", "Image_Comm");
+    //CommunicationEnableColor("VideoCheckBox", "Video_Comm");
+    //ServerEnableColor('MW_check', 'ServerAddress', 'ServerPassword', 'Port');
     // Menu with 0 as disabled
-    updateMenuWithDisabled(document.getElementById("TripPathTime"), "TripPathTime");
-    updateMenuWithDisabled(document.getElementById("TripPathDistance"), "TripPathDistance");
-    updateMenuWithDisabled(document.getElementById("TripPathHeading"), "TripPathHeading");
+    //updateMenuWithDisabled(document.getElementById("TripPathTime"), "TripPathTime");
+    //updateMenuWithDisabled(document.getElementById("TripPathDistance"), "TripPathDistance");
+    //updateMenuWithDisabled(document.getElementById("TripPathHeading"), "TripPathHeading");
 
 	updateDMSImage();
     generateSignal();
@@ -376,56 +376,48 @@ function setInitialColors(){
 
 //Update menus
 function setInitialMenusToFalse(){
-    // DMS
-    update_to_false_menus("DMS_1x1_select");
-    update_to_false_menus("DMS_drowsinessActivationId");
-    update_to_false_menus("DMS_driverDistractedActivationId");
-    update_to_false_menus("DMS_phoneUseActivationId");
-    update_to_false_menus("DMS_seatbeltActivationId");
-    update_to_false_menus("DMS_smokingActivationId");
-    //update_to_false_menus("DMS_1x7_select");
-    update_to_false_menus("DMS_tamperingDetectionActivationId");
-    update_to_false_menus("DMS_driverIdentifiedActivationId");
-    update_to_false_menus("DMS_driverUnidentifiedActivationId");
-    update_to_false_menus("DMS_driverDisappearedActivationId");
-    update_to_false_menus("DMS_driverChangedActivationId");
-    update_to_false_menus("DMS_driverIdUpdatedActivationId");
-    // ADAS
-    update_to_false_menus("ADAS_LDW_ActivationId");
-    //update_to_false_menus("ADAS_1x2_select");
-    //update_to_false_menus("ADAS_1x3_select");
-    update_to_false_menus("ADAS_HMW_ActivationId");
-    update_to_false_menus("ADAS_UFCW_ActivationId");
-    update_to_false_menus("ADAS_FCW_ActivationId");
-    //update_to_false_menus("ADAS_1x7_select");
-    update_to_false_menus("ADAS_PCW_ActivationId");
-    // Tracking Events
-    update_to_false_menus("TES_ignitionOnActivationId");
-    update_to_false_menus("TES_ignitionOffActivationId");
-    update_to_false_menus("TES_movementStartedActivationId");
-    update_to_false_menus("TES_movementStoppedActivationId");
-    update_to_false_menus("TES_heartbeatActivationId");
-    update_to_false_menus("TES_GPS_updateStatusActivationId");
-    update_to_false_menus("TES_tripPathActivationId");
-    // System w/o Events
-    update_to_false_menus("SI_cameraCalibrationOkActivationId");
-    update_to_false_menus("SI_cameraCalibrationFailedActivationId");
-    update_to_false_menus("SI_accelCalibrationOkActivationId");
-    update_to_false_menus("SI_enteringSleepModeActivationId");
-    update_to_false_menus("SI_firmwareUpdateStartedActivationId");
-    update_to_false_menus("SI_firmwareUpdateOK_ActivationId");
-    update_to_false_menus("System_wo_Event_1x7_select");
-    update_to_false_menus("System_wo_Event_1x8_select");
-    update_to_false_menus("System_wo_Event_1x9_select");
-    // System w Events
-    update_to_false_menus("System_w_Event_1x1_select");
-    update_to_false_menus("System_w_Event_1x2_select");
-    update_to_false_menus("System_w_Event_1x3_select");
-    update_to_false_menus("System_w_Event_1x4_select");
-    update_to_false_menus("System_w_Event_1x5_select");
-    update_to_false_menus("System_w_Event_1x6_select");
-    update_to_false_menus("System_w_Event_1x7_select");
+    toggleMenuActivation("DMS_driverAsleep");
+    toggleMenuActivation("DMS_drowsiness");
+    toggleMenuActivation("DMS_driverDistracted");
+    toggleMenuActivation("DMS_phoneUse");
+    toggleMenuActivation("DMS_seatbelt");
+    toggleMenuActivation("DMS_smoking");
+    toggleMenuActivation("DMS_tamperingDetection");
+    toggleMenuActivation("DMS_driverIdentified");
+    toggleMenuActivation("DMS_driverUnidentified");
+    toggleMenuActivation("DMS_driverDisappeared");
+    toggleMenuActivation("DMS_driverChanged");
+    toggleMenuActivation("DMS_driverIdUpdated");
+    toggleMenuActivation("ADAS_LDW_");
+    toggleMenuActivation("ADAS_HMW_");
+    toggleMenuActivation("ADAS_UFCW_");
+    toggleMenuActivation("ADAS_FCW_");
+    toggleMenuActivation("ADAS_PCW_");
+    toggleMenuActivation("TES_ignitionOn");
+    toggleMenuActivation("TES_ignitionOff");
+    toggleMenuActivation("TES_movementStarted");
+    toggleMenuActivation("TES_movementStopped");
+    toggleMenuActivation("TES_heartbeat");
+    toggleMenuActivation("TES_GPS_updateStatus");
+    toggleMenuActivation("TES_tripPath");
+    toggleMenuActivation("SI_cameraCalibrationOk");
+    toggleMenuActivation("SI_cameraCalibrationFailed");
+    toggleMenuActivation("SI_accelCalibrationOk");
+    toggleMenuActivation("SI_externalEventTriggering");
+    toggleMenuActivation("SI_enteringSleepMode");
+    toggleMenuActivation("SI_applicationError");
+    toggleMenuActivation("SI_cameraError");
+    toggleMenuActivation("SI_MCU_Log");
+    toggleMenuActivation("SI_systemBoot");
+    toggleMenuActivation("SI_systemBootFailure");
+    toggleMenuActivation("SI_systemOK_");
+    toggleMenuActivation("SI_systemReset");
+    toggleMenuActivation("SI_systemError");
+    toggleMenuActivation("SI_firmwareUpdateStarted");
+    toggleMenuActivation("SI_firmwareUpdateOK_");
+    toggleMenuActivation("SI_firmwareUpdateFailed");
 }
+
 function CommunicationEnableColor(checkBoxID, selectID){
     var checkBox = document.getElementById(checkBoxID);
     var selectElement = document.getElementById(selectID);
@@ -479,19 +471,19 @@ function WifiNetworkEnableColor(checkBoxID, textbox_A, textbox_B){
 
 function fillCmbBoxes(){
     //updateCmbBox(ID_element, i_from, i_until, step, scaleFactorValue, scaleScreenFactor, decimals, units);
-    updateCmbBox("DriverDisappearTimeThreshold", 5, 60, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("Acc3DDriveTimeFilter", 3, 30, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("Acc3DStopTimeFilter", 1, 30, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("DriverDisappearTimeThreshold", 5, 60, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("Acc3DDriveTimeFilter", 3, 30, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("Acc3DStopTimeFilter", 1, 30, 1, 1, 1, 0, "sec(s)");
     //updateCmbBox("CalibrationReferencePoint_x", 0, 200, 1, 1, 1, 0, "cm(s)");
     //updateCmbBox("CalibrationReferencePoint_y", -100, 100, 1, 1, 1, 0, "cm(s)");
     //updateCmbBox("CalibrationReferencePoint_z", -50, 50, 1, 1, 1, 0, "cm(s)");
-    updateCmbBox("CalibrationTimeout", 10, 60, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("MinSpeedMonitor", 10, 30, 1, 1, 1, 0, "km/h");
-    updateCmbBox("DistractionSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
-    updateCmbBox("DrowsinessSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
-    updateCmbBox("PhoneSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
-    updateCmbBox("SeatbeltSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
-    updateCmbBox("SmokingSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
+    //updateCmbBox("CalibrationTimeout", 10, 60, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("MinSpeedMonitor", 10, 30, 1, 1, 1, 0, "km/h");
+    //updateCmbBox("DistractionSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
+    //updateCmbBox("DrowsinessSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
+    //updateCmbBox("PhoneSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
+    //updateCmbBox("SeatbeltSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
+    //updateCmbBox("SmokingSpeedThreshold", 0, 50, 1, 1, 1, 0, "km/h");
     //updateCmbBox("InstallationHeight", 50, 500, 1, 1, 1, 0, "cm(s)");
     //updateCmbBox("OffsetFromCenter", -50, 50, 1, 1, 1, 0, "cms(s)");
     //updateCmbBox("ActiveLaneSpeedThreshold", 10, 100, 1, 1, 1, 0, "km/h");
@@ -500,74 +492,84 @@ function fillCmbBoxes(){
     //updateCmbBox("TtcWarningRange", 1, 50, 1, 10, 10, 1, "sec(s)");
     //updateCmbBox("TtcEmergencyRange", 1, 20, 1, 10, 10, 1, "sec(s)");
     //updateCmbBox("FCWSpeedThreshold", 10, 100, 1, 1, 1, 0, "km/h");
-    updateCmbBox("AsleepOTABackOff", 0, 1, 1, 1, 1, 0, "min");
-    updateCmbBox("DriverDistractedOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("DrowsinessOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("FCWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("LDWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("AsleepOTABackOff", 0, 1, 1, 1, 1, 0, "min");
+    //updateCmbBox("DriverDistractedOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("DrowsinessOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("FCWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("LDWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
     //updateCmbBox("LightDrowsinessOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("PCWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("PhoneUseOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("SeatbeltOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("SmokingOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("HMWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("UFCWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
-    let cameraFPS = 30;
-    updateCmbBox("CameraStatusBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
-    updateCmbBox("DistractionBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
-    updateCmbBox("DrowsinessBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
-    updateCmbBox("PhoneBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
-    updateCmbBox("SeatbeltBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
-    updateCmbBox("SleepBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
-    updateCmbBox("SmokingBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
-    updateCmbBox("KeepAliveInSec", 0, 300, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("ModemResetHWTimeInMin", 0, 30, 5, 1, 1, 0, "min(s)");
-    updateCmbBox("ModemResetSignalTimeInMin", 0, 30, 5, 1, 1, 0, "min(s)");
-    updateCmbBox("SelfPowerRecycleTimeInMin", 0, 30, 5, 1, 1, 0, "min(s)");
-    updateCmbBox("SocketResetTimeInMin", 0, 30, 5, 1, 1, 0, "min(s)");
-    updateCmbBox("IGNOffInterval", 60, 1440, 60, 1, 60, 0, "hour(s)");
+    //updateCmbBox("PCWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("PhoneUseOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("SeatbeltOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("SmokingOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("HMWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("UFCWOTABackOff", 0, 30, 1, 1, 1, 0, "min(s)");
+    //let cameraFPS = 30;
+    //updateCmbBox("CameraStatusBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
+    //updateCmbBox("DistractionBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
+    //updateCmbBox("DrowsinessBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
+    //updateCmbBox("PhoneBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
+    //updateCmbBox("SeatbeltBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
+    //updateCmbBox("SleepBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
+    //updateCmbBox("SmokingBackoffTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec");
+    //updateCmbBox("KeepAliveInSec", 0, 300, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("ModemResetHWTimeInMin", 0, 30, 5, 1, 1, 0, "min(s)");
+    //updateCmbBox("ModemResetSignalTimeInMin", 0, 30, 5, 1, 1, 0, "min(s)");
+    //updateCmbBox("SelfPowerRecycleTimeInMin", 0, 30, 5, 1, 1, 0, "min(s)");
+    //updateCmbBox("SocketResetTimeInMin", 0, 30, 5, 1, 1, 0, "min(s)");
+    //updateCmbBox("IGNOffInterval", 60, 1440, 60, 1, 60, 0, "hour(s)");
     //updateCmbBox("IGNOffInterval", 15, 1440, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("IGNOnInterval", 5, 600, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("TimeToWaitGPSFix", 0, 300, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("IGNOffFilter", 0, 255, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("IGNOnFilter", 0, 255, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("GPSFixLossOrRecovery", 0, 500, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("IGNOnInterval", 5, 600, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("TimeToWaitGPSFix", 0, 300, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("IGNOffFilter", 0, 255, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("IGNOnFilter", 0, 255, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("GPSFixLossOrRecovery", 0, 500, 1, 1, 1, 0, "sec(s)");
     updateCmbBox("VoltageThresholdGPI", 0, 240, 1, 10, 10, 1, "VDC");
     updateCmbBox("StateDurationGPI", 10, 500, 1, 1, 0.1, 0, "(ms)");
     updateCmbBox("DutyCycleGPO", 10, 100, 1, 1, 1, 0, "%");
     updateCmbBox("FrequencyGPO", 1, 10, 1, 1, 1, 0, "Hz");
     updateCmbBox("LengthGPO", 1, 60, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("timeBeforeEvent", 0, 60, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("timeAfterEvent", 0, 60, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("VideostoStorage", 1, 1000, 1, 1, 1, 0, "");
-    updateCmbBox("EventstoStorage", 1, 5000, 1, 1, 1, 0, "");
-    updateCmbBox("DistractionTurnGraceDuration", 0, 50, 1, 10, 10, 1, "sec(s)");
-    updateCmbBox("TrackingGraceTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec(s)");
-    updateCmbBox("DriverChangeMinDuration", 0, 150, 1, 10, 10, 1, "sec(s)");
-    updateCmbBox("SeatbeltAlertTime", 5, 60, 1, 1, 1, 0, "sec(s)");
-    updateCmbBox("SleepDuration", 10, 50, 1, 10, 10, 1, "sec(s)");
+    //updateCmbBox("timeBeforeEvent", 0, 60, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("timeAfterEvent", 0, 60, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("VideostoStorage", 1, 1000, 1, 1, 1, 0, "");
+    //updateCmbBox("EventstoStorage", 1, 5000, 1, 1, 1, 0, "");
+    //updateCmbBox("DistractionTurnGraceDuration", 0, 50, 1, 10, 10, 1, "sec(s)");
+    //updateCmbBox("TrackingGraceTimer", 30, 1800, cameraFPS/2, 1, cameraFPS, 1, "sec(s)");
+    //updateCmbBox("DriverChangeMinDuration", 0, 150, 1, 10, 10, 1, "sec(s)");
+    //updateCmbBox("SeatbeltAlertTime", 5, 60, 1, 1, 1, 0, "sec(s)");
+    //updateCmbBox("SleepDuration", 10, 50, 1, 10, 10, 1, "sec(s)");
     updateCmbBox("MaxHeadingAngleForEvents", 0, 90, 1, 1, 1, 0, " (°/sec)");
-    updateCmbBox("WiFiTO", 5, 300, 1, 1, 1, 0, " min(s)");
-    updateCmbBox("SleepModeTO", 0, 255, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("SleepModeTO", 0, 255, 1, 1, 1, 0, "min(s)");
-    updateCmbBox("GsensorWakeThreshold", 2, 63, 1, 1, 1, 0, "");
+    //updateCmbBox("WiFiTO", 5, 300, 1, 1, 1, 0, " min(s)");
+    //updateCmbBox("SleepModeTO", 0, 255, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("SleepModeTO", 0, 255, 1, 1, 1, 0, "min(s)");
+    //updateCmbBox("GsensorWakeThreshold", 2, 63, 1, 1, 1, 0, "");
     //with 0 as disabled
     //updateCmbBoxWithColors(ID_element, i_from, i_until, step, scaleFactorValue, scaleScreenFactor, decimals, units, BackgroundColor, TextColor);
-    updateCmbBoxWithColors("TripPathDistance", 100, 1000, 1, 1, 1, 0, "m", '#B9E6F0', '#000000');
-    updateCmbBoxWithColors("TripPathTime", 30, 300, 1, 1, 1, 0, "sec(s)", '#B9E6F0', '#000000');
-    updateCmbBoxWithColors("TripPathHeading", 20, 90, 1, 1, 1, 0, "°", '#B9E6F0', '#000000');
+    //updateCmbBoxWithColors("TripPathDistance", 100, 1000, 1, 1, 1, 0, "m", '#B9E6F0', '#000000');
+    //updateCmbBoxWithColors("TripPathTime", 30, 300, 1, 1, 1, 0, "sec(s)", '#B9E6F0', '#000000');
+    //updateCmbBoxWithColors("TripPathHeading", 20, 90, 1, 1, 1, 0, "°", '#B9E6F0', '#000000');
     generateOptionsForAngles("RoadCenterYawPos", YawPos);
     generateOptionsForAngles("RoadCenterYawNeg", YawNeg);
     generateOptionsForAngles("RoadCenterPitchPos", PitchPos);
     generateOptionsForAngles("RoadCenterPitchNeg", PitchNeg);
-    update_from_TripPath();
+    //update_from_TripPath();
+    updateEventAndInhibit_tripPath();
 }
 
 function update_from_TripPath(){
-    disable_parameter_from_event_activation('TrackingEvents_Heartbeat_Activation', 'TES_heartbeatActivationId', 'TripPathInhibitHeartbeat');
+    disableFromEventActivation('TES_heartbeatActivation', 'TES_tripPathInhibitHeartbeat');
     disable_parameter_from_event_activation('TrackingEvents_TripPath_Activation', 'TES_tripPathActivationId', 'TripPathEnable');
     disable_event_activation_from_parameter('TrackingEvents_TripPath_Activation', 'TES_tripPathActivationId', 'TripPathEnable');
     disable_event_activation_from_parameter('TrackingEvents_Heartbeat_Activation', 'TES_heartbeatActivationId', 'TripPathInhibitHeartbeat');
+}
+
+function updateEventAndInhibit_tripPath() {
+    const tripPathActivation = document.getElementById("TES_tripPathActivationCheckbox");
+    const heartbeatActivation = document.getElementById("TES_heartbeatActivationCheckbox");
+    const tripPathEnable = document.getElementById("TES_tripPathEnableCheckbox");
+    const inhibitHeartbeat = document.getElementById("TES_tripPathInhibitHeartbeatCheckbox");
+    tripPathEnable.checked = tripPathActivation.checked;
+    inhibitHeartbeat.checked = heartbeatActivation.checked;
 }
 
 function setTimezone() {
@@ -769,43 +771,47 @@ function changeAPNFormat(element_ID, default_val) {
 // All menus to false
 function update_ADAS_Select() {
     var deviceTypeRadioButtons = document.getElementsByName("deviceType");
-    var ADAS_LDW_ActivationId = document.getElementById("ADAS_LDW_ActivationId");
+    var ADAS_LDW_ActivationCheckbox = document.getElementById("ADAS_LDW_ActivationCheckbox");
     //var adas_1x2_Select = document.getElementById("ADAS_1x2_select");
     //var adas_1x3_Select = document.getElementById("ADAS_1x3_select");
-    var ADAS_HMW_ActivationId = document.getElementById("ADAS_HMW_ActivationId");
-    var ADAS_UFCW_ActivationId = document.getElementById("ADAS_UFCW_ActivationId");
-    var ADAS_FCW_ActivationId = document.getElementById("ADAS_FCW_ActivationId");
+    var ADAS_HMW_ActivationCheckbox = document.getElementById("ADAS_HMW_ActivationCheckbox");
+    var ADAS_UFCW_ActivationCheckbox = document.getElementById("ADAS_UFCW_ActivationCheckbox");
+    var ADAS_FCW_ActivationCheckbox = document.getElementById("ADAS_FCW_ActivationCheckbox");
     //var adas_1x7_Select = document.getElementById("ADAS_1x7_select");
-    var ADAS_PCW_ActivationId = document.getElementById("ADAS_PCW_ActivationId");
-  
+    var ADAS_PCW_ActivationCheckbox = document.getElementById("ADAS_PCW_ActivationCheckbox");
     for (var i = 0; i < deviceTypeRadioButtons.length; i++) {
-      if (deviceTypeRadioButtons[i].checked) {
-        if (deviceTypeRadioButtons[i].value === "Disabled" || deviceTypeRadioButtons[i].value === "DVR") {
-          ADAS_LDW_ActivationId.value = "false";
-          //adas_1x2_Select.value = "false";
-          //adas_1x3_Select.value = "false";
-          ADAS_HMW_ActivationId.value = "false";
-          ADAS_UFCW_ActivationId.value = "false";
-          ADAS_FCW_ActivationId.value = "false";
-          //adas_1x7_Select.value = "false";
-          ADAS_PCW_ActivationId.value = "false";
-          changeBackgroundColor('ADAS_LDW_Activation', 'ADAS_LDW_ActivationId');
-          //changeBackgroundColor('ADAS_RedLight_Activation', 'ADAS_1x2_select');
-          //changeBackgroundColor('ADAS_StopDisobeyed_Activation', 'ADAS_1x3_select');
-          changeBackgroundColor('ADAS_HMW_Activation', 'ADAS_HMW_ActivationId');
-          changeBackgroundColor('ADAS_UrbanFCW_Activation', 'ADAS_UFCW_ActivationId');
-          changeBackgroundColor('ADAS_FCW_Activation', 'ADAS_FCW_ActivationId');
-          //changeBackgroundColor('ADAS_Overspeeding_Activation', 'ADAS_1x7_select');
-          changeBackgroundColor('ADAS_PCW_Activation', 'ADAS_PCW_ActivationId');
+        if (deviceTypeRadioButtons[i].checked) {
+            if (deviceTypeRadioButtons[i].value === "Disabled" || deviceTypeRadioButtons[i].value === "DVR") {
+                ADAS_LDW_ActivationCheckbox.checked = false;
+                //adas_1x2_Select.value = "false";
+                //adas_1x3_Select.value = "false";
+                ADAS_HMW_ActivationCheckbox.checked = false;
+                ADAS_UFCW_ActivationCheckbox.checked = false;
+                ADAS_FCW_ActivationCheckbox.checked = false;
+                //adas_1x7_Select.value = "false";
+                ADAS_PCW_ActivationCheckbox.checked = false;
+                break;
+                //changeBackgroundColor('ADAS_LDW_Activation', 'ADAS_LDW_ActivationCheckbox');
+                //changeBackgroundColor('ADAS_RedLight_Activation', 'ADAS_1x2_select');
+                //changeBackgroundColor('ADAS_StopDisobeyed_Activation', 'ADAS_1x3_select');
+                //changeBackgroundColor('ADAS_HMW_Activation', 'ADAS_HMW_ActivationCheckbox');
+                //changeBackgroundColor('ADAS_UrbanFCW_Activation', 'ADAS_UFCW_ActivationCheckbox');
+                //changeBackgroundColor('ADAS_FCW_Activation', 'ADAS_FCW_ActivationCheckbox');
+                //changeBackgroundColor('ADAS_Overspeeding_Activation', 'ADAS_1x7_select');
+                //changeBackgroundColor('ADAS_PCW_Activation', 'ADAS_PCW_ActivationCheckbox');
+            }
         }
-      }
     }
-    setInitialMenusToFalse();
-  }
+    toggleMenuActivation("ADAS_LDW_");
+    toggleMenuActivation("ADAS_HMW_");
+    toggleMenuActivation("ADAS_UFCW_");
+    toggleMenuActivation("ADAS_FCW_");
+    toggleMenuActivation("ADAS_PCW_");
+}
   
-  // Add an event listener to the radio buttons
-  var deviceTypeRadioButtons = document.getElementsByName("deviceType");
-  for (var i = 0; i < deviceTypeRadioButtons.length; i++) {
+// Add an event listener to the radio buttons
+var deviceTypeRadioButtons = document.getElementsByName("deviceType");
+for (var i = 0; i < deviceTypeRadioButtons.length; i++) {
     deviceTypeRadioButtons[i].addEventListener("change", update_ADAS_Select);
 }
 
@@ -1022,6 +1028,20 @@ function disable_parameter_from_event_activation(id_from_row, event_activation_m
     updateLogicalColor(document.getElementById(parameter_from_JSON), parameter_from_JSON);
 }
 
+function disableFromEventActivation(eventId, inhibitEnable) {
+    var parameterElement = document.getElementById(inhibitEnable + "Checkbox");
+    var eventElement = document.getElementById(eventActivation + "ActivationCheckbox");
+    if (eventElement && parameterElement) {
+        var eventValue = eventElement.value;
+        if (eventValue === 'false') {
+            parameterElement.value = 'false';
+        } else if (eventValue === 'true') {
+            parameterElement.value = 'true';
+        }
+    }
+    update_to_false_menus(eventActivation);
+}
+
 // FeedbackSpeech to false to unsupported events
 function FeedbackSpeech_UnsupportedUpdate(){
     document.getElementById("DMS_4x8_select").value = false; // Tampering detection
@@ -1113,7 +1133,6 @@ function toggleFeedbackOutputSummary (paramId) {
     const selectedValue = document.getElementById(paramId + 'Id');
     const summaryCell = document.getElementById(paramId + 'Summary');
     const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
-
     if (selectedValue.value === 'None') {
         summaryCell.classList.remove('active-summary-cell');
         summaryCell.classList.add('inactive-summary-cell');
@@ -1177,18 +1196,21 @@ function toggleMediaUpload(id, option, camera) {
         camera2 = "InCabin";
     }
     const enableLabel1 = id + 'Enable' + camera1;
+    const enableLabel2 = id + 'Enable' + camera2;
+    const enableCheckbox1 = document.getElementById(enableLabel1 + 'Checkbox');
+    const enableCheckbox2 = document.getElementById(enableLabel2 + 'Checkbox');
+    if (enableCheckbox1.disabled || enableCheckbox2.disabled) {
+        return;
+    }
     const imageLabel1 = id + 'ReportImage' + camera1;
     const timelapseLabel1 = id + 'ReportTimelapse' + camera1;
     const videoLabel1 = id + 'ReportVideo' + camera1;
-    const enableLabel2 = id + 'Enable' + camera2;
     const imageLabel2 = id + 'ReportImage' + camera2;
     const timelapseLabel2 = id + 'ReportTimelapse' + camera2;
     const videoLabel2 = id + 'ReportVideo' + camera2;
-    const enableCheckbox1 = document.getElementById(enableLabel1 + 'Checkbox');
     const imageCheckbox1 = document.getElementById(imageLabel1 + 'Checkbox');
     const timelapseCheckbox1 = document.getElementById(timelapseLabel1 + 'Checkbox');
     const videoCheckbox1 = document.getElementById(videoLabel1 + 'Checkbox');
-    const enableCheckbox2 = document.getElementById(enableLabel2 + 'Checkbox');
     const imageCheckbox2 = document.getElementById(imageLabel2 + 'Checkbox');
     const timelapseCheckbox2 = document.getElementById(timelapseLabel2 + 'Checkbox');
     const videoCheckbox2 = document.getElementById(videoLabel2 + 'Checkbox');
@@ -1269,6 +1291,9 @@ function toggleMediaUploadButton (button, activate, imgSrc) {
 function toggleCheckAndImageButton(button, imgOnSrc, imgOffSrc) {
     const buttonId = document.getElementById(button + 'Id');
     const buttonCheckbox = document.getElementById(button + 'Checkbox');
+    if (buttonCheckbox.disabled) {
+        return;
+    }
     buttonCheckbox.checked = !buttonCheckbox.checked;
     if (buttonCheckbox.checked) {
         buttonId.src = imgOnSrc;
@@ -1397,4 +1422,61 @@ function scrollToView(elementId) {
       top: offsetPosition,
       behavior: 'smooth'
     });
+}
+
+function toggleMenuActivation(id) {
+    const activationButton = document.getElementById(id + "ActivationCheckbox");
+    const feedbackVisualButton = document.getElementById(id + "FeedbackVisualCheckbox");
+    const feedbackAudioButton = document.getElementById(id + "FeedbackAudioCheckbox");
+    const feedbackSpeechButton = document.getElementById(id + "FeedbackSpeechCheckbox");
+    const detectionEventButton = document.getElementById(id + "DetectionEventCheckbox");
+    const enableInCabinButton = document.getElementById(id + "EnableInCabinCheckbox");
+    const enableRoadFacingButton = document.getElementById(id + "EnableRoadFacingCheckbox");
+    const feedbackOutputSelect = document.getElementById(id + "FeedbackOutputId");
+    const feedbackSpeechSummaryCell = document.getElementById(id + "FeedbackSpeechSummary");
+    if (activationButton.checked) {
+        feedbackVisualButton.disabled = false;
+        feedbackAudioButton.disabled = false;
+        if (!feedbackSpeechSummaryCell.classList.contains("disabled-summary-cell")) {
+            feedbackSpeechButton.disabled = false;
+        }
+        feedbackOutputSelect.disabled = false;
+        detectionEventButton.disabled = false;
+        enableInCabinButton.disabled = false;
+        enableRoadFacingButton.disabled = false;
+    } else {
+        if (feedbackVisualButton.checked) {
+            toggleCheckAndImageButton(id + "FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
+        }
+        if (feedbackAudioButton.checked) {
+            toggleCheckAndImageButton(id + "FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
+        }
+        if (feedbackSpeechButton.checked) {
+            toggleCheckAndImageButton(id + "FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+        }
+        feedbackOutputSelect.value = "None";
+        toggleFeedbackOutputSummary(id + "FeedbackOutput");
+        detectionEventButton.checked = false;
+        toggleDetectionClosureEvent(id, false);
+        enableInCabinButton.checked = false;
+        toggleMediaUpload(id, 'Enable', 'InCabin');
+        enableRoadFacingButton.checked = false;
+        toggleMediaUpload(id, 'Enable', 'RoadFacing');
+        feedbackVisualButton.disabled = true;
+        feedbackAudioButton.disabled = true;
+        feedbackSpeechButton.disabled = true;
+        feedbackOutputSelect.disabled = true;
+        detectionEventButton.disabled = true;
+        enableInCabinButton.disabled = true;
+        enableRoadFacingButton.disabled = true;
+    }
+}
+
+function updateLinkedCheckboxes(id, isChecked) {
+    document.getElementById(id).checked = isChecked;
+}
+
+function updateLinkedMenu(id, isChecked) {
+    updateLinkedCheckboxes(id + "ActivationCheckbox", isChecked);
+    toggleMenuActivation(id);
 }

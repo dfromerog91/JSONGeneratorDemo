@@ -238,7 +238,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_driverAsleepActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_driverAsleepActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_driverAsleep')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -743,7 +743,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_drowsinessActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_drowsinessActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_drowsiness')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -1216,7 +1216,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_driverDistractedActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_driverDistractedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_driverDistracted')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -1704,7 +1704,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_phoneUseActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_phoneUseActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_phoneUse')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -2143,7 +2143,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_seatbeltActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_seatbeltActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_seatbelt')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -2648,7 +2648,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_smokingActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_smokingActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_smoking')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -3015,7 +3015,7 @@
                 <td id="DMS_tamperingDetectionFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="DMS_tamperingDetectionFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="DMS_tamperingDetectionFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="DMS_tamperingDetectionFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="DMS_tamperingDetectionFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="DMS_tamperingDetectionFeedbackOutputSummary" class="inactive-summary-cell">
@@ -3087,7 +3087,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_tamperingDetectionActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_tamperingDetectionActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_tamperingDetection')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -3151,8 +3151,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="DMS_tamperingDetectionFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('DMS_tamperingDetectionFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="DMS_tamperingDetectionFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="DMS_tamperingDetectionFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -3422,7 +3421,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_driverIdentifiedActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_driverIdentifiedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_driverIdentified')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -3791,7 +3790,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_driverUnidentifiedActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_driverUnidentifiedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_driverUnidentified')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -4126,7 +4125,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_driverDisappearedActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_driverDisappearedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_driverDisappeared')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -4541,7 +4540,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_driverChangedActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_driverChangedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_driverChanged')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -4853,7 +4852,7 @@
                 <td id="DMS_driverIdUpdatedFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="DMS_driverIdUpdatedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="DMS_driverIdUpdatedFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="DMS_driverIdUpdatedFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="DMS_driverIdUpdatedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="DMS_driverIdUpdatedFeedbackOutputSummary" class="inactive-summary-cell">
@@ -4925,7 +4924,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="DMS_driverIdUpdatedActivationCheckbox" type="checkbox" checked>
+                    <input id="DMS_driverIdUpdatedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('DMS_driverIdUpdated')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -4989,8 +4988,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="DMS_driverIdUpdatedFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('DMS_driverIdUpdatedFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="DMS_driverIdUpdatedFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="DMS_driverIdUpdatedFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -5379,7 +5377,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_LDW_ActivationCheckbox" type="checkbox" checked>
+                    <input id="ADAS_LDW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_LDW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -5726,7 +5724,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_HMW_ActivationCheckbox" type="checkbox" checked>
+                    <input id="ADAS_HMW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_HMW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6073,7 +6071,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_UFCW_ActivationCheckbox" type="checkbox" checked>
+                    <input id="ADAS_UFCW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_UFCW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6420,7 +6418,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_FCW_ActivationCheckbox" type="checkbox" checked>
+                    <input id="ADAS_FCW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_FCW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6767,7 +6765,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_PCW_ActivationCheckbox" type="checkbox" checked>
+                    <input id="ADAS_PCW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_PCW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -7292,7 +7290,7 @@
                 <td id="TES_ignitionOnFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="TES_ignitionOnFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="TES_ignitionOnFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="TES_ignitionOnFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="TES_ignitionOnFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="TES_ignitionOnFeedbackOutputSummary" class="inactive-summary-cell">
@@ -7336,7 +7334,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="TES_ignitionOnActivationCheckbox" type="checkbox" checked>
+                    <input id="TES_ignitionOnActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('TES_ignitionOn')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -7406,8 +7404,7 @@
                             <img id="TES_ignitionOnFeedbackSpeechId" class="container_img"
                               src="source_img/Speech_OFF.png" alt="Toggle Image"
                               onclick="toggleCheckAndImageButton('TES_ignitionOnFeedbackSpeech','source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="TES_ignitionOnFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="TES_ignitionOnFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_ignitionOnFeedbackOutput')">
@@ -7605,7 +7602,7 @@
                 <td id="TES_ignitionOffFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="TES_ignitionOffFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="TES_ignitionOffFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="TES_ignitionOffFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="TES_ignitionOffFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="TES_ignitionOffFeedbackOutputSummary" class="inactive-summary-cell">
@@ -7649,7 +7646,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="TES_ignitionOffActivationCheckbox" type="checkbox" checked>
+                    <input id="TES_ignitionOffActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('TES_ignitionOff')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -7719,8 +7716,7 @@
                             <img id="TES_ignitionOffFeedbackSpeechId" class="container_img"
                               src="source_img/Speech_OFF.png" alt="Toggle Image"
                               onclick="toggleCheckAndImageButton('TES_ignitionOffFeedbackSpeech','source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="TES_ignitionOffFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="TES_ignitionOffFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_ignitionOffFeedbackOutput')">
@@ -7918,7 +7914,7 @@
                 <td id="TES_movementStartedFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="TES_movementStartedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="TES_movementStartedFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="TES_movementStartedFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="TES_movementStartedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="TES_movementStartedFeedbackOutputSummary" class="inactive-summary-cell">
@@ -7962,7 +7958,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="TES_movementStartedActivationCheckbox" type="checkbox" checked>
+                    <input id="TES_movementStartedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('TES_movementStarted')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -8032,8 +8028,7 @@
                             <img id="TES_movementStartedFeedbackSpeechId" class="container_img"
                               src="source_img/Speech_OFF.png" alt="Toggle Image"
                               onclick="toggleCheckAndImageButton('TES_movementStartedFeedbackSpeech','source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="TES_movementStartedFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="TES_movementStartedFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_movementStartedFeedbackOutput')">
@@ -8265,7 +8260,7 @@
                 <td id="TES_movementStoppedFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="TES_movementStoppedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="TES_movementStoppedFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="TES_movementStoppedFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="TES_movementStoppedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="TES_movementStoppedFeedbackOutputSummary" class="inactive-summary-cell">
@@ -8309,7 +8304,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="TES_movementStoppedActivationCheckbox" type="checkbox" checked>
+                    <input id="TES_movementStoppedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('TES_movementStopped')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -8379,8 +8374,7 @@
                             <img id="TES_movementStoppedFeedbackSpeechId" class="container_img"
                               src="source_img/Speech_OFF.png" alt="Toggle Image"
                               onclick="toggleCheckAndImageButton('TES_movementStoppedFeedbackSpeech','source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="TES_movementStoppedFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="TES_movementStoppedFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_movementStoppedFeedbackOutput')">
@@ -8612,7 +8606,7 @@
                 <td id="TES_heartbeatFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="TES_heartbeatFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="TES_heartbeatFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="TES_heartbeatFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="TES_heartbeatFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="TES_heartbeatFeedbackOutputSummary" class="inactive-summary-cell">
@@ -8656,7 +8650,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="TES_heartbeatActivationCheckbox" type="checkbox" checked>
+                    <input id="TES_heartbeatActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('TES_heartbeat'); updateLinkedCheckboxes('TES_tripPathInhibitHeartbeatCheckbox', this.checked)">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -8726,8 +8720,7 @@
                             <img id="TES_heartbeatFeedbackSpeechId" class="container_img"
                               src="source_img/Speech_OFF.png" alt="Toggle Image"
                               onclick="toggleCheckAndImageButton('TES_heartbeatFeedbackSpeech','source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="TES_heartbeatFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="TES_heartbeatFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_heartbeatFeedbackOutput')">
@@ -9155,7 +9148,7 @@
                 <td id="TES_GPS_updateStatusFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="TES_GPS_updateStatusFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="TES_GPS_updateStatusFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="TES_GPS_updateStatusFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="TES_GPS_updateStatusFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="TES_GPS_updateStatusFeedbackOutputSummary" class="inactive-summary-cell">
@@ -9199,7 +9192,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="TES_GPS_updateStatusActivationCheckbox" type="checkbox" checked>
+                    <input id="TES_GPS_updateStatusActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('TES_GPS_updateStatus')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -9269,8 +9262,7 @@
                             <img id="TES_GPS_updateStatusFeedbackSpeechId" class="container_img"
                               src="source_img/Speech_OFF.png" alt="Toggle Image"
                               onclick="toggleCheckAndImageButton('TES_GPS_updateStatusFeedbackSpeech','source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="TES_GPS_updateStatusFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="TES_GPS_updateStatusFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_GPS_updateStatusFeedbackOutput')">
@@ -9468,7 +9460,7 @@
                 <td id="TES_tripPathFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="TES_tripPathFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="TES_tripPathFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="TES_tripPathFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="TES_tripPathFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="TES_tripPathFeedbackOutputSummary" class="inactive-summary-cell">
@@ -9512,7 +9504,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="TES_tripPathActivationCheckbox" type="checkbox" checked>
+                    <input id="TES_tripPathActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('TES_tripPath'); updateLinkedCheckboxes('TES_tripPathEnableCheckbox', this.checked)">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -9582,8 +9574,7 @@
                             <img id="TES_tripPathFeedbackSpeechId" class="container_img"
                               src="source_img/Speech_OFF.png" alt="Toggle Image"
                               onclick="toggleCheckAndImageButton('TES_tripPathFeedbackSpeech','source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="TES_tripPathFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="TES_tripPathFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_tripPathFeedbackOutput')">
@@ -9772,7 +9763,7 @@
                         <td style="text-align: center; width: 20%;">
                           Enable<br><br>
                           <label class="switch">
-                            <input id="TES_tripPathEnableId" type="checkbox">
+                            <input id="TES_tripPathEnableCheckbox" type="checkbox" checked onclick="updateLinkedMenu('TES_tripPath', this.checked)">
                             <span class="slider"></span>
                           </label>
                         </td>
@@ -9847,7 +9838,7 @@
                         <td style="text-align: center;">
                           Inhibit Heartbeat<br><br>
                           <label class="switch">
-                            <input id="TES_tripPathInhibitHeartbeatId" type="checkbox">
+                            <input id="TES_tripPathInhibitHeartbeatCheckbox" type="checkbox" checked onclick="updateLinkedMenu('TES_heartbeat', this.checked)">
                             <span class="slider"></span>
                           </label>
                         </td>
@@ -9968,7 +9959,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_cameraCalibrationOkActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_cameraCalibrationOkActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_cameraCalibrationOk')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -10275,7 +10266,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_cameraCalibrationFailedActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_cameraCalibrationFailedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_cameraCalibrationFailed')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -10538,7 +10529,7 @@
                 <td id="SI_accelCalibrationOkFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_accelCalibrationOkFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_accelCalibrationOkFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_accelCalibrationOkFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_accelCalibrationOkFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_accelCalibrationOkFeedbackOutputSummary" class="inactive-summary-cell">
@@ -10582,7 +10573,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_accelCalibrationOkActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_accelCalibrationOkActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_accelCalibrationOk')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -10646,8 +10637,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_accelCalibrationOkFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_accelCalibrationOkFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_accelCalibrationOkFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_accelCalibrationOkFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -10889,7 +10879,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_externalEventTriggeringActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_externalEventTriggeringActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_externalEventTriggering')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -11152,7 +11142,7 @@
                 <td id="SI_enteringSleepModeFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_enteringSleepModeFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_enteringSleepModeFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_enteringSleepModeFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_enteringSleepModeFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_enteringSleepModeFeedbackOutputSummary" class="inactive-summary-cell">
@@ -11196,7 +11186,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_enteringSleepModeActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_enteringSleepModeActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_enteringSleepMode')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -11260,8 +11250,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_enteringSleepModeFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_enteringSleepModeFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_enteringSleepModeFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_enteringSleepModeFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -11459,7 +11448,7 @@
                 <td id="SI_applicationErrorFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_applicationErrorFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_applicationErrorFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_applicationErrorFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_applicationErrorFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_applicationErrorFeedbackOutputSummary" class="inactive-summary-cell">
@@ -11503,7 +11492,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_applicationErrorActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_applicationErrorActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_applicationError')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -11567,8 +11556,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_applicationErrorFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_applicationErrorFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_applicationErrorFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_applicationErrorFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -11766,7 +11754,7 @@
                 <td id="SI_cameraErrorFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_cameraErrorFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_cameraErrorFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_cameraErrorFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_cameraErrorFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_cameraErrorFeedbackOutputSummary" class="inactive-summary-cell">
@@ -11810,7 +11798,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_cameraErrorActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_cameraErrorActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_cameraError')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -11874,8 +11862,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_cameraErrorFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_cameraErrorFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_cameraErrorFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_cameraErrorFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -12107,7 +12094,7 @@
                 <td id="SI_MCU_LogFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_MCU_LogFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_MCU_LogFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_MCU_LogFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_MCU_LogFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_MCU_LogFeedbackOutputSummary" class="inactive-summary-cell">
@@ -12151,7 +12138,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_MCU_LogActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_MCU_LogActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_MCU_Log')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -12215,8 +12202,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_MCU_LogFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_MCU_LogFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_MCU_LogFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_MCU_LogFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -12414,7 +12400,7 @@
                 <td id="SI_systemBootFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_systemBootFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_systemBootFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_systemBootFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_systemBootFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_systemBootFeedbackOutputSummary" class="inactive-summary-cell">
@@ -12458,7 +12444,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_systemBootActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_systemBootActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_systemBoot')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -12522,8 +12508,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_systemBootFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_systemBootFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_systemBootFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_systemBootFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -12721,7 +12706,7 @@
                 <td id="SI_systemBootFailureFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_systemBootFailureFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_systemBootFailureFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_systemBootFailureFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_systemBootFailureFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_systemBootFailureFeedbackOutputSummary" class="inactive-summary-cell">
@@ -12765,7 +12750,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_systemBootFailureActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_systemBootFailureActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_systemBootFailure')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -12829,8 +12814,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_systemBootFailureFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_systemBootFailureFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_systemBootFailureFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_systemBootFailureFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -13028,7 +13012,7 @@
                 <td id="SI_systemOK_FeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_systemOK_FeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_systemOK_FeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_systemOK_FeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_systemOK_FeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_systemOK_FeedbackOutputSummary" class="inactive-summary-cell">
@@ -13072,7 +13056,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_systemOK_ActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_systemOK_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_systemOK_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -13136,8 +13120,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_systemOK_FeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_systemOK_FeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_systemOK_FeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_systemOK_FeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -13335,7 +13318,7 @@
                 <td id="SI_systemResetFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_systemResetFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_systemResetFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_systemResetFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_systemResetFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_systemResetFeedbackOutputSummary" class="inactive-summary-cell">
@@ -13379,7 +13362,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_systemResetActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_systemResetActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_systemReset')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -13443,8 +13426,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_systemResetFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_systemResetFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_systemResetFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_systemResetFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -13642,7 +13624,7 @@
                 <td id="SI_systemErrorFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_systemErrorFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_systemErrorFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_systemErrorFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_systemErrorFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_systemErrorFeedbackOutputSummary" class="inactive-summary-cell">
@@ -13686,7 +13668,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_systemErrorActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_systemErrorActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_systemError')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -13750,8 +13732,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_systemErrorFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_systemErrorFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_systemErrorFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_systemErrorFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -13949,7 +13930,7 @@
                 <td id="SI_firmwareUpdateStartedFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_firmwareUpdateStartedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_firmwareUpdateStartedFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_firmwareUpdateStartedFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_firmwareUpdateStartedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_firmwareUpdateStartedFeedbackOutputSummary" class="inactive-summary-cell">
@@ -13993,7 +13974,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_firmwareUpdateStartedActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_firmwareUpdateStartedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_firmwareUpdateStarted')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -14057,8 +14038,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_firmwareUpdateStartedFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_firmwareUpdateStartedFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_firmwareUpdateStartedFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_firmwareUpdateStartedFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -14256,7 +14236,7 @@
                 <td id="SI_firmwareUpdateOK_FeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_firmwareUpdateOK_FeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_firmwareUpdateOK_FeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_firmwareUpdateOK_FeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_firmwareUpdateOK_FeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_firmwareUpdateOK_FeedbackOutputSummary" class="inactive-summary-cell">
@@ -14300,7 +14280,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_firmwareUpdateOK_ActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_firmwareUpdateOK_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_firmwareUpdateOK_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -14364,8 +14344,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_firmwareUpdateOK_FeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_firmwareUpdateOK_FeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_firmwareUpdateOK_FeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_firmwareUpdateOK_FeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -14563,7 +14542,7 @@
                 <td id="SI_firmwareUpdateFailedFeedbackAudioSummary" class="inactive-summary-cell">
                   <img id="SI_firmwareUpdateFailedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.png">
                 </td>
-                <td id="SI_firmwareUpdateFailedFeedbackSpeechSummary" class="inactive-summary-cell">
+                <td id="SI_firmwareUpdateFailedFeedbackSpeechSummary" class="disabled-summary-cell">
                   <img id="SI_firmwareUpdateFailedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.png">
                 </td>
                 <td id="SI_firmwareUpdateFailedFeedbackOutputSummary" class="inactive-summary-cell">
@@ -14607,7 +14586,7 @@
                 <td class="col3" style="width: 7%; background-color:#dbdbdb;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="SI_firmwareUpdateFailedActivationCheckbox" type="checkbox" checked>
+                    <input id="SI_firmwareUpdateFailedActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('SI_firmwareUpdateFailed')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -14671,8 +14650,7 @@
                         <td style="text-align: center;">
                           <div class="container">
                             <img id="SI_firmwareUpdateFailedFeedbackSpeechId" class="container_img" src="source_img/Speech_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('SI_firmwareUpdateFailedFeedbackSpeech', 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png')">
-                            <input type="checkbox" id="SI_firmwareUpdateFailedFeedbackSpeechCheckbox"
-                              class="hidden-checkbox">
+                            <input type="checkbox" id="SI_firmwareUpdateFailedFeedbackSpeechCheckbox" class="hidden-checkbox" disabled>
                           </div>
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
@@ -14993,7 +14971,7 @@
                         <td style="text-align: center;">
                           Repeat Cycle<br><br>
                           <label class="switch">
-                            <input id="SI_communicationsWatchdogRepeatCycleId" type="checkbox">
+                            <input id="SI_communicationsWatchdogRepeatCycleCheckbox" type="checkbox">
                             <span class="slider"></span>
                           </label>
                         </td>
@@ -15089,7 +15067,7 @@
                       <tr>
                         <td style="text-align: center; width: 33%;">
                           Alerts:&nbsp;
-                          <input type="checkbox" id="SI_communicationSettingsAndHybridAlertsId" name="SI_communicationSettingsAndHybridAlertsName">
+                          <input type="checkbox" id="SI_communicationSettingsAndHybridAlertsCheckbox" name="SI_communicationSettingsAndHybridAlertsCheckboxName">
                           &nbsp;
                           <select id="SI_communicationSettingsAndHybridAlertsSelectId" name="SI_communicationSettingsAndHybridAlertsSelectName" style="width: 100px;">
                             <option value="LTE">LTE</option>
@@ -15099,7 +15077,7 @@
                         </td>
                         <td style="text-align: center; width: 33%;">
                           Video:&nbsp;
-                          <input type="checkbox" id="SI_communicationSettingsAndHybridVideoId" name="SI_communicationSettingsAndHybridVideoName">
+                          <input type="checkbox" id="SI_communicationSettingsAndHybridVideoCheckbox" name="SI_communicationSettingsAndHybridVideoCheckboxName">
                           &nbsp;
                           <select id="SI_communicationSettingsAndHybridVideoSelectId" name="SI_communicationSettingsAndHybridVideoSelectName" style="width: 100px;">
                             <option value="LTE">LTE</option>
@@ -15108,7 +15086,7 @@
                         </td>
                         <td style="text-align: center;">
                           Debug:&nbsp;
-                          <input type="checkbox" id="SI_communicationSettingsAndHybridDebugId" name="SI_communicationSettingsAndHybridDebugName">
+                          <input type="checkbox" id="SI_communicationSettingsAndHybridDebugCheckbox" name="SI_communicationSettingsAndHybridDebugCheckboxName">
                           &nbsp;
                           <select id="SI_communicationSettingsAndHybridDebugSelectId" name="SI_communicationSettingsAndHybridDebugSelectName" style="width: 100px;">
                             <option value="LTE">LTE</option>
@@ -15120,7 +15098,7 @@
                       <tr>
                         <td style="text-align: center;">
                           Image:&nbsp;
-                          <input type="checkbox" id="SI_communicationSettingsAndHybridImageId" name="SI_communicationSettingsAndHybridImageName">
+                          <input type="checkbox" id="SI_communicationSettingsAndHybridImageCheckbox" name="SI_communicationSettingsAndHybridImageCheckboxName">
                           &nbsp;
                           <select id="SI_communicationSettingsAndHybridImageSelectId" name="SI_communicationSettingsAndHybridImageSelectName" style="width: 100px;">
                             <option value="LTE">LTE</option>
@@ -15130,7 +15108,7 @@
                         </td>
                         <td style="text-align: center;">
                           FOTA:&nbsp;
-                          <input type="checkbox" id="SI_communicationSettingsAndHybridFOTAId" name="SI_communicationSettingsAndHybridFOTAName">
+                          <input type="checkbox" id="SI_communicationSettingsAndHybridFOTACheckbox" name="SI_communicationSettingsAndHybridFOTACheckboxName">
                           &nbsp;
                           <select id="SI_communicationSettingsAndHybridFOTASelectId" name="SI_communicationSettingsAndHybridFOTASelectName" style="width: 100px;">
                             <option value="LTE">LTE</option>
@@ -15175,7 +15153,7 @@
                         <td colspan="3" style="text-align: center;">
                           Duplicate Event Over RS232:&nbsp;&nbsp;&nbsp;
                           <label class="switch">
-                            <input id="SI_communicationSettingsAndHybridDuplicateEventId" type="checkbox">
+                            <input id="SI_communicationSettingsAndHybridDuplicateEventCheckbox" type="checkbox">
                             <span class="slider"></span>
                           </label>
                         </td>
@@ -15199,7 +15177,7 @@
                                 <label for="SI_APN_SettingsTextId">APN:</label>
                               </td>
                               <td style="border: none;">
-                                <input type="text" id="SI_APN_SettingsTextId" name="SI_APN_SettingsTextName" placeholder="APN" style="width: 150px;">
+                                <input type="text" id="SI_APN_SettingsTextId" name="SI_APN_SettingsTextName" placeholder="APN" style="width: 192px;">
                               </td>
                             </tr>
                           </table>
@@ -15211,7 +15189,7 @@
                                 <label for="SI_APN_UserTextId">User:</label>
                               </td>
                               <td style="border: none;">
-                                <input type="text" id="SI_APN_UserTextId" name="SI_APN_UserTextName" placeholder="User" style="width: 150px;">
+                                <input type="text" id="SI_APN_UserTextId" name="SI_APN_UserTextName" placeholder="User" style="width: 192px;">
                               </td>
                             </tr>
                           </table>
@@ -15223,7 +15201,7 @@
                                 <label for="SI_APN_PasswordTextId">Password:</label>
                               </td>
                               <td style="border: none;">
-                                <input type="text" id="SI_APN_PasswordTextId" name="SI_APN_PasswordTextName" placeholder="Password" style="width: 150px;">
+                                <input type="text" id="SI_APN_PasswordTextId" name="SI_APN_PasswordTextName" placeholder="Password" style="width: 192px;">
                               </td>
                             </tr>
                           </table>
@@ -15266,8 +15244,8 @@
                         <td style="text-align: center;">
                           Parity<br>
                           <select id="SI_serialCommParityId" name="SI_serialCommParityName" style="width: 100px;">
-                            <option value="None">None</option>
-                            <option value="Even">Even</option>
+                            <option value="false">None</option>
+                            <option value="true">Even</option>
                           </select>
                         </td>
                         <td style="text-align: center;">
@@ -15279,7 +15257,7 @@
                         </td>
                         <td style="text-align: center;">
                           Data To Send<br>
-                          <select id="SI_serialCommDataToSendId" name="SI_serialCommDataToSendName" style="width: 100px;">
+                          <select id="SI_serialCommDataToSendId" name="SI_serialCommDataToSendName" style="width: 120px;">
                             <option value="Event">Event</option>
                             <option value="EventAndImage">Event and Image</option>
                           </select>
@@ -15680,7 +15658,7 @@
                   <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
                     Video Overlay:&nbsp;
                     <label class="switch">
-                      <input id="SI_videoOverlayId" type="checkbox">
+                      <input id="SI_videoOverlayCheckbox" type="checkbox">
                       <span class="slider"></span>
                     </label>
                   </td>
@@ -15695,7 +15673,7 @@
                   <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
                     SD-card Encryption:&nbsp;
                     <label class="switch">
-                      <input id="SI_SD_cardEncryptionId" type="checkbox">
+                      <input id="SI_SD_cardEncryptionCheckbox" type="checkbox">
                       <span class="slider"></span>
                     </label>
                   </td>
@@ -15720,10 +15698,9 @@
                   </td>
                   <td colspan="2" style="text-align: center; vertical-align: center; font-weight: normal; font-size: 13px; color: black;">
                     Unit ID:&nbsp;
-                    <select name="Unit_ID_Overlay" id="Unit_ID_Overlay" style="width: 120px;"
-                      onchange="updateLogicalColor(this, id)">
-                      <option value="true" style="background-color: #C6EFCE; color: #006100">On-screen</option>
-                      <option value="false" style="background-color: #FFC7CE; color: #9C0000">No</option>
+                    <select name="Unit_ID_Overlay" id="Unit_ID_Overlay" style="width: 120px;">
+                      <option value="true">On-screen</option>
+                      <option value="false">No</option>
                     </select>
                   </td>
                 </tr>
@@ -15863,14 +15840,14 @@
                     SD card space for cyclic recording:&nbsp;
                     <select name="ContRecording" id="ContRecording" style="width: 80px;">
                       <option value="0">Disabled</option>
-                      <option value="8">8 GB</option>
-                      <option value="16">16 GB</option>
-                      <option value="32">32 GB</option>
-                      <option value="64">64 GB</option>
-                      <option value="128">128 GB</option>
-                      <option value="256">256 GB</option>
-                      <option value="512">512 GB</option>
-                      <option value="1024">1 TB</option>
+                      <option value="8">8GB</option>
+                      <option value="16">16GB</option>
+                      <option value="32">32GB</option>
+                      <option value="64">64GB</option>
+                      <option value="128">128GB</option>
+                      <option value="256">256GB</option>
+                      <option value="512">512GB</option>
+                      <option value="1024">1TB</option>
                     </select>
                   </td>
                 </tr>
@@ -16083,14 +16060,14 @@
                         <td style="text-align: center; width: 50%;">
                           Device-Turn-On:&nbsp;
                           <label class="switch">
-                            <input id="SI_deviceTurnOnId" type="checkbox">
+                            <input id="SI_deviceTurnOnCheckbox" type="checkbox">
                             <span class="slider"></span>
                           </label>
                         </td>
                         <td style="text-align: center; width: auto;">
                           Self Event Trigger:&nbsp;
                           <label class="switch">
-                            <input id="SI_selfEventTriggerId" type="checkbox">
+                            <input id="SI_selfEventTriggerCheckbox" type="checkbox">
                             <span class="slider"></span>
                           </label>
                         </td>
@@ -16246,7 +16223,7 @@
                           Volume Controls:
                           <br><br>
                           <label class="switch">
-                            <input id="SI_volumeControlsId" type="checkbox">
+                            <input id="SI_volumeControlsCheckbox" type="checkbox">
                             <span class="slider"></span>
                           </label>
                         </td>
@@ -16311,7 +16288,7 @@
                         <td style="text-align: center; vertical-align: middle;">
                           OTA Update:&nbsp;
                           <label class="switch">
-                            <input id="SI_OTA_updateId" type="checkbox">
+                            <input id="SI_OTA_updateCheckbox" type="checkbox">
                             <span class="slider"></span>
                           </label>
                         </td>
