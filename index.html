@@ -16646,9 +16646,20 @@
       <section id="LoadJSON" class="row grey">
         <div class="center">
           <h1>Load JSON</h1>
-          <input style="font-size: 14px;" type="file" id="file-input" accept=".json" onchange="load_FS10_JSON()">
+          <input style="font-size: 14px;" type="file" id="file-input" accept=".json" onchange="load_FS10_JSON(); setUrlOptionToCustom()">
           <div>
             <br>
+            <select name="options" id="options" onchange="updateJsonByDefaultSelected()">
+              <option value="0">Custom Configuration</option>
+              <option value="1">LTE</option>
+              <option value="2">Wi-Fi</option>
+              <option value="3">Wi-Fi in the Office</option>
+              <option value="4">RS232</option>
+              <option value="5">RS232 Hybrid</option>
+              <option value="6">Mobileye</option>
+              <option value="7">Mobileye + Dashcam</option>
+              <option value="8">LTE + Dashcam</option>
+          </select>
             <button id="updateButton" onclick="updateOnBased_FS10_json()">Update based on loaded JSON</button>
             <button id="cleaningButton" onclick="clearJsonInput()">Clear JSON loading console</button>
             <h4></h4>

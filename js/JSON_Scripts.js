@@ -4506,3 +4506,50 @@ function setSliderAndCheckboxToJson(id) {
     }
     return parsedValue;
 }
+
+function updateJsonByDefaultSelected() {
+    clearJsonInput();
+    const selectedOption = document.getElementById("options").value;
+    let jsonFileUrl = "";    
+    switch (selectedOption) {
+        case "1": 
+            jsonFileUrl = "source/FS10_default_configs/1.0.1.31-LTE.json";
+            break;
+        case "2":
+            jsonFileUrl = "source/FS10_default_configs/1.0.1.31-Wifi.json";
+            break;
+        case "3":
+            jsonFileUrl = "source/FS10_default_configs/1.0.1.31-Wifi.json";
+            break;
+        case "4":
+            jsonFileUrl = "source/FS10_default_configs/1.0.1.31-Serial-teltonika.json";
+            break;
+        case "5":
+            jsonFileUrl = "source/FS10_default_configs/1.0.1.31-hybrid-teltonika.json";
+            break;
+        case "6":
+            jsonFileUrl = "source/FS10_default_configs/1.0.1.31-LTE-Mobileye.json";
+            break;
+        case "7":
+            jsonFileUrl = "source/FS10_default_configs/1.0.1.31-LTE-MobileyeRC.json";
+            break;
+        case "8":
+            jsonFileUrl = "source/FS10_default_configs/1.0.2.32-LTE-DVR.json";
+            break;
+        default:
+            return;
+    }
+    fetch(jsonFileUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            const file = new File([blob], "config.json", { type: "application/json" });
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            document.getElementById("file-input").files = dataTransfer.files;
+        })
+        .catch(error => console.error('Error loading the JSON file:', error));
+}
+
+function setUrlOptionToCustom() {
+    document.getElementById("options").value = "0";
+}
