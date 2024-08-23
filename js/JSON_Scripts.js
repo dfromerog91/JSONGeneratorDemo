@@ -4510,7 +4510,7 @@ function setSliderAndCheckboxToJson(id) {
 function updateJsonByDefaultSelected() {
     clearJsonInput();
     const selectedOption = document.getElementById("options").value;
-    let jsonFileUrl = "";    
+    let jsonFileUrl = "";
     switch (selectedOption) {
         case "1": 
             jsonFileUrl = "source/FS10_default_configs/1.0.1.31-LTE.json";
@@ -4537,15 +4537,14 @@ function updateJsonByDefaultSelected() {
             jsonFileUrl = "source/FS10_default_configs/1.0.2.32-LTE-DVR.json";
             break;
         default:
-            return;
+            break;
     }
     fetch(jsonFileUrl)
-        .then(response => response.blob())
-        .then(blob => {
-            const file = new File([blob], "config.json", { type: "application/json" });
-            const dataTransfer = new DataTransfer();
-            dataTransfer.items.add(file);
-            document.getElementById("file-input").files = dataTransfer.files;
+        .then(response => response.text())
+        .then(data => {
+            const jsonInput = document.getElementById("jsonInput");
+            jsonInput.value = data;
+            console.log("JSON loaded successfully");
         })
         .catch(error => console.error('Error loading the JSON file:', error));
 }
