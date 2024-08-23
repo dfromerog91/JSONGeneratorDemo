@@ -1928,7 +1928,7 @@ function generate_FS10_JSON(){
     var TailgatingOTABackOff = parseInt(document.getElementById("ADAS_HMW_MessageBackoffNumber").value);
     var UFCWOTABackOff = parseInt(document.getElementById("ADAS_UFCW_MessageBackoffNumber").value);
     var CalibrationTimeout = parseInt(document.getElementById("SI_calibrationTimeoutNumber").value);
-    var IGNOffInterval = parseInt(document.getElementById("TES_heartbeatIgnitionOffIntervalNumber").value);
+    var IGNOffInterval = 60 * parseInt(document.getElementById("TES_heartbeatIgnitionOffIntervalNumber").value);
     var IGNOnInterval = parseInt(document.getElementById("TES_heartbeatIgnitionOnIntervalNumber").value);
     var TimeToWaitGPSFix = parseInt(document.getElementById("TES_heartbeatTimeToWaitGPSFixNumber").value);
     var DistractionTurnGraceDuration = parseFloat(document.getElementById("DMS_driverDistractedTurnGraceTimerNumber").value).toFixed(1);
@@ -1942,7 +1942,7 @@ function generate_FS10_JSON(){
     var timeSource = document.getElementById("timeSource").value;
     var GSensorWakeThreshold = parseInt(document.getElementById("SI_GSensorWakeThresholdNumber").value);
     var OTAupdateEnable = document.getElementById("SI_OTA_updateCheckbox").checked;
-    var GPSFixLossOrRecoveryTime = parseFloat(document.getElementById("TES_heartbeatGPS_FixLossOrRecoveryNumber").value).toFixed(1);
+    var GPSFixLossOrRecoveryTime = parseInt(document.getElementById("TES_heartbeatGPS_FixLossOrRecoveryNumber").value);
     var MaxHeadingAngleForEvents = parseInt(document.getElementById("MaxHeadingAngleForEvents").value);
     var IGNOffFilter = parseInt(document.getElementById("TES_heartbeatIgnitionOffFilterNumber").value);
     var IGNOnFilter = parseInt(document.getElementById("TES_heartbeatIgnitionOnFilterNumber").value);
@@ -1953,7 +1953,7 @@ function generate_FS10_JSON(){
     var TripPathHeading = setSliderAndCheckboxToJson("TES_tripPathHeading");
     var WiFiTO = parseInt(document.getElementById("SI_SettingsAndHybridWi_Fi_TimeOutNumber").value);
     var SleepModeTO = parseInt(document.getElementById("SI_sleepModeTimeoutNumber").value);
-    var DriverDisappearTimeThreshold = parseFloat(document.getElementById("DMS_driverDisappearedTimeThresholdNumber").value).toFixed(1);
+    var DriverDisappearTimeThreshold = parseInt(document.getElementById("DMS_driverDisappearedTimeThresholdNumber").value);
     var InhibitSeatbeltAlertsOnStop = document.getElementById("DMS_seatbeltInhibitAlertsOnStopCheckbox").checked;
     
     //RS232
@@ -3778,6 +3778,37 @@ function updateSliderControlInteger(id, JSONdata, propertyPath) {
     updateSliderControlSummary(id + "Summary", value);
 }
 
+function updateSliderControlIntegerWithScale(id, JSONdata, propertyPath, scale) {
+    var segments = propertyPath.split('.');
+    var value = JSONdata;
+    for (var i = 0; i < segments.length; i++) {
+        var segment = segments[i];
+        if (value && segment in value) {
+            value = value[segment];
+        } else {
+            value = NaN;
+            break;
+        }
+    }
+    const range = document.getElementById(id + "Range");
+    const number = document.getElementById(id + "Number");
+    let minValue = parseInt(range.min, 10);
+    let maxValue = parseInt(range.max, 10);
+    if (!isNaN(value)) {
+        value = parseInt(value * scale, 10);
+        if (value < minValue) {
+            value = minValue;
+        } else if (value > maxValue) {
+            value = maxValue;
+        }
+    } else {
+        value = parseInt((maxValue - minValue) / 2 + minValue, 10);
+    }
+    range.value = value;
+    number.value = value;
+    updateSliderControlSummary(id + "Summary", value);
+}
+
 function updateCheckboxAndSlider(id, JSONdata, propertyPath) {
     const checkbox = document.getElementById(id + "Checkbox");
     var segments = propertyPath.split('.');
@@ -4062,7 +4093,7 @@ function updateComboBox_fromJSON(JSONdata){
     updateSliderControlInteger("SI_communicationsWatchdogSocketResetTime", JSONdata, "CommunicationWatchdog.SocketResetTimeInMin");
 
     //Heartbeat Configuration
-    updateSliderControlInteger("TES_heartbeatIgnitionOffInterval", JSONdata, "ExtraParameters.HeartbeatConfig.IGNOffInterval");
+    updateSliderControlIntegerWithScale("TES_heartbeatIgnitionOffInterval", JSONdata, "ExtraParameters.HeartbeatConfig.IGNOffInterval", 1 / 60);
     updateSliderControlInteger("TES_heartbeatIgnitionOnInterval", JSONdata, "ExtraParameters.HeartbeatConfig.IGNOnInterval");
     updateSliderControlInteger("TES_heartbeatTimeToWaitGPSFix", JSONdata, "ExtraParameters.HeartbeatConfig.TimeToWaitGPSFix");
     updateSliderControlInteger("TES_heartbeatGPS_FixLossOrRecovery", JSONdata, "GPSFixLossOrRecoveryTime");
@@ -4392,12 +4423,10 @@ function updateOnBased_FS10_json() {
         updatingWiFiNetworksfrom_FS10(JSONdata);
 		extractOverlayText(JSONdata);
         extractGPIO_from_JSON(JSONdata);
-		alert("Successful upload! - Please verify parameters");
-
         validateJSON(JSONdata);
-
         setInitialValues();
         remove_duplicate_from_menus();
+        alert("Successful upload! - Please verify parameters");
     }
     catch (error) {
         // Display the error message on the screen
@@ -4434,32 +4463,25 @@ function updateOnBased_FS10_json_init() {
 }
 
 function validateJSON(JSON_customer_code) {
-    // Perform the POST request
-    // This one for testing JSON generated for the platform (Actual Parameters)
-    fetch('https://api.cipia-fscloud.com/validate-json', {
-    //This one for comparing a complete JSON (Missing Parameters)
-    //fetch('https://api.cipia-fscloud.com/validate-json?useEtcConfig=false', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      // Convert the JSON object to a JSON string before sending
-      body: JSON.stringify(JSON_customer_code)
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.text(); // or response.json() if expecting JSON
-      }
-      throw new Error('Failed request: ' + response.statusText);
-    })
-    .then(data => {
-      // Display the response in the textbox
-      document.getElementById("responseText").value = data;
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      document.getElementById("responseText").value = 'Error: ' + error.message;
-    });
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    const raw = JSON.stringify(JSON_customer_code);
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+    fetch("https://api.cipia-fscloud.com/validate-json", requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        console.log(result);
+        document.getElementById("jsonValidation").value = result;
+        })
+      .catch((error) => {
+        console.error(error);
+        document.getElementById("jsonValidation").value = error.toString();
+        });
 }
   
 function setSliderAndCheckboxToJson(id) {

@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('TES_movementStartedSpeedThreshold', 10, 30, '136px', 10, 1, 'TES_movementStoppedSpeedThreshold');
     initializeDial('TES_movementStoppedSpeedThreshold', 10, 30, '136px', 10, 1, 'TES_movementStartedSpeedThreshold');
 
-    initializeDial('TES_heartbeatIgnitionOffInterval', 1, 10, '136px', 1, 0.1);
+    initializeDial('TES_heartbeatIgnitionOffInterval', 1, 24, '136px', 1);
     initializeDial('TES_heartbeatIgnitionOnInterval', 5, 600, '136px', 60);
     initializeDial('TES_heartbeatTimeToWaitGPSFix', 0, 300, '136px', 120);
     initializeDial('TES_heartbeatGPS_FixLossOrRecovery', 0, 500, '136px', 15);
@@ -162,10 +162,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('SI_cameraErrorFeedbackBackoff', 1, 60, '136px', 2);
 
     initializeDial('SI_communicationsWatchdogKeepAlive', 0, 300, '136px', 0);
-    initializeDial('SI_communicationsWatchdogModemReset', 0, 30, '136px', 0);
-    initializeDial('SI_communicationsWatchdogModemResetSignal', 0, 30, '136px', 0);
-    initializeDial('SI_communicationsWatchdogSelfPowerRecycle', 0, 30, '136px', 0);
-    initializeDial('SI_communicationsWatchdogSocketResetTime', 0, 30, '136px', 0);
+    initializeDial('SI_communicationsWatchdogModemReset', 0, 30, '136px', 0, 5);
+    initializeDial('SI_communicationsWatchdogModemResetSignal', 0, 30, '136px', 0, 5);
+    initializeDial('SI_communicationsWatchdogSelfPowerRecycle', 0, 30, '136px', 0, 5);
+    initializeDial('SI_communicationsWatchdogSocketResetTime', 0, 30, '136px', 0, 5);
 
     initializeDial('SI_SettingsAndHybridWi_Fi_TimeOut', 5, 300, '136px', 5);
 

@@ -7,7 +7,7 @@
 		color:#444444;
 	}
 	a{
-		color:#466087;
+		color:hwb(216 27% 47%);
 		text-decoration:underline;
 	}
 	a:hover { text-decoration:none;}
@@ -192,6 +192,7 @@
 	.row{
 		width:100%;
 		background:#ffffff;
+		color: #fff;
 		padding:2.857em 0;
 	}
 	.row:after{
@@ -907,8 +908,9 @@ input:checked + .slider:before {
 	height: 20px; 	/* Smaller Height */
 }
 
-.table-internal {
+.table-internal{
     border: 1px solid gray;
+	color: #000;
     border-collapse: collapse;
     width: 100%; /* Adjust width as needed */
 }
@@ -1027,25 +1029,39 @@ input:checked + .slider:before {
 /* Style for cells with an X */
 .failCell {
     background-color: #FFD8D8; /* Light red background */
+	color: rgb(65, 65, 65);
 }
 
 .active-summary-cell {
 	background-color: #D8FFC2;
+	color: rgb(65, 65, 65);
 	width: 3.5%;
 }
   
 .inactive-summary-cell { 
 	background-color: #FFD8D8;
+	color: rgb(65, 65, 65);
 	width: 3.5%;
 }
 
 .disabled-summary-cell {
-	background-color: grey;
+	background-color: rgb(208, 208, 208);
 	width: 3.5%;
+	font-style: italic;
+	font-weight: normal;
+	color: rgb(115, 115, 115);
 }
 
 .slider-summary{
 	font-size: 10px;
 	padding: 0;
 	background-color: transparent;
+}
+
+h4{
+	font:1.714em/1.125em Arial, Helvetica, sans-serif; /*24px/27px*/
+	color:#ffffff;
+	text-align:center;
+	margin:0 0 0.417em;
+	/*text-shadow:0px 0px 0px rgba(255,255,255,0.5);*/
 }
