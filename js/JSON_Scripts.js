@@ -51,7 +51,7 @@ function generate_FS10_JSON(){
     } else if (!DriverAsleep_ReportCabinSnapshot && DriverAsleep_ReportRoadSnapshot) {
         DriverAsleep_ReportImage = "SingleADAS";
     } else if (DriverAsleep_ReportCabinTimelapse && DriverAsleep_ReportRoadTimelapse) {
-        DriverAsleep_ReportImage = "BothTimelaps";
+        DriverAsleep_ReportImage = "BothTimelapse";
     } else if (DriverAsleep_ReportCabinTimelapse && !DriverAsleep_ReportRoadTimelapse) {
         DriverAsleep_ReportImage = "TimelapseDMS";
     } else if (!DriverAsleep_ReportCabinTimelapse && DriverAsleep_ReportRoadTimelapse) {
@@ -85,7 +85,7 @@ function generate_FS10_JSON(){
     } else if (!Drowsiness_ReportCabinSnapshot && Drowsiness_ReportRoadSnapshot) {
         Drowsiness_ReportImage = "SingleADAS";
     } else if (Drowsiness_ReportCabinTimelapse && Drowsiness_ReportRoadTimelapse) {
-        Drowsiness_ReportImage = "BothTimelaps";
+        Drowsiness_ReportImage = "BothTimelapse";
     } else if (Drowsiness_ReportCabinTimelapse && !Drowsiness_ReportRoadTimelapse) {
         Drowsiness_ReportImage = "TimelapseDMS";
     } else if (!Drowsiness_ReportCabinTimelapse && Drowsiness_ReportRoadTimelapse) {
@@ -119,7 +119,7 @@ function generate_FS10_JSON(){
     } else if (!DriverDistracted_ReportCabinSnapshot && DriverDistracted_ReportRoadSnapshot) {
         DriverDistracted_ReportImage = "SingleADAS";
     } else if (DriverDistracted_ReportCabinTimelapse && DriverDistracted_ReportRoadTimelapse) {
-        DriverDistracted_ReportImage = "BothTimelaps";
+        DriverDistracted_ReportImage = "BothTimelapse";
     } else if (DriverDistracted_ReportCabinTimelapse && !DriverDistracted_ReportRoadTimelapse) {
         DriverDistracted_ReportImage = "TimelapseDMS";
     } else if (!DriverDistracted_ReportCabinTimelapse && DriverDistracted_ReportRoadTimelapse) {
@@ -153,7 +153,7 @@ function generate_FS10_JSON(){
     } else if (!PhoneUse_ReportCabinSnapshot && PhoneUse_ReportRoadSnapshot) {
         PhoneUse_ReportImage = "SingleADAS";
     } else if (PhoneUse_ReportCabinTimelapse && PhoneUse_ReportRoadTimelapse) {
-        PhoneUse_ReportImage = "BothTimelaps";
+        PhoneUse_ReportImage = "BothTimelapse";
     } else if (PhoneUse_ReportCabinTimelapse && !PhoneUse_ReportRoadTimelapse) {
         PhoneUse_ReportImage = "TimelapseDMS";
     } else if (!PhoneUse_ReportCabinTimelapse && PhoneUse_ReportRoadTimelapse) {
@@ -187,7 +187,7 @@ function generate_FS10_JSON(){
     } else if (!Seatbelt_ReportCabinSnapshot && Seatbelt_ReportRoadSnapshot) {
         Seatbelt_ReportImage = "SingleADAS";
     } else if (Seatbelt_ReportCabinTimelapse && Seatbelt_ReportRoadTimelapse) {
-        Seatbelt_ReportImage = "BothTimelaps";
+        Seatbelt_ReportImage = "BothTimelapse";
     } else if (Seatbelt_ReportCabinTimelapse && !Seatbelt_ReportRoadTimelapse) {
         Seatbelt_ReportImage = "TimelapseDMS";
     } else if (!Seatbelt_ReportCabinTimelapse && Seatbelt_ReportRoadTimelapse) {
@@ -221,7 +221,7 @@ function generate_FS10_JSON(){
     } else if (!Smoking_ReportCabinSnapshot && Smoking_ReportRoadSnapshot) {
         Smoking_ReportImage = "SingleADAS";
     } else if (Smoking_ReportCabinTimelapse && Smoking_ReportRoadTimelapse) {
-        Smoking_ReportImage = "BothTimelaps";
+        Smoking_ReportImage = "BothTimelapse";
     } else if (Smoking_ReportCabinTimelapse && !Smoking_ReportRoadTimelapse) {
         Smoking_ReportImage = "TimelapseDMS";
     } else if (!Smoking_ReportCabinTimelapse && Smoking_ReportRoadTimelapse) {
@@ -263,7 +263,7 @@ function generate_FS10_JSON(){
     } else if (!TamperingDetection_ReportCabinSnapshot && TamperingDetection_ReportRoadSnapshot) {
         TamperingDetection_ReportImage = "SingleADAS";
     } else if (TamperingDetection_ReportCabinTimelapse && TamperingDetection_ReportRoadTimelapse) {
-        TamperingDetection_ReportImage = "BothTimelaps";
+        TamperingDetection_ReportImage = "BothTimelapse";
     } else if (TamperingDetection_ReportCabinTimelapse && !TamperingDetection_ReportRoadTimelapse) {
         TamperingDetection_ReportImage = "TimelapseDMS";
     } else if (!TamperingDetection_ReportCabinTimelapse && TamperingDetection_ReportRoadTimelapse) {
@@ -297,7 +297,7 @@ function generate_FS10_JSON(){
     } else if (!DriverIdentified_ReportCabinSnapshot && DriverIdentified_ReportRoadSnapshot) {
         DriverIdentified_ReportImage = "SingleADAS";
     } else if (DriverIdentified_ReportCabinTimelapse && DriverIdentified_ReportRoadTimelapse) {
-        DriverIdentified_ReportImage = "BothTimelaps";
+        DriverIdentified_ReportImage = "BothTimelapse";
     } else if (DriverIdentified_ReportCabinTimelapse && !DriverIdentified_ReportRoadTimelapse) {
         DriverIdentified_ReportImage = "TimelapseDMS";
     } else if (!DriverIdentified_ReportCabinTimelapse && DriverIdentified_ReportRoadTimelapse) {
@@ -331,7 +331,7 @@ function generate_FS10_JSON(){
     } else if (!UnidentifiedUnauthDriver_ReportCabinSnapshot && UnidentifiedUnauthDriver_ReportRoadSnapshot) {
         UnidentifiedUnauthDriver_ReportImage = "SingleADAS";
     } else if (UnidentifiedUnauthDriver_ReportCabinTimelapse && UnidentifiedUnauthDriver_ReportRoadTimelapse) {
-        UnidentifiedUnauthDriver_ReportImage = "BothTimelaps";
+        UnidentifiedUnauthDriver_ReportImage = "BothTimelapse";
     } else if (UnidentifiedUnauthDriver_ReportCabinTimelapse && !UnidentifiedUnauthDriver_ReportRoadTimelapse) {
         UnidentifiedUnauthDriver_ReportImage = "TimelapseDMS";
     } else if (!UnidentifiedUnauthDriver_ReportCabinTimelapse && UnidentifiedUnauthDriver_ReportRoadTimelapse) {
@@ -365,7 +365,7 @@ function generate_FS10_JSON(){
     } else if (!DriverDisappeared_ReportCabinSnapshot && DriverDisappeared_ReportRoadSnapshot) {
         DriverDisappeared_ReportImage = "SingleADAS";
     } else if (DriverDisappeared_ReportCabinTimelapse && DriverDisappeared_ReportRoadTimelapse) {
-        DriverDisappeared_ReportImage = "BothTimelaps";
+        DriverDisappeared_ReportImage = "BothTimelapse";
     } else if (DriverDisappeared_ReportCabinTimelapse && !DriverDisappeared_ReportRoadTimelapse) {
         DriverDisappeared_ReportImage = "TimelapseDMS";
     } else if (!DriverDisappeared_ReportCabinTimelapse && DriverDisappeared_ReportRoadTimelapse) {
@@ -399,7 +399,7 @@ function generate_FS10_JSON(){
     } else if (!DriverChange_ReportCabinSnapshot && DriverChange_ReportRoadSnapshot) {
         DriverChange_ReportImage = "SingleADAS";
     } else if (DriverChange_ReportCabinTimelapse && DriverChange_ReportRoadTimelapse) {
-        DriverChange_ReportImage = "BothTimelaps";
+        DriverChange_ReportImage = "BothTimelapse";
     } else if (DriverChange_ReportCabinTimelapse && !DriverChange_ReportRoadTimelapse) {
         DriverChange_ReportImage = "TimelapseDMS";
     } else if (!DriverChange_ReportCabinTimelapse && DriverChange_ReportRoadTimelapse) {
@@ -433,7 +433,7 @@ function generate_FS10_JSON(){
     } else if (!DriverIDUpdated_ReportCabinSnapshot && DriverIDUpdated_ReportRoadSnapshot) {
         DriverIDUpdated_ReportImage = "SingleADAS";
     } else if (DriverIDUpdated_ReportCabinTimelapse && DriverIDUpdated_ReportRoadTimelapse) {
-        DriverIDUpdated_ReportImage = "BothTimelaps";
+        DriverIDUpdated_ReportImage = "BothTimelapse";
     } else if (DriverIDUpdated_ReportCabinTimelapse && !DriverIDUpdated_ReportRoadTimelapse) {
         DriverIDUpdated_ReportImage = "TimelapseDMS";
     } else if (!DriverIDUpdated_ReportCabinTimelapse && DriverIDUpdated_ReportRoadTimelapse) {
@@ -469,7 +469,7 @@ function generate_FS10_JSON(){
     } else if (!LDW_ReportCabinSnapshot && LDW_ReportRoadSnapshot) {
         LDW_ReportImage = "SingleADAS";
     } else if (LDW_ReportCabinTimelapse && LDW_ReportRoadTimelapse) {
-        LDW_ReportImage = "BothTimelaps";
+        LDW_ReportImage = "BothTimelapse";
     } else if (LDW_ReportCabinTimelapse && !LDW_ReportRoadTimelapse) {
         LDW_ReportImage = "TimelapseDMS";
     } else if (!LDW_ReportCabinTimelapse && LDW_ReportRoadTimelapse) {
@@ -519,7 +519,7 @@ function generate_FS10_JSON(){
     } else if (!HMW_ReportCabinSnapshot && HMW_ReportRoadSnapshot) {
         HMW_ReportImage = "SingleADAS";
     } else if (HMW_ReportCabinTimelapse && HMW_ReportRoadTimelapse) {
-        HMW_ReportImage = "BothTimelaps";
+        HMW_ReportImage = "BothTimelapse";
     } else if (HMW_ReportCabinTimelapse && !HMW_ReportRoadTimelapse) {
         HMW_ReportImage = "TimelapseDMS";
     } else if (!HMW_ReportCabinTimelapse && HMW_ReportRoadTimelapse) {
@@ -553,7 +553,7 @@ function generate_FS10_JSON(){
     } else if (!UrbanFCW_ReportCabinSnapshot && UrbanFCW_ReportRoadSnapshot) {
         UrbanFCW_ReportImage = "SingleADAS";
     } else if (UrbanFCW_ReportCabinTimelapse && UrbanFCW_ReportRoadTimelapse) {
-        UrbanFCW_ReportImage = "BothTimelaps";
+        UrbanFCW_ReportImage = "BothTimelapse";
     } else if (UrbanFCW_ReportCabinTimelapse && !UrbanFCW_ReportRoadTimelapse) {
         UrbanFCW_ReportImage = "TimelapseDMS";
     } else if (!UrbanFCW_ReportCabinTimelapse && UrbanFCW_ReportRoadTimelapse) {
@@ -587,7 +587,7 @@ function generate_FS10_JSON(){
     } else if (!FCW_ReportCabinSnapshot && FCW_ReportRoadSnapshot) {
         FCW_ReportImage = "SingleADAS";
     } else if (FCW_ReportCabinTimelapse && FCW_ReportRoadTimelapse) {
-        FCW_ReportImage = "BothTimelaps";
+        FCW_ReportImage = "BothTimelapse";
     } else if (FCW_ReportCabinTimelapse && !FCW_ReportRoadTimelapse) {
         FCW_ReportImage = "TimelapseDMS";
     } else if (!FCW_ReportCabinTimelapse && FCW_ReportRoadTimelapse) {
@@ -629,7 +629,7 @@ function generate_FS10_JSON(){
     } else if (!PCW_ReportCabinSnapshot && PCW_ReportRoadSnapshot) {
         PCW_ReportImage = "SingleADAS";
     } else if (PCW_ReportCabinTimelapse && PCW_ReportRoadTimelapse) {
-        PCW_ReportImage = "BothTimelaps";
+        PCW_ReportImage = "BothTimelapse";
     } else if (PCW_ReportCabinTimelapse && !PCW_ReportRoadTimelapse) {
         PCW_ReportImage = "TimelapseDMS";
     } else if (!PCW_ReportCabinTimelapse && PCW_ReportRoadTimelapse) {
@@ -665,7 +665,7 @@ function generate_FS10_JSON(){
     } else if (!IgnitionON_ReportCabinSnapshot && IgnitionON_ReportRoadSnapshot) {
         IgnitionON_ReportImage = "SingleADAS";
     } else if (IgnitionON_ReportCabinTimelapse && IgnitionON_ReportRoadTimelapse) {
-        IgnitionON_ReportImage = "BothTimelaps";
+        IgnitionON_ReportImage = "BothTimelapse";
     } else if (IgnitionON_ReportCabinTimelapse && !IgnitionON_ReportRoadTimelapse) {
         IgnitionON_ReportImage = "TimelapseDMS";
     } else if (!IgnitionON_ReportCabinTimelapse && IgnitionON_ReportRoadTimelapse) {
@@ -699,7 +699,7 @@ function generate_FS10_JSON(){
     } else if (!IgnitionOFF_ReportCabinSnapshot && IgnitionOFF_ReportRoadSnapshot) {
         IgnitionOFF_ReportImage = "SingleADAS";
     } else if (IgnitionOFF_ReportCabinTimelapse && IgnitionOFF_ReportRoadTimelapse) {
-        IgnitionOFF_ReportImage = "BothTimelaps";
+        IgnitionOFF_ReportImage = "BothTimelapse";
     } else if (IgnitionOFF_ReportCabinTimelapse && !IgnitionOFF_ReportRoadTimelapse) {
         IgnitionOFF_ReportImage = "TimelapseDMS";
     } else if (!IgnitionOFF_ReportCabinTimelapse && IgnitionOFF_ReportRoadTimelapse) {
@@ -733,7 +733,7 @@ function generate_FS10_JSON(){
     } else if (!MovementStarted_ReportCabinSnapshot && MovementStarted_ReportRoadSnapshot) {
         MovementStarted_ReportImage = "SingleADAS";
     } else if (MovementStarted_ReportCabinTimelapse && MovementStarted_ReportRoadTimelapse) {
-        MovementStarted_ReportImage = "BothTimelaps";
+        MovementStarted_ReportImage = "BothTimelapse";
     } else if (MovementStarted_ReportCabinTimelapse && !MovementStarted_ReportRoadTimelapse) {
         MovementStarted_ReportImage = "TimelapseDMS";
     } else if (!MovementStarted_ReportCabinTimelapse && MovementStarted_ReportRoadTimelapse) {
@@ -767,7 +767,7 @@ function generate_FS10_JSON(){
     } else if (!MovementStopped_ReportCabinSnapshot && MovementStopped_ReportRoadSnapshot) {
         MovementStopped_ReportImage = "SingleADAS";
     } else if (MovementStopped_ReportCabinTimelapse && MovementStopped_ReportRoadTimelapse) {
-        MovementStopped_ReportImage = "BothTimelaps";
+        MovementStopped_ReportImage = "BothTimelapse";
     } else if (MovementStopped_ReportCabinTimelapse && !MovementStopped_ReportRoadTimelapse) {
         MovementStopped_ReportImage = "TimelapseDMS";
     } else if (!MovementStopped_ReportCabinTimelapse && MovementStopped_ReportRoadTimelapse) {
@@ -801,7 +801,7 @@ function generate_FS10_JSON(){
     } else if (!Heartbeat_ReportCabinSnapshot && Heartbeat_ReportRoadSnapshot) {
         Heartbeat_ReportImage = "SingleADAS";
     } else if (Heartbeat_ReportCabinTimelapse && Heartbeat_ReportRoadTimelapse) {
-        Heartbeat_ReportImage = "BothTimelaps";
+        Heartbeat_ReportImage = "BothTimelapse";
     } else if (Heartbeat_ReportCabinTimelapse && !Heartbeat_ReportRoadTimelapse) {
         Heartbeat_ReportImage = "TimelapseDMS";
     } else if (!Heartbeat_ReportCabinTimelapse && Heartbeat_ReportRoadTimelapse) {
@@ -835,7 +835,7 @@ function generate_FS10_JSON(){
     } else if (!GPSstatusUpdate_ReportCabinSnapshot && GPSstatusUpdate_ReportRoadSnapshot) {
         GPSstatusUpdate_ReportImage = "SingleADAS";
     } else if (GPSstatusUpdate_ReportCabinTimelapse && GPSstatusUpdate_ReportRoadTimelapse) {
-        GPSstatusUpdate_ReportImage = "BothTimelaps";
+        GPSstatusUpdate_ReportImage = "BothTimelapse";
     } else if (GPSstatusUpdate_ReportCabinTimelapse && !GPSstatusUpdate_ReportRoadTimelapse) {
         GPSstatusUpdate_ReportImage = "TimelapseDMS";
     } else if (!GPSstatusUpdate_ReportCabinTimelapse && GPSstatusUpdate_ReportRoadTimelapse) {
@@ -869,7 +869,7 @@ function generate_FS10_JSON(){
     } else if (!TripPath_ReportCabinSnapshot && TripPath_ReportRoadSnapshot) {
         TripPath_ReportImage = "SingleADAS";
     } else if (TripPath_ReportCabinTimelapse && TripPath_ReportRoadTimelapse) {
-        TripPath_ReportImage = "BothTimelaps";
+        TripPath_ReportImage = "BothTimelapse";
     } else if (TripPath_ReportCabinTimelapse && !TripPath_ReportRoadTimelapse) {
         TripPath_ReportImage = "TimelapseDMS";
     } else if (!TripPath_ReportCabinTimelapse && TripPath_ReportRoadTimelapse) {
@@ -905,7 +905,7 @@ function generate_FS10_JSON(){
     } else if (!CameraCalibrationCompleted_ReportCabinSnapshot && CameraCalibrationCompleted_ReportRoadSnapshot) {
         CameraCalibrationCompleted_ReportImage = "SingleADAS";
     } else if (CameraCalibrationCompleted_ReportCabinTimelapse && CameraCalibrationCompleted_ReportRoadTimelapse) {
-        CameraCalibrationCompleted_ReportImage = "BothTimelaps";
+        CameraCalibrationCompleted_ReportImage = "BothTimelapse";
     } else if (CameraCalibrationCompleted_ReportCabinTimelapse && !CameraCalibrationCompleted_ReportRoadTimelapse) {
         CameraCalibrationCompleted_ReportImage = "TimelapseDMS";
     } else if (!CameraCalibrationCompleted_ReportCabinTimelapse && CameraCalibrationCompleted_ReportRoadTimelapse) {
@@ -939,7 +939,7 @@ function generate_FS10_JSON(){
     } else if (!CameraCalibrationFailed_ReportCabinSnapshot && CameraCalibrationFailed_ReportRoadSnapshot) {
         CameraCalibrationFailed_ReportImage = "SingleADAS";
     } else if (CameraCalibrationFailed_ReportCabinTimelapse && CameraCalibrationFailed_ReportRoadTimelapse) {
-        CameraCalibrationFailed_ReportImage = "BothTimelaps";
+        CameraCalibrationFailed_ReportImage = "BothTimelapse";
     } else if (CameraCalibrationFailed_ReportCabinTimelapse && !CameraCalibrationFailed_ReportRoadTimelapse) {
         CameraCalibrationFailed_ReportImage = "TimelapseDMS";
     } else if (!CameraCalibrationFailed_ReportCabinTimelapse && CameraCalibrationFailed_ReportRoadTimelapse) {
@@ -973,7 +973,7 @@ function generate_FS10_JSON(){
     } else if (!AccelerometerCalibrationCompleted_ReportCabinSnapshot && AccelerometerCalibrationCompleted_ReportRoadSnapshot) {
         AccelerometerCalibrationCompleted_ReportImage = "SingleADAS";
     } else if (AccelerometerCalibrationCompleted_ReportCabinTimelapse && AccelerometerCalibrationCompleted_ReportRoadTimelapse) {
-        AccelerometerCalibrationCompleted_ReportImage = "BothTimelaps";
+        AccelerometerCalibrationCompleted_ReportImage = "BothTimelapse";
     } else if (AccelerometerCalibrationCompleted_ReportCabinTimelapse && !AccelerometerCalibrationCompleted_ReportRoadTimelapse) {
         AccelerometerCalibrationCompleted_ReportImage = "TimelapseDMS";
     } else if (!AccelerometerCalibrationCompleted_ReportCabinTimelapse && AccelerometerCalibrationCompleted_ReportRoadTimelapse) {
@@ -1007,7 +1007,7 @@ function generate_FS10_JSON(){
     } else if (!EnteredSleepMode_ReportCabinSnapshot && EnteredSleepMode_ReportRoadSnapshot) {
         EnteredSleepMode_ReportImage = "SingleADAS";
     } else if (EnteredSleepMode_ReportCabinTimelapse && EnteredSleepMode_ReportRoadTimelapse) {
-        EnteredSleepMode_ReportImage = "BothTimelaps";
+        EnteredSleepMode_ReportImage = "BothTimelapse";
     } else if (EnteredSleepMode_ReportCabinTimelapse && !EnteredSleepMode_ReportRoadTimelapse) {
         EnteredSleepMode_ReportImage = "TimelapseDMS";
     } else if (!EnteredSleepMode_ReportCabinTimelapse && EnteredSleepMode_ReportRoadTimelapse) {
@@ -1041,7 +1041,7 @@ function generate_FS10_JSON(){
     } else if (!FwUpdateStarted_ReportCabinSnapshot && FwUpdateStarted_ReportRoadSnapshot) {
         FwUpdateStarted_ReportImage = "SingleADAS";
     } else if (FwUpdateStarted_ReportCabinTimelapse && FwUpdateStarted_ReportRoadTimelapse) {
-        FwUpdateStarted_ReportImage = "BothTimelaps";
+        FwUpdateStarted_ReportImage = "BothTimelapse";
     } else if (FwUpdateStarted_ReportCabinTimelapse && !FwUpdateStarted_ReportRoadTimelapse) {
         FwUpdateStarted_ReportImage = "TimelapseDMS";
     } else if (!FwUpdateStarted_ReportCabinTimelapse && FwUpdateStarted_ReportRoadTimelapse) {
@@ -1075,7 +1075,7 @@ function generate_FS10_JSON(){
     } else if (!FwUpdateCompleted_ReportCabinSnapshot && FwUpdateCompleted_ReportRoadSnapshot) {
         FwUpdateCompleted_ReportImage = "SingleADAS";
     } else if (FwUpdateCompleted_ReportCabinTimelapse && FwUpdateCompleted_ReportRoadTimelapse) {
-        FwUpdateCompleted_ReportImage = "BothTimelaps";
+        FwUpdateCompleted_ReportImage = "BothTimelapse";
     } else if (FwUpdateCompleted_ReportCabinTimelapse && !FwUpdateCompleted_ReportRoadTimelapse) {
         FwUpdateCompleted_ReportImage = "TimelapseDMS";
     } else if (!FwUpdateCompleted_ReportCabinTimelapse && FwUpdateCompleted_ReportRoadTimelapse) {
@@ -1109,7 +1109,7 @@ function generate_FS10_JSON(){
     } else if (!FwUpdateFailed_ReportCabinSnapshot && FwUpdateFailed_ReportRoadSnapshot) {
         FwUpdateFailed_ReportImage = "SingleADAS";
     } else if (FwUpdateFailed_ReportCabinTimelapse && FwUpdateFailed_ReportRoadTimelapse) {
-        FwUpdateFailed_ReportImage = "BothTimelaps";
+        FwUpdateFailed_ReportImage = "BothTimelapse";
     } else if (FwUpdateFailed_ReportCabinTimelapse && !FwUpdateFailed_ReportRoadTimelapse) {
         FwUpdateFailed_ReportImage = "TimelapseDMS";
     } else if (!FwUpdateFailed_ReportCabinTimelapse && FwUpdateFailed_ReportRoadTimelapse) {
@@ -1143,7 +1143,7 @@ function generate_FS10_JSON(){
     } else if (!SystemBoot_ReportCabinSnapshot && SystemBoot_ReportRoadSnapshot) {
         SystemBoot_ReportImage = "SingleADAS";
     } else if (SystemBoot_ReportCabinTimelapse && SystemBoot_ReportRoadTimelapse) {
-        SystemBoot_ReportImage = "BothTimelaps";
+        SystemBoot_ReportImage = "BothTimelapse";
     } else if (SystemBoot_ReportCabinTimelapse && !SystemBoot_ReportRoadTimelapse) {
         SystemBoot_ReportImage = "TimelapseDMS";
     } else if (!SystemBoot_ReportCabinTimelapse && SystemBoot_ReportRoadTimelapse) {
@@ -1177,7 +1177,7 @@ function generate_FS10_JSON(){
     } else if (!SystemBootFailure_ReportCabinSnapshot && SystemBootFailure_ReportRoadSnapshot) {
         SystemBootFailure_ReportImage = "SingleADAS";
     } else if (SystemBootFailure_ReportCabinTimelapse && SystemBootFailure_ReportRoadTimelapse) {
-        SystemBootFailure_ReportImage = "BothTimelaps";
+        SystemBootFailure_ReportImage = "BothTimelapse";
     } else if (SystemBootFailure_ReportCabinTimelapse && !SystemBootFailure_ReportRoadTimelapse) {
         SystemBootFailure_ReportImage = "TimelapseDMS";
     } else if (!SystemBootFailure_ReportCabinTimelapse && SystemBootFailure_ReportRoadTimelapse) {
@@ -1211,7 +1211,7 @@ function generate_FS10_JSON(){
     } else if (!ExternalEventTriggering_ReportCabinSnapshot && ExternalEventTriggering_ReportRoadSnapshot) {
         ExternalEventTriggering_ReportImage = "SingleADAS";
     } else if (ExternalEventTriggering_ReportCabinTimelapse && ExternalEventTriggering_ReportRoadTimelapse) {
-        ExternalEventTriggering_ReportImage = "BothTimelaps";
+        ExternalEventTriggering_ReportImage = "BothTimelapse";
     } else if (ExternalEventTriggering_ReportCabinTimelapse && !ExternalEventTriggering_ReportRoadTimelapse) {
         ExternalEventTriggering_ReportImage = "TimelapseDMS";
     } else if (!ExternalEventTriggering_ReportCabinTimelapse && ExternalEventTriggering_ReportRoadTimelapse) {
@@ -1245,7 +1245,7 @@ function generate_FS10_JSON(){
     } else if (!ApplicationError_ReportCabinSnapshot && ApplicationError_ReportRoadSnapshot) {
         ApplicationError_ReportImage = "SingleADAS";
     } else if (ApplicationError_ReportCabinTimelapse && ApplicationError_ReportRoadTimelapse) {
-        ApplicationError_ReportImage = "BothTimelaps";
+        ApplicationError_ReportImage = "BothTimelapse";
     } else if (ApplicationError_ReportCabinTimelapse && !ApplicationError_ReportRoadTimelapse) {
         ApplicationError_ReportImage = "TimelapseDMS";
     } else if (!ApplicationError_ReportCabinTimelapse && ApplicationError_ReportRoadTimelapse) {
@@ -1279,7 +1279,7 @@ function generate_FS10_JSON(){
     } else if (!CameraError_ReportCabinSnapshot && CameraError_ReportRoadSnapshot) {
         CameraError_ReportImage = "SingleADAS";
     } else if (CameraError_ReportCabinTimelapse && CameraError_ReportRoadTimelapse) {
-        CameraError_ReportImage = "BothTimelaps";
+        CameraError_ReportImage = "BothTimelapse";
     } else if (CameraError_ReportCabinTimelapse && !CameraError_ReportRoadTimelapse) {
         CameraError_ReportImage = "TimelapseDMS";
     } else if (!CameraError_ReportCabinTimelapse && CameraError_ReportRoadTimelapse) {
@@ -1313,7 +1313,7 @@ function generate_FS10_JSON(){
     } else if (!SystemOK_ReportCabinSnapshot && SystemOK_ReportRoadSnapshot) {
         SystemOK_ReportImage = "SingleADAS";
     } else if (SystemOK_ReportCabinTimelapse && SystemOK_ReportRoadTimelapse) {
-        SystemOK_ReportImage = "BothTimelaps";
+        SystemOK_ReportImage = "BothTimelapse";
     } else if (SystemOK_ReportCabinTimelapse && !SystemOK_ReportRoadTimelapse) {
         SystemOK_ReportImage = "TimelapseDMS";
     } else if (!SystemOK_ReportCabinTimelapse && SystemOK_ReportRoadTimelapse) {
@@ -1347,7 +1347,7 @@ function generate_FS10_JSON(){
     } else if (!SystemReset_ReportCabinSnapshot && SystemReset_ReportRoadSnapshot) {
         SystemReset_ReportImage = "SingleADAS";
     } else if (SystemReset_ReportCabinTimelapse && SystemReset_ReportRoadTimelapse) {
-        SystemReset_ReportImage = "BothTimelaps";
+        SystemReset_ReportImage = "BothTimelapse";
     } else if (SystemReset_ReportCabinTimelapse && !SystemReset_ReportRoadTimelapse) {
         SystemReset_ReportImage = "TimelapseDMS";
     } else if (!SystemReset_ReportCabinTimelapse && SystemReset_ReportRoadTimelapse) {
@@ -1381,7 +1381,7 @@ function generate_FS10_JSON(){
     } else if (!SystemError_ReportCabinSnapshot && SystemError_ReportRoadSnapshot) {
         SystemError_ReportImage = "SingleADAS";
     } else if (SystemError_ReportCabinTimelapse && SystemError_ReportRoadTimelapse) {
-        SystemError_ReportImage = "BothTimelaps";
+        SystemError_ReportImage = "BothTimelapse";
     } else if (SystemError_ReportCabinTimelapse && !SystemError_ReportRoadTimelapse) {
         SystemError_ReportImage = "TimelapseDMS";
     } else if (!SystemError_ReportCabinTimelapse && SystemError_ReportRoadTimelapse) {
@@ -1415,7 +1415,7 @@ function generate_FS10_JSON(){
     } else if (!MCULOG_ReportCabinSnapshot && MCULOG_ReportRoadSnapshot) {
         MCULOG_ReportImage = "SingleADAS";
     } else if (MCULOG_ReportCabinTimelapse && MCULOG_ReportRoadTimelapse) {
-        MCULOG_ReportImage = "BothTimelaps";
+        MCULOG_ReportImage = "BothTimelapse";
     } else if (MCULOG_ReportCabinTimelapse && !MCULOG_ReportRoadTimelapse) {
         MCULOG_ReportImage = "TimelapseDMS";
     } else if (!MCULOG_ReportCabinTimelapse && MCULOG_ReportRoadTimelapse) {
@@ -1884,24 +1884,24 @@ function generate_FS10_JSON(){
     //var CalibrationReferencePoint_x = parseFloat(document.getElementById("CalibrationReferencePoint_x").value).toFixed(1);
     //var CalibrationReferencePoint_y = parseFloat(document.getElementById("CalibrationReferencePoint_y").value).toFixed(1);
     //var CalibrationReferencePoint_z = parseFloat(document.getElementById("CalibrationReferencePoint_z").value).toFixed(1);
-    var CameraStatusBackoffTimer = parseInt(document.getElementById("SI_cameraErrorFeedbackBackoffNumber").value);
-    var DistractionBackoffTimer = parseInt(document.getElementById("DMS_driverDistractedFeedbackBackoffNumber").value);
+    var CameraStatusBackoffTimer = parseInt(30 * document.getElementById("SI_cameraErrorFeedbackBackoffNumber").value);
+    var DistractionBackoffTimer = parseInt(30 * document.getElementById("DMS_driverDistractedFeedbackBackoffNumber").value);
     var DistractionSpeedThreshold = parseInt(document.getElementById("DMS_driverDistractedSpeedThresholdNumber").value);
     var DistractionTurnGraceDuration = parseFloat(document.getElementById("DMS_driverDistractedTurnGraceTimerNumber").value).toFixed(1);
     var DriverChangeMinDuration = parseFloat(document.getElementById("DMS_driverChangedMinimumNumber").value).toFixed(1);
-    var DrowsinessBackoffTimer = parseInt(document.getElementById("DMS_drowsinessFeedbackBackoffNumber").value);
+    var DrowsinessBackoffTimer = parseInt(30 * document.getElementById("DMS_drowsinessFeedbackBackoffNumber").value);
     var DrowsinessSpeedThreshold = parseInt(document.getElementById("DMS_drowsinessSpeedThresholdNumber").value);
     var EnableYawnBasedDrowsiness = document.getElementById("DMS_drowsinessYawnEnableCheckbox").checked;
-    var PhoneBackoffTimer = parseInt(document.getElementById("DMS_phoneUseFeedbackBackoffNumber").value);
+    var PhoneBackoffTimer = parseInt(30 * document.getElementById("DMS_phoneUseFeedbackBackoffNumber").value);
     var PhoneSpeedThreshold = parseInt(document.getElementById("DMS_phoneUseSpeedThresholdNumber").value);
     var RoadCenterPitchNeg = parseFloat(document.getElementById("RoadCenterPitchNeg").value).toFixed(1);
     var RoadCenterPitchPos = parseFloat(document.getElementById("RoadCenterPitchPos").value).toFixed(1);
     var RoadCenterYawNeg = parseFloat(document.getElementById("RoadCenterYawNeg").value).toFixed(1);
     var RoadCenterYawPos = parseFloat(document.getElementById("RoadCenterYawPos").value).toFixed(1);
-    var SeatbeltBackoffTimer = parseInt(document.getElementById("DMS_seatbeltFeedbackBackoffNumber").value);
+    var SeatbeltBackoffTimer = parseInt(30 * document.getElementById("DMS_seatbeltFeedbackBackoffNumber").value);
     var SeatbeltSpeedThreshold = parseInt(document.getElementById("DMS_seatbeltSpeedThresholdNumber").value);
-    var SleepBackoffTimer = parseInt(document.getElementById("DMS_driverAsleepFeedbackBackoffNumber").value);
-    var SmokingBackoffTimer = parseInt(document.getElementById("DMS_smokingFeedbackBackoffNumber").value);
+    var SleepBackoffTimer = parseInt(30 * document.getElementById("DMS_driverAsleepFeedbackBackoffNumber").value);
+    var SmokingBackoffTimer = parseInt(30 * document.getElementById("DMS_smokingFeedbackBackoffNumber").value);
     var SmokingSpeedThreshold = parseInt(document.getElementById("DMS_smokingSpeedThresholdNumber").value);
     var AsleepOTAClosure = document.getElementById("DMS_driverAsleepClosureEventCheckbox");
     var DriverDistractedOTAClosure = document.getElementById("DMS_driverDistractedClosureEventCheckbox");
@@ -1932,7 +1932,7 @@ function generate_FS10_JSON(){
     var IGNOnInterval = parseInt(document.getElementById("TES_heartbeatIgnitionOnIntervalNumber").value);
     var TimeToWaitGPSFix = parseInt(document.getElementById("TES_heartbeatTimeToWaitGPSFixNumber").value);
     var DistractionTurnGraceDuration = parseFloat(document.getElementById("DMS_driverDistractedTurnGraceTimerNumber").value).toFixed(1);
-    var TrackingGraceTimer = parseInt(document.getElementById("DMS_driverDisappearedTrackingGraceTimerNumber").value);
+    var TrackingGraceTimer = parseInt(30 * document.getElementById("DMS_driverDisappearedTrackingGraceTimerNumber").value);
     var DriverChangeMinDuration = parseFloat(document.getElementById("DMS_driverChangedMinimumNumber").value).toFixed(1);
     var SeatbeltAlertTime = parseFloat(document.getElementById("DMS_seatbeltAlertTimeNumber").value).toFixed(1);
     var SleepDuration = parseFloat(document.getElementById("DMS_driverAsleepSleepDurationNumber").value).toFixed(1);
@@ -3144,7 +3144,7 @@ function updateMediaUpload(id, JSONdata, paramPath) {
             updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_ON.png');
             footageValue = "None";
             break;
-        case "BothTimelaps":
+        case "BothTimelapse":
             updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_ON.png');
             updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_ON.png');
             footageValue = "None";
@@ -3747,38 +3747,7 @@ function updateNumericValue(selectId, JSONdata, propertyPath, nominal, min_Lim, 
     selectElement.value = selectValue;
 }
 
-function updateSliderControlInteger(id, JSONdata, propertyPath) {
-    var segments = propertyPath.split('.');
-    var value = JSONdata;
-    for (var i = 0; i < segments.length; i++) {
-        var segment = segments[i];
-        if (value && segment in value) {
-            value = value[segment];
-        } else {
-            value = NaN;
-            break;
-        }
-    }
-    const range = document.getElementById(id + "Range");
-    const number = document.getElementById(id + "Number");
-    let minValue = parseInt(range.min, 10);
-    let maxValue = parseInt(range.max, 10);
-    if (!isNaN(value)) {
-        value = parseInt(value, 10);
-        if (value < minValue) {
-            value = minValue;
-        } else if (value > maxValue) {
-            value = maxValue;
-        }
-    } else {
-        value = parseInt((maxValue - minValue) / 2 + minValue, 10);
-    }
-    range.value = value;
-    number.value = value;
-    updateSliderControlSummary(id + "Summary", value);
-}
-
-function updateSliderControlIntegerWithScale(id, JSONdata, propertyPath, scale) {
+function updateSliderControlInteger(id, JSONdata, propertyPath, scale = 1) {
     var segments = propertyPath.split('.');
     var value = JSONdata;
     for (var i = 0; i < segments.length; i++) {
@@ -4049,7 +4018,7 @@ function updateComboBox_fromJSON(JSONdata){
     updateSliderControlInteger("DMS_seatbeltSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SeatbeltSpeedThreshold");
     updateSliderControlInteger("DMS_smokingSpeedThreshold", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SmokingSpeedThreshold");
     updateSliderControlDecimal("DMS_driverDistractedTurnGraceTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionTurnGraceDuration");
-    updateSliderControlInteger("DMS_driverDisappearedTrackingGraceTimer", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.TrackingGraceTimer");
+    updateSliderControlInteger("DMS_driverDisappearedTrackingGraceTimer", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.TrackingGraceTimer", 1 / 30);
     updateSliderControlDecimal("DMS_driverChangedMinimum", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DriverChangeMinDuration");
     updateSliderControlInteger("DMS_seatbeltAlertTime", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.SeatbeltAlertTime");
     updateSliderControlDecimal("DMS_driverAsleepSleepDuration", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.SleepDuration");
@@ -4075,13 +4044,13 @@ function updateComboBox_fromJSON(JSONdata){
     //updateNumericValue("LightDrowsinessOTABackOff", JSONdata, "ExtraParameters.OTAMessageBackOff.LightDrowsiness", 15, 0, 30);
 
     // Backoff Timers
-    updateSliderControlInteger("SI_cameraErrorFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.CameraStatusBackoffTimer");
-    updateSliderControlInteger("DMS_driverDistractedFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionBackoffTimer");
-    updateSliderControlInteger("DMS_drowsinessFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DrowsinessBackoffTimer");
-    updateSliderControlInteger("DMS_phoneUseFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.PhoneBackoffTimer");
-    updateSliderControlInteger("DMS_seatbeltFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SeatbeltBackoffTimer");
-    updateSliderControlInteger("DMS_driverAsleepFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SleepBackoffTimer");
-    updateSliderControlInteger("DMS_smokingFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SmokingBackoffTimer");
+    updateSliderControlInteger("SI_cameraErrorFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.CameraStatusBackoffTimer", 1 / 30);
+    updateSliderControlInteger("DMS_driverDistractedFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DistractionBackoffTimer", 1 / 30);
+    updateSliderControlInteger("DMS_drowsinessFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.DrowsinessBackoffTimer", 1 / 30);
+    updateSliderControlInteger("DMS_phoneUseFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.PhoneBackoffTimer", 1 / 30);
+    updateSliderControlInteger("DMS_seatbeltFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SeatbeltBackoffTimer", 1 / 30);
+    updateSliderControlInteger("DMS_driverAsleepFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SleepBackoffTimer", 1 / 30);
+    updateSliderControlInteger("DMS_smokingFeedbackBackoff", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.SmokingBackoffTimer", 1 / 30);
     //updateNumericValue("LightDrowsinessBackoffTimer", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.LightDrowsinessBackoffTimer", 900, 30, 1800);
 
     //Communication Watchdog
@@ -4093,7 +4062,7 @@ function updateComboBox_fromJSON(JSONdata){
     updateSliderControlInteger("SI_communicationsWatchdogSocketResetTime", JSONdata, "CommunicationWatchdog.SocketResetTimeInMin");
 
     //Heartbeat Configuration
-    updateSliderControlIntegerWithScale("TES_heartbeatIgnitionOffInterval", JSONdata, "ExtraParameters.HeartbeatConfig.IGNOffInterval", 1 / 60);
+    updateSliderControlInteger("TES_heartbeatIgnitionOffInterval", JSONdata, "ExtraParameters.HeartbeatConfig.IGNOffInterval", 1 / 60);
     updateSliderControlInteger("TES_heartbeatIgnitionOnInterval", JSONdata, "ExtraParameters.HeartbeatConfig.IGNOnInterval");
     updateSliderControlInteger("TES_heartbeatTimeToWaitGPSFix", JSONdata, "ExtraParameters.HeartbeatConfig.TimeToWaitGPSFix");
     updateSliderControlInteger("TES_heartbeatGPS_FixLossOrRecovery", JSONdata, "GPSFixLossOrRecoveryTime");

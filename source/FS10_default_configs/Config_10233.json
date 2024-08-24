@@ -191,7 +191,7 @@
             "FeedbackSpeech": false,
             "FeedbackVisual": false,
             "ReportEvent": true,
-            "ReportFootage": "Thanks",
+            "ReportFootage": "None",
             "ReportImage": "None"
         },
         "ExternalEventTriggering": {

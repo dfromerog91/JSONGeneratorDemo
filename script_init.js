@@ -732,7 +732,7 @@ function check_TL_selection(ReportImage_select, ReportVideo_select){
     var ReportImage_box = document.getElementById(ReportVideo_select);
     var ReportImage_value = document.getElementById(ReportImage_select).value;
     var ReportVideo_value = document.getElementById(ReportVideo_select).value;
-    if (ReportImage_value === "TimelapseDMS" || ReportImage_value === "TimelapseADAS" || ReportImage_value === "BothTimelaps"){
+    if (ReportImage_value === "TimelapseDMS" || ReportImage_value === "TimelapseADAS" || ReportImage_value === "BothTimelapse"){
         if(ReportVideo_value !== "None"){
             ReportImage_box.style.backgroundColor = "#FFBEBE";
             ReportImage_box.style.textDecoration = "line-through";
