@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('DMS_seatbeltMessageBackoff', 0, 30, '136px', 10);
     initializeDial('DMS_seatbeltFeedbackBackoff', 1, 60, '136px', 30);
     initializeDial('DMS_seatbeltSpeedThreshold', 0, 50, '136px', 0);
-    initializeDial('DMS_seatbeltAlertTime', 5, 60, '192px', 15);
+    initializeDial('DMS_seatbeltAlertTime', 5, 60, '136px', 15);
 
     initializeDial('DMS_smokingMessageBackoff', 0, 30, '136px', 5);
     initializeDial('DMS_smokingFeedbackBackoff', 1, 60, '136px', 30);

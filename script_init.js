@@ -772,35 +772,31 @@ function changeAPNFormat(element_ID, default_val) {
 function update_ADAS_Select() {
     var deviceTypeRadioButtons = document.getElementsByName("deviceType");
     var ADAS_LDW_ActivationCheckbox = document.getElementById("ADAS_LDW_ActivationCheckbox");
-    //var adas_1x2_Select = document.getElementById("ADAS_1x2_select");
-    //var adas_1x3_Select = document.getElementById("ADAS_1x3_select");
     var ADAS_HMW_ActivationCheckbox = document.getElementById("ADAS_HMW_ActivationCheckbox");
     var ADAS_UFCW_ActivationCheckbox = document.getElementById("ADAS_UFCW_ActivationCheckbox");
     var ADAS_FCW_ActivationCheckbox = document.getElementById("ADAS_FCW_ActivationCheckbox");
-    //var adas_1x7_Select = document.getElementById("ADAS_1x7_select");
     var ADAS_PCW_ActivationCheckbox = document.getElementById("ADAS_PCW_ActivationCheckbox");
+    ADAS_LDW_ActivationCheckbox.disabled = false;
+    ADAS_HMW_ActivationCheckbox.disabled = false;
+    ADAS_UFCW_ActivationCheckbox.disabled = false;
+    ADAS_FCW_ActivationCheckbox.disabled = false;
+    ADAS_PCW_ActivationCheckbox.disabled = false;
     for (var i = 0; i < deviceTypeRadioButtons.length; i++) {
         if (deviceTypeRadioButtons[i].checked) {
             if (deviceTypeRadioButtons[i].value === "Disabled" || deviceTypeRadioButtons[i].value === "DVR") {
                 ADAS_LDW_ActivationCheckbox.checked = false;
-                //adas_1x2_Select.value = "false";
-                //adas_1x3_Select.value = "false";
+                ADAS_LDW_ActivationCheckbox.disabled = true;
                 ADAS_HMW_ActivationCheckbox.checked = false;
+                ADAS_HMW_ActivationCheckbox.disabled = true;
                 ADAS_UFCW_ActivationCheckbox.checked = false;
+                ADAS_UFCW_ActivationCheckbox.disabled = true;
                 ADAS_FCW_ActivationCheckbox.checked = false;
-                //adas_1x7_Select.value = "false";
+                ADAS_FCW_ActivationCheckbox.disabled = true;
                 ADAS_PCW_ActivationCheckbox.checked = false;
+                ADAS_PCW_ActivationCheckbox.disabled = true;
                 break;
-                //changeBackgroundColor('ADAS_LDW_Activation', 'ADAS_LDW_ActivationCheckbox');
-                //changeBackgroundColor('ADAS_RedLight_Activation', 'ADAS_1x2_select');
-                //changeBackgroundColor('ADAS_StopDisobeyed_Activation', 'ADAS_1x3_select');
-                //changeBackgroundColor('ADAS_HMW_Activation', 'ADAS_HMW_ActivationCheckbox');
-                //changeBackgroundColor('ADAS_UrbanFCW_Activation', 'ADAS_UFCW_ActivationCheckbox');
-                //changeBackgroundColor('ADAS_FCW_Activation', 'ADAS_FCW_ActivationCheckbox');
-                //changeBackgroundColor('ADAS_Overspeeding_Activation', 'ADAS_1x7_select');
-                //changeBackgroundColor('ADAS_PCW_Activation', 'ADAS_PCW_ActivationCheckbox');
             }
-        }
+        }        
     }
     toggleMenuActivation("ADAS_LDW_");
     toggleMenuActivation("ADAS_HMW_");

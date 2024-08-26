@@ -2919,7 +2919,7 @@ function updateSelectValue(selectId, JSONdata, propertyPath) {
     var value = JSONdata;
     for (var i = 0; i < segments.length; i++) {
         var segment = segments[i];
-        if (segment in value) {
+        if (value && segment in value) {
             value = value[segment];
         }
         else {
@@ -2936,7 +2936,7 @@ function updateCheckboxCheckedState(id, JSONdata, propertyPath, imgOnSrc = null,
     var value = JSONdata;
     for (var i = 0; i < segments.length; i++) {
         var segment = segments[i];
-        if (segment in value) {
+        if (value && segment in value) {
             value = value[segment];
         } else {
             value = false;
@@ -2944,7 +2944,7 @@ function updateCheckboxCheckedState(id, JSONdata, propertyPath, imgOnSrc = null,
         }
     }
     var checkboxElement = document.getElementById(id + 'Checkbox');
-    checkboxElement.checked = value;
+    checkboxElement.checked = (value === true);
     if (checkboxElement.checked) {
         updateSummaryCell(id + 'Summary', true, imgOnSrc);
     } else {
@@ -2958,7 +2958,7 @@ function updateDetectionClosureEvent(id, JSONdata, detectionPath, closurePath, c
     var detectionValue = JSONdata;
     for (var i = 0; i < detectionSegments.length; i++) {
         var segment = detectionSegments[i];
-        if (segment in detectionValue) {
+        if (detectionValue && segment in detectionValue) {
             detectionValue = detectionValue[segment];
         } else {
             detectionValue = false;
@@ -2977,7 +2977,7 @@ function updateDetectionClosureEvent(id, JSONdata, detectionPath, closurePath, c
             closureValue = JSONdata;
             for (var i = 0; i < closureSegments.length; i++) {
                 var segment = closureSegments[i];
-                if (segment in closureValue) {
+                if (closureValue && segment in closureValue) {
                     closureValue = closureValue[segment];
                 } else {
                     closureValue = false;
@@ -3011,7 +3011,7 @@ function updateCheckAndImageButton(button, JSONdata, propertyPath, imgOnSrc, img
     var value = JSONdata;
     for (var i = 0; i < segments.length; i++) {
         var segment = segments[i];
-        if (segment in value) {
+        if (value && segment in value) {
             value = value[segment];
         } else {
             value = false;
@@ -3023,7 +3023,7 @@ function updateCheckAndImageButton(button, JSONdata, propertyPath, imgOnSrc, img
     if (buttonCheckbox.disabled) {
         return;
     }
-    buttonCheckbox.checked = value;
+    buttonCheckbox.checked = (value === true);
     if (buttonCheckbox.checked) {
         buttonId.src = imgOnSrc;
         updateSummaryCell(button + 'Summary', true, imgOnSrc);
@@ -3085,7 +3085,7 @@ function updateMediaUpload(id, JSONdata, paramPath) {
     var imageValue = JSONdata;
     for (var i = 0; i < imageSegments.length; i++) {
         var segment = imageSegments[i];
-        if (segment in imageValue) {
+        if (imageValue && segment in imageValue) {
             imageValue = imageValue[segment];
         } else {
             imageValue = "None";
@@ -3096,12 +3096,18 @@ function updateMediaUpload(id, JSONdata, paramPath) {
     var footageValue = JSONdata;
     for (var i = 0; i < footageSegments.length; i++) {
         var segment = footageSegments[i];
-        if (segment in footageValue) {
+        if (footageValue && segment in footageValue) {
             footageValue = footageValue[segment];
         } else {
             footageValue = "None";
             break;
         }
+    }
+    if (imageValue === true) {
+        imageValue = "SingleDMS";
+    }
+    if (footageValue === true) {
+        footageValue = "DMS";
     }
     const enableInCabinLabel = id + 'EnableInCabin';
     const imageInCabinLabel = id + 'ReportImageInCabin';
@@ -3243,7 +3249,7 @@ function updateFeedbackOutput(id, JSONdata, propertyPath) {
     var value = JSONdata;
     for (var i = 0; i < segments.length; i++) {
         var segment = segments[i];
-        if (segment in value) {
+        if (value && segment in value) {
             value = value[segment];
         }
         else {
@@ -3252,7 +3258,16 @@ function updateFeedbackOutput(id, JSONdata, propertyPath) {
         }
     }
     var selectElement = document.getElementById(id + 'Id');
-    selectElement.value = value;
+    selectElement.value = selectElement.options[0].value;
+    if (value === true) {
+        value = "GPO";
+    }
+    for (var i = 0; i < selectElement.options.length; i++) {
+        if (selectElement.options[i].value === value) {
+            selectElement.value = value;
+            break;
+        }
+    }
     updateFeedbackOutputSummary(id);
 }
 
@@ -3261,7 +3276,7 @@ function updateSelect(id, JSONdata, propertyPath, defaultReturn) {
     var value = JSONdata;
     for (var i = 0; i < segments.length; i++) {
         var segment = segments[i];
-        if (segment in value) {
+        if (value && segment in value) {
             value = value[segment];
         }
         else {
@@ -3272,17 +3287,13 @@ function updateSelect(id, JSONdata, propertyPath, defaultReturn) {
     value = String(value);
     defaultReturn = String(defaultReturn);
     var selectElement = document.getElementById(id);
-    var optionExists = false;
+    selectElement.value = defaultReturn;
     for (var i = 0; i < selectElement.options.length; i++) {
-        if (selectElement.options[i].value == value) {
-            optionExists = true;
+        if (selectElement.options[i].value === value) {
+            selectElement.value = value;
             break;
         }
     }
-    if (!optionExists) {
-        value = defaultReturn;
-    }
-    selectElement.value = value;
 }
 
 function updateFeedbackOutputSummary (paramId) {

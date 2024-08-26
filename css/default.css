@@ -1055,7 +1055,7 @@ input:checked + .slider:before {
 }
 
 .disabled-summary-cell {
-	background-color: rgb(211, 211, 211);
+	background-color: rgb(170, 170, 170);
 	width: 3.5%;
 	font-style: italic;
 	font-weight: normal;

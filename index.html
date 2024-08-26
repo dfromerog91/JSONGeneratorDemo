@@ -46,59 +46,119 @@
           <!---------------------------------->
           <!-----Global Feedback Parameters--->
           <!---------------------------------->
-          <table class="summary_table">
-            <tr>
-              <th style="text-align: center;" colspan="7">
-                Global Parameters for Driver's Feedback
-              </th>
-            </tr>
-            <tr>
-              <td style="text-align: center;">
-                <label style="font-size: 12px; font-weight: normal; text-align: center;" for="GP_beepsActivationCheckbox">Sound
-                  Alerts: </label>
-                <div class="container">
-                  <img id="GP_beepsActivationId" class="container_img" src="source_img/GP_Beeps_Activation_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('GP_beepsActivation', 'source_img/GP_Beeps_Activation_ON.png', 'source_img/GP_Beeps_Activation_OFF.png')">
-                  <input type="checkbox" id="GP_beepsActivationCheckbox"
-                    class="hidden-checkbox">
-                </div>
-              </td style="text-align: center;">
-              <td style="width: 25px;">
-                &nbsp;
-              </td>
-              <td style="text-align: center;">
-                <label style="font-size: 12px; font-weight: normal; text-align: center" for="GP_voiceActivationCheckbox">Voice
-                  Notification: </label>
-                <div class="container">
-                  <img id="GP_voiceActivationId" class="container_img" src="source_img/GP_Voice_Activation_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('GP_voiceActivation', 'source_img/GP_Voice_Activation_ON.png', 'source_img/GP_Voice_Activation_OFF.png')">
-                  <input type="checkbox" id="GP_voiceActivationCheckbox"
-                    class="hidden-checkbox">
-                </div>
-              </td>
-              <td style="width: 25px;">
-                &nbsp;
-              </td>
-              <td style="text-align: center;">
-                <label style="font-size: 12px; font-weight: normal; text-align: center" for="GP_LED_activationCheckbox">Driver LED:
-                </label>
-                <div class="container">
-                  <img id="GP_LED_activationId" class="container_img" src="source_img/GP_LED_Activation_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('GP_LED_activation', 'source_img/GP_LED_Activation_ON.png', 'source_img/GP_LED_Activation_OFF.png')">
-                  <input type="checkbox" id="GP_LED_activationCheckbox"
-                    class="hidden-checkbox">
-                </div>
-              </td>
-              <td style="width: 25px;">
-                &nbsp;
-              </td>
-              <td style="text-align: center;">
-                <label style="font-size: 12px;" for="GP_system_LED_activationCheckbox">System LED: </label>
-                <div class="container">
-                  <img id="GP_system_LED_activationId" class="container_img" src="source_img/GP_System_LED_Activation_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('GP_system_LED_activation', 'source_img/GP_System_LED_Activation_ON.png', 'source_img/GP_System_LED_Activation_OFF.png')">
-                  <input type="checkbox" id="GP_system_LED_activationCheckbox"
-                    class="hidden-checkbox">
-                </div>
-              </td>
-            </tr>
-          </table>
+          <!-- Global Parameters - Header -->
+          <div class="header" , id="globalParametersHeader">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center;">
+                  <img src="source_img/Global_Parameters.svg" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
+                  title="An alert that triggers when driver's eyes are closed for a pre-configured period of time">
+                  Global Parameters
+                </td>
+                <td class="col4" style="width: 5%; text-align: center;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('globalParametersSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'globalParametersHeader')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- Global Parameters - Subparams -->
+          <div id="globalParametersSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table class="summary_table">
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal">
+                      <tr>
+                        <td style="text-align: center;">
+                          <label style="font-size: 12px; font-weight: normal; text-align: center;" for="GP_beepsActivationCheckbox">Sound
+                            Alerts: </label>
+                          <div class="container">
+                            <img id="GP_beepsActivationId" class="container_img" src="source_img/GP_Beeps_Activation_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('GP_beepsActivation', 'source_img/GP_Beeps_Activation_ON.png', 'source_img/GP_Beeps_Activation_OFF.png')">
+                            <input type="checkbox" id="GP_beepsActivationCheckbox"
+                              class="hidden-checkbox">
+                          </div>
+                        </td style="text-align: center;">
+                        <td style="width: 25px;">
+                          &nbsp;
+                        </td>
+                        <td style="text-align: center;">
+                          <label style="font-size: 12px; font-weight: normal; text-align: center" for="GP_voiceActivationCheckbox">Voice
+                            Notification: </label>
+                          <div class="container">
+                            <img id="GP_voiceActivationId" class="container_img" src="source_img/GP_Voice_Activation_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('GP_voiceActivation', 'source_img/GP_Voice_Activation_ON.png', 'source_img/GP_Voice_Activation_OFF.png')">
+                            <input type="checkbox" id="GP_voiceActivationCheckbox"
+                              class="hidden-checkbox">
+                          </div>
+                        </td>
+                        <td style="width: 25px;">
+                          &nbsp;
+                        </td>
+                        <td style="text-align: center;">
+                          <label style="font-size: 12px; font-weight: normal; text-align: center" for="GP_LED_activationCheckbox">Driver LED:
+                          </label>
+                          <div class="container">
+                            <img id="GP_LED_activationId" class="container_img" src="source_img/GP_LED_Activation_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('GP_LED_activation', 'source_img/GP_LED_Activation_ON.png', 'source_img/GP_LED_Activation_OFF.png')">
+                            <input type="checkbox" id="GP_LED_activationCheckbox"
+                              class="hidden-checkbox">
+                          </div>
+                        </td>
+                        <td style="width: 25px;">
+                          &nbsp;
+                        </td>
+                        <td style="text-align: center;">
+                          <label style="font-size: 12px;" for="GP_system_LED_activationCheckbox">System LED: </label>
+                          <div class="container">
+                            <img id="GP_system_LED_activationId" class="container_img" src="source_img/GP_System_LED_Activation_OFF.png" alt="Toggle Image" onclick="toggleCheckAndImageButton('GP_system_LED_activation', 'source_img/GP_System_LED_Activation_ON.png', 'source_img/GP_System_LED_Activation_OFF.png')">
+                            <input type="checkbox" id="GP_system_LED_activationCheckbox"
+                              class="hidden-checkbox">
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal">
+                      <tr>
+                        <td rowspan="2">Vehicle Type</td>
+                        <td style="text-align: center;"><span class="coment"
+                            title="Small Vehicles for individual personal transportation purposes">Private</span></td>
+                        <td style="text-align: center;"><span class="coment" title="Light Commercial Vehicles - under 15 TON">LCV</span></td>
+                        <td style="text-align: center;"><span class="coment" title="Medium Commercial Vehicles - around 15 TON">MCV</span></td>
+                        <td style="text-align: center;"><span class="coment" title="High Commercial Vehicles - over 15 TON">HCV</span></td>
+                        <td style="text-align: center;"><span class="coment" title="Medium/ Big Vehicles for people transportation purposes">Bus</span></td>
+                      </tr>
+                      <tr>
+                        <td><img src="img/Private.png"></td>
+                        <td><img src="img/LCV.png"></td>
+                        <td><img src="img/MCV.png"></td>
+                        <td><img src="img/HCV.png"></td>
+                        <td><img src="img/BUS.png"></td>
+                      </tr>
+                      <tbody>
+                        <tr>
+                          <td>Category</td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_Private" value="Private" checked></td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_LCV" value="LCV"></td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_MCV" value="MCV"></td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_HCV" value="HCV"></td>
+                          <td><input type="radio" name="vehicleType" id="vehicleType_Bus" value="Bus"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
           <h1>DMS</h1>
           <h2 style="color: black;">(Driver Monitoring System Settings)</h2>
 
@@ -1611,6 +1671,79 @@
                     </table>
                   </td>
                 </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Road Centering Options:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal">
+                      <tr style="text-align: center;">
+                        <td style="text-align: center; background-color: #ffffff;">
+                          <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
+                            <tr>
+                              <td
+                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
+                                <img id="DMS_up_A" style="display: block; margin: 0 auto; padding: 0; border: none;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td
+                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
+                                <img id="DMS_up_B" style="display: block; margin: 0 auto; padding: 0; border: none;">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="vertical-align: top;">
+                          <label style="font-size: 2px;">&nbsp;</label>
+                          <label style="font-size: 12px;" for="RoadCenterPitchPos">Positive Pitch Angle (Up): </label>
+                          <select style="background-color: rgb(232 216 244); width: 200px" name="RoadCenterPitchPos" id="RoadCenterPitchPos"
+                            onchange="updateDMSImage()">
+                          </select>
+                          <br><br>
+                          <label style="font-size: 12px;" for="RoadCenterPitchNeg">Negative Pitch Angle (Down): </label>
+                          <select style="background-color: rgb(232 216 244); width: 200px" name="RoadCenterPitchNeg" id="RoadCenterPitchNeg"
+                            onchange="updateDMSImage()">
+                          </select>
+                          <br><br>
+                          <label style="font-size: 12px;" for="RoadCenterYawPos">Positive Yaw Angle (Right): </label>
+                          <select style="background-color: rgb(232 216 244); width: 200px;" name="RoadCenterYawPos" id="RoadCenterYawPos"
+                            onchange="updateDMSImage()">
+                          </select>
+                          <br><br>
+                          <label style="font-size: 12px;" for="RoadCenterYawNeg">Negative Yaw Angle (Left): </label>
+                          <select style="background-color: rgb(232 216 244); width: 200px" name="RoadCenterYawNeg" id="RoadCenterYawNeg"
+                            onchange="updateDMSImage()">
+                          </select>
+                          <br><br>
+                          <label style="font-size: 12px;">Max Heading Angle for Events: </label>
+                          <select name="MaxHeadingAngleForEvents" id="MaxHeadingAngleForEvents"
+                            style="background-color: rgb(232 216 244); width: 200px">
+                          </select>
+                          <br><br><br>
+                        </td>
+                        <td style="background-color: #ffffff;">
+                          <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
+                            <tr>
+                              <td
+                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
+                                <img id="DMS_side_A" style="display: block; margin: 0 auto; padding: 0; border: none;">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td
+                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
+                                <img id="DMS_side_B" style="display: block; margin: 0 auto; padding: 0; border: none;">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
               </table>
             </div>
             <h1></h1>
@@ -2550,6 +2683,13 @@
                               </td>
                             </tr>
                           </table>
+                        </td>
+                        <td>
+                          <span title="Position of the Driver&#10;inside the vehicle">Driving Position:</span>
+                          <select style="width: 100px;" name="LeftHandDrive" id="LeftHandDrive">
+                            <option value="true">Left</option>
+                            <option value="false">Right</option>
+                          </select>
                         </td>
                       </tr>
                     </table>
@@ -5169,142 +5309,6 @@
             </div>
             <h1></h1>
           </div>
-          <div class="header" , id="DMS_additionalOptionsHeader">
-            <table class="table_properties">
-              <tr style="text-align: center; ">
-                <td class="col1" style="width: 5%; text-align: center;">
-                  <img src="source_img/Additional_Options.svg" class="icon">
-                </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
-                  DMS Additional Settings
-                </td>
-                <td class="col4" style="width: 5%; text-align: center;"
-                  title="More/less options">
-                  <span class="toggle-button"
-                    onclick="toggleSubParameters('DMS_additionalOptionsSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'DMS_additionalOptionsHeader')">
-                    <img src="source_img/more_options_icon.png" alt="More Options">
-                  </span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div id="DMS_additionalOptionsSubParamsId" class="sub-parameters">
-            <h1></h1>
-            <div class="table-container">
-              <table>
-                <tr>
-                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
-                    <table class="table-internal">
-                      <tr>
-                        <td rowspan="2">Vehicle Type</td>
-                        <td style="text-align: center;"><span class="coment"
-                            title="Small Vehicles for individual personal transportation purposes">Private</span></td>
-                        <td style="text-align: center;"><span class="coment" title="Light Commercial Vehicles - under 15 TON">LCV</span></td>
-                        <td style="text-align: center;"><span class="coment" title="Medium Commercial Vehicles - around 15 TON">MCV</span></td>
-                        <td style="text-align: center;"><span class="coment" title="High Commercial Vehicles - over 15 TON">HCV</span></td>
-                        <td style="text-align: center;"><span class="coment" title="Medium/ Big Vehicles for people transportation purposes">Bus</span></td>
-                      </tr>
-                      <tr>
-                        <td><img src="img/Private.png"></td>
-                        <td><img src="img/LCV.png"></td>
-                        <td><img src="img/MCV.png"></td>
-                        <td><img src="img/HCV.png"></td>
-                        <td><img src="img/BUS.png"></td>
-                      </tr>
-                      <tbody>
-                        <tr>
-                          <td>Category</td>
-                          <td><input type="radio" name="vehicleType" id="vehicleType_Private" value="Private" checked></td>
-                          <td><input type="radio" name="vehicleType" id="vehicleType_LCV" value="LCV"></td>
-                          <td><input type="radio" name="vehicleType" id="vehicleType_MCV" value="MCV"></td>
-                          <td><input type="radio" name="vehicleType" id="vehicleType_HCV" value="HCV"></td>
-                          <td><input type="radio" name="vehicleType" id="vehicleType_Bus" value="Bus"></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
-                    <table class="table-internal">
-                      <tr style="text-align: center;">
-                        <td style="text-align: center; background-color: #ffffff;">
-                          <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
-                            <tr>
-                              <td
-                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
-                                <img id="DMS_up_A" style="display: block; margin: 0 auto; padding: 0; border: none;">
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
-                                <img id="DMS_up_B" style="display: block; margin: 0 auto; padding: 0; border: none;">
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                        <td style="vertical-align: top;">
-                          <label style="font-size: 14px; font-weight: bold; ">Road Centering Options</label>
-                          <label style="font-size: 2px;">&nbsp;</label>
-                          <label style="font-size: 12px;" for="RoadCenterPitchPos">Positive Pitch Angle (Up): </label>
-                          <select style="background-color: rgb(232 216 244);" name="RoadCenterPitchPos" id="RoadCenterPitchPos"
-                            onchange="updateDMSImage()">
-                          </select>
-                          <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterPitchNeg">Negative Pitch Angle (Down): </label>
-                          <select style="background-color: rgb(232 216 244);" name="RoadCenterPitchNeg" id="RoadCenterPitchNeg"
-                            onchange="updateDMSImage()">
-                          </select>
-                          <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterYawPos">Positive Yaw Angle (Right): </label>
-                          <select style="background-color: rgb(232 216 244);" name="RoadCenterYawPos" id="RoadCenterYawPos"
-                            onchange="updateDMSImage()">
-                          </select>
-                          <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterYawNeg">Negative Yaw Angle (Left): </label>
-                          <select style="background-color: rgb(232 216 244);" name="RoadCenterYawNeg" id="RoadCenterYawNeg"
-                            onchange="updateDMSImage()">
-                          </select>
-                          <br><br>
-                          <label style="font-size: 12px;">Max Heading Angle for Events: </label>
-                          <select name="MaxHeadingAngleForEvents" id="MaxHeadingAngleForEvents"
-                            style="background-color: rgb(232 216 244);">
-                          </select>
-                          <br><br><br>
-                          <label style="font-size: 14px; font-weight: bold; ">Additional Driver Options</label>
-                          <label style="font-size: 2px;">&nbsp;</label>
-                          <span class="coment" title="Position of the Driver&#10;inside the vehicle"
-                            style="font-size: 13px;font-weight: normal;">Driving Position:</span>
-                          <select style="width: 120px;" name="LeftHandDrive" id="LeftHandDrive" onchange="updateLogicalColor(this, id)">
-                            <option value="true">Left</option>
-                            <option value="false">Right</option>
-                          </select>
-                        </td>
-                        <td style="background-color: #ffffff;">
-                          <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
-                            <tr>
-                              <td
-                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
-                                <img id="DMS_side_A" style="display: block; margin: 0 auto; padding: 0; border: none;">
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                style="text-align: center; padding: 0; margin: 0; text-align: center; background-color: #ffffff;">
-                                <img id="DMS_side_B" style="display: block; margin: 0 auto; padding: 0; border: none;">
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
           <h1></h1>
         </div>
       </section>
@@ -5315,7 +5319,62 @@
         <div class="center">
           <h1>ADAS</h1>
           <h4>(Advanced Driver Assistance System Settings)</h4>
-
+          <div class="header" , id="ADAS_architectureHeader">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center;">
+                  <img src="source_img/ADAS_Architecture.svg" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
+                  title="AlertMessage">
+                  Road-facing feature
+                </td>
+                <td class="col4" style="width: 5%; text-align: center;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('ADAS_architectureSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'ADAS_architectureHeader')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="ADAS_architectureSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table>
+                <table>
+                  <tr>
+                    <td rowspan="2" style="background: #E5F2FF; color:black; font-size: 14px;">Road-facing<br>feature</td>
+                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Disabled</span></td>
+                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Mobileye</span></td>
+                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Mobileye + dashcam</span></td>
+                    <!--<td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">FS10</span></td>-->
+                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px;">DVR</span></td>
+                  </tr>
+                  <tr>
+                    <td style="width: 22%; background-color: whitesmoke;"><img src="img/ADAS_disabled.png"></td>
+                    <td style="width: 22%; background-color: whitesmoke;"><img src="img/ADAS_ME.png"></td>
+                    <td style="width: 22%; background-color: whitesmoke;"><img src="img/ADAS_ME_and_RC.png"></td>
+                    <!--<td style="width: 20%; background-color: whitesmoke;"><img src="img/ADAS_FS10.png"></td>-->
+                    <td style="width: 22%; background-color: whitesmoke;"><img src="img/ADAS_DVR.png"></td>
+                  </tr>
+                  <tbody>
+                    <tr>
+                      <td style="background: #E5F2FF; color:black; font-size: 14px;">Category</td>
+                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_Disabled" value="Disabled"
+                          onchange="update_ADAS_Select()" checked></td>
+                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_Mobileye" value="Mobileye" onchange="update_ADAS_Select()"></td>
+                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_MobileyeRC" value="MobileyeRC" onchange="update_ADAS_Select()"></td>
+                      <!--<td style="background: #E5F2FF;"><input type="radio" name="deviceType" id = "deviceType_FS10" value="FS10"></td>-->
+                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_DVR" value="DVR"
+                          onchange="update_ADAS_Select()"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </table>
+            </div>
+          </div>
           <!---ADAS Lane Departure Warning (LDW) - Header------>
           <div class="header" , id="LDW_Header">
             <table class="table_properties">
@@ -5377,7 +5436,7 @@
                 <td class="col3" style="width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_LDW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_LDW_')">
+                    <input id="ADAS_LDW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_LDW_')" disabled>
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -5724,7 +5783,7 @@
                 <td class="col3" style="width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_HMW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_HMW_')">
+                    <input id="ADAS_HMW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_HMW_')" disabled>
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6071,7 +6130,7 @@
                 <td class="col3" style="width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_UFCW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_UFCW_')">
+                    <input id="ADAS_UFCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_UFCW_')" disabled>
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6418,7 +6477,7 @@
                 <td class="col3" style="width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_FCW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_FCW_')">
+                    <input id="ADAS_FCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_FCW_')" disabled>
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6765,7 +6824,7 @@
                 <td class="col3" style="width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_PCW_ActivationCheckbox" type="checkbox" checked onclick="toggleMenuActivation('ADAS_PCW_')">
+                    <input id="ADAS_PCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_PCW_')" disabled>
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -7050,62 +7109,6 @@
               </table>
             </div>
             <h1></h1>
-          </div>
-          <div class="header" , id="ADAS_architectureHeader">
-            <table class="table_properties">
-              <tr style="text-align: center; ">
-                <td class="col1" style="width: 5%; text-align: center;">
-                  <img src="source_img/ADAS_Architecture.svg" class="icon">
-                </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
-                  ADAS Architecture
-                </td>
-                <td class="col4" style="width: 5%; text-align: center;"
-                  title="More/less options">
-                  <span class="toggle-button"
-                    onclick="toggleSubParameters('ADAS_architectureSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'ADAS_architectureHeader')">
-                    <img src="source_img/more_options_icon.png" alt="More Options">
-                  </span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div id="ADAS_architectureSubParamsId" class="sub-parameters">
-            <h1></h1>
-            <div class="table-container">
-              <table>
-                <table>
-                  <tr>
-                    <td rowspan="2" style="background: #E5F2FF; color:black; font-size: 14px;">Road-facing<br>feature</td>
-                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Disabled</span></td>
-                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Mobileye</span></td>
-                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Mobileye + dashcam</span></td>
-                    <!--<td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">FS10</span></td>-->
-                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px;">DVR</span></td>
-                  </tr>
-                  <tr>
-                    <td style="width: 22%; background-color: whitesmoke;"><img src="img/ADAS_disabled.png"></td>
-                    <td style="width: 22%; background-color: whitesmoke;"><img src="img/ADAS_ME.png"></td>
-                    <td style="width: 22%; background-color: whitesmoke;"><img src="img/ADAS_ME_and_RC.png"></td>
-                    <!--<td style="width: 20%; background-color: whitesmoke;"><img src="img/ADAS_FS10.png"></td>-->
-                    <td style="width: 22%; background-color: whitesmoke;"><img src="img/ADAS_DVR.png"></td>
-                  </tr>
-                  <tbody>
-                    <tr>
-                      <td style="background: #E5F2FF; color:black; font-size: 14px;">Category</td>
-                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_Disabled" value="Disabled"
-                          onchange="update_ADAS_Select()" checked></td>
-                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_Mobileye" value="Mobileye"></td>
-                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_MobileyeRC" value="MobileyeRC"></td>
-                      <!--<td style="background: #E5F2FF;"><input type="radio" name="deviceType" id = "deviceType_FS10" value="FS10"></td>-->
-                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_DVR" value="DVR"
-                          onchange="update_ADAS_Select()"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </table>
-            </div>
           </div>
           <h1></h1>
           
@@ -14831,38 +14834,32 @@
             </div>
             <h1></h1>
           </div>
-          
-          <!---SI Cipia-FS10 Architecture: Communications - Header------>
-          <div class="header" , id="Cipia-FS10ArchitectureCommunicationsHeader">
+          <!---SI Cipia-FS10: Communications Watchdog - Header------>
+          <div class="header" , id="Cipia-FS10CommunicationsWatchdogHeader">
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 5%; text-align: center;">
-                  <img src="source_img/Cipia-FS10_Architecture_Communications.png" class="icon">
+                  <img src="source_img/Cipia-FS10_Communications_Watchdog.png" class="icon">
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
                   title="AlertMessage">
-                  Cipia-FS10 Architecture: Communications
+                  Cipia-FS10: Communications Watchdog
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
                   title="More/less options">
                   <span class="toggle-button"
-                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureCommunicationsSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureCommunicationsHeader')">
+                    onclick="toggleSubParameters('SI_Cipia-FS10CommunicationsWatchdogSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10CommunicationsWatchdogHeader')">
                     <img src="source_img/more_options_icon.png" alt="More Options">
                   </span>
                 </td>
               </tr>
             </table>
           </div>
-          <!-- SI Cipia-FS10 Architecture: Communications - Subparams -->
-          <div id="SI_Cipia-FS10ArchitectureCommunicationsSubParamsId" class="sub-parameters">
+          <!-- SI Cipia-FS10: Communications Watchdog - Subparams -->
+          <div id="SI_Cipia-FS10CommunicationsWatchdogSubParamsId" class="sub-parameters">
             <h1></h1>
             <div class="table-container">
               <table>
-                <tr>
-                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
-                    Communications Watchdog:
-                  </td>
-                </tr>
                 <tr>
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     <table class="table-internal">
@@ -15045,6 +15042,35 @@
                     </table>
                   </td>
                 </tr>
+              </table>
+            </div>
+          </div>
+          <!---SI Cipia-FS10 Architecture: Communications - Header------>
+          <div class="header" , id="Cipia-FS10ArchitectureCommunicationsHeader">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center;">
+                  <img src="source_img/Cipia-FS10_Architecture_Communications.png" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
+                  title="AlertMessage">
+                  Cipia-FS10 Architecture: Communications
+                </td>
+                <td class="col4" style="width: 5%; text-align: center;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureCommunicationsSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureCommunicationsHeader')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- SI Cipia-FS10 Architecture: Communications - Subparams -->
+          <div id="SI_Cipia-FS10ArchitectureCommunicationsSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table>
                 <tr>
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     Communication Settings and Hybrid Mode:
