@@ -1219,6 +1219,9 @@ function toggleMediaUpload(id, option, camera) {
                 if (timelapseCheckbox1.checked) {
                     toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_OFF.png');
                 }
+                if (timelapseCheckbox2.checked) {
+                    toggleMediaUploadButton(timelapseLabel2, false, 'source_img/Timelapse_OFF.png');
+                }
             }
             break;
         case "ReportTimelapse":
@@ -1231,6 +1234,9 @@ function toggleMediaUpload(id, option, camera) {
                 }
                 if (videoCheckbox1.checked) {
                     toggleMediaUploadButton(videoLabel1, false, 'source_img/Video_OFF.png');
+                }
+                if (imageCheckbox2.checked) {
+                    toggleMediaUploadButton(imageLabel2, false, 'source_img/Image_OFF.png');
                 }
             }
             break;
