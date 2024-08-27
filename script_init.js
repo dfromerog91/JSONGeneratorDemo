@@ -865,18 +865,18 @@ function updateGPIOparameters(selectElement) {
         var option_label_1A = document.createElement("option");
         option_label_1A.text = "High";
         option_label_1A.value = "true";
-        option_label_1A.style.backgroundColor = "#C6EFCE";
-        option_label_1A.style.color = "#006100";
+        /*option_label_1A.style.backgroundColor = "#C6EFCE";
+        option_label_1A.style.color = "#006100";*/
         
         var option_label_1B = document.createElement("option");
         option_label_1B.text = "Low";
         option_label_1B.value = "false";
-        option_label_1B.style.backgroundColor = "#FFC7CE";
-        option_label_1B.style.color = "#9C0000";
+        /*option_label_1B.style.backgroundColor = "#FFC7CE";
+        option_label_1B.style.color = "#9C0000";*/
 
         Select_GPIO_1.appendChild(option_label_1A);
         Select_GPIO_1.appendChild(option_label_1B);
-        updateLogicalColor(document.getElementById("Select_GPIO_1"), "Select_GPIO_1");
+        //updateLogicalColor(document.getElementById("Select_GPIO_1"), "Select_GPIO_1");
 
         label_2_ID.textContent = "Special function:";
         // Create and append options for Select_GPIO_2

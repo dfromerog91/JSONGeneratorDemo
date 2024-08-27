@@ -56,8 +56,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Global_Parameters.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="An alert that triggers when driver's eyes are closed for a pre-configured period of time">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Global Parameters
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
@@ -219,8 +218,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Driver_Asleep.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="An alert that triggers when driver's eyes are closed for a pre-configured period of time">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Driver Asleep
                 </td>
                 <td id="DMS_driverAsleepFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -371,7 +369,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_driverAsleepFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_driverAsleepFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -549,7 +547,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -599,7 +597,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -659,12 +657,10 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: right; width: 80%;">
                                 Enable Sleep Blocking by Drowsiness:
-                                <img src="source_img/info.png" class="icon">
                               </td>
-                              <td style="border: none; text-align: center;">
+                              <td style="border: none; text-align: left; width: auto;">
                                 <div class="container">
                                   <label class="switch">
                                     <input type="checkbox" id="DMS_driverAsleepSleepBlockingEnableCheckbox">
@@ -678,10 +674,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Sleep Duration:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -724,8 +718,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Drowsiness.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="An alert that triggers when driver shows signs of drowsiness (based on PERCLOS during a moving time interval of 3 minutes)">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Drowsiness
                 </td>
                 <td id="DMS_drowsinessFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -876,7 +869,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_drowsinessFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_drowsinessFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -1054,7 +1047,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -1104,7 +1097,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -1165,10 +1158,8 @@
                         <td style="border: none; width: 40%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Enable Drowsiness based in Yawn:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                               <td style="border: none; text-align: center;">
                                 <div class="container">
@@ -1197,8 +1188,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Driver_Distracted.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Driver Distracted
                 </td>
                 <td id="DMS_driverDistractedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -1349,7 +1339,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_driverDistractedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_driverDistractedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -1527,7 +1517,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -1577,7 +1567,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -1637,10 +1627,8 @@
                         <td style="width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Distraction Turn Grace Timer:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -1729,27 +1717,86 @@
                             </tr>
                           </table>
                         </td>
-                        <td style="vertical-align: top;">
-                          <label style="font-size: 2px;">&nbsp;</label>
-                          <label style="font-size: 12px;" for="RoadCenterYawPosNumber">Positive Yaw Angle (Right): </label>
-                          <input type="number" id="RoadCenterYawPosNumber" onchange="updateDMSImage()">
-                          <label style="font-size: 2px;">&nbsp;</label>
-                          <input type="range" id="RoadCenterYawPosRange" onchange="updateDMSImage()">
+                        <td style="text-align: center;">
+                          <table>
+                            <tr>
+                              <td colspan="3" style="text-align: center; border: none; padding: 3px;">
+                                Positive Yaw Angle (Right):
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="width: 23%; border: none; padding: 1px;"></td>
+                              <td style="width: auto; text-align: center; border: none; padding: 1px;">
+                                <input type="number" id="RoadCenterYawPosNumber" onchange="updateDMSImage()">
+                              </td>
+                              <td style="width: 23%; border: none; padding: 1px;"></td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="text-align: center; border: none; padding: 1px;">
+                                <input type="range" id="RoadCenterYawPosRange" onchange="updateDMSImage()">
+                              </td>
+                            </tr>
+                          </table>
                           <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterYawNegNumber">Negative Yaw Angle (Left): </label>
-                          <input type="number" id="RoadCenterYawNegNumber" onchange="updateDMSImage()">
-                          <label style="font-size: 2px;">&nbsp;</label>
-                          <input type="range" id="RoadCenterYawNegRange" onchange="updateDMSImage()">
+                          <table>
+                            <tr>
+                              <td colspan="3" style="text-align: center; border: none; padding: 3px;">
+                                Negative Yaw Angle (Left):
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="width: 23%; border: none; padding: 1px;"></td>
+                              <td style="width: auto; text-align: center; border: none; padding: 1px;">
+                                <input type="number" id="RoadCenterYawNegNumber" onchange="updateDMSImage()">
+                              </td>
+                              <td style="width: 23%; border: none; padding: 1px;"></td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="text-align: center; border: none; padding: 1px;">
+                                <input type="range" id="RoadCenterYawNegRange" onchange="updateDMSImage()">
+                              </td>
+                            </tr>
+                          </table>
                           <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterPitchPosNumber">Positive Pitch Angle (Up): </label>
-                          <input type="number" id="RoadCenterPitchPosNumber" onchange="updateDMSImage()">
-                          <label style="font-size: 2px;">&nbsp;</label>
-                          <input type="range" id="RoadCenterPitchPosRange" onchange="updateDMSImage()">
+                          <table>
+                            <tr>
+                              <td colspan="3" style="text-align: center; border: none; padding: 3px;">
+                                Positive Pitch Angle (Up):
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="width: 23%; border: none; padding: 1px;"></td>
+                              <td style="width: auto; text-align: center; border: none; padding: 1px;">
+                                <input type="number" id="RoadCenterPitchPosNumber" onchange="updateDMSImage()">
+                              </td>
+                              <td style="width: 23%; border: none; padding: 1px;"></td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="text-align: center; border: none; padding: 1px;">
+                                <input type="range" id="RoadCenterPitchPosRange" onchange="updateDMSImage()">
+                              </td>
+                            </tr>
+                          </table>
                           <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterPitchNegNumber">Negative Pitch Angle (Down): </label>
-                          <input type="number" id="RoadCenterPitchNegNumber" onchange="updateDMSImage()">
-                          <label style="font-size: 2px;">&nbsp;</label>
-                          <input type="range" id="RoadCenterPitchNegRange" onchange="updateDMSImage()">
+                          <table>
+                            <tr>
+                              <td colspan="3" style="text-align: center; border: none; padding: 3px;">
+                                Negative Pitch Angle (Down):
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="width: 23%; border: none; padding: 1px;"></td>
+                              <td style="width: auto; text-align: center; border: none; padding: 1px;">
+                                <input type="number" id="RoadCenterPitchNegNumber" onchange="updateDMSImage()">
+                              </td>
+                              <td style="width: 23%; border: none; padding: 1px;"></td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="text-align: center; border: none; padding: 1px;">
+                                <input type="range" id="RoadCenterPitchNegRange" onchange="updateDMSImage()">
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                         <td style="background-color: #ffffff;">
                           <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
@@ -1782,8 +1829,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Phone_Use.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Phone Use
                 </td>
                 <td id="DMS_phoneUseFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -1934,7 +1980,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_phoneUseFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_phoneUseFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -2112,7 +2158,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -2162,7 +2208,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -2221,8 +2267,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Seatbelt.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Seatbelt
                 </td>
                 <td id="DMS_seatbeltFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -2373,7 +2418,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_seatbeltFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_seatbeltFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -2551,7 +2596,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -2601,7 +2646,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -2661,10 +2706,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Inhibit Seatbelt Alerts on Stop:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                               <td style="border: none; text-align: center;">
                                 <div class="container">
@@ -2680,10 +2723,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Seatbelt Alert Time:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -2733,8 +2774,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Smoking.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Smoking
                 </td>
                 <td id="DMS_smokingFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -2885,7 +2925,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_smokingFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_smokingFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -3063,7 +3103,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -3113,7 +3153,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -3172,8 +3212,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Tampering_Detection.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Tampering Detection
                 </td>
                 <td id="DMS_tamperingDetectionFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -3323,7 +3362,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_tamperingDetectionFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_tamperingDetectionFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -3397,7 +3436,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -3447,7 +3486,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -3506,8 +3545,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Driver_Identified.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Driver Identified
                 </td>
                 <td id="DMS_driverIdentifiedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -3658,7 +3696,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_driverIdentifiedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_driverIdentifiedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -3732,7 +3770,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -3782,7 +3820,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -3843,10 +3881,8 @@
                         <td style="border: none; width: 40%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="Enables/disables alert upload to the server">
+                              <td style="border: none; text-align: center;">
                                 Enable Driver's Database:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                               <td style="border: none; text-align: center;">
                                 <div class="container">
@@ -3875,8 +3911,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Driver_Unidentified.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Driver Unidentified
                 </td>
                 <td id="DMS_driverUnidentifiedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -4027,7 +4062,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_driverUnidentifiedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_driverUnidentifiedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -4101,7 +4136,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -4151,7 +4186,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -4210,8 +4245,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Driver_Disappeared.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Driver Disappeared
                 </td>
                 <td id="DMS_driverDisappearedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -4362,7 +4396,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_driverDisappearedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_driverDisappearedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -4436,7 +4470,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -4486,7 +4520,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -4546,10 +4580,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Driver Disappear Time Threshold:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -4580,10 +4612,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Tracking Grace Timer:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -4625,8 +4655,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Driver_Changed.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Driver Changed
                 </td>
                 <td id="DMS_driverChangedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -4777,7 +4806,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_driverChangedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_driverChangedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -4851,7 +4880,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -4901,7 +4930,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -4962,10 +4991,8 @@
                         <td style="border: none; width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Driver Change (minimum):
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -5009,8 +5036,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Driver_ID_Updated.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Driver ID Updated
                 </td>
                 <td id="DMS_driverIdUpdatedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -5160,7 +5186,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="DMS_driverIdUpdatedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('DMS_driverIdUpdatedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -5234,7 +5260,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -5284,7 +5310,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -5352,8 +5378,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/ADAS_Architecture.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Road-facing feature
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
@@ -5409,8 +5434,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/LDW.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Lane Departure Warning (LDW)
                 </td>
                 <td id="ADAS_LDW_FeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -5539,7 +5563,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="ADAS_LDW_FeedbackOutputId" onchange="toggleFeedbackOutputSummary('ADAS_LDW_FeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -5647,7 +5671,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -5697,7 +5721,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -5756,8 +5780,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/HMW.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Tailgating (HMW)
                 </td>
                 <td id="ADAS_HMW_FeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -5886,7 +5909,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="ADAS_HMW_FeedbackOutputId" onchange="toggleFeedbackOutputSummary('ADAS_HMW_FeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -5994,7 +6017,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -6044,7 +6067,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -6103,8 +6126,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/UFCW.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Urban Forward Collision Warning (UFCW)
                 </td>
                 <td id="ADAS_UFCW_FeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -6233,7 +6255,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="ADAS_UFCW_FeedbackOutputId" onchange="toggleFeedbackOutputSummary('ADAS_UFCW_FeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -6341,7 +6363,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -6391,7 +6413,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -6450,8 +6472,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/FCW.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Forward Collision Warning (FCW)
                 </td>
                 <td id="ADAS_FCW_FeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -6580,7 +6601,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="ADAS_FCW_FeedbackOutputId" onchange="toggleFeedbackOutputSummary('ADAS_FCW_FeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -6688,7 +6709,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -6738,7 +6759,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -6797,8 +6818,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/PCW.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Pedestrian Collision Warning (PCW)
                 </td>
                 <td id="ADAS_PCW_FeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -6927,7 +6947,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="ADAS_PCW_FeedbackOutputId" onchange="toggleFeedbackOutputSummary('ADAS_PCW_FeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -7035,7 +7055,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -7085,7 +7105,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -7310,8 +7330,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Ignition_On.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Ignition On
                 </td>
                 <td id="TES_ignitionOnFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -7439,7 +7458,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_ignitionOnFeedbackOutput')">
                           <select id="TES_ignitionOnFeedbackOutputId">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -7513,7 +7532,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -7563,7 +7582,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -7622,8 +7641,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Ignition_Off.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Ignition Off
                 </td>
                 <td id="TES_ignitionOffFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -7751,7 +7769,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_ignitionOffFeedbackOutput')">
                           <select id="TES_ignitionOffFeedbackOutputId">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -7825,7 +7843,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -7875,7 +7893,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -7934,8 +7952,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Movement_Started.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Movement Started
                 </td>
                 <td id="TES_movementStartedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -8063,7 +8080,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_movementStartedFeedbackOutput')">
                           <select id="TES_movementStartedFeedbackOutputId">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -8171,7 +8188,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -8221,7 +8238,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -8280,8 +8297,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Movement_Stopped.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Movement Stopped
                 </td>
                 <td id="TES_movementStoppedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -8409,7 +8425,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_movementStoppedFeedbackOutput')">
                           <select id="TES_movementStoppedFeedbackOutputId">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -8517,7 +8533,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -8567,7 +8583,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -8626,8 +8642,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Heartbeat.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Heartbeat
                 </td>
                 <td id="TES_heartbeatFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -8755,7 +8770,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_heartbeatFeedbackOutput')">
                           <select id="TES_heartbeatFeedbackOutputId">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -8829,7 +8844,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -8879,7 +8894,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -8939,10 +8954,8 @@
                         <td style="width: 40%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="Defines the period in which additional occurrences of the same event are not reported to the server. If timer expires and the safety event is still ongoing or a new occurrence is detected, another OTA alert is generated, and back-off timer is reset.">
+                              <td style="border: none; text-align: center;">
                                 Ignition Off Interval:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -8973,10 +8986,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="Defines the period in which additional occurrences of the same event are not reported to the driver(in-cabin). If timer expires and the safety event is still ongoing or a new occurrence is detected, another alert is generated, and back-off timer is reset.">
+                              <td style="border: none; text-align: center;">
                                 Ignition On Interval:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9007,10 +9018,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="Defines minimum speed for alert triggering.">
+                              <td style="border: none; text-align: center;">
                                 Time to wait GPS fix:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9054,10 +9063,8 @@
                         <td style="width: 40%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 GPS Fix Loss Or Recovery:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9088,10 +9095,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="Defines the period in which additional occurrences of the same event are not reported to the driver(in-cabin). If timer expires and the safety event is still ongoing or a new occurrence is detected, another alert is generated, and back-off timer is reset.">
+                              <td style="border: none; text-align: center;">
                                 Ignition On Filter:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9122,10 +9127,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;"
-                                title="Defines minimum speed for alert triggering.">
+                              <td style="border: none; text-align: center;">
                                 Ignition Off Filter:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9168,8 +9171,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/GPS_Update_Status.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   GPS Update Status
                 </td>
                 <td id="TES_GPS_updateStatusFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -9297,7 +9299,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_GPS_updateStatusFeedbackOutput')">
                           <select id="TES_GPS_updateStatusFeedbackOutputId">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -9371,7 +9373,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -9421,7 +9423,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -9480,8 +9482,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Trip_Path.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Trip Path
                 </td>
                 <td id="TES_tripPathFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -9609,7 +9610,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;" onchange="toggleFeedbackOutputSummary('TES_tripPathFeedbackOutput')">
                           <select id="TES_tripPathFeedbackOutputId">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -9683,7 +9684,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -9733,7 +9734,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -9935,8 +9936,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Camera_Calibration_Completed.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Camera Calibration Completed
                 </td>
                 <td id="SI_cameraCalibrationOkFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -10059,7 +10059,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_cameraCalibrationOkFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_cameraCalibrationOkFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -10133,7 +10133,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -10183,7 +10183,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -10242,8 +10242,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Camera_Calibration_Failed.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Camera Calibration Failed
                 </td>
                 <td id="SI_cameraCalibrationFailedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -10366,7 +10365,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_cameraCalibrationFailedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_cameraCalibrationFailedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -10440,7 +10439,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -10490,7 +10489,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -10549,8 +10548,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Accelerometer_Calibration_Completed.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Accelerometer Calibration Completed
                 </td>
                 <td id="SI_accelCalibrationOkFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -10672,7 +10670,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_accelCalibrationOkFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_accelCalibrationOkFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -10746,7 +10744,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -10796,7 +10794,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -10855,8 +10853,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/External_Event_Triggering.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   External Event Triggering
                 </td>
                 <td id="SI_externalEventTriggeringFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -10979,7 +10976,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_externalEventTriggeringFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_externalEventTriggeringFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -11053,7 +11050,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -11103,7 +11100,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -11162,8 +11159,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Entering_Sleep_Mode.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Entering Sleep Mode
                 </td>
                 <td id="SI_enteringSleepModeFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -11285,7 +11281,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_enteringSleepModeFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_enteringSleepModeFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -11359,7 +11355,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -11409,7 +11405,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -11468,8 +11464,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Application_Error.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Application Error
                 </td>
                 <td id="SI_applicationErrorFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -11591,7 +11586,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_applicationErrorFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_applicationErrorFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -11665,7 +11660,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -11715,7 +11710,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -11774,8 +11769,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Camera_Error.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Camera Error
                 </td>
                 <td id="SI_cameraErrorFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -11897,7 +11891,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_cameraErrorFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_cameraErrorFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -11958,7 +11952,7 @@
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;"
-                                title="Defines the period in which additional occurrences of the same event are not reported to the server. If timer expires and the safety event is still ongoing or a new occurrence is detected, another OTA alert is generated, and back-off timer is reset.">
+                              title="Defines the period in which additional occurrences of the same event are not reported to the driver(in-cabin). If timer expires and the safety event is still ongoing or a new occurrence is detected, another alert is generated, and back-off timer is reset.">
                                 Feedback Backoff:
                                 <img src="source_img/info.png" class="icon">
                               </td>
@@ -12005,7 +11999,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -12055,7 +12049,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -12114,8 +12108,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/MCU_Log.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   MCU Log
                 </td>
                 <td id="SI_MCU_LogFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -12237,7 +12230,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_MCU_LogFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_MCU_LogFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -12311,7 +12304,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -12361,7 +12354,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -12420,8 +12413,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/System_Boot.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   System Boot
                 </td>
                 <td id="SI_systemBootFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -12543,7 +12535,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_systemBootFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_systemBootFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -12617,7 +12609,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -12667,7 +12659,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -12726,8 +12718,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/System_Boot_Failure.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   System Boot Failure
                 </td>
                 <td id="SI_systemBootFailureFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -12849,7 +12840,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_systemBootFailureFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_systemBootFailureFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -12923,7 +12914,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -12973,7 +12964,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -13032,8 +13023,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/System_OK.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   System OK
                 </td>
                 <td id="SI_systemOK_FeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -13155,7 +13145,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_systemOK_FeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_systemOK_FeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -13229,7 +13219,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -13279,7 +13269,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -13338,8 +13328,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/System_Reset.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   System Reset
                 </td>
                 <td id="SI_systemResetFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -13461,7 +13450,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_systemResetFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_systemResetFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -13535,7 +13524,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -13585,7 +13574,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -13644,8 +13633,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/System_Error.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   System Error
                 </td>
                 <td id="SI_systemErrorFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -13767,7 +13755,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_systemErrorFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_systemErrorFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -13841,7 +13829,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -13891,7 +13879,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -13950,8 +13938,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Firmware_Update_Started.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Firmware Update Started
                 </td>
                 <td id="SI_firmwareUpdateStartedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -14073,7 +14060,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_firmwareUpdateStartedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_firmwareUpdateStartedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -14147,7 +14134,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -14197,7 +14184,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -14256,8 +14243,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Firmware_Update_Completed.svg" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Firmware Update Completed
                 </td>
                 <td id="SI_firmwareUpdateOK_FeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -14379,7 +14365,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_firmwareUpdateOK_FeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_firmwareUpdateOK_FeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -14453,7 +14439,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -14503,7 +14489,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -14562,8 +14548,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Firmware_Update_Failed.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Firmware Update Failed
                 </td>
                 <td id="SI_firmwareUpdateFailedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-summary-cell">
@@ -14685,7 +14670,7 @@
                         </td>
                         <td style="width: 25%; font-size: 10px; text-align: center;">
                           <select id="SI_firmwareUpdateFailedFeedbackOutputId" onchange="toggleFeedbackOutputSummary('SI_firmwareUpdateFailedFeedbackOutput')">
-                            <option value="None" style="background-color: #9C0000;">None</option>
+                            <option value="None">None</option>
                             <option value="GPO">GPO</option>
                             <option value="GPIO">GPIO</option>
                             <option value="Both">Both</option>
@@ -14759,7 +14744,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="inCabinIconId" class="container_img" src="source_img/IN_Cabin_Icon.png"
+                                <img id="inCabinIconId" src="source_img/IN_Cabin_Icon.png"
                                   alt="In cabin icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -14809,7 +14794,7 @@
                           <table>
                             <tr>
                               <td style="text-align: right; border-style: none;">
-                                <img id="roadFacingIconId" class="container_img" src="source_img/Road_Facing_Icon.png"
+                                <img id="roadFacingIconId" src="source_img/Road_Facing_Icon.png"
                                   alt="Road facing icon" style="width: auto; height: 80px;">
                               </td>
                               <td style="text-align: left; border-style: none;">
@@ -14868,8 +14853,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Cipia-FS10_Communications_Watchdog.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Cipia-FS10: Communications Watchdog
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
@@ -14906,8 +14890,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Cipia-FS10_Architecture_Communications.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Communications
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
@@ -14937,9 +14920,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Keep Alive:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -14970,9 +14952,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Modem Reset:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -15003,9 +14984,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Modem Reset Signal:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -15045,9 +15025,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Self Power Recycle:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -15078,9 +15057,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Socket Reset Time:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -15185,9 +15163,8 @@
                         <td style="text-align: center;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="HintTest">
+                              <td style="border: none; text-align: center;">
                                 Wi-Fi TimeOut:
-                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -15344,8 +15321,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Cipia-FS10_Architecture_GPIO.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   General Purpose Inputs & Outputs
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
@@ -15388,10 +15364,9 @@
                     Active level:
                   </td>
                   <td style="vertical-align: center; text-align: left;">
-                    <select name="ActiveLevelGPI" id="ActiveLevelGPI" style="width: 120px;"
-                      onchange="updateLogicalColor(this, id)">
-                      <option value="true" style="background-color: #C6EFCE; color: #006100">High</option>
-                      <option value="false" style="background-color: #FFC7CE; color: #9C0000">Low</option>
+                    <select name="ActiveLevelGPI" id="ActiveLevelGPI" style="width: 120px;">
+                      <option value="true">High</option>
+                      <option value="false">Low</option>
                     </select>
                   </td>
                   <td
@@ -15439,7 +15414,7 @@
                     <label id="GPIO_field_3">GPIO_field_3</label>
                   </td>
                   <td style="vertical-align: center; text-align: left;">
-                    <select name="Select_GPIO_3" id="Select_GPIO_3" style="width: 120px; background-color: #B9E6F0;">
+                    <select name="Select_GPIO_3" id="Select_GPIO_3" style="width: 120px;">
                     </select>
                   </td>
                   <td
@@ -15447,7 +15422,7 @@
                     State duration:
                   </td>
                   <td style="vertical-align: center; text-align: left;">
-                    <select name="StateDurationGPI" id="StateDurationGPI" style="width: 120px; background-color: #B9E6F0;">
+                    <select name="StateDurationGPI" id="StateDurationGPI" style="width: 120px;">
                     </select>
                   </td>
                   <td
@@ -15455,7 +15430,7 @@
                     Length:
                   </td>
                   <td style="vertical-align: center; text-align: left;">
-                    <select name="LengthGPO" id="LengthGPO" style="width: 120px; background-color: #B9E6F0;">
+                    <select name="LengthGPO" id="LengthGPO" style="width: 120px;">
                     </select>
                   </td>
                 </tr>
@@ -15495,9 +15470,9 @@
                   </td>
                   <td style="vertical-align: center; text-align: left;">
                     <select name="StateGPIO" style="width: 120px;" id="StateGPIO" onchange="updateGPIOparameters(this)">
-                      <option value="In" style="background-color: rgb(153,217,234);">In</option>
-                      <option value="Out" style="background-color: rgb(165,255,5);">Out</option>
-                      <option value="AnalogIn" style="background-color: rgb(255,216,6);">Analog in</option>
+                      <option value="In">In</option>
+                      <option value="Out">Out</option>
+                      <option value="AnalogIn">Analog in</option>
                     </select>
                   </td>
                   <td colspan="4"
@@ -15702,8 +15677,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Cipia-FS10_Architecture_Photos_And_Videos.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Photos and Videos
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
@@ -15922,7 +15896,7 @@
                   <td colspan="3">
                     <table>
                       <tr>
-                        <td style="border: none; text-align: center;" title="Hint">
+                        <td style="border: none; text-align: center;">
                           Events to Storage
                         </td>
                       </tr>
@@ -15951,7 +15925,7 @@
                   <td colspan="3">
                     <table>
                       <tr>
-                        <td style="border: none; text-align: center;" title="Hint">
+                        <td style="border: none; text-align: center;">
                           Video to Storage
                         </td>
                       </tr>
@@ -16011,10 +15985,8 @@
                   <td colspan="2">
                     <table>
                       <tr>
-                        <td style="border: none; text-align: center;"
-                          title="Hint">
+                        <td style="border: none; text-align: center;">
                           Record before event:
-                          <img src="source_img/info.png" class="icon">
                         </td>
                       </tr>
                       <tr>
@@ -16053,10 +16025,8 @@
                   <td colspan="2">
                     <table>
                       <tr>
-                        <td style="border: none; text-align: center;"
-                          title="Hint">
+                        <td style="border: none; text-align: center;">
                           Record after event:
-                          <img src="source_img/info.png" class="icon">
                         </td>
                       </tr>
                       <tr>
@@ -16096,8 +16066,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Cipia-FS10_Architecture_Additional_Settings.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Additional Settings
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
@@ -16116,7 +16085,7 @@
             <div class="table-container">
               <table>
                 <tr>
-                  <td style="text-align: left; background-color: white;">
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     Main button settings:
                   </td>
                 </tr>
@@ -16143,7 +16112,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td style="text-align: left; background-color: white;">
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     Accelerometer:
                   </td>
                 </tr>
@@ -16154,7 +16123,7 @@
                         <td style="width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="Hint">
+                              <td style="border: none; text-align: center;">
                                 Drive Time Filter
                               </td>
                             </tr>
@@ -16186,7 +16155,7 @@
                         <td style="width: auto;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="Hint">
+                              <td style="border: none; text-align: center;">
                                 Stop Time Filter
                               </td>
                             </tr>
@@ -16220,7 +16189,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td style="text-align: left; background-color: white;">
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     Volume:
                   </td>
                 </tr>
@@ -16231,7 +16200,7 @@
                         <td style="width: 33.33%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="Hint">
+                              <td style="border: none; text-align: center;">
                                 Volume for Asleep
                               </td>
                             </tr>
@@ -16260,7 +16229,7 @@
                         <td style="width: 33.33%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="Hint">
+                              <td style="border: none; text-align: center;">
                                 Volume for Other Alerts
                               </td>
                             </tr>
@@ -16312,7 +16281,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td style="text-align: left; background-color: white;">
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     Extra:
                   </td>
                 </tr>
@@ -16323,7 +16292,7 @@
                         <td style="width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="Hint">
+                              <td style="border: none; text-align: center;">
                                 Calibration Timeout
                               </td>
                             </tr>
@@ -16364,7 +16333,7 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="Hint">
+                              <td style="border: none; text-align: center;">
                                 Sleep Mode Timeout
                               </td>
                             </tr>
@@ -16396,7 +16365,7 @@
                         <td style="text-align: center; vertical-align: middle;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="Hint">
+                              <td style="border: none; text-align: center;">
                                 GSensor Wake Threshold
                               </td>
                             </tr>
@@ -16437,8 +16406,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Server_Parameters.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Server Parameters
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
@@ -16500,8 +16468,7 @@
                 <td class="col1" style="width: 5%; text-align: center;">
                   <img src="source_img/Wifi_Networks.png" class="icon">
                 </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;">
                   Wifi Networks 2.4GHz/5.0GHz (Prioritized List)
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"

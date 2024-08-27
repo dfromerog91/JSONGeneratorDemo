@@ -255,8 +255,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // Initialization of controls
-    sliderWithVariableStep('RoadCenterPitchPos', 15, 35, 45, '164px', 15, 1, 5);
-    sliderWithVariableStep('RoadCenterPitchNeg', -45, -35, -15, '164px', -15, 5, 1);
-    sliderWithVariableStep('RoadCenterYawPos', 15, 35, 90, '164px', 20, 1, 5);
-    sliderWithVariableStep('RoadCenterYawNeg', -90, -35, -15, '164px', -20, 5, 1);
+    sliderWithVariableStep('RoadCenterPitchPos', 15, 35, 45, '184px', 15, 1, 5);
+    sliderWithVariableStep('RoadCenterPitchNeg', -45, -35, -15, '184px', -15, 5, 1);
+    sliderWithVariableStep('RoadCenterYawPos', 15, 35, 90, '184px', 20, 1, 5);
+    sliderWithVariableStep('RoadCenterYawNeg', -90, -35, -15, '184px', -20, 5, 1);
 });
