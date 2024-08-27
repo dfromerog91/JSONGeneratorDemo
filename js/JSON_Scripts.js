@@ -1894,10 +1894,10 @@ function generate_FS10_JSON(){
     var EnableYawnBasedDrowsiness = document.getElementById("DMS_drowsinessYawnEnableCheckbox").checked;
     var PhoneBackoffTimer = parseInt(30 * document.getElementById("DMS_phoneUseFeedbackBackoffNumber").value);
     var PhoneSpeedThreshold = parseInt(document.getElementById("DMS_phoneUseSpeedThresholdNumber").value);
-    var RoadCenterPitchNeg = parseFloat(document.getElementById("RoadCenterPitchNeg").value).toFixed(1);
-    var RoadCenterPitchPos = parseFloat(document.getElementById("RoadCenterPitchPos").value).toFixed(1);
-    var RoadCenterYawNeg = parseFloat(document.getElementById("RoadCenterYawNeg").value).toFixed(1);
-    var RoadCenterYawPos = parseFloat(document.getElementById("RoadCenterYawPos").value).toFixed(1);
+    var RoadCenterPitchNeg = parseFloat(document.getElementById("RoadCenterPitchNegNumber").value).toFixed(1);
+    var RoadCenterPitchPos = parseFloat(document.getElementById("RoadCenterPitchPosNumber").value).toFixed(1);
+    var RoadCenterYawNeg = parseFloat(document.getElementById("RoadCenterYawNegNumber").value).toFixed(1);
+    var RoadCenterYawPos = parseFloat(document.getElementById("RoadCenterYawPosNumber").value).toFixed(1);
     var SeatbeltBackoffTimer = parseInt(30 * document.getElementById("DMS_seatbeltFeedbackBackoffNumber").value);
     var SeatbeltSpeedThreshold = parseInt(document.getElementById("DMS_seatbeltSpeedThresholdNumber").value);
     var SleepBackoffTimer = parseInt(30 * document.getElementById("DMS_driverAsleepFeedbackBackoffNumber").value);
@@ -1943,7 +1943,7 @@ function generate_FS10_JSON(){
     var GSensorWakeThreshold = parseInt(document.getElementById("SI_GSensorWakeThresholdNumber").value);
     var OTAupdateEnable = document.getElementById("SI_OTA_updateCheckbox").checked;
     var GPSFixLossOrRecoveryTime = parseInt(document.getElementById("TES_heartbeatGPS_FixLossOrRecoveryNumber").value);
-    var MaxHeadingAngleForEvents = parseInt(document.getElementById("MaxHeadingAngleForEvents").value);
+    var MaxHeadingAngleForEvents = parseInt(document.getElementById("MaxHeadingAngleForEventsNumber").value);
     var IGNOffFilter = parseInt(document.getElementById("TES_heartbeatIgnitionOffFilterNumber").value);
     var IGNOnFilter = parseInt(document.getElementById("TES_heartbeatIgnitionOnFilterNumber").value);
     var TripPathEnable = document.getElementById("TES_tripPathEnableCheckbox").checked;
@@ -3144,11 +3144,19 @@ function updateMediaUpload(id, JSONdata, paramPath) {
             break;
         case "TimelapseDMS":
             updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_ON.png');
-            footageValue = "None";
+            if (footageValue == "ADAS" || footageValue == "Both") {
+                footageValue = "ADAS";
+            } else {
+                footageValue = "None";
+            }
             break;
         case "TimelapseADAS":
             updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_ON.png');
-            footageValue = "None";
+            if (footageValue == "DMS" || footageValue == "Both") {
+                footageValue = "DMS";
+            } else {
+                footageValue = "None";
+            }
             break;
         case "BothTimelapse":
             updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_ON.png');
@@ -3725,6 +3733,85 @@ function updateAngleValue(selectId, JSONdata, propertyPath, nominal, min_Lim, ma
     selectElement.value = selectValue;
 }
 
+function updateAngleSlider(id, JSONdata, propertyPath, mid, defaultAngle, step1, step2) {
+    let segments = propertyPath.split('.');
+    let value = JSONdata;
+    for (let i = 0; i < segments.length; i++) {
+        let segment = segments[i];
+        if (value && segment in value) {
+            value = value[segment];
+        } else {
+            value = NaN;
+            break;
+        }
+    }
+    const selectSlider = document.getElementById(id + "Range");
+    const selectNumber = document.getElementById(id + "Number");
+    if (isNaN(value) || typeof value !== "number") {
+        selectSlider.value = defaultAngle;
+        selectNumber.value = defaultAngle;
+    } else {
+        value = setValidValue(id, value, defaultAngle, step1, step2, mid);
+        selectSlider.value = value;
+        selectNumber.value = value, 10;
+    }
+}
+
+function setValidValue(id, value, defaultValue, step1, step2 = 0, mid = 0) {
+    const selectSlider = document.getElementById(id + "Range");
+    if (value < selectSlider.min) {
+        return defaultValue;
+    }
+    if (value > selectSlider.max) {
+        return defaultValue;
+    }
+    if (step2 == 0) {
+        for (let i = parseInt(selectSlider.min); i <= selectSlider.max; i += step1) {
+            if (i >= value) {
+                if (i == value) {
+                    return i;
+                } else {
+                    let prev_i = i - step1;
+                    if ((value - prev_i) < (i - value)) {
+                        return prev_i;
+                    } else {
+                        return i;
+                    }
+                }
+            }
+        }
+    }
+    for (let i = parseInt(selectSlider.min); i <= mid; i += step1) {
+        if (i >= value) {
+            if (i == value) {
+                return i;
+            } else {
+                let prev_i = i - step1;
+                if ((value - prev_i) < (i - value)) {
+                    return prev_i;
+                } else {
+                    return i;
+                }
+            }
+        }
+    }
+    for (let i = mid; i <= selectSlider.max; i += step2) {
+        if (i >= value) {
+            if (i == value) {
+                return i;
+            } else {
+                let prev_i = i - step2;
+                if ((value - prev_i) < (i - value)) {
+                    return prev_i;
+                } else {
+                    return i;
+                }
+            }
+        }
+    }
+    return defaultValue;
+}
+
 // Updating ComboBox from Numerical Values
 function updateNumericValue(selectId, JSONdata, propertyPath, nominal, min_Lim, max_Lim) {
     var selectValue = nominal;
@@ -3758,7 +3845,7 @@ function updateNumericValue(selectId, JSONdata, propertyPath, nominal, min_Lim, 
     selectElement.value = selectValue;
 }
 
-function updateSliderControlInteger(id, JSONdata, propertyPath, scale = 1) {
+function updateSliderControlInteger(id, JSONdata, propertyPath, scale = 1, step = 1, defaultValue = -999) {
     var segments = propertyPath.split('.');
     var value = JSONdata;
     for (var i = 0; i < segments.length; i++) {
@@ -3774,18 +3861,33 @@ function updateSliderControlInteger(id, JSONdata, propertyPath, scale = 1) {
     const number = document.getElementById(id + "Number");
     let minValue = parseInt(range.min, 10);
     let maxValue = parseInt(range.max, 10);
-    if (!isNaN(value)) {
+    if (isNaN(value) || typeof value !== "number") {
+        if (defaultValue == -999) {
+            defaultValue = minValue;
+        }
+        value = defaultValue;
+    } else {
         value = parseInt(value * scale, 10);
         if (value < minValue) {
             value = minValue;
         } else if (value > maxValue) {
             value = maxValue;
         }
-    } else {
-        value = parseInt((maxValue - minValue) / 2 + minValue, 10);
     }
-    range.value = value;
-    number.value = value;
+    if (step > 1) {
+        range.value = defaultValue;
+        number.value = defaultValue;
+        for (let i = minValue; i <= maxValue; i += step) {
+            if (value == i) {
+                range.value = i;
+                number.value = i;
+                break;
+            }
+        }
+    } else {
+        range.value = value;
+        number.value = value;
+    }
     updateSliderControlSummary(id + "Summary", value);
 }
 
@@ -4008,13 +4110,14 @@ function updateComboBox_fromJSON(JSONdata){
     updateCheckAndImageButton("GP_system_LED_activation", JSONdata, "SystemLEDActivation", 'source_img/GP_System_LED_Activation_ON.png', 'source_img/GP_System_LED_Activation_OFF.png');
     
     // Driver Angles
-    updateAngleValue("RoadCenterPitchPos", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterPitchPos", 15, 0, 45, PitchPos);
-    updateAngleValue("RoadCenterPitchNeg", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterPitchNeg", -15, -45, 0, PitchNeg);
-    updateAngleValue("RoadCenterYawPos", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterYawPos", 20, 0, 90, YawPos);
-    updateAngleValue("RoadCenterYawNeg", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterYawNeg", -20, -90, 0, YawNeg);
+    //updateAngleValue("RoadCenterPitchPos", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterPitchPos", 15, 0, 45, PitchPos);
+    updateAngleSlider("RoadCenterPitchPos", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterPitchPos", 35, 15, 1, 5);
+    updateAngleSlider("RoadCenterPitchNeg", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterPitchNeg", -35, -15, 5, 1);
+    updateAngleSlider("RoadCenterYawPos", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterYawPos", 35, 20, 1, 5);
+    updateAngleSlider("RoadCenterYawNeg", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterYawNeg", -35, -20, 5, 1);
 
     // Driver Distraction
-    updateNumericValue("MaxHeadingAngleForEvents", JSONdata, "MaxHeadingAngleForEvents", 15, 2, 30);
+    updateSliderControlInteger("MaxHeadingAngleForEvents", JSONdata, "MaxHeadingAngleForEvents");
     updateSliderControlInteger("DMS_driverDisappearedTimeThreshold", JSONdata, "DriverDisappearTimeThreshold");
     
     // Movement
@@ -4066,11 +4169,11 @@ function updateComboBox_fromJSON(JSONdata){
 
     //Communication Watchdog
     updateSliderControlInteger("SI_communicationsWatchdogKeepAlive", JSONdata, "CommunicationWatchdog.KeepAliveInSec");
-    updateSliderControlInteger("SI_communicationsWatchdogModemReset", JSONdata, "CommunicationWatchdog.ModemResetHWTimeInMin");
-    updateSliderControlInteger("SI_communicationsWatchdogModemResetSignal", JSONdata, "CommunicationWatchdog.ModemResetSignalTimeInMin");
+    updateSliderControlInteger("SI_communicationsWatchdogModemReset", JSONdata, "CommunicationWatchdog.ModemResetHWTimeInMin", 1, 5, 5);
+    updateSliderControlInteger("SI_communicationsWatchdogModemResetSignal", JSONdata, "CommunicationWatchdog.ModemResetSignalTimeInMin", 1, 5, 5);
     updateCheckboxCheckedState("SI_communicationsWatchdogRepeatCycle", JSONdata, "CommunicationWatchdog.RepeatCycleUntilCommRecovery");
-    updateSliderControlInteger("SI_communicationsWatchdogSelfPowerRecycle", JSONdata, "CommunicationWatchdog.SelfPowerRecycleTimeInMin");
-    updateSliderControlInteger("SI_communicationsWatchdogSocketResetTime", JSONdata, "CommunicationWatchdog.SocketResetTimeInMin");
+    updateSliderControlInteger("SI_communicationsWatchdogSelfPowerRecycle", JSONdata, "CommunicationWatchdog.SelfPowerRecycleTimeInMin", 1, 5, 5);
+    updateSliderControlInteger("SI_communicationsWatchdogSocketResetTime", JSONdata, "CommunicationWatchdog.SocketResetTimeInMin", 1, 5, 15);
 
     //Heartbeat Configuration
     updateSliderControlInteger("TES_heartbeatIgnitionOffInterval", JSONdata, "ExtraParameters.HeartbeatConfig.IGNOffInterval", 1 / 60);
@@ -4377,11 +4480,11 @@ function remove_duplicate_from_menus(){
     removeDuplicateOptionsAndRestoreSelected('DutyCycleGPO');
     removeDuplicateOptionsAndRestoreSelected('FrequencyGPO');
     removeDuplicateOptionsAndRestoreSelected('LengthGPO');
-    removeDuplicateOptionsAndRestoreSelected('MaxHeadingAngleForEvents');
-    removeDuplicateOptionsAndRestoreSelected('RoadCenterYawPos');
-    removeDuplicateOptionsAndRestoreSelected('RoadCenterYawNeg');
-    removeDuplicateOptionsAndRestoreSelected('RoadCenterPitchPos');
-    removeDuplicateOptionsAndRestoreSelected('RoadCenterPitchNeg');
+    //removeDuplicateOptionsAndRestoreSelected('MaxHeadingAngleForEvents');
+    //removeDuplicateOptionsAndRestoreSelected('RoadCenterYawPos');
+    //removeDuplicateOptionsAndRestoreSelected('RoadCenterYawNeg');
+    //removeDuplicateOptionsAndRestoreSelected('RoadCenterPitchPos');
+    //removeDuplicateOptionsAndRestoreSelected('RoadCenterPitchNeg');
 }
 
 function updateOnBased_FS10_json() {

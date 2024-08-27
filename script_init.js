@@ -538,7 +538,7 @@ function fillCmbBoxes(){
     //updateCmbBox("DriverChangeMinDuration", 0, 150, 1, 10, 10, 1, "sec(s)");
     //updateCmbBox("SeatbeltAlertTime", 5, 60, 1, 1, 1, 0, "sec(s)");
     //updateCmbBox("SleepDuration", 10, 50, 1, 10, 10, 1, "sec(s)");
-    updateCmbBox("MaxHeadingAngleForEvents", 0, 90, 1, 1, 1, 0, " (°/sec)");
+    //updateCmbBox("MaxHeadingAngleForEvents", 0, 90, 1, 1, 1, 0, " (°/sec)");
     //updateCmbBox("WiFiTO", 5, 300, 1, 1, 1, 0, " min(s)");
     //updateCmbBox("SleepModeTO", 0, 255, 1, 1, 1, 0, "min(s)");
     //updateCmbBox("SleepModeTO", 0, 255, 1, 1, 1, 0, "min(s)");
@@ -548,10 +548,10 @@ function fillCmbBoxes(){
     //updateCmbBoxWithColors("TripPathDistance", 100, 1000, 1, 1, 1, 0, "m", '#B9E6F0', '#000000');
     //updateCmbBoxWithColors("TripPathTime", 30, 300, 1, 1, 1, 0, "sec(s)", '#B9E6F0', '#000000');
     //updateCmbBoxWithColors("TripPathHeading", 20, 90, 1, 1, 1, 0, "°", '#B9E6F0', '#000000');
-    generateOptionsForAngles("RoadCenterYawPos", YawPos);
-    generateOptionsForAngles("RoadCenterYawNeg", YawNeg);
-    generateOptionsForAngles("RoadCenterPitchPos", PitchPos);
-    generateOptionsForAngles("RoadCenterPitchNeg", PitchNeg);
+    //generateOptionsForAngles("RoadCenterYawPos", YawPos);
+    //generateOptionsForAngles("RoadCenterYawNeg", YawNeg);
+    //generateOptionsForAngles("RoadCenterPitchPos", PitchPos);
+    //generateOptionsForAngles("RoadCenterPitchNeg", PitchNeg);
     //update_from_TripPath();
     updateEventAndInhibit_tripPath();
 }
@@ -683,10 +683,10 @@ function generateOptionsForAngles(selectId, valuesArray) {
 }
 
 function updateDMSImage() {
-    var positiveYaw = document.getElementById("RoadCenterYawPos").value;
-    var negativeYaw = document.getElementById("RoadCenterYawNeg").value;
-    var positivePitch = document.getElementById("RoadCenterPitchPos").value;
-    var negativePitch = document.getElementById("RoadCenterPitchNeg").value;
+    var positiveYaw = document.getElementById("RoadCenterYawPosNumber").value;
+    var negativeYaw = document.getElementById("RoadCenterYawNegNumber").value;
+    var positivePitch = document.getElementById("RoadCenterPitchPosNumber").value;
+    var negativePitch = document.getElementById("RoadCenterPitchNegNumber").value;
     //
     var nameYawImageUp = "img/angles/yaw_export/" + positiveYaw + ".png";
     var nameYawImageDown = "img/angles/yaw_export/" + negativeYaw + ".png";
@@ -1219,9 +1219,6 @@ function toggleMediaUpload(id, option, camera) {
                 if (timelapseCheckbox1.checked) {
                     toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_OFF.png');
                 }
-                if (timelapseCheckbox2.checked) {
-                    toggleMediaUploadButton(timelapseLabel2, false, 'source_img/Timelapse_OFF.png');
-                }
             }
             break;
         case "ReportTimelapse":
@@ -1235,12 +1232,6 @@ function toggleMediaUpload(id, option, camera) {
                 if (videoCheckbox1.checked) {
                     toggleMediaUploadButton(videoLabel1, false, 'source_img/Video_OFF.png');
                 }
-                if (imageCheckbox2.checked) {
-                    toggleMediaUploadButton(imageLabel2, false, 'source_img/Image_OFF.png');
-                }
-                if (videoCheckbox2.checked) {
-                    toggleMediaUploadButton(videoLabel2, false, 'source_img/Video_OFF.png');
-                }
             }
             break;
         case "ReportVideo":
@@ -1250,9 +1241,6 @@ function toggleMediaUpload(id, option, camera) {
                 toggleMediaUploadButton(videoLabel1, true, 'source_img/Video_ON.png');
                 if (timelapseCheckbox1.checked) {
                     toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_OFF.png');
-                }
-                if (timelapseCheckbox2.checked) {
-                    toggleMediaUploadButton(timelapseLabel2, false, 'source_img/Timelapse_OFF.png');
                 }
             }
             break;

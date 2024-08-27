@@ -41,8 +41,8 @@ input[type="range"]::-moz-range-track {
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     background: #007BFF;
     border-radius: 50%;
     cursor: pointer;

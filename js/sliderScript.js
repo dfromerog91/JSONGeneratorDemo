@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('DMS_driverDistractedFeedbackBackoff', 1, 60, '136px', 10);
     initializeDial('DMS_driverDistractedSpeedThreshold', 0, 50, '136px', 0);
     initializeDial('DMS_driverDistractedTurnGraceTimer', 0, 5, '192px', 2, 0.1);
+    initializeDial('MaxHeadingAngleForEvents', 0, 90, '192px', 15);
 
     initializeDial('DMS_phoneUseMessageBackoff', 0, 30, '136px', 5);
     initializeDial('DMS_phoneUseFeedbackBackoff', 1, 60, '136px', 30);
@@ -181,4 +182,81 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('SI_calibrationTimeout', 10, 60, '192px', 10);
     initializeDial('SI_sleepModeTimeout', 0, 255, '192px', 5);
     initializeDial('SI_GSensorWakeThreshold', 2, 63, '192px', 30);
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    function sliderWithVariableStep(baseId, min, mid, max, width, initialValue, step1, step2) {
+        const sliderId = baseId + 'Range';
+        const sliderValueId = baseId + 'Number';
+
+        const slider = document.getElementById(sliderId);
+        const sliderValue = document.getElementById(sliderValueId);
+
+        slider.min = min;
+        slider.max = max;
+        slider.step = getMinStep();
+        slider.value = initialValue;
+        slider.style.width = width;
+
+        sliderValue.min = min;
+        sliderValue.max = max;
+        sliderValue.value = initialValue;
+
+        function getStep(value) {
+            if (value == mid) {
+                return step1 < step2 ? step1 : step2;
+            }
+            return value < mid ? step1 : step2;
+        }
+
+        function getMinStep() {
+            if (step1 <= step2) {
+                return step1;
+            } else {
+                return step2;
+            }
+        }
+
+        function updateValues() {
+            let value = parseFloat(slider.value);
+            const step = getStep(value);
+            value = Math.round((value - min) / step) * step + min;
+            slider.value = value;
+            sliderValue.value = value;
+        }
+
+        slider.addEventListener('input', function() {
+            updateValues();
+        });
+
+        sliderValue.addEventListener('input', function() {
+            let value = parseFloat(sliderValue.value);
+            if (value < parseFloat(slider.min)) {
+                value = parseFloat(slider.min);
+            } else if (value > parseFloat(slider.max)) {
+                value = parseFloat(slider.max);
+            } else {
+                const step = getStep(value);
+                const minStep = getMinStep();
+                if (step > minStep) {
+                    if (value < slider.value) {
+                        sliderValue.value = parseInt(slider.value) - step;
+                    } else {
+                        sliderValue.value = parseInt(slider.value) + step;
+                    }
+                }
+            }
+            slider.value = sliderValue.value;
+        });
+
+        // Initialize the value
+        sliderValue.value = initialValue;
+        slider.value = initialValue;
+    }
+
+    // Initialization of controls
+    sliderWithVariableStep('RoadCenterPitchPos', 15, 35, 45, '164px', 15, 1, 5);
+    sliderWithVariableStep('RoadCenterPitchNeg', -45, -35, -15, '164px', -15, 5, 1);
+    sliderWithVariableStep('RoadCenterYawPos', 15, 35, 90, '164px', 20, 1, 5);
+    sliderWithVariableStep('RoadCenterYawNeg', -90, -35, -15, '164px', -20, 5, 1);
 });

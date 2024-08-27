@@ -17,6 +17,9 @@
   <script src="js/default.js"></script>
   <script src="js/API_jsonCipia.js"></script>
   <script src="js/sliderScript.js"></script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "nk13h3s6lc"); 
+  </script>
 </head>
 
 <body onload="import_FS10_defaultConfig()">
@@ -1624,15 +1627,14 @@
                 </tr>
                 <tr>
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
-                    Additional Parameters:
+                    Distraction filter when vehicle is turning:
                   </td>
                 </tr>
                 <tr>
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
                       <tr>
-                        <td style="border: none; width: 25%;"></td>
-                        <td style="border: none; width: 50%;">
+                        <td style="width: 50%;">
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;"
@@ -1666,7 +1668,38 @@
                             </tr>
                           </table>
                         </td>
-                        <td style="border: none; width: 25%;"></td>
+                        <td style="width: auto;">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;">
+                                Max Heading Angle for Events:
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border: none;">
+                                <table>
+                                  <tr>
+                                    <td colspan="2" style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="MaxHeadingAngleForEventsRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="MaxHeadingAngleForEventsNumber">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; text-align: left; vertical-align: middle;">
+                                      <label style="font-size: 12pt;">°/sec</label>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
                       </tr>
                     </table>
                   </td>
@@ -1698,31 +1731,21 @@
                         </td>
                         <td style="vertical-align: top;">
                           <label style="font-size: 2px;">&nbsp;</label>
-                          <label style="font-size: 12px;" for="RoadCenterPitchPos">Positive Pitch Angle (Up): </label>
-                          <select style="background-color: rgb(232 216 244); width: 200px" name="RoadCenterPitchPos" id="RoadCenterPitchPos"
-                            onchange="updateDMSImage()">
-                          </select>
+                          <label style="font-size: 12px;" for="RoadCenterPitchPosNumber">Positive Pitch Angle (Up): </label>
+                          <input type="range" id="RoadCenterPitchPosRange" onchange="updateDMSImage()">
+                          <input type="number" id="RoadCenterPitchPosNumber" onchange="updateDMSImage()">
                           <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterPitchNeg">Negative Pitch Angle (Down): </label>
-                          <select style="background-color: rgb(232 216 244); width: 200px" name="RoadCenterPitchNeg" id="RoadCenterPitchNeg"
-                            onchange="updateDMSImage()">
-                          </select>
+                          <label style="font-size: 12px;" for="RoadCenterPitchNegNumber">Negative Pitch Angle (Down): </label>
+                          <input type="range" id="RoadCenterPitchNegRange" onchange="updateDMSImage()">
+                          <input type="number" id="RoadCenterPitchNegNumber" onchange="updateDMSImage()">
                           <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterYawPos">Positive Yaw Angle (Right): </label>
-                          <select style="background-color: rgb(232 216 244); width: 200px;" name="RoadCenterYawPos" id="RoadCenterYawPos"
-                            onchange="updateDMSImage()">
-                          </select>
+                          <label style="font-size: 12px;" for="RoadCenterYawPosNumber">Positive Yaw Angle (Right): </label>
+                          <input type="range" id="RoadCenterYawPosRange" onchange="updateDMSImage()">
+                          <input type="number" id="RoadCenterYawPosNumber" onchange="updateDMSImage()">
                           <br><br>
-                          <label style="font-size: 12px;" for="RoadCenterYawNeg">Negative Yaw Angle (Left): </label>
-                          <select style="background-color: rgb(232 216 244); width: 200px" name="RoadCenterYawNeg" id="RoadCenterYawNeg"
-                            onchange="updateDMSImage()">
-                          </select>
-                          <br><br>
-                          <label style="font-size: 12px;">Max Heading Angle for Events: </label>
-                          <select name="MaxHeadingAngleForEvents" id="MaxHeadingAngleForEvents"
-                            style="background-color: rgb(232 216 244); width: 200px">
-                          </select>
-                          <br><br><br>
+                          <label style="font-size: 12px;" for="RoadCenterYawNegNumber">Negative Yaw Angle (Left): </label>
+                          <input type="range" id="RoadCenterYawNegRange" onchange="updateDMSImage()">
+                          <input type="number" id="RoadCenterYawNegNumber" onchange="updateDMSImage()">
                         </td>
                         <td style="background-color: #ffffff;">
                           <table style="background-color: #ffffff; width: 375px; border-collapse: collapse; border-spacing: 0;">
@@ -14835,7 +14858,7 @@
             <h1></h1>
           </div>
           <!---SI Cipia-FS10: Communications Watchdog - Header------>
-          <div class="header" , id="Cipia-FS10CommunicationsWatchdogHeader">
+          <!-- <div class="header" , id="Cipia-FS10CommunicationsWatchdogHeader">
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 5%; text-align: center;">
@@ -14854,12 +14877,55 @@
                 </td>
               </tr>
             </table>
-          </div>
+          </div> -->
           <!-- SI Cipia-FS10: Communications Watchdog - Subparams -->
-          <div id="SI_Cipia-FS10CommunicationsWatchdogSubParamsId" class="sub-parameters">
+          <!-- <div id="SI_Cipia-FS10CommunicationsWatchdogSubParamsId" class="sub-parameters">
             <h1></h1>
             <div class="table-container">
               <table>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal">
+                      
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div> -->
+          <h1></h1>
+          <h1 style="font-size:32pt">Cipia-FS10 Architecture</h1>
+          <!---SI Cipia-FS10 Architecture: Communications - Header------>
+          <div class="header" , id="Cipia-FS10ArchitectureCommunicationsHeader">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 5%; text-align: center;">
+                  <img src="source_img/Cipia-FS10_Architecture_Communications.png" class="icon">
+                </td>
+                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
+                  title="AlertMessage">
+                  Communications
+                </td>
+                <td class="col4" style="width: 5%; text-align: center;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureCommunicationsSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureCommunicationsHeader')">
+                    <img src="source_img/more_options_icon.png" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- SI Cipia-FS10 Architecture: Communications - Subparams -->
+          <div id="SI_Cipia-FS10ArchitectureCommunicationsSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Communications Watchdog:
+                  </td>
+                </tr>
                 <tr>
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     <table class="table-internal">
@@ -15042,35 +15108,6 @@
                     </table>
                   </td>
                 </tr>
-              </table>
-            </div>
-          </div>
-          <!---SI Cipia-FS10 Architecture: Communications - Header------>
-          <div class="header" , id="Cipia-FS10ArchitectureCommunicationsHeader">
-            <table class="table_properties">
-              <tr style="text-align: center; ">
-                <td class="col1" style="width: 5%; text-align: center;">
-                  <img src="source_img/Cipia-FS10_Architecture_Communications.png" class="icon">
-                </td>
-                <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
-                  title="AlertMessage">
-                  Cipia-FS10 Architecture: Communications
-                </td>
-                <td class="col4" style="width: 5%; text-align: center;"
-                  title="More/less options">
-                  <span class="toggle-button"
-                    onclick="toggleSubParameters('SI_Cipia-FS10ArchitectureCommunicationsSubParamsId', this, 'source_img/more_options_icon.png', 'source_img/less_options_icon.png', 'Cipia-FS10ArchitectureCommunicationsHeader')">
-                    <img src="source_img/more_options_icon.png" alt="More Options">
-                  </span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <!-- SI Cipia-FS10 Architecture: Communications - Subparams -->
-          <div id="SI_Cipia-FS10ArchitectureCommunicationsSubParamsId" class="sub-parameters">
-            <h1></h1>
-            <div class="table-container">
-              <table>
                 <tr>
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     Communication Settings and Hybrid Mode:
@@ -15305,7 +15342,7 @@
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
                   title="AlertMessage">
-                  Cipia-FS10 Architecture: General Purpose Inputs & Outputs
+                  General Purpose Inputs & Outputs
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
                   title="More/less options">
@@ -15663,7 +15700,7 @@
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
                   title="AlertMessage">
-                  Cipia-FS10 Architecture: Photos and Videos
+                  Photos and Videos
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
                   title="More/less options">
@@ -16057,7 +16094,7 @@
                 </td>
                 <td class="col2" style="width: auto; text-align: left; font-weight: bold;"
                   title="AlertMessage">
-                  Cipia-FS10 Architecture: Additional Settings
+                  Additional Settings
                 </td>
                 <td class="col4" style="width: 5%; text-align: center;"
                   title="More/less options">
@@ -16388,6 +16425,7 @@
             </div>
             <h1></h1>
           </div>
+          <h1></h1>
           <!-- Server Parameters - Header -->
           <div class="header" , id="serverParametersHeader">
             <table class="table_properties">
@@ -16450,6 +16488,7 @@
             </div>
             <h1></h1>
           </div>
+          <h1></h1>
           <!-- Wifi Networks - Header -->
           <div class="header" , id="wifiNetworksHeader">
             <table class="table_properties">
