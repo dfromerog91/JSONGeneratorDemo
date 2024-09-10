@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #bf0000;
+      }
+    </style>
+  </defs>
+  <circle class="cls-2" cx="24" cy="24" r="24"/>
+  <polygon class="cls-1" points="24 11.76 40.7 31.25 7.3 31.25 24 11.76"/>
+</svg>
