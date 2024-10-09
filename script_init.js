@@ -1367,7 +1367,7 @@ document.addEventListener("DOMContentLoaded", function() {
     toggles.forEach(toggle => {
         const img = toggle.querySelector('img');
         if (img) {
-            img.src = 'source_img/more_options_icon.png';
+            img.src = 'source_img/more_options_icon.svg';
             img.alt = 'More Options';
         } else {
             toggle.textContent = '[+]';

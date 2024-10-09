@@ -4129,10 +4129,10 @@ function updateComboBox_fromJSON(JSONdata){
     updateSelectValue("LeftHandDrive", JSONdata, "ExtraParameters.DsEngineParams.PreStartSetParams.LeftHandDrive");
 
     // Global Parameters for Driver's Feedback
-    updateCheckAndImageButton("GP_beepsActivation", JSONdata, "DriverFeedbackOptions.Beeps", 'source_img/GP_Beeps_Activation_ON.png', 'source_img/GP_Beeps_Activation_OFF.png');
-    updateCheckAndImageButton("GP_voiceActivation", JSONdata, "DriverFeedbackOptions.Voice", 'source_img/GP_Voice_Activation_ON.png', 'source_img/GP_Voice_Activation_OFF.png');
-    updateCheckAndImageButton("GP_LED_activation", JSONdata, "DriverFeedbackOptions.LED", 'source_img/GP_LED_Activation_ON.png', 'source_img/GP_LED_Activation_OFF.png');
-    updateCheckAndImageButton("GP_system_LED_activation", JSONdata, "SystemLEDActivation", 'source_img/GP_System_LED_Activation_ON.png', 'source_img/GP_System_LED_Activation_OFF.png');
+    updateCheckAndImageButton("GP_beepsActivation", JSONdata, "DriverFeedbackOptions.Beeps", 'source_img/GP_Beeps_Activation_ON.svg', 'source_img/GP_Beeps_Activation_OFF.svg');
+    updateCheckAndImageButton("GP_voiceActivation", JSONdata, "DriverFeedbackOptions.Voice", 'source_img/GP_Voice_Activation_ON.svg', 'source_img/GP_Voice_Activation_OFF.svg');
+    updateCheckAndImageButton("GP_LED_activation", JSONdata, "DriverFeedbackOptions.LED", 'source_img/GP_LED_Activation_ON.svg', 'source_img/GP_LED_Activation_OFF.svg');
+    updateCheckAndImageButton("GP_system_LED_activation", JSONdata, "SystemLEDActivation", 'source_img/GP_System_LED_Activation_ON.svg', 'source_img/GP_System_LED_Activation_OFF.svg');
     
     // Driver Angles
     //updateAngleValue("RoadCenterPitchPos", JSONdata, "ExtraParameters.DsEngineParams.PostStartSetParams.RoadCenterPitchPos", 15, 0, 45, PitchPos);
