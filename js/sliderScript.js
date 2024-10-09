@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dialValue.value = initialValue;
         dialValue.step = step;
 
-        const sliderType = baseId.endsWith("MessageBackoff") ? "messageSettings-"
+        const group = baseId.endsWith("MessageBackoff") ? "messageSettings-"
             : baseId.endsWith("FeedbackBackoff")  ? "messageSettings-"
             : baseId.endsWith("SpeedThreshold") ? "messageSettings-"
             : '';
@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (summaryCell) {
             summaryCell.classList.remove('disabled-summary-cell');
             if (parseFloat(dialValue.value) > 0) {                
-                summaryCell.classList.add(`active-${sliderType}summary-cell`);
+                summaryCell.classList.add(`active-${group}summary-cell`);
             } else {
-                summaryCell.classList.add(`inactive-${sliderType}summary-cell`);
+                summaryCell.classList.add(`inactive-${group}summary-cell`);
             }
         }
 
@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         function updateCellColor(cell) {
             if (cell) {
                 if (parseFloat(dialValue.value) > 0) {
-                    cell.classList.remove(`inactive-${sliderType}summary-cell`);
-                    cell.classList.add(`active-${sliderType}summary-cell`);
+                    cell.classList.remove(`inactive-${group}summary-cell`);
+                    cell.classList.add(`active-${group}summary-cell`);
                 } else {
-                    cell.classList.remove(`active-${sliderType}summary-cell`);
-                    cell.classList.add(`inactive-${sliderType}summary-cell`);
+                    cell.classList.remove(`active-${group}summary-cell`);
+                    cell.classList.add(`inactive-${group}summary-cell`);
                 }
             }
         }

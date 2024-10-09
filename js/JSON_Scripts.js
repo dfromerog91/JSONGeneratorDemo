@@ -3038,15 +3038,15 @@ function updateCheckAndImageButton(button, JSONdata, propertyPath, imgOnSrc, img
 function updateSummaryCell(cell, activate, imgSrc) {
     const summaryCell = document.getElementById(cell);
     const summaryCellImg = document.getElementById(cell + 'Img');
-    const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
-    let group = '';
-    if (currentClass) {
-        const match = currentClass.match(/(inactive|active)-(.*)-?summary-cell/);
-        if (match && match[2]) {
-            group = match[2];
-        }
-    }
     if (summaryCell) {
+        const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
+        let group = '';
+        if (currentClass) {
+            const match = currentClass.match(/(inactive|active)-(.*)-?summary-cell/);
+            if (match && match[2]) {
+                group = match[2];
+            }
+        }
         if (activate) {
             summaryCell.classList.remove(`inactive-${group}summary-cell`);
             summaryCell.classList.add(`active-${group}summary-cell`);
@@ -3333,7 +3333,7 @@ function updateFeedbackOutputSummary (paramId) {
         summaryCell.classList.remove(`inactive-${group}summary-cell`);
         summaryCell.classList.add(`active-${group}summary-cell`);
     }
-    summaryCellImg.src = "source_img/" + selectedValue.value + ".png";
+    summaryCellImg.src = "source_img/" + selectedValue.value + ".svg";
 }
 
 // Updating tables from FS10-Events
@@ -3972,21 +3972,21 @@ function updateSliderControlDecimal(id, JSONdata, propertyPath) {
 
 function updateSliderControlSummary(id, value) {
     const summaryCell = document.getElementById(id);
-    const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
-    let group = '';
-    if (currentClass) {
-        const match = currentClass.match(/(inactive|active)-(.*)-?summary-cell/);
-        if (match && match[2]) {
-            group = match[2];
-        }
-    }
     if (summaryCell) {
+        const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
+        let group = '';
+        if (currentClass) {
+            const match = currentClass.match(/(inactive|active)-(.*)-?summary-cell/);
+            if (match && match[2]) {
+                group = match[2];
+            }
+        }
         if (value > 0) {
-            summaryCell.classList.remove('inactive-summary-cell');
-            summaryCell.classList.add('active-summary-cell');
+            summaryCell.classList.remove(`inactive-${group}summary-cell`);
+            summaryCell.classList.add(`active-${group}summary-cell`);
         } else {
-            summaryCell.classList.remove('active-summary-cell');
-            summaryCell.classList.add('inactive-summary-cell');
+            summaryCell.classList.remove(`active-${group}summary-cell`);
+            summaryCell.classList.add(`inactive-${group}summary-cell`);
         }
         const summaryCellValue = document.getElementById(id + "Value");
         summaryCellValue.textContent = value;
