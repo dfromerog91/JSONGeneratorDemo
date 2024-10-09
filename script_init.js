@@ -1298,6 +1298,14 @@ function toggleSummaryCell (cell, activate, imgSrc) {
     const summaryCell = document.getElementById(cell);
     const summaryCellImg = document.getElementById(cell + 'Img');
     if (summaryCell) {
+        const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
+        let group = '';
+        if (currentClass) {
+            const match = currentClass.match(/(inactive|active)-(.*)-?summary-cell/);
+            if (match && match[2]) {
+                group = match[2];
+            }
+        }
         if (activate) {
             summaryCell.classList.remove('inactive-summary-cell');
             summaryCell.classList.add('active-summary-cell');

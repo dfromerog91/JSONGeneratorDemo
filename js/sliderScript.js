@@ -21,12 +21,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dialValue.value = initialValue;
         dialValue.step = step;
 
+        const group = baseId.endsWith("MessageBackoff") ? "messageSettings-"
+            : baseId.endsWith("FeedbackBackoff")  ? "messageSettings-"
+            : baseId.endsWith("SpeedThreshold") ? "messageSettings-"
+            : '';
+
         if (summaryCell) {
             summaryCell.classList.remove('disabled-summary-cell');
             if (parseFloat(dialValue.value) > 0) {                
-                summaryCell.classList.add('active-summary-cell');
+                summaryCell.classList.add(`active-${group}summary-cell`);
             } else {
-                summaryCell.classList.add('inactive-summary-cell');
+                summaryCell.classList.add(`inactive-${group}summary-cell`);
             }
         }
 
@@ -39,11 +44,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         function updateCellColor(cell) {
             if (cell) {
                 if (parseFloat(dialValue.value) > 0) {
-                    cell.classList.remove('inactive-summary-cell');
-                    cell.classList.add('active-summary-cell');
+                    cell.classList.remove(`inactive-${group}summary-cell`);
+                    cell.classList.add(`active-${group}summary-cell`);
                 } else {
-                    cell.classList.remove('active-summary-cell');
-                    cell.classList.add('inactive-summary-cell');
+                    cell.classList.remove(`active-${group}summary-cell`);
+                    cell.classList.add(`inactive-${group}summary-cell`);
                 }
             }
         }
