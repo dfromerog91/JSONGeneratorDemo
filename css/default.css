@@ -1046,76 +1046,17 @@ input:checked + .slider:before {
 	background-color: #bfeffc;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
-	padding: 3px;
-}
-
-.active-driverFeedback-summary-cell {
-	background-color: #00b6c4;
-	color: rgb(65, 65, 65);
-	width: 3.5%;
-	padding: 3px;
-}
-
-.active-messageSettings-summary-cell {
-	background-color: #fea500;
-	color: rgb(65, 65, 65);
-	width: 3.5%;
-	padding: 3px;
-}
-
-.active-inCabin-summary-cell {
-	background-color: #0c6;
-	color: rgb(65, 65, 65);
-	width: 3.5%;
-	padding: 3px;
-}
-
-.active-roadFacing-summary-cell {
-	background-color: #e16a44;
-	color: rgb(65, 65, 65);
-	width: 3.5%;
-	padding: 3px;
 }
   
 .inactive-summary-cell { 
 	background-color: #eecdcd;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
-	padding: 3px;
-}
-
-.inactive-driverFeedback-summary-cell { 
-	background-color: #00b6c4;
-	color: rgb(65, 65, 65);
-	width: 3.5%;
-	padding: 3px;
-}
-
-.inactive-messageSettings-summary-cell { 
-	background-color: #fea500;
-	color: rgb(65, 65, 65);
-	width: 3.5%;
-	padding: 3px;
-}
-
-.inactive-inCabin-summary-cell { 
-	background-color: #0c6;
-	color: rgb(65, 65, 65);
-	width: 3.5%;
-	padding: 3px;
-}
-
-.inactive-roadFacing-summary-cell { 
-	background-color: #e16a44;
-	color: rgb(65, 65, 65);
-	width: 3.5%;
-	padding: 3px;
 }
 
 .disabled-summary-cell {
 	background-color: rgb(170, 170, 170);
 	width: 3.5%;
-	padding: 3px;
 	font-style: italic;
 	font-weight: normal;
 	color: rgb(115, 115, 115);

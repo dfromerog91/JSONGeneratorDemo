@@ -1488,7 +1488,6 @@ function generate_FS10_JSON(){
     var FrequencyGPO = parseFloat(document.getElementById("FrequencyGPO").value).toFixed(1);
     var LengthGPO = parseInt(document.getElementById("LengthGPO").value);
     var SourceGPO = document.getElementById("SourceGPO").value;
-    var GPS_lossSpeedPersistenceTime = parseInt(document.getElementById("GPS_lossSpeedPersistenceTimeNumber").value);
     var DeviceTurnOnEnable = document.getElementById("SI_deviceTurnOnCheckbox").checked;
     var SelfEventTriggerEnable = document.getElementById("SI_selfEventTriggerCheckbox").checked;
     var micStatus = document.getElementById("micStatus").value;
@@ -2812,7 +2811,6 @@ function generate_FS10_JSON(){
         "MaxHeadingAngleForEvents": MaxHeadingAngleForEvents,
         "MicStatus": micStatus,
         "MinSpeedMonitorThreshold": MinSpeedMonitor,
-        "GPSLossSpeedPersistenceTime": GPS_lossSpeedPersistenceTime,
         "Port": ServerPort,
         "RS232Settings": {
             "Baud": Baudrate,
@@ -2988,22 +2986,22 @@ function updateDetectionClosureEvent(id, JSONdata, detectionPath, closurePath, c
             }
             closureEventCheckbox.checked = closureValue;
             if (closureEventCheckbox.checked) {
-                updateSummaryCell(summaryCellLabel, true, 'source_img/Detection_Closure_Event_ON.svg');
+                updateSummaryCell(summaryCellLabel, true, 'source_img/Detection_Closure_Event_ON.png');
             } else {
-                updateSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.svg');
+                updateSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
             }
         } else {
             closureEventCheckbox.checked = false;
             closureEventCheckbox.disabled = true;
-            updateSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.svg');
+            updateSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
         }
     } else {
         closureEventCheckbox.checked = false;
         closureEventCheckbox.disabled = true;
         if (detectionEventCheckbox.checked) {
-            toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.svg');
+            toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
         } else {
-            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.svg');
+            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
         }
     }
 }
@@ -3048,11 +3046,11 @@ function updateSummaryCell(cell, activate, imgSrc) {
             }
         }
         if (activate) {
-            summaryCell.classList.remove(`inactive-${group}summary-cell`);
-            summaryCell.classList.add(`active-${group}summary-cell`);
+            summaryCell.classList.remove('inactive-summary-cell');
+            summaryCell.classList.add('active-summary-cell');
         } else {
-            summaryCell.classList.remove(`active-${group}summary-cell`);
-            summaryCell.classList.add(`inactive-${group}summary-cell`);
+            summaryCell.classList.remove('active-summary-cell');
+            summaryCell.classList.add('inactive-summary-cell');
         }
         summaryCellImg.src = imgSrc;
     }
@@ -3135,25 +3133,25 @@ function updateMediaUpload(id, JSONdata, paramPath) {
     const imageRoadFacingCheckbox = document.getElementById(imageRoadFacingLabel + 'Checkbox');
     const timelapseRoadFacingCheckbox = document.getElementById(timelapseRoadFacingLabel + 'Checkbox');
     const videoRoadFacingCheckbox = document.getElementById(videoRoadFacingLabel + 'Checkbox');
-    updateMediaUploadButton(imageInCabinLabel, false, 'source_img/Image_InCabin_OFF.svg');
-    updateMediaUploadButton(timelapseInCabinLabel, false, 'source_img/Timelapse_InCabin_OFF.svg');
-    updateMediaUploadButton(imageRoadFacingLabel, false, 'source_img/Image_RoadFacing_OFF.svg');
-    updateMediaUploadButton(timelapseRoadFacingLabel, false, 'source_img/Timelapse_RoadFacing_OFF.svg');
-    updateMediaUploadButton(videoInCabinLabel, false, 'source_img/Video_InCabin_OFF.svg');
-    updateMediaUploadButton(videoRoadFacingLabel, false, 'source_img/Video_RoadFacing_OFF.svg');
+    updateMediaUploadButton(imageInCabinLabel, false, 'source_img/Image_OFF.png');
+    updateMediaUploadButton(timelapseInCabinLabel, false, 'source_img/Timelapse_OFF.png');
+    updateMediaUploadButton(imageRoadFacingLabel, false, 'source_img/Image_OFF.png');
+    updateMediaUploadButton(timelapseRoadFacingLabel, false, 'source_img/Timelapse_OFF.png');
+    updateMediaUploadButton(videoInCabinLabel, false, 'source_img/Video_OFF.png');
+    updateMediaUploadButton(videoRoadFacingLabel, false, 'source_img/Video_OFF.png');
     switch (imageValue) {
         case "SingleDMS":
-            updateMediaUploadButton(imageInCabinLabel, true, 'source_img/Image_InCabin_ON.svg');
+            updateMediaUploadButton(imageInCabinLabel, true, 'source_img/Image_ON.png');
             break;
         case "SingleADAS":
-            updateMediaUploadButton(imageRoadFacingLabel, true, 'source_img/Image_RoadFacing_ON.svg');
+            updateMediaUploadButton(imageRoadFacingLabel, true, 'source_img/Image_ON.png');
             break;
         case "BothSingle":
-            updateMediaUploadButton(imageInCabinLabel, true, 'source_img/Image_InCabin_ON.svg');
-            updateMediaUploadButton(imageRoadFacingLabel, true, 'source_img/Image_RoadFacing_ON.svg');
+            updateMediaUploadButton(imageInCabinLabel, true, 'source_img/Image_ON.png');
+            updateMediaUploadButton(imageRoadFacingLabel, true, 'source_img/Image_ON.png');
             break;
         case "TimelapseDMS":
-            updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_InCabin_ON.svg');
+            updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_ON.png');
             if (footageValue == "ADAS" || footageValue == "Both") {
                 footageValue = "ADAS";
             } else {
@@ -3161,7 +3159,7 @@ function updateMediaUpload(id, JSONdata, paramPath) {
             }
             break;
         case "TimelapseADAS":
-            updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_RoadFacing_ON.svg');
+            updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_ON.png');
             if (footageValue == "DMS" || footageValue == "Both") {
                 footageValue = "DMS";
             } else {
@@ -3169,8 +3167,8 @@ function updateMediaUpload(id, JSONdata, paramPath) {
             }
             break;
         case "BothTimelapse":
-            updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_InCabin_ON.svg');
-            updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_RoadFacing_ON.svg');
+            updateMediaUploadButton(timelapseInCabinLabel, true, 'source_img/Timelapse_ON.png');
+            updateMediaUploadButton(timelapseRoadFacingLabel, true, 'source_img/Timelapse_ON.png');
             footageValue = "None";
             break;
         default:
@@ -3178,14 +3176,14 @@ function updateMediaUpload(id, JSONdata, paramPath) {
     }
     switch (footageValue) {
         case "DMS":
-            updateMediaUploadButton(videoInCabinLabel, true, 'source_img/Video_InCabin_ON.svg');
+            updateMediaUploadButton(videoInCabinLabel, true, 'source_img/Video_ON.png');
             break;
         case "ADAS":
-            updateMediaUploadButton(videoRoadFacingLabel, true, 'source_img/Video_RoadFacing_ON.svg');
+            updateMediaUploadButton(videoRoadFacingLabel, true, 'source_img/Video_ON.png');
             break;
         case "Both":
-            updateMediaUploadButton(videoInCabinLabel, true, 'source_img/Video_InCabin_ON.svg');
-            updateMediaUploadButton(videoRoadFacingLabel, true, 'source_img/Video_RoadFacing_ON.svg');
+            updateMediaUploadButton(videoInCabinLabel, true, 'source_img/Video_ON.png');
+            updateMediaUploadButton(videoRoadFacingLabel, true, 'source_img/Video_ON.png');
             break;
         default:
             break;
@@ -3318,20 +3316,13 @@ function updateFeedbackOutputSummary (paramId) {
     const selectedValue = document.getElementById(paramId + 'Id');
     const summaryCell = document.getElementById(paramId + 'Summary');
     const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
-    const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
-    let group = '';
-    if (currentClass) {
-        const match = currentClass.match(/(inactive|active)-(.*)-?summary-cell/);
-        if (match && match[2]) {
-            group = match[2];
-        }
-    }
+
     if (selectedValue.value === 'None') {
-        summaryCell.classList.remove(`active-${group}summary-cell`);
-        summaryCell.classList.add(`inactive-${group}summary-cell`);
+        summaryCell.classList.remove('active-summary-cell');
+        summaryCell.classList.add('inactive-summary-cell');
     } else {
-        summaryCell.classList.remove(`inactive-${group}summary-cell`);
-        summaryCell.classList.add(`active-${group}summary-cell`);
+        summaryCell.classList.remove('inactive-summary-cell');
+        summaryCell.classList.add('active-summary-cell');
     }
     summaryCellImg.src = "source_img/" + selectedValue.value + ".svg";
 }
@@ -3341,51 +3332,51 @@ function DMS_menuToUpdate(JSONdata){
     // DMS
     //    -Driver Asleep
     updateCheckboxCheckedState("DMS_driverAsleepActivation", JSONdata, "EventsSettings.DriverAsleep.Activation");
-    updateCheckAndImageButton("DMS_driverAsleepFeedbackAudio", JSONdata, "EventsSettings.DriverAsleep.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_driverAsleepFeedbackAudio", JSONdata, "EventsSettings.DriverAsleep.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_driverAsleepFeedbackOutput", JSONdata, "EventsSettings.DriverAsleep.FeedbackOutput");
-    updateCheckAndImageButton("DMS_driverAsleepFeedbackSpeech", JSONdata, "EventsSettings.DriverAsleep.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_driverAsleepFeedbackVisual", JSONdata, "EventsSettings.DriverAsleep.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_driverAsleepFeedbackSpeech", JSONdata, "EventsSettings.DriverAsleep.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverAsleepFeedbackVisual", JSONdata, "EventsSettings.DriverAsleep.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_driverAsleep", JSONdata, 'DriverAsleep', 'Asleep', true);
     updateMediaUpload("DMS_driverAsleep", JSONdata, "DriverAsleep");
     
     //    -Drowsiness
     updateCheckboxCheckedState("DMS_drowsinessActivation", JSONdata, "EventsSettings.Drowsiness.Activation");
-    updateCheckAndImageButton("DMS_drowsinessFeedbackAudio", JSONdata, "EventsSettings.Drowsiness.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_drowsinessFeedbackAudio", JSONdata, "EventsSettings.Drowsiness.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_drowsinessFeedbackOutput", JSONdata, "EventsSettings.Drowsiness.FeedbackOutput");
-    updateCheckAndImageButton("DMS_drowsinessFeedbackSpeech", JSONdata, "EventsSettings.Drowsiness.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_drowsinessFeedbackVisual", JSONdata, "EventsSettings.Drowsiness.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_drowsinessFeedbackSpeech", JSONdata, "EventsSettings.Drowsiness.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_drowsinessFeedbackVisual", JSONdata, "EventsSettings.Drowsiness.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_drowsiness", JSONdata, 'Drowsiness', 'Drowsiness', true);
     updateMediaUpload("DMS_drowsiness", JSONdata, "Drowsiness");
     //    -Driver Distracted
     updateCheckboxCheckedState("DMS_driverDistractedActivation", JSONdata, "EventsSettings.DriverDistracted.Activation");
-    updateCheckAndImageButton("DMS_driverDistractedFeedbackAudio", JSONdata, "EventsSettings.DriverDistracted.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_driverDistractedFeedbackAudio", JSONdata, "EventsSettings.DriverDistracted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_driverDistractedFeedbackOutput", JSONdata, "EventsSettings.DriverDistracted.FeedbackOutput");
-    updateCheckAndImageButton("DMS_driverDistractedFeedbackSpeech", JSONdata, "EventsSettings.DriverDistracted.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_driverDistractedFeedbackVisual", JSONdata, "EventsSettings.DriverDistracted.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_driverDistractedFeedbackSpeech", JSONdata, "EventsSettings.DriverDistracted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverDistractedFeedbackVisual", JSONdata, "EventsSettings.DriverDistracted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_driverDistracted", JSONdata, 'DriverDistracted', 'DriverDistracted', true);
     updateMediaUpload("DMS_driverDistracted", JSONdata, "DriverDistracted");
     //    -Phone use
     updateCheckboxCheckedState("DMS_phoneUseActivation", JSONdata, "EventsSettings.PhoneUse.Activation");
-    updateCheckAndImageButton("DMS_phoneUseFeedbackAudio", JSONdata, "EventsSettings.PhoneUse.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_phoneUseFeedbackAudio", JSONdata, "EventsSettings.PhoneUse.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_phoneUseFeedbackOutput", JSONdata, "EventsSettings.PhoneUse.FeedbackOutput");
-    updateCheckAndImageButton("DMS_phoneUseFeedbackSpeech", JSONdata, "EventsSettings.PhoneUse.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_phoneUseFeedbackVisual", JSONdata, "EventsSettings.PhoneUse.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_phoneUseFeedbackSpeech", JSONdata, "EventsSettings.PhoneUse.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_phoneUseFeedbackVisual", JSONdata, "EventsSettings.PhoneUse.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_phoneUse", JSONdata, 'PhoneUse', 'PhoneUse', true);
     updateMediaUpload("DMS_phoneUse", JSONdata, "PhoneUse");
     //    -Seatbelt
     updateCheckboxCheckedState("DMS_seatbeltActivation", JSONdata, "EventsSettings.Seatbelt.Activation");
-    updateCheckAndImageButton("DMS_seatbeltFeedbackAudio", JSONdata, "EventsSettings.Seatbelt.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_seatbeltFeedbackAudio", JSONdata, "EventsSettings.Seatbelt.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_seatbeltFeedbackOutput", JSONdata, "EventsSettings.Seatbelt.FeedbackOutput");
-    updateCheckAndImageButton("DMS_seatbeltFeedbackSpeech", JSONdata, "EventsSettings.Seatbelt.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_seatbeltFeedbackVisual", JSONdata, "EventsSettings.Seatbelt.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_seatbeltFeedbackSpeech", JSONdata, "EventsSettings.Seatbelt.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_seatbeltFeedbackVisual", JSONdata, "EventsSettings.Seatbelt.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_seatbelt", JSONdata, 'Seatbelt', 'Seatbelt', true);
     updateMediaUpload("DMS_seatbelt", JSONdata, "Seatbelt");
     //    -Smoking
     updateCheckboxCheckedState("DMS_smokingActivation", JSONdata, "EventsSettings.Smoking.Activation");
-    updateCheckAndImageButton("DMS_smokingFeedbackAudio", JSONdata, "EventsSettings.Smoking.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_smokingFeedbackAudio", JSONdata, "EventsSettings.Smoking.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_smokingFeedbackOutput", JSONdata, "EventsSettings.Smoking.FeedbackOutput");
-    updateCheckAndImageButton("DMS_smokingFeedbackSpeech", JSONdata, "EventsSettings.Smoking.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_smokingFeedbackVisual", JSONdata, "EventsSettings.Smoking.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_smokingFeedbackSpeech", JSONdata, "EventsSettings.Smoking.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_smokingFeedbackVisual", JSONdata, "EventsSettings.Smoking.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_smoking", JSONdata, 'Smoking', 'Smoking', true);
     updateMediaUpload("DMS_smoking", JSONdata, "Smoking");
     //    -Light Drowsiness
@@ -3401,50 +3392,50 @@ function DMS_menuToUpdate(JSONdata){
     */
     //    -Tampering
     updateCheckboxCheckedState("DMS_tamperingDetectionActivation", JSONdata, "EventsSettings.TamperingDetection.Activation");
-    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackAudio", JSONdata, "EventsSettings.TamperingDetection.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackAudio", JSONdata, "EventsSettings.TamperingDetection.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_tamperingDetectionFeedbackOutput", JSONdata, "EventsSettings.TamperingDetection.FeedbackOutput");
-    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackSpeech", JSONdata, "EventsSettings.TamperingDetection.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackVisual", JSONdata, "EventsSettings.TamperingDetection.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackSpeech", JSONdata, "EventsSettings.TamperingDetection.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_tamperingDetectionFeedbackVisual", JSONdata, "EventsSettings.TamperingDetection.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_tamperingDetection", JSONdata, 'TamperingDetection', 'TamperingDetection', false);
     updateMediaUpload("DMS_tamperingDetection", JSONdata, "TamperingDetection");
     //    -Driver Identified
     updateCheckboxCheckedState("DMS_driverIdentifiedActivation", JSONdata, "EventsSettings.DriverIdentified.Activation");
-    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackAudio", JSONdata, "EventsSettings.DriverIdentified.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackAudio", JSONdata, "EventsSettings.DriverIdentified.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_driverIdentifiedFeedbackOutput", JSONdata, "EventsSettings.DriverIdentified.FeedbackOutput");
-    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackSpeech", JSONdata, "EventsSettings.DriverIdentified.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackVisual", JSONdata, "EventsSettings.DriverIdentified.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackSpeech", JSONdata, "EventsSettings.DriverIdentified.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverIdentifiedFeedbackVisual", JSONdata, "EventsSettings.DriverIdentified.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_driverIdentified", JSONdata, 'DriverIdentified', 'DriverIdentified', false);
     updateMediaUpload("DMS_driverIdentified", JSONdata, "DriverIdentified");
     //    -Driver Unindentified
     updateCheckboxCheckedState("DMS_driverUnidentifiedActivation", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.Activation");
-    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackAudio", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackAudio", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_driverUnidentifiedFeedbackOutput", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackOutput");
-    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackSpeech", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackVisual", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackSpeech", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackVisual", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_driverUnidentified", JSONdata, 'UnidentifiedUnauthDriver', 'UnidentifiedUnauthDriver', false);
     updateMediaUpload("DMS_driverUnidentified", JSONdata, "UnidentifiedUnauthDriver");
     //    -Driver Disappeared
     updateCheckboxCheckedState("DMS_driverDisappearedActivation", JSONdata, "EventsSettings.DriverDisappeared.Activation");
-    updateCheckAndImageButton("DMS_driverDisappearedFeedbackAudio", JSONdata, "EventsSettings.DriverDisappeared.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_driverDisappearedFeedbackAudio", JSONdata, "EventsSettings.DriverDisappeared.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_driverDisappearedFeedbackOutput", JSONdata, "EventsSettings.DriverDisappeared.FeedbackOutput");
-    updateCheckAndImageButton("DMS_driverDisappearedFeedbackSpeech", JSONdata, "EventsSettings.DriverDisappeared.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_driverDisappearedFeedbackVisual", JSONdata, "EventsSettings.DriverDisappeared.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_driverDisappearedFeedbackSpeech", JSONdata, "EventsSettings.DriverDisappeared.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverDisappearedFeedbackVisual", JSONdata, "EventsSettings.DriverDisappeared.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_driverDisappeared", JSONdata, 'DriverDisappeared', 'DriverDisappeared', false);
     updateMediaUpload("DMS_driverDisappeared", JSONdata, "DriverDisappeared");
     //    -Driver Changed
     updateCheckboxCheckedState("DMS_driverChangedActivation", JSONdata, "EventsSettings.DriverChange.Activation");
-    updateCheckAndImageButton("DMS_driverChangedFeedbackAudio", JSONdata, "EventsSettings.DriverChange.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_driverChangedFeedbackAudio", JSONdata, "EventsSettings.DriverChange.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_driverChangedFeedbackOutput", JSONdata, "EventsSettings.DriverChange.FeedbackOutput");
-    updateCheckAndImageButton("DMS_driverChangedFeedbackSpeech", JSONdata, "EventsSettings.DriverChange.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_driverChangedFeedbackVisual", JSONdata, "EventsSettings.DriverChange.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_driverChangedFeedbackSpeech", JSONdata, "EventsSettings.DriverChange.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverChangedFeedbackVisual", JSONdata, "EventsSettings.DriverChange.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_driverChanged", JSONdata, 'DriverChange', 'DriverChange', false);
     updateMediaUpload("DMS_driverChanged", JSONdata, "DriverChange");
     //    -Driver ID Updated
     updateCheckboxCheckedState("DMS_driverIdUpdatedActivation", JSONdata, "EventsSettings.DriverIDUpdated.Activation");
-    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackAudio", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackAudio", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("DMS_driverIdUpdatedFeedbackOutput", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackOutput");
-    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackSpeech", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackVisual", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackSpeech", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackVisual", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("DMS_driverIdUpdated", JSONdata, 'DriverIDUpdated', 'DriverIDUpdated', false);
     updateMediaUpload("DMS_driverIdUpdated", JSONdata, "DriverIDUpdated");
 }
@@ -3452,10 +3443,10 @@ function ADAS_menuToUpdate(JSONdata){
     // ADAS
     //    -LDW
     updateCheckboxCheckedState("ADAS_LDW_Activation", JSONdata, "EventsSettings.LaneDepartureWarning.Activation");
-    updateCheckAndImageButton("ADAS_LDW_FeedbackAudio", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("ADAS_LDW_FeedbackAudio", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("ADAS_LDW_FeedbackOutput", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackOutput");
-    updateCheckAndImageButton("ADAS_LDW_FeedbackSpeech", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("ADAS_LDW_FeedbackVisual", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("ADAS_LDW_FeedbackSpeech", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_LDW_FeedbackVisual", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("ADAS_LDW_", JSONdata, 'LaneDepartureWarning', 'LDW', true);
     updateMediaUpload("ADAS_LDW_", JSONdata, "LaneDepartureWarning");
     //    -Running Red Light (FS10)
@@ -3482,26 +3473,26 @@ function ADAS_menuToUpdate(JSONdata){
     */
     //    -HMW
     updateCheckboxCheckedState("ADAS_HMW_Activation", JSONdata, "EventsSettings.Tailgating(HMW).Activation");
-    updateCheckAndImageButton("ADAS_HMW_FeedbackAudio", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("ADAS_HMW_FeedbackAudio", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("ADAS_HMW_FeedbackOutput", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackOutput");
-    updateCheckAndImageButton("ADAS_HMW_FeedbackSpeech", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("ADAS_HMW_FeedbackVisual", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("ADAS_HMW_FeedbackSpeech", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_HMW_FeedbackVisual", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("ADAS_HMW_", JSONdata, 'Tailgating(HMW)', 'Tailgating', true);
     updateMediaUpload("ADAS_HMW_", JSONdata, "Tailgating(HMW)");
     //    -UFCW
     updateCheckboxCheckedState("ADAS_UFCW_Activation", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.Activation");
-    updateCheckAndImageButton("ADAS_UFCW_FeedbackAudio", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("ADAS_UFCW_FeedbackAudio", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("ADAS_UFCW_FeedbackOutput", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackOutput");
-    updateCheckAndImageButton("ADAS_UFCW_FeedbackSpeech", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("ADAS_UFCW_FeedbackVisual", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("ADAS_UFCW_FeedbackSpeech", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_UFCW_FeedbackVisual", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("ADAS_UFCW_", JSONdata, 'UrbanForwardCollisionWarning', 'UFCW', true);
     updateMediaUpload("ADAS_UFCW_", JSONdata, "UrbanForwardCollisionWarning");
     //    -FCW
     updateCheckboxCheckedState("ADAS_FCW_Activation", JSONdata, "EventsSettings.ForwardCollisionWarning.Activation");
-    updateCheckAndImageButton("ADAS_FCW_FeedbackAudio", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("ADAS_FCW_FeedbackAudio", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("ADAS_FCW_FeedbackOutput", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackOutput");
-    updateCheckAndImageButton("ADAS_FCW_FeedbackSpeech", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("ADAS_FCW_FeedbackVisual", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("ADAS_FCW_FeedbackSpeech", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_FCW_FeedbackVisual", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("ADAS_FCW_", JSONdata, 'ForwardCollisionWarning', 'FCW', true);
     updateMediaUpload("ADAS_FCW_", JSONdata, "ForwardCollisionWarning");
     //    -FS10
@@ -3517,10 +3508,10 @@ function ADAS_menuToUpdate(JSONdata){
     */
     //    -PCW
     updateCheckboxCheckedState("ADAS_PCW_Activation", JSONdata, "EventsSettings.PedestrianCollisionWarning.Activation");
-    updateCheckAndImageButton("ADAS_PCW_FeedbackAudio", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("ADAS_PCW_FeedbackAudio", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("ADAS_PCW_FeedbackOutput", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackOutput");
-    updateCheckAndImageButton("ADAS_PCW_FeedbackSpeech", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("ADAS_PCW_FeedbackVisual", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("ADAS_PCW_FeedbackSpeech", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("ADAS_PCW_FeedbackVisual", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("ADAS_PCW_", JSONdata, 'PedestrianCollisionWarning', 'PCW', true);
     updateMediaUpload("ADAS_PCW_", JSONdata, "PedestrianCollisionWarning");
 }
@@ -3528,58 +3519,58 @@ function Tracking_menuToUpdate(JSONdata){
     // Tracking
     //    -Ignition ON
     updateCheckboxCheckedState("TES_ignitionOnActivation", JSONdata, "EventsSettings.IgnitionOn.Activation");
-    updateCheckAndImageButton("TES_ignitionOnFeedbackAudio", JSONdata, "EventsSettings.IgnitionOn.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("TES_ignitionOnFeedbackAudio", JSONdata, "EventsSettings.IgnitionOn.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("TES_ignitionOnFeedbackOutput", JSONdata, "EventsSettings.IgnitionOn.FeedbackOutput");
-    updateCheckAndImageButton("TES_ignitionOnFeedbackSpeech", JSONdata, "EventsSettings.IgnitionOn.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("TES_ignitionOnFeedbackVisual", JSONdata, "EventsSettings.IgnitionOn.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("TES_ignitionOnFeedbackSpeech", JSONdata, "EventsSettings.IgnitionOn.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_ignitionOnFeedbackVisual", JSONdata, "EventsSettings.IgnitionOn.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("TES_ignitionOn", JSONdata, 'IgnitionOn', 'IgnitionOn', false);
     updateMediaUpload("TES_ignitionOn", JSONdata, "IgnitionOn");
     //    -Ignition OFF
     updateCheckboxCheckedState("TES_ignitionOffActivation", JSONdata, "EventsSettings.IgnitionOff.Activation");
-    updateCheckAndImageButton("TES_ignitionOffFeedbackAudio", JSONdata, "EventsSettings.IgnitionOff.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("TES_ignitionOffFeedbackAudio", JSONdata, "EventsSettings.IgnitionOff.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("TES_ignitionOffFeedbackOutput", JSONdata, "EventsSettings.IgnitionOff.FeedbackOutput");
-    updateCheckAndImageButton("TES_ignitionOffFeedbackSpeech", JSONdata, "EventsSettings.IgnitionOff.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("TES_ignitionOffFeedbackVisual", JSONdata, "EventsSettings.IgnitionOff.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("TES_ignitionOffFeedbackSpeech", JSONdata, "EventsSettings.IgnitionOff.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_ignitionOffFeedbackVisual", JSONdata, "EventsSettings.IgnitionOff.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("TES_ignitionOff", JSONdata, 'IgnitionOff', 'IgnitionOff', false);
     updateMediaUpload("TES_ignitionOff", JSONdata, "IgnitionOff");
     //    -Movement Started
     updateCheckboxCheckedState("TES_movementStartedActivation", JSONdata, "EventsSettings.MovementStarted.Activation");
-    updateCheckAndImageButton("TES_movementStartedFeedbackAudio", JSONdata, "EventsSettings.MovementStarted.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("TES_movementStartedFeedbackAudio", JSONdata, "EventsSettings.MovementStarted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("TES_movementStartedFeedbackOutput", JSONdata, "EventsSettings.MovementStarted.FeedbackOutput");
-    updateCheckAndImageButton("TES_movementStartedFeedbackSpeech", JSONdata, "EventsSettings.MovementStarted.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("TES_movementStartedFeedbackVisual", JSONdata, "EventsSettings.MovementStarted.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("TES_movementStartedFeedbackSpeech", JSONdata, "EventsSettings.MovementStarted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_movementStartedFeedbackVisual", JSONdata, "EventsSettings.MovementStarted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("TES_movementStarted", JSONdata, 'MovementStarted', 'MovementStarted', false);
     updateMediaUpload("TES_movementStarted", JSONdata, "MovementStarted");
     //    -Movement Stopped
     updateCheckboxCheckedState("TES_movementStoppedActivation", JSONdata, "EventsSettings.MovementStop.Activation");
-    updateCheckAndImageButton("TES_movementStoppedFeedbackAudio", JSONdata, "EventsSettings.MovementStop.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("TES_movementStoppedFeedbackAudio", JSONdata, "EventsSettings.MovementStop.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("TES_movementStoppedFeedbackOutput", JSONdata, "EventsSettings.MovementStop.FeedbackOutput");
-    updateCheckAndImageButton("TES_movementStoppedFeedbackSpeech", JSONdata, "EventsSettings.MovementStop.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("TES_movementStoppedFeedbackVisual", JSONdata, "EventsSettings.MovementStop.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("TES_movementStoppedFeedbackSpeech", JSONdata, "EventsSettings.MovementStop.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_movementStoppedFeedbackVisual", JSONdata, "EventsSettings.MovementStop.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("TES_movementStopped", JSONdata, 'MovementStop', 'MovementStop', false);
     updateMediaUpload("TES_movementStopped", JSONdata, "MovementStop");
     //    -Heartbeat
     updateCheckboxCheckedState("TES_heartbeatActivation", JSONdata, "EventsSettings.Heartbeat.Activation");
-    updateCheckAndImageButton("TES_heartbeatFeedbackAudio", JSONdata, "EventsSettings.Heartbeat.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("TES_heartbeatFeedbackAudio", JSONdata, "EventsSettings.Heartbeat.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("TES_heartbeatFeedbackOutput", JSONdata, "EventsSettings.Heartbeat.FeedbackOutput");
-    updateCheckAndImageButton("TES_heartbeatFeedbackSpeech", JSONdata, "EventsSettings.Heartbeat.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("TES_heartbeatFeedbackVisual", JSONdata, "EventsSettings.Heartbeat.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("TES_heartbeatFeedbackSpeech", JSONdata, "EventsSettings.Heartbeat.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_heartbeatFeedbackVisual", JSONdata, "EventsSettings.Heartbeat.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("TES_heartbeat", JSONdata, 'Heartbeat', 'Heartbeat', false);
     updateMediaUpload("TES_heartbeat", JSONdata, "Heartbeat");
     //    -GPS Status Update
     updateCheckboxCheckedState("TES_GPS_updateStatusActivation", JSONdata, "EventsSettings.GpsStatusUpdate.Activation");
-    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackAudio", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackAudio", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("TES_GPS_updateStatusFeedbackOutput", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackOutput");
-    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackSpeech", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackVisual", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackSpeech", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_GPS_updateStatusFeedbackVisual", JSONdata, "EventsSettings.GpsStatusUpdate.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("TES_GPS_updateStatus", JSONdata, 'GpsStatusUpdate', 'GpsStatusUpdate', false);
     updateMediaUpload("TES_GPS_updateStatus", JSONdata, "GpsStatusUpdate");
     //    -TripPath
     updateCheckboxCheckedState("TES_tripPathActivation", JSONdata, "EventsSettings.TripPath.Activation");
-    updateCheckAndImageButton("TES_tripPathFeedbackAudio", JSONdata, "EventsSettings.TripPath.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("TES_tripPathFeedbackAudio", JSONdata, "EventsSettings.TripPath.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("TES_tripPathFeedbackOutput", JSONdata, "EventsSettings.TripPath.FeedbackOutput");
-    updateCheckAndImageButton("TES_tripPathFeedbackSpeech", JSONdata, "EventsSettings.TripPath.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("TES_tripPathFeedbackVisual", JSONdata, "EventsSettings.TripPath.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("TES_tripPathFeedbackSpeech", JSONdata, "EventsSettings.TripPath.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("TES_tripPathFeedbackVisual", JSONdata, "EventsSettings.TripPath.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("TES_tripPath", JSONdata, 'TripPath', 'TripPath', false);
     updateMediaUpload("TES_tripPath", JSONdata, "TripPath");
 }
@@ -3587,74 +3578,74 @@ function System_wo_event_menuToUpdate(JSONdata){
     //System Events without Reason
     //    -Camera Calibration Completed
     updateCheckboxCheckedState("SI_cameraCalibrationOkActivation", JSONdata, "EventsSettings.CameraCalibrationCompleted.Activation");
-    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackAudio", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackAudio", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_cameraCalibrationOkFeedbackOutput", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackOutput");
-    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackSpeech", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackVisual", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackSpeech", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_cameraCalibrationOkFeedbackVisual", JSONdata, "EventsSettings.CameraCalibrationCompleted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_cameraCalibrationOk", JSONdata, 'CameraCalibrationCompleted', 'CameraCalibrationCompleted', false);
     updateMediaUpload("SI_cameraCalibrationOk", JSONdata, "CameraCalibrationCompleted");
     //    -Camera Calibration Failed
     updateCheckboxCheckedState("SI_cameraCalibrationFailedActivation", JSONdata, "EventsSettings.CameraCalibrationFailed.Activation");
-    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackAudio", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackAudio", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_cameraCalibrationFailedFeedbackOutput", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackOutput");
-    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackSpeech", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackVisual", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackSpeech", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_cameraCalibrationFailedFeedbackVisual", JSONdata, "EventsSettings.CameraCalibrationFailed.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_cameraCalibrationFailed", JSONdata, 'CameraCalibrationFailed', 'CameraCalibrationFailed', false);
     updateMediaUpload("SI_cameraCalibrationFailed", JSONdata, "CameraCalibrationFailed");
     //    -Accelerometer Calibration Complete
     updateCheckboxCheckedState("SI_accelCalibrationOkActivation", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.Activation");
-    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackAudio", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackAudio", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_accelCalibrationOkFeedbackOutput", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackOutput");
-    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackSpeech", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackVisual", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackSpeech", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_accelCalibrationOkFeedbackVisual", JSONdata, "EventsSettings.3DAccelerometerCalibrationCompleted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_accelCalibrationOk", JSONdata, '3DAccelerometerCalibrationCompleted', '3DAccelerometerCalibrationCompleted', false);
     updateMediaUpload("SI_accelCalibrationOk", JSONdata, "3DAccelerometerCalibrationCompleted");
     //    -Entering Sleep Mode
     updateCheckboxCheckedState("SI_enteringSleepModeActivation", JSONdata, "EventsSettings.EnteredSleepMode.Activation");
-    updateCheckAndImageButton("SI_enteringSleepModeFeedbackAudio", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_enteringSleepModeFeedbackAudio", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_enteringSleepModeFeedbackOutput", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackOutput");
-    updateCheckAndImageButton("SI_enteringSleepModeFeedbackSpeech", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_enteringSleepModeFeedbackVisual", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_enteringSleepModeFeedbackSpeech", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_enteringSleepModeFeedbackVisual", JSONdata, "EventsSettings.EnteredSleepMode.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_enteringSleepMode", JSONdata, 'EnteredSleepMode', 'EnteredSleepMode', false);
     updateMediaUpload("SI_enteringSleepMode", JSONdata, "EnteredSleepMode");
     //    -FW Update Started
     updateCheckboxCheckedState("SI_firmwareUpdateStartedActivation", JSONdata, "EventsSettings.FwUpdateStarted.Activation");
-    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackAudio", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackAudio", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_firmwareUpdateStartedFeedbackOutput", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackOutput");
-    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackSpeech", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackVisual", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackSpeech", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_firmwareUpdateStartedFeedbackVisual", JSONdata, "EventsSettings.FwUpdateStarted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_firmwareUpdateStarted", JSONdata, 'FwUpdateStarted', 'FwUpdateStarted', false);
     updateMediaUpload("SI_firmwareUpdateStarted", JSONdata, "FwUpdateStarted");
     //    -FW Update Completed
     updateCheckboxCheckedState("SI_firmwareUpdateOK_Activation", JSONdata, "EventsSettings.FwUpdateCompleted.Activation");
-    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackAudio", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackAudio", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_firmwareUpdateOK_FeedbackOutput", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackOutput");
-    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackSpeech", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackVisual", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackSpeech", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_firmwareUpdateOK_FeedbackVisual", JSONdata, "EventsSettings.FwUpdateCompleted.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_firmwareUpdateOK_", JSONdata, 'FwUpdateCompleted', 'FwUpdateCompleted', false);
     updateMediaUpload("SI_firmwareUpdateOK_", JSONdata, "FwUpdateCompleted");
     //    -FW Update Failed
     updateCheckboxCheckedState("SI_firmwareUpdateFailedActivation", JSONdata, "EventsSettings.FwUpdateFailed.Activation");
-    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackAudio", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackAudio", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_firmwareUpdateFailedFeedbackOutput", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackOutput");
-    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackSpeech", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackVisual", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackSpeech", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_firmwareUpdateFailedFeedbackVisual", JSONdata, "EventsSettings.FwUpdateFailed.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_firmwareUpdateFailed", JSONdata, 'FwUpdateFailed', 'FwUpdateFailed', false);
     updateMediaUpload("SI_firmwareUpdateFailed", JSONdata, "FwUpdateFailed");
     //    -System Boot
     updateCheckboxCheckedState("SI_systemBootActivation", JSONdata, "EventsSettings.SystemBoot.Activation");
-    updateCheckAndImageButton("SI_systemBootFeedbackAudio", JSONdata, "EventsSettings.SystemBoot.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_systemBootFeedbackAudio", JSONdata, "EventsSettings.SystemBoot.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_systemBootFeedbackOutput", JSONdata, "EventsSettings.SystemBoot.FeedbackOutput");
-    updateCheckAndImageButton("SI_systemBootFeedbackSpeech", JSONdata, "EventsSettings.SystemBoot.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_systemBootFeedbackVisual", JSONdata, "EventsSettings.SystemBoot.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_systemBootFeedbackSpeech", JSONdata, "EventsSettings.SystemBoot.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemBootFeedbackVisual", JSONdata, "EventsSettings.SystemBoot.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_systemBoot", JSONdata, 'SystemBoot', 'SystemBoot', false);
     updateMediaUpload("SI_systemBoot", JSONdata, "SystemBoot");
     //    -System Boot Failure
     updateCheckboxCheckedState("SI_systemBootFailureActivation", JSONdata, "EventsSettings.SystemBootFailure.Activation");
-    updateCheckAndImageButton("SI_systemBootFailureFeedbackAudio", JSONdata, "EventsSettings.SystemBootFailure.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_systemBootFailureFeedbackAudio", JSONdata, "EventsSettings.SystemBootFailure.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_systemBootFailureFeedbackOutput", JSONdata, "EventsSettings.SystemBootFailure.FeedbackOutput");
-    updateCheckAndImageButton("SI_systemBootFailureFeedbackSpeech", JSONdata, "EventsSettings.SystemBootFailure.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_systemBootFailureFeedbackVisual", JSONdata, "EventsSettings.SystemBootFailure.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_systemBootFailureFeedbackSpeech", JSONdata, "EventsSettings.SystemBootFailure.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemBootFailureFeedbackVisual", JSONdata, "EventsSettings.SystemBootFailure.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_systemBootFailure", JSONdata, 'SystemBootFailure', 'SystemBootFailure', false);
     updateMediaUpload("SI_systemBootFailure", JSONdata, "SystemBootFailure");
 }
@@ -3662,58 +3653,58 @@ function System_w_event_menuToUpdate(JSONdata){
     //System Events with Reason 
     //    -External Event Triggering
     updateCheckboxCheckedState("SI_externalEventTriggeringActivation", JSONdata, "EventsSettings.ExternalEventTriggering.Activation");
-    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackAudio", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackAudio", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_externalEventTriggeringFeedbackOutput", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackOutput");
-    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackSpeech", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackVisual", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackSpeech", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_externalEventTriggeringFeedbackVisual", JSONdata, "EventsSettings.ExternalEventTriggering.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_externalEventTriggering", JSONdata, 'ExternalEventTriggering', 'ExternalEventTriggering', false);
     updateMediaUpload("SI_externalEventTriggering", JSONdata, "ExternalEventTriggering");
     //    -Application Error
     updateCheckboxCheckedState("SI_applicationErrorActivation", JSONdata, "EventsSettings.ApplicationError.Activation");
-    updateCheckAndImageButton("SI_applicationErrorFeedbackAudio", JSONdata, "EventsSettings.ApplicationError.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_applicationErrorFeedbackAudio", JSONdata, "EventsSettings.ApplicationError.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_applicationErrorFeedbackOutput", JSONdata, "EventsSettings.ApplicationError.FeedbackOutput");
-    updateCheckAndImageButton("SI_applicationErrorFeedbackSpeech", JSONdata, "EventsSettings.ApplicationError.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_applicationErrorFeedbackVisual", JSONdata, "EventsSettings.ApplicationError.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_applicationErrorFeedbackSpeech", JSONdata, "EventsSettings.ApplicationError.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_applicationErrorFeedbackVisual", JSONdata, "EventsSettings.ApplicationError.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_applicationError", JSONdata, 'ApplicationError', 'ApplicationError', false);
     updateMediaUpload("SI_applicationError", JSONdata, "ApplicationError");
     //    -Camera Error
     updateCheckboxCheckedState("SI_cameraErrorActivation", JSONdata, "EventsSettings.CameraError.Activation");
-    updateCheckAndImageButton("SI_cameraErrorFeedbackAudio", JSONdata, "EventsSettings.CameraError.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_cameraErrorFeedbackAudio", JSONdata, "EventsSettings.CameraError.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_cameraErrorFeedbackOutput", JSONdata, "EventsSettings.CameraError.FeedbackOutput");
-    updateCheckAndImageButton("SI_cameraErrorFeedbackSpeech", JSONdata, "EventsSettings.CameraError.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_cameraErrorFeedbackVisual", JSONdata, "EventsSettings.CameraError.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_cameraErrorFeedbackSpeech", JSONdata, "EventsSettings.CameraError.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_cameraErrorFeedbackVisual", JSONdata, "EventsSettings.CameraError.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_cameraError", JSONdata, 'CameraError', 'CameraError', false);
     updateMediaUpload("SI_cameraError", JSONdata, "CameraError");
     //    -System OK
     updateCheckboxCheckedState("SI_systemOK_Activation", JSONdata, "EventsSettings.SystemOk.Activation");
-    updateCheckAndImageButton("SI_systemOK_FeedbackAudio", JSONdata, "EventsSettings.SystemOk.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_systemOK_FeedbackAudio", JSONdata, "EventsSettings.SystemOk.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_systemOK_FeedbackOutput", JSONdata, "EventsSettings.SystemOk.FeedbackOutput");
-    updateCheckAndImageButton("SI_systemOK_FeedbackSpeech", JSONdata, "EventsSettings.SystemOk.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_systemOK_FeedbackVisual", JSONdata, "EventsSettings.SystemOk.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_systemOK_FeedbackSpeech", JSONdata, "EventsSettings.SystemOk.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemOK_FeedbackVisual", JSONdata, "EventsSettings.SystemOk.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_systemOK_", JSONdata, 'SystemOk', 'SystemOk', false);
     updateMediaUpload("SI_systemOK_", JSONdata, "SystemOk");
     //    -System Reset
     updateCheckboxCheckedState("SI_systemResetActivation", JSONdata, "EventsSettings.SystemReset.Activation");
-    updateCheckAndImageButton("SI_systemResetFeedbackAudio", JSONdata, "EventsSettings.SystemReset.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_systemResetFeedbackAudio", JSONdata, "EventsSettings.SystemReset.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_systemResetFeedbackOutput", JSONdata, "EventsSettings.SystemReset.FeedbackOutput");
-    updateCheckAndImageButton("SI_systemResetFeedbackSpeech", JSONdata, "EventsSettings.SystemReset.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_systemResetFeedbackVisual", JSONdata, "EventsSettings.SystemReset.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_systemResetFeedbackSpeech", JSONdata, "EventsSettings.SystemReset.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemResetFeedbackVisual", JSONdata, "EventsSettings.SystemReset.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_systemReset", JSONdata, 'SystemReset', 'SystemReset', false);
     updateMediaUpload("SI_systemReset", JSONdata, "SystemReset");
     //    -System Error
     updateCheckboxCheckedState("SI_systemErrorActivation", JSONdata, "EventsSettings.SystemError.Activation");
-    updateCheckAndImageButton("SI_systemErrorFeedbackAudio", JSONdata, "EventsSettings.SystemError.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_systemErrorFeedbackAudio", JSONdata, "EventsSettings.SystemError.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_systemErrorFeedbackOutput", JSONdata, "EventsSettings.SystemError.FeedbackOutput");
-    updateCheckAndImageButton("SI_systemErrorFeedbackSpeech", JSONdata, "EventsSettings.SystemError.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_systemErrorFeedbackVisual", JSONdata, "EventsSettings.SystemError.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_systemErrorFeedbackSpeech", JSONdata, "EventsSettings.SystemError.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_systemErrorFeedbackVisual", JSONdata, "EventsSettings.SystemError.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_systemError", JSONdata, 'SystemError', 'SystemError', false);
     updateMediaUpload("SI_systemError", JSONdata, "SystemError");
     //    -MCULOG
     updateCheckboxCheckedState("SI_MCU_LogActivation", JSONdata, "EventsSettings.MCULOG.Activation");
-    updateCheckAndImageButton("SI_MCU_LogFeedbackAudio", JSONdata, "EventsSettings.MCULOG.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+    updateCheckAndImageButton("SI_MCU_LogFeedbackAudio", JSONdata, "EventsSettings.MCULOG.FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
     updateFeedbackOutput("SI_MCU_LogFeedbackOutput", JSONdata, "EventsSettings.MCULOG.FeedbackOutput");
-    updateCheckAndImageButton("SI_MCU_LogFeedbackSpeech", JSONdata, "EventsSettings.MCULOG.FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-    updateCheckAndImageButton("SI_MCU_LogFeedbackVisual", JSONdata, "EventsSettings.MCULOG.FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+    updateCheckAndImageButton("SI_MCU_LogFeedbackSpeech", JSONdata, "EventsSettings.MCULOG.FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
+    updateCheckAndImageButton("SI_MCU_LogFeedbackVisual", JSONdata, "EventsSettings.MCULOG.FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
     updateDetectionClosureEvent("SI_MCU_Log", JSONdata, 'MCULOG', 'MCULOG', false);
     updateMediaUpload("SI_MCU_Log", JSONdata, "MCULOG");
 }
@@ -4247,8 +4238,6 @@ function updateComboBox_fromJSON(JSONdata){
     updateNumericValue("LengthGPO", JSONdata, "GPOut.Length", 1, 1, 60);
     updateListValue("SourceGPO", JSONdata, "GPOut.Source", "LED");
     generateSignal();
-    
-    //GPS Loss Speed Persistence Time
 
     //Accelerometer
     updateSliderControlInteger("SI_driveTimeFilter", JSONdata, "Acc3DDriveTimeFilter");
