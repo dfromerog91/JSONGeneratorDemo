@@ -1129,22 +1129,14 @@ function toggleFeedbackOutputSummary (paramId) {
     const selectedValue = document.getElementById(paramId + 'Id');
     const summaryCell = document.getElementById(paramId + 'Summary');
     const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
-    const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
-    let group = '';
-    if (currentClass) {
-        const match = currentClass.match(/(inactive|active)-(.*)-?summary-cell/);
-        if (match && match[2]) {
-            group = match[2];
-        }
-    }
     if (selectedValue.value === 'None') {
-        summaryCell.classList.remove(`active-${group}summary-cell`);
-        summaryCell.classList.add(`inactive-${group}summary-cell`);
+        summaryCell.classList.remove('active-summary-cell');
+        summaryCell.classList.add('inactive-summary-cell');
     } else {
-        summaryCell.classList.remove(`inactive-${group}summary-cell`);
-        summaryCell.classList.add(`active-${group}summary-cell`);
+        summaryCell.classList.remove('inactive-summary-cell');
+        summaryCell.classList.add('active-summary-cell');
     }
-    summaryCellImg.src = "source_img/" + selectedValue.value + ".svg";
+    summaryCellImg.src = "source_img/" + selectedValue.value + ".png";
 }
 
 function toggleDetectionClosureEvent(id, closureEventAdmitted) {
@@ -1155,22 +1147,22 @@ function toggleDetectionClosureEvent(id, closureEventAdmitted) {
         if (detectionEventCheckbox.checked) {
             closureEventCheckbox.disabled = false;
             if (closureEventCheckbox.checked) {
-                toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Closure_Event_ON.svg');
+                toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Closure_Event_ON.png');
             } else {
-                toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.svg');
+                toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
             }
         } else {
             closureEventCheckbox.checked = false;
             closureEventCheckbox.disabled = true;
-            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.svg');
+            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
         }
     } else {
         closureEventCheckbox.checked = false;
         closureEventCheckbox.disabled = true;
         if (detectionEventCheckbox.checked) {
-            toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.svg');
+            toggleSummaryCell(summaryCellLabel, true, 'source_img/Detection_Event_ON.png');
         } else {
-            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.svg');
+            toggleSummaryCell(summaryCellLabel, false, 'source_img/Detection_Closure_Event_OFF.png');
         }
     }
 }
@@ -1180,21 +1172,14 @@ function toggleDetectionEventSummary (paramId, paramPathOn, paramPathOff) {
     const checkbox = document.getElementById(paramId + 'Checkbox');
     const summaryCell = document.getElementById(paramId + 'Summary');
     const summaryCellImg = document.getElementById(paramId + 'SummaryImg');
-    const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
-    let group = '';
-    if (currentClass) {
-        const match = currentClass.match(/(inactive|active)-(.+)?-summary-cell/);
-        if (match) {
-            group = match[2] || '';
-        }
-    }
+
     if (!checkbox.checked) {
-        summaryCell.classList.remove(`active-${group}summary-cell`);
-        summaryCell.classList.add(`inactive-${group}summary-cell`);
+        summaryCell.classList.remove('active-summary-cell');
+        summaryCell.classList.add('inactive-summary-cell');
         summaryCellImg.src = paramPathOff;
     } else {
-        summaryCell.classList.remove(`inactive-${group}summary-cell`);
-        summaryCell.classList.add(`active-${group}summary-cell`);
+        summaryCell.classList.remove('inactive-summary-cell');
+        summaryCell.classList.add('active-summary-cell');
         summaryCellImg.src = paramPathOn;
     }
 }
@@ -1228,53 +1213,53 @@ function toggleMediaUpload(id, option, camera) {
     switch (option) {
         case "ReportImage":
             if (imageCheckbox1.checked) {
-                toggleMediaUploadButton(imageLabel1, false, 'source_img/Image_' + camera1 + '_OFF.svg');
+                toggleMediaUploadButton(imageLabel1, false, 'source_img/Image_OFF.png');
             } else {
-                toggleMediaUploadButton(imageLabel1, true, 'source_img/Image_' + camera1 + '_ON.svg');
+                toggleMediaUploadButton(imageLabel1, true, 'source_img/Image_ON.png');
                 if (timelapseCheckbox1.checked) {
-                    toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_' + camera1 + '_OFF.svg');
+                    toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_OFF.png');
                 }
                 if (timelapseCheckbox2.checked) {
-                    toggleMediaUploadButton(timelapseLabel2, false, 'source_img/Timelapse_' + camera2 + '_OFF.svg');
+                    toggleMediaUploadButton(timelapseLabel2, false, 'source_img/Timelapse_OFF.png');
                 }
             }
             break;
         case "ReportTimelapse":
             if (timelapseCheckbox1.checked) {
-                toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_' + camera1 + '_OFF.svg');
+                toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_OFF.png');
             } else {
-                toggleMediaUploadButton(timelapseLabel1, true, 'source_img/Timelapse_' + camera1 + '_ON.svg');
+                toggleMediaUploadButton(timelapseLabel1, true, 'source_img/Timelapse_ON.png');
                 if (imageCheckbox1.checked) {
-                    toggleMediaUploadButton(imageLabel1, false, 'source_img/Image_' + camera1 + '_OFF.svg');
+                    toggleMediaUploadButton(imageLabel1, false, 'source_img/Image_OFF.png');
                 }
                 if (videoCheckbox1.checked) {
-                    toggleMediaUploadButton(videoLabel1, false, 'source_img/Video_' + camera1 + '_OFF.svg');
+                    toggleMediaUploadButton(videoLabel1, false, 'source_img/Video_OFF.png');
                 }
                 if (imageCheckbox2.checked) {
-                    toggleMediaUploadButton(imageLabel2, false, 'source_img/Image_' + camera2 + '_OFF.svg');
+                    toggleMediaUploadButton(imageLabel2, false, 'source_img/Image_OFF.png');
                 }
             }
             break;
         case "ReportVideo":
             if (videoCheckbox1.checked) {
-                toggleMediaUploadButton(videoLabel1, false, 'source_img/Video_' + camera1 + '_OFF.svg');
+                toggleMediaUploadButton(videoLabel1, false, 'source_img/Video_OFF.png');
             } else {
-                toggleMediaUploadButton(videoLabel1, true, 'source_img/Video_' + camera1 + '_ON.svg');
+                toggleMediaUploadButton(videoLabel1, true, 'source_img/Video_ON.png');
                 if (timelapseCheckbox1.checked) {
-                    toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_' + camera1 + '_OFF.svg');
+                    toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_OFF.png');
                 }
             }
             break;
         default:
             if (!enableCheckbox1.checked){
                 if (imageCheckbox1.checked) {
-                    toggleMediaUploadButton(imageLabel1, false, 'source_img/Image_' + camera1 + '_OFF.svg');
+                    toggleMediaUploadButton(imageLabel1, false, 'source_img/Image_OFF.png');
                 }
                 if (timelapseCheckbox1) {
-                    toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_' + camera1 + '_OFF.svg');
+                    toggleMediaUploadButton(timelapseLabel1, false, 'source_img/Timelapse_OFF.png');
                 }
                 if (videoCheckbox1) {
-                    toggleMediaUploadButton(videoLabel1, false, 'source_img/Video_' + camera1 + '_OFF.svg');
+                    toggleMediaUploadButton(videoLabel1, false, 'source_img/Video_OFF.png');
                 }
             }
             break;
@@ -1312,21 +1297,13 @@ function toggleCheckAndImageButton(button, imgOnSrc, imgOffSrc) {
 function toggleSummaryCell (cell, activate, imgSrc) {
     const summaryCell = document.getElementById(cell);
     const summaryCellImg = document.getElementById(cell + 'Img');
-    const currentClass = [...summaryCell.classList].find(cls => cls.match(/(inactive|active)-.*summary-cell/));
-    let group = '';
-    if (currentClass) {
-        const match = currentClass.match(/(inactive|active)-(.*)-?summary-cell/);
-        if (match && match[2]) {
-            group = match[2];
-        }
-    }
     if (summaryCell) {
         if (activate) {
-            summaryCell.classList.remove(`inactive-${group}summary-cell`);
-            summaryCell.classList.add(`active-${group}summary-cell`);
+            summaryCell.classList.remove('inactive-summary-cell');
+            summaryCell.classList.add('active-summary-cell');
         } else {
-            summaryCell.classList.remove(`active-${group}summary-cell`);
-            summaryCell.classList.add(`inactive-${group}summary-cell`);
+            summaryCell.classList.remove('active-summary-cell');
+            summaryCell.classList.add('inactive-summary-cell');
         }
         summaryCellImg.src = imgSrc;
     }
@@ -1446,38 +1423,26 @@ function toggleMenuActivation(id) {
     const enableInCabinButton = document.getElementById(id + "EnableInCabinCheckbox");
     const enableRoadFacingButton = document.getElementById(id + "EnableRoadFacingCheckbox");
     const feedbackOutputSelect = document.getElementById(id + "FeedbackOutputId");
-    const feedbackVisualSummaryCell = document.getElementById(id + "FeedbackVisualSummary");
-    const feedbackAudioSummaryCell = document.getElementById(id + "FeedbackAudioSummary");
     const feedbackSpeechSummaryCell = document.getElementById(id + "FeedbackSpeechSummary");
-    const reportImageInCabinSummaryCell = document.getElementById(id + "ReportImageInCabinSummary");
-    const reportImageRoadFacingSummaryCell = document.getElementById(id + "ReportImageRoadFacingSummary");
     if (activationButton.checked) {
-        if (!feedbackVisualSummaryCell.classList.contains("disabled-summary-cell")) {
-            feedbackVisualButton.disabled = false;
-        }
-        if (!feedbackAudioSummaryCell.classList.contains("disabled-summary-cell")) {
-            feedbackAudioButton.disabled = false;
-        }
+        feedbackVisualButton.disabled = false;
+        feedbackAudioButton.disabled = false;
         if (!feedbackSpeechSummaryCell.classList.contains("disabled-summary-cell")) {
             feedbackSpeechButton.disabled = false;
         }
         feedbackOutputSelect.disabled = false;
         detectionEventButton.disabled = false;
-        if (!reportImageInCabinSummaryCell.classList.contains("disabled-summary-cell")) {
-            enableInCabinButton.disabled = false;
-        }
-        if (!reportImageRoadFacingSummaryCell.classList.contains("disabled-summary-cell")) {
-            enableRoadFacingButton.disabled = false;
-        }
+        enableInCabinButton.disabled = false;
+        enableRoadFacingButton.disabled = false;
     } else {
         if (feedbackVisualButton.checked) {
-            toggleCheckAndImageButton(id + "FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+            toggleCheckAndImageButton(id + "FeedbackVisual", 'source_img/Visual_ON.png', 'source_img/Visual_OFF.png');
         }
         if (feedbackAudioButton.checked) {
-            toggleCheckAndImageButton(id + "FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
+            toggleCheckAndImageButton(id + "FeedbackAudio", 'source_img/Audio_ON.png', 'source_img/Audio_OFF.png');
         }
         if (feedbackSpeechButton.checked) {
-            toggleCheckAndImageButton(id + "FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
+            toggleCheckAndImageButton(id + "FeedbackSpeech", 'source_img/Speech_ON.png', 'source_img/Speech_OFF.png');
         }
         feedbackOutputSelect.value = "None";
         toggleFeedbackOutputSummary(id + "FeedbackOutput");

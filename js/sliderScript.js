@@ -21,17 +21,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dialValue.value = initialValue;
         dialValue.step = step;
 
-        const sliderType = baseId.endsWith("MessageBackoff") ? "messageSettings-"
-            : baseId.endsWith("FeedbackBackoff")  ? "messageSettings-"
-            : baseId.endsWith("SpeedThreshold") ? "messageSettings-"
-            : '';
-
         if (summaryCell) {
             summaryCell.classList.remove('disabled-summary-cell');
             if (parseFloat(dialValue.value) > 0) {                
-                summaryCell.classList.add(`active-${sliderType}summary-cell`);
+                summaryCell.classList.add('active-summary-cell');
             } else {
-                summaryCell.classList.add(`inactive-${sliderType}summary-cell`);
+                summaryCell.classList.add('inactive-summary-cell');
             }
         }
 
@@ -44,11 +39,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         function updateCellColor(cell) {
             if (cell) {
                 if (parseFloat(dialValue.value) > 0) {
-                    cell.classList.remove(`inactive-${sliderType}summary-cell`);
-                    cell.classList.add(`active-${sliderType}summary-cell`);
+                    cell.classList.remove('inactive-summary-cell');
+                    cell.classList.add('active-summary-cell');
                 } else {
-                    cell.classList.remove(`active-${sliderType}summary-cell`);
-                    cell.classList.add(`inactive-${sliderType}summary-cell`);
+                    cell.classList.remove('active-summary-cell');
+                    cell.classList.add('inactive-summary-cell');
                 }
             }
         }
@@ -187,7 +182,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('SI_calibrationTimeout', 10, 60, '192px', 10);
     initializeDial('SI_sleepModeTimeout', 0, 255, '192px', 5);
     initializeDial('SI_GSensorWakeThreshold', 2, 63, '192px', 30);
-    initializeDial('GPS_lossSpeedPersistenceTime', 0, 300, '256px', 10);
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
