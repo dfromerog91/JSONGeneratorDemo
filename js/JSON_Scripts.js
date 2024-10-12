@@ -4249,6 +4249,7 @@ function updateComboBox_fromJSON(JSONdata){
     generateSignal();
     
     //GPS Loss Speed Persistence Time
+    updateSliderControlInteger("GPS_lossSpeedPersistenceTime", JSONdata, "GPSLossSpeedPersistenceTime");
 
     //Accelerometer
     updateSliderControlInteger("SI_driveTimeFilter", JSONdata, "Acc3DDriveTimeFilter");
