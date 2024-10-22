@@ -198,7 +198,7 @@
 	.fullWidth img{width:100%;}
 	.row{
 		width:100%;
-		background:#dfedfa;
+		background:white;
 		color:#fff;
 		padding:2.857em 0;
 	}
@@ -922,10 +922,55 @@ input:checked + .slider:before {
     width: 100%; /* Adjust width as needed */
 }
 
+
 .table-internal th, .table-internal td {
     border: 1px solid gray;
     padding: 8px; /* Adjust padding as needed */
     background-color: #E5F2FF;
+    text-align: left; /* Adjust text alignment as needed */
+}
+
+.table-internal-driver-feedback {
+    border: 1px solid gray;
+	color: #000;
+    border-collapse: collapse;
+    width: 100%; /* Adjust width as needed */
+}
+
+
+.table-internal-driver-feedback th, .table-internal-driver-feedback td {
+    border: 1px solid gray;
+    padding: 8px; /* Adjust padding as needed */
+    background-color: #00b6c4;
+    text-align: left; /* Adjust text alignment as needed */
+}
+
+.table-internal-message-settings {
+    border: 1px solid gray;
+	color: #000;
+    border-collapse: collapse;
+    width: 100%; /* Adjust width as needed */
+}
+
+
+.table-internal-message-settings th, .table-internal-message-settings td {
+    border: 1px solid gray;
+    padding: 8px; /* Adjust padding as needed */
+    background-color: #fea500;
+    text-align: left; /* Adjust text alignment as needed */
+}
+
+.table-internal-in-cabin th, .table-internal-in-cabin td {
+    border: 1px solid gray;
+    padding: 8px; /* Adjust padding as needed */
+    background-color: #0c6;
+    text-align: left; /* Adjust text alignment as needed */
+}
+
+.table-internal-road-facing th, .table-internal-road-facing td {
+    border: 1px solid gray;
+    padding: 8px; /* Adjust padding as needed */
+    background-color: #e16a44;
     text-align: left; /* Adjust text alignment as needed */
 }
 
@@ -1043,6 +1088,8 @@ input:checked + .slider:before {
 }
 
 .active-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #bfeffc;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
@@ -1050,6 +1097,8 @@ input:checked + .slider:before {
 }
 
 .active-driverFeedback-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #00b6c4;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
@@ -1057,6 +1106,8 @@ input:checked + .slider:before {
 }
 
 .active-messageSettings-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #fea500;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
@@ -1064,6 +1115,8 @@ input:checked + .slider:before {
 }
 
 .active-inCabin-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #0c6;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
@@ -1071,41 +1124,53 @@ input:checked + .slider:before {
 }
 
 .active-roadFacing-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #e16a44;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
 	padding: 3px;
 }
   
-.inactive-summary-cell { 
+.inactive-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #eecdcd;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
 	padding: 3px;
 }
 
-.inactive-driverFeedback-summary-cell { 
+.inactive-driverFeedback-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #00b6c4;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
 	padding: 3px;
 }
 
-.inactive-messageSettings-summary-cell { 
+.inactive-messageSettings-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #fea500;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
 	padding: 3px;
 }
 
-.inactive-inCabin-summary-cell { 
+.inactive-inCabin-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #0c6;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
 	padding: 3px;
 }
 
-.inactive-roadFacing-summary-cell { 
+.inactive-roadFacing-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: #e16a44;
 	color: rgb(65, 65, 65);
 	width: 3.5%;
@@ -1113,6 +1178,8 @@ input:checked + .slider:before {
 }
 
 .disabled-summary-cell {
+	border-top: none;
+	border-bottom: none;
 	background-color: rgb(170, 170, 170);
 	width: 3.5%;
 	padding: 3px;
@@ -1128,16 +1195,17 @@ input:checked + .slider:before {
 }
 
 .col1{
-	background-color: #114aa5;
+	background-color: #e0dedf;
 }
 .col2{
-	background-color: #114aa5;
+	background-color: #e0dedf;
+	color: black;
 }
 
 .col3{
-	background-color: #114aa5;
+	background-color: #e0dedf;
 }
 
 .col4{
-	background-color:  #114aa5;
+	background-color:  #e0dedf;
 }
