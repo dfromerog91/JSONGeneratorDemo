@@ -931,7 +931,7 @@ input:checked + .slider:before {
 }
 
 .table-internal-driver-feedback {
-    border: 1px solid gray;
+    border: 5px solid #00b6c4;
 	color: #000;
     border-collapse: collapse;
     width: 100%; /* Adjust width as needed */
@@ -941,12 +941,12 @@ input:checked + .slider:before {
 .table-internal-driver-feedback th, .table-internal-driver-feedback td {
     border: 1px solid gray;
     padding: 8px; /* Adjust padding as needed */
-    background-color: #00b6c4;
+    background-color: #E5F2FF;
     text-align: left; /* Adjust text alignment as needed */
 }
 
 .table-internal-message-settings {
-    border: 1px solid gray;
+    border: 5px solid #fea500;
 	color: #000;
     border-collapse: collapse;
     width: 100%; /* Adjust width as needed */
@@ -956,21 +956,42 @@ input:checked + .slider:before {
 .table-internal-message-settings th, .table-internal-message-settings td {
     border: 1px solid gray;
     padding: 8px; /* Adjust padding as needed */
-    background-color: #fea500;
+    background-color: #E5F2FF;
     text-align: left; /* Adjust text alignment as needed */
 }
 
-.table-internal-in-cabin th, .table-internal-in-cabin td {
-    border: 1px solid gray;
+.table-internal-in-cabin{
+    border: 5px solid #0c6;
+	box-sizing: border-box;
     padding: 8px; /* Adjust padding as needed */
-    background-color: #0c6;
+    background-color: #E5F2FF;
     text-align: left; /* Adjust text alignment as needed */
 }
 
-.table-internal-road-facing th, .table-internal-road-facing td {
-    border: 1px solid gray;
+.table-internal-in-cabin-left {
+	border: red;
+	border-top: 5px solid #0c6;
+	border-left: 5px solid #0c6;
+	border-bottom: 5px solid #0C6;
+	box-sizing: border-box;
+	color: #000;
+    border-collapse: collapse;
+	background-color: #E5F2FF;
+}
+
+.table-internal-in-cabin-middle {
+	border-top: 5px solid #0c6;
+	border-bottom: 5px solid #0c6;
+	color: #000;
+    border-collapse: collapse;
+	background-color: #E5F2FF;
+}
+
+.table-internal-road-facing{
+    border: 5px solid #e16a44;
+	box-sizing: border-box;
     padding: 8px; /* Adjust padding as needed */
-    background-color: #e16a44;
+    background-color: #E5F2FF;
     text-align: left; /* Adjust text alignment as needed */
 }
 
