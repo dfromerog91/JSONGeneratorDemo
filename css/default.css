@@ -960,39 +960,32 @@ input:checked + .slider:before {
     text-align: left; /* Adjust text alignment as needed */
 }
 
-.table-internal-in-cabin{
-    border: 5px solid #0c6;
-	box-sizing: border-box;
-    padding: 8px; /* Adjust padding as needed */
+.table-internal-media-upload {
+    border: 1px solid gray;
+	color: #000;
+    border-collapse: collapse;
+    width: 100%; /* Adjust width as needed */
+}
+
+.table-internal-media-upload th, .table-internal-media-upload td {
+    border: 1px solid gray;
+    padding: 0px; /* Adjust padding as needed */
     background-color: #E5F2FF;
     text-align: left; /* Adjust text alignment as needed */
 }
 
-.table-internal-in-cabin-left {
-	border: red;
-	border-top: 5px solid #0c6;
-	border-left: 5px solid #0c6;
-	border-bottom: 5px solid #0C6;
-	box-sizing: border-box;
+.table-internal-in-cabin{
+	border: 5px solid #0C6;
 	color: #000;
     border-collapse: collapse;
-	background-color: #E5F2FF;
-}
-
-.table-internal-in-cabin-middle {
-	border-top: 5px solid #0c6;
-	border-bottom: 5px solid #0c6;
-	color: #000;
-    border-collapse: collapse;
-	background-color: #E5F2FF;
+    width: 100%; /* Adjust width as needed */
 }
 
 .table-internal-road-facing{
-    border: 5px solid #e16a44;
-	box-sizing: border-box;
-    padding: 8px; /* Adjust padding as needed */
-    background-color: #E5F2FF;
-    text-align: left; /* Adjust text alignment as needed */
+	border: 5px solid #e16a44;
+	color: #000;
+    border-collapse: collapse;
+    width: 100%; /* Adjust width as needed */
 }
 
 .toggleable {
