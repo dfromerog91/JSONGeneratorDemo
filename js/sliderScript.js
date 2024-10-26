@@ -136,8 +136,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('DMS_smokingFeedbackBackoff', 1, 60, '136px', 30);
     initializeDial('DMS_smokingSpeedThreshold', 0, 50, '136px', 0);
 
-    initializeDial('DMS_driverDisappearedTimeThreshold', 5, 60, '192px', 30);
-    initializeDial('DMS_driverDisappearedTrackingGraceTimer', 1, 60, '192px', 5);
+    initializeDial('DMS_driverDisappearedTimeThreshold', 5, 60, '136px', 30);
+    initializeDial('DMS_driverDisappearedTrackingGraceTimer', 1, 60, '136px', 5);
 
     initializeDial('DMS_driverChangedMinimum', 0, 15, '192px', 5, 0.1);
 
