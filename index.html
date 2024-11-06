@@ -5609,6 +5609,44 @@
             </div>
             <h1></h1>
           </div>
+          <!---DMS Additional DMS Parameters - Header------>
+          <div class="header" , id="AdditionalDMS_ParametersHeader" style="margin-bottom: 1px;">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
+                  <img src="source_img/Additional_DMS_Parameters.svg">
+                </td>
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                  Additional DMS Parameters
+                </td>
+                <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('DMS_additionalDMS_ParametersSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'AdditionalDMS_ParametersHeader')">
+                    <img src="source_img/more_options_icon.svg" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!---DMS Additional DMS Parameters - Subparams-->
+          <div id="DMS_additionalDMS_ParametersSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Additional DMS Parameters:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <!--Content-->
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
       <!---->
@@ -15696,6 +15734,42 @@
                                   </tr>
                                 </table>
                               </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3">
+                          <table>
+                            <tr>
+                              <td style="border-style: none; width: 25%;"></td>
+                              <td style="border-style: none; width: auto;">
+                                <table>
+                                  <tr>
+                                    <td colspan="4" style="border: none; text-align: center;">
+                                      Time to Wait GPS Fix Ignition OFF:
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2" style="border: none; vertical-align: middle;">
+                                      <div class="dial-container"
+                                        style="display: flex; align-items: center; justify-content: center;">
+                                        <input type="range" id="timeToWaitGPSFixIGNOffRange">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; vertical-align: middle;">
+                                      <div class="value-container"
+                                        style="display: flex; align-items: right; justify-content: right;">
+                                        <input type="number" id="timeToWaitGPSFixIGNOffNumber">
+                                      </div>
+                                    </td>
+                                    <td style="border: none; text-align: left; vertical-align: middle;">
+                                      <label style="font-size: 12pt;">s</label>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td style="border-style: none; width: 25%;"></td>
                             </tr>
                           </table>
                         </td>
