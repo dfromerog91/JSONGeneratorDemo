@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>1.0.2.34 New UI Cipia-FS10 Configurator</title>
+  <title>1.0.2.35 Cipia-FS10 Configurator</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1">
   <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
@@ -723,6 +723,21 @@
                             </tr>
                           </table>
                         </td>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border-style: none;">Privacy Event</td>
+                              <td style="border-style: none;">
+                                <select id="DMS_driverAsleepPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
                       </tr>
                     </table>
                   </td>
@@ -1171,8 +1186,7 @@
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
                       <tr>
-                        <td style="border: none; width: 30%;"></td>
-                        <td style="border: none; width: 40%;">
+                        <td style="border: none; width: 50%;">
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;">
@@ -1189,7 +1203,21 @@
                             </tr>
                           </table>
                         </td>
-                        <td style="border: none; width: 30%;"></td>
+                        <td style="width: auto;">
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right;">Privacy Event</td>
+                              <td style="border-style: none;">
+                                <select id="DMS_drowsinessPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
                       </tr>
                     </table>
                   </td>
@@ -1832,6 +1860,34 @@
                     </table>
                   </td>
                 </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Additional Parameters:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_driverDistractedPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
               </table>
             </div>
             <h1></h1>
@@ -2262,6 +2318,34 @@
                         </td>
                         </tr>
                         </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Additional Parameters:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_phoneUsePrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -2711,7 +2795,7 @@
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
                       <tr>
-                        <td>
+                        <td style="width: 50%;">
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;">
@@ -2728,7 +2812,7 @@
                             </tr>
                           </table>
                         </td>
-                        <td>
+                        <td style="width: auto;">
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;">
@@ -2760,12 +2844,35 @@
                             </tr>
                           </table>
                         </td>
+                      </tr>
+                      <tr>
                         <td>
-                          <span title="Position of the Driver&#10;inside the vehicle">Driving Position:</span>
-                          <select style="width: 100px;" name="LeftHandDrive" id="LeftHandDrive">
-                            <option value="true">Left</option>
-                            <option value="false">Right</option>
-                          </select>
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Driving Position</td>
+                              <td style="border-style: none; width: auto;">
+                                <select style="width: 100px;" name="LeftHandDrive" id="LeftHandDrive">
+                                  <option value="true">Left</option>
+                                  <option value="false">Right</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_seatbeltPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -3206,6 +3313,34 @@
                     </table>
                   </td>
                 </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Additional Parameters:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_smokingPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
               </table>
             </div>
             <h1></h1>
@@ -3531,6 +3666,34 @@
                         </td>
                         </tr>
                         </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Additional Parameters:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_tamperingDetectionPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -3876,8 +4039,7 @@
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
                       <tr>
-                        <td style="border: none; width: 30;"></td>
-                        <td style="border: none; width: 40%;">
+                        <td style="border: none; width: 50%;">
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;">
@@ -3894,7 +4056,21 @@
                             </tr>
                           </table>
                         </td>
-                        <td style="border: none; width: auto;"></td>
+                        <td style="width: auto;">
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_driverIdentifiedPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
                       </tr>
                     </table>
                   </td>
@@ -4225,6 +4401,34 @@
                         </td>
                         </tr>
                         </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Additional Parameters:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_driverUnidentifiedPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -4570,7 +4774,7 @@
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
                       <tr>
-                        <td>
+                        <td style="width: 33.33%;">
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;">
@@ -4602,7 +4806,7 @@
                             </tr>
                           </table>
                         </td>
-                        <td>
+                        <td style="width: 33.33%;">
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;">
@@ -4630,6 +4834,21 @@
                                     </td>
                                   </tr>
                                 </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td style="width: auto;">
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_driverDisappearedPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
                               </td>
                             </tr>
                           </table>
@@ -4977,7 +5196,6 @@
                   <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
                     <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
                       <tr>
-                        <td style="border: none; width: 25%;"></td>
                         <td style="border: none; width: 50%;">
                           <table>
                             <tr>
@@ -5010,7 +5228,21 @@
                             </tr>
                           </table>
                         </td>
-                        <td style="border: none; width: 25%;"></td>
+                        <td style="width: auto;">
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_driverChangedPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
                       </tr>
                     </table>
                   </td>
@@ -5340,6 +5572,34 @@
                         </td>
                         </tr>
                         </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    Additional Parameters:
+                  </td>
+                </tr>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal" style="height: 100%; border-collapse: collapse; width: 100%;">
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td style="border-style: none; text-align: right; width: 50%;">Privacy Event</td>
+                              <td style="border-style: none; width: auto;">
+                                <select id="DMS_driverIdUpdatedPrivacyEventId" disabled style="width: 136px;">
+                                  <option value="Disabled">Disabled</option>
+                                  <option value="LocalOnly">Local Only</option>
+                                  <option value="Normal" selected>Normal</option>
+                                  <option value="NotifyWithoutMedia">Notify Without Media</option>
+                                </select>
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -15311,9 +15571,8 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;" title="The interval in seconds in which the device sends keepalive message to the server.">
-                                Keep Alive
-                                <img src="source_img/info.png" class="icon">
+                              <td style="border: none; text-align: center;">
+                                Keep Alive:
                               </td>
                             </tr>
                             <tr>
@@ -17088,10 +17347,150 @@
           </div>
         </div>
       </section>
+
+      <!---->
+      <!--PRIVACY section-->
+      <!---->
+      <section id="Privacy" class="row">
+        <div class="center">
+          <h1>Privacy</h1>
+          <!--<h2 style="color:black">(Tracking Events System Settings)</h2>-->
+          <!---P Privacy mode - Header------>
+          <div class="header" , id="privacyModeHeader" style="margin-bottom: 1px;">
+            <table class="table_properties">
+              <tr style="text-align: center; ">
+                <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
+                  <img src="source_img/Privacy_Mode.svg">
+                </td>
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                  Privacy Mode
+                </td>
+                <td class="col3" style="border-style: none; width: 7%;"
+                  title="Enables/disables detection of event type">
+                  <label class="switch">
+                    <input id="P_privacyModeActivationCheckbox" type="checkbox" onclick="togglePrivacyModeActivation()">
+                    <span class="slider"></span>
+                  </label>
+                </td>
+                <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
+                  title="More/less options">
+                  <span class="toggle-button"
+                    onclick="toggleSubParameters('P_privacyModeSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'privacyModeHeader')">
+                    <img src="source_img/more_options_icon.svg" alt="More Options">
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!---P Privacy Mode - Subparams-->
+          <div id="P_privacyModeSubParamsId" class="sub-parameters">
+            <h1></h1>
+            <div class="table-container">
+              <table>
+                <tr>
+                  <td style="background-color:#ffffff; color: rgb(65, 65, 65);">
+                    <table class="table-internal">
+                      <tr>
+                        <td colspan="3">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;">
+                                Local Control:
+                              </td>
+                              <td style="border: none; text-align: center;">
+                                <div class="container">
+                                  <label class="switch">
+                                    <input type="checkbox" id="P_privacyModeLocalControlCheckbox">
+                                    <span class="slider round"></span>
+                                  </label>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td colspan="3">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;">
+                                Remote Control:
+                              </td>
+                              <td style="border: none; text-align: center;">
+                                <div class="container">
+                                  <label class="switch">
+                                    <input type="checkbox" id="P_privacyModeRemoteControlCheckbox">
+                                    <span class="slider round"></span>
+                                  </label>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;">
+                                Auto Disable:
+                              </td>
+                              <td style="border: none; text-align: center;">
+                                <div class="container">
+                                  <select id="P_privacyModeAutoDisableId" style="width: 128px;">
+                                    <option value="0">Disabled</option>
+                                    <option value="1" selected>On Ignition Off</option>
+                                  </select>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td colspan="2">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;">
+                                Enable Events:
+                              </td>
+                              <td style="border: none; text-align: center;">
+                                <div class="container">
+                                  <label class="switch">
+                                    <input type="checkbox" id="P_privacyModeEnableEventsCheckbox" onclick="togglePrivacyEvents(this.checked)">
+                                    <span class="slider round"></span>
+                                  </label>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td colspan="2">
+                          <table>
+                            <tr>
+                              <td style="border: none; text-align: center;">
+                                Enable Outputs:
+                              </td>
+                              <td style="border: none; text-align: center;">
+                                <div class="container">
+                                  <label class="switch">
+                                    <input type="checkbox" id="P_privacyModeEnableOutputsCheckbox">
+                                    <span class="slider round"></span>
+                                  </label>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
       <!---->
       <!--GENERATE JSON section-->
       <!---->
-      <section id="GenerateJSON" class="row">
+      <section id="GenerateJSON" class="row grey">
         <div class="center">
           <h1>Generate JSON</h1>
           <h2 style="color:black;font-size: 13pt">According to the information you can review and download the Config
@@ -17105,7 +17504,7 @@
       <!---->
       <!--LOAD JSON section-->
       <!---->
-      <section id="LoadJSON" class="row grey">
+      <section id="LoadJSON" class="row">
         <div class="center">
           <h1>Load JSON</h1>
           <input style="font-size: 14px;" type="file" id="file-input" accept=".json" onchange="load_FS10_JSON(); setUrlOptionToCustom()">
