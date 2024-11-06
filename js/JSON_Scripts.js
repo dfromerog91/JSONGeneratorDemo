@@ -2260,16 +2260,6 @@ function generate_FS10_JSON(){
                 "ReportImage": CameraError_ReportImage,
                 "ReportFootage": CameraError_ReportFootage
             },
-            "TripPath": {
-                "Activation": TripPath_Activation,
-                "FeedbackAudio": TripPath_FeedbackAudio,
-                "FeedbackOutput": TripPath_FeedbackOutput,
-                "FeedbackSpeech": TripPath_FeedbackSpeech,
-                "FeedbackVisual": TripPath_FeedbackVisual,
-                "ReportEvent": TripPath_ReportEvent,
-                "ReportImage": TripPath_ReportImage,
-                "ReportFootage": TripPath_ReportFootage
-            },
             "DriverAsleep": {
                 "Activation": DriverAsleep_Activation,
                 "FeedbackAudio": DriverAsleep_FeedbackAudio,
@@ -2669,6 +2659,16 @@ function generate_FS10_JSON(){
                 "ReportEvent": TamperingDetection_ReportEvent,
                 "ReportImage": TamperingDetection_ReportImage,
                 "ReportFootage": TamperingDetection_ReportFootage
+            },
+            "TripPath": {
+                "Activation": TripPath_Activation,
+                "FeedbackAudio": TripPath_FeedbackAudio,
+                "FeedbackOutput": TripPath_FeedbackOutput,
+                "FeedbackSpeech": TripPath_FeedbackSpeech,
+                "FeedbackVisual": TripPath_FeedbackVisual,
+                "ReportEvent": TripPath_ReportEvent,
+                "ReportImage": TripPath_ReportImage,
+                "ReportFootage": TripPath_ReportFootage
             },
             "UnidentifiedUnauthDriver": {
                 "Activation": UnidentifiedUnauthDriver_Activation,
