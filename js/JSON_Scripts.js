@@ -1881,7 +1881,7 @@ function generate_FS10_JSON(){
     APN_pass = update_FS10_textInputs(APN_pass);
     
     //Events for user
-    var EventstoStorage = parseInt(document.getElementById("SI_videoToStorageNumber").value);
+    var EventstoStorage = parseInt(document.getElementById("SI_eventsToStorageNumber").value);
     //var CalibrationReferencePoint_x = parseFloat(document.getElementById("CalibrationReferencePoint_x").value).toFixed(1);
     //var CalibrationReferencePoint_y = parseFloat(document.getElementById("CalibrationReferencePoint_y").value).toFixed(1);
     //var CalibrationReferencePoint_z = parseFloat(document.getElementById("CalibrationReferencePoint_z").value).toFixed(1);
