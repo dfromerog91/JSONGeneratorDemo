@@ -1497,60 +1497,6 @@ function toggleMenuActivation(id) {
     }
 }
 
-function togglePrivacyModeActivation() {
-    const activationCheckbox = document.getElementById("P_privacyModeActivationCheckbox");
-    const localControlCheckbox = document.getElementById("P_privacyModeLocalControlCheckbox");
-    const remoteControlCheckbox = document.getElementById("P_privacyModeRemoteControlCheckbox");
-    const autoDisable = document.getElementById("P_privacyModeAutoDisableId");
-    const enableEventsCheckbox = document.getElementById("P_privacyModeEnableEventsCheckbox");
-    const enableOutputsCheckbox = document.getElementById("P_privacyModeEnableOutputsCheckbox");
-    if (activationCheckbox.checked) {
-        localControlCheckbox.checked = true;
-        remoteControlCheckbox.checked = true;
-        autoDisable.value = "1";
-        enableEventsCheckbox.checked = true;
-        enableOutputsCheckbox.checked = true;
-        localControlCheckbox.disabled = false;
-        remoteControlCheckbox.disabled = false;
-        autoDisable.disabled = false;
-        enableEventsCheckbox.disabled = false;
-        enableOutputsCheckbox.disabled = false;
-    } else {
-        localControlCheckbox.checked = false;
-        remoteControlCheckbox.checked = false;
-        autoDisable.value = "0";
-        enableEventsCheckbox.checked = false;
-        enableOutputsCheckbox.checked = false;
-        localControlCheckbox.disabled = true;
-        remoteControlCheckbox.disabled = true;
-        autoDisable.disabled = true;
-        enableEventsCheckbox.disabled = true;
-        enableOutputsCheckbox.disabled = true;
-    }
-    togglePrivacyEvents(enableEventsCheckbox.checked);
-}
-
-function togglePrivacyEvents(enableEvents) {
-    const privacyEventIds = [
-        "DMS_driverAsleepPrivacyEventId",
-        "DMS_drowsinessPrivacyEventId",
-        "DMS_driverDistractedPrivacyEventId",
-        "DMS_phoneUsePrivacyEventId",
-        "DMS_seatbeltPrivacyEventId",
-        "DMS_smokingPrivacyEventId",
-        "DMS_tamperingDetectionPrivacyEventId",
-        "DMS_driverIdentifiedPrivacyEventId",
-        "DMS_driverUnidentifiedPrivacyEventId",
-        "DMS_driverDisappearedPrivacyEventId",
-        "DMS_driverChangedPrivacyEventId",
-        "DMS_driverIdUpdatedPrivacyEventId"
-    ];
-    const privacyEvents = privacyEventIds.map(id => document.getElementById(id));
-    privacyEvents.forEach(event => {
-        event.disabled = !enableEvents;
-    });
-}
-
 function updateLinkedCheckboxes(id, isChecked) {
     document.getElementById(id).checked = isChecked;
 }
