@@ -239,7 +239,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Driver_Asleep.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Based on occlusion of pupil over a preconfigured time">
                   Driver Asleep
                 </td>
                 <td id="DMS_driverAsleepFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -675,8 +675,9 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: right; width: 80%;">
-                                Enable Sleep Blocking by Drowsiness:
+                              <td style="border: none; text-align: right; width: 80%;" title="Enable driver asleep event after receiving drowsiness event first">
+                                Enable Sleep Blocking by Drowsiness
+                                <img src="source_img/info.png" class="icon">
                               </td>
                               <td style="border: none; text-align: left; width: auto;">
                                 <div class="container">
@@ -692,8 +693,9 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Sleep Duration:
+                              <td style="border: none; text-align: center;" title="Set the time for closed eyes to trigger driver asleep event">
+                                Sleep Duration
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -751,7 +753,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Drowsiness.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Based on fatigue (occlusion of the pupil) over a sampling time">
                   Drowsiness
                 </td>
                 <td id="DMS_drowsinessFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -1187,8 +1189,9 @@
                         <td style="border: none; width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Enable Drowsiness based in Yawn:
+                              <td style="border: none; text-align: center;" title="Generate drowsiness event if driver yawns multiple times within a few minutes">
+                                Enable Drowsiness based in Yawn
+                                <img src="source_img/info.png" class="icon">
                               </td>
                               <td style="border: none; text-align: center;">
                                 <div class="container">
@@ -1231,7 +1234,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Driver_Distracted.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Based on gaze direction and the analysis of other facial features when the driver is inattentive to road center">
                   Driver Distracted
                 </td>
                 <td id="DMS_driverDistractedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -1667,8 +1670,9 @@
                         <td style="width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Distraction Turn Grace Timer:
+                              <td style="border: none; text-align: center;" title="Grace period for distraction event generation when a turn is detected">
+                                Distraction Turn Grace Timer
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -1699,8 +1703,9 @@
                         <td style="width: auto;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Max Heading Angle for Events:
+                              <td style="border: none; text-align: center;" title="The maximum allowed change in vehicle heading angle per second for which driver attentiveness events remain applicable">
+                                Max Heading Angle for Events
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -1897,7 +1902,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Phone_Use.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Driver is holding a mobile phone">
                   Phone Use
                 </td>
                 <td id="DMS_phoneUseFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -2360,7 +2365,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Seatbelt.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Driver is not wearing a seatbelt">
                   Seatbelt
                 </td>
                 <td id="DMS_seatbeltFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -2796,8 +2801,9 @@
                         <td style="width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Inhibit Seatbelt Alerts on Stop:
+                              <td style="border: none; text-align: center;" title="Disable seatbelt alerts when no vehicle movement is detected">
+                                Inhibit Seatbelt Alerts on Stop
+                                <img src="source_img/info.png" class="icon">
                               </td>
                               <td style="border: none; text-align: center;">
                                 <div class="container">
@@ -2813,8 +2819,9 @@
                         <td style="width: auto;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Seatbelt Alert Time:
+                              <td style="border: none; text-align: center;" title="Minimum time in seconds without seatbelt detection before event is generated">
+                                Seatbelt Alert Time
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -2887,7 +2894,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Smoking.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Driver is smoking">
                   Smoking
                 </td>
                 <td id="DMS_smokingFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -3350,7 +3357,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Tampering_Detection.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated when FS10 is moved from its calibration point">
                   Tampering Detection
                 </td>
                 <td id="DMS_tamperingDetectionFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -3708,7 +3715,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Driver_Identified.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated upon visual detection of enrolled driver (saved in Cipia-FS10 database)">
                   Driver Identified
                 </td>
                 <td id="DMS_driverIdentifiedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -4040,8 +4047,9 @@
                         <td style="border: none; width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Enable Driver's Database:
+                              <td style="border: none; text-align: center;" title="Store enrolled driver image in the device database in addition to the vector file">
+                                Enable Driver's Database
+                                <img src="source_img/info.png" class="icon">
                               </td>
                               <td style="border: none; text-align: center;">
                                 <div class="container">
@@ -4084,7 +4092,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Driver_Unidentified.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated the first time in a trip when movement is detected for more than 10 seconds and the driver is unidentified or unauthorized (shown in the blacklist)">
                   Driver Unidentified
                 </td>
                 <td id="DMS_driverUnidentifiedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -4443,7 +4451,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Driver_Disappeared.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated if the driver image is lost for a time exceeding the DriverDisappearTimeThreshold during a trip">
                   Driver Disappeared
                 </td>
                 <td id="DMS_driverDisappearedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -4775,8 +4783,9 @@
                         <td style="width: 33.33%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Driver Disappear Time Threshold:
+                              <td style="border: none; text-align: center;" title="Timeout before an event is generated when the driver disappears from camera view during drive state">
+                                Driver Disappear Time Threshold
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -4807,8 +4816,9 @@
                         <td style="width: 33.33%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Tracking Grace Timer:
+                              <td style="border: none; text-align: center;" title="Grace period to announce driver disappearance">
+                                Tracking Grace Timer
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -4865,7 +4875,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Driver_Changed.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated upon successful identification of a different driver during the same trip (while the engine is running)">
                   Driver Changed
                 </td>
                 <td id="DMS_driverChangedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -5197,8 +5207,9 @@
                         <td style="border: none; width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Driver Change (minimum):
+                              <td style="border: none; text-align: center;" title="Generated upon successful identification of a different driver during the same trip (while ignition is ON)">
+                                Driver Change (minimum)
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -5256,7 +5267,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Driver_ID_Updated.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated when the DMS library captures an improved driver face vector file. Sent with the driver ID in the reason field. Media attached to such event will be the vector file rather than a photo">
                   Driver ID Updated
                 </td>
                 <td id="DMS_driverIdUpdatedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
