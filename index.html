@@ -16474,15 +16474,15 @@
                   <td style="background-color: white;">
                     <table class="table-internal">
                       <tr>
-                        <td style="text-align: center; width: 50%;">
-                          Device-Turn-On:&nbsp;
+                        <td style="text-align: center; width: 50%;" title="If enabled, the user can trigger the device to enter/exit sleep mode by pressing the main button continuously for any time between 5 and 10 seconds">
+                          Device-Turn-On <img src="source_img/info.png" class="icon"> &nbsp;
                           <label class="switch">
                             <input id="SI_deviceTurnOnCheckbox" type="checkbox">
                             <span class="slider"></span>
                           </label>
                         </td>
-                        <td style="text-align: center; width: auto;">
-                          Self Event Trigger:&nbsp;
+                        <td style="text-align: center; width: auto;" title="If enabled, the user can trigger the 'External' event by pressing the main button for 3 seconds">
+                          Self Event Trigger <img src="source_img/info.png" class="icon"> &nbsp;
                           <label class="switch">
                             <input id="SI_selfEventTriggerCheckbox" type="checkbox">
                             <span class="slider"></span>
@@ -16504,8 +16504,9 @@
                         <td style="width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
+                              <td style="border: none; text-align: center;" title="The continuous time of movement detection, based on 3D ACC, required to set vehicle movement to true when GPS is unavailable">
                                 Drive Time Filter
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -16536,8 +16537,9 @@
                         <td style="width: auto;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
+                              <td style="border: none; text-align: center;" title="The continuous idle time detection, based on 3D ACC, required to set vehicle movement to false when GPS is unavailable">
                                 Stop Time Filter
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -16578,11 +16580,12 @@
                   <td style="background-color: white;">
                     <table class="table-internal">
                       <tr>
-                        <td style="width: 33.33%;">
+                        <td style="width: 30%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
+                              <td style="border: none; text-align: center;" title="Level of the internal speaker for the 'Driver Asleep' and FCW events">
                                 Volume for Asleep
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -16607,11 +16610,12 @@
                             </tr>
                           </table>
                         </td>
-                        <td style="width: 33.33%;">
+                        <td style="width: 30%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
+                              <td style="border: none; text-align: center;" title="Level of the internal speaker for all audible alarms except for the 'driver asleep' event">
                                 Volume for Other Alerts
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -16636,16 +16640,18 @@
                             </tr>
                           </table>
                         </td>
-                        <td style="width: 16.67%; text-align: center; vertical-align: middle;">
-                          Volume Controls:
+                        <td style="width: 16.67%; text-align: center; vertical-align: middle;" title="Determines whether the driver can control the speaker volume using the volume keys">
+                          Volume Controls
+                          <img src="source_img/info.png" class="icon">
                           <br><br>
                           <label class="switch">
                             <input id="SI_volumeControlsCheckbox" type="checkbox">
                             <span class="slider"></span>
                           </label>
                         </td>
-                        <td style="width: auto; text-align: center; vertical-align: middle;">
-                          Notification Language:
+                        <td style="width: auto; text-align: center; vertical-align: middle;" title="The voice package to be used for voice notifications">
+                          Notification Language
+                          <img src="source_img/info.png" class="icon">
                           <br><br>
                           <select name="SI_notificationLanguageName" style="width: 80px;" id="SI_notificationLanguageId">
                             <option value="0">English</option>
@@ -16673,8 +16679,9 @@
                         <td style="width: 50%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
+                              <td style="border: none; text-align: center;" title="Determines the maximum time that the system waits to receive the calibration process result from the DMS">
                                 Calibration Timeout
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -16702,8 +16709,8 @@
                             </tr>
                           </table>
                         </td>
-                        <td style="text-align: center; vertical-align: middle;">
-                          OTA Update:&nbsp;
+                        <td style="text-align: center; vertical-align: middle;" title="Determines whether the OTA update service is running">
+                          OTA Update <img src="source_img/info.png" class="icon"> &nbsp;
                           <label class="switch">
                             <input id="SI_OTA_updateCheckbox" type="checkbox">
                             <span class="slider"></span>
@@ -16714,8 +16721,9 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
+                              <td style="border: none; text-align: center;" title="Time counted from the IGN_OFF event (logic) until the Cipia-FS10 device enters sleep mode (power save)">
                                 Sleep Mode Timeout
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -16746,8 +16754,9 @@
                         <td style="text-align: center; vertical-align: middle;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
+                              <td style="border: none; text-align: center;" title="Sets the sensitivity of the G sensor to wake up the device from sleep mode when movement is detected">
                                 GSensor Wake Threshold
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
