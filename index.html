@@ -5373,7 +5373,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/ADAS_Architecture.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Defines the type of ADAS/DVR attached to the FS10 device">
                   Road-facing feature
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
@@ -9630,8 +9630,9 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                GPS Loss Speed Persistence Time:
+                              <td style="border: none; text-align: center;" title="When a GPS signal is lost, DMS and ADAS events will continue to be generated based on the last recorded GPS speed for a duration specified by this parameter. If set to 0, DMS and ADAS events will continue indefinitely based on the last recorded speed">
+                                GPS Loss Speed Persistence Time
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -12395,7 +12396,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/MCU_Log.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Enables logging information for the Microcontroller events">
                   MCU Log
                 </td>
                 <td id="SI_MCU_LogFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -15258,7 +15259,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Cipia-FS10_Architecture_Communications.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Defines which interfaces are used for data transmission">
                   Communications
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
@@ -15593,8 +15594,8 @@
                         <td style="text-align: center;">
                           <table>
                             <tr>
-                              <td style="border: none;">
-                                <label for="SI_APN_SettingsTextId">APN:</label>
+                              <td style="border: none;" title="Access Point Name (Mobile Operator)">
+                                <label for="SI_APN_SettingsTextId">APN <img src="source_img/info.png" class="icon"> </label>
                               </td>
                               <td style="border: none;">
                                 <input type="text" id="SI_APN_SettingsTextId" name="SI_APN_SettingsTextName" placeholder="APN" style="width: 192px;">
@@ -15605,8 +15606,8 @@
                         <td style="text-align: center;">
                           <table>
                             <tr>
-                              <td style="border: none;">
-                                <label for="SI_APN_UserTextId">User:</label>
+                              <td style="border: none;" title="User for APN (from Mobile Operator)">
+                                <label for="SI_APN_UserTextId">User<img src="source_img/info.png" class="icon"></label>
                               </td>
                               <td style="border: none;">
                                 <input type="text" id="SI_APN_UserTextId" name="SI_APN_UserTextName" placeholder="User" style="width: 192px;">
@@ -15617,8 +15618,8 @@
                         <td style="text-align: center;">
                           <table>
                             <tr>
-                              <td style="border: none;">
-                                <label for="SI_APN_PasswordTextId">Password:</label>
+                              <td style="border: none;" title="Password for APN (from Mobile Operator)">
+                                <label for="SI_APN_PasswordTextId">Password<img src="source_img/info.png" class="icon"></label>
                               </td>
                               <td style="border: none;">
                                 <input type="text" id="SI_APN_PasswordTextId" name="SI_APN_PasswordTextName" placeholder="Password" style="width: 192px;">
@@ -15697,7 +15698,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Cipia-FS10_Architecture_GPIO.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Configures and defines behavior for input/output ports on the FS10">
                   General Purpose Inputs & Outputs
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
@@ -16053,7 +16054,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Cipia-FS10_Architecture_Photos_And_Videos.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Configures parameters for media associated with events">
                   Photos and Videos
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
@@ -16448,7 +16449,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Cipia-FS10_Architecture_Additional_Settings.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Main button settings, volume, and 3D accelerometer configuration">
                   Additional Settings
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
@@ -16796,7 +16797,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Server_Parameters.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Defines the IP/URL of the destination server for Wi-Fi/cellular connection, the password used by the Cipia-FS10, along with its UnitID for successful authentication to the MQTT broker, and the server listening port">
                   Server Parameters
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
@@ -16857,7 +16858,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Wifi_Networks.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Allows configuration of a prioritized list of Wi-Fi networks (2.4GHz and 5.0GHz) that the FS10 will attempt to connect to, selecting higher-priority networks first">
                   Wifi Networks 2.4GHz/5.0GHz (Prioritized List)
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
