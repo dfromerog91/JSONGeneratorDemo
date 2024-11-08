@@ -7417,7 +7417,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Ignition_On.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Activation generated upon detection of the IGN switch (after timeout filter)">
                   Ignition On
                 </td>
                 <td id="TES_ignitionOnFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -7737,7 +7737,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Ignition_Off.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated when the IGN switch is turned off (after timeout filter)">
                   Ignition Off
                 </td>
                 <td id="TES_ignitionOffFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -8057,7 +8057,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Movement_Started.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated upon transition from STOP to DRIVE state (speed exceeds minSpeedThreshold)">
                   Movement Started
                 </td>
                 <td id="TES_movementStartedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -8411,7 +8411,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Movement_Stopped.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated upon transition from DRIVE to STOP state (speed falls below minSpeedThreshold)">
                   Movement Stopped
                 </td>
                 <td id="TES_movementStoppedFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -8765,7 +8765,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Heartbeat.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated periodically according to the heartbeat settings">
                   Heartbeat
                 </td>
                 <td id="TES_heartbeatFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -9086,8 +9086,9 @@
                         <td style="width: 40%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Ignition Off Interval:
+                              <td style="border: none; text-align: center;" title="Time interval between two consecutive heartbeat events while the ignition line is inactive">
+                                Ignition Off Interval
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9118,8 +9119,9 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Ignition On Interval:
+                              <td style="border: none; text-align: center;" title="Time interval between two consecutive heartbeat events while the ignition line is active">
+                                Ignition On Interval
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9150,8 +9152,9 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Time to wait GPS fix:
+                              <td style="border: none; text-align: center;" title="Time in seconds between the Ignition On event and the start of DMS activity (for speed-dependent events) when GPS fix is unavailable and vehicle speed is unknown">
+                                Time to wait GPS fix
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9195,8 +9198,9 @@
                         <td style="width: 40%;">
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                GPS Fix Loss Or Recovery:
+                              <td style="border: none; text-align: center;" title="Time after which GNSS position loss and GNSS position recovery (loss + 5 sec) are considered if position data received from GNSS is invalid">
+                                GPS Fix Loss Or Recovery
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9227,8 +9231,9 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Ignition On Filter:
+                              <td style="border: none; text-align: center;" title="Time after a constant rise in the physical state of the IGN line is interpreted as a logic ON state">
+                                Ignition On Filter
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9259,8 +9264,9 @@
                         <td>
                           <table>
                             <tr>
-                              <td style="border: none; text-align: center;">
-                                Ignition Off Filter:
+                              <td style="border: none; text-align: center;" title="Time after a constant fall in the physical state of the IGN line is interpreted as a logic OFF state">
+                                Ignition Off Filter
+                                <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
                             <tr>
@@ -9303,7 +9309,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/GPS_Update_Status.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Generated whenever a valid position is lost or recovered after a timeout">
                   GPS Update Status
                 </td>
                 <td id="TES_GPS_updateStatusFeedbackVisualSummary" title="Driver Feedback: Visual" class="inactive-driverFeedback-summary-cell">
@@ -9668,7 +9674,7 @@
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
                   <img src="source_img/Trip_Path.svg">
                 </td>
-                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;">
+                <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Allows fleet managers to visualize detailed, turn-by-turn navigation paths of their vehicles">
                   Trip Path
                 </td>
                 <td id="TES_tripPathFeedbackVisualSummary" title="Driver Feedback: Visual" class="disabled-summary-cell">
@@ -9996,7 +10002,7 @@
                         <td colspan="2" style="width: 40%;">
                           <table>
                             <tr>
-                              <td style="text-align: center; border: none;">Distance</td>
+                              <td style="text-align: center; border: none;" title="Events can be generated when the vehicle moves beyond a specified distance">Distance <img src="source_img/info.png" class="icon"></td>
                             </tr>
                             <tr>
                               <td style="border: none;">
@@ -10029,7 +10035,7 @@
                         <td colspan="2">
                           <table>
                             <tr>
-                              <td style="text-align: center; border: none;">Time</td>
+                              <td style="text-align: center; border: none;" title="Events can be generated based on time elapsed since the last event">Time <img src="source_img/info.png" class="icon"></td>
                             </tr>
                             <tr>
                               <td style="border: none;">
@@ -10061,8 +10067,8 @@
                         </td>
                       </tr>
                       <tr>
-                        <td style="text-align: center;">
-                          Inhibit Heartbeat<br><br>
+                        <td style="text-align: center;" title="Activating this parameter prevents the simultaneous generation of trip path and heartbeat events, reducing data redundancy.">
+                          Inhibit Heartbeat<img src="source_img/info.png" class="icon"><br><br>
                           <label class="switch">
                             <input id="TES_tripPathInhibitHeartbeatCheckbox" type="checkbox" onclick="updateLinkedMenu('TES_heartbeat', !this.checked)">
                             <span class="slider"></span>
@@ -10072,7 +10078,7 @@
                         <td colspan="2" style="border: none; width: 40%;">
                           <table>
                             <tr>
-                              <td style="text-align: center; border: none;">Heading</td>
+                              <td style="text-align: center; border: none;" title="Changes in vehicle heading beyond a set angle will trigger an event">Heading <img src="source_img/info.png" class="icon"></td>
                             </tr>
                             <tr>
                               <td style="border: none;">
