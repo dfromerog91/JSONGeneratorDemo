@@ -17127,7 +17127,7 @@
                           <table>
                             <tr>
                               <td style="border: none; text-align: center;" title="Determines the maximum time that the system waits to receive the calibration process result from the DMS">
-                                Calibration Timeout
+                                Manual Calibration Timeout
                                 <img src="source_img/info.png" class="icon">
                               </td>
                             </tr>
@@ -17309,22 +17309,52 @@
                     &nbsp;
                   </td>
                   <td style="text-align: center;">
-                    <input type="text" id="ServerAddress" name="ServerAddress" placeholder="Server Address"
-                      style="font-style: italic; width: 280px; font-size: 13px;">
+                    <table>
+                      <tr>
+                        <td style="text-align: left; border-style: none;">
+                          Server Address:
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=" text-align: center; border-style: none;">
+                          <input type="text" id="ServerAddress" name="ServerAddress" placeholder="Server Address" style="font-style: italic; width: 280px; font-size: 13px;">
+                        </td>
+                      </tr>
+                    </table>                    
                   </td>
                   <td style="width: 10px;">
                     &nbsp;
                   </td>
                   <td style="text-align: center;">
-                    <input type="text" id="ServerPassword" name="ServerPassword" placeholder="Server Password"
-                      style="font-style: italic; width: 280px; font-size: 13px;">
+                    <table>
+                      <tr>
+                        <td style="text-align: left; border-style: none;">
+                          Server Password:
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=" text-align: center; border-style: none;">
+                          <input type="text" id="ServerPassword" name="ServerPassword" placeholder="Server Password" style="font-style: italic; width: 280px; font-size: 13px;">
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                   <td style="width: 10px;">
                     &nbsp;
                   </td>
                   <td style="text-align: center;">
-                    <input type="text" id="Port" name="Port" placeholder="Server Port"
-                      style="font-style: italic; width: 150px; font-size: 13px;">
+                    <table>
+                      <tr>
+                        <td style="text-align: left; border-style: none;">
+                          TCP Port:
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=" text-align: center; border-style: none;">
+                          <input type="text" id="Port" name="Port" placeholder="Server Port" style="font-style: italic; width: 150px; font-size: 13px;">
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
