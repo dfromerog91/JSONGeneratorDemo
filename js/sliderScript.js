@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('DMS_driverAsleepMessageBackoff', 0, 1, '136px', 0);
     initializeDial('DMS_driverAsleepFeedbackBackoff', 1, 60, '136px', 1);
     initializeDial('DMS_driverAsleepSpeedThreshold', 0, 50, '136px', 0, 1, 'DMS_drowsinessSpeedThreshold');
-    initializeDial('DMS_driverAsleepSleepDuration', 1, 5, '192px', 4, 0.1);
+    initializeDial('DMS_driverAsleepSleepDuration', 1, 5, '136px', 4, 0.1);
 
     initializeDial('DMS_drowsinessMessageBackoff', 0, 30, '136px', 15);
     initializeDial('DMS_drowsinessFeedbackBackoff', 1, 60, '136px', 10);
