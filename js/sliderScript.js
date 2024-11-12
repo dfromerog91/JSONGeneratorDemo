@@ -185,9 +185,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initializeDial('SI_stopTimeFilter', 1, 30, '192px', 5);
     initializeDial('SI_volumeForAsleep', 50, 100, '136px', 100);
     initializeDial('SI_volumeForOtherAlerts', 10, 100, '136px', 100);
-    initializeDial('SI_calibrationTimeout', 10, 60, '192px', 10);
-    initializeDial('SI_sleepModeTimeout', 0, 255, '192px', 5);
-    initializeDial('SI_GSensorWakeThreshold', 2, 63, '192px', 30);
+    initializeDial('SI_calibrationTimeout', 10, 60, '136px', 10);
+    initializeDial('SI_sleepModeTimeout', 0, 255, '136px', 5);
+    initializeDial('SI_GSensorWakeThreshold', 2, 63, '136px', 30);
     initializeDial('GPS_lossSpeedPersistenceTime', 0, 300, '256px', 10);
 });
 
