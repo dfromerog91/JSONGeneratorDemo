@@ -1955,6 +1955,7 @@ function generate_FS10_JSON(){
     var videoOverlay = document.getElementById("SI_videoOverlayCheckbox").checked;
     var timeOffset = parseInt(document.getElementById("timeOffset").value);
     var timeSource = document.getElementById("timeSource").value;
+    var enableRoadCenterLearning =document.getElementById("SI_autoCalibrationCheckbox").checked;
     var GSensorWakeThreshold = parseInt(document.getElementById("SI_GSensorWakeThresholdNumber").value);
     var OTAupdateEnable = document.getElementById("SI_OTA_updateCheckbox").checked;
     var GPSFixLossOrRecoveryTime = parseInt(document.getElementById("TES_heartbeatGPS_FixLossOrRecoveryNumber").value);
@@ -2768,6 +2769,7 @@ function generate_FS10_JSON(){
                     "TrackingGraceTimer": TrackingGraceTimer
                 }
             },
+            "enableRoadCenterLearning": enableRoadCenterLearning,
             "GSensorWakeThreshold": GSensorWakeThreshold,
             "HeartbeatConfig": {
                 "IGNOffInterval": IGNOffInterval,
@@ -4347,6 +4349,7 @@ function updateComboBox_fromJSON(JSONdata){
     updateSliderControlInteger("SI_calibrationTimeout", JSONdata, "ExtraParameters.Calibration.Timeout");
     updateSliderControlInteger("SI_SettingsAndHybridWi_Fi_TimeOut", JSONdata, "WiFiTO");
     updateSliderControlInteger("SI_sleepModeTimeout", JSONdata, "SleepModeTO");
+    updateCheckboxCheckedState("SI_autoCalibration", JSONdata, "ExtraParameters.enableRoadCenterLearning", undefined, undefined, true);
     updateSliderControlInteger("SI_GSensorWakeThreshold", JSONdata, "ExtraParameters.GSensorWakeThreshold");
     updateCheckboxCheckedState("SI_OTA_update", JSONdata, "ExtraParameters.OTAupdateEnable");
 }
