@@ -1946,6 +1946,7 @@ function generate_FS10_JSON(){
     var IGNOffInterval = 60 * parseInt(document.getElementById("TES_heartbeatIgnitionOffIntervalNumber").value);
     var IGNOnInterval = parseInt(document.getElementById("TES_heartbeatIgnitionOnIntervalNumber").value);
     var TimeToWaitGPSFix = parseInt(document.getElementById("TES_heartbeatTimeToWaitGPSFixNumber").value);
+    var TimeToWaitGPSFixIGNOff = parseInt(document.getElementById("timeToWaitGPSFixIGNOffNumber").value);
     var DistractionTurnGraceDuration = parseFloat(document.getElementById("DMS_driverDistractedTurnGraceTimerNumber").value).toFixed(1);
     var TrackingGraceTimer = parseInt(30 * document.getElementById("DMS_driverDisappearedTrackingGraceTimerNumber").value);
     var DriverChangeMinDuration = parseFloat(document.getElementById("DMS_driverChangedMinimumNumber").value).toFixed(1);
@@ -2774,7 +2775,8 @@ function generate_FS10_JSON(){
             "HeartbeatConfig": {
                 "IGNOffInterval": IGNOffInterval,
                 "IGNOnInterval": IGNOnInterval,
-                "TimeToWaitGPSFix": TimeToWaitGPSFix
+                "TimeToWaitGPSFix": TimeToWaitGPSFix,
+                "TimeToWaitGPSFixIGNOff": TimeToWaitGPSFixIGNOff
             },
             "TripPathConfig": {
                 "Enable": TripPathEnable,
@@ -4352,6 +4354,7 @@ function updateComboBox_fromJSON(JSONdata){
     updateCheckboxCheckedState("SI_autoCalibration", JSONdata, "ExtraParameters.enableRoadCenterLearning", undefined, undefined, true);
     updateSliderControlInteger("SI_GSensorWakeThreshold", JSONdata, "ExtraParameters.GSensorWakeThreshold");
     updateCheckboxCheckedState("SI_OTA_update", JSONdata, "ExtraParameters.OTAupdateEnable");
+    updateSliderControlInteger("timeToWaitGPSFixIGNOff", JSONdata, "ExtraParameters.HeartbeatConfig.TimeToWaitGPSFixIGNOff", undefined, undefined, 45);
 }
 
 //Updating Check Boxes
