@@ -1507,7 +1507,7 @@ function togglePrivacyModeActivation() {
     if (activationCheckbox.checked) {
         localControlCheckbox.checked = true;
         remoteControlCheckbox.checked = true;
-        autoDisable.value = "1";
+        autoDisable.value = "OnIgnitionOff";
         enableEventsCheckbox.checked = true;
         enableOutputsCheckbox.checked = true;
         localControlCheckbox.disabled = false;
@@ -1518,7 +1518,7 @@ function togglePrivacyModeActivation() {
     } else {
         localControlCheckbox.checked = false;
         remoteControlCheckbox.checked = false;
-        autoDisable.value = "0";
+        autoDisable.value = "Disabled";
         enableEventsCheckbox.checked = false;
         enableOutputsCheckbox.checked = false;
         localControlCheckbox.disabled = true;

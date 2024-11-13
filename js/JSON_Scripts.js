@@ -32,10 +32,19 @@ function update_FS10_textInputs(inputFromTextbox){
 }
 
 function generate_FS10_JSON(){
+    // Privacy Mode
+    var PrivacyMode_Allow = document.getElementById("P_privacyModeActivationCheckbox").checked;
+    var PrivacyMode_ControlLocally = document.getElementById("P_privacyModeLocalControlCheckbox").checked;
+    var PrivacyMode_ControlRemotely = document.getElementById("P_privacyModeRemoteControlCheckbox").checked;
+    var PrivacyMode_AutoDisable = document.getElementById("P_privacyModeAutoDisableId").value;
+    var PrivacyMode_EnableEvents = document.getElementById("P_privacyModeEnableEventsCheckbox").checked;
+    var PrivacyMode_EnableOutputs = document.getElementById("P_privacyModeEnableOutputsCheckbox").checked;
+
     // DMS
     var DriverAsleep_Activation = document.getElementById("DMS_driverAsleepActivationCheckbox").checked; 
     var DriverAsleep_FeedbackAudio = document.getElementById("DMS_driverAsleepFeedbackAudioCheckbox").checked; 
-    var DriverAsleep_FeedbackOutput = document.getElementById("DMS_driverAsleepFeedbackOutputId").value; 
+    var DriverAsleep_FeedbackOutput = document.getElementById("DMS_driverAsleepFeedbackOutputId").value;
+    var DriverAsleep_PrivacyModeBehavior = document.getElementById("DMS_driverAsleepPrivacyEventId").value;
     var DriverAsleep_FeedbackSpeech = document.getElementById("DMS_driverAsleepFeedbackSpeechCheckbox").checked; 
     var DriverAsleep_FeedbackVisual = document.getElementById("DMS_driverAsleepFeedbackVisualCheckbox").checked; 
     var DriverAsleep_ReportEvent = document.getElementById("DMS_driverAsleepDetectionEventCheckbox").checked; 
@@ -69,7 +78,8 @@ function generate_FS10_JSON(){
     }
     var Drowsiness_Activation = document.getElementById("DMS_drowsinessActivationCheckbox").checked; 
     var Drowsiness_FeedbackAudio = document.getElementById("DMS_drowsinessFeedbackAudioCheckbox").checked; 
-    var Drowsiness_FeedbackOutput = document.getElementById("DMS_drowsinessFeedbackOutputId").value; 
+    var Drowsiness_FeedbackOutput = document.getElementById("DMS_drowsinessFeedbackOutputId").value;
+    var Drowsiness_PrivacyModeBehavior = document.getElementById("DMS_drowsinessPrivacyEventId").value;
     var Drowsiness_FeedbackSpeech = document.getElementById("DMS_drowsinessFeedbackSpeechCheckbox").checked; 
     var Drowsiness_FeedbackVisual = document.getElementById("DMS_drowsinessFeedbackVisualCheckbox").checked; 
     var Drowsiness_ReportEvent = document.getElementById("DMS_drowsinessDetectionEventCheckbox").checked; 
@@ -103,7 +113,8 @@ function generate_FS10_JSON(){
     }
     var DriverDistracted_Activation = document.getElementById("DMS_driverDistractedActivationCheckbox").checked; 
     var DriverDistracted_FeedbackAudio = document.getElementById("DMS_driverDistractedFeedbackAudioCheckbox").checked; 
-    var DriverDistracted_FeedbackOutput = document.getElementById("DMS_driverDistractedFeedbackOutputId").value; 
+    var DriverDistracted_FeedbackOutput = document.getElementById("DMS_driverDistractedFeedbackOutputId").value;
+    var DriverDistracted_PrivacyModeBehavior = document.getElementById("DMS_driverDistractedPrivacyEventId").value;
     var DriverDistracted_FeedbackSpeech = document.getElementById("DMS_driverDistractedFeedbackSpeechCheckbox").checked; 
     var DriverDistracted_FeedbackVisual = document.getElementById("DMS_driverDistractedFeedbackVisualCheckbox").checked; 
     var DriverDistracted_ReportEvent = document.getElementById("DMS_driverDistractedDetectionEventCheckbox").checked; 
@@ -137,7 +148,8 @@ function generate_FS10_JSON(){
     }
     var PhoneUse_Activation = document.getElementById("DMS_phoneUseActivationCheckbox").checked; 
     var PhoneUse_FeedbackAudio = document.getElementById("DMS_phoneUseFeedbackAudioCheckbox").checked; 
-    var PhoneUse_FeedbackOutput = document.getElementById("DMS_phoneUseFeedbackOutputId").value; 
+    var PhoneUse_FeedbackOutput = document.getElementById("DMS_phoneUseFeedbackOutputId").value;
+    var PhoneUse_PrivacyModeBehavior = document.getElementById("DMS_phoneUsePrivacyEventId").value;
     var PhoneUse_FeedbackSpeech = document.getElementById("DMS_phoneUseFeedbackSpeechCheckbox").checked; 
     var PhoneUse_FeedbackVisual = document.getElementById("DMS_phoneUseFeedbackVisualCheckbox").checked; 
     var PhoneUse_ReportEvent = document.getElementById("DMS_phoneUseDetectionEventCheckbox").checked; 
@@ -171,7 +183,8 @@ function generate_FS10_JSON(){
     }
     var Seatbelt_Activation = document.getElementById("DMS_seatbeltActivationCheckbox").checked; 
     var Seatbelt_FeedbackAudio = document.getElementById("DMS_seatbeltFeedbackAudioCheckbox").checked; 
-    var Seatbelt_FeedbackOutput = document.getElementById("DMS_seatbeltFeedbackOutputId").value; 
+    var Seatbelt_FeedbackOutput = document.getElementById("DMS_seatbeltFeedbackOutputId").value;
+    var Seatbelt_PrivacyModeBehavior = document.getElementById("DMS_seatbeltPrivacyEventId").value;
     var Seatbelt_FeedbackSpeech = document.getElementById("DMS_seatbeltFeedbackSpeechCheckbox").checked; 
     var Seatbelt_FeedbackVisual = document.getElementById("DMS_seatbeltFeedbackVisualCheckbox").checked; 
     var Seatbelt_ReportEvent = document.getElementById("DMS_seatbeltDetectionEventCheckbox").checked; 
@@ -206,6 +219,7 @@ function generate_FS10_JSON(){
     var Smoking_Activation = document.getElementById("DMS_smokingActivationCheckbox").checked;
     var Smoking_FeedbackAudio = document.getElementById("DMS_smokingFeedbackAudioCheckbox").checked;
     var Smoking_FeedbackOutput = document.getElementById("DMS_smokingFeedbackOutputId").value;
+    var Smoking_PrivacyModeBehavior = document.getElementById("DMS_smokingPrivacyEventId").value;
     var Smoking_FeedbackSpeech = document.getElementById("DMS_smokingFeedbackSpeechCheckbox").checked;
     var Smoking_FeedbackVisual = document.getElementById("DMS_smokingFeedbackVisualCheckbox").checked;
     var Smoking_ReportEvent = document.getElementById("DMS_smokingDetectionEventCheckbox").checked;
@@ -2261,6 +2275,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": CameraError_ReportFootage
             },
             "DriverAsleep": {
+                "PrivacyModeBehavior": DriverAsleep_PrivacyModeBehavior,
                 "Activation": DriverAsleep_Activation,
                 "FeedbackAudio": DriverAsleep_FeedbackAudio,
                 "FeedbackOutput": DriverAsleep_FeedbackOutput,
@@ -2291,6 +2306,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": DriverDisappeared_ReportFootage
             },
             "DriverDistracted": {
+                "PrivacyModeBehavior": DriverDistracted_PrivacyModeBehavior,
                 "Activation": DriverDistracted_Activation,
                 "FeedbackAudio": DriverDistracted_FeedbackAudio,
                 "FeedbackOutput": DriverDistracted_FeedbackOutput,
@@ -2321,6 +2337,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": DriverIdentified_ReportFootage
             },
             "Drowsiness": {
+                "PrivacyModeBehavior": Drowsiness_PrivacyModeBehavior,
                 "Activation": Drowsiness_Activation,
                 "FeedbackAudio": Drowsiness_FeedbackAudio,
                 "FeedbackOutput": Drowsiness_FeedbackOutput,
@@ -2521,6 +2538,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": PCW_ReportFootage
             },
             "PhoneUse": {
+                "PrivacyModeBehavior": PhoneUse_PrivacyModeBehavior,
                 "Activation": PhoneUse_Activation,
                 "FeedbackAudio": PhoneUse_FeedbackAudio,
                 "FeedbackOutput": PhoneUse_FeedbackOutput,
@@ -2551,6 +2569,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": "None"
             },
             "Seatbelt": {
+                "PrivacyModeBehavior": Seatbelt_PrivacyModeBehavior,
                 "Activation": Seatbelt_Activation,
                 "FeedbackAudio": Seatbelt_FeedbackAudio,
                 "FeedbackOutput": Seatbelt_FeedbackOutput,
@@ -2561,6 +2580,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": Seatbelt_ReportFootage
             },
             "Smoking": {
+                "PrivacyModeBehavior": Smoking_PrivacyModeBehavior,
                 "Activation": Smoking_Activation,
                 "FeedbackAudio": Smoking_FeedbackAudio,
                 "FeedbackOutput": Smoking_FeedbackOutput,
@@ -2693,6 +2713,14 @@ function generate_FS10_JSON(){
         },
         "EventsStorageNumber": EventstoStorage,
         "ExtraParameters": {
+            "PrivacyMode": {
+                "Allow": PrivacyMode_Allow,
+                "ControlLocally": PrivacyMode_ControlLocally,
+                "ControlRemotely": PrivacyMode_ControlRemotely,
+                "AutoDisable": PrivacyMode_AutoDisable,
+                "EnableEvents": PrivacyMode_EnableEvents,
+                "EnableOutputs": PrivacyMode_EnableOutputs
+            },
             "Calibration": {
                 "Timeout": CalibrationTimeout
             },
@@ -2933,7 +2961,7 @@ function updateSelectValue(selectId, JSONdata, propertyPath) {
     selectElement.value = value;
 }
 
-function updateCheckboxCheckedState(id, JSONdata, propertyPath, imgOnSrc = null, imgOffSrc = null) {
+function updateCheckboxCheckedState(id, JSONdata, propertyPath, imgOnSrc = null, imgOffSrc = null, defaultValue = false) {
     var segments = propertyPath.split('.');
     var value = JSONdata;
     for (var i = 0; i < segments.length; i++) {
@@ -2941,7 +2969,7 @@ function updateCheckboxCheckedState(id, JSONdata, propertyPath, imgOnSrc = null,
         if (value && segment in value) {
             value = value[segment];
         } else {
-            value = false;
+            value = defaultValue;
             break;
         }
     }
@@ -3262,6 +3290,34 @@ function update_FS10_OutputValue(selectId, JSONdata, propertyPath) {
     selectElement.value = selectValue;
 }
 
+function initializePrivacyMode() {
+    const activationCheckbox = document.getElementById("P_privacyModeActivationCheckbox");
+    const localControlCheckbox = document.getElementById("P_privacyModeLocalControlCheckbox");
+    const remoteControlCheckbox = document.getElementById("P_privacyModeRemoteControlCheckbox");
+    const autoDisable = document.getElementById("P_privacyModeAutoDisableId");
+    const enableEventsCheckbox = document.getElementById("P_privacyModeEnableEventsCheckbox");
+    const enableOutputsCheckbox = document.getElementById("P_privacyModeEnableOutputsCheckbox");
+    if (activationCheckbox.checked) {
+        localControlCheckbox.disabled = false;
+        remoteControlCheckbox.disabled = false;
+        autoDisable.disabled = false;
+        enableEventsCheckbox.disabled = false;
+        enableOutputsCheckbox.disabled = false;
+    } else {
+        localControlCheckbox.checked = false;
+        remoteControlCheckbox.checked = false;
+        autoDisable.value = "Disabled";
+        enableEventsCheckbox.checked = false;
+        enableOutputsCheckbox.checked = false;
+        localControlCheckbox.disabled = true;
+        remoteControlCheckbox.disabled = true;
+        autoDisable.disabled = true;
+        enableEventsCheckbox.disabled = true;
+        enableOutputsCheckbox.disabled = true;
+    }
+    togglePrivacyEvents(enableEventsCheckbox.checked);
+}
+
 function updateFeedbackOutput(id, JSONdata, propertyPath) {
     var segments = propertyPath.split('.');
     var value = JSONdata;
@@ -3338,8 +3394,18 @@ function updateFeedbackOutputSummary (paramId) {
 
 // Updating tables from FS10-Events
 function DMS_menuToUpdate(JSONdata){
+    // Privacy Mode
+    updateCheckboxCheckedState("P_privacyModeActivation", JSONdata, "ExtraParameters.PrivacyMode.Allow", undefined, undefined, false);
+    updateCheckboxCheckedState("P_privacyModeLocalControl", JSONdata, "ExtraParameters.PrivacyMode.ControlLocally", undefined, undefined, true);
+    updateCheckboxCheckedState("P_privacyModeRemoteControl", JSONdata, "ExtraParameters.PrivacyMode.ControlRemotely", undefined, undefined, true);
+    updateSelect("P_privacyModeAutoDisableId", JSONdata, "ExtraParameters.PrivacyMode.AutoDisable", "OnIgnitionOff");
+    updateCheckboxCheckedState("P_privacyModeEnableEvents", JSONdata, "ExtraParameters.PrivacyMode.EnableEvents", undefined, undefined, true);
+    updateCheckboxCheckedState("P_privacyModeEnableOutputs", JSONdata, "ExtraParameters.PrivacyMode.EnableOutputs", undefined, undefined, true);
+    initializePrivacyMode();
+
     // DMS
     //    -Driver Asleep
+    updateSelect("DMS_driverAsleepPrivacyEventId", JSONdata, "EventsSettings.DriverAsleep.PrivacyModeBehavior", "Normal");
     updateCheckboxCheckedState("DMS_driverAsleepActivation", JSONdata, "EventsSettings.DriverAsleep.Activation");
     updateCheckAndImageButton("DMS_driverAsleepFeedbackAudio", JSONdata, "EventsSettings.DriverAsleep.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverAsleepFeedbackOutput", JSONdata, "EventsSettings.DriverAsleep.FeedbackOutput");
@@ -3349,6 +3415,7 @@ function DMS_menuToUpdate(JSONdata){
     updateMediaUpload("DMS_driverAsleep", JSONdata, "DriverAsleep");
     
     //    -Drowsiness
+    updateSelect("DMS_drowsinessPrivacyEventId", JSONdata, "EventsSettings.Drowsiness.PrivacyModeBehavior", "Normal");
     updateCheckboxCheckedState("DMS_drowsinessActivation", JSONdata, "EventsSettings.Drowsiness.Activation");
     updateCheckAndImageButton("DMS_drowsinessFeedbackAudio", JSONdata, "EventsSettings.Drowsiness.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_drowsinessFeedbackOutput", JSONdata, "EventsSettings.Drowsiness.FeedbackOutput");
@@ -3357,6 +3424,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_drowsiness", JSONdata, 'Drowsiness', 'Drowsiness', true);
     updateMediaUpload("DMS_drowsiness", JSONdata, "Drowsiness");
     //    -Driver Distracted
+    updateSelect("DMS_driverDistractedPrivacyEventId", JSONdata, "EventsSettings.DriverDistracted.PrivacyModeBehavior", "Normal");
     updateCheckboxCheckedState("DMS_driverDistractedActivation", JSONdata, "EventsSettings.DriverDistracted.Activation");
     updateCheckAndImageButton("DMS_driverDistractedFeedbackAudio", JSONdata, "EventsSettings.DriverDistracted.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverDistractedFeedbackOutput", JSONdata, "EventsSettings.DriverDistracted.FeedbackOutput");
@@ -3365,6 +3433,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_driverDistracted", JSONdata, 'DriverDistracted', 'DriverDistracted', true);
     updateMediaUpload("DMS_driverDistracted", JSONdata, "DriverDistracted");
     //    -Phone use
+    updateSelect("DMS_phoneUsePrivacyEventId", JSONdata, "EventsSettings.PhoneUse.PrivacyModeBehavior", "Normal");
     updateCheckboxCheckedState("DMS_phoneUseActivation", JSONdata, "EventsSettings.PhoneUse.Activation");
     updateCheckAndImageButton("DMS_phoneUseFeedbackAudio", JSONdata, "EventsSettings.PhoneUse.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_phoneUseFeedbackOutput", JSONdata, "EventsSettings.PhoneUse.FeedbackOutput");
@@ -3373,6 +3442,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_phoneUse", JSONdata, 'PhoneUse', 'PhoneUse', true);
     updateMediaUpload("DMS_phoneUse", JSONdata, "PhoneUse");
     //    -Seatbelt
+    updateSelect("DMS_seatbeltPrivacyEventId", JSONdata, "EventsSettings.Seatbelt.PrivacyModeBehavior", "Normal");
     updateCheckboxCheckedState("DMS_seatbeltActivation", JSONdata, "EventsSettings.Seatbelt.Activation");
     updateCheckAndImageButton("DMS_seatbeltFeedbackAudio", JSONdata, "EventsSettings.Seatbelt.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_seatbeltFeedbackOutput", JSONdata, "EventsSettings.Seatbelt.FeedbackOutput");
@@ -3381,6 +3451,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_seatbelt", JSONdata, 'Seatbelt', 'Seatbelt', true);
     updateMediaUpload("DMS_seatbelt", JSONdata, "Seatbelt");
     //    -Smoking
+    updateSelect("DMS_smokingPrivacyEventId", JSONdata, "EventsSettings.Smoking.PrivacyModeBehavior", "Normal");
     updateCheckboxCheckedState("DMS_smokingActivation", JSONdata, "EventsSettings.Smoking.Activation");
     updateCheckAndImageButton("DMS_smokingFeedbackAudio", JSONdata, "EventsSettings.Smoking.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_smokingFeedbackOutput", JSONdata, "EventsSettings.Smoking.FeedbackOutput");
