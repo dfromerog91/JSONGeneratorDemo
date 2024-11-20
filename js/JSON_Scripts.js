@@ -1488,7 +1488,6 @@ function generate_FS10_JSON(){
     var FrequencyGPO = parseFloat(document.getElementById("FrequencyGPO").value).toFixed(1);
     var LengthGPO = parseInt(document.getElementById("LengthGPO").value);
     var SourceGPO = document.getElementById("SourceGPO").value;
-    var GPS_lossSpeedPersistenceTime = parseInt(document.getElementById("GPS_lossSpeedPersistenceTimeNumber").value);
     var DeviceTurnOnEnable = document.getElementById("SI_deviceTurnOnCheckbox").checked;
     var SelfEventTriggerEnable = document.getElementById("SI_selfEventTriggerCheckbox").checked;
     var micStatus = document.getElementById("micStatus").value;
@@ -2812,7 +2811,6 @@ function generate_FS10_JSON(){
         "MaxHeadingAngleForEvents": MaxHeadingAngleForEvents,
         "MicStatus": micStatus,
         "MinSpeedMonitorThreshold": MinSpeedMonitor,
-        "GPSLossSpeedPersistenceTime": GPS_lossSpeedPersistenceTime,
         "Port": ServerPort,
         "RS232Settings": {
             "Baud": Baudrate,
@@ -4247,9 +4245,6 @@ function updateComboBox_fromJSON(JSONdata){
     updateNumericValue("LengthGPO", JSONdata, "GPOut.Length", 1, 1, 60);
     updateListValue("SourceGPO", JSONdata, "GPOut.Source", "LED");
     generateSignal();
-    
-    //GPS Loss Speed Persistence Time
-    updateSliderControlInteger("GPS_lossSpeedPersistenceTime", JSONdata, "GPSLossSpeedPersistenceTime");
 
     //Accelerometer
     updateSliderControlInteger("SI_driveTimeFilter", JSONdata, "Acc3DDriveTimeFilter");
