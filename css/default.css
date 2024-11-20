@@ -1191,15 +1191,20 @@ input:checked + .slider:before {
 	padding: 3px;
 }
 
+.blocked-summary-cell {
+	border-top: none;
+	border-bottom: none;
+	background-color: rgb(170, 170, 170);
+	width: 3.5%;
+	padding: 3px;
+}
+
 .disabled-summary-cell {
 	border-top: none;
 	border-bottom: none;
 	background-color: rgb(170, 170, 170);
 	width: 3.5%;
 	padding: 3px;
-	font-style: italic;
-	font-weight: normal;
-	color: rgb(115, 115, 115);
 }
 
 .slider-summary{

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             : '';
 
         if (summaryCell) {
-            summaryCell.classList.remove('disabled-summary-cell');
+            summaryCell.classList.remove('blocked-summary-cell');
             if (parseFloat(dialValue.value) > 0) {                
                 summaryCell.classList.add(`active-${group}summary-cell`);
             } else {
