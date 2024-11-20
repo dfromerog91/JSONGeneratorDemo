@@ -50,7 +50,7 @@
           <!-----Global Feedback Parameters--->
           <!---------------------------------->
           <!-- Global Parameters - Header -->
-          <div class="header" , id="globalParametersHeader" style="margin-bottom: 1px;">
+          <div class="header" , id="globalParametersHeader">
             <table class="table_properties">
               <tr style="text-align: center;">
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
@@ -70,7 +70,7 @@
             </table>
           </div>
           <!-- Global Parameters - Subparams -->
-          <div id="globalParametersSubParamsId" class="sub-parameters">
+          <div id="globalParametersSubParamsId" class="sub-parameters" style="margin-bottom: 40px;">
             <h1></h1>
             <div class="table-container">
               <table class="summary_table">
@@ -292,7 +292,7 @@
               </table>
             </div>
           </div>
-          <h1>DMS</h1>
+          <h1 style="margin-top: 25px;">DMS</h1>
           <h2 style="color: black;">(Driver Monitoring System Settings)</h2>
 
           <head>
@@ -392,7 +392,7 @@
                 <td id="DMS_driverAsleepDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_driverAsleepDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_driverAsleepMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverAsleepMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverAsleepMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_driverAsleepMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -400,7 +400,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverAsleepFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverAsleepFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverAsleepFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_driverAsleepFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -408,7 +408,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverAsleepSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_driverAsleepSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverAsleepSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_driverAsleepSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -445,7 +445,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_driverAsleepToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_driverAsleepSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'driverAsleepHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -906,7 +906,7 @@
                 <td id="DMS_drowsinessDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_drowsinessDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_drowsinessMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_drowsinessMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_drowsinessMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_drowsinessMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -914,7 +914,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_drowsinessFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_drowsinessFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_drowsinessFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_drowsinessFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -922,7 +922,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_drowsinessSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_drowsinessSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_drowsinessSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_drowsinessSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -959,7 +959,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_drowsinessToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_drowsinessSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'drowsinessHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -1387,7 +1387,7 @@
                 <td id="DMS_driverDistractedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_driverDistractedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_driverDistractedMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverDistractedMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverDistractedMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_driverDistractedMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -1395,7 +1395,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverDistractedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverDistractedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverDistractedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_driverDistractedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -1403,7 +1403,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverDistractedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_driverDistractedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverDistractedSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_driverDistractedSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -1440,7 +1440,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_driverDistractedToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_driverDistractedSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'driverDistractedHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -2070,7 +2070,7 @@
                 <td id="DMS_phoneUseDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_phoneUseDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_phoneUseMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_phoneUseMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_phoneUseMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_phoneUseMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -2078,7 +2078,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_phoneUseFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_phoneUseFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_phoneUseFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_phoneUseFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -2086,7 +2086,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_phoneUseSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_phoneUseSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_phoneUseSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_phoneUseSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -2123,7 +2123,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_phoneUseToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_phoneUseSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'phoneUseHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -2533,7 +2533,7 @@
                 <td id="DMS_seatbeltDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_seatbeltDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_seatbeltMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_seatbeltMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_seatbeltMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_seatbeltMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -2541,7 +2541,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_seatbeltFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_seatbeltFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_seatbeltFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_seatbeltFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -2549,7 +2549,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_seatbeltSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_seatbeltSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_seatbeltSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_seatbeltSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -2586,7 +2586,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_seatbeltToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_seatbeltSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'seatbeltHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -3062,7 +3062,7 @@
                 <td id="DMS_smokingDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_smokingDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_smokingMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_smokingMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_smokingMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_smokingMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3070,7 +3070,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_smokingFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_smokingFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_smokingFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_smokingFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3078,7 +3078,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_smokingSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_smokingSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_smokingSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_smokingSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3115,7 +3115,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_smokingToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_smokingSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'smokingHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -3515,7 +3515,7 @@
                 <td id="DMS_tamperingDetectionFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="DMS_tamperingDetectionFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="DMS_tamperingDetectionFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="DMS_tamperingDetectionFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="DMS_tamperingDetectionFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="DMS_tamperingDetectionFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -3525,7 +3525,7 @@
                 <td id="DMS_tamperingDetectionDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_tamperingDetectionDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_tamperingDetectionMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_tamperingDetectionMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_tamperingDetectionMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_tamperingDetectionMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3533,7 +3533,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_tamperingDetectionFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_tamperingDetectionFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_tamperingDetectionFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_tamperingDetectionFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3541,7 +3541,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_tamperingDetectionSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_tamperingDetectionSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_tamperingDetectionSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_tamperingDetectionSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3578,7 +3578,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_tamperingDetectionToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_tamperingDetectionSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'tamperingDetectionHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -3883,7 +3883,7 @@
                 <td id="DMS_driverIdentifiedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_driverIdentifiedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_driverIdentifiedMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverIdentifiedMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverIdentifiedMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_driverIdentifiedMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3891,7 +3891,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverIdentifiedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverIdentifiedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverIdentifiedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_driverIdentifiedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3899,7 +3899,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverIdentifiedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_driverIdentifiedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverIdentifiedSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_driverIdentifiedSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -3936,7 +3936,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_driverIdentifiedToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_driverIdentifiedSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'driverIdentifiedHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -4260,7 +4260,7 @@
                 <td id="DMS_driverUnidentifiedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_driverUnidentifiedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_driverUnidentifiedMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverUnidentifiedMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverUnidentifiedMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_driverUnidentifiedMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -4268,7 +4268,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverUnidentifiedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverUnidentifiedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverUnidentifiedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_driverUnidentifiedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -4276,7 +4276,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverUnidentifiedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_driverUnidentifiedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverUnidentifiedSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_driverUnidentifiedSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -4313,7 +4313,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_driverUnidentifiedToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_driverUnidentifiedSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'driverUnidentifiedHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -4619,7 +4619,7 @@
                 <td id="DMS_driverDisappearedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_driverDisappearedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_driverDisappearedMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverDisappearedMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverDisappearedMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_driverDisappearedMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -4627,7 +4627,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverDisappearedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverDisappearedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverDisappearedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_driverDisappearedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -4635,7 +4635,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverDisappearedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_driverDisappearedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverDisappearedSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_driverDisappearedSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -4672,7 +4672,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_driverDisappearedToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_driverDisappearedSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'driverDisappearedHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -5043,7 +5043,7 @@
                 <td id="DMS_driverChangedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_driverChangedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_driverChangedMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverChangedMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverChangedMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_driverChangedMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -5051,7 +5051,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverChangedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverChangedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverChangedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_driverChangedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -5059,7 +5059,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverChangedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_driverChangedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverChangedSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_driverChangedSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -5096,7 +5096,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_driverChangedToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_driverChangedSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'driverChangedHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -5425,7 +5425,7 @@
                 <td id="DMS_driverIdUpdatedFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="DMS_driverIdUpdatedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="DMS_driverIdUpdatedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="DMS_driverIdUpdatedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="DMS_driverIdUpdatedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="DMS_driverIdUpdatedFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -5435,7 +5435,7 @@
                 <td id="DMS_driverIdUpdatedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="DMS_driverIdUpdatedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="DMS_driverIdUpdatedMessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverIdUpdatedMessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverIdUpdatedMessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="DMS_driverIdUpdatedMessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -5443,7 +5443,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverIdUpdatedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="DMS_driverIdUpdatedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverIdUpdatedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="DMS_driverIdUpdatedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -5451,7 +5451,7 @@
                     </span>
                   </div>
                 </td>
-                <td id="DMS_driverIdUpdatedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="DMS_driverIdUpdatedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="DMS_driverIdUpdatedSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="DMS_driverIdUpdatedSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -5488,7 +5488,7 @@
                 </td>
                 <td class="col4" style="border-style: none; border-top-right-radius: 50%; border-bottom-right-radius: 50%; width: 3.5%; text-align: center;"
                   title="More/less options">
-                  <span class="toggle-button"
+                  <span id="DMS_driverIdUpdatedToggleButton" class="toggle-button"
                     onclick="toggleSubParameters('DMS_driverIdUpdatedSubParamsId', this, 'source_img/more_options_icon.svg', 'source_img/less_options_icon.svg', 'DriverIdUpdatedHeader')">
                     <img src="source_img/more_options_icon.svg" alt="More Options">
                   </span>
@@ -5804,7 +5804,7 @@
                     <td rowspan="2" style="background: #E5F2FF; color:black; font-size: 14px;">Road-facing<br>feature</td>
                     <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Disabled</span></td>
                     <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Mobileye</span></td>
-                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">Mobileye + dashcam</span></td>
+                    <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;" >Mobileye + dashcam</span></td>
                     <!--<td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px; text-align: center;">FS10</span></td>-->
                     <td style="background: #E5F2FF;"><span class="coment" style="color:black; font-size: 14px;">DVR</span></td>
                   </tr>
@@ -5819,9 +5819,9 @@
                     <tr>
                       <td style="background: #E5F2FF; color:black; font-size: 14px;">Category</td>
                       <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_Disabled" value="Disabled"
-                          onchange="update_ADAS_Select()" checked></td>
+                          onchange="update_ADAS_Select()"></td>
                       <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_Mobileye" value="Mobileye" onchange="update_ADAS_Select()"></td>
-                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_MobileyeRC" value="MobileyeRC" onchange="update_ADAS_Select()"></td>
+                      <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_MobileyeRC" value="MobileyeRC" onchange="update_ADAS_Select()" checked></td>
                       <!--<td style="background: #E5F2FF;"><input type="radio" name="deviceType" id = "deviceType_FS10" value="FS10"></td>-->
                       <td style="background: #E5F2FF;"><input type="radio" name="deviceType" id="deviceType_DVR" value="DVR"
                           onchange="update_ADAS_Select()"></td>
@@ -5860,7 +5860,7 @@
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
-                  <img src="source_img/LDW.svg">
+                  <img src="source_img/LDW_Red.svg">
                 </td>
                 <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Unintentional departure from the driving lane without activating the turn signals">
                   Lane Departure Warning (LDW)
@@ -5881,7 +5881,7 @@
                 <td id="ADAS_LDW_DetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="ADAS_LDW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="ADAS_LDW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="ADAS_LDW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="ADAS_LDW_MessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="ADAS_LDW_MessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -5912,7 +5912,7 @@
                 <td class="col3" style="border-style: none; width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_LDW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_LDW_')" disabled>
+                    <input id="ADAS_LDW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_LDW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6215,7 +6215,7 @@
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
-                  <img src="source_img/HMW.svg">
+                  <img src="source_img/HMW_Red.svg">
                 </td>
                 <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Vehicle is approaching the vehicle in front (time to collision in Mobileye)">
                   Tailgating (HMW)
@@ -6236,7 +6236,7 @@
                 <td id="ADAS_HMW_DetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="ADAS_HMW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="ADAS_HMW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="ADAS_HMW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="ADAS_HMW_MessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="ADAS_HMW_MessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -6267,7 +6267,7 @@
                 <td class="col3" style="border-style: none; width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_HMW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_HMW_')" disabled>
+                    <input id="ADAS_HMW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_HMW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6570,7 +6570,7 @@
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
-                  <img src="source_img/UFCW.svg">
+                  <img src="source_img/UFCW_Red.svg">
                 </td>
                 <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Vehicle is approaching the vehicle in front at speeds under 30 km/h">
                   Urban Forward Collision Warning (UFCW)
@@ -6591,7 +6591,7 @@
                 <td id="ADAS_UFCW_DetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="ADAS_UFCW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="ADAS_UFCW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="ADAS_UFCW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="ADAS_UFCW_MessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="ADAS_UFCW_MessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -6622,7 +6622,7 @@
                 <td class="col3" style="border-style: none; width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_UFCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_UFCW_')" disabled>
+                    <input id="ADAS_UFCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_UFCW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -6925,7 +6925,7 @@
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
-                  <img src="source_img/FCW.svg">
+                  <img src="source_img/FCW_Red.svg">
                 </td>
                 <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Possible collision with the vehicle in front at speeds over 30 km/h">
                   Forward Collision Warning (FCW)
@@ -6946,7 +6946,7 @@
                 <td id="ADAS_FCW_DetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="ADAS_FCW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="ADAS_FCW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="ADAS_FCW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="ADAS_FCW_MessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="ADAS_FCW_MessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -6977,7 +6977,7 @@
                 <td class="col3" style="border-style: none; width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_FCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_FCW_')" disabled>
+                    <input id="ADAS_FCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_FCW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -7280,7 +7280,7 @@
             <table class="table_properties">
               <tr style="text-align: center; ">
                 <td class="col1" style="width: 3.5%; border-style: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; padding: 3px; text-align: center;">
-                  <img src="source_img/PCW.svg">
+                  <img src="source_img/PCW_Red.svg">
                 </td>
                 <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Possible collision with pedestrian and/or cyclist in front at speeds under 50 km/h">
                   Pedestrian Collision Warning (PCW)
@@ -7301,7 +7301,7 @@
                 <td id="ADAS_PCW_DetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="ADAS_PCW_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="ADAS_PCW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="disabled-summary-cell">
+                <td id="ADAS_PCW_MessageBackoffSummary" title="Message Settings: Message Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="ADAS_PCW_MessageBackoffSummaryImg" src="source_img/Message_Backoff.svg">
                     <span id="ADAS_PCW_MessageBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -7332,7 +7332,7 @@
                 <td class="col3" style="border-style: none; width: 7%;"
                   title="Enables/disables detection of event type">
                   <label class="switch">
-                    <input id="ADAS_PCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_PCW_')" disabled>
+                    <input id="ADAS_PCW_ActivationCheckbox" type="checkbox" onclick="toggleMenuActivation('ADAS_PCW_')">
                     <span class="slider"></span>
                   </label>
                 </td>
@@ -7630,14 +7630,11 @@
             </div>
             <h1></h1>
           </div>
-          <h1></h1>
           
-          </br>
           <!---->
           <!-- ADAS Device Type -->
           <!---->
           
-          </br>
           <!---->
           <!--FS10 ADAS (Future Use)-->
           <!---->
@@ -7835,7 +7832,7 @@
                 <td id="TES_ignitionOnFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="TES_ignitionOnFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="TES_ignitionOnFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="TES_ignitionOnFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="TES_ignitionOnFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="TES_ignitionOnFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -7845,7 +7842,7 @@
                 <td id="TES_ignitionOnDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="TES_ignitionOnDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="TES_ignitionOnSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="TES_ignitionOnSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="TES_ignitionOnSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="TES_ignitionOnSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -8155,7 +8152,7 @@
                 <td id="TES_ignitionOffFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="TES_ignitionOffFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="TES_ignitionOffFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="TES_ignitionOffFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="TES_ignitionOffFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="TES_ignitionOffFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -8165,7 +8162,7 @@
                 <td id="TES_ignitionOffDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="TES_ignitionOffDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="TES_ignitionOffSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="TES_ignitionOffSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="TES_ignitionOffSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="TES_ignitionOffSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -8475,7 +8472,7 @@
                 <td id="TES_movementStartedFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="TES_movementStartedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="TES_movementStartedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="TES_movementStartedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="TES_movementStartedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="TES_movementStartedFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -8485,7 +8482,7 @@
                 <td id="TES_movementStartedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="TES_movementStartedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="TES_movementStartedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="TES_movementStartedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="TES_movementStartedSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="TES_movementStartedSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -8829,7 +8826,7 @@
                 <td id="TES_movementStoppedFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="TES_movementStoppedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="TES_movementStoppedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="TES_movementStoppedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="TES_movementStoppedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="TES_movementStoppedFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -8839,7 +8836,7 @@
                 <td id="TES_movementStoppedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="TES_movementStoppedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="TES_movementStoppedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="TES_movementStoppedSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="TES_movementStoppedSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="TES_movementStoppedSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -9183,7 +9180,7 @@
                 <td id="TES_heartbeatFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="TES_heartbeatFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="TES_heartbeatFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="TES_heartbeatFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="TES_heartbeatFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="TES_heartbeatFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -9193,7 +9190,7 @@
                 <td id="TES_heartbeatDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="TES_heartbeatDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="TES_heartbeatSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="TES_heartbeatSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="TES_heartbeatSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="TES_heartbeatSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -9727,7 +9724,7 @@
                 <td id="TES_GPS_updateStatusFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="TES_GPS_updateStatusFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="TES_GPS_updateStatusFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="TES_GPS_updateStatusFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="TES_GPS_updateStatusFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="TES_GPS_updateStatusFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -9737,7 +9734,7 @@
                 <td id="TES_GPS_updateStatusDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="TES_GPS_updateStatusDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="TES_GPS_updateStatusSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="TES_GPS_updateStatusSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="TES_GPS_updateStatusSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="TES_GPS_updateStatusSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -10087,13 +10084,13 @@
                 <td class="col2" style="border-style: none; width: auto; text-align: left; font-weight: bold;" title="Allows fleet managers to visualize detailed, turn-by-turn navigation paths of their vehicles">
                   Trip Path
                 </td>
-                <td id="TES_tripPathFeedbackVisualSummary" title="Driver Feedback: Visual" class="disabled-summary-cell">
+                <td id="TES_tripPathFeedbackVisualSummary" title="Driver Feedback: Visual" class="blocked-summary-cell">
                   <img id="TES_tripPathFeedbackVisualSummaryImg" src="source_img/Visual_OFF.svg">
                 </td>
-                <td id="TES_tripPathFeedbackAudioSummary" title="Driver Feedback: Audio" class="disabled-summary-cell">
+                <td id="TES_tripPathFeedbackAudioSummary" title="Driver Feedback: Audio" class="blocked-summary-cell">
                   <img id="TES_tripPathFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="TES_tripPathFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="TES_tripPathFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="TES_tripPathFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="TES_tripPathFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -10103,7 +10100,7 @@
                 <td id="TES_tripPathDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="TES_tripPathDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="TES_tripPathSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="disabled-summary-cell">
+                <td id="TES_tripPathSpeedThresholdSummary" title="Message Settings: Speed Threshold" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="TES_tripPathSpeedThresholdSummaryImg" src="source_img/Speed_Threshold.svg">
                     <span id="TES_tripPathSpeedThresholdSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -10112,23 +10109,23 @@
                   </div>
                 </td>
                 <td style="border-style: none; width: 0.5%; padding: 0; background-color: #e0dedf;"></td>
-                <td id="TES_tripPathReportImageInCabinSummary" title="Media Upload: In-Cabin Image" class="disabled-summary-cell">
+                <td id="TES_tripPathReportImageInCabinSummary" title="Media Upload: In-Cabin Image" class="blocked-summary-cell">
                   <img id="TES_tripPathReportImageInCabinSummaryImg" src="source_img/Image_InCabin_OFF.svg">
                 </td>
-                <td id="TES_tripPathReportTimelapseInCabinSummary" title="Media Upload: In-Cabin Timelapse" class="disabled-summary-cell">
+                <td id="TES_tripPathReportTimelapseInCabinSummary" title="Media Upload: In-Cabin Timelapse" class="blocked-summary-cell">
                   <img id="TES_tripPathReportTimelapseInCabinSummaryImg" src="source_img/Timelapse_InCabin_OFF.svg">
                 </td>
-                <td id="TES_tripPathReportVideoInCabinSummary" title="Media Upload: In-Cabin Video" class="disabled-summary-cell">
+                <td id="TES_tripPathReportVideoInCabinSummary" title="Media Upload: In-Cabin Video" class="blocked-summary-cell">
                   <img id="TES_tripPathReportVideoInCabinSummaryImg" src="source_img/Video_InCabin_OFF.svg">
                 </td>
                 <td style="border-style: none; width: 0.5%; padding: 0; background-color: #e0dedf;"></td>
-                <td id="TES_tripPathReportImageRoadFacingSummary" title="Media Upload: Road-Facing Image" class="disabled-summary-cell">
+                <td id="TES_tripPathReportImageRoadFacingSummary" title="Media Upload: Road-Facing Image" class="blocked-summary-cell">
                   <img id="TES_tripPathReportImageRoadFacingSummaryImg" src="source_img/Image_RoadFacing_OFF.svg">
                 </td>
-                <td id="TES_tripPathReportTimelapseRoadFacingSummary" title="Media Upload: Road-Facing Timelapse" class="disabled-summary-cell">
+                <td id="TES_tripPathReportTimelapseRoadFacingSummary" title="Media Upload: Road-Facing Timelapse" class="blocked-summary-cell">
                   <img id="TES_tripPathReportTimelapseRoadFacingSummaryImg" src="source_img/Timelapse_RoadFacing_OFF.svg">
                 </td>
-                <td id="TES_tripPathReportVideoRoadFacingSummary" title="Media Upload: Road-Facing Video" class="disabled-summary-cell">
+                <td id="TES_tripPathReportVideoRoadFacingSummary" title="Media Upload: Road-Facing Video" class="blocked-summary-cell">
                   <img id="TES_tripPathReportVideoRoadFacingSummaryImg" src="source_img/Video_RoadFacing_OFF.svg">
                 </td>
                 <td class="col3" style="border-style: none; width: 7%;"
@@ -10527,8 +10524,8 @@
                 </tr>
               </table>
             </div>
+            <h1></h1>
           </div>
-          <h1></h1>
         </div>
       </section>
       <!---->
@@ -10591,7 +10588,7 @@
                 <td id="SI_cameraCalibrationOkDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_cameraCalibrationOkDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_cameraCalibrationOkFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_cameraCalibrationOkFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_cameraCalibrationOkFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_cameraCalibrationOkFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -10906,7 +10903,7 @@
                 <td id="SI_cameraCalibrationFailedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_cameraCalibrationFailedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_cameraCalibrationFailedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_cameraCalibrationFailedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_cameraCalibrationFailedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_cameraCalibrationFailedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -11211,7 +11208,7 @@
                 <td id="SI_accelCalibrationOkFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_accelCalibrationOkFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_accelCalibrationOkFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_accelCalibrationOkFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_accelCalibrationOkFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_accelCalibrationOkFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -11221,7 +11218,7 @@
                 <td id="SI_accelCalibrationOkDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_accelCalibrationOkDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_accelCalibrationOkFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_accelCalibrationOkFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_accelCalibrationOkFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_accelCalibrationOkFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -11535,7 +11532,7 @@
                 <td id="SI_externalEventTriggeringDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_externalEventTriggeringDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_externalEventTriggeringFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_externalEventTriggeringFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_externalEventTriggeringFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_externalEventTriggeringFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -11840,7 +11837,7 @@
                 <td id="SI_enteringSleepModeFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_enteringSleepModeFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_enteringSleepModeFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_enteringSleepModeFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_enteringSleepModeFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_enteringSleepModeFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -11850,7 +11847,7 @@
                 <td id="SI_enteringSleepModeDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_enteringSleepModeDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_enteringSleepModeFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_enteringSleepModeFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_enteringSleepModeFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_enteringSleepModeFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -12154,7 +12151,7 @@
                 <td id="SI_applicationErrorFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_applicationErrorFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_applicationErrorFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_applicationErrorFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_applicationErrorFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_applicationErrorFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -12164,7 +12161,7 @@
                 <td id="SI_applicationErrorDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_applicationErrorDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_applicationErrorFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_applicationErrorFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_applicationErrorFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_applicationErrorFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -12478,7 +12475,7 @@
                 <td id="SI_cameraErrorDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_cameraErrorDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_cameraErrorFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_cameraErrorFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_cameraErrorFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_cameraErrorFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -12816,7 +12813,7 @@
                 <td id="SI_MCU_LogFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_MCU_LogFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_MCU_LogFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_MCU_LogFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_MCU_LogFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_MCU_LogFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -12826,7 +12823,7 @@
                 <td id="SI_MCU_LogDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_MCU_LogDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_MCU_LogFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_MCU_LogFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_MCU_LogFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_MCU_LogFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -13130,7 +13127,7 @@
                 <td id="SI_systemBootFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_systemBootFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_systemBootFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_systemBootFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_systemBootFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_systemBootFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -13140,7 +13137,7 @@
                 <td id="SI_systemBootDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_systemBootDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_systemBootFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_systemBootFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_systemBootFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_systemBootFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -13444,7 +13441,7 @@
                 <td id="SI_systemBootFailureFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_systemBootFailureFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_systemBootFailureFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_systemBootFailureFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_systemBootFailureFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_systemBootFailureFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -13454,7 +13451,7 @@
                 <td id="SI_systemBootFailureDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_systemBootFailureDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_systemBootFailureFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_systemBootFailureFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_systemBootFailureFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_systemBootFailureFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -13758,7 +13755,7 @@
                 <td id="SI_systemOK_FeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_systemOK_FeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_systemOK_FeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_systemOK_FeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_systemOK_FeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_systemOK_FeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -13768,7 +13765,7 @@
                 <td id="SI_systemOK_DetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_systemOK_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_systemOK_FeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_systemOK_FeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_systemOK_FeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_systemOK_FeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -14072,7 +14069,7 @@
                 <td id="SI_systemResetFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_systemResetFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_systemResetFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_systemResetFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_systemResetFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_systemResetFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -14082,7 +14079,7 @@
                 <td id="SI_systemResetDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_systemResetDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_systemResetFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_systemResetFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_systemResetFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_systemResetFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -14386,7 +14383,7 @@
                 <td id="SI_systemErrorFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_systemErrorFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_systemErrorFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_systemErrorFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_systemErrorFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_systemErrorFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -14396,7 +14393,7 @@
                 <td id="SI_systemErrorDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_systemErrorDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_systemErrorFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_systemErrorFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_systemErrorFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_systemErrorFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -14700,7 +14697,7 @@
                 <td id="SI_firmwareUpdateStartedFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_firmwareUpdateStartedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_firmwareUpdateStartedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_firmwareUpdateStartedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_firmwareUpdateStartedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_firmwareUpdateStartedFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -14710,7 +14707,7 @@
                 <td id="SI_firmwareUpdateStartedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_firmwareUpdateStartedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_firmwareUpdateStartedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_firmwareUpdateStartedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_firmwareUpdateStartedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_firmwareUpdateStartedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -15014,7 +15011,7 @@
                 <td id="SI_firmwareUpdateOK_FeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_firmwareUpdateOK_FeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_firmwareUpdateOK_FeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_firmwareUpdateOK_FeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_firmwareUpdateOK_FeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_firmwareUpdateOK_FeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -15024,7 +15021,7 @@
                 <td id="SI_firmwareUpdateOK_DetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_firmwareUpdateOK_DetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_firmwareUpdateOK_FeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_firmwareUpdateOK_FeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_firmwareUpdateOK_FeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_firmwareUpdateOK_FeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -15328,7 +15325,7 @@
                 <td id="SI_firmwareUpdateFailedFeedbackAudioSummary" title="Driver Feedback: Audio" class="inactive-driverFeedback-summary-cell">
                   <img id="SI_firmwareUpdateFailedFeedbackAudioSummaryImg" src="source_img/Audio_OFF.svg">
                 </td>
-                <td id="SI_firmwareUpdateFailedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="disabled-summary-cell">
+                <td id="SI_firmwareUpdateFailedFeedbackSpeechSummary" title="Driver Feedback: Speech" class="blocked-summary-cell">
                   <img id="SI_firmwareUpdateFailedFeedbackSpeechSummaryImg" src="source_img/Speech_OFF.svg">
                 </td>
                 <td id="SI_firmwareUpdateFailedFeedbackOutputSummary" title="Driver Feedback: Output" class="inactive-driverFeedback-summary-cell">
@@ -15338,7 +15335,7 @@
                 <td id="SI_firmwareUpdateFailedDetectionClosureEventSummary" title="Message Settings: Detection/Closure Event" class="inactive-messageSettings-summary-cell">
                   <img id="SI_firmwareUpdateFailedDetectionClosureEventSummaryImg" src="source_img/Detection_Closure_Event_OFF.svg">
                 </td>
-                <td id="SI_firmwareUpdateFailedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="disabled-summary-cell">
+                <td id="SI_firmwareUpdateFailedFeedbackBackoffSummary" title="Message Settings: Feedback Backoff" class="blocked-summary-cell">
                   <div style="position: relative;">
                     <img id="SI_firmwareUpdateFailedFeedbackBackoffSummaryImg" src="source_img/Feedback_Backoff.svg">
                     <span id="SI_firmwareUpdateFailedFeedbackBackoffSummaryValue" style="position: absolute; top: 50%; left: 8%; font-size: 10px; color: #114aa5;">
@@ -15662,7 +15659,7 @@
             </div>
           </div> -->
           <h1></h1>
-          <h1 style="font-size:32pt">Cipia-FS10 Architecture</h1>
+          <h1 style="font-size:32pt; margin-top: 25px;">Cipia-FS10 Architecture</h1>
           <!---SI Cipia-FS10 Architecture: Communications - Header------>
           <div class="header" , id="Cipia-FS10ArchitectureCommunicationsHeader" style="margin-bottom: 1px;">
             <table class="table_properties">
@@ -17604,7 +17601,7 @@
           </div>
           <textarea class="console-font" id="jsonInput" style="height: 33vh;"></textarea>
           <h1></h1>
-          <h1 style="font-size:32pt">Validate JSON</h1>
+          <h1 style="font-size:32pt; margin-top: 25px;">Validate JSON</h1>
           <textarea class="console-font" id="jsonValidation" style="height: 33vh;"></textarea>
           <!--
         <h2></h2>

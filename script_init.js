@@ -1332,6 +1332,24 @@ function toggleSummaryCell (cell, activate, imgSrc) {
     }
 }
 
+function enableSummaryCell (summaryCell, group, activate) {
+    if (summaryCell && !summaryCell.classList.contains("blocked-summary-cell")) {
+        summaryCell.className = "";
+        if (activate) {
+            summaryCell.classList.add("active-" + group + "-summary-cell");
+        } else {
+            summaryCell.classList.add("inactive-" + group + "-summary-cell");
+        }
+    }
+}
+
+function disableSummaryCell (summaryCell){
+    if (summaryCell && !summaryCell.classList.contains("blocked-summary-cell")) {
+        summaryCell.className = "";
+        summaryCell.classList.add("disabled-summary-cell")
+    }
+}
+
 // Script Test for New FrontEnd
 function toggleImageAndCheckbox(id_img, imagePath1, imagePath2, checkboxId) {
     const imgElement = document.getElementById(id_img);
@@ -1376,28 +1394,31 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function toggleSubParameters(id, button, moreOptionsImg, lessOptionsImg, headerId) {
-    // Seleccionar todos los elementos con la clase 'sub-parameters'
-    const allSubParams = document.querySelectorAll('.sub-parameters');
-
-    // Recorrer cada elemento para ocultar todos los menús excepto el que se está alternando
-    allSubParams.forEach(subParam => {
-        if (subParam.id !== id) {
-            // Ocultar los menús que no están siendo alternados
-            subParam.classList.remove('show');
-            subParam.style.display = 'none';
-
-            // Actualizar la imagen del botón asociado al menú que se está ocultando
-            const associatedButton = document.querySelector(`.toggle-button[onclick*="${subParam.id}"] img`);
-            if (associatedButton) {
-                associatedButton.src = moreOptionsImg;
-                associatedButton.alt = 'More Options';
-            }
-        }
-    });
+    const subParams = document.getElementById(id);
+    const img = button.querySelector('img');
 
     // Seleccionar el menú que se está alternando
-    const subParams = document.getElementById(id);
-    if (subParams) {
+    if (subParams && (img.alt != "Blocked Options")) {
+        // Seleccionar todos los elementos con la clase 'sub-parameters'
+        const allSubParams = document.querySelectorAll('.sub-parameters');
+
+        // Recorrer cada elemento para ocultar todos los menús excepto el que se está alternando
+        allSubParams.forEach(subParam => {
+            if (subParam.id !== id) {
+
+                // Actualizar la imagen del botón asociado al menú que se está ocultando
+                const associatedButton = document.querySelector(`.toggle-button[onclick*="${subParam.id}"] img`);
+                if (associatedButton && (associatedButton.alt != "Blocked Options")) {
+                    // Ocultar los menús que no están siendo alternados
+                    subParam.classList.remove('show');
+                    subParam.style.display = 'none';
+                    
+                    associatedButton.src = moreOptionsImg;
+                    associatedButton.alt = 'More Options';
+                }
+            }
+        });
+
         // Verificar si el menú está oculto
         const isHidden = !subParams.classList.contains('show');
         if (isHidden) {
@@ -1417,7 +1438,6 @@ function toggleSubParameters(id, button, moreOptionsImg, lessOptionsImg, headerI
         }
 
         // Actualizar la imagen del botón del menú alternado
-        const img = button.querySelector('img');
         if (img) {
             img.src = isHidden ? lessOptionsImg : moreOptionsImg;
             img.alt = isHidden ? 'Less Options' : 'More Options';
@@ -1442,58 +1462,87 @@ function toggleMenuActivation(id) {
     const feedbackVisualButton = document.getElementById(id + "FeedbackVisualCheckbox");
     const feedbackAudioButton = document.getElementById(id + "FeedbackAudioCheckbox");
     const feedbackSpeechButton = document.getElementById(id + "FeedbackSpeechCheckbox");
-    const detectionEventButton = document.getElementById(id + "DetectionEventCheckbox");
-    const enableInCabinButton = document.getElementById(id + "EnableInCabinCheckbox");
-    const enableRoadFacingButton = document.getElementById(id + "EnableRoadFacingCheckbox");
     const feedbackOutputSelect = document.getElementById(id + "FeedbackOutputId");
+    const detectionEventButton = document.getElementById(id + "DetectionEventCheckbox");
+    const messageBackoffNumber = document.getElementById(id + "MessageBackoffNumber");
+    const feedbackBackoffNumber = document.getElementById(id + "FeedbackBackoffNumber");
+    const speedThresholdNumber = document.getElementById(id + "SpeedThresholdNumber");
+    const reportImageInCabinButton = document.getElementById(id + "ReportImageInCabinCheckbox");
+    const reportTimelapseInCabinButton = document.getElementById(id + "ReportTimelapseInCabinCheckbox");
+    const reportVideoInCabinButton = document.getElementById(id + "ReportVideoInCabinCheckbox");
+    const reportImageRoadFacingButton = document.getElementById(id + "ReportImageRoadFacingCheckbox");
+    const reportTimelapseRoadFacingButton = document.getElementById(id + "ReportTimelapseRoadFacingCheckbox");
+    const reportVideoRoadFacingButton = document.getElementById(id + "ReportVideoRoadFacingCheckbox");
     const feedbackVisualSummaryCell = document.getElementById(id + "FeedbackVisualSummary");
     const feedbackAudioSummaryCell = document.getElementById(id + "FeedbackAudioSummary");
     const feedbackSpeechSummaryCell = document.getElementById(id + "FeedbackSpeechSummary");
+    const feedbackOutputSummaryCell = document.getElementById(id + "FeedbackOutputSummary");
+    const detectionClosureEventSummaryCell = document.getElementById(id + "DetectionClosureEventSummary");
+    const messageBackoffSummaryCell = document.getElementById(id + "MessageBackoffSummary");
+    const feedbackBackoffSummaryCell = document.getElementById(id + "FeedbackBackoffSummary");
+    const speedThresholdSummaryCell = document.getElementById(id + "SpeedThresholdSummary");
     const reportImageInCabinSummaryCell = document.getElementById(id + "ReportImageInCabinSummary");
+    const reportTimelapseInCabinSummaryCell = document.getElementById(id + "ReportTimelapseInCabinSummary");
+    const reportVideoInCabinSummaryCell = document.getElementById(id + "ReportVideoInCabinSummary");
     const reportImageRoadFacingSummaryCell = document.getElementById(id + "ReportImageRoadFacingSummary");
+    const reportTimelapseRoadFacingSummaryCell = document.getElementById(id + "ReportTimelapseRoadFacingSummary");
+    const reportVideoRoadFacingSummaryCell = document.getElementById(id + "ReportVideoRoadFacingSummary");
+    const subParams = document.getElementById(id + "SubParamsId");
     if (activationButton.checked) {
-        if (!feedbackVisualSummaryCell.classList.contains("disabled-summary-cell")) {
-            feedbackVisualButton.disabled = false;
+        enableSummaryCell(feedbackVisualSummaryCell, "driverFeedback", feedbackVisualButton.checked);
+        enableSummaryCell(feedbackAudioSummaryCell, "driverFeedback", feedbackAudioButton.checked);
+        enableSummaryCell(feedbackSpeechSummaryCell, "driverFeedback", feedbackSpeechButton.checked);
+        enableSummaryCell(feedbackOutputSummaryCell, "driverFeedback", feedbackOutputSelect.value != "None");
+        enableSummaryCell(detectionClosureEventSummaryCell, "messageSettings", detectionEventButton.checked);
+        if (messageBackoffNumber) {
+            enableSummaryCell(messageBackoffSummaryCell, "messageSettings", messageBackoffNumber.value > 0);
         }
-        if (!feedbackAudioSummaryCell.classList.contains("disabled-summary-cell")) {
-            feedbackAudioButton.disabled = false;
+        if (feedbackBackoffNumber) {
+            enableSummaryCell(feedbackBackoffSummaryCell, "messageSettings", feedbackBackoffNumber.value > 0);
         }
-        if (!feedbackSpeechSummaryCell.classList.contains("disabled-summary-cell")) {
-            feedbackSpeechButton.disabled = false;
+        if (speedThresholdNumber) {
+            enableSummaryCell(speedThresholdSummaryCell, "messageSettings", speedThresholdNumber.value > 0);
         }
-        feedbackOutputSelect.disabled = false;
-        detectionEventButton.disabled = false;
-        if (!reportImageInCabinSummaryCell.classList.contains("disabled-summary-cell")) {
-            enableInCabinButton.disabled = false;
-        }
-        if (!reportImageRoadFacingSummaryCell.classList.contains("disabled-summary-cell")) {
-            enableRoadFacingButton.disabled = false;
+        enableSummaryCell(reportImageInCabinSummaryCell, "inCabin", reportImageInCabinButton.checked);
+        enableSummaryCell(reportTimelapseInCabinSummaryCell, "inCabin", reportTimelapseInCabinButton.checked);
+        enableSummaryCell(reportVideoInCabinSummaryCell, "inCabin", reportVideoInCabinButton.checked);
+        enableSummaryCell(reportImageRoadFacingSummaryCell, "roadFacing", reportImageRoadFacingButton.checked);
+        enableSummaryCell(reportTimelapseRoadFacingSummaryCell, "roadFacing", reportTimelapseRoadFacingButton.checked);
+        enableSummaryCell(reportVideoRoadFacingSummaryCell, "roadFacing", reportVideoRoadFacingButton.checked);
+        if (subParams) {
+            const img = document.querySelector(`.toggle-button[onclick*="${subParams.id}"] img`);
+            img.src = 'source_img/more_options_icon.svg';
+            img.alt = "More Options"
         }
     } else {
-        if (feedbackVisualButton.checked) {
-            toggleCheckAndImageButton(id + "FeedbackVisual", 'source_img/Visual_ON.svg', 'source_img/Visual_OFF.svg');
+        if (subParams) {
+            const isHidden = !subParams.classList.contains('show');
+            if (!isHidden) {
+                subParams.classList.remove('show');
+                setTimeout(() => {
+                    if (!subParams.classList.contains('show')) {
+                        subParams.style.display = 'none';
+                    }
+                }, 125);
+            }
+            const img = document.querySelector(`.toggle-button[onclick*="${subParams.id}"] img`);
+            img.src = 'source_img/blocked_options_icon.svg';
+            img.alt = "Blocked Options"
         }
-        if (feedbackAudioButton.checked) {
-            toggleCheckAndImageButton(id + "FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
-        }
-        if (feedbackSpeechButton.checked) {
-            toggleCheckAndImageButton(id + "FeedbackSpeech", 'source_img/Speech_ON.svg', 'source_img/Speech_OFF.svg');
-        }
-        feedbackOutputSelect.value = "None";
-        toggleFeedbackOutputSummary(id + "FeedbackOutput");
-        detectionEventButton.checked = false;
-        toggleDetectionClosureEvent(id, false);
-        enableInCabinButton.checked = false;
-        toggleMediaUpload(id, 'Enable', 'InCabin');
-        enableRoadFacingButton.checked = false;
-        toggleMediaUpload(id, 'Enable', 'RoadFacing');
-        feedbackVisualButton.disabled = true;
-        feedbackAudioButton.disabled = true;
-        feedbackSpeechButton.disabled = true;
-        feedbackOutputSelect.disabled = true;
-        detectionEventButton.disabled = true;
-        enableInCabinButton.disabled = true;
-        enableRoadFacingButton.disabled = true;
+        disableSummaryCell(feedbackVisualSummaryCell);
+        disableSummaryCell(feedbackAudioSummaryCell);
+        disableSummaryCell(feedbackSpeechSummaryCell);
+        disableSummaryCell(feedbackOutputSummaryCell);
+        disableSummaryCell(detectionClosureEventSummaryCell);
+        disableSummaryCell(messageBackoffSummaryCell);
+        disableSummaryCell(feedbackBackoffSummaryCell);
+        disableSummaryCell(speedThresholdSummaryCell);
+        disableSummaryCell(reportImageInCabinSummaryCell);
+        disableSummaryCell(reportTimelapseInCabinSummaryCell);
+        disableSummaryCell(reportVideoInCabinSummaryCell);
+        disableSummaryCell(reportImageRoadFacingSummaryCell);
+        disableSummaryCell(reportTimelapseRoadFacingSummaryCell);
+        disableSummaryCell(reportVideoRoadFacingSummaryCell);
     }
 }
 
