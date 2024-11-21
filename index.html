@@ -28,14 +28,15 @@
       <div class="center">
         <nav id="mainNav" style="width: 100%;">
           <ul>
-            <li><a href="https://www.cipia.com"><img src="img/Cipia_logo_print_white.png"
-                  style="vertical-align: middle; width: 80px;"></a></li>
-            <li class="active"><a href="#DMS"><span>DMS</span></a></li>
-            <li><a href="#ADAS"><span>ADAS</span></a></li>
-            <li><a href="#TrackingEvents"><span>Tracking</span></a></li>
-            <li><a href="#System"><span>System</span></a></li>
-            <li><a href="#GenerateJSON"><span>Generate JSON</span></a></li>
-            <li><a href="#LoadJSON"><span>Load JSON</span></a></li>
+            <li><a href="https://www.cipia.com" style="font-size: 13px;"><img src="img/Cipia_logo_print_white.png"
+              style="vertical-align: middle; width: 60px;"></a></li>
+            <li class="active"><a href="#DMS" style="font-size: 13px;"><span>DMS</span></a></li>
+            <li><a href="#ADAS" style="font-size: 13px;"><span>ADAS</span></a></li>
+            <li><a href="#TrackingEvents" style="font-size: 13px;"><span>Tracking</span></a></li>
+            <li><a href="#System" style="font-size: 13px;"><span>System</span></a></li>
+            <li><a href="#Cipia-FS10_Architecture" style="font-size: 13px;"><span>Cipia Architecture</span></a></li>
+            <li><a href="#GenerateJSON" style="font-size: 13px;"><span>Generate JSON</span></a></li>
+            <li><a href="#LoadJSON" style="font-size: 13px;"><span>Load JSON</span></a></li>
           </ul>
         </nav>
       </div>
@@ -15204,8 +15205,15 @@
               </table>
             </div>
           </div> -->
-          <h1></h1>
-          <h1 style="font-size:32pt; margin-top: 25px;">Cipia-FS10 Architecture</h1>
+        </div>
+      </section>
+      <!---->
+      <!-- Cipia-FS10 Architecture -->
+      <!---->
+      <section id="Cipia-FS10_Architecture" class="row">
+        <div class="center">
+          <h1>Cipia-FS10 Architecture</h1>
+          <!-- <h1 style="font-size:32pt; margin-top: 25px;">Cipia-FS10 Architecture</h1> -->
           <!---SI Cipia-FS10 Architecture: Communications - Header------>
           <div class="header" , id="Cipia-FS10ArchitectureCommunicationsHeader" style="margin-bottom: 1px;">
             <table class="table_properties">
@@ -17084,10 +17092,10 @@
       <!---->
       <!--GENERATE JSON section-->
       <!---->
-      <section id="GenerateJSON" class="row">
+      <section id="GenerateJSON" class="row grey">
         <div class="center">
           <h1>Generate JSON</h1>
-          <h2 style="color:black;font-size: 13pt">According to the information you can review and download the Config
+          <h2 style="color: white; font-size: 13pt">According to the information you can review and download the Config
             File</h2>
           <button onclick="generate_FS10_JSON()">Generate JSON</button>
           <button onclick="download_FS10_JSON('Config.JSON')">Download JSON</button>
@@ -17098,7 +17106,7 @@
       <!---->
       <!--LOAD JSON section-->
       <!---->
-      <section id="LoadJSON" class="row grey">
+      <section id="LoadJSON" class="row">
         <div class="center">
           <h1>Load JSON</h1>
           <input style="font-size: 14px;" type="file" id="file-input" accept=".json" onchange="load_FS10_JSON(); setUrlOptionToCustom()">
