@@ -1567,7 +1567,7 @@ function togglePrivacyModeActivation() {
     } else {
         localControlCheckbox.checked = false;
         remoteControlCheckbox.checked = false;
-        autoDisable.value = "Disabled";
+        autoDisable.value = "No";
         enableEventsCheckbox.checked = false;
         enableOutputsCheckbox.checked = false;
         localControlCheckbox.disabled = true;
