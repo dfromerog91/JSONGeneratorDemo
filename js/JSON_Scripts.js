@@ -259,6 +259,7 @@ function generate_FS10_JSON(){
     //var LightDrowsiness_ReportEvent = document.getElementById("DMS_6x7_select").value; 
     //var LightDrowsiness_ReportImage = document.getElementById("DMS_7x7_select").value; 
     //var LightDrowsiness_ReportFootage = document.getElementById("DMS_8x7_select").value; 
+    var TamperingDetection_PrivacyModeBehavior = document.getElementById("DMS_tamperingDetectionPrivacyEventId").value;
     var TamperingDetection_Activation = document.getElementById("DMS_tamperingDetectionActivationCheckbox").checked;
     var TamperingDetection_FeedbackAudio = document.getElementById("DMS_tamperingDetectionFeedbackAudioCheckbox").checked;
     var TamperingDetection_FeedbackOutput = document.getElementById("DMS_tamperingDetectionFeedbackOutputId").value;
@@ -293,6 +294,7 @@ function generate_FS10_JSON(){
     } else if (!TamperingDetection_ReportFootageCabin && TamperingDetection_ReportFootageRoad) {
         TamperingDetection_ReportFootage = "ADAS";
     }
+    var DriverIdentified_PrivacyModeBehavior = document.getElementById("DMS_driverIdentifiedPrivacyEventId").value;
     var DriverIdentified_Activation = document.getElementById("DMS_driverIdentifiedActivationCheckbox").checked;
     var DriverIdentified_FeedbackAudio = document.getElementById("DMS_driverIdentifiedFeedbackAudioCheckbox").checked;
     var DriverIdentified_FeedbackOutput = document.getElementById("DMS_driverIdentifiedFeedbackOutputId").value;
@@ -327,6 +329,7 @@ function generate_FS10_JSON(){
     } else if (!DriverIdentified_ReportFootageCabin && DriverIdentified_ReportFootageRoad) {
         DriverIdentified_ReportFootage = "ADAS";
     }
+    var UnidentifiedUnauthDriver_PrivacyModeBehavior = document.getElementById("DMS_driverUnidentifiedPrivacyEventId").value;
     var UnidentifiedUnauthDriver_Activation = document.getElementById("DMS_driverUnidentifiedActivationCheckbox").checked;
     var UnidentifiedUnauthDriver_FeedbackAudio = document.getElementById("DMS_driverUnidentifiedFeedbackAudioCheckbox").checked;
     var UnidentifiedUnauthDriver_FeedbackOutput = document.getElementById("DMS_driverUnidentifiedFeedbackOutputId").value;
@@ -361,6 +364,7 @@ function generate_FS10_JSON(){
     } else if (!UnidentifiedUnauthDriver_ReportFootageCabin && UnidentifiedUnauthDriver_ReportFootageRoad) {
         UnidentifiedUnauthDriver_ReportFootage = "ADAS";
     }
+    var DriverDisappeared_PrivacyModeBehavior = document.getElementById("DMS_driverDisappearedPrivacyEventId").value;
     var DriverDisappeared_Activation = document.getElementById("DMS_driverDisappearedActivationCheckbox").checked;
     var DriverDisappeared_FeedbackAudio = document.getElementById("DMS_driverDisappearedFeedbackAudioCheckbox").checked;
     var DriverDisappeared_FeedbackOutput = document.getElementById("DMS_driverDisappearedFeedbackOutputId").value;
@@ -394,7 +398,8 @@ function generate_FS10_JSON(){
         DriverDisappeared_ReportFootage = "DMS";
     } else if (!DriverDisappeared_ReportFootageCabin && DriverDisappeared_ReportFootageRoad) {
         DriverDisappeared_ReportFootage = "ADAS";
-    } 
+    }
+    var DriverChange_PrivacyModeBehavior = document.getElementById("DMS_driverChangedPrivacyEventId").value;
     var DriverChange_Activation = document.getElementById("DMS_driverChangedActivationCheckbox").checked;
     var DriverChange_FeedbackAudio = document.getElementById("DMS_driverChangedFeedbackAudioCheckbox").checked;
     var DriverChange_FeedbackOutput = document.getElementById("DMS_driverChangedFeedbackOutputId").value;
@@ -428,7 +433,8 @@ function generate_FS10_JSON(){
         DriverChange_ReportFootage = "DMS";
     } else if (!DriverChange_ReportFootageCabin && DriverChange_ReportFootageRoad) {
         DriverChange_ReportFootage = "ADAS";
-    } 
+    }
+    var DriverIDUpdated_PrivacyModeBehavior = document.getElementById("DMS_driverIdUpdatedPrivacyEventId").value;
     var DriverIDUpdated_Activation = document.getElementById("DMS_driverIdUpdatedActivationCheckbox").checked;
     var DriverIDUpdated_FeedbackAudio = document.getElementById("DMS_driverIdUpdatedFeedbackAudioCheckbox").checked;
     var DriverIDUpdated_FeedbackOutput = document.getElementById("DMS_driverIdUpdatedFeedbackOutputId").value;
@@ -465,6 +471,7 @@ function generate_FS10_JSON(){
     }
    
     // ADAS
+    var LDW_PrivacyModeBehavior = document.getElementById("ADAS_LDW_PrivacyEventId").value;
     var LDW_Activation = document.getElementById("ADAS_LDW_ActivationCheckbox").checked;
     var LDW_FeedbackAudio = document.getElementById("ADAS_LDW_FeedbackAudioCheckbox").checked;
     var LDW_FeedbackOutput = document.getElementById("ADAS_LDW_FeedbackOutputId").value;
@@ -515,6 +522,7 @@ function generate_FS10_JSON(){
     //var StopDisobeyed_ReportEvent = document.getElementById("ADAS_6x3_select").value;
     //var StopDisobeyed_ReportImage = document.getElementById("ADAS_7x3_select").value;
     //var StopDisobeyed_ReportFootage = document.getElementById("ADAS_8x3_select").value;
+    var HMW_PrivacyModeBehavior = document.getElementById("ADAS_HMW_PrivacyEventId").value;
     var HMW_Activation = document.getElementById("ADAS_HMW_ActivationCheckbox").checked;
     var HMW_FeedbackAudio = document.getElementById("ADAS_HMW_FeedbackAudioCheckbox").checked;
     var HMW_FeedbackOutput = document.getElementById("ADAS_HMW_FeedbackOutputId").value;
@@ -549,6 +557,7 @@ function generate_FS10_JSON(){
     } else if (!HMW_ReportFootageCabin && HMW_ReportFootageRoad) {
         HMW_ReportFootage = "ADAS";
     }
+    var UrbanFCW_PrivacyModeBehavior = document.getElementById("ADAS_UFCW_PrivacyEventId").value;
     var UrbanFCW_Activation = document.getElementById("ADAS_UFCW_ActivationCheckbox").checked;
     var UrbanFCW_FeedbackAudio = document.getElementById("ADAS_UFCW_FeedbackAudioCheckbox").checked;
     var UrbanFCW_FeedbackOutput = document.getElementById("ADAS_UFCW_FeedbackOutputId").value;
@@ -583,6 +592,7 @@ function generate_FS10_JSON(){
     } else if (!UrbanFCW_ReportFootageCabin && UrbanFCW_ReportFootageRoad) {
         UrbanFCW_ReportFootage = "ADAS";
     }
+    var FCW_PrivacyModeBehavior = document.getElementById("ADAS_FCW_PrivacyEventId").value;
     var FCW_Activation = document.getElementById("ADAS_FCW_ActivationCheckbox").checked;
     var FCW_FeedbackAudio = document.getElementById("ADAS_FCW_FeedbackAudioCheckbox").checked;
     var FCW_FeedbackOutput = document.getElementById("ADAS_FCW_FeedbackOutputId").value;
@@ -625,6 +635,7 @@ function generate_FS10_JSON(){
     //var Overspeeding_ReportEvent = document.getElementById("ADAS_6x7_select").value;
     //var Overspeeding_ReportImage = document.getElementById("ADAS_7x7_select").value;
     //var Overspeeding_ReportFootage = document.getElementById("ADAS_8x7_select").value;
+    var PCW_PrivacyModeBehavior = document.getElementById("ADAS_PCW_PrivacyEventId").value;
     var PCW_Activation = document.getElementById("ADAS_PCW_ActivationCheckbox").checked;
     var PCW_FeedbackAudio = document.getElementById("ADAS_PCW_FeedbackAudioCheckbox").checked;
     var PCW_FeedbackOutput = document.getElementById("ADAS_PCW_FeedbackOutputId").value;
@@ -2288,6 +2299,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": DriverAsleep_ReportFootage
             },
             "DriverChange": {
+                "PrivacyModeBehavior": DriverChange_PrivacyModeBehavior,
                 "Activation": DriverChange_Activation,
                 "FeedbackAudio": DriverChange_FeedbackAudio,
                 "FeedbackOutput": DriverChange_FeedbackOutput,
@@ -2298,6 +2310,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": DriverChange_ReportFootage
             },
             "DriverDisappeared": {
+                "PrivacyModeBehavior": DriverDisappeared_PrivacyModeBehavior,
                 "Activation": DriverDisappeared_Activation,
                 "FeedbackAudio": DriverDisappeared_FeedbackAudio,
                 "FeedbackOutput": DriverDisappeared_FeedbackOutput,
@@ -2319,6 +2332,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": DriverDistracted_ReportFootage
             },
             "DriverIDUpdated": {
+                "PrivacyModeBehavior": DriverIDUpdated_PrivacyModeBehavior,
                 "Activation": DriverIDUpdated_Activation,
                 "FeedbackAudio": DriverIDUpdated_FeedbackAudio,
                 "FeedbackOutput": DriverIDUpdated_FeedbackOutput,
@@ -2329,6 +2343,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": DriverIDUpdated_ReportFootage
             },
             "DriverIdentified": {
+                "PrivacyModeBehavior": DriverIdentified_PrivacyModeBehavior,
                 "Activation": DriverIdentified_Activation,
                 "FeedbackAudio": DriverIdentified_FeedbackAudio,
                 "FeedbackOutput": DriverIdentified_FeedbackOutput,
@@ -2370,6 +2385,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": ExternalEventTriggering_ReportFootage
             },
             "ForwardCollisionWarning": {
+                "PrivacyModeBehavior": FCW_PrivacyModeBehavior,
                 "Activation": FCW_Activation,
                 "FeedbackAudio": FCW_FeedbackAudio,
                 "FeedbackOutput": FCW_FeedbackOutput,
@@ -2450,6 +2466,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": IgnitionON_ReportFootage
             },
             "LaneDepartureWarning": {
+                "PrivacyModeBehavior": LDW_PrivacyModeBehavior,
                 "Activation": LDW_Activation,
                 "FeedbackAudio": LDW_FeedbackAudio,
                 "FeedbackOutput": LDW_FeedbackOutput,
@@ -2530,6 +2547,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": "None"
             },
             "PedestrianCollisionWarning": {
+                "PrivacyModeBehavior": PCW_PrivacyModeBehavior,
                 "Activation": PCW_Activation,
                 "FeedbackAudio": PCW_FeedbackAudio,
                 "FeedbackOutput": PCW_FeedbackOutput,
@@ -2663,6 +2681,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": SystemReset_ReportFootage
             },
             "Tailgating(HMW)": {
+                "PrivacyModeBehavior": HMW_PrivacyModeBehavior,
                 "Activation": HMW_Activation,
                 "FeedbackAudio": HMW_FeedbackAudio,
                 "FeedbackOutput": HMW_FeedbackOutput,
@@ -2673,6 +2692,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": HMW_ReportFootage
             },
             "TamperingDetection": {
+                "PrivacyModeBehavior": TamperingDetection_PrivacyModeBehavior,
                 "Activation": TamperingDetection_Activation,
                 "FeedbackAudio": TamperingDetection_FeedbackAudio,
                 "FeedbackOutput": TamperingDetection_FeedbackOutput,
@@ -2693,6 +2713,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": TripPath_ReportFootage
             },
             "UnidentifiedUnauthDriver": {
+                "PrivacyModeBehavior": UnidentifiedUnauthDriver_PrivacyModeBehavior,
                 "Activation": UnidentifiedUnauthDriver_Activation,
                 "FeedbackAudio": UnidentifiedUnauthDriver_FeedbackAudio,
                 "FeedbackOutput": UnidentifiedUnauthDriver_FeedbackOutput,
@@ -2703,6 +2724,7 @@ function generate_FS10_JSON(){
                 "ReportFootage": UnidentifiedUnauthDriver_ReportFootage
             },
             "UrbanForwardCollisionWarning": {
+                "PrivacyModeBehavior": UrbanFCW_PrivacyModeBehavior,
                 "Activation": UrbanFCW_Activation,
                 "FeedbackAudio": UrbanFCW_FeedbackAudio,
                 "FeedbackOutput": UrbanFCW_FeedbackOutput,
@@ -3409,7 +3431,7 @@ function DMS_menuToUpdate(JSONdata){
 
     // DMS
     //    -Driver Asleep
-    updateSelect("DMS_driverAsleepPrivacyEventId", JSONdata, "EventsSettings.DriverAsleep.PrivacyModeBehavior", "Normal");
+    updateSelect("DMS_driverAsleepPrivacyEventId", JSONdata, "EventsSettings.DriverAsleep.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_driverAsleepActivation", JSONdata, "EventsSettings.DriverAsleep.Activation");
     updateCheckAndImageButton("DMS_driverAsleepFeedbackAudio", JSONdata, "EventsSettings.DriverAsleep.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverAsleepFeedbackOutput", JSONdata, "EventsSettings.DriverAsleep.FeedbackOutput");
@@ -3419,7 +3441,7 @@ function DMS_menuToUpdate(JSONdata){
     updateMediaUpload("DMS_driverAsleep", JSONdata, "DriverAsleep");
     
     //    -Drowsiness
-    updateSelect("DMS_drowsinessPrivacyEventId", JSONdata, "EventsSettings.Drowsiness.PrivacyModeBehavior", "Normal");
+    updateSelect("DMS_drowsinessPrivacyEventId", JSONdata, "EventsSettings.Drowsiness.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_drowsinessActivation", JSONdata, "EventsSettings.Drowsiness.Activation");
     updateCheckAndImageButton("DMS_drowsinessFeedbackAudio", JSONdata, "EventsSettings.Drowsiness.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_drowsinessFeedbackOutput", JSONdata, "EventsSettings.Drowsiness.FeedbackOutput");
@@ -3428,7 +3450,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_drowsiness", JSONdata, 'Drowsiness', 'Drowsiness', true);
     updateMediaUpload("DMS_drowsiness", JSONdata, "Drowsiness");
     //    -Driver Distracted
-    updateSelect("DMS_driverDistractedPrivacyEventId", JSONdata, "EventsSettings.DriverDistracted.PrivacyModeBehavior", "Normal");
+    updateSelect("DMS_driverDistractedPrivacyEventId", JSONdata, "EventsSettings.DriverDistracted.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_driverDistractedActivation", JSONdata, "EventsSettings.DriverDistracted.Activation");
     updateCheckAndImageButton("DMS_driverDistractedFeedbackAudio", JSONdata, "EventsSettings.DriverDistracted.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverDistractedFeedbackOutput", JSONdata, "EventsSettings.DriverDistracted.FeedbackOutput");
@@ -3437,7 +3459,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_driverDistracted", JSONdata, 'DriverDistracted', 'DriverDistracted', true);
     updateMediaUpload("DMS_driverDistracted", JSONdata, "DriverDistracted");
     //    -Phone use
-    updateSelect("DMS_phoneUsePrivacyEventId", JSONdata, "EventsSettings.PhoneUse.PrivacyModeBehavior", "Normal");
+    updateSelect("DMS_phoneUsePrivacyEventId", JSONdata, "EventsSettings.PhoneUse.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_phoneUseActivation", JSONdata, "EventsSettings.PhoneUse.Activation");
     updateCheckAndImageButton("DMS_phoneUseFeedbackAudio", JSONdata, "EventsSettings.PhoneUse.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_phoneUseFeedbackOutput", JSONdata, "EventsSettings.PhoneUse.FeedbackOutput");
@@ -3446,7 +3468,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_phoneUse", JSONdata, 'PhoneUse', 'PhoneUse', true);
     updateMediaUpload("DMS_phoneUse", JSONdata, "PhoneUse");
     //    -Seatbelt
-    updateSelect("DMS_seatbeltPrivacyEventId", JSONdata, "EventsSettings.Seatbelt.PrivacyModeBehavior", "Normal");
+    updateSelect("DMS_seatbeltPrivacyEventId", JSONdata, "EventsSettings.Seatbelt.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_seatbeltActivation", JSONdata, "EventsSettings.Seatbelt.Activation");
     updateCheckAndImageButton("DMS_seatbeltFeedbackAudio", JSONdata, "EventsSettings.Seatbelt.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_seatbeltFeedbackOutput", JSONdata, "EventsSettings.Seatbelt.FeedbackOutput");
@@ -3455,7 +3477,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_seatbelt", JSONdata, 'Seatbelt', 'Seatbelt', true);
     updateMediaUpload("DMS_seatbelt", JSONdata, "Seatbelt");
     //    -Smoking
-    updateSelect("DMS_smokingPrivacyEventId", JSONdata, "EventsSettings.Smoking.PrivacyModeBehavior", "Normal");
+    updateSelect("DMS_smokingPrivacyEventId", JSONdata, "EventsSettings.Smoking.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_smokingActivation", JSONdata, "EventsSettings.Smoking.Activation");
     updateCheckAndImageButton("DMS_smokingFeedbackAudio", JSONdata, "EventsSettings.Smoking.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_smokingFeedbackOutput", JSONdata, "EventsSettings.Smoking.FeedbackOutput");
@@ -3475,6 +3497,7 @@ function DMS_menuToUpdate(JSONdata){
     update_FS10_videoValue("DMS_8x7_select", JSONdata, "EventsSettings.LightDrowsiness.ReportFootage");
     */
     //    -Tampering
+    updateSelect("DMS_tamperingDetectionPrivacyEventId", JSONdata, "EventsSettings.TamperingDetection.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_tamperingDetectionActivation", JSONdata, "EventsSettings.TamperingDetection.Activation");
     updateCheckAndImageButton("DMS_tamperingDetectionFeedbackAudio", JSONdata, "EventsSettings.TamperingDetection.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_tamperingDetectionFeedbackOutput", JSONdata, "EventsSettings.TamperingDetection.FeedbackOutput");
@@ -3483,6 +3506,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_tamperingDetection", JSONdata, 'TamperingDetection', 'TamperingDetection', false);
     updateMediaUpload("DMS_tamperingDetection", JSONdata, "TamperingDetection");
     //    -Driver Identified
+    updateSelect("DMS_driverIdentifiedPrivacyEventId", JSONdata, "EventsSettings.DriverIdentified.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_driverIdentifiedActivation", JSONdata, "EventsSettings.DriverIdentified.Activation");
     updateCheckAndImageButton("DMS_driverIdentifiedFeedbackAudio", JSONdata, "EventsSettings.DriverIdentified.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverIdentifiedFeedbackOutput", JSONdata, "EventsSettings.DriverIdentified.FeedbackOutput");
@@ -3491,6 +3515,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_driverIdentified", JSONdata, 'DriverIdentified', 'DriverIdentified', false);
     updateMediaUpload("DMS_driverIdentified", JSONdata, "DriverIdentified");
     //    -Driver Unindentified
+    updateSelect("DMS_driverUnidentifiedPrivacyEventId", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_driverUnidentifiedActivation", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.Activation");
     updateCheckAndImageButton("DMS_driverUnidentifiedFeedbackAudio", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverUnidentifiedFeedbackOutput", JSONdata, "EventsSettings.UnidentifiedUnauthDriver.FeedbackOutput");
@@ -3499,6 +3524,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_driverUnidentified", JSONdata, 'UnidentifiedUnauthDriver', 'UnidentifiedUnauthDriver', false);
     updateMediaUpload("DMS_driverUnidentified", JSONdata, "UnidentifiedUnauthDriver");
     //    -Driver Disappeared
+    updateSelect("DMS_driverDisappearedPrivacyEventId", JSONdata, "EventsSettings.DriverDisappeared.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_driverDisappearedActivation", JSONdata, "EventsSettings.DriverDisappeared.Activation");
     updateCheckAndImageButton("DMS_driverDisappearedFeedbackAudio", JSONdata, "EventsSettings.DriverDisappeared.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverDisappearedFeedbackOutput", JSONdata, "EventsSettings.DriverDisappeared.FeedbackOutput");
@@ -3507,6 +3533,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_driverDisappeared", JSONdata, 'DriverDisappeared', 'DriverDisappeared', false);
     updateMediaUpload("DMS_driverDisappeared", JSONdata, "DriverDisappeared");
     //    -Driver Changed
+    updateSelect("DMS_driverChangedPrivacyEventId", JSONdata, "EventsSettings.DriverChange.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_driverChangedActivation", JSONdata, "EventsSettings.DriverChange.Activation");
     updateCheckAndImageButton("DMS_driverChangedFeedbackAudio", JSONdata, "EventsSettings.DriverChange.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverChangedFeedbackOutput", JSONdata, "EventsSettings.DriverChange.FeedbackOutput");
@@ -3515,6 +3542,7 @@ function DMS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("DMS_driverChanged", JSONdata, 'DriverChange', 'DriverChange', false);
     updateMediaUpload("DMS_driverChanged", JSONdata, "DriverChange");
     //    -Driver ID Updated
+    updateSelect("DMS_driverIdUpdatedPrivacyEventId", JSONdata, "EventsSettings.DriverIDUpdated.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("DMS_driverIdUpdatedActivation", JSONdata, "EventsSettings.DriverIDUpdated.Activation");
     updateCheckAndImageButton("DMS_driverIdUpdatedFeedbackAudio", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("DMS_driverIdUpdatedFeedbackOutput", JSONdata, "EventsSettings.DriverIDUpdated.FeedbackOutput");
@@ -3526,6 +3554,7 @@ function DMS_menuToUpdate(JSONdata){
 function ADAS_menuToUpdate(JSONdata){
     // ADAS
     //    -LDW
+    updateSelect("ADAS_LDW_PrivacyEventId", JSONdata, "EventsSettings.LaneDepartureWarning.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("ADAS_LDW_Activation", JSONdata, "EventsSettings.LaneDepartureWarning.Activation");
     updateCheckAndImageButton("ADAS_LDW_FeedbackAudio", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("ADAS_LDW_FeedbackOutput", JSONdata, "EventsSettings.LaneDepartureWarning.FeedbackOutput");
@@ -3556,6 +3585,7 @@ function ADAS_menuToUpdate(JSONdata){
     update_FS10_videoValue("ADAS_8x3_select", JSONdata, "EventsSettings.StopDisobeyed.ReportFootage");
     */
     //    -HMW
+    updateSelect("ADAS_HMW_PrivacyEventId", JSONdata, "EventsSettings.Tailgating(HMW).PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("ADAS_HMW_Activation", JSONdata, "EventsSettings.Tailgating(HMW).Activation");
     updateCheckAndImageButton("ADAS_HMW_FeedbackAudio", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("ADAS_HMW_FeedbackOutput", JSONdata, "EventsSettings.Tailgating(HMW).FeedbackOutput");
@@ -3564,6 +3594,7 @@ function ADAS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("ADAS_HMW_", JSONdata, 'Tailgating(HMW)', 'Tailgating', true);
     updateMediaUpload("ADAS_HMW_", JSONdata, "Tailgating(HMW)");
     //    -UFCW
+    updateSelect("ADAS_UFCW_PrivacyEventId", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("ADAS_UFCW_Activation", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.Activation");
     updateCheckAndImageButton("ADAS_UFCW_FeedbackAudio", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("ADAS_UFCW_FeedbackOutput", JSONdata, "EventsSettings.UrbanForwardCollisionWarning.FeedbackOutput");
@@ -3572,6 +3603,7 @@ function ADAS_menuToUpdate(JSONdata){
     updateDetectionClosureEvent("ADAS_UFCW_", JSONdata, 'UrbanForwardCollisionWarning', 'UFCW', true);
     updateMediaUpload("ADAS_UFCW_", JSONdata, "UrbanForwardCollisionWarning");
     //    -FCW
+    updateSelect("ADAS_FCW_PrivacyEventId", JSONdata, "EventsSettings.ForwardCollisionWarning.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("ADAS_FCW_Activation", JSONdata, "EventsSettings.ForwardCollisionWarning.Activation");
     updateCheckAndImageButton("ADAS_FCW_FeedbackAudio", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("ADAS_FCW_FeedbackOutput", JSONdata, "EventsSettings.ForwardCollisionWarning.FeedbackOutput");
@@ -3591,6 +3623,7 @@ function ADAS_menuToUpdate(JSONdata){
     update_FS10_videoValue("ADAS_8x7_select", JSONdata, "EventsSettings.OverSpeeding.ReportFootage");
     */
     //    -PCW
+    updateSelect("ADAS_PCW_PrivacyEventId", JSONdata, "EventsSettings.PedestrianCollisionWarning.PrivacyModeBehavior", "NotifyWithoutMedia");
     updateCheckboxCheckedState("ADAS_PCW_Activation", JSONdata, "EventsSettings.PedestrianCollisionWarning.Activation");
     updateCheckAndImageButton("ADAS_PCW_FeedbackAudio", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackAudio", 'source_img/Audio_ON.svg', 'source_img/Audio_OFF.svg');
     updateFeedbackOutput("ADAS_PCW_FeedbackOutput", JSONdata, "EventsSettings.PedestrianCollisionWarning.FeedbackOutput");

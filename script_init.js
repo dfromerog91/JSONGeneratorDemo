@@ -1592,7 +1592,12 @@ function togglePrivacyEvents(enableEvents) {
         "DMS_driverUnidentifiedPrivacyEventId",
         "DMS_driverDisappearedPrivacyEventId",
         "DMS_driverChangedPrivacyEventId",
-        "DMS_driverIdUpdatedPrivacyEventId"
+        "DMS_driverIdUpdatedPrivacyEventId",
+        "ADAS_LDW_PrivacyEventId",
+        "ADAS_HMW_PrivacyEventId",
+        "ADAS_UFCW_PrivacyEventId",
+        "ADAS_FCW_PrivacyEventId",
+        "ADAS_PCW_PrivacyEventId"
     ];
     const privacyEvents = privacyEventIds.map(id => document.getElementById(id));
     privacyEvents.forEach(event => {
